@@ -4,9 +4,10 @@ import { Symptom, CovidReport, Sex } from '../domain/types';
 const router = express.Router();
 
 router.get('/', (req, res) => {
+  const smsVerificationSuccess = req.query['success'] === 'true';
   res.locals.metaDescription =
     'Her kan du legge inn informasjon om din helsetilstand, slik at vi kan få en bedre oversikt over totalbildet i Norge.';
-  return res.render('pages/form');
+  return res.render('pages/form', { smsVerificationSuccess });
 });
 
 router.post('/', (req, res) => {
@@ -28,7 +29,7 @@ router.post('/', (req, res) => {
 
   // TODO: Save report
 
-  console.log(covidReport);
+  res.redirect(`/sms?nummer=${covidReport.phoneNumber}`);
 });
 
 router.get('/elements', (req, res) => {

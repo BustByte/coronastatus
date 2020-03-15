@@ -7,6 +7,11 @@
       <div class="inner">
         <header class="major special">
           <h1>Koronastatus</h1>
+          <% if(smsVerificationSuccess) {%>
+            <div class="alert alert-success" role="alert">
+              Takk for ditt svar! Gjerne tips venner og kjente om denne siden, så bidrar dere til å kartlegge den faktiske statusen i Norge.
+            </div>
+          <% } %>
           <h2 class="slogan">Rapporter din helsetilstand</h2>
           <p><strong>Vi ber alle om å fylle inn feltene under, uavhengig om du har symptomer eller ikke.</strong></p>
           <p>Mørketallene på smittede er store. Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset. Nettsiden er laget i dugnadsånd av et lite konsulentselskap. Dette er ikke en offisiell nettside fra norske myndigheter.</p>

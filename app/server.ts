@@ -3,6 +3,7 @@ import session from 'express-session';
 import bodyParser from 'body-parser';
 import path from 'path';
 import formRoutes from './routes/form-routes';
+import smsRoutes from './routes/sms-routes';
 import { getInstance } from './repository/SqlLiteDatabase';
 
 const SqLiteStore = require('connect-sqlite3')(session);
@@ -33,7 +34,8 @@ app.set('views', [
   path.join(__dirname, 'views', 'errors')
 ]);
 
-app.use(formRoutes);
+app.use('/', formRoutes);
+app.use('/sms', smsRoutes);
 
 app.use(
   '/static',
