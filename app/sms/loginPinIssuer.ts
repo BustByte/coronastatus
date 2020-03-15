@@ -1,8 +1,18 @@
+interface IssuedPins {
+  [phoneNumber: string]: LoginPin;
+}
+
+interface Attempts {
+  [ip: string]: Date[];
+}
+
 /**
  * Represents a 6-digit login pin with expiration date.
  */
 class LoginPin {
-  constructor(pin, expires) {
+  pin: string;
+  expires: Date;
+  constructor(pin: string, expires: Date) {
     this.pin = pin;
     this.expires = expires;
   }
@@ -11,7 +21,10 @@ class LoginPin {
 /**
  * Issues login pins to customers for logging in.
  */
-class LoginPinIssuer {
+export class LoginPinIssuer {
+  issuedPins: IssuedPins;
+  attempts: Attempts;
+
   constructor() {
     this.attempts = {};
     this.issuedPins = {};
@@ -22,7 +35,7 @@ class LoginPinIssuer {
    * It creates a new one if this is the first time the customer requests a pin.
    * It re-uses an old pin if the previous one has not yet expired (10 minutes).
    */
-  issue(phoneNumber, now = new Date()) {
+  issue(phoneNumber: string, now = new Date()) {
     if (this.alreadyHasUnexpiredPin(phoneNumber, now)) {
       console.info(`Issued unexpired pin to ${phoneNumber}.`);
     } else {
@@ -37,7 +50,7 @@ class LoginPinIssuer {
    * Throttles by ip if someone is brute forcing emails or attempts.
    * Returns true if the pin is correct and conversely false if incorrect.
    */
-  async validate(ip, phoneNumber, pinAttempt) {
+  async validate(ip: string, phoneNumber: string, pinAttempt: string) {
     await this.waitProportionallyToRecentAttempts(ip);
     return (
       this.alreadyHasUnexpiredPin(phoneNumber) &&
@@ -49,7 +62,7 @@ class LoginPinIssuer {
    * - Waits for (number of validation attempts last 5 minutes) * 1 second.
    * Returns an asynchronous Promise to avoid locking up other resources.
    */
-  async waitProportionallyToRecentAttempts(ip) {
+  async waitProportionallyToRecentAttempts(ip: string) {
     this.attempts[ip] = (this.attempts[ip] || []).concat(new Date());
     const secondsToWait = this.attempts[ip].reduce(
       (time, attempt) =>
@@ -59,13 +72,13 @@ class LoginPinIssuer {
     return new Promise(resolve => setTimeout(resolve, secondsToWait * 1000));
   }
 
-  doesPinMatch(phoneNumber, pinAttempt) {
+  doesPinMatch(phoneNumber: string, pinAttempt: string) {
     const doesPinMatch = this.issuedPins[phoneNumber].pin === pinAttempt.trim();
     console.info(`${phoneNumber} checked if pins matched (${doesPinMatch}).`);
     return doesPinMatch;
   }
 
-  alreadyHasUnexpiredPin(phoneNumber, now = new Date()) {
+  alreadyHasUnexpiredPin(phoneNumber: string, now = new Date()) {
     return (
       phoneNumber in this.issuedPins &&
       this.issuedPins[phoneNumber].expires > now
@@ -75,7 +88,7 @@ class LoginPinIssuer {
   /**
    * - Generates a new LoginPin (struct-like) with an expiration date 24 hours from now.
    */
-  static generateNewPin(createdAt) {
+  static generateNewPin(createdAt: Date) {
     const randomSixDigitPin = Math.random()
       .toString()
       .substr(2, 6);
@@ -86,12 +99,12 @@ class LoginPinIssuer {
   }
 }
 
-let instance = null;
-const getInstance = () => {
+let instance: LoginPinIssuer | null = null;
+const getInstance = (): LoginPinIssuer => {
   if (instance === null) {
     instance = new LoginPinIssuer();
   }
   return instance;
 };
 
-module.exports = { LoginPinIssuer, loginPinIssuer: getInstance() };
+export const loginPinIssuer = getInstance();

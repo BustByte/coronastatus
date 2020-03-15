@@ -1,7 +1,17 @@
-import express from 'express';
-import { Symptom, CovidReport, Sex } from '../domain/types';
+import express, { Request } from 'express';
+import { loginPinIssuer } from '../sms/loginPinIssuer';
 
 const router = express.Router();
+
+function determineRemoteAddress(req: Request) {
+  const ipWithPort =
+    (req.headers['x-forwarded-for'] as string) || req.connection.remoteAddress;
+  if (ipWithPort) {
+    const [ipWithoutPort] = ipWithPort.split(':');
+    return ipWithoutPort;
+  }
+  return req.ip;
+}
 
 router.get('/', (req, res) => {
   console.log(req.query);
@@ -16,13 +26,18 @@ router.get('/', (req, res) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   const verificationCode = req.body['verification-code'];
   const phoneNumber = req.body['phone-number'];
-  console.log(phoneNumber, verificationCode);
+  const ip = determineRemoteAddress(req);
 
   // TODO: check if verification code is invalid
-  if (phoneNumber === verificationCode) {
+  const validationSucceeded = await loginPinIssuer.validate(
+    ip,
+    phoneNumber,
+    verificationCode
+  );
+  if (!validationSucceeded) {
     return res.render('pages/sms', {
       phoneNumber,
       invalidVerificationCode: true

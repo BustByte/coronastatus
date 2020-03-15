@@ -6,6 +6,8 @@ import formRoutes from './routes/form-routes';
 import smsRoutes from './routes/sms-routes';
 import { getInstance } from './repository/SqlLiteDatabase';
 
+const { COOKIE_SECRET } = require('../config.json');
+
 const SqLiteStore = require('connect-sqlite3')(session);
 
 const app = express();
@@ -15,7 +17,7 @@ const isDevelopmentEnv = process.env.NODE_ENV === 'dev';
 app.use(
   session({
     store: new SqLiteStore(),
-    secret: 'TODO maybe add secret here',
+    secret: COOKIE_SECRET,
     cookie: {
       secure: true,
       httpOnly: true,

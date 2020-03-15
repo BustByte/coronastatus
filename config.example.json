@@ -1,0 +1,6 @@
+{
+  "COOKIE_SECRET": "123",
+  "SVEVE_USERNAME": "",
+  "SVEVE_PASSWORD": "",
+  "SHOULD_USE_SMS_LOGIN": true
+}

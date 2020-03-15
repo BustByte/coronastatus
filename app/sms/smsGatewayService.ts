@@ -1,21 +1,25 @@
-const fetch = require("node-fetch");
+import fetch from 'node-fetch';
 
-class SmsGatewayService {
-  constructor(username, password, shouldSendSms) {
+export class SmsGatewayService {
+  username: string;
+  password: string;
+  shouldSendSms: boolean;
+
+  constructor(username: string, password: string, shouldSendSms: boolean) {
     this.username = username;
     this.password = password;
     this.shouldSendSms = shouldSendSms;
   }
 
-  createEndpointString(recipientNumber, messageContent) {
+  createEndpointString(recipientNumber: string, messageContent: string) {
     return `https://sveve.no/SMS/SendMessage?user=${this.username}&passwd=${
       this.password
     }&to=${recipientNumber}&msg=${encodeURIComponent(
       messageContent
-    )}&from=Batvett`;
+    )}&from=Corona`;
   }
 
-  async sendMessageToNumber(recipientNumber, messageContent) {
+  async sendMessageToNumber(recipientNumber: string, messageContent: string) {
     if (!this.shouldSendSms) {
       console.info(`Not sending SMS: ${recipientNumber}{${messageContent}}`);
       return {
@@ -40,29 +44,18 @@ class SmsGatewayService {
       // eslint-disable-next-line consistent-return
       return {
         success: false,
-        message: "Something went wrong during Sveve"
+        message: 'Something went wrong during Sveve'
       };
     }
   }
 
-  async sendSmsWithPin(recipientNumber, pin) {
-    const messageContent = `${pin}\nDin engangskode for innlogging til [redact].`;
-    return this.sendMessageToNumber(recipientNumber, messageContent);
-  }
-
-  async sendInviteLink(invitedByUser, discountAmount, recipientNumber, link) {
-    const messageContent = `Gratulerer! Din venn ${
-      invitedByUser.fullName
-    } har gitt deg ${discountAmount},- rabatt hos [redacted]! Velkommen! ${link}`;
+  async sendSmsWithPin(recipientNumber: string, pin: string) {
+    const messageContent = `${pin}\nDin kode for å verifisere deg.\nDu kan også verifisere deg her: https://coronastatus.no/sms?nummer=${recipientNumber}`;
     return this.sendMessageToNumber(recipientNumber, messageContent);
   }
 
   // eslint-disable-next-line class-methods-use-this
-  async doFetch(url) {
+  async doFetch(url: string) {
     return fetch(url);
   }
 }
-
-module.exports = {
-  SmsGatewayService
-};

@@ -7,12 +7,17 @@
       <div class="inner">
         <header class="major special">
           <h1>Coronastatus</h1>
-          <h2 class="slogan">Rapporter din helsetilstand</h2>
-          <% if(smsVerificationSuccess) {%>
+          <% if(locals.smsVerificationSuccess) {%>
             <div class="alert alert-success" role="alert">
               Takk for ditt svar! Gjerne tips venner og kjente om denne siden, så bidrar dere til å kartlegge den faktiske statusen i Norge.
             </div>
           <% } %>
+          <% if(locals.smsSendingFailed) {%>
+            <div class="alert alert-danger" role="alert">
+              Beklager, noe gikk galt under utsending av SMS. Vennligst prøv igjen senere.
+            </div>
+          <% } %>
+          <h2 class="slogan">Rapporter din helsetilstand</h2>
           <p><strong>Vi ber alle om å fylle inn feltene under, uavhengig om du har symptomer eller ikke.</strong></p>
           <p>Mørketallene på smittede er store. Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset. Nettsiden er laget i dugnadsånd av et lite konsulentselskap. Dette er ikke en offisiell nettside fra norske myndigheter.</p>
         </header>
