@@ -37,10 +37,12 @@ export class CovidReportRepository {
   async getCovidReportByPasscode(
     passcode: string
   ): Promise<CovidReport | undefined> {
-    const jsonDump = await (this.db.getFirst<string>(SELECT_COVID_REPORT, [
+    const row = await this.db.getFirst<CovidReportRow>(SELECT_COVID_REPORT, [
       passcode
-    ]) ?? Promise.resolve(undefined));
-    return jsonDump ? this.parseJsonDumpToCovidReport(jsonDump) : undefined;
+    ]);
+    return row?.json_dump
+      ? this.parseJsonDumpToCovidReport(row.json_dump)
+      : undefined;
   }
 
   async countNumberOfReports(): Promise<number | undefined> {
