@@ -5,6 +5,7 @@ export interface CovidReport {
   postalCode: string;
   hasBeenTested: boolean;
   testedAt?: Date; // YYYY-MM-DD
+  symptomStart?: string; // YYYY-MM-DD
   testResult?: TestResult;
   hasBeenAbroadLastTwoWeeks: boolean;
   symptoms: { [key in Symptom]: boolean };
