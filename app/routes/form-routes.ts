@@ -2,7 +2,7 @@ import express, { Request } from 'express';
 import { Symptom, CovidReport, Sex, TestResult } from '../domain/types';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
 import { loginPinIssuer } from '../sms/loginPinIssuer';
-import { stripPhoneNumber } from '../sms/utils';
+import { stripPhoneNumber, hashPhoneNumber } from '../sms/utils';
 import { SmsGatewayService } from '../sms/smsGatewayService';
 import postalCodeCoordinates from '../domain/postalCodeCoordinates';
 
@@ -65,8 +65,10 @@ router.get('/kart', (req, res) => {
 
 router.post('/', async (req, res) => {
   const phoneNumber = req.body['phone-number'];
+  const strippedPhoneNumber = stripPhoneNumber(phoneNumber);
+  const hashedPhoneNumber = hashPhoneNumber(strippedPhoneNumber);
   const covidReport: CovidReport = {
-    phoneNumber,
+    phoneNumber: hashedPhoneNumber,
     yearOfBirth: req.body['birth-year'],
     postalCode: req.body['postal-code'],
     hasBeenTested: req.body['been-tested'] === 'yes',
@@ -84,8 +86,7 @@ router.post('/', async (req, res) => {
     hasBeenAbroadLastTwoWeeks: req.body['been-abroad'] === 'yes',
     symptomStart: req.body['symptom-start']
   };
-  const strippedPhoneNumber = stripPhoneNumber(phoneNumber);
-  const pin = loginPinIssuer.issue(strippedPhoneNumber);
+  const pin = loginPinIssuer.issue(hashedPhoneNumber);
 
   const gateway = new SmsGatewayService(
     SVEVE_USERNAME,
@@ -94,8 +95,8 @@ router.post('/', async (req, res) => {
   );
   const success = await gateway.sendSmsWithPin(phoneNumber, pin);
   if (success) {
-    reportRepo.addNewCovidReportForPhoneNumber(
-      strippedPhoneNumber,
+    reportRepo.addNewCovidReportForHashedPhoneNumber(
+      hashedPhoneNumber,
       covidReport
     );
     return res.redirect(`/sms?nummer=${strippedPhoneNumber}`);

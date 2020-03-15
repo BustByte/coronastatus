@@ -1,4 +1,5 @@
 import express, { Request } from 'express';
+import { hashPhoneNumber } from '../sms/utils';
 import { loginPinIssuer } from '../sms/loginPinIssuer';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
 
@@ -30,12 +31,12 @@ router.get('/', (req, res) => {
 router.post('/', async (req, res) => {
   const verificationCode: string = req.body['verification-code'];
   const phoneNumber: string = req.body['phone-number'];
+  const hashedPhoneNumber = hashPhoneNumber(phoneNumber);
   const ip = determineRemoteAddress(req);
 
-  // TODO: check if verification code is invalid
   const validationSucceeded = await loginPinIssuer.validate(
     ip,
-    phoneNumber,
+    hashedPhoneNumber,
     verificationCode
   );
   if (!validationSucceeded) {
@@ -44,7 +45,9 @@ router.post('/', async (req, res) => {
       invalidVerificationCode: true
     });
   }
-  await reportRepo.saveVerificationSucceededForPhoneNumber(phoneNumber);
+  await reportRepo.saveVerificationSucceededForHashedPhoneNumber(
+    hashedPhoneNumber
+  );
   return res.redirect('/?success=true');
 });
 
