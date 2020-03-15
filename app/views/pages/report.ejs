@@ -7,14 +7,9 @@
       <div class="inner">
         <header class="major special">
           <h1>Coronastatus</h1>
-          <% if(locals.smsVerificationSuccess) {%>
+          <% if(locals.success) {%>
             <div class="alert alert-success" role="alert">
               Takk for ditt svar! Gjerne tips venner og kjente om denne siden, så bidrar dere til å kartlegge den faktiske statusen i Norge.
-            </div>
-          <% } %>
-          <% if(locals.smsSendingFailed) {%>
-            <div class="alert alert-danger" role="alert">
-              Beklager, noe gikk galt under utsending av SMS. Vennligst prøv igjen senere.
             </div>
           <% } %>
           <% if(locals.didNotAcceptPrivacyPolicy) {%>
@@ -31,11 +26,6 @@
           <div class="col-12">
             <form method="post" action="/">
               <div class="row gtr-uniform">
-                <div class="col-12">
-                  <label for="phone-number">Telefonnummer</label>
-                  <p class="info">Vennligst ikke bruk samme telefonnummer for flere personer.</p>
-                  <input required type="tel" pattern="[0-9]{8}" name="phone-number" id="phone-number" placeholder="99123456">
-                </div>
                 <div class="col-12">
                   <label for="birth-year">Fødselsår</label>
                   <select required name="birth-year" id="birth-year">
