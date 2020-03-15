@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
       [Symptom.MUSCLE_ACHING]: req.body['symptom-muscle-pain'] === 'on',
       [Symptom.DIARRHEA]: req.body['symptom-diarrhea'] === 'on'
     },
-    hasBeenAbroadLastTwoWeeks: false // TODO
+    hasBeenAbroadLastTwoWeeks: req.body['been-abroad'] === 'yes'
   };
   reportRepo.addNewCovidReportForPhoneNumber(phoneNumber, covidReport);
   return res.redirect(`/sms?nummer=${covidReport.phoneNumber}`);
