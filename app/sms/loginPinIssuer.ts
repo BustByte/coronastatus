@@ -1,7 +1,7 @@
 import { LoginPin } from './loginPin';
 
 interface IssuedPins {
-  [phoneNumber: string]: LoginPin;
+  [hashedPhoneNumber: string]: LoginPin;
 }
 
 interface Attempts {
@@ -25,14 +25,14 @@ export class LoginPinIssuer {
    * It creates a new one if this is the first time the customer requests a pin.
    * It re-uses an old pin if the previous one has not yet expired (10 minutes).
    */
-  issue(phoneNumber: string, now = new Date()) {
-    if (this.alreadyHasUnexpiredPin(phoneNumber, now)) {
-      console.info(`Issued unexpired pin to ${phoneNumber}.`);
+  issue(hashedPhoneNumber: string, now = new Date()) {
+    if (this.alreadyHasUnexpiredPin(hashedPhoneNumber, now)) {
+      console.info(`Issued unexpired pin to ${hashedPhoneNumber}.`);
     } else {
-      console.info(`Issued fresh pin to ${phoneNumber}.`);
-      this.issuedPins[phoneNumber] = LoginPinIssuer.generateNewPin(now);
+      console.info(`Issued fresh pin to ${hashedPhoneNumber}.`);
+      this.issuedPins[hashedPhoneNumber] = LoginPinIssuer.generateNewPin(now);
     }
-    return this.issuedPins[phoneNumber].pin;
+    return this.issuedPins[hashedPhoneNumber].pin;
   }
 
   /**
@@ -40,11 +40,11 @@ export class LoginPinIssuer {
    * Throttles by ip if someone is brute forcing emails or attempts.
    * Returns true if the pin is correct and conversely false if incorrect.
    */
-  async validate(ip: string, phoneNumber: string, pinAttempt: string) {
+  async validate(ip: string, hashedPhoneNumber: string, pinAttempt: string) {
     await this.waitProportionallyToRecentAttempts(ip);
     return (
-      this.alreadyHasUnexpiredPin(phoneNumber) &&
-      this.doesPinMatch(phoneNumber, pinAttempt)
+      this.alreadyHasUnexpiredPin(hashedPhoneNumber) &&
+      this.doesPinMatch(hashedPhoneNumber, pinAttempt)
     );
   }
 
@@ -62,16 +62,19 @@ export class LoginPinIssuer {
     return new Promise(resolve => setTimeout(resolve, secondsToWait * 1000));
   }
 
-  doesPinMatch(phoneNumber: string, pinAttempt: string) {
-    const doesPinMatch = this.issuedPins[phoneNumber].pin === pinAttempt.trim();
-    console.info(`${phoneNumber} checked if pins matched (${doesPinMatch}).`);
+  doesPinMatch(hashedPhoneNumber: string, pinAttempt: string) {
+    const doesPinMatch =
+      this.issuedPins[hashedPhoneNumber].pin === pinAttempt.trim();
+    console.info(
+      `${hashedPhoneNumber} checked if pins matched (${doesPinMatch}).`
+    );
     return doesPinMatch;
   }
 
-  alreadyHasUnexpiredPin(phoneNumber: string, now = new Date()) {
+  alreadyHasUnexpiredPin(hashedPhoneNumber: string, now = new Date()) {
     return (
-      phoneNumber in this.issuedPins &&
-      this.issuedPins[phoneNumber].expires > now
+      hashedPhoneNumber in this.issuedPins &&
+      this.issuedPins[hashedPhoneNumber].expires > now
     );
   }
 

@@ -21,30 +21,30 @@ export class CovidReportRepository {
     }
   }
 
-  async addNewCovidReportForPhoneNumber(
-    phoneNumber: string,
+  async addNewCovidReportForHashedPhoneNumber(
+    hashedPhoneNumber: string,
     report: CovidReport
   ): Promise<void> {
     const stringifiedReport = JSON.stringify(report);
     return this.db?.run<void>(INSERT_NEW_COVID_REPORT, [
-      phoneNumber,
+      hashedPhoneNumber,
       stringifiedReport
     ]);
   }
 
-  async getCovidReportForPhoneNumber(
-    phoneNumber: string
+  async getCovidReportForHashedPhoneNumber(
+    hashedPhoneNumber: string
   ): Promise<CovidReport | undefined> {
     const jsonDump = await (this.db?.getFirst<string>(SELECT_COVID_REPORT, [
-      phoneNumber
+      hashedPhoneNumber
     ]) ?? Promise.resolve(undefined));
     return jsonDump ? this.parseJsonDumpToCovidReport(jsonDump) : undefined;
   }
 
-  async saveVerificationSucceededForPhoneNumber(
-    phoneNumber: string
+  async saveVerificationSucceededForHashedPhoneNumber(
+    hashedPhoneNumber: string
   ): Promise<void> {
-    return this.db?.run<void>(SET_VERIFICATION_SUCCEEDED, [phoneNumber]);
+    return this.db?.run<void>(SET_VERIFICATION_SUCCEEDED, [hashedPhoneNumber]);
   }
 
   async getAllCovidReports(): Promise<CovidReport[]> {
