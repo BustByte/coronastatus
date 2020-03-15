@@ -7,6 +7,9 @@ const SELECT_COVID_REPORT =
 const INSERT_NEW_COVID_REPORT =
   'insert into covid_report(phone_number, json_dump) values((?), (?))';
 
+const SET_VERIFICATION_SUCCEEDED =
+  'update covid_report set is_verified = 1 where phone_number = (?)';
+
 export class CovidReportRepository {
   db?: SqlLiteDatabase;
 
@@ -34,6 +37,12 @@ export class CovidReportRepository {
       phoneNumber
     ]) ?? Promise.resolve(undefined));
     return jsonDump ? this.parseJsonDumpToCovidReport(jsonDump) : undefined;
+  }
+
+  async saveVerificationSucceededForPhoneNumber(
+    phoneNumber: string
+  ): Promise<void> {
+    return this.db?.run<void>(SET_VERIFICATION_SUCCEEDED, [phoneNumber]);
   }
 
   private parseJsonDumpToCovidReport(jsonDump: string): CovidReport {

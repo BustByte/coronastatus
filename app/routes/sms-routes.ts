@@ -1,7 +1,9 @@
 import express, { Request } from 'express';
 import { loginPinIssuer } from '../sms/loginPinIssuer';
+import { CovidReportRepository } from '../repository/CovidReportRepository';
 
 const router = express.Router();
+const reportRepo = new CovidReportRepository();
 
 function determineRemoteAddress(req: Request) {
   const ipWithPort =
@@ -26,8 +28,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const verificationCode = req.body['verification-code'];
-  const phoneNumber = req.body['phone-number'];
+  const verificationCode: string = req.body['verification-code'];
+  const phoneNumber: string = req.body['phone-number'];
   const ip = determineRemoteAddress(req);
 
   // TODO: check if verification code is invalid
@@ -42,9 +44,7 @@ router.post('/', async (req, res) => {
       invalidVerificationCode: true
     });
   }
-
-  // TODO: Save verification ok
-
+  await reportRepo.saveVerificationSucceededForPhoneNumber(phoneNumber);
   return res.redirect('/?success=true');
 });
 
