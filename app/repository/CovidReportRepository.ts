@@ -1,5 +1,5 @@
 import { getInstance, SqlLiteDatabase } from './SqlLiteDatabase';
-import { CovidReport, Symptom, Sex } from '../domain/types';
+import { CovidReport } from '../domain/types';
 
 const SELECT_COVID_REPORT =
   'select * from covid_report where phone_number = (?)';

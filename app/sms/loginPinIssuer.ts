@@ -1,21 +1,11 @@
+import { LoginPin } from './loginPin';
+
 interface IssuedPins {
   [phoneNumber: string]: LoginPin;
 }
 
 interface Attempts {
   [ip: string]: Date[];
-}
-
-/**
- * Represents a 6-digit login pin with expiration date.
- */
-class LoginPin {
-  pin: string;
-  expires: Date;
-  constructor(pin: string, expires: Date) {
-    this.pin = pin;
-    this.expires = expires;
-  }
 }
 
 /**

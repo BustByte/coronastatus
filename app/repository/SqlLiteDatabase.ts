@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-ignore */
 import { Database } from 'sqlite3';
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
@@ -88,7 +89,7 @@ export class SqlLiteDatabase {
     parameters: string[] = []
   ): Promise<T | undefined> {
     const statement = this.db.prepare(query);
-    //@ts-ignore
+    // @ts-ignore
     const result = await promisify(statement.get).bind(statement)(parameters);
     statement.finalize();
     return result || undefined;
@@ -105,7 +106,7 @@ export class SqlLiteDatabase {
    */
   async getAll(query: string, parameters: string[] = []) {
     const statement = this.db.prepare(query);
-    //@ts-ignore
+    // @ts-ignore
     const results = await promisify(statement.all).bind(statement)(parameters);
     statement.finalize();
     return results;

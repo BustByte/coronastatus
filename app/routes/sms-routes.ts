@@ -14,7 +14,6 @@ function determineRemoteAddress(req: Request) {
 }
 
 router.get('/', (req, res) => {
-  console.log(req.query);
   const phoneNumber = req.query['nummer'];
   res.locals.metaDescription = 'Verifiser ditt telefonnummer';
   if (!phoneNumber) {

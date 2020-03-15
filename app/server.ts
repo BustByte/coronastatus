@@ -6,9 +6,9 @@ import formRoutes from './routes/form-routes';
 import smsRoutes from './routes/sms-routes';
 import { getInstance } from './repository/SqlLiteDatabase';
 
-const { COOKIE_SECRET } = require('../config.json');
-
 const SqLiteStore = require('connect-sqlite3')(session);
+
+const { COOKIE_SECRET } = require('../config.json');
 
 const app = express();
 const port = process.env.PORT || 7272;
@@ -63,6 +63,7 @@ app.use(
   ) => {
     console.error(err);
     res.status(500).json({ error: 'Internal server error' });
+    next();
   }
 );
 

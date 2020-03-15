@@ -4,6 +4,7 @@ import { CovidReportRepository } from '../repository/CovidReportRepository';
 import { loginPinIssuer } from '../sms/loginPinIssuer';
 import { stripPhoneNumber } from '../sms/utils';
 import { SmsGatewayService } from '../sms/smsGatewayService';
+
 const {
   SVEVE_USERNAME,
   SVEVE_PASSWORD,
@@ -52,10 +53,9 @@ router.post('/', async (req, res) => {
       covidReport
     );
     return res.redirect(`/sms?nummer=${strippedPhoneNumber}`);
-  } else {
-    console.log('Sending SMS failed for ', covidReport);
-    return res.render('pages/form', { smsSendingFailed: true });
   }
+  console.log('Sending SMS failed for ', covidReport);
+  return res.render('pages/form', { smsSendingFailed: true });
 });
 
 router.get('/elements', (req, res) => {
