@@ -11,4 +11,11 @@ For å få oversikt over spredning av coronaviruset.
 Alle som vil kan bidra. Nettsiden er laget i dugnadsånd av BustByte, et lite konsulentselskap. Dette er ikke en offisiell nettside fra norske myndigheter.
 
 ## Hvordan kan jeg bidra?
+
+### Slack
 Vi har en felles Slack-kanal du kan bli medlem av. Her prøver vi å koordinere utviklingen så godt vi kan. Send e-postadressen din til kontakt@bustbyte.no, så legger vi deg til snarest. 
+
+### Trello
+https://trello.com/b/ypPpu6Mm
+
+Foreløpig ikke i bruk, men vil mest sannsynlig ta det i bruk etterhvert.
