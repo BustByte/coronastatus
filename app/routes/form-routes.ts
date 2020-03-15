@@ -57,7 +57,8 @@ router.post('/', async (req, res) => {
       [Symptom.HEAVY_BREATHING]: req.body['symptom-heavy-breath'] === 'on',
       [Symptom.MUSCLE_ACHING]: req.body['symptom-muscle-pain'] === 'on',
       [Symptom.DIARRHEA]: req.body['symptom-diarrhea'] === 'on',
-      [Symptom.HEADACHE]: req.body['symptom-headache'] === 'on'
+      [Symptom.HEADACHE]: req.body['symptom-headache'] === 'on',
+      [Symptom.SORE_THROAT]: req.body['symptom-sore-throat'] === 'on'
     },
     hasBeenAbroadLastTwoWeeks: req.body['been-abroad'] === 'yes',
     symptomStart: req.body['symptom-start']
