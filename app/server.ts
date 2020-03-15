@@ -8,6 +8,7 @@ const SqLiteStore = require('connect-sqlite3')(session);
 
 const app = express();
 const port = process.env.PORT || 7272;
+const isDevelopmentEnv = process.env.NODE_ENV === 'dev';
 
 app.use(
   session({
@@ -32,6 +33,20 @@ app.set('views', [
 ]);
 
 app.use(formRoutes);
+
+app.use(
+  '/static',
+  express.static('static', {
+    ...(!isDevelopmentEnv && {
+      setHeaders(res) {
+        res.set(
+          'Cache-Control',
+          'max-age=86400, no-cache="Set-Cookie", public'
+        );
+      }
+    })
+  })
+);
 
 // Fallback error handling
 app.use(

@@ -1,0 +1,9 @@
+label {
+  font-variant: all-small-caps;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+header.major {
+  margin-bottom: 0;
+}
