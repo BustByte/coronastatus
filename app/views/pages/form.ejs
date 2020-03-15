@@ -9,8 +9,7 @@
           <h1>Koronastatus</h1>
           <h2 class="slogan">Rapporter din helsetilstand</h2>
           <p><strong>Vi ber alle om å fylle inn feltene under, uavhengig om du har symptomer eller ikke.</strong></p>
-          <p>Mørketallene på smittede er store. Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset. </p>
-          <p>Nettsiden er laget i dugnadsånd av et lite konsulentselskap. Dette er ikke en offisiell nettside fra norske myndigheter.</p>
+          <p>Mørketallene på smittede er store. Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset. Nettsiden er laget i dugnadsånd av et lite konsulentselskap. Dette er ikke en offisiell nettside fra norske myndigheter.</p>
         </header>
         <div class="row gtr-200">
           <div class="col-12">
@@ -18,11 +17,12 @@
               <div class="row gtr-uniform">
                 <div class="col-12">
                   <label for="phone-number">Telefonnummer</label>
-                  <input type="tel" name="phone-number" id="phone-number" placeholder="999 99 999">
+                  <p class="info">Vennligst ikke bruk samme telefonnummer for flere personer</p>
+                  <input required type="tel" name="phone-number" id="phone-number" placeholder="999 99 999">
                 </div>
                 <div class="col-12">
                   <label for="birth-year">Fødselsår</label>
-                  <select name="birth-year" id="birth-year">
+                  <select required name="birth-year" id="birth-year">
                     <option value="" disabled selected>- Fødselsår -</option>
                     <% for(var i=2020; i>1909; i--) {%>
                       <option value="<%= i %>"><%= i %></option>
@@ -31,21 +31,22 @@
                 </div>
                 <div class="col-12">
                   <label for="postal-code">Postnummer</label>
-                  <input type="number" min="0" max="9999" name="postal-code" id="postal-code" placeholder="1234">
+                  <input required type="number" min="0" max="9999" name="postal-code" id="postal-code" placeholder="1234">
                 </div>
                 <div class="col-12">
                   <label>Biologisk kjønn</label>
                 </div>
                 <div class="col-3 col-12-small reduced-form-padding">
-                  <input type="radio" id="gender-female" name="gender" value="female">
+                  <input required type="radio" id="gender-female" name="gender" value="female">
                   <label for="gender-female">Kvinne</label>
                 </div>
                 <div class="col-3 col-12-small reduced-form-padding">
-                  <input type="radio" id="gender-male" name="gender" value="male">
+                  <input required type="radio" id="gender-male" name="gender" value="male">
                   <label for="gender-male">Mann</label>
                 </div>
                 <div class="col-12">
                   <label>Symptomer du har hatt</label>
+                  <p class="info">Ikke velg noen dersom du ikke har hatt symptomer</p>
                 </div>
                 <div class="col-12 reduced-form-padding">
                   <input type="checkbox" id="symptom-cough" name="symptom-cough">
@@ -84,28 +85,7 @@
         </div>
       </div>
     </section>
-    <section id="footer" class="wrapper">
-      <div class="inner">
-        <div class="split">
-          <div class="content">
-            <header><h2>Om tjenesten</h2></header>
-            <p>Oppdatert info finner du alltid på FHI sine sider.</p>
-            <ul class="actions">
-              <li><a target="_blank" class="button next" style="cursor: pointer;" href="https://fhi.no">Til fhi.no</a></li>
-            </ul>
-          </div>
-          <ul class="contact-icons">
-            <li><a class="icon brands alt fa-twitter" style="cursor: pointer;"><span class="label">twitter.com/untitled</span></a></li>
-            <li><a class="icon brands alt fa-facebook-f" style="cursor: pointer;"><span class="label">facebook.com/untitled</span></a></li>
-            <li><a class="icon brands alt fa-instagram" style="cursor: pointer;"><span class="label">instagram.com/untitled</span></a></li>
-            <li><a class="icon solid alt fa-envelope" style="cursor: pointer;"><span class="label">contact@untitled.tld</span></a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="wrapper style2 copyright">
-      <div class="inner">Utviklet av <a target="_blank" href="https://bustbyte.no">BustByte AS</a></div>
-    </section>
+    <%- include('partials/footer') -%>
   </div>
 </body>
 </html>
