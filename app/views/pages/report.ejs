@@ -1,3 +1,23 @@
+<%
+  const profile = locals.profile;
+  const yearOfBirth = profile && locals.profile.yearOfBirth;
+  const postalCode = profile && locals.profile.postalCode;
+  const sex = profile && locals.profile.sex;
+  const hasBeenTested = profile && locals.profile.hasBeenTested;
+  const symptomStart = profile && locals.profile.symptomStart;
+  const testResult = profile && locals.profile.testResult;
+  const hasBeenAbroadLastTwoWeeks = profile && locals.profile.hasBeenAbroadLastTwoWeeks;
+  const symptoms = profile && locals.profile.symptoms;
+  const symptomDryCough = symptoms && symptoms['DRY_COUGH'];
+  const symptomFatigue = symptoms && symptoms['EXHAUSTION'];
+  const symptomFever = symptoms && symptoms['FEVER'];
+  const symptomHeavyBreathing = symptoms && symptoms['HEAVY_BREATHING'];
+  const symptomMuscleAching = symptoms && symptoms['MUSCLE_ACHING'];
+  const symptomDiarrhea = symptoms && symptoms['DIARRHEA'];
+  const symptomHeadache = symptoms && symptoms['HEADACHE'];
+  const symptomSoreThroat = symptoms && symptoms['SORE_THROAT'];
+%>
+
 <!DOCTYPE html>
 <html lang="no">
 <%- include('partials/head') -%>
@@ -31,45 +51,45 @@
                   <select required name="birth-year" id="birth-year">
                     <option value="" disabled selected>- Fødselsår -</option>
                     <% for(var i=2020; i>1909; i--) {%>
-                      <option value="<%= i %>"><%= i %></option>
+                      <option value="<%= i %>" <%= yearOfBirth === `${i}` ? 'selected' : '' %>><%= i %></option>
                     <% } %>
                   </select>
                 </div>
                 <div class="col-12">
                   <label for="postal-code">Postnummer</label>
-                  <input required type="text" pattern="[0-9]{4}" name="postal-code" id="postal-code" placeholder="1234">
+                  <input required type="text" pattern="[0-9]{4}" name="postal-code" id="postal-code" placeholder="1234" value="<%= postalCode %>">
                 </div>
                 <div class="col-12">
                   <label>Biologisk kjønn</label>
                 </div>
                 <div class="col-12 col-12-small reduced-form-padding">
-                  <input required type="radio" id="gender-female" name="gender" value="female">
+                  <input required type="radio" id="gender-female" name="gender" value="female" <%= sex === 'FEMALE' ? 'checked' : '' %>>
                   <label for="gender-female">Kvinne</label>
                 </div>
                 <div class="col-12 col-12-small reduced-form-padding">
-                  <input required type="radio" id="gender-male" name="gender" value="male">
+                  <input required type="radio" id="gender-male" name="gender" value="male" <%= sex === 'MALE' ? 'checked' : '' %>>
                   <label for="gender-male">Mann</label>
                 </div>
                 <div class="col-12">
                   <label>Har du vært i utlandet de siste to ukene?</label>
                 </div>
                 <div class="col-12 col-12-small reduced-form-padding">
-                  <input required type="radio" id="been-abroad-yes" name="been-abroad" value="yes">
+                  <input required type="radio" id="been-abroad-yes" name="been-abroad" value="yes" <%= hasBeenAbroadLastTwoWeeks ? 'checked' : '' %>>
                   <label for="been-abroad-yes">Ja</label>
                 </div>
                 <div class="col-12 col-12-small reduced-form-padding">
-                  <input required type="radio" id="been-abroad-no" name="been-abroad" value="no">
+                  <input required type="radio" id="been-abroad-no" name="been-abroad" value="no" <%= hasBeenAbroadLastTwoWeeks === false ? 'checked' : '' %>>
                   <label for="been-abroad-no">Nei</label>
                 </div>
                 <div class="col-12">
                   <label>Har du blitt testet for COVID-19?</label>
                 </div>
                 <div class="col-12 col-12-small reduced-form-padding">
-                  <input required type="radio" id="been-tested-yes" name="been-tested" value="yes" onclick="changeTestResultDisplay(true)">
+                  <input required type="radio" id="been-tested-yes" name="been-tested" value="yes" onclick="changeTestResultDisplay(true)" <%= hasBeenTested ? 'checked' : '' %>>
                   <label for="been-tested-yes">Ja</label>
                 </div>
                 <div class="col-12 col-12-small reduced-form-padding">
-                  <input required type="radio" id="been-tested-no" name="been-tested" value="no" onclick="changeTestResultDisplay(false)">
+                  <input required type="radio" id="been-tested-no" name="been-tested" value="no" onclick="changeTestResultDisplay(false)" <%= hasBeenTested === false ? 'checked' : '' %>>
                   <label for="been-tested-no">Nei</label>
                 </div>
                 <div id="test-result-question" class="row gtr-uniform" style="display: none">
@@ -77,15 +97,15 @@
                     <label>Hva var svaret på testen?</label>
                   </div>
                   <div class="col-12 col-12-small reduced-form-padding">
-                    <input type="radio" id="test-response-positive" name="test-response" value="positive">
+                    <input type="radio" id="test-response-positive" name="test-response" value="positive" <%= testResult === 'POSITIVE' ? 'checked' : '' %>>
                     <label for="test-response-positive">Positivt</label>
                   </div>
                   <div class="col-12 col-12-small reduced-form-padding">
-                    <input type="radio" id="test-response-negative" name="test-response" value="negative">
+                    <input type="radio" id="test-response-negative" name="test-response" value="negative" <%= testResult === 'NEGATIVE' ? 'checked' : '' %>>
                     <label for="test-response-negative">Negativt</label>
                   </div>
                   <div class="col-12 col-12-small reduced-form-padding">
-                    <input type="radio" id="test-response-pending" name="test-response" value="pending">
+                    <input type="radio" id="test-response-pending" name="test-response" value="pending" <%= testResult === 'PENDING' ? 'checked' : '' %>>
                     <label for="test-response-pending">Venter på svar</label>
                   </div>
                 </div>
@@ -94,40 +114,40 @@
                   <p class="info">Ikke velg noen dersom du ikke har hatt symptomer</p>
                 </div>
                 <div class="col-12 reduced-form-padding">
-                  <input type="checkbox" id="symptom-cough" name="symptom-cough">
+                  <input type="checkbox" id="symptom-cough" name="symptom-cough" <%= symptomDryCough ? 'checked' : '' %>>
                   <label for="symptom-cough">Tørrhoste</label>
                 </div>
                 <div class="col-12 reduced-form-padding">
-                  <input type="checkbox" id="symptom-fatigue" name="symptom-fatigue">
+                  <input type="checkbox" id="symptom-fatigue" name="symptom-fatigue" <%= symptomFatigue ? 'checked' : '' %>>
                   <label for="symptom-fatigue">Slitenhet eller utmattelse</label>
                 </div>
                 <div class="col-12 reduced-form-padding">
-                  <input type="checkbox" id="symptom-fever" name="symptom-fever">
+                  <input type="checkbox" id="symptom-fever" name="symptom-fever" <%= symptomFever ? 'checked' : '' %>>
                   <label for="symptom-fever">Feber</label>
                 </div>
                 <div class="col-12 reduced-form-padding">
-                  <input type="checkbox" id="symptom-heavy-breath" name="symptom-heavy-breath">
+                  <input type="checkbox" id="symptom-heavy-breath" name="symptom-heavy-breath" <%= symptomHeavyBreathing ? 'checked' : '' %>>
                   <label for="symptom-heavy-breath">Tung pust</label>
                 </div>
                 <div class="col-12 reduced-form-padding">
-                  <input type="checkbox" id="symptom-muscle-pain" name="symptom-muscle-pain">
+                  <input type="checkbox" id="symptom-muscle-pain" name="symptom-muscle-pain" <%= symptomMuscleAching ? 'checked' : '' %>>
                   <label for="symptom-muscle-pain">Muskelsmerter</label>
                 </div>
                 <div class="col-12 reduced-form-padding">
-                  <input type="checkbox" id="symptom-diarrhea" name="symptom-diarrhea">
+                  <input type="checkbox" id="symptom-diarrhea" name="symptom-diarrhea" <%= symptomDiarrhea ? 'checked' : '' %>>
                   <label for="symptom-diarrhea">Diaré</label>
                 </div>
                 <div class="col-12 reduced-form-padding">
-                  <input type="checkbox" id="symptom-headache" name="symptom-headache">
+                  <input type="checkbox" id="symptom-headache" name="symptom-headache" <%= symptomHeavyBreathing ? 'checked' : '' %>>
                   <label for="symptom-headache">Hodepine</label>
                 </div>
                 <div class="col-12 reduced-form-padding">
-                  <input type="checkbox" id="symptom-sore-throat" name="symptom-sore-throat">
+                  <input type="checkbox" id="symptom-sore-throat" name="symptom-sore-throat" <%= symptomSoreThroat ? 'checked' : '' %>>
                   <label for="symptom-sore-throat">Vondt i halsen</label>
                 </div>
                 <div id="symptom-start-question" class="col-12" style="display: none;">
                   <label for="symptom-start">Når startet symptomene?</label>
-                  <input type="date" name="symptom-start" id="symptom-start">
+                  <input type="date" name="symptom-start" id="symptom-start" value="<%= symptomStart %>">
                 </div>
                 <div class="col-12">
                   <label>Personvernerklæring</label>
