@@ -5,7 +5,9 @@
 Mørketallene på smittede er store. Vi lager en nettside som lar folk rapportere sin helsetilstand.
 
 ## Hvorfor?
-For å få oversikt over spredning av coronaviruset.
+For å få oversikt over spredning av coronaviruset. Myndighetene vært treige med å få på plass et selvrapporteringssystem.
+
+Vi anbefaler denne artikkelen av Petter Bae Brandtzæg: https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona-maa-paa-plass-naa-petter-bae-brandtzaeg
 
 ## Hvem står bak?
 Alle som vil kan bidra. Nettsiden er laget i dugnadsånd av BustByte, et lite konsulentselskap. Dette er ikke en offisiell nettside fra norske myndigheter.
