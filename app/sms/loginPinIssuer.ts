@@ -84,7 +84,7 @@ export class LoginPinIssuer {
   static generateNewPin(createdAt: Date) {
     const randomSixDigitPin = Math.random()
       .toString()
-      .substr(2, 6);
+      .substr(2, 4);
     const tenMinutesFromNow = new Date(
       createdAt.getTime() + 1000 * 60 * 60 * 24
     );
