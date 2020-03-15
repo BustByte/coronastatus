@@ -1,5 +1,5 @@
-import express from 'express';
-import { Symptom, CovidReport, Sex } from '../domain/types';
+import express, { Request } from 'express';
+import { Symptom, CovidReport, Sex, TestResult } from '../domain/types';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
 import { loginPinIssuer } from '../sms/loginPinIssuer';
 import { stripPhoneNumber } from '../sms/utils';
@@ -21,12 +21,28 @@ router.get('/', (req, res) => {
   return res.render('pages/form', { smsVerificationSuccess });
 });
 
+const extractTestResult = (req: Request): TestResult | undefined => {
+  const testResponse = req.body['test-response'];
+  if (testResponse === 'positive') {
+    return TestResult.POSITIVE;
+  }
+  if (testResponse === 'negative') {
+    return TestResult.NEGATIVE;
+  }
+  if (testResponse === 'pending') {
+    return TestResult.PENDING;
+  }
+  return undefined;
+};
+
 router.post('/', async (req, res) => {
   const phoneNumber = req.body['phone-number'];
   const covidReport: CovidReport = {
     phoneNumber,
     yearOfBirth: req.body['birth-year'],
     postalCode: req.body['postal-code'],
+    hasBeenTested: req.body['been-tested'] === 'yes',
+    testResult: extractTestResult(req),
     sex: req.body['gender'] === 'male' ? Sex.MALE : Sex.FEMALE,
     symptoms: {
       [Symptom.DRY_COUGH]: req.body['symptom-cough'] === 'on',
