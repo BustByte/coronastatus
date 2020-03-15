@@ -13,7 +13,7 @@ import { promisify } from 'util';
 export class SqlLiteDatabase {
   db: Database;
 
-  constructor(dbName = 'covid-db') {
+  constructor(dbName: string) {
     this.db = new Database(dbName);
   }
 

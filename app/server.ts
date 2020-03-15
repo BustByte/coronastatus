@@ -68,7 +68,7 @@ app.use(
 );
 
 async function initializeDatabase() {
-  const db = getInstance('covid-db');
+  const db = getInstance('covid_db');
   const numberOfTables = (await db.listTables()).length;
   if (numberOfTables === 0) {
     await db.applyMigrationScripts(
