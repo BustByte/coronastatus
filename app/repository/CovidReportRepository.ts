@@ -1,6 +1,8 @@
 import { getInstance, SqlLiteDatabase } from './SqlLiteDatabase';
 import { CovidReport } from '../domain/types';
 
+const SELECT_ALL_COVID_REPORTS = 'select json_dump from covid_report';
+
 const SELECT_COVID_REPORT =
   'select * from covid_report where phone_number = (?)';
 
@@ -43,6 +45,15 @@ export class CovidReportRepository {
     phoneNumber: string
   ): Promise<void> {
     return this.db?.run<void>(SET_VERIFICATION_SUCCEEDED, [phoneNumber]);
+  }
+
+  async getAllCovidReports(): Promise<CovidReport[]> {
+    const results = await this.db?.getAll(SELECT_ALL_COVID_REPORTS);
+    const reports = [];
+    for (const row of results) {
+      reports.push(this.parseJsonDumpToCovidReport(row.json_dump));
+    }
+    return reports;
   }
 
   private parseJsonDumpToCovidReport(jsonDump: string): CovidReport {
