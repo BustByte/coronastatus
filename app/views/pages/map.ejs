@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Create and style clusters</title>
+        <title>Coronastatus</title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
         <script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
         <link href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css" rel="stylesheet" />
@@ -12,113 +12,245 @@
         </style>
     </head>
     <body>
+        <style>
+            .map-overlay {
+                font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+                position: absolute;
+                width: 10%;
+                min-width: 150px;
+                top: 0;
+                left: 0;
+                padding: 10px;
+            }
+
+            .map-overlay .map-overlay-inner {
+                background-color: #fff;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+                min-width: 150px;
+                border-radius: 3px;
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+
+            .map-overlay h2 {
+                line-height: 24px;
+                display: block;
+                margin: 0 0 10px;
+            }
+
+            .map-overlay .legend .healthy {
+                height: 10px;
+                width: 100%;
+                background:  linear-gradient(to right, #91cf60, #91cf60);
+            }
+
+            .map-overlay .legend .positive {
+                height: 10px;
+                width: 100%;
+                background:  linear-gradient(to right, #fc8d59, #fc8d59);
+            }
+
+            .map-overlay .legend .symptoms {
+                height: 10px;
+                width: 100%;
+                background:  linear-gradient(to right, #ffffbf, #ffffbf);
+            }
+
+            .map-overlay input {
+                background-color: transparent;
+                display: inline-block;
+                width: 100%;
+                position: relative;
+                margin: 0;
+                cursor: ew-resize;
+            }
+        </style>
         <div id="map"></div>
+        <div class="map-overlay top">
+            <div class="map-overlay-inner">
+                <h2>Rapportert status per postnummer</h2>
+                <label id="month"></label>
+            </div>
+            <div class="map-overlay-inner">
+                <div id="legend" class="legend">
+                    <div>Frisk</div>
+                    <div class="healthy"></div>
+                    <div>Har symptomer</div>
+                    <div class="symptoms"></div>
+                    <div>Testet positivt</div>
+                    <div class="positive"></div>
+                </div>
+            </div>
+        </div>
+        <script src="https://d3js.org/d3.v4.js"></script>
         <script>
             mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZHJpa3BlIiwiYSI6ImNrN3QxOGV4bTBuNmwzbG1yNnUzMXIyaWMifQ._pfjKIPQuSFRxSCv8oRLEA';
             var map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/dark-v10',
-                center: [-103.59179687498357, 40.66995747013945],
+                center: [10.7522, 59.9139],
                 zoom: 3
             });
 
+            const positive = ['==', ['get', 'state'], 'POSITIVE'];
+            const symptoms = ['==', ['get', 'state'], 'SYMPTOMS'];
+            const healthy = ['==', ['get', 'state'], 'HEALTHY'];
+
+            const colors = {
+                positive: "#fc8d59",
+                symptoms: "#ffffbf",
+                healthy: "#91cf60"
+            };
+
             map.on('load', function() {
-                // Add a new source from our GeoJSON data and
-                // set the 'cluster' option to true. GL-JS will
-                // add the point_count property to your source data.
                 map.addSource('reports', {
-                    type: 'geojson',
-                    data: 'https://coronastatus.no/kart/geojson',
-                    //data: 'http://localhost:7272/kart/geojson',
-                    cluster: true,
-                    clusterMaxZoom: 14, // Max zoom to cluster points on
-                    clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+                  'type': 'geojson',
+                  data: 'https://coronastatus.no/kart/geojson',
+                  //data: 'http://localhost:7272/kart/geojson',
+                  cluster: true,
+                  clusterMaxZoom: 100, // Max zoom to cluster points on
+                  clusterRadius: 80,
+                  clusterProperties: {
+                    positive: ['+', ['case', positive, 1, 0]],
+                    symptoms: ['+', ['case', symptoms, 1, 0]],
+                    healthy: ['+', ['case', healthy, 1, 0]],
+                  }
                 });
 
                 map.addLayer({
-                    id: 'clusters',
-                    type: 'circle',
-                    source: 'reports',
-                    filter: ['has', 'point_count'],
-                    paint: {
-                        // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
-                        // with three steps to implement three types of circles:
-                        //   * Blue, 20px circles when point count is less than 100
-                        //   * Yellow, 30px circles when point count is between 100 and 750
-                        //   * Pink, 40px circles when point count is greater than or equal to 750
-                        'circle-color': [
-                            'step',
-                            ['get', 'point_count'],
-                            '#51bbd6', 100,
-                            '#f1f075', 750,
-                            '#f28cb1'
-                        ],
-                        'circle-radius': [
-                        'step',
-                            ['get', 'point_count'],
-                            20,
-                            100,
-                            30,
-                            750,
-                            40
-                        ]
-                    }
-                });
-
-                map.addLayer({
-                    id: 'cluster-count',
-                    type: 'symbol',
-                    source: 'reports',
-                    filter: ['has', 'point_count'],
-                    layout: {
-                        'text-field': '{point_count_abbreviated}',
-                        'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-                        'text-size': 12
-                    }
-                });
-
-                map.loadImage("/static/favicon.png",
-                    function(error, image) {
-                        if (error) throw error;
-                        map.addImage('coronaIcon', image);
-                        map.addLayer({
-                            'id': 'unclustered-point',
-                            'type': 'symbol',
-                            'source': 'reports',
-                            'layout': {
-                                'icon-image': 'coronaIcon',
-                                'icon-size': 0.03
-                            }
-                        });
-                    }
-                );
-
-                // inspect a cluster on click
-                map.on('click', 'clusters', function(e) {
-                    var features = map.queryRenderedFeatures(e.point, {
-                        layers: ['clusters']
-                    });
-                    var clusterId = features[0].properties.cluster_id;
-                    map.getSource('reports').getClusterExpansionZoom(
-                        clusterId,
-                        function(err, zoom) {
-                            if (err) return;
-
-                            map.easeTo({
-                                center: features[0].geometry.coordinates,
-                                zoom: zoom
-                            });
-                        }
-                    );
-                });
-
-                map.on('mouseenter', 'clusters', function() {
-                    map.getCanvas().style.cursor = 'pointer';
-                });
-                map.on('mouseleave', 'clusters', function() {
-                    map.getCanvas().style.cursor = '';
+                  'id': 'report_individual',
+                  'type': 'circle',
+                  'source': 'reports',
+                  'filter': ['!=', ['get', 'cluster'], true],
+                  'paint': {
+                    'circle-color': ['case',
+                      positive, colors.positive,
+                      symptoms, colors.symptoms,
+                      healthy, colors.healthy,
+                      "#000000"
+                    ],
+                    'circle-radius': 5
+                  }
                 });
             });
+
+            let markers = {};
+            let markersOnScreen = {};
+            let point_counts = [];
+            let totals;
+
+            const getPointCount = (features) => {
+              features.forEach(f => {
+                if (f.properties.cluster) {
+                  point_counts.push(f.properties.point_count)
+                }
+              })
+              return point_counts;
+            };
+
+            const updateMarkers = () => {
+              let newMarkers = {};
+              const features = map.querySourceFeatures('reports');
+              totals = getPointCount(features);
+              features.forEach((feature) => {
+                const coordinates = feature.geometry.coordinates;
+                const props = feature.properties;
+                if (!props.cluster) {
+                  return;
+                };
+                const id = props.cluster_id;
+                let marker = markers[id];
+                if (!marker) {
+                  const el = createDonutChart(props, totals);
+                  marker = markers[id] = new mapboxgl.Marker({
+                    element: el
+                  }).setLngLat(coordinates);
+                }
+
+                newMarkers[id] = marker;
+
+                if (!markersOnScreen[id]) {
+                  marker.addTo(map);
+                }
+              });
+
+              for (id in markersOnScreen) {
+                if (!newMarkers[id]) {
+                  markersOnScreen[id].remove();
+                }
+              }
+                markersOnScreen = newMarkers;
+            };
+
+            const createDonutChart = (props, totals) => {
+              const div = document.createElement('div');
+
+              const data = [
+                {type: 'positive', count: props.positive},
+                {type: 'symptoms', count: props.symptoms},
+                {type: 'healthy', count: props.healthy},
+              ];
+
+              const thickness = 10;
+
+              // this sets the scale for our circle radius
+              // and this is why we need the totals. We need to
+              // set a mininum and a maximum to define the domain and the range.
+              const scale = d3.scaleLinear()
+                .domain([d3.max(totals), d3.min(totals)])
+                .range([1000, d3.max(totals)])
+
+              const radius = Math.sqrt(scale(props.point_count)) + 10;
+              const circleRadius = radius - thickness;
+
+              const svg = d3.select(div)
+                .append('svg')
+                .attr('class', 'pie')
+                .attr('width', radius * 2)
+                .attr('height', radius * 2);
+
+              const g = svg.append('g')
+                .attr('transform', `translate(${radius}, ${radius})`);
+
+              const arc = d3.arc()
+                .innerRadius(radius - thickness)
+                .outerRadius(radius);
+
+              const pie = d3.pie()
+                .value(d => d.count)
+                .sort(null);
+
+              const path = g.selectAll('path')
+                .data(pie(data.sort((x, y) => d3.ascending(y.count, x.count))))
+                .enter()
+                .append('path')
+                .attr('d', arc)
+                    .attr('fill', (d) => colors[d.data.type])
+
+              const circle = g.append('circle')
+                .attr('r', circleRadius)
+                .attr('fill', 'rgba(0, 0, 0, 0.7)')
+                .attr('class', 'center-circle')
+
+              const text = g
+                .append("text")
+                .attr("class", "total")
+                .text(props.point_count_abbreviated)
+                .attr('text-anchor', 'middle')
+                .attr('dy', 5)
+                .attr('fill', 'white')
+
+              return div;
+            }
+
+            map.on('data', (e) => {
+              if (e.sourceId !== 'reports' || !e.isSourceLoaded) return;
+
+              map.on('move', updateMarkers);
+              map.on('moveend', updateMarkers);
+              updateMarkers();
+            });
+
         </script>
     </body>
 </html>
