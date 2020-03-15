@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import formRoutes from './routes/form-routes';
 import smsRoutes from './routes/sms-routes';
+import mapRoutes from './routes/map-routes';
 import { getInstance } from './repository/SqlLiteDatabase';
 
 const SqLiteStore = require('connect-sqlite3')(session);
@@ -38,6 +39,7 @@ app.set('views', [
 
 app.use('/', formRoutes);
 app.use('/sms', smsRoutes);
+app.use('/kart', mapRoutes);
 
 app.use(
   '/static',
