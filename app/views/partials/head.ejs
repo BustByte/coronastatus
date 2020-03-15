@@ -5,6 +5,17 @@
   <% if (locals.metaDescription) { %>
     <meta name="description" content="<%= metaDescription %>">
   <% } %>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61808862-11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-61808862-11');
+  </script>
+
   <link href="https://fonts.googleapis.com/css?family=Mada:400,400i,700" rel="stylesheet">
   <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
   <link rel='stylesheet' href='/static/main.css' type='text/css' media='all' />
