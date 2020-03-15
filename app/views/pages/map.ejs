@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Create and style clusters</title>
+        <title>Coronastatus</title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
         <script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
         <link href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css" rel="stylesheet" />
@@ -49,9 +49,9 @@
                         'circle-color': [
                             'step',
                             ['get', 'point_count'],
-                            '#51bbd6', 100,
-                            '#f1f075', 750,
-                            '#f28cb1'
+                            '#f28cb1', 50,
+                            '#f1f075', 500,
+                            '#51bbd6',
                         ],
                         'circle-radius': [
                         'step',
@@ -82,10 +82,11 @@
                         if (error) throw error;
                         map.addImage('coronaIcon', image);
                         map.addLayer({
-                            'id': 'unclustered-point',
-                            'type': 'symbol',
-                            'source': 'reports',
-                            'layout': {
+                            id: 'unclustered-point',
+                            type: 'symbol',
+                            source: 'reports',
+                            filter: ['!', ['has', 'point_count']],
+                            layout: {
                                 'icon-image': 'coronaIcon',
                                 'icon-size': 0.03
                             }

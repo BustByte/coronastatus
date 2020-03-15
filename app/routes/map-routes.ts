@@ -1,5 +1,5 @@
 import express from 'express';
-import { CovidReport } from '../domain/types';
+import { CovidReport, TestResult } from '../domain/types';
 import postalCodeCoordinates from '../domain/postalCodeCoordinates';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
 
@@ -8,20 +8,27 @@ const reportRepo = new CovidReportRepository();
 
 router.get('/geojson', async (req, res) => {
   const allReports = await reportRepo.getAllCovidReports();
+
   const features: any[] =
-    allReports.reduce((list: any[], report: CovidReport) => {
-      const coordinates = postalCodeCoordinates(report.postalCode);
-      if (coordinates.length !== 0) {
-        list.push({
-          type: 'Feature',
-          geometry: {
-            type: 'Point',
-            coordinates
-          }
-        });
-      }
-      return list;
-    }, []) ?? [];
+    allReports
+      .filter(
+        (report: CovidReport) =>
+          (report.hasBeenTested && report.testResult === TestResult.POSITIVE) ||
+          Object.values(report.symptoms).includes(true)
+      )
+      .reduce((list: any[], report: CovidReport) => {
+        const coordinates = postalCodeCoordinates(report.postalCode);
+        if (coordinates.length !== 0) {
+          list.push({
+            type: 'Feature',
+            geometry: {
+              type: 'Point',
+              coordinates
+            }
+          });
+        }
+        return list;
+      }, []) ?? [];
 
   res.send({
     type: 'FeatureCollection',
