@@ -3,95 +3,110 @@
 <%- include('partials/head') -%>
 <body>
   <div id="page-wrapper">
-      <section id="main" class="wrapper style2">
-          <div class="inner">
-              <header class="major special">
-                  <h1>Koronastatus</h1>
-                  <p>Blabla litt info om hva denne tjenesten gjør. Du må verifisere deg med ditt telefonnummer.</p>
-              </header>
-              <div class="row gtr-200">
-                  <div class="col-12">
-                    <form method="post" action="#">
-                          <div class="row gtr-uniform">
-                              <div class="col-12">
-                                  <label for="full-name">Fullt navn</label>
-                                  <input type="text" name="full-name" id="full-name" placeholder="Ola Nordmann">
-                              </div>
-                              <div class="col-12">
-                                  <label for="phone-number">Telefonnummer</label>
-                                  <input type="tel" name="phone-number" id="phone-number" placeholder="999 99 999">
-                              </div>
-                              <div class="col-12">
-                                  <label for="birth-year">Fødselsår</label>
-                                  <select name="birth-year" id="birth-year">
-                                      <option value="" disabled selected>- Fødselsår -</option>
-                                      <% for(var i=2020; i>1909; i--) {%>
-                                      <option value="<%= i %>"><%= i %></option>
-                                      <% } %>
-                                  </select>
-                              </div>
-                              <div class="col-4 col-12-small">
-                                  <input type="radio" id="demo-priority-low" name="demo-priority" checked="">
-                                  <label for="demo-priority-low">Low Priority</label>
-                              </div>
-                              <div class="col-4 col-12-small">
-                                  <input type="radio" id="demo-priority-normal" name="demo-priority">
-                                  <label for="demo-priority-normal">Normal Priority</label>
-                              </div>
-                              <div class="col-4 col-12-small">
-                                  <input type="radio" id="demo-priority-high" name="demo-priority">
-                                  <label for="demo-priority-high">High Priority</label>
-                              </div>
-                              <div class="col-6 col-12-small">
-                                  <input type="checkbox" id="demo-copy" name="demo-copy">
-                                  <label for="demo-copy">Email me a copy of this message</label>
-                              </div>
-                              <div class="col-6 col-12-small">
-                                  <input type="checkbox" id="demo-human" name="demo-human" checked="">
-                                  <label for="demo-human">I am a human and not a robot</label>
-                              </div>
-                              <div class="col-12">
-                                  <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-                              </div>
-                              <div class="col-12">
-                                  <ul class="actions">
-                                      <li>
-                                          <input type="submit" value="Send Message">
-                                      </li>
-                                      <li>
-                                          <input type="reset" value="Reset">
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </section>
-      <section id="footer" class="wrapper">
-          <div class="inner">
-              <div class="split">
-                  <div class="content">
-                      <header>
-                          <h2>About</h2></header>
-                      <p>Lorem ipsum dolor amet et donec convallis placerat varius. Phasellus sagittis, urna blanSapien lectus lorem tempus ut purus consequat. Sed veroeros et nisl urna lacinia lorem. Aenean at adipiscing lorem. Nunc risus augue, ullamcorper eget posuere.</p>
-                      <ul class="actions">
-                          <li><a class="button next" style="cursor: pointer;">Full Story</a></li>
-                      </ul>
-                  </div>
-                  <ul class="contact-icons">
-                      <li><a class="icon brands alt fa-twitter" style="cursor: pointer;"><span class="label">twitter.com/untitled</span></a></li>
-                      <li><a class="icon brands alt fa-facebook-f" style="cursor: pointer;"><span class="label">facebook.com/untitled</span></a></li>
-                      <li><a class="icon brands alt fa-instagram" style="cursor: pointer;"><span class="label">instagram.com/untitled</span></a></li>
-                      <li><a class="icon solid alt fa-envelope" style="cursor: pointer;"><span class="label">contact@untitled.tld</span></a></li>
+    <section id="main" class="wrapper style2">
+      <div class="inner">
+        <header class="major special">
+          <h1>Koronastatus</h1>
+          <p>Blabla litt info om hva denne tjenesten gjør. Du må verifisere deg med ditt telefonnummer.</p>
+        </header>
+        <div class="row gtr-200">
+          <div class="col-12">
+            <form method="post" action="#">
+              <div class="row gtr-uniform">
+                <div class="col-12">
+                  <label for="full-name">Fullt navn</label>
+                  <input type="text" name="full-name" id="full-name" placeholder="Ola Nordmann">
+                </div>
+                <div class="col-12">
+                  <label for="phone-number">Telefonnummer</label>
+                  <input type="tel" name="phone-number" id="phone-number" placeholder="999 99 999">
+                </div>
+                <div class="col-12">
+                  <label for="birth-year">Fødselsår</label>
+                  <select name="birth-year" id="birth-year">
+                    <option value="" disabled selected>- Fødselsår -</option>
+                    <% for(var i=2020; i>1909; i--) {%>
+                      <option value="<%= i %>"><%= i %></option>
+                    <% } %>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="postal-code">Postnummer</label>
+                  <input type="number" min="0" max="9999" name="postal-code" id="postal-code" placeholder="1234">
+                </div>
+                <div class="col-12">
+                  <label>Biologisk kjønn</label>
+                </div>
+                <div class="col-3 col-12-small reduced-form-padding">
+                  <input type="radio" id="gender-female" name="gender">
+                  <label for="gender-female">Kvinne</label>
+                </div>
+                <div class="col-3 col-12-small reduced-form-padding">
+                  <input type="radio" id="gender-male" name="gender">
+                  <label for="gender-male">Mann</label>
+                </div>
+                <div class="col-12">
+                  <label>Symptomer du har hatt</label>
+                </div>
+                <div class="col-12 reduced-form-padding">
+                  <input type="checkbox" id="symptom-cough" name="symptom-cough">
+                  <label for="symptom-cough">Tørrhoste</label>
+                </div>
+                <div class="col-12 reduced-form-padding">
+                  <input type="checkbox" id="symptom-fatigue" name="symptom-fatigue">
+                  <label for="symptom-fatigue">Slitenhet eller utmattelse</label>
+                </div>
+                <div class="col-12 reduced-form-padding">
+                  <input type="checkbox" id="symptom-fever" name="symptom-fever">
+                  <label for="symptom-fever">Feber</label>
+                </div>
+                <div class="col-12 reduced-form-padding">
+                  <input type="checkbox" id="symptom-heavy-breath" name="symptom-heavy-breath">
+                  <label for="symptom-heavy-breath">Tung pust</label>
+                </div>
+                <div class="col-12 reduced-form-padding">
+                  <input type="checkbox" id="symptom-muscle-pain" name="symptom-muscle-pain">
+                  <label for="symptom-muscle-pain">Muskelsmerter</label>
+                </div>
+                <div class="col-12 reduced-form-padding">
+                  <input type="checkbox" id="symptom-diarrhea" name="symptom-diarrhea">
+                  <label for="symptom-diarrhea">Diaré</label>
+                </div>
+                <div class="col-12">
+                  <ul class="actions">
+                    <li>
+                      <input type="submit" value="Lagre">
+                    </li>
                   </ul>
-              </div>
+                </div>
+              </form>
+            </div>
           </div>
-      </section>
-      <section class="wrapper style2 copyright">
-          <div class="inner"> © Untitled. All rights reserved. Lorem ipsum dolor sit amet. </div>
-      </section>
+        </div>
+      </div>
+    </section>
+    <section id="footer" class="wrapper">
+      <div class="inner">
+        <div class="split">
+          <div class="content">
+            <header><h2>Om tjenesten</h2></header>
+            <p>Oppdatert info finner du alltid på FHI sine sider.</p>
+            <ul class="actions">
+              <li><a target="_blank" class="button next" style="cursor: pointer;" href="https://fhi.no">Til fhi.no</a></li>
+            </ul>
+          </div>
+          <ul class="contact-icons">
+            <li><a class="icon brands alt fa-twitter" style="cursor: pointer;"><span class="label">twitter.com/untitled</span></a></li>
+            <li><a class="icon brands alt fa-facebook-f" style="cursor: pointer;"><span class="label">facebook.com/untitled</span></a></li>
+            <li><a class="icon brands alt fa-instagram" style="cursor: pointer;"><span class="label">instagram.com/untitled</span></a></li>
+            <li><a class="icon solid alt fa-envelope" style="cursor: pointer;"><span class="label">contact@untitled.tld</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="wrapper style2 copyright">
+      <div class="inner">Utviklet av <a target="_blank" href="https://bustbyte.no">BustByte AS</a></div>
+    </section>
   </div>
 </body>
 </html>

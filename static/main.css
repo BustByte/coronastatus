@@ -1837,6 +1837,7 @@ label {
 }
 input[type='text'],
 input[type='tel'],
+input[type='number'],
 input[type='password'],
 input[type='email'],
 select,
@@ -1856,6 +1857,7 @@ textarea {
 }
 input[type='text']:invalid,
 input[type='tel']:invalid,
+input[type='number']:invalid,
 input[type='password']:invalid,
 input[type='email']:invalid,
 select:invalid,
@@ -1878,6 +1880,7 @@ select::-ms-expand {
 }
 input[type='text'],
 input[type='tel'],
+input[type='number'],
 input[type='password'],
 input[type='email'],
 select {
@@ -1965,6 +1968,7 @@ label {
 }
 input[type='text'],
 input[type='tel'],
+input[type='number'],
 input[type='password'],
 input[type='email'],
 select,
@@ -1974,6 +1978,7 @@ textarea {
 }
 input[type='text']:focus,
 input[type='tel']:focus,
+input[type='number']:focus,
 input[type='password']:focus,
 input[type='email']:focus,
 select:focus,
@@ -2809,6 +2814,16 @@ table.alt tbody tr td {
     -webkit-transform 0.25s ease;
   transition: opacity 0.25s ease, transform 0.25s ease,
     -webkit-transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    -webkit-transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    -webkit-transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    -webkit-transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    -webkit-transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    -webkit-transform 0.25s ease;
   opacity: 0;
 }
 .gallery .modal .inner img {
@@ -2833,6 +2848,16 @@ table.alt tbody tr td {
   transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
     -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
@@ -3211,6 +3236,16 @@ body #page-wrapper {
     -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
     -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
   -webkit-overflow-scrolling: touch;
   background: #000000;
   border-radius: 10px;
@@ -3415,6 +3450,7 @@ body.is-menu-visible #menu .inner {
 }
 #banner input[type='text'],
 #banner input[type='tel'],
+#banner input[type='number'],
 #banner input[type='password'],
 #banner input[type='email'],
 #banner select,
@@ -3424,6 +3460,7 @@ body.is-menu-visible #menu .inner {
 }
 #banner input[type='text']:focus,
 #banner input[type='tel']:focus,
+#banner input[type='number']:focus,
 #banner input[type='password']:focus,
 #banner input[type='email']:focus,
 #banner select:focus,
