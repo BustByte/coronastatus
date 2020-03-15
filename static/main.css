@@ -2459,7 +2459,7 @@ header.major h1 {
   padding-bottom: 2rem;
 }
 header.major p {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 0;
 }
 header.major.alt {
@@ -2475,7 +2475,7 @@ header.major.alt {
     padding-bottom: 1rem;
   }
   header.major p {
-    font-size: 1.45rem;
+    font-size: 1.2rem;
   }
   header.major.alt {
     margin-bottom: 2.7rem;
@@ -2483,7 +2483,7 @@ header.major.alt {
 }
 @media screen and (max-width: 980px) {
   header.major p {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
   }
 }
 @media screen and (max-width: 736px) {
@@ -2492,7 +2492,7 @@ header.major.alt {
     padding-bottom: 1.3rem;
   }
   header.major p {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
   header.major.alt {
     margin-bottom: 1.8rem;
@@ -2500,7 +2500,7 @@ header.major.alt {
 }
 @media screen and (max-width: 480px) {
   header.major p {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 }
 header p {
@@ -2839,6 +2839,8 @@ table.alt tbody tr td {
     -webkit-transform 0.25s ease;
   transition: opacity 0.25s ease, transform 0.25s ease,
     -webkit-transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    -webkit-transform 0.25s ease;
   opacity: 0;
 }
 .gallery .modal .inner img {
@@ -2863,6 +2865,8 @@ table.alt tbody tr td {
   transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
     -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
@@ -3253,6 +3257,8 @@ body #page-wrapper {
   transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
     -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
