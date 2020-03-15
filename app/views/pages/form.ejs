@@ -23,7 +23,7 @@
                 <div class="col-12">
                   <label for="phone-number">Telefonnummer</label>
                   <p class="info">Vennligst ikke bruk samme telefonnummer for flere personer.</p>
-                  <input required type="tel" name="phone-number" id="phone-number" placeholder="99123456">
+                  <input required type="tel" pattern="[0-9]{8}" name="phone-number" id="phone-number" placeholder="99123456">
                 </div>
                 <div class="col-12">
                   <label for="birth-year">Fødselsår</label>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-12">
                   <label for="postal-code">Postnummer</label>
-                  <input required type="number" min="0" max="9999" name="postal-code" id="postal-code" placeholder="1234">
+                  <input required type="text" pattern="[0-9]{4}" name="postal-code" id="postal-code" placeholder="1234">
                 </div>
                 <div class="col-12">
                   <label>Biologisk kjønn</label>
