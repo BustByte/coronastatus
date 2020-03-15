@@ -1,5 +1,4 @@
 export interface CovidReport {
-  fullName: string;
   phoneNumber: string;
   yearOfBirth: string;
   sex: Sex;

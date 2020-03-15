@@ -11,7 +11,6 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const covidReport: CovidReport = {
-    fullName: req.body['full-name'],
     phoneNumber: req.body['phone-number'],
     yearOfBirth: req.body['birth-year'],
     postalCode: req.body['postal-code'],
