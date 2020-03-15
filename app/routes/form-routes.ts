@@ -21,6 +21,11 @@ router.get('/', (req, res) => {
   return res.render('pages/form', { smsVerificationSuccess });
 });
 
+router.get('/numberOfReports', async (req, res) => {
+  const numberOfReports = await reportRepo.countNumberOfReports();
+  return res.json({ numberOfReports });
+});
+
 const extractTestResult = (req: Request): TestResult | undefined => {
   const testResponse = req.body['test-response'];
   if (testResponse === 'positive') {

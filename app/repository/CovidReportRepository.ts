@@ -12,6 +12,8 @@ const INSERT_NEW_COVID_REPORT =
 const SET_VERIFICATION_SUCCEEDED =
   'update covid_report set is_verified = 1 where phone_number = (?)';
 
+const COUNT_NUMBER_OF_REPORTS = 'select count(*) as count from covid_report';
+
 export class CovidReportRepository {
   db?: SqlLiteDatabase;
 
@@ -45,6 +47,12 @@ export class CovidReportRepository {
     hashedPhoneNumber: string
   ): Promise<void> {
     return this.db?.run<void>(SET_VERIFICATION_SUCCEEDED, [hashedPhoneNumber]);
+  }
+
+  async countNumberOfReports(): Promise<number | undefined> {
+    return this.db
+      ?.getFirst<{ count: number }>(COUNT_NUMBER_OF_REPORTS)
+      .then(row => row?.count);
   }
 
   async getAllCovidReports(): Promise<CovidReport[]> {
