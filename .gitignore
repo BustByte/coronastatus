@@ -108,3 +108,5 @@ sessions
 covid_db
 
 config.json
+
+build/

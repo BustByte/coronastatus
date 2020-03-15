@@ -1,5 +1,5 @@
 create table if not exists covid_report (
-  phone_number varchar primary key,
-  is_verified boolean default false not null,
+  passcode varchar primary key,
   json_dump varchar not null
 );
+

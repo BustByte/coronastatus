@@ -2,8 +2,7 @@ import express from 'express';
 import session from 'express-session';
 import bodyParser from 'body-parser';
 import path from 'path';
-import formRoutes from './routes/form-routes';
-import smsRoutes from './routes/sms-routes';
+import reportRoutes from './routes/report-routes';
 import mapRoutes from './routes/map-routes';
 import { getInstance } from './repository/SqlLiteDatabase';
 
@@ -37,8 +36,7 @@ app.set('views', [
   path.join(__dirname, 'views', 'errors')
 ]);
 
-app.use('/', formRoutes);
-app.use('/sms', smsRoutes);
+app.use('/', reportRoutes);
 app.use('/kart', mapRoutes);
 
 app.use(
