@@ -16,6 +16,20 @@ router.get('/numberOfReports', async (req, res) => {
   return res.json({ numberOfReports });
 });
 
+router.get('/profil/:passcode', async (req, res) => {
+  const { passcode } = req.params;
+  if (!passcode) {
+    return res.redirect('/');
+  }
+  const profile = await reportRepo.getCovidReportByPasscode(passcode);
+  if (profile) {
+    res.locals.metaDescription =
+      'Her kan du legge inn informasjon om din helsetilstand, slik at vi kan få en bedre oversikt over totalbildet i Norge.';
+    return res.render('pages/report', { profile });
+  }
+  return res.redirect('/');
+});
+
 const extractTestResult = (req: Request): TestResult | undefined => {
   const testResponse = req.body['test-response'];
   if (testResponse === 'positive') {
@@ -55,9 +69,9 @@ router.post('/', async (req, res) => {
     symptomStart: req.body['symptom-start'],
     submissionTimestamp: new Date().getTime()
   };
-  const passcode = 'ole-gunnar-solskjaer-123';
+  const passcode = 'ole-gunnar-solskjaer-123'; // TODO: generate passcode
   reportRepo.addNewCovidReport(passcode, covidReport);
-  return res.redirect(`/passcode?success=true`);
+  return res.redirect(`/profil/${passcode}?success=true`);
 });
 
 router.get('/elements', (req, res) => {
