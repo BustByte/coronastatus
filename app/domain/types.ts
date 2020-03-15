@@ -3,6 +3,7 @@ export interface CovidReport {
   yearOfBirth: string;
   sex: Sex;
   postalCode: string;
+  hasBeenTested: boolean;
   testedAt?: Date; // YYYY-MM-DD
   testResult?: TestResult;
   hasBeenAbroadLastTwoWeeks: boolean;

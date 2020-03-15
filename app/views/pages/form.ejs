@@ -46,24 +46,52 @@
                 <div class="col-12">
                   <label>Biologisk kjønn</label>
                 </div>
-                <div class="col-3 col-12-small reduced-form-padding">
+                <div class="col-12 col-12-small reduced-form-padding">
                   <input required type="radio" id="gender-female" name="gender" value="female">
                   <label for="gender-female">Kvinne</label>
                 </div>
-                <div class="col-3 col-12-small reduced-form-padding">
+                <div class="col-12 col-12-small reduced-form-padding">
                   <input required type="radio" id="gender-male" name="gender" value="male">
                   <label for="gender-male">Mann</label>
                 </div>
                 <div class="col-12">
                   <label>Har du vært i utlandet de siste to ukene?</label>
                 </div>
-                <div class="col-3 col-12-small reduced-form-padding">
+                <div class="col-12 col-12-small reduced-form-padding">
                   <input required type="radio" id="been-abroad-yes" name="been-abroad" value="yes">
                   <label for="been-abroad-yes">Ja</label>
                 </div>
-                <div class="col-3 col-12-small reduced-form-padding">
-                  <input required type="radio" id="been-abroad-no" name="been-abroad" value="no" checked>
+                <div class="col-12 col-12-small reduced-form-padding">
+                  <input required type="radio" id="been-abroad-no" name="been-abroad" value="no">
                   <label for="been-abroad-no">Nei</label>
+                </div>
+                <div class="col-12">
+                  <label>Har du blitt testet for COVID-19?</label>
+                </div>
+                <div class="col-12 col-12-small reduced-form-padding">
+                  <input required type="radio" id="been-tested-yes" name="been-tested" value="yes" onclick="changeTestResultDisplay(true)">
+                  <label for="been-tested-yes">Ja</label>
+                </div>
+                <div class="col-12 col-12-small reduced-form-padding">
+                  <input required type="radio" id="been-tested-no" name="been-tested" value="no" onclick="changeTestResultDisplay(false)">
+                  <label for="been-tested-no">Nei</label>
+                </div>
+                <div id="test-result-question" class="row gtr-uniform" style="display: none">
+                  <div class="col-12">
+                    <label>Hva var svaret på testen?</label>
+                  </div>
+                  <div class="col-12 col-12-small reduced-form-padding">
+                    <input type="radio" id="test-response-positive" name="test-response" value="positive">
+                    <label for="test-response-positive">Positivt</label>
+                  </div>
+                  <div class="col-12 col-12-small reduced-form-padding">
+                    <input type="radio" id="test-response-negative" name="test-response" value="negative">
+                    <label for="test-response-negative">Negativt</label>
+                  </div>
+                  <div class="col-12 col-12-small reduced-form-padding">
+                    <input type="radio" id="test-response-pending" name="test-response" value="pending">
+                    <label for="test-response-pending">Venter på svar</label>
+                  </div>
                 </div>
                 <div class="col-12">
                   <label>Symptomer du har hatt</label>
@@ -111,6 +139,16 @@
   <script>
     // Remove query params from url
     window.history.replaceState({}, document.title, window.location.pathname);
+  </script>
+  <script>
+    function changeTestResultDisplay(show) {
+      var testResultElement = document.getElementById('test-result-question');
+      if (show) {
+        testResultElement.style.display = 'block';
+      } else {
+        testResultElement.style.display = 'none';
+      }
+    }
   </script>
 </body>
 </html>
