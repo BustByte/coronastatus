@@ -183,12 +183,12 @@ html {
 }
 @media screen and (max-width: 1280px) {
   html {
-    font-size: 12pt;
+    font-size: 13pt;
   }
 }
 @media screen and (max-width: 980px) {
   html {
-    font-size: 12pt;
+    font-size: 13pt;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1907,8 +1907,8 @@ input[type='radio'] + label {
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: 1.2rem;
+  font-weight: 400;
   padding-left: 2.55rem;
   padding-right: 0.75rem;
   position: relative;
@@ -1932,14 +1932,15 @@ input[type='radio'] + label:before {
   border: solid 1px;
   content: '';
   display: inline-block;
-  font-size: 0.8rem;
-  height: 1.8rem;
+  font-size: 1rem;
+  height: 2rem;
   left: 0;
-  line-height: 1.8rem;
+  line-height: 2rem;
   position: absolute;
   text-align: center;
   top: 0;
-  width: 1.8rem;
+  width: 2rem;
+  margin-top: 2px;
 }
 input[type='checkbox']:checked + label:before,
 input[type='radio']:checked + label:before {
@@ -2824,6 +2825,20 @@ table.alt tbody tr td {
     -webkit-transform 0.25s ease;
   transition: opacity 0.25s ease, transform 0.25s ease,
     -webkit-transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    -webkit-transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    -webkit-transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    -webkit-transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    -webkit-transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    -webkit-transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    -webkit-transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    -webkit-transform 0.25s ease;
   opacity: 0;
 }
 .gallery .modal .inner img {
@@ -2848,6 +2863,20 @@ table.alt tbody tr td {
   transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
     -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
@@ -3224,6 +3253,20 @@ body #page-wrapper {
   transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
     -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
