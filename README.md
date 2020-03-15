@@ -21,3 +21,34 @@ Send e-postadressen din til kontakt@bustbyte.no, så legger vi deg til snarest.
 
 ### GitHub Issues
 Klikk på "Issues" i menyen over for å se hva du kan bidra med.
+
+## Oppsett for utvikling / installasjon
+
+Last ned og installer [nodejs](https://nodejs.org),
+[git](https://git-scm.com/downloads) og [yarn](https://yarnpkg.com/)
+
+1. Clone repository git
+
+  `git clone https://github.com/BustByte/coronastatus.no/`
+
+2. CD into folder
+
+  `cd coronastatus.no`
+
+3. Run yarn install
+
+  `yarn`
+
+4. Copy config.example.json to config.json
+
+  `cp config.example.json config.json`
+
+5. Start dev-server
+
+  `yarn start`
+
+6. Open web-browser at http://localhost:7272/
+
+7. Before you create a pull request run the linter
+
+  `yarn linter`
