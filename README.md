@@ -15,7 +15,9 @@ Alle som vil kan bidra. Nettsiden er laget i dugnadsånd av BustByte, et lite ko
 ## Hvordan kan jeg bidra?
 
 ### Slack
-Vi har en felles Slack-kanal du kan bli medlem av. Her prøver vi å koordinere utviklingen så godt vi kan. Send e-postadressen din til kontakt@bustbyte.no, så legger vi deg til snarest. 
+Vi har en felles Slack-kanal du kan bli medlem av. Her prøver vi å koordinere utviklingen så godt vi kan via. en VoIP-samtale.
+
+Send e-postadressen din til kontakt@bustbyte.no, så legger vi deg til snarest. 
 
 ### Trello
 https://trello.com/b/ypPpu6Mm
