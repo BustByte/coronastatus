@@ -108,4 +108,8 @@ router.get('/elements', (req, res) => {
   return res.render('pages/elements');
 });
 
+router.get('/personvern', (req, res) => {
+  return res.render('pages/privacy-policy');
+});
+
 export default router;
