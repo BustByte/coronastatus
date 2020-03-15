@@ -1,5 +1,4 @@
 export interface CovidReport {
-  phoneNumber: string;
   yearOfBirth: string;
   sex: Sex;
   postalCode: string;
@@ -9,6 +8,7 @@ export interface CovidReport {
   testResult?: TestResult;
   hasBeenAbroadLastTwoWeeks: boolean;
   symptoms: { [key in Symptom]: boolean };
+  submissionTimestamp: number;
 }
 
 export enum Sex {
