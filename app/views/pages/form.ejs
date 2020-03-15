@@ -125,6 +125,10 @@
                   <input type="checkbox" id="symptom-headache" name="symptom-headache">
                   <label for="symptom-headache">Hodepine</label>
                 </div>
+                <div id="symptom-start-question" class="col-12" style="display: none;">
+                  <label for="symptom-start">Når startet symptomene?</label>
+                  <input required type="date" name="symptom-start" id="symptom-start">
+                </div>
                 <div class="col-12">
                   <ul class="actions">
                     <li>
@@ -144,15 +148,6 @@
     // Remove query params from url
     window.history.replaceState({}, document.title, window.location.pathname);
   </script>
-  <script>
-    function changeTestResultDisplay(show) {
-      var testResultElement = document.getElementById('test-result-question');
-      if (show) {
-        testResultElement.style.display = 'block';
-      } else {
-        testResultElement.style.display = 'none';
-      }
-    }
-  </script>
+  <script src="/static/form.js"></script>
 </body>
 </html>

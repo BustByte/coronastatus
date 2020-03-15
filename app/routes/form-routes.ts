@@ -53,7 +53,8 @@ router.post('/', async (req, res) => {
       [Symptom.DIARRHEA]: req.body['symptom-diarrhea'] === 'on',
       [Symptom.HEADACHE]: req.body['symptom-headache'] === 'on'
     },
-    hasBeenAbroadLastTwoWeeks: req.body['been-abroad'] === 'yes'
+    hasBeenAbroadLastTwoWeeks: req.body['been-abroad'] === 'yes',
+    symptomStart: req.body['symptom-start']
   };
   const strippedPhoneNumber = stripPhoneNumber(phoneNumber);
   const pin = loginPinIssuer.issue(strippedPhoneNumber);
