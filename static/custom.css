@@ -27,3 +27,8 @@ p.info {
   font-style: italic;
   margin-bottom: 0.5rem;
 }
+
+.privacy-policy h3,
+.privacy-policy p {
+  margin-bottom: 1rem;
+}
