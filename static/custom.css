@@ -12,6 +12,10 @@ header.major p {
   margin-bottom: 15px;
 }
 
+h2.slogan {
+  margin-bottom: 70px;
+}
+
 .row.gtr-uniform .reduced-form-padding {
   padding-top: 0.75rem;
 }
