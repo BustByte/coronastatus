@@ -1,7 +1,9 @@
 import express from 'express';
 import { Symptom, CovidReport, Sex } from '../domain/types';
+import { CovidReportRepository } from '../repository/CovidReportRepository';
 
 const router = express.Router();
+const reportRepo = new CovidReportRepository();
 
 router.get('/', (req, res) => {
   res.locals.metaDescription =
@@ -10,8 +12,9 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  const phoneNumber = req.body['phone-number'];
   const covidReport: CovidReport = {
-    phoneNumber: req.body['phone-number'],
+    phoneNumber: phoneNumber,
     yearOfBirth: req.body['birth-year'],
     postalCode: req.body['postal-code'],
     sex: req.body['gender'] === 'male' ? Sex.MALE : Sex.FEMALE,
@@ -25,10 +28,8 @@ router.post('/', (req, res) => {
     },
     hasBeenAbroadLastTwoWeeks: false // TODO
   };
-
-  // TODO: Save report
-
   console.log(covidReport);
+  reportRepo.addNewCovidReportForPhoneNumber(phoneNumber, covidReport);
 });
 
 router.get('/elements', (req, res) => {

@@ -5,14 +5,14 @@ const SELECT_COVID_REPORT =
   'select * from covid_report where phone_number = (?)';
 
 const INSERT_NEW_COVID_REPORT =
-  'insert into covid_report(phone_number, dump) values((?), (?))';
+  'insert into covid_report(phone_number, json_dump) values((?), (?))';
 
-class CovidReportRepository {
+export class CovidReportRepository {
   db?: SqlLiteDatabase;
 
   constructor() {
     if (!this.db) {
-      this.db = getInstance('covid_dump');
+      this.db = getInstance('covid_db');
     }
   }
 
