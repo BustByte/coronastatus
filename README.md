@@ -19,7 +19,5 @@ Vi har en felles Slack-kanal du kan bli medlem av. Her prøver vi å koordinere 
 
 Send e-postadressen din til kontakt@bustbyte.no, så legger vi deg til snarest. 
 
-### Trello
-https://trello.com/b/ypPpu6Mm
-
-Foreløpig ikke i bruk, men vil mest sannsynlig ta det i bruk etterhvert.
+### GitHub Issues
+Klikk på "Issues" i menyen over for å se hva du kan bidra med.
