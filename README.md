@@ -49,6 +49,6 @@ Last ned og installer [nodejs](https://nodejs.org),
 
 6. Open web-browser at http://localhost:7272/
 
-7. Before you create a pull request run the linter
+7. Before you create a pull request run the linter. Warnings are ok, but errors should be fixed.
 
-  `yarn linter`
+  `yarn lint`
