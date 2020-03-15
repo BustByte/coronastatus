@@ -4,7 +4,6 @@ import { CovidReportRepository } from '../repository/CovidReportRepository';
 import { loginPinIssuer } from '../sms/loginPinIssuer';
 import { stripPhoneNumber, hashPhoneNumber } from '../sms/utils';
 import { SmsGatewayService } from '../sms/smsGatewayService';
-import postalCodeCoordinates from '../domain/postalCodeCoordinates';
 
 const {
   SVEVE_USERNAME,
@@ -35,33 +34,6 @@ const extractTestResult = (req: Request): TestResult | undefined => {
   }
   return undefined;
 };
-
-router.get('/kart.geojson', async (req, res) => {
-  const allReports = await reportRepo.getAllCovidReports();
-  const features: any[] =
-    allReports.reduce((list: any[], report: CovidReport) => {
-      const coordinates = postalCodeCoordinates(report.postalCode);
-      if (coordinates.length !== 0) {
-        list.push({
-          type: 'Feature',
-          geometry: {
-            type: 'Point',
-            coordinates
-          }
-        });
-      }
-      return list;
-    }, []) ?? [];
-
-  res.send({
-    type: 'FeatureCollection',
-    features
-  });
-});
-
-router.get('/kart', (req, res) => {
-  return res.render('pages/map');
-});
 
 router.post('/', async (req, res) => {
   const phoneNumber = req.body['phone-number'];
