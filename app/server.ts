@@ -3,6 +3,7 @@ import session from 'express-session';
 import bodyParser from 'body-parser';
 import path from 'path';
 import formRoutes from './routes/form-routes';
+import { getInstance } from './repository/SqlLiteDatabase';
 
 const SqLiteStore = require('connect-sqlite3')(session);
 
@@ -61,6 +62,20 @@ app.use(
   }
 );
 
-app.listen(port);
+async function initializeDatabase() {
+  const db = getInstance('covid-db');
+  const numberOfTables = (await db.listTables()).length;
+  if (numberOfTables === 0) {
+    await db.applyMigrationScripts(
+      path.join(__dirname, 'migrations', 'schema')
+    );
+    console.info('Database was clean, applying migration scripts');
+  } else {
+    console.info('Migration scripts already applied, skipping');
+  }
+}
 
-console.log(`API up and running on port ${port}`);
+initializeDatabase().then(() => {
+  app.listen(port);
+  console.log(`API up and running on port ${port}`);
+});
