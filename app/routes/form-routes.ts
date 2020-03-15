@@ -36,6 +36,10 @@ const extractTestResult = (req: Request): TestResult | undefined => {
 };
 
 router.post('/', async (req, res) => {
+  const acceptPrivacyPolicy = req.body['accept-privacy-policy'] === 'on';
+  if (!acceptPrivacyPolicy) {
+    return res.render('pages/form', { didNotAcceptPrivacyPolicy: true });
+  }
   const phoneNumber = req.body['phone-number'];
   const strippedPhoneNumber = stripPhoneNumber(phoneNumber);
   const hashedPhoneNumber = hashPhoneNumber(strippedPhoneNumber);

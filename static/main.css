@@ -1943,7 +1943,7 @@ input[type='radio'] + label:before {
   text-align: center;
   top: 0;
   width: 2rem;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 input[type='checkbox']:checked + label:before,
 input[type='radio']:checked + label:before {
@@ -2852,6 +2852,8 @@ table.alt tbody tr td {
     -webkit-transform 0.25s ease;
   transition: opacity 0.25s ease, transform 0.25s ease,
     -webkit-transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    -webkit-transform 0.25s ease;
   opacity: 0;
 }
 .gallery .modal .inner img {
@@ -2876,6 +2878,8 @@ table.alt tbody tr td {
   transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
     -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
@@ -3274,6 +3278,8 @@ body #page-wrapper {
   transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
     -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,

@@ -32,3 +32,15 @@ p.info {
 .privacy-policy p {
   margin-bottom: 1rem;
 }
+
+input[type='checkbox'] + label.normal-font::before {
+  margin-top: 0;
+}
+
+input[type='checkbox'] + label.normal-font {
+  font-variant: normal;
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 3px;
+}

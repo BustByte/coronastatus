@@ -17,6 +17,11 @@
               Beklager, noe gikk galt under utsending av SMS. Vennligst prøv igjen senere.
             </div>
           <% } %>
+          <% if(locals.didNotAcceptPrivacyPolicy) {%>
+            <div class="alert alert-danger" role="alert">
+              Du må godkjenne personvernerklæringen for å rapportere dine data.
+            </div>
+          <% } %>
           <h2 class="slogan">Rapporter din helsetilstand</h2>
           <p><strong>NB! Denne siden er p.t. ikke tilknyttet FHI eller norske myndigheter på noen måte. Les hvordan dataen du oppgir blir behandlet <a href="/personvern">her!</a></strong></p>
           <p>Mørketallene på smittede er store. Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset. Nettsiden er laget i dugnadsånd av et lite konsulentselskap. Dette er ikke en offisiell nettside fra norske myndigheter.</p>
@@ -129,6 +134,14 @@
                 <div id="symptom-start-question" class="col-12" style="display: none;">
                   <label for="symptom-start">Når startet symptomene?</label>
                   <input type="date" name="symptom-start" id="symptom-start">
+                </div>
+                <div class="col-12">
+                  <label>Personvernerklæring</label>
+                  <p class="info">Vi passer godt på dine helseopplysninger. Vår personvernerklæring finner du <a target="_blank" href="/personvernerklæring">her</a>.</p>
+                </div>
+                <div class="col-12 reduced-form-padding">
+                  <input required type="checkbox" id="accept-privacy-policy" name="accept-privacy-policy">
+                  <label for="accept-privacy-policy" class="normal-font">Jeg godtar at mine data lagres i henhold til personvernerklæringen</label>
                 </div>
                 <div class="col-12">
                   <ul class="actions">
