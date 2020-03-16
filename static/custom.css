@@ -44,3 +44,36 @@ input[type='checkbox'] + label.normal-font {
   font-weight: 400;
   margin-top: 3px;
 }
+
+.disclaimer {
+  background-color: #ffeb3b;
+}
+
+.disclaimer.wrapper {
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.disclaimer > .inner {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .disclaimer.wrapper {
+    padding: 0.5rem 0;
+  }
+
+  .disclaimer__link {
+    display: none;
+  }
+  .disclaimer > .inner {
+    -webkit-box-pack: start;
+    justify-content: start;
+  }
+}
