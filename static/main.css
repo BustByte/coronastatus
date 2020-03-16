@@ -2584,30 +2584,10 @@ table.alt tbody tr td {
   padding: 10rem 0 12rem 0;
   position: relative;
 }
-.wrapper:before,
-.wrapper:after {
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAnIGhlaWdodD0nMTAwJyB2aWV3Qm94PScwIDAgMTAwIDEwMCcgcHJlc2VydmVBc3BlY3RSYXRpbz0nbm9uZSc+PHBvbHlnb24gcG9pbnRzPScwLDAgMCwxMDAgMTAwLDEwMCcgc3R5bGU9J2ZpbGw6I2ZmZmZmZjsnIC8+PC9zdmc+');
-  z-index: 2;
-}
 .wrapper > .inner {
   margin: 0 auto;
   max-width: 65rem;
   width: calc(100% - 4rem);
-}
-.wrapper:before,
-.wrapper:after {
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  height: 6rem;
-  left: 0;
-  position: absolute;
-  width: 100%;
-}
-.wrapper:before {
-  -webkit-transform: translateY(-100%) scale(-1, 1);
-  transform: translateY(-100%) scale(-1, 1);
-  content: '';
-  top: 0;
 }
 .wrapper.alt {
   padding-bottom: 1rem;
@@ -2635,10 +2615,6 @@ table.alt tbody tr td {
   .wrapper {
     padding: 6rem 0 8rem 0;
   }
-  .wrapper:before,
-  .wrapper:after {
-    height: 4rem;
-  }
   .wrapper > .inner {
     max-width: 75rem;
     width: calc(100% - 8rem);
@@ -2648,10 +2624,6 @@ table.alt tbody tr td {
   .wrapper {
     padding: 4rem 0 6rem 0;
   }
-  .wrapper:before,
-  .wrapper:after {
-    height: 3rem;
-  }
 }
 @media screen and (max-width: 736px) {
   .wrapper {
@@ -2659,10 +2631,6 @@ table.alt tbody tr td {
   }
   .wrapper > .inner {
     width: calc(100% - 6rem);
-  }
-  .wrapper:before,
-  .wrapper:after {
-    height: 2rem;
   }
   .wrapper.alt {
     padding-bottom: 0;
@@ -2804,56 +2772,8 @@ table.alt tbody tr td {
 .gallery .modal .inner {
   -webkit-transform: translateY(0.75rem);
   transform: translateY(0.75rem);
-  -webkit-transition: opacity 0.25s ease, -webkit-transform 0.25s ease;
   transition: opacity 0.25s ease, -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease, -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-    -webkit-transform 0.25s ease;
+  -webkit-transition: opacity 0.25s ease, -webkit-transform 0.25s ease;
   opacity: 0;
 }
 .gallery .modal .inner img {
@@ -2876,54 +2796,6 @@ table.alt tbody tr td {
   transform: translateY(0);
   -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
   opacity: 1;
 }
 .gallery .modal.loaded:before {
@@ -3009,14 +2881,6 @@ table.alt tbody tr td {
   100% {
     top: 0;
     opacity: 1;
-  }
-}
-body #page-wrapper {
-  padding-top: 4rem;
-}
-@media screen and (max-width: 736px) {
-  body #page-wrapper {
-    padding-top: 3rem;
   }
 }
 #header {
@@ -3278,6 +3142,22 @@ body #page-wrapper {
   transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease,
+    -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
     -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease,
