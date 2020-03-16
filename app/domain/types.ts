@@ -6,6 +6,7 @@ export interface CovidReport {
   testedAt?: Date; // YYYY-MM-DD
   symptomStart?: string; // YYYY-MM-DD
   testResult?: TestResult;
+  inQuarantine?: Boolean;
   hasBeenAbroadLastTwoWeeks: boolean;
   symptoms: { [key in Symptom]: boolean };
   submissionTimestamp: number;

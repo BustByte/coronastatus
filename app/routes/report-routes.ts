@@ -67,6 +67,7 @@ router.post('/', async (req, res) => {
       [Symptom.HEADACHE]: req.body['symptom-headache'] === 'on',
       [Symptom.SORE_THROAT]: req.body['symptom-sore-throat'] === 'on'
     },
+    inQuarantine: req.body['in-quarantine'] === 'yes',
     hasBeenAbroadLastTwoWeeks: req.body['been-abroad'] === 'yes',
     symptomStart: req.body['symptom-start'],
     submissionTimestamp: new Date().getTime()

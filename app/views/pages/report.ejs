@@ -6,6 +6,7 @@
   const hasBeenTested = profile && locals.profile.hasBeenTested;
   const symptomStart = profile && locals.profile.symptomStart;
   const testResult = profile && locals.profile.testResult;
+  const inQuarantine = profile && locals.profile.inQuarantine;
   const hasBeenAbroadLastTwoWeeks = profile && locals.profile.hasBeenAbroadLastTwoWeeks;
   const symptoms = profile && locals.profile.symptoms;
   const symptomDryCough = symptoms && symptoms['DRY_COUGH'];
@@ -80,6 +81,18 @@
                 <div class="col-12 col-12-small reduced-form-padding">
                   <input required type="radio" id="been-abroad-no" name="been-abroad" value="no" <%= hasBeenAbroadLastTwoWeeks === false ? 'checked' : '' %>>
                   <label for="been-abroad-no">Nei</label>
+                </div>
+                <div class="col-12">
+                  <label>Sitter du i lovpålagt karantene?</label>
+                  <p class="info">Reglene for karantene finner du <a href="https://helsenorge.no/koronavirus/karantene-og-isolasjon" target="_blank">her</a></p>
+                </div>
+                <div class="col-12 col-12-small reduced-form-padding">
+                  <input required type="radio" id="in-quarantine-yes" name="in-quarantine" value="yes" <%= inQuarantine ? 'checked' : '' %>>
+                  <label for="in-quarantine-yes">Ja</label>
+                </div>
+                <div class="col-12 col-12-small reduced-form-padding">
+                  <input required type="radio" id="in-quarantine-no" name="in-quarantine" value="no" <%= inQuarantine === false ? 'checked' : '' %>>
+                  <label for="in-quarantine-no">Nei</label>
                 </div>
                 <div class="col-12">
                   <label>Har du blitt testet for COVID-19?</label>
