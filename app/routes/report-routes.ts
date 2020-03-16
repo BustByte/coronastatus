@@ -7,9 +7,10 @@ import { aggregateCovidReports } from '../util/report-aggregator';
 
 function determineRemoteAddress(req: Request): string {
   const ipWithPort =
-    (req.headers['x-forwarded-for'] as string) || req.connection.remoteAddress;
+    (req.headers['x-real-ip'] as string) || req.connection.remoteAddress;
   if (ipWithPort) {
     const [ipWithoutPort] = ipWithPort.split(':');
+    console.log(ipWithoutPort);
     return ipWithoutPort;
   }
   return req.ip;
