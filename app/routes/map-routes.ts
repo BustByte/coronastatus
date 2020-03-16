@@ -7,16 +7,16 @@ const router = express.Router();
 const reportRepo = new CovidReportRepository();
 
 router.get('/geojson', async (req, res) => {
-  const allReports = await reportRepo.getAllCovidReports();
+  const allReports = await reportRepo.getLatestCovidReports();
 
   const features: any[] =
     allReports.reduce((list: any[], report: CovidReport) => {
       const coordinates = postalCodeCoordinates(report.postalCode);
       if (coordinates.length !== 0) {
         let state = 'HEALTHY';
-        if (report.hasBeenTested && report.testResult === TestResult.POSITIVE) {
+        if (report.testResult === TestResult.POSITIVE) {
           state = 'POSITIVE';
-        } else if (Object.values(report.symptoms).includes(true)) {
+        } else if (isShowingAtLeastOneSymptom(report)) {
           state = 'SYMPTOMS';
         }
 
