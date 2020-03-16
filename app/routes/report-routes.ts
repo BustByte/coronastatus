@@ -1,9 +1,11 @@
 import express, { Request } from 'express';
 import { Symptom, CovidReport, Sex, TestResult } from '../domain/types';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
+import { getPasscodeCreator } from '../util/PasscodeCreator';
 
 const router = express.Router();
 const reportRepo = new CovidReportRepository();
+const passcodeCreator = getPasscodeCreator();
 
 router.get('/', (req, res) => {
   res.locals.metaDescription =
@@ -69,7 +71,7 @@ router.post('/', async (req, res) => {
     symptomStart: req.body['symptom-start'],
     submissionTimestamp: new Date().getTime()
   };
-  const passcode = 'ole-gunnar-solskjaer-123'; // TODO: generate passcode
+  const passcode = passcodeCreator.createPasscode();
   reportRepo.addNewCovidReport(passcode, covidReport);
   return res.redirect(`/profil/${passcode}?success=true`);
 });
