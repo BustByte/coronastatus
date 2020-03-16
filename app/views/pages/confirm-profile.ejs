@@ -22,14 +22,13 @@
             </p>
             <div class="profile-url">
               <span id="link-to-be-copied">coronastatus.no/helsetilstand/<%= passcode %></span>
-              <!-- TODO: Make this button work properly
               <div>
-                <button class="copy-icon" data-clipboard-text="coronastatus.no/helsetilstand/<%= passcode %>">
+                <button id="profile-url-id" class="copy-icon" data-clipboard-text="coronastatus.no/helsetilstand/<%= passcode %>">
                   <i class="fas fa-copy"></i>
                 </button>
               </div>
-              -->
             </div>
+            <div id="profile-copy-status-text" class="alert" style="display:none;" role="alert"></div>
             <form method="get" action="/helsetilstand/<%= passcode %>">
               <div class="row">
                 <div class="col-12">
@@ -52,10 +51,34 @@
     </section>	
     <%- include('partials/footer') -%>	
   </div>	
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
   <script>	
     // Remove query params from url	
-    window.history.replaceState({}, document.title, window.location.pathname);	
+    window.history.replaceState({}, document.title, window.location.pathname);
+
+    var clipboard = new ClipboardJS('#profile-url-id');
+    var statusText = document.getElementById("profile-copy-status-text");
+
+    function setStatusAlert(element,text, alert_class){
+        txt = document.createTextNode(text);
+        element.appendChild(txt);
+        element.style.display = 'block';
+        element.classList.add(alert_class);
+    }
+
+    clipboard.on('success',function(e){
+      if(statusText.style.display == 'none'){
+        setStatusAlert(statusText,'Linken er kopiert','alert-success');
+      }
+    });
+
+    clipboard.on('error',function(e){
+      if(statusText.style.display == 'none'){
+        setStatusAlert(statusText,'Klarte ikke å kopiere linke til utklippstavlen. Skriv ned linken selv.','alert-error');
+      }
+    });
+
   </script>	
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+  
 </body>	
 </html>
