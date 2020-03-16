@@ -1,4 +1,5 @@
 import express, { Request } from 'express';
+import rateLimit from 'express-rate-limit';
 import { Symptom, CovidReport, Sex, TestResult } from '../domain/types';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
 import { getPasscodeCreator } from '../util/PasscodeCreator';
@@ -58,7 +59,12 @@ const extractTestResult = (req: Request): TestResult | undefined => {
   return undefined;
 };
 
-router.post('/', async (req, res) => {
+const createReportRateLimit = rateLimit({
+  max: 20 // allowed requests per window,
+  windowMs: 24 * 60 * 60 * 1000, // 24 hour window
+});
+
+router.post('/', createReportRateLimit, async (req, res) => {
   const acceptPrivacyPolicy = req.body['accept-privacy-policy'] === 'on';
   if (!acceptPrivacyPolicy) {
     const reports = await reportRepo.getLatestCovidReports();
