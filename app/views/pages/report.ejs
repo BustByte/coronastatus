@@ -72,7 +72,7 @@
         <form method="post" action="/">
           <h2>Geografi og demografi</h2>
           <div class="row">
-            <div class="col-5 col-12-small">
+            <div class="col-5 col-12-small input-block">
               <label class="with-top-margin" for="age">Din alder</label>
               <select required name="age" id="Age">
                 <option value="" disabled selected>Velg din alder</option>
@@ -83,7 +83,7 @@
                 <% } %>
               </select>
             </div>
-            <div class="col-5 col-12-small">
+            <div class="col-5 col-12-small input-block">
               <label  class="with-top-margin">Biologisk kjønn</label>
               <div class="row">
                 <div class="col-6">
@@ -98,14 +98,14 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-5 col-12-small">
+            <div class="col-5 col-12-small input-block">
               <label class="with-top-margin" for="postal-code">Postnummer</label>
               <input required type="text" pattern="[0-9]{4}" maxlength="4" name="postal-code" id="postal-code" placeholder="1234" value="<%= postalCode %>">
             </div>
           </div>
           <h2>Testing og symptomper</h2>
           <div class="row">
-            <div class="col-5 col-12-small">
+            <div class="col-5 col-12-small input-block">
               <label  class="with-top-margin">Har du blitt testet for COVID-19?</label>
               <div class="row">
                 <div class="col-6">
@@ -118,7 +118,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-5 col-12-small" id="test-result-question" style="display:none">
+            <div class="col-5 col-12-small input-block" id="test-result-question" style="display:none">
               <label  class="with-top-margin">Hva var svaret på testen?</label>
               <div class="row">
                 <div class="col-12">
@@ -137,7 +137,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-5 col-12-small">
+            <div class="col-5 col-12-small input-block">
               <label class="with-top-margin">Symptomer du har hatt</label>
               <p class="info">Ikke velg noen dersom du ikke har hatt symptomer</p>
               <div class="row">
@@ -175,7 +175,7 @@
                 </div>
               </div>
             </div>
-            <div id="symptom-start-question" class="col-5 col-12-small" style="display: none;">
+            <div id="symptom-start-question" class="col-5 col-12-small input-block" style="display: none;">
               <label class="with-top-margin" for="symptom-start">Når startet symptomene?</label>
               <input type="date" name="symptom-start" id="symptom-start" value="<%= symptomStart %>">
             </div>
@@ -183,13 +183,13 @@
           <h2>Hvordan blir dataene mine brukt?</h2>
           <p class="privacy-info-text">Dine helseopplysninger blir lagret anonymisert, og kan ikke kobles til deg.<br/><a target="_blank" href="/personvern">Vår personvernerklæring finner du her</a>.</p>
           <div class="row">
-            <div class="col-12">
+            <div class="col-12 input-block">
               <input required type="checkbox" id="accept-privacy-policy" name="accept-privacy-policy" <%= passcode ? 'checked' : '' %>>
               <label for="accept-privacy-policy" class="normal-font">Jeg godtar at mine data lagres i henhold til personvernerklæringen</label>
             </div>
           </div>
           <div class="row">
-            <div class="col-12">
+            <div class="col-12 input-block">
               <ul class="actions">
                 <li>
                   <input type="hidden" name="passcode" value="<%= passcode %>" />
