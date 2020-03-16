@@ -34,3 +34,10 @@ export enum Symptom {
   HEADACHE = 'HEADACHE',
   SORE_THROAT = 'SORE_THROAT'
 }
+
+export interface AggregatedCovidReportData {
+  numberOfReports: number;
+  numberOfPeopleShowingSymptoms: number;
+  numberOfConfirmedInfected: number;
+  numberOfTested: number;
+}
