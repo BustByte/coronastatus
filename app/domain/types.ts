@@ -42,3 +42,16 @@ export interface AggregatedCovidReportData {
   numberOfConfirmedInfected: number;
   numberOfTested: number;
 }
+
+export type PostalCode = string;
+
+export interface Coordinate {
+  lat: string;
+  lon: string;
+}
+export interface Municipality {
+  name: string;
+  population: string;
+  postalcodes: PostalCode[];
+  coordinates: Coordinate;
+}
