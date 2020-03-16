@@ -5,6 +5,16 @@ import { CovidReportRepository } from '../repository/CovidReportRepository';
 import { getPasscodeCreator } from '../util/PasscodeCreator';
 import { aggregateCovidReports } from '../util/report-aggregator';
 
+function determineRemoteAddress(req: Request): string {
+  const ipWithPort =
+    (req.headers['x-forwarded-for'] as string) || req.connection.remoteAddress;
+  if (ipWithPort) {
+    const [ipWithoutPort] = ipWithPort.split(':');
+    return ipWithoutPort;
+  }
+  return req.ip;
+}
+
 const router = express.Router();
 const reportRepo = new CovidReportRepository();
 const passcodeCreator = getPasscodeCreator();
@@ -61,7 +71,8 @@ const extractTestResult = (req: Request): TestResult | undefined => {
 
 const createReportRateLimit = rateLimit({
   max: 20, // allowed requests per window
-  windowMs: 24 * 60 * 60 * 1000, // 24 hour window
+  windowMs: 24 * 60 * 60 * 1000, // 24 hour window,
+  keyGenerator: req => determineRemoteAddress(req)
 });
 
 router.post('/', createReportRateLimit, async (req, res) => {
