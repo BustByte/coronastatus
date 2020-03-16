@@ -312,3 +312,8 @@ p.subtitle {
 .about-us h2 {
   margin-bottom: 1rem;
 }
+
+#link-to-be-copied {
+  max-width: 100%;
+  word-break: break-all;
+}
