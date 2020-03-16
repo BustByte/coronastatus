@@ -2,15 +2,18 @@ import express, { Request } from 'express';
 import { Symptom, CovidReport, Sex, TestResult } from '../domain/types';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
 import { getPasscodeCreator } from '../util/PasscodeCreator';
+import { aggregateCovidReports } from '../util/report-aggregator';
 
 const router = express.Router();
 const reportRepo = new CovidReportRepository();
 const passcodeCreator = getPasscodeCreator();
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   res.locals.metaDescription =
     'Her kan du legge inn informasjon om din helsetilstand, slik at vi kan få en bedre oversikt over totalbildet i Norge.';
-  return res.render('pages/report');
+  const reports = await reportRepo.getLatestCovidReports();
+  const aggregated = aggregateCovidReports(reports);
+  return res.render('pages/report', { aggregated });
 });
 
 router.get('/numberOfReports', async (req, res) => {
@@ -28,7 +31,15 @@ router.get('/helsetilstand/:passcode', async (req, res) => {
   if (profile) {
     res.locals.metaDescription =
       'Her kan du legge inn informasjon om din helsetilstand, slik at vi kan få en bedre oversikt over totalbildet i Norge.';
-    return res.render('pages/report', { profile, passcode, success });
+
+    const reports = await reportRepo.getLatestCovidReports();
+    const aggregated = aggregateCovidReports(reports);
+    return res.render('pages/report', {
+      profile,
+      passcode,
+      success,
+      aggregated
+    });
   }
   return res.redirect('/');
 });
@@ -50,7 +61,12 @@ const extractTestResult = (req: Request): TestResult | undefined => {
 router.post('/', async (req, res) => {
   const acceptPrivacyPolicy = req.body['accept-privacy-policy'] === 'on';
   if (!acceptPrivacyPolicy) {
-    return res.render('pages/report', { didNotAcceptPrivacyPolicy: true });
+    const reports = await reportRepo.getLatestCovidReports();
+    const aggregated = aggregateCovidReports(reports);
+    return res.render('pages/report', {
+      didNotAcceptPrivacyPolicy: true,
+      aggregated
+    });
   }
   const covidReport: CovidReport = {
     age: req.body['age'],

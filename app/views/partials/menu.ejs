@@ -1,0 +1,16 @@
+<%
+  const isOnProfile = !locals.activePage || locals.activePage === 'helsetilstand';
+  const isOnMap = locals.activePage === 'kart';
+  const isOnPrivacyPolicy = locals.activePage === 'personvern';
+%>
+
+<div class="menu wrapper">
+  <div class="inner">
+    <div class="logo"><img alt="Logo" src="/static/favicon.png"><a href="/" class="logo__text">Coronastatus.no</a></div>
+    <div class="menu__links">
+      <a href="/" class="<%= isOnProfile ? 'active' : '' %>">Din helsetilstand</a>
+      <a href="/kart" class="<%= isOnMap ? 'active' : '' %>">Kart</a>
+      <a href="/personvern" class="<%= isOnPrivacyPolicy ? 'active' : '' %>">Personvern</a>
+    </div>
+  </div>
+</div>

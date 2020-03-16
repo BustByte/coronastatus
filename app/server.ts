@@ -31,6 +31,12 @@ app.use(
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use((req, res, next) => {
+  // eslint-disable-next-line prefer-destructuring
+  res.locals.activePage = req.path.split('/')[1];
+  next();
+});
+
 app.set('view engine', 'ejs');
 app.set('views', [
   path.join(__dirname, 'views'),

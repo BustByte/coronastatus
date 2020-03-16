@@ -18,6 +18,10 @@
   const symptomDiarrhea = symptoms && symptoms['DIARRHEA'];
   const symptomHeadache = symptoms && symptoms['HEADACHE'];
   const symptomSoreThroat = symptoms && symptoms['SORE_THROAT'];
+
+  function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
 %>
 
 <!DOCTYPE html>
@@ -25,168 +29,207 @@
 <%- include('partials/head') -%>
 <body>
   <%- include('partials/disclaimer') -%>
+  <%- include('partials/menu') -%>
   <div id="page-wrapper">
     <section id="main" class="wrapper">
       <div class="inner">
-        <header class="major special">
-          <h1>Coronastatus</h1>
-          <% if(locals.didNotAcceptPrivacyPolicy) {%>
-            <div class="alert alert-danger" role="alert">
-              Du må godkjenne personvernerklæringen for å rapportere dine data.
+        <div class="info-box-row">
+          <div class="info-box main-info">
+            <div class="info-box__icon">
+              <div class="info-box__icon__circle">
+                <i class="fas fa-question"></i>
+              </div>
             </div>
-          <% } %>
-          <h2 class="slogan"><%= profile ? 'Din helsetilstand' : 'Rapporter din helsetilstand' %></h2>
-          <% if(locals.success) {%>
-            <div class="alert alert-success" role="alert">
-              Takk for ditt svar! Hvis helsetilstanden din skulle endre seg går du inn her og endrer: <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>. 
+            <div class="info-box__content">
+              <p class="info-box__bolder">Mørketallene på smittede er store.</p>
+              <p class="info-box__bolder">Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset.</p>
+              <p>Nettsiden er laget i dugnadsånd av et lite konsulentselskap i samarbeid med frivillige.</p>
             </div>
-          <% } %>
-          <% if(!profile) {%>
-            <p>Mørketallene på smittede er store. Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset. Nettsiden er laget i dugnadsånd av et lite konsulentselskap. Dette er ikke en offisiell nettside fra norske myndigheter.</p>
-            <p>Vi ber alle om å fylle inn feltene under, uavhengig om du har symptomer eller ikke.</p>
-          <% } %>
-        </header>
-        <div class="row gtr-200">
-          <div class="col-12">
-            <form method="post" action="/">
-              <div class="row gtr-uniform">
-                <div class="col-12">
-                  <label for="age">Alder</label>
-                  <select required name="age" id="Age">
-                    <option value="" disabled selected>Velg din alder</option>
-                    <% for(var i=0; i<100; i+=10) {
-                      const ageSpan = `${i} - ${i + 9}`;
-                    %>
-                      <option value="<%= ageSpan %>" <%= age === `${ageSpan}` ? 'selected' : '' %>><%= ageSpan %></option>
-                    <% } %>
-                  </select>
-                </div>
-                <div class="col-12">
-                  <label for="postal-code">Postnummer</label>
-                  <input required type="text" pattern="[0-9]{4}" maxlength="4" name="postal-code" id="postal-code" placeholder="1234" value="<%= postalCode %>">
-                </div>
-                <div class="col-12">
-                  <label>Biologisk kjønn</label>
-                </div>
-                <div class="col-12 col-12-small reduced-form-padding">
+          </div>
+          <div class="info-box stats" id="total-reports">
+            <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfReports) %></div>
+            <div class="stats__description">Totalt innsendte</div>
+          </div>
+          <div class="info-box stats">
+            <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfPeopleShowingSymptoms) %></div>
+            <div class="stats__description">Har symptomer</div>
+          </div>
+          <!-- Outcommented until we have added stats on the map page
+          <a href="/kart" class="info-box link-to-stats">
+            <i class="fas fa-chevron-right"></i>
+          </a>
+          -->
+        </div>
+        <% if(locals.didNotAcceptPrivacyPolicy) {%>
+          <div class="alert alert-danger" role="alert">
+            Du må godkjenne personvernerklæringen for å rapportere dine data.
+          </div>
+        <% } %>
+        <h1><%= profile ? 'Din helsetilstand' : 'Rapporter din helsetilstand' %></h1>
+        <% if(locals.success) {%>
+          <div class="alert alert-success" role="alert">
+            Takk for ditt svar! Hvis helsetilstanden din skulle endre seg går du inn her og endrer: <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>. 
+          </div>
+        <% } %>
+        <form method="post" action="/">
+          <h2>Geografisk og demografisk</h2>
+          <div class="row">
+            <div class="col-5 col-12-small">
+              <label class="with-top-margin" for="age">Din alder</label>
+              <select required name="age" id="Age">
+                <option value="" disabled selected>Velg din alder</option>
+                <% for(var i=0; i<100; i+=10) {
+                  const ageSpan = `${i} - ${i + 9}`;
+                %>
+                  <option value="<%= ageSpan %>" <%= age === `${ageSpan}` ? 'selected' : '' %>><%= ageSpan %></option>
+                <% } %>
+              </select>
+            </div>
+            <div class="col-5 col-12-small">
+              <label  class="with-top-margin">Biologisk kjønn</label>
+              <div class="row">
+                <div class="col-6">
                   <input required type="radio" id="gender-female" name="gender" value="female" <%= sex === 'FEMALE' ? 'checked' : '' %>>
                   <label for="gender-female">Kvinne</label>
                 </div>
-                <div class="col-12 col-12-small reduced-form-padding">
+                <div class="col-6">
                   <input required type="radio" id="gender-male" name="gender" value="male" <%= sex === 'MALE' ? 'checked' : '' %>>
                   <label for="gender-male">Mann</label>
                 </div>
-                <div class="col-12">
-                  <label>Har du vært i utlandet de siste to ukene?</label>
-                </div>
-                <div class="col-12 col-12-small reduced-form-padding">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-5 col-12-small">
+              <label class="with-top-margin" for="postal-code">Postnummer</label>
+              <input required type="text" pattern="[0-9]{4}" maxlength="4" name="postal-code" id="postal-code" placeholder="1234" value="<%= postalCode %>">
+            </div>
+            <div class="col-5 col-12-small">
+              <label  class="with-top-margin">Har du vært i utlandet de siste to ukene?</label>
+              <div class="row">
+                <div class="col-6">
                   <input required type="radio" id="been-abroad-yes" name="been-abroad" value="yes" <%= hasBeenAbroadLastTwoWeeks ? 'checked' : '' %>>
                   <label for="been-abroad-yes">Ja</label>
                 </div>
-                <div class="col-12 col-12-small reduced-form-padding">
+                <div class="col-6">
                   <input required type="radio" id="been-abroad-no" name="been-abroad" value="no" <%= hasBeenAbroadLastTwoWeeks === false ? 'checked' : '' %>>
                   <label for="been-abroad-no">Nei</label>
                 </div>
-                <div class="col-12">
-                  <label>Sitter du i lovpålagt karantene?</label>
-                  <p class="info">Reglene for karantene finner du <a href="https://helsenorge.no/koronavirus/karantene-og-isolasjon" target="_blank">her</a></p>
-                </div>
-                <div class="col-12 col-12-small reduced-form-padding">
-                  <input required type="radio" id="in-quarantine-yes" name="in-quarantine" value="yes" <%= inQuarantine ? 'checked' : '' %>>
-                  <label for="in-quarantine-yes">Ja</label>
-                </div>
-                <div class="col-12 col-12-small reduced-form-padding">
-                  <input required type="radio" id="in-quarantine-no" name="in-quarantine" value="no" <%= inQuarantine === false ? 'checked' : '' %>>
-                  <label for="in-quarantine-no">Nei</label>
-                </div>
-                <div class="col-12">
-                  <label>Har du blitt testet for COVID-19?</label>
-                </div>
-                <div class="col-12 col-12-small reduced-form-padding">
+              </div>
+            </div>
+          </div>
+          <h2>Testing og symptomper</h2>
+          <div class="row">
+            <div class="col-5 col-12-small">
+              <label  class="with-top-margin">Har du blitt testet for COVID-19?</label>
+              <div class="row">
+                <div class="col-6">
                   <input required type="radio" id="been-tested-yes" name="been-tested" value="yes" onclick="changeTestResultDisplay(true)" <%= hasBeenTested ? 'checked' : '' %>>
                   <label for="been-tested-yes">Ja</label>
                 </div>
-                <div class="col-12 col-12-small reduced-form-padding">
+                <div class="col-6">
                   <input required type="radio" id="been-tested-no" name="been-tested" value="no" onclick="changeTestResultDisplay(false)" <%= hasBeenTested === false ? 'checked' : '' %>>
                   <label for="been-tested-no">Nei</label>
                 </div>
-                <div id="test-result-question" class="row gtr-uniform" style="display: none">
-                  <div class="col-12">
-                    <label>Hva var svaret på testen?</label>
-                  </div>
-                  <div class="col-12 col-12-small reduced-form-padding">
-                    <input type="radio" id="test-response-positive" name="test-response" value="positive" <%= testResult === 'POSITIVE' ? 'checked' : '' %>>
-                    <label for="test-response-positive">Positivt</label>
-                  </div>
-                  <div class="col-12 col-12-small reduced-form-padding">
-                    <input type="radio" id="test-response-negative" name="test-response" value="negative" <%= testResult === 'NEGATIVE' ? 'checked' : '' %>>
-                    <label for="test-response-negative">Negativt</label>
-                  </div>
-                  <div class="col-12 col-12-small reduced-form-padding">
-                    <input type="radio" id="test-response-pending" name="test-response" value="pending" <%= testResult === 'PENDING' ? 'checked' : '' %>>
-                    <label for="test-response-pending">Venter på svar</label>
-                  </div>
+              </div>
+            </div>
+            <div class="col-5 col-12-small" id="test-result-question" style="display:none">
+              <label  class="with-top-margin">Hva var svaret på testen?</label>
+              <div class="row">
+                <div class="col-12">
+                  <input type="radio" id="test-response-positive" name="test-response" value="positive" <%= testResult === 'POSITIVE' ? 'checked' : '' %>>
+                  <label for="test-response-positive">Positivt</label>
                 </div>
                 <div class="col-12">
-                  <label>Symptomer du har hatt</label>
-                  <p class="info">Ikke velg noen dersom du ikke har hatt symptomer</p>
+                  <input type="radio" id="test-response-negative" name="test-response" value="negative" <%= testResult === 'NEGATIVE' ? 'checked' : '' %>>
+                  <label for="test-response-negative">Negativt</label>
                 </div>
-                <div class="col-12 reduced-form-padding">
+                <div class="col-12">
+                  <input type="radio" id="test-response-pending" name="test-response" value="pending" <%= testResult === 'PENDING' ? 'checked' : '' %>>
+                  <label for="test-response-pending">Venter på svar</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-5 col-12-small">
+              <label class="with-top-margin">Symptomer du har hatt</label>
+              <p class="info">Ikke velg noen dersom du ikke har hatt symptomer</p>
+              <div class="row">
+                <div class="col-12">
                   <input type="checkbox" id="symptom-cough" name="symptom-cough" <%= symptomDryCough ? 'checked' : '' %>>
                   <label for="symptom-cough">Tørrhoste</label>
                 </div>
-                <div class="col-12 reduced-form-padding">
+                <div class="col-12">
                   <input type="checkbox" id="symptom-fatigue" name="symptom-fatigue" <%= symptomFatigue ? 'checked' : '' %>>
                   <label for="symptom-fatigue">Slitenhet eller utmattelse</label>
                 </div>
-                <div class="col-12 reduced-form-padding">
+                <div class="col-12">
                   <input type="checkbox" id="symptom-fever" name="symptom-fever" <%= symptomFever ? 'checked' : '' %>>
                   <label for="symptom-fever">Feber</label>
                 </div>
-                <div class="col-12 reduced-form-padding">
+                <div class="col-12">
                   <input type="checkbox" id="symptom-heavy-breath" name="symptom-heavy-breath" <%= symptomHeavyBreathing ? 'checked' : '' %>>
                   <label for="symptom-heavy-breath">Tung pust</label>
                 </div>
-                <div class="col-12 reduced-form-padding">
+                <div class="col-12">
                   <input type="checkbox" id="symptom-muscle-pain" name="symptom-muscle-pain" <%= symptomMuscleAching ? 'checked' : '' %>>
                   <label for="symptom-muscle-pain">Muskelsmerter</label>
                 </div>
-                <div class="col-12 reduced-form-padding">
+                <div class="col-12">
                   <input type="checkbox" id="symptom-diarrhea" name="symptom-diarrhea" <%= symptomDiarrhea ? 'checked' : '' %>>
                   <label for="symptom-diarrhea">Diaré</label>
                 </div>
-                <div class="col-12 reduced-form-padding">
+                <div class="col-12">
                   <input type="checkbox" id="symptom-headache" name="symptom-headache" <%= symptomHeadache ? 'checked' : '' %>>
                   <label for="symptom-headache">Hodepine</label>
                 </div>
-                <div class="col-12 reduced-form-padding">
+                <div class="col-12">
                   <input type="checkbox" id="symptom-sore-throat" name="symptom-sore-throat" <%= symptomSoreThroat ? 'checked' : '' %>>
                   <label for="symptom-sore-throat">Vondt i halsen</label>
                 </div>
-                <div id="symptom-start-question" class="col-12" style="display: none;">
-                  <label for="symptom-start">Når startet symptomene?</label>
-                  <input type="date" name="symptom-start" id="symptom-start" value="<%= symptomStart %>">
+              </div>
+            </div>
+            <div id="symptom-start-question" class="col-5 col-12-small" style="display: none;">
+              <label class="with-top-margin" for="symptom-start">Når startet symptomene?</label>
+              <input type="date" name="symptom-start" id="symptom-start" value="<%= symptomStart %>">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-5 col-12-small">
+              <label class="with-top-margin">Sitter du i lovpålagt karantene?</label>
+              <p class="info">Reglene for karantene finner du <a href="https://helsenorge.no/koronavirus/karantene-og-isolasjon" target="_blank">her</a></p>
+              <div class="row">
+                <div class="col-6">
+                  <input required type="radio" id="in-quarantine-yes" name="in-quarantine" value="yes" <%= inQuarantine ? 'checked' : '' %>>
+                  <label for="in-quarantine-yes">Ja</label>
                 </div>
-                <div class="col-12">
-                  <label>Personvernerklæring</label>
-                  <p class="info">Vi passer godt på dine helseopplysninger. Vår personvernerklæring finner du <a target="_blank" href="/personvern">her</a>.</p>
-                </div>
-                <div class="col-12 reduced-form-padding">
-                  <input required type="checkbox" id="accept-privacy-policy" name="accept-privacy-policy" <%= passcode ? 'checked' : '' %>>
-                  <label for="accept-privacy-policy" class="normal-font">Jeg godtar at mine data lagres i henhold til personvernerklæringen</label>
-                </div>
-                <div class="col-12">
-                  <ul class="actions">
-                    <li>
-                      <input type="hidden" name="passcode" value="<%= passcode %>" />
-                      <input type="submit" value="Lagre">
-                    </li>
-                  </ul>
+                <div class="col-6">
+                  <input required type="radio" id="in-quarantine-no" name="in-quarantine" value="no" <%= inQuarantine === false ? 'checked' : '' %>>
+                  <label for="in-quarantine-no">Nei</label>
                 </div>
               </div>
-            </form>
+            </div>
           </div>
-        </div>
+          <h2>Hvordan blir dataene mine brukt?</h2>
+          <p class="privacy-info-text">Dine helseopplysninger blir lagret anonymisert, og kan ikke kobles til deg.<br/><a target="_blank" href="/personvern">Vår personvernerklæring finner du her</a>.</p>
+          <div class="row">
+            <div class="col-12">
+              <input required type="checkbox" id="accept-privacy-policy" name="accept-privacy-policy" <%= passcode ? 'checked' : '' %>>
+              <label for="accept-privacy-policy" class="normal-font">Jeg godtar at mine data lagres i henhold til personvernerklæringen</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <ul class="actions">
+                <li>
+                  <input type="hidden" name="passcode" value="<%= passcode %>" />
+                  <input class="inverse" type="submit" value="Send inn rapportering">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
     <%- include('partials/footer') -%>

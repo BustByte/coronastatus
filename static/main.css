@@ -240,10 +240,9 @@ h4,
 h5,
 h6 {
   font-weight: 900;
-  letter-spacing: 0.25rem;
   line-height: 1.5;
-  margin: 0 0 1.5rem 0;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  margin: 0;
 }
 h1 a,
 h2 a,
@@ -255,15 +254,17 @@ h6 a {
   text-decoration: none;
 }
 h1 {
-  font-family: 'Oswald', Helvetica, sans-serif;
-  font-size: 4rem;
-  letter-spacing: 0.1rem;
+  padding-top: 1.75rem;
+  font-size: 2.5rem;
 }
 h2 {
-  font-size: 1.75rem;
+  padding-top: 2.5rem;
+  font-size: 1.5rem;
+  color: #848484;
 }
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  margin: 0;
 }
 h4 {
   font-size: 1.25rem;
@@ -273,33 +274,6 @@ h5 {
 }
 h6 {
   font-size: 0.75rem;
-}
-@media screen and (max-width: 1280px) {
-  h1 {
-    font-size: 3.5rem;
-  }
-}
-@media screen and (max-width: 980px) {
-  h1 {
-    font-size: 3rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
-  h3 {
-    font-size: 1.25rem;
-  }
-}
-@media screen and (max-width: 736px) {
-  h1 {
-    font-size: 1.75rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
-  h3 {
-    font-size: 1.25rem;
-  }
 }
 sub {
   font-size: 0.8rem;
@@ -360,14 +334,6 @@ a {
 }
 strong,
 b {
-  color: #000000;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
   color: #000000;
 }
 blockquote {
@@ -2581,7 +2547,7 @@ table.alt tbody tr td {
   border-color: rgba(99, 116, 133, 0.25);
 }
 .wrapper {
-  padding: 10rem 0 12rem 0;
+  padding: 5rem 0 6rem 0;
   position: relative;
 }
 .wrapper > .inner {
@@ -2608,12 +2574,12 @@ table.alt tbody tr td {
 }
 @media screen and (max-width: 1680px) {
   .wrapper {
-    padding: 8rem 0 10rem 0;
+    padding: 4rem 0 5rem 0;
   }
 }
 @media screen and (max-width: 1280px) {
   .wrapper {
-    padding: 6rem 0 8rem 0;
+    padding: 3rem 0 4rem 0;
   }
   .wrapper > .inner {
     max-width: 75rem;
@@ -2622,12 +2588,12 @@ table.alt tbody tr td {
 }
 @media screen and (max-width: 980px) {
   .wrapper {
-    padding: 4rem 0 6rem 0;
+    padding: 3rem 0 4rem 0;
   }
 }
 @media screen and (max-width: 736px) {
   .wrapper {
-    padding: 4rem 0 6rem 0;
+    padding: 2rem 0 3rem 0;
   }
   .wrapper > .inner {
     width: calc(100% - 6rem);
@@ -2638,7 +2604,7 @@ table.alt tbody tr td {
 }
 @media screen and (max-width: 480px) {
   .wrapper {
-    padding: 3rem 0 3rem 0;
+    padding: 2rem 0 2rem 0;
   }
   .wrapper > .inner {
     width: calc(100% - 4rem);
@@ -3140,70 +3106,6 @@ table.alt tbody tr td {
   transform: translateY(0.5rem);
   -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease,
-    -webkit-transform 0.5s ease;
   -webkit-overflow-scrolling: touch;
   background: #000000;
   border-radius: 10px;
@@ -3524,7 +3426,8 @@ body.is-menu-visible #menu .inner {
   pointer-events: none;
   background-image: -webkit-gradient(
     linear,
-    left top, left bottom,
+    left top,
+    left bottom,
     from(rgba(0, 0, 0, 0.325)),
     to(rgba(0, 0, 0, 0))
   );
@@ -3761,17 +3664,7 @@ body.is-preload #banner .inner {
   opacity: 0;
 }
 #main {
-  padding-top: 8rem !important;
-}
-@media screen and (max-width: 1680px) {
-  #main {
-    padding-top: 6rem !important;
-  }
-}
-@media screen and (max-width: 980px) {
-  #main {
-    padding-top: 4rem !important;
-  }
+  padding-top: 0rem !important;
 }
 .copyright {
   color: rgba(40, 40, 40, 0.5);
