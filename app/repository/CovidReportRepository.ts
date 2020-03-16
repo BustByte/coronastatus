@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import { getInstance, SqlLiteDatabase } from './SqlLiteDatabase';
 import { CovidReport } from '../domain/types';
+import { CacheWithLifetime } from './CovidReportCache';
 
 const SELECT_ALL_COVID_REPORTS = 'select passcode, json_dump from covid_report';
 
@@ -18,8 +19,10 @@ interface CovidReportRow {
 
 export class CovidReportRepository {
   db: SqlLiteDatabase;
+  cache: CacheWithLifetime<CovidReportRow[]>;
 
   constructor() {
+    this.cache = new CacheWithLifetime<CovidReportRow[]>();
     this.db = getInstance('covid_db');
   }
 
@@ -51,7 +54,9 @@ export class CovidReportRepository {
   }
 
   async getLatestCovidReports(): Promise<CovidReport[]> {
-    const rows = await this.db.getAll(SELECT_ALL_COVID_REPORTS);
+    const rows = await this.cache.getCachedElements(() =>
+      this.db.getAll(SELECT_ALL_COVID_REPORTS)
+    );
     const latestReports: { [key: string]: CovidReport } = {};
     rows.forEach((row: CovidReportRow) => {
       latestReports[row.passcode] = this.parseJsonDumpToCovidReport(
