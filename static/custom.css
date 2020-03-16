@@ -324,3 +324,9 @@ label i {
   font-size: 0.75rem;
   color: #848484;
 }
+
+p.slogan {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin: 2rem 0 0;
+}

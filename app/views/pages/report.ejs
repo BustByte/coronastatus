@@ -44,7 +44,7 @@
             <div class="info-box__content">
               <p class="info-box__bolder">Mørketallene på smittede i Norge er store.</p>
               <p class="info-box__bolder">Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset i landet vårt.</p>
-              <p>Nettsiden er laget i dugnadsånd av et lite konsulentselskap i samarbeid med frivillige.</p>
+              <p>Nettsiden er laget i dugnadsånd av et lite konsulentselskap i samarbeid med frivillige. <br/>NB! Rapportering er frivillig.</p>
             </div>
           </div>
           <div class="info-box stats" id="total-reports">
@@ -71,6 +71,8 @@
           <div class="alert alert-success" role="alert">
             Takk for ditt svar! Husk å oppdatere skjemaet på denne lenken hvis helsetilstanden din skulle endre seg: <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>. 
           </div>
+        <% } else { %>
+          <p class="slogan">Bli med på Norges viktigste dugnad!</p>
         <% } %>
         <form method="post" action="/">
           <h2>Geografi og demografi</h2>
