@@ -4,6 +4,10 @@ label {
   margin-bottom: 0.2rem;
 }
 
+.with-top-margin {
+  margin-top: 0.75rem;
+}
+
 header.major {
   margin-bottom: 0;
 }
@@ -16,10 +20,6 @@ header.major p:not(:last-child) {
   padding-top: 0.75rem;
 }
 
-h2.slogan + p {
-  margin-top: 2rem;
-}
-
 p.info {
   font-size: 1rem;
   padding: 0;
@@ -28,9 +28,12 @@ p.info {
   margin-bottom: 0.5rem;
 }
 
-.privacy-policy h3,
 .privacy-policy p {
   margin-bottom: 1rem;
+}
+
+.privacy-policy h2 {
+  color: black;
 }
 
 input[type='checkbox'] + label.normal-font::before {
@@ -76,4 +79,236 @@ input[type='checkbox'] + label.normal-font {
     -webkit-box-pack: start;
     justify-content: start;
   }
+}
+
+.menu > .inner {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.menu__links a {
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  font-weight: 500;
+  margin-left: 1rem;
+  font-size: 1rem;
+  padding-bottom: 0.2rem;
+}
+
+.menu__links a.active {
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 3px solid #ff6666;
+}
+
+.menu .logo {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.menu .logo__text {
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.menu .logo img {
+  width: 50px;
+  height: auto;
+}
+
+.menu.wrapper {
+  padding: 2rem 0;
+}
+
+@media (max-width: 992px) {
+  .menu__links {
+    display: none;
+  }
+}
+
+.info-box {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  background-color: #f0f0f0;
+  border-color: #fdfdfe;
+  display: -webkit-box;
+  display: flex;
+}
+
+.info-box.main-info {
+  flex-grow: 1;
+}
+
+.info-box__icon {
+  width: 50px;
+}
+
+.info-box__content {
+  width: calc(100% - 50px);
+  padding-left: 1rem;
+}
+
+.info-box__content p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4rem;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.info-box__content p.info-box__bolder {
+  font-weight: 700;
+}
+
+.info-box__icon__circle {
+  border-radius: 50%;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+}
+
+.info-box__icon__circle i {
+  color: black;
+}
+
+.info-box-row {
+  display: flex;
+  align-items: stretch;
+}
+
+.info-box.stats {
+  width: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.stats__number {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stats__description {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1rem;
+}
+
+.info-box + .info-box {
+  margin-left: 0.5rem;
+}
+
+.info-box.link-to-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.75rem;
+}
+
+@media (max-width: 992px) {
+  .info-box.main-info {
+    width: 100%;
+  }
+
+  .info-box.stats {
+    flex-grow: 1;
+    padding: 0.5rem 0 1rem;
+    width: auto;
+  }
+
+  .info-box.main-info + .info-box.stats {
+    margin-left: 0;
+  }
+
+  .info-box-row {
+    flex-wrap: wrap;
+  }
+}
+
+.privacy-info-text {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+ul.actions {
+  margin-top: 1.5em;
+}
+
+input[type='submit'].inverse {
+  color: white !important;
+  background-color: black;
+  border-color: black;
+}
+
+p.subtitle {
+  font-size: 1.25rem;
+  color: #848484;
+  margin-bottom: 1rem;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 1rem 0;
+}
+
+.profile-url {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 2.5rem 0;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+
+.copy-icon {
+  width: 40px !important;
+  height: 40px !important;
+  line-height: 1;
+  justify-content: center;
+  height: auto;
+  border-radius: 50%;
+  background-color: #ffeb3b;
+  color: black;
+  padding: 0;
+  margin: 0 0 0 1rem;
+  border: 0;
+}
+
+.copy-icon i {
+  font-size: 1rem;
+}
+
+.copy-icon:hover,
+.copy-icon:focus {
+  background-color: #ffeb3b;
+  color: black;
+  opacity: 0.75;
+}
+
+#footer.wrapper {
+  padding: 0 !important;
+}
+
+.about-us,
+.about-us h2 {
+  color: black;
+  text-align: left;
+}
+
+.about-us h2 {
+  margin-bottom: 1rem;
 }

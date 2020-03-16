@@ -7,34 +7,46 @@
 <%- include('partials/head') -%>	
 <body>
   <%- include('partials/disclaimer') -%>
+  <%- include('partials/menu') -%>
   <div id="page-wrapper">
-    <section id="main" class="wrapper style2">	
-      <div class="inner">	
-        <header class="special">	
-          <h2>Ta vare på denne lenken</h2>	
-        </header>
-        <p>Din helsetilstand blir lagret på: <br/>
-          <strong>coronastatus.no/helsetilstand/<%= passcode %></strong>
-        </p>
-        <p>Ta vare på denne lenken, eller opprett et bokmerke til siden. Da kan du gå inn å endre din helsetilstand dersom den endrer seg.</p>
-        <form method="get" action="/helsetilstand/<%= passcode %>">
-          <div class="row gtr-uniform">
-            <div class="col-12 reduced-form-padding">
-              <input type="hidden" name="success" value="true" />
-              <input required type="checkbox" id="accept" name="accept">
-              <label for="accept" class="normal-font">Jeg har tatt vare på lenken</label>
+    <section id="main" class="wrapper">	
+      <div class="inner">
+        <div class="row">
+          <div class="col-10 col-12-small">
+            <h1>Før du går videre må du ta vare på følgende lenke</h1>
+            <p class="subtitle">
+              Lagre den følgende lenken et sted, eller opprett et bokmerke til siden.<br/>
+              Da kan du gå inn å endre din helsetilstand dersom den endrer seg.
+            </p>
+            <div class="profile-url">
+              <span id="link-to-be-copied">coronastatus.no/helsetilstand/<%= passcode %></span>
+              <!-- TODO: Make this button work properly
+              <div>
+                <button class="copy-icon" data-clipboard-text="coronastatus.no/helsetilstand/<%= passcode %>">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+              -->
             </div>
-            <div class="col-12">
-              <ul class="actions">
-                <li>
-                  <input type="submit" value="Gå videre">
-                </li>
-              </ul>
-            </div>
-          </div>
-        </form>	
-        </div>	
-      </div>	
+            <form method="get" action="/helsetilstand/<%= passcode %>">
+              <div class="row">
+                <div class="col-12">
+                  <input type="hidden" name="success" value="true" />
+                  <input required type="checkbox" id="accept" name="accept">
+                  <label for="accept" class="normal-font">Jeg har tatt vare på lenken</label>
+                </div>
+                <div class="col-12">
+                  <ul class="actions">
+                    <li>
+                      <input class="inverse" type="submit" value="Gå videre">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </form>	
+          </div>	
+        </div>
+      </div>
     </section>	
     <%- include('partials/footer') -%>	
   </div>	
@@ -42,5 +54,6 @@
     // Remove query params from url	
     window.history.replaceState({}, document.title, window.location.pathname);	
   </script>	
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
 </body>	
 </html>
