@@ -12,8 +12,11 @@ router.get('/aggregated', async (req, res) => {
   res.send(aggregated);
 });
 
-router.get('/', (req, res) => {
-  return res.render('pages/map');
+router.get('*', function(req, res) {
+  res.status(404).json({
+    status: 404,
+    message: 'Page Not Found'
+  });
 });
 
 export default router;
