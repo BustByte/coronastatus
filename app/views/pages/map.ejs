@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <%- include('partials/head') -%>
         <meta charset="utf-8" />
-        <title>Coronastatus</title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
         <script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
         <link href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css" rel="stylesheet" />
         <style>
-            body { margin: 0; padding: 0; }
-            #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+            #map { position: fixed; width: 100%; height: 100% }
         </style>
     </head>
     <body>
@@ -16,7 +15,7 @@
             .map-overlay {
                 font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
                 position: absolute;
-                width: 10%;
+                width: 7%;
                 min-width: 150px;
                 top: 0;
                 left: 0;
@@ -26,7 +25,7 @@
             .map-overlay .map-overlay-inner {
                 background-color: #fff;
                 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-                min-width: 150px;
+                min-width: 140px;
                 border-radius: 3px;
                 padding: 10px;
                 margin-bottom: 10px;
@@ -39,16 +38,6 @@
                 height: 40px;
                 bottom: 5px;
                 right: 10px;
-            }
-
-            .map-overlay-bottom a {
-                color: #fff;
-            }
-
-            .map-overlay h2 {
-                line-height: 24px;
-                display: block;
-                margin: 0 0 10px;
             }
 
             .map-overlay .legend .healthy {
@@ -69,19 +58,19 @@
                 background:  linear-gradient(to right, #ffffbf, #ffffbf);
             }
 
-            .map-overlay input {
-                background-color: transparent;
-                display: inline-block;
-                width: 100%;
-                position: relative;
-                margin: 0;
-                cursor: ew-resize;
+            .logo__text {
+                color: #fff;
+            }
+
+            a {
+                color: #fff;
             }
         </style>
         <div id="map"></div>
+        <%- include('partials/menu') -%>
         <div class="map-overlay top">
             <div class="map-overlay-inner">
-                <h2>Rapportert status per postnummer</h2>
+                <h5>Rapportert status per postnummer</h5>
                 <p>Punktene vises på oppgitt postnummer, der hvert postnummer er assosiert med en koordinat.<p>
                 <label id="month"></label>
             </div>
@@ -96,9 +85,6 @@
                 </div>
             </div>
         </div>
-        <div class="map-overlay-bottom">
-            <p>Koordinater hentet fra <a href="http://www.erikbolstad.no/geo/noreg/postnummer/">erikbolstad.no/postnummer/</a></p>
-        </div>
         <script src="https://d3js.org/d3.v4.js"></script>
         <script>
             mapboxgl.accessToken = 'pk.eyJ1IjoiZnJlZHJpa3BlIiwiYSI6ImNrN3QxOGV4bTBuNmwzbG1yNnUzMXIyaWMifQ._pfjKIPQuSFRxSCv8oRLEA';
@@ -106,7 +92,28 @@
                 container: 'map',
                 style: 'mapbox://styles/mapbox/dark-v10',
                 center: [10.7522, 59.9139],
-                zoom: 3
+                zoom: 4,
+                attributionControl: false
+            });
+
+            function Attributions() { }
+            Attributions.prototype.onAdd = function(map) {
+                this._map = map;
+                this._container = document.createElement('div');
+                this._container.className = 'mapboxgl-ctrl';
+                this._container.innerHTML = "<a href='http://www.erikbolstad.no/geo/noreg/postnummer/'>erikbolstad.no/postnummer/</a>" +
+                    " © <a href='https://www.mapbox.com/about/maps/'>Mapbox</a>" +
+                    " © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>";
+                return this._container;
+            };
+            Attributions.prototype.onRemove = function () {
+                 this._container.parentNode.removeChild(this._container);
+                 this._map = undefined;
+            };
+            var attributions = new Attributions();
+
+            map.on('load', function(){
+                map.addControl(attributions, 'bottom-right');
             });
 
             const positive = ['==', ['get', 'state'], 'POSITIVE'];
@@ -122,8 +129,8 @@
             map.on('load', function() {
                 map.addSource('reports', {
                   'type': 'geojson',
-                  data: 'https://coronastatus.no/kart/geojson',
-                  //data: 'http://localhost:7272/kart/geojson',
+                    //data: 'https://coronastatus.no/kart/geojson',
+                  data: 'http://localhost:7272/kart/geojson',
                   cluster: true,
                   clusterMaxZoom: 100, // Max zoom to cluster points on
                   clusterRadius: 80,
