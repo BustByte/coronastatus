@@ -5,6 +5,7 @@ import path from 'path';
 import reportRoutes from './routes/report-routes';
 import mapRoutes from './routes/map-routes';
 import { getInstance } from './repository/SqlLiteDatabase';
+import { getPasscodeCreator } from './util/PasscodeCreator';
 
 const SqLiteStore = require('connect-sqlite3')(session);
 
@@ -83,4 +84,13 @@ async function initializeDatabase() {
 initializeDatabase().then(() => {
   app.listen(port);
   console.log(`API up and running on port ${port}`);
+  const creator = getPasscodeCreator();
+  console.log(creator.createPasscode());
+  console.log(creator.createPasscode());
+  console.log(creator.createPasscode());
+  console.log(creator.createPasscode());
+  console.log(creator.createPasscode());
+  console.log(creator.createPasscode());
+  console.log(creator.createPasscode());
+  console.log(creator.createPasscode());
 });
