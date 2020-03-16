@@ -16,8 +16,6 @@ const reports: CovidReport[] = [
     testedAt: new Date(), // Not in use
     symptomStart: '2020-03-02', // YYYY-MM-DD
     testResult: TestResult.POSITIVE,
-    inQuarantine: true,
-    hasBeenAbroadLastTwoWeeks: true,
     symptoms: {
       [Symptom.DRY_COUGH]: true,
       [Symptom.EXHAUSTION]: false,
@@ -39,8 +37,6 @@ const reports: CovidReport[] = [
     testedAt: new Date(), // YYYY-MM-DD
     symptomStart: '2020-03-02', // YYYY-MM-DD
     testResult: undefined,
-    inQuarantine: false,
-    hasBeenAbroadLastTwoWeeks: false,
     symptoms: {
       [Symptom.DRY_COUGH]: true,
       [Symptom.EXHAUSTION]: true,
@@ -62,8 +58,6 @@ const reports: CovidReport[] = [
     testedAt: new Date(), // YYYY-MM-DD
     symptomStart: '2020-03-02', // YYYY-MM-DD
     testResult: TestResult.PENDING,
-    inQuarantine: false,
-    hasBeenAbroadLastTwoWeeks: false,
     symptoms: {
       [Symptom.DRY_COUGH]: false,
       [Symptom.EXHAUSTION]: false,
@@ -85,8 +79,6 @@ const reports: CovidReport[] = [
     testedAt: new Date(), // YYYY-MM-DD
     symptomStart: '2020-03-02', // YYYY-MM-DD
     testResult: TestResult.NEGATIVE,
-    inQuarantine: false,
-    hasBeenAbroadLastTwoWeeks: false,
     symptoms: {
       [Symptom.DRY_COUGH]: true,
       [Symptom.EXHAUSTION]: false,
