@@ -5,6 +5,7 @@
   const postalCode = profile && locals.profile.postalCode;
   const sex = profile && locals.profile.sex;
   const hasBeenTested = profile && locals.profile.hasBeenTested;
+  const hasBeenInContactWithInfected = profile && locals.profile.hasBeenInContactWithInfected;
   const symptomStart = profile && locals.profile.symptomStart;
   const testResult = profile && locals.profile.testResult;
   const symptoms = profile && locals.profile.symptoms;
@@ -106,6 +107,21 @@
             </div>
           </div>
           <h2>Testing og symptomper</h2>
+          <div class="row">
+            <div class="col-10 col-12-small input-block">
+              <label  class="with-top-margin">Har du vært i <a target="_blank" href="https://www.fhi.no/nettpub/coronavirus/helsepersonell/definisjoner-av-mistenkte-og-bekreftede-tilfeller-med-koronavirus-coronavir/">nærkontakt</a> med noen som har testet positivt på COVID-19?</label>
+              <div class="row">
+                <div class="col-3">
+                  <input required type="radio" id="been-in-contact-with-yes" name="been-in-contact-with" value="yes" <%= hasBeenInContactWithInfected ? 'checked' : '' %>>
+                  <label for="been-in-contact-with-yes">Ja</label>
+                </div>
+                <div class="col-3">
+                  <input required type="radio" id="been-in-contact-with-no" name="been-in-contact-with" value="no" <%= hasBeenInContactWithInfected === false ? 'checked' : '' %>>
+                  <label for="been-in-contact-with-no">Nei</label>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="row">
             <div class="col-5 col-12-small input-block">
               <label  class="with-top-margin">Har du blitt testet for COVID-19?</label>
