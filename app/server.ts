@@ -64,7 +64,15 @@ app.use(
     next: express.NextFunction
   ) => {
     console.error(err);
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).render('pages/500');
+    next();
+  }
+);
+
+// Handling 404
+app.use(
+  (req: express.Request, res: express.Response, next: express.NextFunction) => {
+    res.status(404).render('pages/404');
     next();
   }
 );
