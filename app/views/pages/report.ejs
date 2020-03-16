@@ -170,7 +170,7 @@
                   <p class="info">Vi passer godt på dine helseopplysninger. Vår personvernerklæring finner du <a target="_blank" href="/personvern">her</a>.</p>
                 </div>
                 <div class="col-12 reduced-form-padding">
-                  <input required type="checkbox" id="accept-privacy-policy" name="accept-privacy-policy">
+                  <input required type="checkbox" id="accept-privacy-policy" name="accept-privacy-policy" <%= passcode ? 'checked' : '' %>>
                   <label for="accept-privacy-policy" class="normal-font">Jeg godtar at mine data lagres i henhold til personvernerklæringen</label>
                 </div>
                 <div class="col-12">
