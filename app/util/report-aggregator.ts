@@ -4,8 +4,8 @@ import {
   TestResult
 } from '../domain/types';
 
-const isShowingAtLeastOneSymptom = (report: CovidReport): boolean => {
-  return Object.values(report.symptoms).filter(value => !!value).length > 0;
+export const isShowingAtLeastOneSymptom = (report: CovidReport): boolean => {
+  return Object.values(report.symptoms).includes(true);
 };
 
 export const aggregateCovidReports = (

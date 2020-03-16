@@ -50,13 +50,6 @@ export class CovidReportRepository {
       .then(row => row?.count);
   }
 
-  async getAllCovidReports(): Promise<CovidReport[]> {
-    const rows = await this.db.getAll(SELECT_ALL_COVID_REPORTS);
-    return rows.map((row: CovidReportRow) =>
-      this.parseJsonDumpToCovidReport(row.json_dump)
-    );
-  }
-
   async getLatestCovidReports(): Promise<CovidReport[]> {
     const rows = await this.db.getAll(SELECT_ALL_COVID_REPORTS);
     const latestReports: { [key: string]: CovidReport } = {};
