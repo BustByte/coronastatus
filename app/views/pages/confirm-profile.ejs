@@ -1,0 +1,45 @@
+<%
+  const passcode = locals.passcode;
+%>
+
+<!DOCTYPE html>	
+<html lang="no">	
+<%- include('partials/head') -%>	
+<body>	
+  <div id="page-wrapper">	
+    <section id="main" class="wrapper style2">	
+      <div class="inner">	
+        <header class="special">	
+          <h2>Ta vare på denne lenken</h2>	
+        </header>
+        <p>Din helsetilstand blir lagret på: <br/>
+          <strong>coronastatus.no/helsetilstand/<%= passcode %></strong>
+        </p>
+        <p>Ta vare på denne lenken, eller opprett et bokmerke til siden. Da kan du gå inn å endre din helsetilstand dersom den endrer seg.</p>
+        <form method="get" action="/helsetilstand/<%= passcode %>">
+          <div class="row gtr-uniform">
+            <div class="col-12 reduced-form-padding">
+              <input type="hidden" name="success" value="true" />
+              <input required type="checkbox" id="accept" name="accept">
+              <label for="accept" class="normal-font">Jeg har tatt vare på lenken</label>
+            </div>
+            <div class="col-12">
+              <ul class="actions">
+                <li>
+                  <input type="submit" value="Gå videre">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </form>	
+        </div>	
+      </div>	
+    </section>	
+    <%- include('partials/footer') -%>	
+  </div>	
+  <script>	
+    // Remove query params from url	
+    window.history.replaceState({}, document.title, window.location.pathname);	
+  </script>	
+</body>	
+</html>

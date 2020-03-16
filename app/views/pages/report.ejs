@@ -1,5 +1,6 @@
 <%
   const profile = locals.profile;
+  const passcode = locals.passcode;
   const yearOfBirth = profile && locals.profile.yearOfBirth;
   const postalCode = profile && locals.profile.postalCode;
   const sex = profile && locals.profile.sex;
@@ -28,20 +29,22 @@
       <div class="inner">
         <header class="major special">
           <h1>Coronastatus</h1>
-          <% if(locals.success) {%>
-            <div class="alert alert-success" role="alert">
-              Takk for ditt svar! Gjerne tips venner og kjente om denne siden, så bidrar dere til å kartlegge den faktiske statusen i Norge.
-            </div>
-          <% } %>
           <% if(locals.didNotAcceptPrivacyPolicy) {%>
             <div class="alert alert-danger" role="alert">
               Du må godkjenne personvernerklæringen for å rapportere dine data.
             </div>
           <% } %>
-          <h2 class="slogan">Rapporter din helsetilstand</h2>
-          <p><strong>NB! Denne siden er p.t. ikke tilknyttet FHI eller norske myndigheter på noen måte. Les hvordan dataen du oppgir blir behandlet <a target="_blank" href="/personvern">her!</a></strong></p>
-          <p>Mørketallene på smittede er store. Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset. Nettsiden er laget i dugnadsånd av et lite konsulentselskap. Dette er ikke en offisiell nettside fra norske myndigheter.</p>
-          <p>Vi ber alle om å fylle inn feltene under, uavhengig om du har symptomer eller ikke.</p>
+          <h2 class="slogan"><%= profile ? 'Din helsetilstand' : 'Rapporter din helsetilstand' %></h2>
+          <% if(locals.success) {%>
+            <div class="alert alert-success" role="alert">
+              Takk for ditt svar! Husk at du kan alltid gjøre endringer på din helsetilstand på <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>. 
+            </div>
+          <% } %>
+          <% if(!profile) {%>
+            <p>NB! Denne siden er p.t. ikke tilknyttet FHI eller norske myndigheter på noen måte. Les hvordan dataen du oppgir blir behandlet <a target="_blank" href="/personvern">her!</a></p>
+            <p>Mørketallene på smittede er store. Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset. Nettsiden er laget i dugnadsånd av et lite konsulentselskap. Dette er ikke en offisiell nettside fra norske myndigheter.</p>
+            <p>Vi ber alle om å fylle inn feltene under, uavhengig om du har symptomer eller ikke.</p>
+          <% } %>
         </header>
         <div class="row gtr-200">
           <div class="col-12">
@@ -173,6 +176,7 @@
                 <div class="col-12">
                   <ul class="actions">
                     <li>
+                      <input type="hidden" name="passcode" value="<%= passcode %>" />
                       <input type="submit" value="Lagre">
                     </li>
                   </ul>

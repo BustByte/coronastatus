@@ -18,7 +18,8 @@ router.get('/numberOfReports', async (req, res) => {
   return res.json({ numberOfReports });
 });
 
-router.get('/profil/:passcode', async (req, res) => {
+router.get('/helsetilstand/:passcode', async (req, res) => {
+  const success = req.query?.success === 'true';
   const { passcode } = req.params;
   if (!passcode) {
     return res.redirect('/');
@@ -27,7 +28,7 @@ router.get('/profil/:passcode', async (req, res) => {
   if (profile) {
     res.locals.metaDescription =
       'Her kan du legge inn informasjon om din helsetilstand, slik at vi kan få en bedre oversikt over totalbildet i Norge.';
-    return res.render('pages/report', { profile });
+    return res.render('pages/report', { profile, passcode, success });
   }
   return res.redirect('/');
 });
@@ -72,9 +73,12 @@ router.post('/', async (req, res) => {
     symptomStart: req.body['symptom-start'],
     submissionTimestamp: new Date().getTime()
   };
-  const passcode = passcodeCreator.createPasscode();
+  const passcode = req.body['passcode'] || passcodeCreator.createPasscode();
   reportRepo.addNewCovidReport(passcode, covidReport);
-  return res.redirect(`/profil/${passcode}?success=true`);
+  if (req.body['passcode']) {
+    return res.redirect(`/helsetilstand/${passcode}?success=true`);
+  }
+  return res.render('pages/confirm-profile', { passcode });
 });
 
 router.get('/elements', (req, res) => {
