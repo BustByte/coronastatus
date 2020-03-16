@@ -37,12 +37,11 @@ export class CovidReportRepository {
   async getCovidReportByPasscode(
     passcode: string
   ): Promise<CovidReport | undefined> {
-    const row = await this.db.getFirst<CovidReportRow>(SELECT_COVID_REPORT, [
-      passcode
-    ]);
-    return row?.json_dump
-      ? this.parseJsonDumpToCovidReport(row.json_dump)
-      : undefined;
+    const rows = await this.db.getAll(SELECT_COVID_REPORT, [passcode]);
+    if (rows?.length) {
+      return this.parseJsonDumpToCovidReport(rows.pop().json_dump);
+    }
+    return undefined;
   }
 
   async countNumberOfReports(): Promise<number | undefined> {
