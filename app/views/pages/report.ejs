@@ -5,6 +5,7 @@
   const postalCode = profile && locals.profile.postalCode;
   const sex = profile && locals.profile.sex;
   const hasBeenTested = profile && locals.profile.hasBeenTested;
+  const hasBeenInContactWithInfected = profile && locals.profile.hasBeenInContactWithInfected;
   const symptomStart = profile && locals.profile.symptomStart;
   const testResult = profile && locals.profile.testResult;
   const symptoms = profile && locals.profile.symptoms;
@@ -24,7 +25,9 @@
 
 <!DOCTYPE html>
 <html lang="no">
+<head>
 <%- include('partials/head') -%>
+</head>
 <body>
   <%- include('partials/disclaimer') -%>
   <%- include('partials/menu') -%>
@@ -42,7 +45,7 @@
             <div class="info-box__content">
               <p class="info-box__bolder">Mørketallene på smittede i Norge er store.</p>
               <p class="info-box__bolder">Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset i landet vårt.</p>
-              <p>Nettsiden er laget i dugnadsånd av et lite konsulentselskap i samarbeid med frivillige.</p>
+              <p>Nettsiden er laget i dugnadsånd av et lite konsulentselskap i samarbeid med frivillige. <br/>NB! Rapportering er frivillig.</p>
             </div>
           </div>
           <div class="info-box stats" id="total-reports">
@@ -69,11 +72,13 @@
           <div class="alert alert-success" role="alert">
             Takk for ditt svar! Husk å oppdatere skjemaet på denne lenken hvis helsetilstanden din skulle endre seg: <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>. 
           </div>
+        <% } else { %>
+          <p class="slogan">Bli med på Norges viktigste dugnad!</p>
         <% } %>
         <form method="post" action="/">
           <h2>Geografi og demografi</h2>
           <div class="row">
-            <div class="col-5 col-12-small">
+            <div class="col-5 col-12-small input-block">
               <label class="with-top-margin" for="age">Din alder</label>
               <select required name="age" id="Age">
                 <option value="" disabled selected>Velg din alder</option>
@@ -84,7 +89,7 @@
                 <% } %>
               </select>
             </div>
-            <div class="col-5 col-12-small">
+            <div class="col-5 col-12-small input-block">
               <label  class="with-top-margin">Biologisk kjønn</label>
               <div class="row">
                 <div class="col-6">
@@ -99,14 +104,29 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-5 col-12-small">
+            <div class="col-5 col-12-small input-block">
               <label class="with-top-margin" for="postal-code">Postnummer</label>
               <input required type="text" pattern="[0-9]{4}" maxlength="4" name="postal-code" id="postal-code" placeholder="1234" value="<%= postalCode %>">
             </div>
           </div>
           <h2>Testing og symptomper</h2>
           <div class="row">
-            <div class="col-5 col-12-small">
+            <div class="col-10 col-12-small input-block">
+              <label  class="with-top-margin">Har du vært i <a target="_blank" href="https://www.fhi.no/nettpub/coronavirus/helsepersonell/definisjoner-av-mistenkte-og-bekreftede-tilfeller-med-koronavirus-coronavir/">nærkontakt</a> med noen som har testet positivt på COVID-19?</label>
+              <div class="row">
+                <div class="col-3">
+                  <input required type="radio" id="been-in-contact-with-yes" name="been-in-contact-with" value="yes" <%= hasBeenInContactWithInfected ? 'checked' : '' %>>
+                  <label for="been-in-contact-with-yes">Ja</label>
+                </div>
+                <div class="col-3">
+                  <input required type="radio" id="been-in-contact-with-no" name="been-in-contact-with" value="no" <%= hasBeenInContactWithInfected === false ? 'checked' : '' %>>
+                  <label for="been-in-contact-with-no">Nei</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-5 col-12-small input-block">
               <label  class="with-top-margin">Har du blitt testet for COVID-19?</label>
               <div class="row">
                 <div class="col-6">
@@ -119,7 +139,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-5 col-12-small" id="test-result-question" style="display:none">
+            <div class="col-5 col-12-small input-block" id="test-result-question" style="display:none">
               <label  class="with-top-margin">Hva var svaret på testen?</label>
               <div class="row">
                 <div class="col-12">
@@ -138,7 +158,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-5 col-12-small">
+            <div class="col-5 col-12-small input-block">
               <label class="with-top-margin">Symptomer du har hatt</label>
               <p class="info">Ikke velg noen dersom du ikke har hatt symptomer</p>
               <div class="row">
@@ -176,7 +196,7 @@
                 </div>
               </div>
             </div>
-            <div id="symptom-start-question" class="col-5 col-12-small" style="display: none;">
+            <div id="symptom-start-question" class="col-5 col-12-small input-block" style="display: none;">
               <label class="with-top-margin" for="symptom-start">Når startet symptomene?</label>
               <input type="date" name="symptom-start" id="symptom-start" value="<%= symptomStart %>">
             </div>
@@ -184,13 +204,13 @@
           <h2>Hvordan blir dataene mine brukt?</h2>
           <p class="privacy-info-text">Dine helseopplysninger blir lagret anonymisert, og kan ikke kobles til deg.<br/><a target="_blank" href="/personvern">Vår personvernerklæring finner du her</a>.</p>
           <div class="row">
-            <div class="col-12">
+            <div class="col-12 input-block">
               <input required type="checkbox" id="accept-privacy-policy" name="accept-privacy-policy" <%= passcode ? 'checked' : '' %>>
               <label for="accept-privacy-policy" class="normal-font">Jeg godtar at mine data lagres i henhold til personvernerklæringen</label>
             </div>
           </div>
           <div class="row">
-            <div class="col-12">
+            <div class="col-12 input-block">
               <ul class="actions">
                 <li>
                   <input type="hidden" name="passcode" value="<%= passcode %>" />
@@ -206,7 +226,9 @@
   </div>
   <script>
     // Remove query params from url
-    window.history.replaceState({}, document.title, window.location.pathname);
+    if (window.history.replaceState) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
   </script>
   <script src="/static/form.js"></script>
   <script src="/static/hamburger-menu.js"></script>

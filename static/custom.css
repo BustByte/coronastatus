@@ -112,16 +112,14 @@ input[type='checkbox'] + label.normal-font {
   align-items: center;
 }
 
-.menu .logo__text {
-  margin-left: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 700;
+.menu > a {
+  display: flex;
   text-decoration: none;
 }
 
 .menu .logo img {
-  width: 50px;
-  height: auto;
+  width: auto;
+  height: 50px;
 }
 
 .menu.wrapper {
@@ -368,4 +366,19 @@ p.subtitle {
   .hamburger-menu {
     display: none !important;
   }
+}
+
+.input-block {
+  padding-bottom: 1rem;
+}
+
+label i {
+  font-size: 0.75rem;
+  color: #848484;
+}
+
+p.slogan {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin: 2rem 0 0;
 }

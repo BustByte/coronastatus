@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="no">
+  <head>
   <%- include('partials/head') -%>
+  </head>
   <body>
     <%- include('partials/disclaimer') -%>
     <%- include('partials/menu') -%>
@@ -40,7 +42,9 @@
     </div>
     <script>
       // Remove query params from url
-      window.history.replaceState({}, document.title, window.location.pathname);
+      if (window.history.replaceState) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
     </script>
     <script src="/static/hamburger-menu.js"></script>
   </body>
