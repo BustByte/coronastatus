@@ -41,7 +41,9 @@
     </div>
     <script>
       // Remove query params from url
-      window.history.replaceState({}, document.title, window.location.pathname);
+      if (window.history.replaceState) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
     </script>
   </body>
 </html>
