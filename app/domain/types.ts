@@ -1,15 +1,16 @@
 export interface CovidReport {
-  yearOfBirth: string;
+  yearOfBirth?: string; // Deprecated
   sex: Sex;
   postalCode: string;
   hasBeenTested: boolean;
   testedAt?: Date; // YYYY-MM-DD
   symptomStart?: string; // YYYY-MM-DD
   testResult?: TestResult;
-  inQuarantine?: Boolean;
+  inQuarantine?: boolean;
   hasBeenAbroadLastTwoWeeks: boolean;
   symptoms: { [key in Symptom]: boolean };
   submissionTimestamp: number;
+  age: string;
 }
 
 export enum Sex {

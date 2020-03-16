@@ -1,7 +1,7 @@
 <%
   const profile = locals.profile;
   const passcode = locals.passcode;
-  const yearOfBirth = profile && locals.profile.yearOfBirth;
+  const age = profile && locals.profile.age;
   const postalCode = profile && locals.profile.postalCode;
   const sex = profile && locals.profile.sex;
   const hasBeenTested = profile && locals.profile.hasBeenTested;
@@ -51,11 +51,13 @@
             <form method="post" action="/">
               <div class="row gtr-uniform">
                 <div class="col-12">
-                  <label for="birth-year">Fødselsår</label>
-                  <select required name="birth-year" id="birth-year">
-                    <option value="" disabled selected>- Fødselsår -</option>
-                    <% for(var i=2020; i>1909; i--) {%>
-                      <option value="<%= i %>" <%= yearOfBirth === `${i}` ? 'selected' : '' %>><%= i %></option>
+                  <label for="age">Alder</label>
+                  <select required name="age" id="Age">
+                    <option value="" disabled selected>Velg din alder</option>
+                    <% for(var i=0; i<100; i+=10) {
+                      const ageSpan = `${i} - ${i + 9}`;
+                    %>
+                      <option value="<%= ageSpan %>" <%= age === `${ageSpan}` ? 'selected' : '' %>><%= ageSpan %></option>
                     <% } %>
                   </select>
                 </div>

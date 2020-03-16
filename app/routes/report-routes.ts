@@ -53,7 +53,7 @@ router.post('/', async (req, res) => {
     return res.render('pages/report', { didNotAcceptPrivacyPolicy: true });
   }
   const covidReport: CovidReport = {
-    yearOfBirth: req.body['birth-year'],
+    age: req.body['age'],
     postalCode: req.body['postal-code'],
     hasBeenTested: req.body['been-tested'] === 'yes',
     testResult: extractTestResult(req),
