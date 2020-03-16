@@ -10,12 +10,14 @@
     "serve": "NODE_ENV=production ts-node app/server.ts"
   },
   "dependencies": {
+    "@types/express-rate-limit": "^5.0.0",
     "@types/sqlite3": "^3.1.6",
     "body-parser": "^1.19.0",
     "connect-sqlite3": "^0.9.11",
     "crypto": "^1.0.1",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "express-rate-limit": "^5.1.1",
     "express-session": "^1.17.0",
     "node-fetch": "^2.6.0",
     "sqlite3": "^4.1.1",

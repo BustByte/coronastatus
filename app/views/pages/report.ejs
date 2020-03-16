@@ -7,8 +7,6 @@
   const hasBeenTested = profile && locals.profile.hasBeenTested;
   const symptomStart = profile && locals.profile.symptomStart;
   const testResult = profile && locals.profile.testResult;
-  const inQuarantine = profile && locals.profile.inQuarantine;
-  const hasBeenAbroadLastTwoWeeks = profile && locals.profile.hasBeenAbroadLastTwoWeeks;
   const symptoms = profile && locals.profile.symptoms;
   const symptomDryCough = symptoms && symptoms['DRY_COUGH'];
   const symptomFatigue = symptoms && symptoms['EXHAUSTION'];
@@ -41,8 +39,8 @@
               </div>
             </div>
             <div class="info-box__content">
-              <p class="info-box__bolder">Mørketallene på smittede er store.</p>
-              <p class="info-box__bolder">Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset.</p>
+              <p class="info-box__bolder">Mørketallene på smittede i Norge er store.</p>
+              <p class="info-box__bolder">Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset i landet vårt.</p>
               <p>Nettsiden er laget i dugnadsånd av et lite konsulentselskap i samarbeid med frivillige.</p>
             </div>
           </div>
@@ -72,7 +70,7 @@
           </div>
         <% } %>
         <form method="post" action="/">
-          <h2>Geografisk og demografisk</h2>
+          <h2>Geografi og demografi</h2>
           <div class="row">
             <div class="col-5 col-12-small">
               <label class="with-top-margin" for="age">Din alder</label>
@@ -103,19 +101,6 @@
             <div class="col-5 col-12-small">
               <label class="with-top-margin" for="postal-code">Postnummer</label>
               <input required type="text" pattern="[0-9]{4}" maxlength="4" name="postal-code" id="postal-code" placeholder="1234" value="<%= postalCode %>">
-            </div>
-            <div class="col-5 col-12-small">
-              <label  class="with-top-margin">Har du vært i utlandet de siste to ukene?</label>
-              <div class="row">
-                <div class="col-6">
-                  <input required type="radio" id="been-abroad-yes" name="been-abroad" value="yes" <%= hasBeenAbroadLastTwoWeeks ? 'checked' : '' %>>
-                  <label for="been-abroad-yes">Ja</label>
-                </div>
-                <div class="col-6">
-                  <input required type="radio" id="been-abroad-no" name="been-abroad" value="no" <%= hasBeenAbroadLastTwoWeeks === false ? 'checked' : '' %>>
-                  <label for="been-abroad-no">Nei</label>
-                </div>
-              </div>
             </div>
           </div>
           <h2>Testing og symptomper</h2>
@@ -193,22 +178,6 @@
             <div id="symptom-start-question" class="col-5 col-12-small" style="display: none;">
               <label class="with-top-margin" for="symptom-start">Når startet symptomene?</label>
               <input type="date" name="symptom-start" id="symptom-start" value="<%= symptomStart %>">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-5 col-12-small">
-              <label class="with-top-margin">Sitter du i lovpålagt karantene?</label>
-              <p class="info">Reglene for karantene finner du <a href="https://helsenorge.no/koronavirus/karantene-og-isolasjon" target="_blank">her</a></p>
-              <div class="row">
-                <div class="col-6">
-                  <input required type="radio" id="in-quarantine-yes" name="in-quarantine" value="yes" <%= inQuarantine ? 'checked' : '' %>>
-                  <label for="in-quarantine-yes">Ja</label>
-                </div>
-                <div class="col-6">
-                  <input required type="radio" id="in-quarantine-no" name="in-quarantine" value="no" <%= inQuarantine === false ? 'checked' : '' %>>
-                  <label for="in-quarantine-no">Nei</label>
-                </div>
-              </div>
             </div>
           </div>
           <h2>Hvordan blir dataene mine brukt?</h2>
