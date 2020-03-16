@@ -3,3 +3,4 @@ create table if not exists covid_report (
   json_dump varchar not null
 );
 
+PRAGMA journal_mode=WAL;
