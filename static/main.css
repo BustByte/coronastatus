@@ -2553,7 +2553,7 @@ table.alt tbody tr td {
 .wrapper > .inner {
   margin: 0 auto;
   max-width: 65rem;
-  width: calc(100% - 4rem);
+  width: calc(100% - 2rem);
 }
 .wrapper.alt {
   padding-bottom: 1rem;
@@ -2583,7 +2583,7 @@ table.alt tbody tr td {
   }
   .wrapper > .inner {
     max-width: 75rem;
-    width: calc(100% - 8rem);
+    width: calc(100% - 4rem);
   }
 }
 @media screen and (max-width: 980px) {
@@ -2596,7 +2596,7 @@ table.alt tbody tr td {
     padding: 2rem 0 3rem 0;
   }
   .wrapper > .inner {
-    width: calc(100% - 6rem);
+    width: calc(100% - 3rem);
   }
   .wrapper.alt {
     padding-bottom: 0;
@@ -2607,7 +2607,7 @@ table.alt tbody tr td {
     padding: 2rem 0 2rem 0;
   }
   .wrapper > .inner {
-    width: calc(100% - 4rem);
+    width: calc(100% - 2rem);
   }
 }
 @-webkit-keyframes gallery-modal-spinner {
@@ -3572,7 +3572,7 @@ body.is-preload #banner .bg {
   #banner .inner {
     margin: 0 auto;
     max-width: 75rem;
-    width: calc(100% - 8rem);
+    width: calc(100% - 4rem);
   }
   #banner h1 {
     font-size: 4rem;
@@ -3625,7 +3625,7 @@ body.is-preload #banner .bg {
     padding-bottom: 2rem;
   }
   #banner .inner {
-    width: calc(100% - 6rem);
+    width: calc(100% - 3rem);
   }
   #banner .content p {
     padding-top: 2rem;
