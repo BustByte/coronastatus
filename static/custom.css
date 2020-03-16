@@ -128,7 +128,7 @@ input[type='checkbox'] + label.normal-font {
   padding: 2rem 0;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 850px) {
   .menu__links {
     display: none;
   }
@@ -316,4 +316,56 @@ p.subtitle {
 #link-to-be-copied {
   max-width: 100%;
   word-break: break-all;
+}
+
+#hamburger-menu-button {
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger-menu {
+  display: none;
+  overflow: hidden;
+  height: 0;
+  background-color: #ffeb3b;
+  transition: height .3s;
+}
+
+.hamburger-menu.active {
+  display: block;
+}
+
+.hamburger-menu .inner{
+  padding: .5em;
+}
+
+.hamburger-menu ul {
+  list-style-type: none;
+}
+
+.hamburger-menu a {
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.hamburger-menu a.active {
+  font-weight: 600;
+}
+
+.hamburger-menu a:hover {
+  border-bottom: 3px solid #ff6666;
+}
+
+@media (max-width: 850px) {
+  #hamburger-menu-button {
+    display: block;
+  }
+}
+
+@media (min-width: 850px) {
+  .hamburger-menu {
+    display: none !important;
+  }
 }

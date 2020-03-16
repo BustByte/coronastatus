@@ -28,6 +28,7 @@
 <body>
   <%- include('partials/disclaimer') -%>
   <%- include('partials/menu') -%>
+  <%- include('partials/hamburger-menu') -%>
   <div id="page-wrapper">
     <section id="main" class="wrapper">
       <div class="inner">
@@ -66,7 +67,7 @@
         <h1><%= profile ? 'Din helsetilstand' : 'Rapporter din helsetilstand' %></h1>
         <% if(locals.success) {%>
           <div class="alert alert-success" role="alert">
-            Takk for ditt svar! Husk å oppdatere skjemaet på denne lenken hvis helsetilstanden din skulle endre seg: <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>. 
+            Takk for ditt svar! Husk å oppdatere skjemaet på denne lenken hvis helsetilstanden din skulle endre seg: <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>.
           </div>
         <% } %>
         <form method="post" action="/">
@@ -208,5 +209,6 @@
     window.history.replaceState({}, document.title, window.location.pathname);
   </script>
   <script src="/static/form.js"></script>
+  <script src="/static/hamburger-menu.js"></script>
 </body>
 </html>
