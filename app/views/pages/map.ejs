@@ -5,7 +5,6 @@
         <title>Coronastatus</title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
         <script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
-        <link href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css" rel="stylesheet" />
         <style>
             body { margin: 0; padding: 0; }
             #map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -30,6 +29,19 @@
                 border-radius: 3px;
                 padding: 10px;
                 margin-bottom: 10px;
+            }
+
+            .map-overlay-bottom {
+                font: 11px Arial;
+                color: #fff;
+                position: fixed;
+                height: 20px;
+                bottom: 5px;
+                right: 10px;
+            }
+
+            .map-overlay-bottom a {
+                color: #fff;
             }
 
             .map-overlay h2 {
@@ -69,6 +81,7 @@
         <div class="map-overlay top">
             <div class="map-overlay-inner">
                 <h2>Rapportert status per postnummer</h2>
+                <p>Punktene vises på oppgitt postnummer, der hvert postnummer er assosiert med en koordinat.<p>
                 <label id="month"></label>
             </div>
             <div class="map-overlay-inner">
@@ -81,6 +94,9 @@
                     <div class="positive"></div>
                 </div>
             </div>
+        </div>
+        <div class="map-overlay-bottom">
+            <p>Koordinater hentet fra <a href="http://www.erikbolstad.no/geo/noreg/postnummer/">erikbolstad.no/postnummer/</a></p>
         </div>
         <script src="https://d3js.org/d3.v4.js"></script>
         <script>
