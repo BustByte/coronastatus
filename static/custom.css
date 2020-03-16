@@ -321,3 +321,8 @@ p.subtitle {
 .input-block {
   padding-bottom: 1rem;
 }
+
+label i {
+  font-size: 0.75rem;
+  color: #848484;
+}

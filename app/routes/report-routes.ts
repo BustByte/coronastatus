@@ -102,6 +102,7 @@ router.post('/', createReportRateLimit, async (req, res) => {
       [Symptom.SORE_THROAT]: req.body['symptom-sore-throat'] === 'on'
     },
     symptomStart: req.body['symptom-start'],
+    hasBeenInContactWithInfected: req.body['been-in-contact-with'] === 'yes',
     submissionTimestamp: new Date().getTime()
   };
   const passcode = req.body['passcode'] || passcodeCreator.createPasscode();
