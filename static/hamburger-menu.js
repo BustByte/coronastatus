@@ -1,7 +1,7 @@
-const hamburgerMenuButton = document.getElementById('hamburger-menu-button');
+var hamburgerMenuButton = document.getElementById('hamburger-menu-button');
 
 hamburgerMenuButton.addEventListener('click', function() {
-  const hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
+  var hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
 
   if (hamburgerMenu.classList.contains('active')) {
     hamburgerMenu.style.height = '';
