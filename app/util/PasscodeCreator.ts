@@ -5,17 +5,11 @@ const hasEnglishCharsOnly = (word: string): boolean => {
   return word.match('^[a-zA-Z]+$') !== null;
 };
 class PasscodeCreator {
-  availableWords: string[];
-  digitsInNumber: number;
-  separator: string;
+  private availableWords: string[];
+  private separator: string;
 
-  constructor(
-    filePath = '../../wordList.txt',
-    digitsInNumber = 2,
-    separator = '-'
-  ) {
+  constructor(filePath = '../../wordList.txt', separator = '-') {
     this.availableWords = this.readAvailableWordsFromFile(filePath);
-    this.digitsInNumber = digitsInNumber;
     this.separator = separator;
   }
 
@@ -29,14 +23,12 @@ class PasscodeCreator {
     return this.availableWords[randomIndex];
   }
 
-  private getRandomDigitString(
-    digitsInNumber: number = this.digitsInNumber
-  ): string {
-    return `${Math.random()}`.substring(2, 2 + digitsInNumber);
-  }
-
   createPasscode(): string {
-    return `${this.selectRandomWord()}-${this.selectRandomWord()}-${this.getRandomDigitString()}`;
+    return [
+      this.selectRandomWord(),
+      this.selectRandomWord(),
+      this.selectRandomWord()
+    ].join(this.separator);
   }
 }
 
