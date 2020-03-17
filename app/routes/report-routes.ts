@@ -1,16 +1,26 @@
 import express, { Request } from 'express';
+import rateLimit from 'express-rate-limit';
 import { Symptom, CovidReport, Sex, TestResult } from '../domain/types';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
 import { getPasscodeCreator } from '../util/PasscodeCreator';
 import { aggregateCovidReports } from '../util/report-aggregator';
+
+function determineRemoteAddress(req: Request): string {
+  const ipWithPort =
+    (req.headers['x-real-ip'] as string) || req.connection.remoteAddress;
+  if (ipWithPort) {
+    const [ipWithoutPort] = ipWithPort.split(':');
+    console.log(ipWithoutPort);
+    return ipWithoutPort;
+  }
+  return req.ip;
+}
 
 const router = express.Router();
 const reportRepo = new CovidReportRepository();
 const passcodeCreator = getPasscodeCreator();
 
 router.get('/', async (req, res) => {
-  res.locals.metaDescription =
-    'Her kan du legge inn informasjon om din helsetilstand, slik at vi kan få en bedre oversikt over totalbildet i Norge.';
   const reports = await reportRepo.getLatestCovidReports();
   const aggregated = aggregateCovidReports(reports);
   return res.render('pages/report', { aggregated });
@@ -29,9 +39,6 @@ router.get('/helsetilstand/:passcode', async (req, res) => {
   }
   const profile = await reportRepo.getCovidReportByPasscode(passcode);
   if (profile) {
-    res.locals.metaDescription =
-      'Her kan du legge inn informasjon om din helsetilstand, slik at vi kan få en bedre oversikt over totalbildet i Norge.';
-
     const reports = await reportRepo.getLatestCovidReports();
     const aggregated = aggregateCovidReports(reports);
     return res.render('pages/report', {
@@ -58,7 +65,13 @@ const extractTestResult = (req: Request): TestResult | undefined => {
   return undefined;
 };
 
-router.post('/', async (req, res) => {
+const createReportRateLimit = rateLimit({
+  max: 20, // allowed requests per window
+  windowMs: 24 * 60 * 60 * 1000, // 24 hour window,
+  keyGenerator: req => determineRemoteAddress(req)
+});
+
+router.post('/', createReportRateLimit, async (req, res) => {
   const acceptPrivacyPolicy = req.body['accept-privacy-policy'] === 'on';
   if (!acceptPrivacyPolicy) {
     const reports = await reportRepo.getLatestCovidReports();
@@ -84,9 +97,8 @@ router.post('/', async (req, res) => {
       [Symptom.HEADACHE]: req.body['symptom-headache'] === 'on',
       [Symptom.SORE_THROAT]: req.body['symptom-sore-throat'] === 'on'
     },
-    inQuarantine: req.body['in-quarantine'] === 'yes',
-    hasBeenAbroadLastTwoWeeks: req.body['been-abroad'] === 'yes',
     symptomStart: req.body['symptom-start'],
+    hasBeenInContactWithInfected: req.body['been-in-contact-with'] === 'yes',
     submissionTimestamp: new Date().getTime()
   };
   const passcode = req.body['passcode'] || passcodeCreator.createPasscode();

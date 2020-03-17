@@ -3,11 +3,10 @@ export interface CovidReport {
   sex: Sex;
   postalCode: string;
   hasBeenTested: boolean;
+  hasBeenInContactWithInfected: boolean;
   testedAt?: Date; // YYYY-MM-DD
   symptomStart?: string; // YYYY-MM-DD
   testResult?: TestResult;
-  inQuarantine?: boolean;
-  hasBeenAbroadLastTwoWeeks: boolean;
   symptoms: { [key in Symptom]: boolean };
   submissionTimestamp: number;
   age: string;

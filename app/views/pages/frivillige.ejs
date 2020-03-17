@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="no">
-<%- include('partials/head') -%>
+<head>
+  <%- include('partials/head') -%>
+</head>
 <body>
   <%- include('partials/disclaimer') -%>
-  <div id="page-wrapper">
-    <section id="main" class="wrapper style2">
+  <%- include('partials/menu') -%>
+    <div id="page-wrapper">
+      <section id="main" class="wrapper">
         <div class="inner privacy-policy">
-            <header class="major special">
-                <h1>Frivillige utviklere:</h1>
-            </header>
-            <h3>Ola Normann</h3>
-            <p>Ola jobber for Bedrift AS, og koder best når har har tilgang på grovbrød og brunost</p>
-
+            <h1>Bidragsytere</h1>
+            <p class="with-top-margin">Denne nettsiden er laget med god hjelp fra frivillige. I tilfeldig rekkefølge:</p>
+            <ul>
+              <li>Kristoffer Sundmyhr</li>
+              <li>Jan Magne Andersen</li>
+              <li>Arild Øren Wanvik</li>
+              <li>Marius Kalvø</li>
+              <li>Rina Andriana</li>
+              <li>William Benjamin Rode</li>
+              <li>Kai H T Mortensen-Langhaug</li>
+              <li><a target="_blank" href="https://github.com/BustByte/coronastatus.no/graphs/contributors">...og flere</a></li>
+            </ul>
+            <p>Koden for nettsiden finnes <a href="https://github.com/BustByte/coronastatus.no">her</a>.
         </div>
     </section>
+    <%- include('partials/footer') -%>
   </div>
 </body>
 </html>

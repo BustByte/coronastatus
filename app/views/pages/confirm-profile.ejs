@@ -4,7 +4,9 @@
 
 <!DOCTYPE html>	
 <html lang="no">	
+<head>
 <%- include('partials/head') -%>	
+</head>
 <body>
   <%- include('partials/disclaimer') -%>
   <%- include('partials/menu') -%>
@@ -16,7 +18,7 @@
             <h1>Før du går videre må du ta vare på følgende lenke</h1>
             <p class="subtitle">
               Lagre den følgende lenken et sted, eller opprett et bokmerke til siden.<br/>
-              Da kan du gå inn å endre din helsetilstand dersom den endrer seg.
+              Da kan du gå inn og endre din helsetilstand dersom den endrer seg.
             </p>
             <div class="profile-url">
               <span id="link-to-be-copied">coronastatus.no/helsetilstand/<%= passcode %></span>
@@ -51,8 +53,10 @@
   </div>	
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
   <script>	
-    // Remove query params from url	
-    window.history.replaceState({}, document.title, window.location.pathname);
+    // Remove query params from url
+    if (window.history.replaceState) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
 
     var clipboard = new ClipboardJS('#profile-url-id');
     var statusText = document.getElementById("profile-copy-status-text");
@@ -75,8 +79,10 @@
         setStatusAlert(statusText,'Klarte ikke å kopiere linke til utklippstavlen. Skriv ned linken selv.','alert-error');
       }
     });
-
-  </script>	
-  
+  </script>
+  <script>
+    // This is done so that we can show a hint on the front page that a profile might exist, when entering from the same browser at a later time.
+    window.localStorage.setItem("hasSubmittedProfile", "true");
+  </script>
 </body>	
 </html>
