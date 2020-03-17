@@ -253,6 +253,7 @@
     </section>
     <%- include('partials/footer') -%>
   </div>
+  <script src="/static/form.js"></script>
   <script>
     function hasSubmittedAlertOnClick() {
         document.getElementById('has-submitted-alert').style.display = 'none';
@@ -264,12 +265,20 @@
         && window.location.pathname.indexOf("helsetilstand") === -1) {
         document.getElementById('has-submitted-alert').style.display = 'flex';
     }
+
+    var symptoms = document.querySelectorAll('input[name^="symptom-"]:checked');
+
+    if (symptoms != null && symptoms.length > 0) {
+      document.getElementById('symptom-start-question').style.display = 'block';
+    }
+    
+    changeTestResultDisplay(document.getElementById("been-tested-yes").checked);
+
     // Remove query params from url
     if (window.history.replaceState) {
       window.history.replaceState({}, document.title, window.location.pathname);
     }
   </script>
-  <script src="/static/form.js"></script>
   <script src="/static/hamburger-menu.js"></script>
 </body>
 </html>
