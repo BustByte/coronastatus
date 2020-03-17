@@ -6,6 +6,8 @@
           <h1>Statistikk</h1>
           <h2>Symptomer</h2>
           <canvas id="symptomsChart"></canvas>
+          <h2>Antall rapporteringer</h2>
+          <canvas id="totalReportsChart"></canvas>
         </div>
         <section>
     </div>
@@ -26,6 +28,40 @@
           }]
         },
         options: {}
+      });
+    </script>
+    <script>
+      /* Number of reports */
+      var ctx = document.getElementById('totalReportsChart').getContext('2d');
+      var totalReportStats = <%- JSON.stringify(locals.totalReportStats) %>;
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          datasets: [
+            {
+              label: 'Rapporteringer med symptomer',
+              data: totalReportStats.numberOfReportsWithSymptomsStat,
+              backgroundColor: 'salmon',
+            },
+            {
+              label: 'Rapporteringer',
+              data: totalReportStats.numberOfReportsStat,
+              backgroundColor: 'lightblue'
+            }
+          ]
+        },
+        options: {
+          scales: {
+            xAxes: [{
+              type: 'time',
+              time: {
+                displayFormats: {
+                   hour: 'HH:mm'
+                }
+              }
+            }]
+          }
+        }
       });
     </script>
     <%- include('partials/footer') -%> </body>

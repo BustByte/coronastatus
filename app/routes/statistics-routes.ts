@@ -1,6 +1,6 @@
 import express from 'express';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
-import { CovidReport, Symptom } from '../domain/types';
+import { CovidReport, Symptom, Symptoms } from '../domain/types';
 
 const router = express.Router();
 const reportRepo = new CovidReportRepository();
@@ -8,6 +8,16 @@ const reportRepo = new CovidReportRepository();
 interface SymptomStats {
   labels: string[];
   values: number[];
+}
+
+interface DateStat {
+  x: Date;
+  y: number;
+}
+
+interface TotalReportsStats {
+  numberOfReportsStat: DateStat[];
+  numberOfReportsWithSymptomsStat: DateStat[];
 }
 
 const symptomToLabelMap = {
@@ -58,6 +68,54 @@ function groupBySymptoms(reports: CovidReport[]): SymptomStats {
   };
 }
 
+const hasSymptoms = (symptoms: Symptoms): boolean =>
+  (Object.keys(symptoms) as Symptom[]).some(key => !!symptoms[key]);
+
+function addMissingTimestamps(reports: CovidReport[]): CovidReport[] {
+  const missingTimestampRange = [1584284400000, 1584316799000];
+  const reportsMissingTimestamp = reports.filter(
+    report => !report.submissionTimestamp
+  );
+  const timeBetweenReports =
+    (missingTimestampRange[0] - missingTimestampRange[1]) /
+    reportsMissingTimestamp.length;
+  let index = 0;
+  return reports.map(report => {
+    if (!report.submissionTimestamp) {
+      index += 1;
+      return {
+        ...report,
+        submissionTimestamp:
+          missingTimestampRange[0] + index * timeBetweenReports
+      };
+    }
+    return report;
+  });
+}
+
+function calculateTotalReportsStats(reports: CovidReport[]): TotalReportsStats {
+  const reportsSortedByTimestamp = addMissingTimestamps(reports).sort(
+    (a, b) => a.submissionTimestamp - b.submissionTimestamp
+  );
+  const numberOfReportsStat = reportsSortedByTimestamp.map(
+    (report, reportIndex) => ({
+      x: new Date(report.submissionTimestamp),
+      y: reportIndex
+    })
+  );
+  const numberOfReportsWithSymptomsStat = reportsSortedByTimestamp
+    .filter(report => hasSymptoms(report.symptoms))
+    .map((report, reportIndex) => ({
+      x: new Date(report.submissionTimestamp),
+      y: reportIndex
+    }));
+
+  return {
+    numberOfReportsStat,
+    numberOfReportsWithSymptomsStat
+  };
+}
+
 router.get('/data', async (req, res) => {
   const allReports = await reportRepo.getLatestCovidReports();
   res.send(allReports);
@@ -66,7 +124,8 @@ router.get('/data', async (req, res) => {
 router.get('/', async (req, res) => {
   const allReports = await reportRepo.getLatestCovidReports();
   const symptomStats = groupBySymptoms(allReports);
-  return res.render('pages/statistics', { symptomStats });
+  const totalReportStats = calculateTotalReportsStats(allReports);
+  return res.render('pages/statistics', { symptomStats, totalReportStats });
 });
 
 export default router;
