@@ -48,3 +48,18 @@ export interface AggregatedCovidReportData {
   numberOfConfirmedInfected: number;
   numberOfTested: number;
 }
+
+export interface SymptomStats {
+  labels: string[];
+  values: number[];
+}
+
+export interface DateStat {
+  x: Date;
+  y: number;
+}
+
+export interface TotalReportsStats {
+  numberOfReportsStat: DateStat[];
+  numberOfReportsWithSymptomsStat: DateStat[];
+}
