@@ -4,7 +4,8 @@ import {
   Symptoms,
   TotalReportsStats,
   SymptomStats,
-  DateStat
+  DateStat,
+  InContactWithInfectedStat
 } from '../domain/types';
 
 const symptomToLabelMap = {
@@ -108,5 +109,26 @@ export function calculateTotalReportsStats(
   return {
     numberOfReportsStat,
     numberOfReportsWithSymptomsStat
+  };
+}
+
+export function getInContactWithInfectedStats(
+  reports: CovidReport[]
+): InContactWithInfectedStat {
+  const inContactWithInfected = reports.filter(
+    report => !!report.hasBeenInContactWithInfected
+  );
+
+  const numberOfPeopleShowingSymptoms = inContactWithInfected.filter(report =>
+    hasSymptoms(report.symptoms)
+  ).length;
+
+  const numberOfPeopleWithoutSymptoms =
+    inContactWithInfected.length - numberOfPeopleShowingSymptoms;
+
+  return {
+    numberOfPeopleShowingSymptoms,
+    numberOfPeopleWithoutSymptoms,
+    total: inContactWithInfected.length
   };
 }
