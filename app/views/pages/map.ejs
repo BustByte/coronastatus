@@ -112,24 +112,13 @@
                 hash: true
             });
 
-            function Attributions() { }
-            Attributions.prototype.onAdd = function(map) {
-                this._map = map;
-                this._container = document.createElement('div');
-                this._container.className = 'mapboxgl-ctrl';
-                this._container.innerHTML = "<a href='http://www.erikbolstad.no/geo/noreg/postnummer/'>postnummerinfo</a>" +
-                    " © <a href='https://www.mapbox.com/about/maps/'>Mapbox</a>" +
-                    " © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>";
-                return this._container;
-            };
-            Attributions.prototype.onRemove = function () {
-                 this._container.parentNode.removeChild(this._container);
-                 this._map = undefined;
-            };
-            var attributions = new Attributions();
-
-            map.on('load', function(){
-                map.addControl(attributions, 'bottom-right');
+            map.on('load', function() {
+                var attributions = document.getElementsByClassName("mapboxgl-ctrl-attrib-inner")[0]
+                let newAttrib = document.createElement("a")
+                newAttrib.href = "http://www.erikbolstad.no/geo/noreg/postnummer/";
+                newAttrib.innerText = "Postnummerinfo "
+                attributions.insertBefore(newAttrib,  attributions.firstChild)
+                attributions.insertBefore(newAttrib2, attributions.firstChild)
             });
 
             const positive = ['==', ['get', 'state'], 'POSITIVE'];
