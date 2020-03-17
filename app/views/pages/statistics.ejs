@@ -1,11 +1,61 @@
+<%
+  const peopleInContactWithInfected = locals.InContactWithInfectedStats.total;
+%>
 <!DOCTYPE html>
-<html> <%- include('partials/head') -%> <body> <%- include('partials/disclaimer') -%> <%- include('partials/menu') -%>
+<html>
+  <%- include('partials/head') -%>
+   <body>
+    <%- include('partials/disclaimer') -%>
+    <%- include('partials/menu') -%>
+    <%- include('partials/hamburger-menu') -%>
     <div id="page-wrapper">
       <section id="main" class="wrapper">
         <div class="inner">
           <h1>Statistikk</h1>
           <h2>Symptomer</h2>
           <canvas id="symptomsChart"></canvas>
+          <p style="margin-bottom: 0.5rem;">PS: Noen symptomer var ikke en del av skjema fra starten av:</p>
+          <div style="max-width: 500px" class="table-wrapper">
+            <table class="alt compact">
+              <thead>
+                <tr>
+                  <th>Symptom</th>
+                  <th>Lagt til i skjema</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Hodepine</td>
+                  <td>16. mars kl. 00:23</td>
+                </tr>
+                <tr>
+                  <td>Vondt i halsen</td>
+                  <td>16. mars kl. 00:23</td>
+                </tr>
+                <tr>
+                  <td>Tap av smakssans</td>
+                  <td>17. mars kl. 10:26</td>
+                </tr>
+                <tr>
+                  <td>Tap av luktesans</td>
+                  <td>17. mars kl. 10:26</td>
+                </tr>
+                <tr>
+                  <td>Slimhoste</td>
+                  <td>17. mars kl. 16:28</td>
+                </tr>
+                <tr>
+                  <td>Tett eller rennende nese</td>
+                  <td>17. mars kl. 16:28</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h2>Antall rapporteringer</h2>
+          <canvas id="totalReportsChart"></canvas>
+          <h2>Nærkontakt med smittede</h2>
+          <p>Totalt har <%= peopleInContactWithInfected %> personer rapportert at de har hatt nærkontakt med en person som har testet positivt på COVID-19.</p>
+          <canvas id="inContactWithInfectedChart"></canvas>
         </div>
         <section>
     </div>
@@ -28,5 +78,62 @@
         options: {}
       });
     </script>
-    <%- include('partials/footer') -%> </body>
+    <script>
+      /* Number of reports */
+      var ctx = document.getElementById('totalReportsChart').getContext('2d');
+      var totalReportStats = <%- JSON.stringify(locals.totalReportStats) %>;
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          datasets: [
+            {
+              label: 'Rapporteringer med symptomer',
+              data: totalReportStats.numberOfReportsWithSymptomsStat,
+              backgroundColor: 'salmon',
+            },
+            {
+              label: 'Rapporteringer',
+              data: totalReportStats.numberOfReportsStat,
+              backgroundColor: 'lightblue'
+            }
+          ]
+        },
+        options: {
+          scales: {
+            xAxes: [{
+              type: 'time',
+              time: {
+                displayFormats: {
+                  hour: 'HH:mm'
+                }
+              }
+            }]
+          }
+        }
+      });
+    </script>
+    <script>
+      var ctx = document.getElementById('inContactWithInfectedChart').getContext('2d');
+      var inContactData = <%- JSON.stringify(locals.InContactWithInfectedStats) %>;
+      var myDoughnutChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: [
+              inContactData.numberOfPeopleShowingSymptoms,
+              inContactData.numberOfPeopleWithoutSymptoms
+            ],
+            backgroundColor: [
+              'salmon',
+              'lightblue',
+            ],
+          }],
+          labels: ['I nærkontakt med symptomer', 'I nærkontakt uten symptomer']
+        },
+        options: {}
+      });
+    </script>
+    <script src="/static/hamburger-menu.js"></script>
+    <%- include('partials/footer') -%>
+  </body>
 </html>

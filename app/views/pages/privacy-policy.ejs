@@ -6,6 +6,7 @@
   <body>
     <%- include('partials/disclaimer') -%>
     <%- include('partials/menu') -%>
+    <%- include('partials/hamburger-menu') -%>
     <div id="page-wrapper">
       <section id="main" class="wrapper">
         <div class="inner privacy-policy">
@@ -47,5 +48,6 @@
         window.history.replaceState({}, document.title, window.location.pathname);
       }
     </script>
+    <script src="/static/hamburger-menu.js"></script>
   </body>
 </html>

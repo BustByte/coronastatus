@@ -1,0 +1,15 @@
+<%
+const isOnProfile = !locals.activePage || locals.activePage === 'helsetilstand';
+const isOnMap = locals.activePage === 'kart';
+const isOnPrivacyPolicy = locals.activePage === 'personvern';
+const isOnStats = locals.activePage === 'statistikk';
+%>
+
+<div class="hamburger-menu">
+  <ul class="inner">
+    <li><a href="/" class="<%= isOnProfile ? 'active' : '' %>">Din helsetilstand</a></li>
+    <li><a href="/kart" class="<%= isOnMap ? 'active' : '' %>">Kart</a></li>
+    <li><a href="/statistikk" class="<%= isOnStats ? 'active' : '' %>">Statistikk</a></li>
+    <li><a href="/personvern" class="<%= isOnPrivacyPolicy ? 'active' : '' %>">Personvern</a></li>
+  </ul>
+</div>

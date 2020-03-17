@@ -38,10 +38,11 @@
     <div class="inner">
       <button class="close" onclick="hasSubmittedAlertOnClick()">&times;
       </button>
-      <div><b>Husk</b> For å endre din helsetilstand, bruk lenken du fikk ved registrering.</div>
+      <div><b>Viktig:</b> Bruk lenken du noterte deg sist for å endre din helsetilstand.</div>
     </div>
   </div>
   <%- include('partials/menu') -%>
+  <%- include('partials/hamburger-menu') -%>
   <div id="page-wrapper">
     <section id="main" class="wrapper">
       <div class="inner">
@@ -55,7 +56,7 @@
             <div class="info-box__content">
               <p class="info-box__bolder">Mørketallene på smittede i Norge er store.</p>
               <p class="info-box__bolder">Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset i landet vårt.</p>
-              <p>Nettsiden er laget i dugnadsånd av et lite konsulentselskap i samarbeid med frivillige. <br/>NB! Rapportering er frivillig.</p>
+              <p>Nettsiden er laget i dugnadsånd av et lite konsulentselskap i samarbeid med frivillige. Rapportering er frivillig.</p>
               <p>Så fort myndighetene er klare for å motta dataene vi samler inn, står vi klare til å overlevere dem!</p>
             </div>
           </div>
@@ -81,7 +82,7 @@
         <h1><%= profile ? 'Din helsetilstand' : 'Rapporter din helsetilstand' %></h1>
         <% if(locals.success) {%>
           <div class="alert alert-success" role="alert">
-            Takk for ditt svar! Husk å oppdatere skjemaet på denne lenken hvis helsetilstanden din skulle endre seg: <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>. 
+            Takk for ditt svar! Benytt denne lenken hvis helsetilstanden din endrer seg: <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>. 
           </div>
         <% } else { %>
           <p class="slogan">Bli med på Norges viktigste dugnad!</p>
@@ -253,7 +254,7 @@
     <%- include('partials/footer') -%>
   </div>
   <script src="/static/form.js"></script>
-  <script>
+<script>
     function hasSubmittedAlertOnClick() {
         document.getElementById('has-submitted-alert').style.display = 'none';
         window.localStorage.setItem("hasCrossedOutInfo", "true");
@@ -278,6 +279,6 @@
       window.history.replaceState({}, document.title, window.location.pathname);
     }
   </script>
-  
+  <script src="/static/hamburger-menu.js"></script>
 </body>
 </html>
