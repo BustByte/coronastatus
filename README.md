@@ -12,6 +12,9 @@ Vi anbefaler denne artikkelen av Petter Bae Brandtzæg: https://www.aftenposten.
 ## Hvem står bak?
 Alle som vil kan bidra. Nettsiden er laget i dugnadsånd av BustByte, et lite konsulentselskap. Dette er ikke en offisiell nettside fra norske myndigheter.
 
+## Medieomtale
+- https://www.tu.no/artikler/utviklere-om-korona-register-vi-kastet-oss-rundt-og-laget-dette/487568
+
 ## Hvordan kan jeg bidra?
 
 ### Slack
