@@ -4,7 +4,9 @@
 
 <!DOCTYPE html>	
 <html lang="no">	
+<head>
 <%- include('partials/head') -%>	
+</head>
 <body>
   <%- include('partials/disclaimer') -%>
   <%- include('partials/menu') -%>
@@ -16,18 +18,17 @@
             <h1>Før du går videre må du ta vare på følgende lenke</h1>
             <p class="subtitle">
               Lagre den følgende lenken et sted, eller opprett et bokmerke til siden.<br/>
-              Da kan du gå inn å endre din helsetilstand dersom den endrer seg.
+              Da kan du gå inn og endre din helsetilstand dersom den endrer seg.
             </p>
             <div class="profile-url">
               <span id="link-to-be-copied">coronastatus.no/helsetilstand/<%= passcode %></span>
-              <!-- TODO: Make this button work properly
               <div>
-                <button class="copy-icon" data-clipboard-text="coronastatus.no/helsetilstand/<%= passcode %>">
+                <button id="profile-url-id" class="copy-icon" data-clipboard-text="coronastatus.no/helsetilstand/<%= passcode %>">
                   <i class="fas fa-copy"></i>
                 </button>
               </div>
-              -->
             </div>
+            <div id="profile-copy-status-text" class="alert" style="display:none;" role="alert"></div>
             <form method="get" action="/helsetilstand/<%= passcode %>">
               <div class="row">
                 <div class="col-12">
@@ -50,10 +51,38 @@
     </section>	
     <%- include('partials/footer') -%>	
   </div>	
-  <script>	
-    // Remove query params from url	
-    window.history.replaceState({}, document.title, window.location.pathname);	
-  </script>	
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+  <script>	
+    // Remove query params from url
+    if (window.history.replaceState) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
+    var clipboard = new ClipboardJS('#profile-url-id');
+    var statusText = document.getElementById("profile-copy-status-text");
+
+    function setStatusAlert(element,text, alert_class){
+        txt = document.createTextNode(text);
+        element.appendChild(txt);
+        element.style.display = 'block';
+        element.classList.add(alert_class);
+    }
+
+    clipboard.on('success',function(e){
+      if(statusText.style.display == 'none'){
+        setStatusAlert(statusText,'Linken er kopiert','alert-success');
+      }
+    });
+
+    clipboard.on('error',function(e){
+      if(statusText.style.display == 'none'){
+        setStatusAlert(statusText,'Klarte ikke å kopiere linke til utklippstavlen. Skriv ned linken selv.','alert-error');
+      }
+    });
+  </script>
+  <script>
+    // This is done so that we can show a hint on the front page that a profile might exist, when entering from the same browser at a later time.
+    window.localStorage.setItem("hasSubmittedProfile", "true");
+  </script>
 </body>	
 </html>
