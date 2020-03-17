@@ -17,12 +17,23 @@ interface CovidReportRow {
   json_dump: string;
 }
 
+let latestReportsCache: CacheWithLifetime<CovidReportRow[]> | undefined;
+const getLatestReportsCache = (): CacheWithLifetime<CovidReportRow[]> => {
+  if (!latestReportsCache) {
+    latestReportsCache = new CacheWithLifetime<CovidReportRow[]>(
+      1,
+      'LatestReportsCache'
+    );
+  }
+  return latestReportsCache;
+};
+
 export class CovidReportRepository {
   db: SqlLiteDatabase;
   cache: CacheWithLifetime<CovidReportRow[]>;
 
   constructor() {
-    this.cache = new CacheWithLifetime<CovidReportRow[]>();
+    this.cache = getLatestReportsCache();
     this.db = getInstance('covid_db');
   }
 

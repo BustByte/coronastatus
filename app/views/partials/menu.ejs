@@ -2,14 +2,17 @@
   const isOnProfile = !locals.activePage || locals.activePage === 'helsetilstand';
   const isOnMap = locals.activePage === 'kart';
   const isOnPrivacyPolicy = locals.activePage === 'personvern';
+  const isOnStats = locals.activePage === 'statistikk';
+  const useWhiteLogo = locals.useWhiteLogo;
 %>
 
 <div class="menu wrapper">
   <div class="inner">
-    <div class="logo"><a href="/"><img alt="Logo" src="/static/logo.png"></a></div>
+    <div class="logo"><a href="/"><img alt="Logo" src="/static/<%= useWhiteLogo ? 'logo-white.png' : 'logo.png' %>"></a></div>
     <div class="menu__links">
       <a href="/" class="<%= isOnProfile ? 'active' : '' %>">Din helsetilstand</a>
       <a href="/kart" class="<%= isOnMap ? 'active' : '' %>">Kart</a>
+      <a href="/statistikk" class="<%= isOnStats ? 'active' : '' %>">Statistikk</a>
       <a href="/personvern" class="<%= isOnPrivacyPolicy ? 'active' : '' %>">Personvern</a>
     </div>
     <i id="hamburger-menu-button" class="fas fa-bars"></i>

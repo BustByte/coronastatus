@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html> <%- include('partials/head') -%> <body> <%- include('partials/disclaimer') -%> <%- include('partials/menu') -%>
+    <div id="page-wrapper">
+      <section id="main" class="wrapper">
+        <div class="inner">
+          <h1>Statistikk</h1>
+          <h2>Symptomer</h2>
+          <canvas id="symptomsChart"></canvas>
+          <p style="margin-bottom: 0.5rem;">PS: Noen symptomer var ikke en del av skjema fra starten av:</p>
+          <div style="max-width: 500px" class="table-wrapper">
+            <table class="alt compact">
+              <thead>
+                <tr>
+                  <th>Symptom</th>
+                  <th>Lagt til i skjema</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Hodepine</td>
+                  <td>16. mars kl. 00:23</td>
+                </tr>
+                <tr>
+                  <td>Vondt i halsen</td>
+                  <td>16. mars kl. 00:23</td>
+                </tr>
+                <tr>
+                  <td>Tap av smakssans</td>
+                  <td>17. mars kl. 10:26</td>
+                </tr>
+                <tr>
+                  <td>Tap av luktesans</td>
+                  <td>17. mars kl. 10:26</td>
+                </tr>
+                <tr>
+                  <td>Slimhoste</td>
+                  <td>17. mars kl. 16:28</td>
+                </tr>
+                <tr>
+                  <td>Tett eller rennende nese</td>
+                  <td>17. mars kl. 16:28</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h2>Antall rapporteringer</h2>
+          <canvas id="totalReportsChart"></canvas>
+        </div>
+        <section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+      /* Total symptom count */
+      var ctx = document.getElementById('symptomsChart').getContext('2d');
+      var symptoms = <%- JSON.stringify(locals.symptomStats) %>;
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: symptoms.labels,
+          datasets: [{
+            label: 'Antall rapportert',
+            backgroundColor: 'salmon',
+            data: symptoms.values
+          }]
+        },
+        options: {}
+      });
+    </script>
+    <script>
+      /* Number of reports */
+      var ctx = document.getElementById('totalReportsChart').getContext('2d');
+      var totalReportStats = <%- JSON.stringify(locals.totalReportStats) %>;
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          datasets: [
+            {
+              label: 'Rapporteringer med symptomer',
+              data: totalReportStats.numberOfReportsWithSymptomsStat,
+              backgroundColor: 'salmon',
+            },
+            {
+              label: 'Rapporteringer',
+              data: totalReportStats.numberOfReportsStat,
+              backgroundColor: 'lightblue'
+            }
+          ]
+        },
+        options: {
+          scales: {
+            xAxes: [{
+              type: 'time',
+              time: {
+                displayFormats: {
+                   hour: 'HH:mm'
+                }
+              }
+            }]
+          }
+        }
+      });
+    </script>
+    <%- include('partials/footer') -%> </body>
+</html>

@@ -7,10 +7,14 @@ export interface CovidReport {
   testedAt?: Date; // YYYY-MM-DD
   symptomStart?: string; // YYYY-MM-DD
   testResult?: TestResult;
-  symptoms: { [key in Symptom]: boolean };
+  symptoms: Symptoms;
   submissionTimestamp: number;
   age: string;
 }
+
+export type Symptoms = {
+  [key in Symptom]: boolean;
+};
 
 export enum Sex {
   MALE = 'MALE',
@@ -31,7 +35,11 @@ export enum Symptom {
   MUSCLE_ACHING = 'MUSCLE_ACHING',
   DIARRHEA = 'DIARRHEA',
   HEADACHE = 'HEADACHE',
-  SORE_THROAT = 'SORE_THROAT'
+  SORE_THROAT = 'SORE_THROAT',
+  NO_TASTE = 'NO_TASTE',
+  NO_SMELL = 'NO_SMELL',
+  SLIME_COUGH = 'SLIME_COUGH',
+  RUNNY_NOSE = 'RUNNY_NOSE'
 }
 
 export interface AggregatedCovidReportData {
@@ -39,4 +47,19 @@ export interface AggregatedCovidReportData {
   numberOfPeopleShowingSymptoms: number;
   numberOfConfirmedInfected: number;
   numberOfTested: number;
+}
+
+export interface SymptomStats {
+  labels: string[];
+  values: number[];
+}
+
+export interface DateStat {
+  x: Date;
+  y: number;
+}
+
+export interface TotalReportsStats {
+  numberOfReportsStat: DateStat[];
+  numberOfReportsWithSymptomsStat: DateStat[];
 }

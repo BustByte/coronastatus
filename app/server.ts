@@ -1,32 +1,15 @@
 import express from 'express';
-import session from 'express-session';
 import bodyParser from 'body-parser';
 import path from 'path';
 import reportRoutes from './routes/report-routes';
 import mapRoutes from './routes/map-routes';
 import apiRoutes from './routes/api-routes';
+import statisticsRoutes from './routes/statistics-routes';
 import { getInstance } from './repository/SqlLiteDatabase';
-
-const SqLiteStore = require('connect-sqlite3')(session);
-
-const { COOKIE_SECRET } = require('../config.json');
 
 const app = express();
 const port = process.env.PORT || 7272;
 const isDevelopmentEnv = process.env.NODE_ENV === 'dev';
-
-app.use(
-  session({
-    store: new SqLiteStore(),
-    secret: COOKIE_SECRET,
-    cookie: {
-      secure: true,
-      httpOnly: true,
-      maxAge: 365 * 24 * 60 * 60 * 1000 // 1 year
-    },
-    proxy: true
-  })
-);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -46,6 +29,7 @@ app.set('views', [
 app.use('/', reportRoutes);
 app.use('/kart', mapRoutes);
 app.use('/api', apiRoutes);
+app.use('/statistikk', statisticsRoutes);
 
 app.use(
   '/static',

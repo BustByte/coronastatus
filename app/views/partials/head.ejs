@@ -1,11 +1,30 @@
+<%
+  const title = locals.metaTitle || 'Bli med på Norges største dugnad!'
+  const metaDescription = locals.metaDescription || 'Gi ditt frivillige bidrag til helsevesenet og registrer din helsetilstand nå. Sammen skaper vi oversikt.'
+  const metaImage1 = 'https://coronastatus.no/static/facebook-thumb-1.png';
+  const metaImage2 = 'https://coronastatus.no/static/facebook-thumb-3.png';
+%>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coronastatus</title>
-<% if (locals.metaDescription) { %>
+<title>Coronastatus.no</title>
 <meta name="description" content="<%= metaDescription %>">
-<% } %>
+
+
+<!-- Open Graph -->
+<meta property="og:title" content="<%= title %>">
+<meta property="og:description" content="<%= metaDescription %>">
+<meta property="og:image" content="<%= metaImage1 %>">
+<meta property="og:site_name" content="<%= title %>">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<%= title %>">
+<meta name="twitter:description" content="<%= metaDescription %>">
+<meta name="twitter:image" content="<%= metaImage2 %>">
+<!-- End Twitter -->
 
 <link href="https://fonts.googleapis.com/css?family=Mada:400,400i,700" rel="stylesheet">
 <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
-<link rel='stylesheet' href='/static/main.css?v=4' type='text/css' media='all' />
-<link rel='stylesheet' href='/static/custom.css?v=4' type='text/css' media='all' />
+<link rel='stylesheet' href='/static/main.css?v=6' type='text/css' media='all' />
+<link rel='stylesheet' href='/static/custom.css?v=5' type='text/css' media='all' />
