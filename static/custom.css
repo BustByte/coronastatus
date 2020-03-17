@@ -126,6 +126,12 @@ input[type='checkbox'] + label.normal-font {
   padding: 2rem 0;
 }
 
+@media screen and (max-width: 360px) {
+  .menu .logo img {
+    height: 40px;
+  }
+}
+
 @media (max-width: 850px) {
   .menu__links {
     display: none;
