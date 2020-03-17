@@ -11,7 +11,7 @@ hamburgerMenuButton.addEventListener('click', function() {
   } else {
     hamburgerMenu.classList.add('active');
     setTimeout(function() {
-      hamburgerMenu.style.height = '110px';
+      hamburgerMenu.style.height = '140px';
     }, 1);
   }
 });

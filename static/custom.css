@@ -321,14 +321,17 @@ p.subtitle {
 #hamburger-menu-button {
   cursor: pointer;
   display: none;
+  font-size: 1.3em;
 }
 
 .hamburger-menu {
   display: none;
   overflow: hidden;
   height: 0;
-  background-color: #ffeb3b;
   transition: height .3s;
+  width: calc(100% - 4rem);
+  margin: 0 auto;
+  border-radius: 0.25rem;
 }
 
 .hamburger-menu.active {
@@ -347,7 +350,7 @@ p.subtitle {
   text-decoration: none;
   font-weight: 500;
   margin-left: 1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .hamburger-menu a.active {
