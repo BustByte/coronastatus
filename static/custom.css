@@ -330,3 +330,12 @@ p.slogan {
   font-weight: 300;
   margin: 2rem 0 0;
 }
+
+.share-buttons {
+  display: flex;
+  align-items: flex-end;
+}
+
+.share-buttons > iframe {
+  margin-left: 0.5rem;
+}
