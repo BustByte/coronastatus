@@ -31,7 +31,9 @@ export enum Symptom {
   MUSCLE_ACHING = 'MUSCLE_ACHING',
   DIARRHEA = 'DIARRHEA',
   HEADACHE = 'HEADACHE',
-  SORE_THROAT = 'SORE_THROAT'
+  SORE_THROAT = 'SORE_THROAT',
+  NO_TASTE = 'NO_TASTE',
+  NO_SMELL = 'NO_SMELL'
 }
 
 export interface AggregatedCovidReportData {
