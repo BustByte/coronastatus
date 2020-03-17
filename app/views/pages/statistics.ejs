@@ -58,6 +58,7 @@
           <canvas id="inContactWithInfectedChart"></canvas>
           <h2>Positive testresultater og nærkontakt</h2>
           <canvas id="infectedAndContactStats"></canvas>
+          <p style="margin: 0.5rem;">PS: Spørsmål om nærkontakt ble lagt til 16. mars kl. 22:30</p>
           <h2>Svar på testresultater</h2>
           <canvas id="testResultStats"></canvas>
         </div>
@@ -93,12 +94,14 @@
             {
               label: 'Rapporteringer med symptomer',
               data: totalReportStats.numberOfReportsWithSymptomsStat,
-              backgroundColor: 'salmon',
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'salmon',
             },
             {
               label: 'Rapporteringer',
               data: totalReportStats.numberOfReportsStat,
-              backgroundColor: 'lightblue'
+              backgroundColor: 'rgba(0, 200, 255, 0.2)',
+              borderColor: 'lightblue'
             }
           ]
         },
@@ -148,12 +151,14 @@
             {
               label: 'Testet positivt',
               data: infectedAndContactStats.numberOfInfectedStat,
-              backgroundColor: 'salmon',
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'salmon',
             },
             {
               label: 'Nærkontakt med noen som har testet positivt',
               data: infectedAndContactStats.numberOfInContactStat,
-              backgroundColor: 'lightblue'
+              backgroundColor: 'rgba(0, 200, 255, 0.2)',
+              borderColor: 'lightblue'
             }
           ]
         },
