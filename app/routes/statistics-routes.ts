@@ -10,7 +10,7 @@ router.get('/data', async (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  return res.render('pages/graphs');
+  return res.render('pages/statistics');
 });
 
 export default router;

@@ -5,6 +5,7 @@
         <div class="inner">
           <canvas id="totalReportsChart"></canvas>
           <canvas id="symptomsChart"></canvas>
+          <canvas id="statusChart"></canvas>
         </div>
         <section>
     </div>
@@ -12,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script>
       const getReports = async () => {
-        const req = await fetch('graph/data');
+        const req = await fetch('statistikk/data');
         const fetchedReports = await req.json();
         return fetchedReports;
       }
@@ -65,16 +66,19 @@
         const ctx = document.getElementById('totalReportsChart').getContext('2d');
         const hasSymptoms = symptoms => Object.keys(symptoms).some(key => !!symptoms[key])
 
-        const data = reports
-          .filter(r => !!r.submissionTimestamp)
-          .sort((a, b) => a.submissionTimestamp - b.submissionTimestamp)
-          .map((r, i) => ({ x: new Date(r.submissionTimestamp), y: i }))
+        const withoutTimestamp = reports.filter(r => !r.submissionTimestamp);
+        const numWithSymptomsWithoutTimestamp = withoutTimestamp.filter(r => hasSymptoms(r.symptoms)).length;
 
-        const withSymptoms = reports
+        const sortedWithSubmissionTimestamp = reports
           .filter(r => !!r.submissionTimestamp)
+          .sort((a, b) => a.submissionTimestamp - b.submissionTimestamp);
+
+        const allReports = sortedWithSubmissionTimestamp
+          .map((r, i) => ({ x: new Date(r.submissionTimestamp), y: i + withoutTimestamp.length }))
+
+        const reportsWithSymptoms = sortedWithSubmissionTimestamp
           .filter(r => hasSymptoms(r.symptoms))
-          .sort((a, b) => a.submissionTimestamp - b.submissionTimestamp)
-          .map((r, i) => ({ x: new Date(r.submissionTimestamp), y: i }))
+          .map((r, i) => ({ x: new Date(r.submissionTimestamp), y: i + numWithSymptomsWithoutTimestamp }))
 
         var chart = new Chart(ctx, {
           type: 'line',
@@ -82,12 +86,12 @@
             datasets: [
               {
                 label: 'Rapporteringer med symptomer',
-                data: withSymptoms,
+                data: reportsWithSymptoms,
                 backgroundColor: 'salmon',
               },
               {
                 label: 'Rapporteringer',
-                data: data,
+                data: allReports,
                 backgroundColor: 'lightblue'
               }
             ]
@@ -100,6 +104,10 @@
             }
           }
         });
+      }
+
+      const drawStatusChart = reports => {
+
       }
 
       getReports().then(data => {
