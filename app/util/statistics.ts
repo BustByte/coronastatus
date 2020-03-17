@@ -5,7 +5,9 @@ import {
   TotalReportsStats,
   SymptomStats,
   DateStat,
-  InContactWithInfectedStat
+  InContactWithInfectedStat,
+  TestResult,
+  InfectedAndInContactStats
 } from '../domain/types';
 
 const symptomToLabelMap = {
@@ -130,5 +132,24 @@ export function getInContactWithInfectedStats(
     numberOfPeopleShowingSymptoms,
     numberOfPeopleWithoutSymptoms,
     total: inContactWithInfected.length
+  };
+}
+
+export function getInfectedAndContactStats(
+  reports: CovidReport[]
+): InfectedAndInContactStats {
+  const reportsSortedByTimestamp = addMissingTimestamps(reports).sort(
+    (a, b) => a.submissionTimestamp - b.submissionTimestamp
+  );
+  const numberOfInfectedStat = reportsSortedByTimestamp
+    .filter(report => report.testResult === TestResult.POSITIVE)
+    .map(toDateStat);
+  const numberOfInContactStat = reportsSortedByTimestamp
+    .filter(report => report.hasBeenInContactWithInfected)
+    .map(toDateStat);
+
+  return {
+    numberOfInfectedStat,
+    numberOfInContactStat
   };
 }

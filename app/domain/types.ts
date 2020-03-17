@@ -69,3 +69,8 @@ export interface TotalReportsStats {
   numberOfReportsStat: DateStat[];
   numberOfReportsWithSymptomsStat: DateStat[];
 }
+
+export interface InfectedAndInContactStats {
+  numberOfInfectedStat: DateStat[];
+  numberOfInContactStat: DateStat[];
+}
