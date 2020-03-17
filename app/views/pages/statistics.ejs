@@ -1,5 +1,12 @@
+<%
+  const peopleInContactWithInfected = locals.InContactWithInfectedStats.total;
+%>
 <!DOCTYPE html>
-<html> <%- include('partials/head') -%> <body> <%- include('partials/disclaimer') -%> <%- include('partials/menu') -%> <%- include('partials/hamburger-menu') -%>
+<html> 
+  <%- include('partials/head') -%>
+   <body> 
+    <%- include('partials/disclaimer') -%> 
+    <%- include('partials/menu') -%>
     <div id="page-wrapper">
       <section id="main" class="wrapper">
         <div class="inner">
@@ -45,10 +52,12 @@
           </div>
           <h2>Antall rapporteringer</h2>
           <canvas id="totalReportsChart"></canvas>
+          <h2>Nærkontakt med smittede</h2>
+          <p>Totalt har <%= peopleInContactWithInfected %> personer rapportert at de har hatt nærkontakt med en person som har testet positivt på COVID-19.</p>
+          <canvas id="inContactWithInfectedChart"></canvas>
         </div>
         <section>
     </div>
-    <script src="/static/hamburger-menu.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script>
@@ -94,7 +103,7 @@
               type: 'time',
               time: {
                 displayFormats: {
-                   hour: 'HH:mm'
+                  hour: 'HH:mm'
                 }
               }
             }]
@@ -102,5 +111,27 @@
         }
       });
     </script>
-    <%- include('partials/footer') -%> </body>
+    <script>
+      var ctx = document.getElementById('inContactWithInfectedChart').getContext('2d');
+      var inContactData = <%- JSON.stringify(locals.InContactWithInfectedStats) %>;
+      var myDoughnutChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: [
+              inContactData.numberOfPeopleShowingSymptoms,
+              inContactData.numberOfPeopleWithoutSymptoms
+            ],
+            backgroundColor: [
+              'salmon',
+              'lightblue',
+            ],
+          }],
+          labels: ['I nærkontakt med symptomer', 'I nærkontakt uten symptomer']
+        },
+        options: {}
+      });
+    </script> 
+    <%- include('partials/footer') -%> 
+  </body>
 </html>
