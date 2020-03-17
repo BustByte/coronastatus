@@ -30,8 +30,8 @@ const mapReportToFeatureState = (report: CovidReport): string => {
 };
 
 const mapFeatureFromMunicipalityAndReport = (
-  municipality: Municipality,
-  report: CovidReport
+  report: CovidReport,
+  municipality: Municipality
 ): MapFeature => ({
   type: 'Feature',
   geometry: {
@@ -48,14 +48,17 @@ const mapFeatureFromMunicipalityAndReport = (
 
 router.get('/geojson', async (req, res) => {
   const allReports = await reportRepo.getLatestCovidReports();
-  const features = allReports.map(report => {
-    const municipality = municipalityRepo.getMunicipalityForPostalCode(
-      report.postalCode
-    );
-    return municipality
-      ? mapFeatureFromMunicipalityAndReport(municipality, report)
-      : undefined;
-  });
+  const features = await Promise.all(
+    allReports.map(report =>
+      municipalityRepo
+        .getMunicipalityForPostalCode(report.postalCode)
+        .then(municipality =>
+          municipality
+            ? mapFeatureFromMunicipalityAndReport(report, municipality)
+            : undefined
+        )
+    )
+  );
 
   res.send({
     type: 'FeatureCollection',
