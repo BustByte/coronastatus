@@ -81,7 +81,7 @@
         <h1><%= profile ? 'Din helsetilstand' : 'Rapporter din helsetilstand' %></h1>
         <% if(locals.success) {%>
           <div class="alert alert-success" role="alert">
-            Takk for ditt svar! Klikk på denne lenken hvis helsetilstanden din endrer seg: <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>. 
+            Takk for ditt svar! Benytt denne lenken hvis helsetilstanden din endrer seg: <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>. 
           </div>
         <% } else { %>
           <p class="slogan">Bli med på Norges viktigste dugnad!</p>
