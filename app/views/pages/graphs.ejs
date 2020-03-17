@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html> <%- include('partials/head') -%> <body> <%- include('partials/disclaimer') -%> <%- include('partials/menu') -%>
+    <div id="page-wrapper">
+      <section id="main" class="wrapper">
+        <div class="inner">
+          <canvas id="totalReportsChart"></canvas>
+          <canvas id="symptomsChart"></canvas>
+        </div>
+        <section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+      const getReports = async () => {
+        const req = await fetch('graph/data');
+        const fetchedReports = await req.json();
+        return fetchedReports;
+      }
+
+      const getSymptomsCount = reports => {
+        const symptoms = reports.map(r => r.symptoms);
+        const symptomsCount = symptoms.reduce((x, y) => {
+          x['DRY_COUGH'] += y.DRY_COUGH ? 1 : 0;
+          x['EXHAUSTION'] += y.EXHAUSTION ? 1 : 0;
+          x['FEVER'] += y.FEVER ? 1 : 0;
+          x['HEAVY_BREATHING'] += y.HEAVY_BREATHING ? 1 : 0;
+          x['MUSCLE_ACHING'] += y.MUSCLE_ACHING ? 1 : 0;
+          x['DIARRHEA'] += y.DIARRHEA ? 1 : 0
+          x['HEADACHE'] += y.HEADACHE ? 1 : 0
+          x['SORE_THROAT'] += y.SORE_THROAT ? 1 : 0
+          return x
+        }, {
+          DRY_COUGH: 0,
+          EXHAUSTION: 0,
+          FEVER: 0,
+          HEAVY_BREATHING: 0,
+          MUSCLE_ACHING: 0,
+          DIARRHEA: 0,
+          HEADACHE: 0,
+          SORE_THROAT: 0,
+        })
+        return symptomsCount;
+      }
+
+      const drawSymptomsChart = reports => {
+        const ctx = document.getElementById('symptomsChart').getContext('2d');
+        const symptomsCount = getSymptomsCount(reports);
+        const labels = Object.keys(symptomsCount).sort();
+        const values = labels.map(label => symptomsCount[label])
+        const chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Symptomer',
+              backgroundColor: 'salmon',
+              data: values
+            }]
+          },
+          options: {}
+        });
+      }
+
+      const drawTotalReportsChart = reports => {
+        const ctx = document.getElementById('totalReportsChart').getContext('2d');
+        const hasSymptoms = symptoms => Object.keys(symptoms).some(key => !!symptoms[key])
+
+        const data = reports
+          .filter(r => !!r.submissionTimestamp)
+          .sort((a, b) => a.submissionTimestamp - b.submissionTimestamp)
+          .map((r, i) => ({ x: new Date(r.submissionTimestamp), y: i }))
+
+        const withSymptoms = reports
+          .filter(r => !!r.submissionTimestamp)
+          .filter(r => hasSymptoms(r.symptoms))
+          .sort((a, b) => a.submissionTimestamp - b.submissionTimestamp)
+          .map((r, i) => ({ x: new Date(r.submissionTimestamp), y: i }))
+
+        var chart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            datasets: [
+              {
+                label: 'Rapporteringer med symptomer',
+                data: withSymptoms,
+                backgroundColor: 'salmon',
+              },
+              {
+                label: 'Rapporteringer',
+                data: data,
+                backgroundColor: 'lightblue'
+              }
+            ]
+          },
+          options: {
+            scales: {
+              xAxes: [{
+                type: 'time',
+              }]
+            }
+          }
+        });
+      }
+
+      getReports().then(data => {
+        drawTotalReportsChart(data);
+        drawSymptomsChart(data);
+      })
+    </script> <%- include('partials/footer') -%> </body>
+</html>

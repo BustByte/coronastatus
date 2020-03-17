@@ -5,6 +5,7 @@
   "scripts": {
     "start": "ts-node app/server.ts",
     "test": "jest",
+    "dev": "ts-node-dev app/server.ts",
     "lint": "eslint --ext .ts app/",
     "lintfix": "eslint --ext .ts app/ --fix",
     "serve": "NODE_ENV=production ts-node app/server.ts"
@@ -40,7 +41,8 @@
     "eslint-plugin-prettier": "^3.1.2",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
-    "ts-jest": "^25.2.1"
+    "ts-jest": "^25.2.1",
+    "ts-node-dev": "^1.0.0-pre.44"
   },
   "eslintConfig": {
     "settings": {
