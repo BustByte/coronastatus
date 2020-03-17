@@ -4,7 +4,8 @@ import {
   groupBySymptoms,
   calculateTotalReportsStats,
   getInContactWithInfectedStats,
-  getInfectedAndContactStats
+  getInfectedAndContactStats,
+  getTestResultStats
 } from '../util/statistics';
 
 const router = express.Router();
@@ -21,11 +22,13 @@ router.get('/', async (req, res) => {
   const totalReportStats = calculateTotalReportsStats(allReports);
   const inContactWithInfectedStats = getInContactWithInfectedStats(allReports);
   const infectedAndContactStats = getInfectedAndContactStats(allReports);
+  const testResultStats = getTestResultStats(allReports);
   return res.render('pages/statistics', {
     symptomStats,
     totalReportStats,
     inContactWithInfectedStats,
-    infectedAndContactStats
+    infectedAndContactStats,
+    testResultStats
   });
 });
 
