@@ -42,6 +42,7 @@ router.get('/geojson', async (req, res) => {
 });
 
 router.get('/', (req, res) => {
+  res.locals.useWhiteLogo = true;
   return res.render('pages/map');
 });
 
