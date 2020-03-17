@@ -108,17 +108,17 @@
                 style: 'mapbox://styles/mapbox/dark-v10',
                 center: [10.7522, 63.9139],
                 zoom: 4,
-                attributionControl: false,
                 hash: true
             });
 
             map.on('load', function() {
                 var attributions = document.getElementsByClassName("mapboxgl-ctrl-attrib-inner")[0]
-                let newAttrib = document.createElement("a")
-                newAttrib.href = "http://www.erikbolstad.no/geo/noreg/postnummer/";
-                newAttrib.innerText = "Postnummerinfo "
-                attributions.insertBefore(newAttrib,  attributions.firstChild)
-                attributions.insertBefore(newAttrib2, attributions.firstChild)
+                if (attributions) {
+                    let newAttrib = document.createElement("a")
+                    newAttrib.href = "http://www.erikbolstad.no/geo/noreg/postnummer/";
+                    newAttrib.innerText = "Postnummerinfo "
+                    attributions.insertBefore(newAttrib,  attributions.firstChild)
+                }
             });
 
             const positive = ['==', ['get', 'state'], 'POSITIVE'];
