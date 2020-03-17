@@ -7,10 +7,14 @@ export interface CovidReport {
   testedAt?: Date; // YYYY-MM-DD
   symptomStart?: string; // YYYY-MM-DD
   testResult?: TestResult;
-  symptoms: { [key in Symptom]: boolean };
+  symptoms: Symptoms;
   submissionTimestamp: number;
   age: string;
 }
+
+export type Symptoms = {
+  [key in Symptom]: boolean;
+};
 
 export enum Sex {
   MALE = 'MALE',
