@@ -19,6 +19,8 @@
   const symptomSoreThroat = symptoms && symptoms['SORE_THROAT'];
   const symptomNoSmell = symptoms && symptoms['NO_SMELL'];
   const symptomNoTaste = symptoms && symptoms['NO_TASTE'];
+  const symptomSlimeCough = symptoms && symptoms['SLIME_COUGH'];
+  const symptomRunnyNose = symptoms && symptoms['RUNNY_NOSE'];
 
   function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -174,6 +176,10 @@
                   <label for="symptom-cough">Tørrhoste</label>
                 </div>
                 <div class="col-12">
+                  <input type="checkbox" id="symptom-slime-cough" name="symptom-slime-cough" <%= symptomSlimeCough ? 'checked' : '' %>>
+                  <label for="symptom-slime-cough">Slimhoste</label>
+                </div>
+                <div class="col-12">
                   <input type="checkbox" id="symptom-fatigue" name="symptom-fatigue" <%= symptomFatigue ? 'checked' : '' %>>
                   <label for="symptom-fatigue">Slitenhet eller utmattelse</label>
                 </div>
@@ -208,6 +214,10 @@
                 <div class="col-12">
                   <input type="checkbox" id="symptom-no-taste" name="symptom-no-taste" <%= symptomNoTaste ? 'checked' : '' %>>
                   <label for="symptom-no-taste">Tap av smakssans</label>
+                </div>
+                <div class="col-12">
+                  <input type="checkbox" id="symptom-runny-nose" name="symptom-runny-nose" <%= symptomRunnyNose ? 'checked' : '' %>>
+                  <label for="symptom-runny-nose">Tett eller rennende nese</label>
                 </div>
               </div>
             </div>

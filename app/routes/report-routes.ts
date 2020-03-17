@@ -97,7 +97,9 @@ router.post('/', createReportRateLimit, async (req, res) => {
       [Symptom.HEADACHE]: req.body['symptom-headache'] === 'on',
       [Symptom.SORE_THROAT]: req.body['symptom-sore-throat'] === 'on',
       [Symptom.NO_TASTE]: req.body['symptom-no-taste'] === 'on',
-      [Symptom.NO_SMELL]: req.body['symptom-no-smell'] === 'on'
+      [Symptom.NO_SMELL]: req.body['symptom-no-smell'] === 'on',
+      [Symptom.SLIME_COUGH]: req.body['symptom-slime-cough'] === 'on',
+      [Symptom.RUNNY_NOSE]: req.body['symptom-runny-nose'] === 'on'
     },
     symptomStart: req.body['symptom-start'],
     hasBeenInContactWithInfected: req.body['been-in-contact-with'] === 'yes',
