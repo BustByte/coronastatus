@@ -21,8 +21,6 @@ const reportRepo = new CovidReportRepository();
 const passcodeCreator = getPasscodeCreator();
 
 router.get('/', async (req, res) => {
-  res.locals.metaDescription =
-    'Her kan du legge inn informasjon om din helsetilstand, slik at vi kan få en bedre oversikt over totalbildet i Norge.';
   const reports = await reportRepo.getLatestCovidReports();
   const aggregated = aggregateCovidReports(reports);
   return res.render('pages/report', { aggregated });
@@ -41,9 +39,6 @@ router.get('/helsetilstand/:passcode', async (req, res) => {
   }
   const profile = await reportRepo.getCovidReportByPasscode(passcode);
   if (profile) {
-    res.locals.metaDescription =
-      'Her kan du legge inn informasjon om din helsetilstand, slik at vi kan få en bedre oversikt over totalbildet i Norge.';
-
     const reports = await reportRepo.getLatestCovidReports();
     const aggregated = aggregateCovidReports(reports);
     return res.render('pages/report', {
