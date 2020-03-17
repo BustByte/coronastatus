@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html> <%- include('partials/head') -%> <body> <%- include('partials/disclaimer') -%> <%- include('partials/menu') -%>
+    <div id="page-wrapper">
+      <section id="main" class="wrapper">
+        <div class="inner">
+          <h1>Statistikk</h1>
+          <h2>Symptomer</h2>
+          <canvas id="symptomsChart"></canvas>
+        </div>
+        <section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+      /* Total symptom count */
+      var ctx = document.getElementById('symptomsChart').getContext('2d');
+      var symptoms = <%- JSON.stringify(locals.symptomStats) %>;
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: symptoms.labels,
+          datasets: [{
+            label: 'Antall rapportert',
+            backgroundColor: 'salmon',
+            data: symptoms.values
+          }]
+        },
+        options: {}
+      });
+    </script>
+    <%- include('partials/footer') -%> </body>
+</html>

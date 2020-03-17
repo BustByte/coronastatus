@@ -17,6 +17,10 @@
   const symptomDiarrhea = symptoms && symptoms['DIARRHEA'];
   const symptomHeadache = symptoms && symptoms['HEADACHE'];
   const symptomSoreThroat = symptoms && symptoms['SORE_THROAT'];
+  const symptomNoSmell = symptoms && symptoms['NO_SMELL'];
+  const symptomNoTaste = symptoms && symptoms['NO_TASTE'];
+  const symptomSlimeCough = symptoms && symptoms['SLIME_COUGH'];
+  const symptomRunnyNose = symptoms && symptoms['RUNNY_NOSE'];
 
   function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -30,6 +34,13 @@
 </head>
 <body>
   <%- include('partials/disclaimer') -%>
+  <div id="has-submitted-alert" class="alert-dismissible wrapper">
+    <div class="inner">
+      <button class="close" onclick="hasSubmittedAlertOnClick()">&times;
+      </button>
+      <div><b>Husk</b> For å endre din helsetilstand, bruk lenken du fikk ved registrering.</div>
+    </div>
+  </div>
   <%- include('partials/menu') -%>
   <div id="page-wrapper">
     <section id="main" class="wrapper">
@@ -45,6 +56,7 @@
               <p class="info-box__bolder">Mørketallene på smittede i Norge er store.</p>
               <p class="info-box__bolder">Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset i landet vårt.</p>
               <p>Nettsiden er laget i dugnadsånd av et lite konsulentselskap i samarbeid med frivillige. <br/>NB! Rapportering er frivillig.</p>
+              <p>Så fort myndighetene er klare for å motta dataene vi samler inn, står vi klare til å overlevere dem!</p>
             </div>
           </div>
           <div class="info-box stats" id="total-reports">
@@ -74,6 +86,7 @@
         <% } else { %>
           <p class="slogan">Bli med på Norges viktigste dugnad!</p>
         <% } %>
+        <%- include('partials/share') -%>
         <form method="post" action="/">
           <h2>Geografi og demografi</h2>
           <div class="row">
@@ -166,6 +179,10 @@
                   <label for="symptom-cough">Tørrhoste</label>
                 </div>
                 <div class="col-12">
+                  <input type="checkbox" id="symptom-slime-cough" name="symptom-slime-cough" <%= symptomSlimeCough ? 'checked' : '' %>>
+                  <label for="symptom-slime-cough">Slimhoste</label>
+                </div>
+                <div class="col-12">
                   <input type="checkbox" id="symptom-fatigue" name="symptom-fatigue" <%= symptomFatigue ? 'checked' : '' %>>
                   <label for="symptom-fatigue">Slitenhet eller utmattelse</label>
                 </div>
@@ -192,6 +209,18 @@
                 <div class="col-12">
                   <input type="checkbox" id="symptom-sore-throat" name="symptom-sore-throat" <%= symptomSoreThroat ? 'checked' : '' %>>
                   <label for="symptom-sore-throat">Vondt i halsen</label>
+                </div>
+                <div class="col-12">
+                  <input type="checkbox" id="symptom-no-smell" name="symptom-no-smell" <%= symptomNoSmell ? 'checked' : '' %>>
+                  <label for="symptom-no-smell">Tap av luktesans</label>
+                </div>
+                <div class="col-12">
+                  <input type="checkbox" id="symptom-no-taste" name="symptom-no-taste" <%= symptomNoTaste ? 'checked' : '' %>>
+                  <label for="symptom-no-taste">Tap av smakssans</label>
+                </div>
+                <div class="col-12">
+                  <input type="checkbox" id="symptom-runny-nose" name="symptom-runny-nose" <%= symptomRunnyNose ? 'checked' : '' %>>
+                  <label for="symptom-runny-nose">Tett eller rennende nese</label>
                 </div>
               </div>
             </div>
@@ -224,6 +253,16 @@
     <%- include('partials/footer') -%>
   </div>
   <script>
+    function hasSubmittedAlertOnClick() {
+        document.getElementById('has-submitted-alert').style.display = 'none';
+        window.localStorage.setItem("hasCrossedOutInfo", "true");
+    }
+
+    if (window.localStorage.getItem("hasSubmittedProfile") === "true"
+        && window.localStorage.getItem("hasCrossedOutInfo") !== "true"
+        && window.location.pathname.indexOf("helsetilstand") === -1) {
+        document.getElementById('has-submitted-alert').style.display = 'flex';
+    }
     // Remove query params from url
     if (window.history.replaceState) {
       window.history.replaceState({}, document.title, window.location.pathname);

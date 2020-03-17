@@ -86,7 +86,7 @@
         <div class="map-overlay top">
             <div class="map-overlay-info">
                 <h5>Rapportert status per postnummer</h5>
-                <p>Punktene vises på oppgitt postnummer, der hvert postnummer er assosiert med en koordinat.<p>
+                <p>Posisjonene vist samsvarer med gitte koordinater per postnummer, og har ingenting med enkeltpersoner og gjøre.<p>
                 <label id="month"></label>
             </div>
             <div class="map-overlay-labels">
@@ -106,29 +106,19 @@
             var map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/dark-v10',
-                center: [10.7522, 59.9139],
+                center: [10.7522, 63.9139],
                 zoom: 4,
-                attributionControl: false
+                hash: true
             });
 
-            function Attributions() { }
-            Attributions.prototype.onAdd = function(map) {
-                this._map = map;
-                this._container = document.createElement('div');
-                this._container.className = 'mapboxgl-ctrl';
-                this._container.innerHTML = "<a href='http://www.erikbolstad.no/geo/noreg/postnummer/'>postnummerinfo</a>" +
-                    " © <a href='https://www.mapbox.com/about/maps/'>Mapbox</a>" +
-                    " © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>";
-                return this._container;
-            };
-            Attributions.prototype.onRemove = function () {
-                 this._container.parentNode.removeChild(this._container);
-                 this._map = undefined;
-            };
-            var attributions = new Attributions();
-
-            map.on('load', function(){
-                map.addControl(attributions, 'bottom-right');
+            map.on('load', function() {
+                var attributions = document.getElementsByClassName("mapboxgl-ctrl-attrib-inner")[0]
+                if (attributions) {
+                    let newAttrib = document.createElement("a")
+                    newAttrib.href = "http://www.erikbolstad.no/geo/noreg/postnummer/";
+                    newAttrib.innerText = "Postnummerinfo "
+                    attributions.insertBefore(newAttrib,  attributions.firstChild)
+                }
             });
 
             const positive = ['==', ['get', 'state'], 'POSITIVE'];
@@ -144,8 +134,7 @@
             map.on('load', function() {
                 map.addSource('reports', {
                   'type': 'geojson',
-                  data: 'https://coronastatus.no/kart/geojson',
-                  //data: 'http://localhost:7272/kart/geojson',
+                  data: '/kart/geojson',
                   cluster: true,
                   clusterMaxZoom: 100, // Max zoom to cluster points on
                   clusterRadius: 80,
@@ -168,7 +157,9 @@
                       healthy, colors.healthy,
                       "#000000"
                     ],
-                    'circle-radius': 5
+                    // We do not show these single points at all. They are only here
+                    // because the markers wouldn't render without.
+                    'circle-radius': 0
                   }
                 });
             });
@@ -290,6 +281,7 @@
               updateMarkers();
             });
 
+            map.addControl(new mapboxgl.NavigationControl());
         </script>
     </body>
 </html>

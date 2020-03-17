@@ -3687,16 +3687,28 @@ body.is-preload #banner .inner {
   font-weight: 700;
 }
 
-.alert-dismissible {
-  padding-right: 4rem;
+.alert-dismissible.wrapper {
+  padding: 0;
+  background-color: #2196F3;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  display: none;
+}
+
+.alert-dismissible b {
+  color: #fff;
+}
+
+.alert-dismissible > .inner {
+  display: flex;
+  align-items: center;
 }
 
 .alert-dismissible .close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0.75rem 1.25rem;
-  color: inherit;
+    color: white !important;
+    padding: 0px 0px;
+    border: none;
 }
 
 .alert-primary {
