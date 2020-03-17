@@ -74,3 +74,7 @@ export interface InfectedAndInContactStats {
   numberOfInfectedStat: DateStat[];
   numberOfInContactStat: DateStat[];
 }
+
+export type TestResultStats = {
+  [key in TestResult]: number;
+};

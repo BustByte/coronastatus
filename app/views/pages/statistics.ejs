@@ -58,6 +58,8 @@
           <canvas id="inContactWithInfectedChart"></canvas>
           <h2>Positive testresultater og nærkontakt</h2>
           <canvas id="infectedAndContactStats"></canvas>
+          <h2>Svar på testresultater</h2>
+          <canvas id="testResultStats"></canvas>
         </div>
         <section>
     </div>
@@ -167,6 +169,30 @@
             }]
           }
         }
+      });
+    </script>
+    <script>
+      /* Stats showing distribution of test results */
+      var ctx = document.getElementById('testResultStats').getContext('2d');
+      var testResultStats = <%- JSON.stringify(locals.testResultStats) %>;
+      var myDoughnutChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          datasets: [{
+            data: [
+              testResultStats.POSITIVE,
+              testResultStats.NEGATIVE,
+              testResultStats.PENDING,
+            ],
+            backgroundColor: [
+              'rgb(255, 99, 132)',
+              'rgb(75, 192, 192)',
+              'rgb(255, 205, 86)',
+            ],
+          }],
+          labels: ['Testet positivt', 'Testet negativt', 'Venter på svar']
+        },
+        options: {}
       });
     </script>
     <script src="/static/hamburger-menu.js"></script>
