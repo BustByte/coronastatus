@@ -1,5 +1,8 @@
 import { PostalCode, Municipality, Coordinate } from '../domain/types';
 
+const rawMunicipalities = require('../../municipalities.json');
+const rawPostalCodesWithCoordinates = require('../../postnummere.json');
+
 interface MunicipalityFromFile {
   population: string;
   postalcodes: PostalCode[];
@@ -19,26 +22,14 @@ export class MunicipalityRepository {
 
   constructor() {
     this.lookupMap = new Map<PostalCode, Municipality>();
+    this.populateMunicipalitiesWithCoordinates();
   }
 
-  private async populateLookupMap(): Promise<void> {
-    const municipalities = (await (await import('../../municipalities.json'))
-      .default) as Municipalities;
+  private populateMunicipalitiesWithCoordinates(): void {
+    console.log('Populating municipality cache...');
+    const municipalities = rawMunicipalities as Municipalities;
+    const coordinates = rawPostalCodesWithCoordinates as PostalCodeWithCoordinates[];
 
-    const postalCodesWithCoordinates = (await (
-      await import('../../postnummere.json')
-    ).default) as PostalCodeWithCoordinates[];
-
-    this.populateMunicipalitiesWithCoordinates(
-      municipalities,
-      postalCodesWithCoordinates
-    );
-  }
-
-  private populateMunicipalitiesWithCoordinates(
-    municipalities: Municipalities,
-    coordinates: PostalCodeWithCoordinates[]
-  ): void {
     Object.keys(municipalities).forEach((key: string) => {
       const municipality = municipalities[key];
       municipality.postalcodes.forEach((code: PostalCode) => {
@@ -79,12 +70,9 @@ export class MunicipalityRepository {
     };
   }
 
-  public async getMunicipalityForPostalCode(
+  public getMunicipalityForPostalCode(
     postalCode: PostalCode
-  ): Promise<Municipality | undefined> {
-    if (this.lookupMap.size === 0) {
-      await this.populateLookupMap();
-    }
+  ): Municipality | undefined {
     return this.lookupMap.get(postalCode);
   }
 }
