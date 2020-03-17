@@ -86,7 +86,7 @@
         <div class="map-overlay top">
             <div class="map-overlay-info">
                 <h5>Rapportert status per postnummer</h5>
-                <p>Punktene vises på oppgitt postnummer, der hvert postnummer er assosiert med en koordinat.<p>
+                <p>Posisjonene vist samsvarer med gitte koordinater per postnummer, og har ingenting med enkeltpersoner og gjøre.<p>
                 <label id="month"></label>
             </div>
             <div class="map-overlay-labels">
@@ -106,7 +106,7 @@
             var map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/dark-v10',
-                center: [10.7522, 59.9139],
+                center: [10.7522, 63.9139],
                 zoom: 4,
                 attributionControl: false,
                 hash: true
@@ -158,7 +158,9 @@
                       healthy, colors.healthy,
                       "#000000"
                     ],
-                    'circle-radius': 5
+                    // We do not show these single points at all. They are only here
+                    // because the markers wouldn't render without.
+                    'circle-radius': 0
                   }
                 });
             });
