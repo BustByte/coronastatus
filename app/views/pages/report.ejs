@@ -254,7 +254,7 @@
     <%- include('partials/footer') -%>
   </div>
   <script src="/static/form.js"></script>
-<script>
+  <script>
     function hasSubmittedAlertOnClick() {
         document.getElementById('has-submitted-alert').style.display = 'none';
         window.localStorage.setItem("hasCrossedOutInfo", "true");
@@ -268,7 +268,7 @@
 
     var symptoms = document.querySelectorAll('input[name^="symptom-"]:checked');
 
-    if(symptoms != null && symptoms.length > 0){
+    if (symptoms != null && symptoms.length > 0) {
       document.getElementById('symptom-start-question').style.display = 'block';
     }
     
