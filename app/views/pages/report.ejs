@@ -17,6 +17,8 @@
   const symptomDiarrhea = symptoms && symptoms['DIARRHEA'];
   const symptomHeadache = symptoms && symptoms['HEADACHE'];
   const symptomSoreThroat = symptoms && symptoms['SORE_THROAT'];
+  const symptomNoSmell = symptoms && symptoms['NO_SMELL'];
+  const symptomNoTaste = symptoms && symptoms['NO_TASTE'];
 
   function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -192,6 +194,14 @@
                 <div class="col-12">
                   <input type="checkbox" id="symptom-sore-throat" name="symptom-sore-throat" <%= symptomSoreThroat ? 'checked' : '' %>>
                   <label for="symptom-sore-throat">Vondt i halsen</label>
+                </div>
+                <div class="col-12">
+                  <input type="checkbox" id="symptom-no-smell" name="symptom-no-smell" <%= symptomNoSmell ? 'checked' : '' %>>
+                  <label for="symptom-no-smell">Tap av luktesans</label>
+                </div>
+                <div class="col-12">
+                  <input type="checkbox" id="symptom-no-taste" name="symptom-no-taste" <%= symptomNoTaste ? 'checked' : '' %>>
+                  <label for="symptom-no-taste">Tap av smakssans</label>
                 </div>
               </div>
             </div>
