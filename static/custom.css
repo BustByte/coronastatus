@@ -342,6 +342,10 @@ p.subtitle {
   display: block;
 }
 
+.hamburger-menu.un-collapsed {
+  height: 175px;
+}
+
 .hamburger-menu .inner{
   padding: .5em;
 }
