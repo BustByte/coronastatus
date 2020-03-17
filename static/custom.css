@@ -126,7 +126,13 @@ input[type='checkbox'] + label.normal-font {
   padding: 2rem 0;
 }
 
-@media (max-width: 992px) {
+@media screen and (max-width: 360px) {
+  .menu .logo img {
+    height: 40px;
+  }
+}
+
+@media (max-width: 850px) {
   .menu__links {
     display: none;
   }
@@ -314,6 +320,65 @@ p.subtitle {
 #link-to-be-copied {
   max-width: 100%;
   word-break: break-all;
+}
+
+#hamburger-menu-button {
+  cursor: pointer;
+  display: none;
+  font-size: 1.3em;
+}
+
+.hamburger-menu {
+  display: none;
+  overflow: hidden;
+  height: 0;
+  transition: height .3s;
+  width: calc(100% - 4rem);
+  margin: 0 auto;
+  border-radius: 0.25rem;
+}
+
+.hamburger-menu.active {
+  display: block;
+}
+
+.hamburger-menu.un-collapsed {
+  height: 175px;
+}
+
+.hamburger-menu .inner{
+  padding: .5em;
+}
+
+.hamburger-menu ul {
+  list-style-type: none;
+}
+
+.hamburger-menu a {
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 1rem;
+  font-size: 1.2rem;
+}
+
+.hamburger-menu a.active {
+  font-weight: 600;
+}
+
+.hamburger-menu a:hover {
+  border-bottom: 3px solid #ff6666;
+}
+
+@media (max-width: 850px) {
+  #hamburger-menu-button {
+    display: block;
+  }
+}
+
+@media (min-width: 850px) {
+  .hamburger-menu {
+    display: none !important;
+  }
 }
 
 .input-block {
