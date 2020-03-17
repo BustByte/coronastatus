@@ -3688,13 +3688,17 @@ body.is-preload #banner .inner {
 }
 
 .alert-dismissible {
-  padding-right: 4rem;
+  background-color: #2196F3;
+  font-weight: 500;
+  color: #fff;
+  display: none;
+}
+
+.alert-dismissible strong {
+  color: #fff;
 }
 
 .alert-dismissible .close {
-  position: absolute;
-  top: 0;
-  right: 0;
   padding: 0.75rem 1.25rem;
   color: inherit;
 }
