@@ -134,8 +134,7 @@
             map.on('load', function() {
                 map.addSource('reports', {
                   'type': 'geojson',
-                  data: 'https://coronastatus.no/kart/geojson',
-                  //data: 'http://localhost:7272/kart/geojson',
+                  data: '/kart/geojson',
                   cluster: true,
                   clusterMaxZoom: 100, // Max zoom to cluster points on
                   clusterRadius: 80,
