@@ -34,9 +34,12 @@
 </head>
 <body>
   <%- include('partials/disclaimer') -%>
-  <div id="has-submitted-alert" class="alert-dismissible">
-    <span class="close" onclick="this.parentElement.style.display='none';">&times;</span>
-    <strong>Info</strong> For å endre din helsetilstand, bruk lenken du fikk ved registrering. 
+  <div id="has-submitted-alert" class="alert-dismissible wrapper">
+    <div class="inner">
+      <button class="close" onclick="hasSubmittedAlertOnClick()">&times;
+      </button>
+      <div><b>Husk</b> For å endre din helsetilstand, bruk lenken du fikk ved registrering.</div>
+    </div>
   </div>
   <%- include('partials/menu') -%>
   <div id="page-wrapper">
@@ -250,9 +253,15 @@
     <%- include('partials/footer') -%>
   </div>
   <script>
+    function hasSubmittedAlertOnClick() {
+        document.getElementById('has-submitted-alert').style.display = 'none';
+        window.localStorage.setItem("hasCrossedOutInfo", "true");
+    }
+
     if (window.localStorage.getItem("hasSubmittedProfile") === "true"
+        && window.localStorage.getItem("hasCrossedOutInfo") !== "true"
         && window.location.pathname.indexOf("helsetilstand") === -1) {
-        document.getElementById('has-submitted-alert').style.display = 'block';
+        document.getElementById('has-submitted-alert').style.display = 'flex';
     }
     // Remove query params from url
     if (window.history.replaceState) {
