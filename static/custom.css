@@ -339,3 +339,11 @@ p.slogan {
 .share-buttons > iframe {
   margin-left: 0.5rem;
 }
+
+table.compact tr td {
+  padding: 0.3rem 0.6rem;
+}
+
+table.compact tr th {
+  padding: 0 0.3rem 0.3rem 0.3rem;
+}
