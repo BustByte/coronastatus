@@ -10,6 +10,7 @@ import { getInstance } from './repository/SqlLiteDatabase';
 const app = express();
 const port = process.env.PORT || 7272;
 const isDevelopmentEnv = process.env.NODE_ENV === 'dev';
+const cacheKey = process.env.CACHE_KEY || `${Math.random()}`.replace('.', '');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use((req, res, next) => {
   // eslint-disable-next-line prefer-destructuring
   res.locals.activePage = req.path.split('/')[1];
+  res.locals.cacheKey = cacheKey;
   next();
 });
 
