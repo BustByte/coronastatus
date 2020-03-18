@@ -29,11 +29,18 @@ const symptomToLabelMap = {
 const symptomKeyToLabel = (symptomKey: Symptom): string =>
   symptomToLabelMap[symptomKey];
 
+const hasSymptoms = (symptoms: Symptoms): boolean =>
+  (Object.keys(symptoms) as Symptom[]).some(key => !!symptoms[key]);
+
 export function groupBySymptoms(
   reports: CovidReport[],
   reportFilter: (report: CovidReport) => boolean = () => true
 ): SymptomStats {
-  const symptoms = reports.filter(reportFilter).map(report => report.symptoms);
+  const symptoms = reports
+    .filter(report => hasSymptoms(report.symptoms))
+    .filter(reportFilter)
+    .map(report => report.symptoms);
+
   const symptomStats = {
     [Symptom.DRY_COUGH]: 0,
     [Symptom.EXHAUSTION]: 0,
@@ -62,9 +69,6 @@ export function groupBySymptoms(
     total: symptoms.length
   };
 }
-
-const hasSymptoms = (symptoms: Symptoms): boolean =>
-  (Object.keys(symptoms) as Symptom[]).some(key => !!symptoms[key]);
 
 function addMissingTimestamps(reports: CovidReport[]): CovidReport[] {
   const missingTimestampRange = [1584284400000, 1584316799000];
