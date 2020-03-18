@@ -78,3 +78,16 @@ export interface InfectedAndInContactStats {
 export type TestResultStats = {
   [key in TestResult]: number;
 };
+
+export type PostalCode = string;
+
+export interface Coordinate {
+  lat: string;
+  lon: string;
+}
+export interface Municipality {
+  name: string;
+  population: string;
+  postalcodes: PostalCode[];
+  coordinates: Coordinate;
+}
