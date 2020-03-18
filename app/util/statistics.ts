@@ -58,7 +58,8 @@ export function groupBySymptoms(
   });
   return {
     labels: (Object.keys(symptomStats) as Symptom[]).map(symptomKeyToLabel),
-    values: Object.values(symptomStats)
+    values: Object.values(symptomStats),
+    total: symptoms.length
   };
 }
 

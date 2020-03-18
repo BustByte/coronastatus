@@ -52,6 +52,7 @@ export interface AggregatedCovidReportData {
 export interface SymptomStats {
   labels: string[];
   values: number[];
+  total: number;
 }
 
 export interface DateStat {
