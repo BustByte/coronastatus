@@ -1,4 +1,6 @@
-var hamburgerMenuButton = document.getElementById('hamburger-menu-button');
+var hamburgerMenuButton = document.getElementsByClassName(
+  'hamburger-menu-button'
+)[0];
 
 hamburgerMenuButton.addEventListener('click', function() {
   var hamburgerMenu = document.getElementsByClassName('hamburger-menu')[0];
