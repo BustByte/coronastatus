@@ -9,7 +9,7 @@ const reportRepo = new CovidReportRepository();
 router.get('/aggregated', async (req, res) => {
   const reports = await reportRepo.getLatestCovidReports();
   const aggregated = aggregateCovidReports(reports);
-  res.send(aggregated);
+  res.json(aggregated);
 });
 
 router.get('*', function(req, res) {
