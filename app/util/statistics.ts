@@ -3,6 +3,7 @@ import {
   Symptom,
   Symptoms,
   TotalReportsStats,
+  SymptomStat,
   SymptomStats,
   DateStat,
   InContactWithInfectedStat,
@@ -32,6 +33,18 @@ const symptomKeyToLabel = (symptomKey: Symptom): string =>
 const hasSymptoms = (symptoms: Symptoms): boolean =>
   (Object.keys(symptoms) as Symptom[]).some(key => !!symptoms[key]);
 
+function compareSymptomStats(a: SymptomStat, b: SymptomStat): number {
+  if (a.count > b.count) {
+    return -1;
+  }
+
+  if (a.count < b.count) {
+    return 1;
+  }
+
+  return 0;
+}
+
 export function groupBySymptoms(
   reports: CovidReport[],
   reportFilter: (report: CovidReport) => boolean = () => true
@@ -41,31 +54,53 @@ export function groupBySymptoms(
     .filter(reportFilter)
     .map(report => report.symptoms);
 
-  const symptomStats = {
-    [Symptom.DRY_COUGH]: 0,
-    [Symptom.EXHAUSTION]: 0,
-    [Symptom.FEVER]: 0,
-    [Symptom.HEAVY_BREATHING]: 0,
-    [Symptom.MUSCLE_ACHING]: 0,
-    [Symptom.DIARRHEA]: 0,
-    [Symptom.HEADACHE]: 0,
-    [Symptom.SORE_THROAT]: 0,
-    [Symptom.NO_TASTE]: 0,
-    [Symptom.NO_SMELL]: 0,
-    [Symptom.SLIME_COUGH]: 0,
-    [Symptom.RUNNY_NOSE]: 0
-  };
+  const symptomStats: SymptomStat[] = [];
+
   symptoms.forEach(symptom => {
     const symptomKeys = Object.keys(symptom) as Symptom[];
     symptomKeys.forEach(key => {
-      if (symptom[key]) {
-        symptomStats[key] += 1;
+      if (!symptom[key]) {
+        return;
+      }
+
+      const found = symptomStats.find(
+        symptomStat => symptomStat.symptom === key
+      );
+
+      if (!found) {
+        symptomStats.push({
+          symptom: key,
+          count: 1
+        });
+      } else {
+        found.count += 1;
       }
     });
   });
+
+  // Fill in the rest of the symptoms that have count = 0.
+  const allSymptoms = Object.keys(Symptom) as Symptom[];
+
+  allSymptoms.forEach(symptom => {
+    const found = symptomStats.find(
+      symptomStat => symptomStat.symptom === symptom
+    );
+
+    if (!found) {
+      symptomStats.push({
+        symptom,
+        count: 0
+      });
+    }
+  });
+
+  const symptomStatsSorted = symptomStats.sort(compareSymptomStats);
+
   return {
-    labels: (Object.keys(symptomStats) as Symptom[]).map(symptomKeyToLabel),
-    values: Object.values(symptomStats),
+    labels: symptomStatsSorted
+      .map(symptomStat => symptomStat.symptom)
+      .map(symptomKeyToLabel),
+    values: symptomStatsSorted.map(symptomStat => symptomStat.count),
     total: symptoms.length
   };
 }
