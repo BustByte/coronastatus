@@ -306,6 +306,18 @@
             });
 
             map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+
+            navigator.geolocation.getCurrentPosition(
+                function(geolocation) {
+                    map.flyTo({
+                        zoom: 11,
+                        center: [
+                            geolocation.coords.longitude,
+                            geolocation.coords.latitude
+                        ],
+                        essential: true
+                    });
+                });
         </script>
         <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
     </body>
