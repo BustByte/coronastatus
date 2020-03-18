@@ -2,6 +2,10 @@
   const totalPeopleInContactWithInfected = locals.inContactWithInfectedStats.total;
   const totalInfectedPeopleWithSymptoms = locals.allInfectedSymptomsStats.total;
   const totalPeopleWithSymptoms = locals.allSymptomsStats.total;
+
+  function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  }
 %>
 <!DOCTYPE html>
 <html>
@@ -15,10 +19,10 @@
         <div class="inner">
           <h1>Statistikk</h1>
           <h2>Symptomer hos covid-19-smittede</h2>
-          <p>Totalt har <%= totalInfectedPeopleWithSymptoms %> personer rapportert at de har testet positivt på COVID-19 og har symptomer.</p>
+          <p>Totalt har <%= numberWithSpaces(totalInfectedPeopleWithSymptoms) %> personer rapportert at de har testet positivt på COVID-19 og har symptomer.</p>
           <canvas id="infectedSymptomsChart"></canvas>
           <h2>Alle innrapporterte symptomer.</h2>
-          <p>Totalt har <%= totalPeopleWithSymptoms %> personer rapportert at de har symptomer</p>
+          <p>Totalt har <%= numberWithSpaces(totalPeopleWithSymptoms) %> personer rapportert at de har symptomer</p>
           <canvas id="allSymptomsChart"></canvas>
           <p style="margin-bottom: 0.5rem;">PS: Noen symptomer var ikke en del av skjema fra starten av:</p>
           <div style="max-width: 500px" class="table-wrapper">
@@ -60,7 +64,7 @@
           <h2>Antall rapporteringer</h2>
           <canvas id="totalReportsChart"></canvas>
           <h2>Nærkontakt med smittede</h2>
-          <p>Totalt har <%= totalPeopleInContactWithInfected %> personer rapportert at de har hatt nærkontakt med en person som har testet positivt på COVID-19.</p>
+          <p>Totalt har <%= numberWithSpaces(totalPeopleInContactWithInfected) %> personer rapportert at de har hatt nærkontakt med en person som har testet positivt på COVID-19.</p>
           <canvas id="inContactWithInfectedChart"></canvas>
           <h2>Positive testresultater og nærkontakt</h2>
           <canvas id="infectedAndContactStats"></canvas>
