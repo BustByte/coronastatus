@@ -3,7 +3,9 @@ import { CovidReportRepository } from '../repository/CovidReportRepository';
 import {
   groupBySymptoms,
   calculateTotalReportsStats,
-  getInContactWithInfectedStats
+  getInContactWithInfectedStats,
+  getInfectedAndContactStats,
+  getTestResultStats
 } from '../util/statistics';
 
 const router = express.Router();
@@ -18,11 +20,15 @@ router.get('/', async (req, res) => {
   const allReports = await reportRepo.getLatestCovidReports();
   const symptomStats = groupBySymptoms(allReports);
   const totalReportStats = calculateTotalReportsStats(allReports);
-  const InContactWithInfectedStats = getInContactWithInfectedStats(allReports);
+  const inContactWithInfectedStats = getInContactWithInfectedStats(allReports);
+  const infectedAndContactStats = getInfectedAndContactStats(allReports);
+  const testResultStats = getTestResultStats(allReports);
   return res.render('pages/statistics', {
     symptomStats,
     totalReportStats,
-    InContactWithInfectedStats
+    inContactWithInfectedStats,
+    infectedAndContactStats,
+    testResultStats
   });
 });
 
