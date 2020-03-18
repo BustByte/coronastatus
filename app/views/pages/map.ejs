@@ -80,24 +80,45 @@
             a {
                 color: #fff;
             }
+
+            #map-page .fas.fa-bars {
+                color: #fff;
+            }
+
+            #map-page .hamburger-menu.active {
+                position: relative;
+                text-align: right;
+            }
+
+            #map-page .hamburger-menu a {
+                color: #fff;
+            }
+
+            #map-page .hamburger-menu-button {
+                border-color: #fff;
+            }
+
+
         </style>
-        <div id="map"></div>
-        <%- include('partials/menu') -%>
-        <%- include('partials/hamburger-menu') -%>
-        <div class="map-overlay top">
-            <div class="map-overlay-info">
-                <h5>Rapportert status per postnummer</h5>
-                <p>Posisjonene vist samsvarer med gitte koordinater per postnummer, og har ingenting med enkeltpersoner og gjøre.<p>
-                <label id="month"></label>
-            </div>
-            <div class="map-overlay-labels">
-                <div id="legend" class="legend">
-                    <div>Frisk</div>
-                    <div class="healthy"></div>
-                    <div>Har symptomer</div>
-                    <div class="symptoms"></div>
-                    <div>Testet positivt</div>
-                    <div class="positive"></div>
+        <div id="map-page">
+            <div id="map"></div>
+            <%- include('partials/menu') -%>
+            <%- include('partials/hamburger-menu') -%>
+            <div class="map-overlay top">
+                <div class="map-overlay-info">
+                    <h5>Rapportert status per postnummer</h5>
+                    <p>Posisjonene vist samsvarer med gitte koordinater per postnummer, og har ingenting med enkeltpersoner og gjøre.<p>
+                    <label id="month"></label>
+                </div>
+                <div class="map-overlay-labels">
+                    <div id="legend" class="legend">
+                        <div>Frisk</div>
+                        <div class="healthy"></div>
+                        <div>Har symptomer</div>
+                        <div class="symptoms"></div>
+                        <div>Testet positivt</div>
+                        <div class="positive"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -284,7 +305,7 @@
               updateMarkers();
             });
 
-            map.addControl(new mapboxgl.NavigationControl());
+            map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
         </script>
         <script src="/static/hamburger-menu.js"></script>
     </body>
