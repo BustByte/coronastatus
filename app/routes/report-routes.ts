@@ -26,16 +26,11 @@ router.get('/', async (req, res) => {
   return res.render('pages/report', { aggregated });
 });
 
-router.get('/numberOfReports', async (req, res) => {
-  const numberOfReports = await reportRepo.countNumberOfReports();
-  return res.json({ numberOfReports });
-});
-
-router.get('/helsetilstand/:passcode', async (req, res) => {
+router.get('/:passcode', async (req, res) => {
   const success = req.query?.success === 'true';
   const { passcode } = req.params;
   if (!passcode) {
-    return res.redirect('/');
+    return res.redirect('/helsetilstand');
   }
   const profile = await reportRepo.getCovidReportByPasscode(passcode);
   if (profile) {
@@ -48,7 +43,7 @@ router.get('/helsetilstand/:passcode', async (req, res) => {
       aggregated
     });
   }
-  return res.redirect('/');
+  return res.redirect('/helsetilstand');
 });
 
 const extractTestResult = (req: Request): TestResult | undefined => {
@@ -111,18 +106,6 @@ router.post('/', createReportRateLimit, async (req, res) => {
     return res.redirect(`/helsetilstand/${passcode}?success=true`);
   }
   return res.render('pages/confirm-profile', { passcode });
-});
-
-router.get('/elements', (req, res) => {
-  return res.render('pages/elements');
-});
-
-router.get('/personvern', (req, res) => {
-  return res.render('pages/privacy-policy');
-});
-
-router.get('/frivillige', (req, res) => {
-  return res.render('pages/frivillige');
 });
 
 export default router;

@@ -32,7 +32,7 @@ const mapFeatureFromCoordinateAndReport = (
   }
 });
 
-router.get('/geojson', async (req, res) => {
+router.get('/kart/geojson', async (req, res) => {
   const allReports = await reportRepo.getLatestCovidReports();
   const features = allReports
     .map(report => {
@@ -54,6 +54,10 @@ router.get('/geojson', async (req, res) => {
 router.get('/', (req, res) => {
   res.locals.useWhiteLogo = true;
   return res.render('pages/map');
+});
+
+router.get('/kart', (req, res) => {
+  return res.redirect('/');
 });
 
 export default router;

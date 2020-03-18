@@ -367,13 +367,11 @@ p.subtitle {
   font-weight: 500;
   margin-left: 1rem;
   font-size: 1.2rem;
+  border-bottom: 3px transparent;
 }
 
 .hamburger-menu a.active {
   font-weight: 600;
-}
-
-.hamburger-menu a:hover {
   border-bottom: 3px solid #ff6666;
 }
 
@@ -419,4 +417,24 @@ table.compact tr td {
 
 table.compact tr th {
   padding: 0 0.3rem 0.3rem 0.3rem;
+}
+
+.call-to-action-button {
+  position: fixed;
+  bottom: 2rem;
+  left: 10px;
+}
+
+.call-to-action-button .actions {
+  margin: 0;
+}
+
+.call-to-action-button ul.actions li {
+  padding: 0;
+}
+
+.call-to-action-button .button {
+  background-color: white;
+  cursor: pointer;
+  padding: 0 3.5rem 0 1.5rem;
 }
