@@ -164,7 +164,7 @@ input[type='checkbox'] + label.normal-font {
 
 .info-box__content p {
   margin: 0;
-  padding: 0;
+  padding: 4px;
   line-height: 1.4rem;
   font-weight: 400;
   font-size: 0.9rem;
