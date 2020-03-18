@@ -33,17 +33,8 @@ const symptomKeyToLabel = (symptomKey: Symptom): string =>
 const hasSymptoms = (symptoms: Symptoms): boolean =>
   (Object.keys(symptoms) as Symptom[]).some(key => !!symptoms[key]);
 
-function compareSymptomStats(a: SymptomStat, b: SymptomStat): number {
-  if (a.count > b.count) {
-    return -1;
-  }
-
-  if (a.count < b.count) {
-    return 1;
-  }
-
-  return 0;
-}
+const compareSymptomStats = (a: SymptomStat, b: SymptomStat): number =>
+  b.count - a.count;
 
 export function groupBySymptoms(
   reports: CovidReport[],
@@ -54,44 +45,32 @@ export function groupBySymptoms(
     .filter(reportFilter)
     .map(report => report.symptoms);
 
-  const symptomStats: SymptomStat[] = [];
+  const symptomStats: SymptomStat[] = [
+    { symptom: Symptom.DRY_COUGH },
+    { symptom: Symptom.DRY_COUGH },
+    { symptom: Symptom.EXHAUSTION },
+    { symptom: Symptom.FEVER },
+    { symptom: Symptom.HEAVY_BREATHING },
+    { symptom: Symptom.MUSCLE_ACHING },
+    { symptom: Symptom.DIARRHEA },
+    { symptom: Symptom.HEADACHE },
+    { symptom: Symptom.SORE_THROAT },
+    { symptom: Symptom.NO_TASTE },
+    { symptom: Symptom.NO_SMELL },
+    { symptom: Symptom.SLIME_COUGH },
+    { symptom: Symptom.RUNNY_NOSE }
+  ].map(symptom => ({ ...symptom, count: 0 }));
 
   symptoms.forEach(symptom => {
     const symptomKeys = Object.keys(symptom) as Symptom[];
     symptomKeys.forEach(key => {
-      if (!symptom[key]) {
-        return;
-      }
-
-      const found = symptomStats.find(
+      const stat = symptomStats.find(
         symptomStat => symptomStat.symptom === key
       );
-
-      if (!found) {
-        symptomStats.push({
-          symptom: key,
-          count: 1
-        });
-      } else {
-        found.count += 1;
+      if (stat) {
+        stat.count += 1;
       }
     });
-  });
-
-  // Fill in the rest of the symptoms that have count = 0.
-  const allSymptoms = Object.keys(Symptom) as Symptom[];
-
-  allSymptoms.forEach(symptom => {
-    const found = symptomStats.find(
-      symptomStat => symptomStat.symptom === symptom
-    );
-
-    if (!found) {
-      symptomStats.push({
-        symptom,
-        count: 0
-      });
-    }
   });
 
   const symptomStatsSorted = symptomStats.sort(compareSymptomStats);
