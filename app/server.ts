@@ -5,7 +5,6 @@ import reportRoutes from './routes/report-routes';
 import mapRoutes from './routes/map-routes';
 import apiRoutes from './routes/api-routes';
 import statisticsRoutes from './routes/statistics-routes';
-import variousRoutes from './routes/various-routes';
 import { getInstance } from './repository/SqlLiteDatabase';
 
 const app = express();
@@ -29,11 +28,10 @@ app.set('views', [
   path.join(__dirname, 'views', 'errors')
 ]);
 
-app.use('/', mapRoutes);
-app.use('/helsetilstand', reportRoutes);
+app.use('/', reportRoutes);
+app.use('/kart', mapRoutes);
 app.use('/api', apiRoutes);
 app.use('/statistikk', statisticsRoutes);
-app.use('/', variousRoutes);
 
 app.use(
   '/static',
