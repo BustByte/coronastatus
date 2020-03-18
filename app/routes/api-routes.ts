@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 
 import { CovidReportRepository } from '../repository/CovidReportRepository';
 import { MunicipalityRepository } from '../repository/MunicipalityRepository';
@@ -9,7 +10,7 @@ const router = express.Router();
 const reportRepo = new CovidReportRepository();
 const municipalityRepo = new MunicipalityRepository();
 
-router.get('/aggregated', async (req, res) => {
+router.get('/aggregated', cors(), async (req, res) => {
   const reports = await reportRepo.getLatestCovidReports();
   const aggregated = aggregateCovidReports(reports);
   res.json(aggregated);
@@ -57,7 +58,7 @@ const municipalityFilter = (municipalityQueryParam: any) => {
     m !== undefined && m === municipalityQueryParam.toUpperCase();
 };
 
-router.get('/reports', async (req, res) => {
+router.get('/reports', cors(), async (req, res) => {
   const numQueryParams = Object.keys(req.query).length;
   if (
     numQueryParams > 1 ||
