@@ -194,7 +194,7 @@ input[type='checkbox'] + label.normal-font {
 }
 
 .info-box.stats {
-  width: 175px;
+  min-width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -340,7 +340,7 @@ p.subtitle {
   display: none;
   overflow: hidden;
   height: 0;
-  transition: height .3s;
+  transition: height 0.3s;
   width: calc(100% - 4rem);
   margin: 0 auto;
   border-radius: 0.25rem;
@@ -354,8 +354,8 @@ p.subtitle {
   height: 175px;
 }
 
-.hamburger-menu .inner{
-  padding: .5em;
+.hamburger-menu .inner {
+  padding: 0.5em;
 }
 
 .hamburger-menu ul {
