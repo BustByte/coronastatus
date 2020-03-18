@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="no">
-    <head>
-        <%- include('partials/head') -%>
-    </head>
-<body>
+  <head>
+    <%- include('partials/head') -%>
+  </head>
+  <body>
     <%- include('partials/disclaimer') -%>
     <%- include('partials/menu') -%>
+    <%- include('partials/hamburger-menu') -%>
     <div id="page-wrapper">
       <section id="main" class="wrapper">
         <div class="inner privacy-policy">
@@ -18,6 +19,6 @@
         </div>
       </section>
     </div>
-</body>
-
+    <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
+  </body>
 </html>
