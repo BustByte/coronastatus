@@ -12,8 +12,10 @@
       <section id="main" class="wrapper">
         <div class="inner">
           <h1>Statistikk</h1>
-          <h2>Symptomer</h2>
-          <canvas id="symptomsChart"></canvas>
+          <h2>Symptomer hos covid-19-smittede</h2>
+          <canvas id="infectedSymptomsChart"></canvas>
+          <h2>Alle innrapporterte symptomer</h2>
+          <canvas id="allSymptomsChart"></canvas>
           <p style="margin-bottom: 0.5rem;">PS: Noen symptomer var ikke en del av skjema fra starten av:</p>
           <div style="max-width: 500px" class="table-wrapper">
             <table class="alt compact">
@@ -67,16 +69,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script>
+      /* Infected symptom count */
+      var ctx = document.getElementById('infectedSymptomsChart').getContext('2d');
+      var infectedSymptoms = <%- JSON.stringify(locals.allInfectedSymptomsStats) %>;
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: infectedSymptoms.labels,
+          datasets: [{
+            label: 'Antall rapportert hos påvist covid-19-smittede',
+            backgroundColor: '#af2222',
+            data: infectedSymptoms.values
+          }]
+        },
+        options: {}
+      });
+    </script>
+    <script>
       /* Total symptom count */
-      var ctx = document.getElementById('symptomsChart').getContext('2d');
-      var symptoms = <%- JSON.stringify(locals.symptomStats) %>;
+      var ctx = document.getElementById('allSymptomsChart').getContext('2d');
+      var symptoms = <%- JSON.stringify(locals.allSymptomsStats) %>;
       new Chart(ctx, {
         type: 'bar',
         data: {
           labels: symptoms.labels,
           datasets: [{
             label: 'Antall rapportert',
-            backgroundColor: 'salmon',
+            backgroundColor: '#da7823',
             data: symptoms.values
           }]
         },
@@ -200,7 +219,7 @@
         options: {}
       });
     </script>
-    <%- include('partials/footer') -%>
     <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
+    <%- include('partials/footer') -%>
   </body>
 </html>

@@ -29,8 +29,11 @@ const symptomToLabelMap = {
 const symptomKeyToLabel = (symptomKey: Symptom): string =>
   symptomToLabelMap[symptomKey];
 
-export function groupBySymptoms(reports: CovidReport[]): SymptomStats {
-  const symptoms = reports.map(report => report.symptoms);
+export function groupBySymptoms(
+  reports: CovidReport[],
+  reportFilter: (report: CovidReport) => boolean = () => true
+): SymptomStats {
+  const symptoms = reports.filter(reportFilter).map(report => report.symptoms);
   const symptomStats = {
     [Symptom.DRY_COUGH]: 0,
     [Symptom.EXHAUSTION]: 0,
