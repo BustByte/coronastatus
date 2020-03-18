@@ -253,7 +253,7 @@
     </section>
     <%- include('partials/footer') -%>
   </div>
-  <script src="/static/form.js"></script>
+  <script src="/static/form.js?v=<%= locals.cacheKey %>"></script>
   <script>
     function hasSubmittedAlertOnClick() {
         document.getElementById('has-submitted-alert').style.display = 'none';
@@ -279,6 +279,6 @@
       window.history.replaceState({}, document.title, window.location.pathname);
     }
   </script>
-  <script src="/static/hamburger-menu.js"></script>
+  <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
 </body>
 </html>

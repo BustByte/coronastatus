@@ -48,6 +48,6 @@
         window.history.replaceState({}, document.title, window.location.pathname);
       }
     </script>
-    <script src="/static/hamburger-menu.js"></script>
+    <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
   </body>
 </html>
