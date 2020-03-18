@@ -322,10 +322,18 @@ p.subtitle {
   word-break: break-all;
 }
 
-#hamburger-menu-button {
-  cursor: pointer;
-  display: none;
+.hamburger-menu-icon {
   font-size: 1.3em;
+}
+
+.hamburger-menu-button {
+  display: none;
+  cursor: pointer;
+  border: 3px solid #282828;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
 }
 
 .hamburger-menu {
@@ -370,8 +378,8 @@ p.subtitle {
 }
 
 @media (max-width: 850px) {
-  #hamburger-menu-button {
-    display: block;
+  .hamburger-menu-button {
+    display: flex;
   }
 }
 

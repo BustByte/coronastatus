@@ -83,6 +83,7 @@
         </style>
         <div id="map"></div>
         <%- include('partials/menu') -%>
+        <%- include('partials/hamburger-menu') -%>
         <div class="map-overlay top">
             <div class="map-overlay-info">
                 <h5>Rapportert status per postnummer</h5>
@@ -285,5 +286,6 @@
 
             map.addControl(new mapboxgl.NavigationControl());
         </script>
+        <script src="/static/hamburger-menu.js"></script>
     </body>
 </html>
