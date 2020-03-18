@@ -252,9 +252,9 @@
               // set a mininum and a maximum to define the domain and the range.
               var scale = d3.scaleLinear()
                 .domain([d3.max(totals), d3.min(totals)])
-                .range([1000, d3.max(totals)])
+                .range([2500, 800])//d3.max(totals)])
 
-              var radius = Math.sqrt(scale(props.point_count)) + 10;
+              var radius = Math.sqrt(scale(props.point_count)) + 5;
               var circleRadius = radius - thickness;
 
               var svg = d3.select(div)
