@@ -1,7 +1,7 @@
 {
   "HALDEN": {
     "population": "31373",
-    "postalcodes": [
+    "postalCodes": [
       "1751",
       "1752",
       "1753",
@@ -43,7 +43,7 @@
   },
   "MOSS": {
     "population": "49273",
-    "postalcodes": [
+    "postalCodes": [
       "1501",
       "1502",
       "1503",
@@ -94,7 +94,7 @@
   },
   "SARPSBORG": {
     "population": "56732",
-    "postalcodes": [
+    "postalCodes": [
       "1701",
       "1702",
       "1703",
@@ -136,7 +136,7 @@
   },
   "FREDRIKSTAD": {
     "population": "82385",
-    "postalcodes": [
+    "postalCodes": [
       "1601",
       "1602",
       "1604",
@@ -198,7 +198,7 @@
   },
   "DRAMMEN": {
     "population": "101386",
-    "postalcodes": [
+    "postalCodes": [
       "3001",
       "3002",
       "3003",
@@ -265,7 +265,7 @@
   },
   "KONGSBERG": {
     "population": "27723",
-    "postalcodes": [
+    "postalCodes": [
       "3601",
       "3602",
       "3603",
@@ -293,7 +293,7 @@
   },
   "RINGERIKE": {
     "population": "30641",
-    "postalcodes": [
+    "postalCodes": [
       "3501",
       "3502",
       "3503",
@@ -320,19 +320,19 @@
   },
   "HVALER": {
     "population": "4668",
-    "postalcodes": ["1680", "1682", "1683", "1684", "1690", "1692"]
+    "postalCodes": ["1680", "1682", "1683", "1684", "1690", "1692"]
   },
   "AREMARK": {
     "population": "1325",
-    "postalcodes": ["1798", "1799"]
+    "postalCodes": ["1798", "1799"]
   },
   "MARKER": {
     "population": "3595",
-    "postalcodes": ["1870", "1871", "1875"]
+    "postalCodes": ["1870", "1871", "1875"]
   },
   "INDRE ØSTFOLD": {
     "population": "44792",
-    "postalcodes": [
+    "postalCodes": [
       "1801",
       "1802",
       "1803",
@@ -370,23 +370,23 @@
   },
   "SKIPTVET": {
     "population": "3805",
-    "postalcodes": ["1806", "1816"]
+    "postalCodes": ["1806", "1816"]
   },
   "RAKKESTAD": {
     "population": "8255",
-    "postalcodes": ["1890", "1891", "1892", "1893", "1894"]
+    "postalCodes": ["1890", "1891", "1892", "1893", "1894"]
   },
   "RÅDE": {
     "population": "7508",
-    "postalcodes": ["1640", "1641", "1642", "1643"]
+    "postalCodes": ["1640", "1641", "1642", "1643"]
   },
   "VÅLER (VIKEN)": {
     "population": "5736",
-    "postalcodes": ["1591", "1592", "1593", "1594"]
+    "postalCodes": ["1591", "1592", "1593", "1594"]
   },
   "VESTBY": {
     "population": "18042",
-    "postalcodes": [
+    "postalCodes": [
       "1540",
       "1541",
       "1542",
@@ -400,7 +400,7 @@
   },
   "NORDRE FOLLO": {
     "population": "59288",
-    "postalcodes": [
+    "postalCodes": [
       "1400",
       "1401",
       "1402",
@@ -430,7 +430,7 @@
   },
   "ÅS": {
     "population": "20439",
-    "postalcodes": [
+    "postalCodes": [
       "1407",
       "1429",
       "1430",
@@ -443,7 +443,7 @@
   },
   "FROGN": {
     "population": "15877",
-    "postalcodes": [
+    "postalCodes": [
       "1440",
       "1441",
       "1442",
@@ -459,7 +459,7 @@
   },
   "NESODDEN": {
     "population": "19616",
-    "postalcodes": [
+    "postalCodes": [
       "1450",
       "1451",
       "1452",
@@ -473,7 +473,7 @@
   },
   "BÆRUM": {
     "population": "127731",
-    "postalcodes": [
+    "postalCodes": [
       "1300",
       "1301",
       "1302",
@@ -541,7 +541,7 @@
   },
   "ASKER": {
     "population": "94441",
-    "postalcodes": [
+    "postalCodes": [
       "1371",
       "1372",
       "1373",
@@ -593,7 +593,7 @@
   },
   "AURSKOG-HØLAND": {
     "population": "17390",
-    "postalcodes": [
+    "postalCodes": [
       "1930",
       "1931",
       "1940",
@@ -609,7 +609,7 @@
   },
   "RÆLINGEN": {
     "population": "18530",
-    "postalcodes": [
+    "postalCodes": [
       "2005",
       "2006",
       "2008",
@@ -622,11 +622,11 @@
   },
   "ENEBAKK": {
     "population": "11110",
-    "postalcodes": ["1911", "1912", "1914", "1916", "1917"]
+    "postalCodes": ["1911", "1912", "1914", "1916", "1917"]
   },
   "LØRENSKOG": {
     "population": "41460",
-    "postalcodes": [
+    "postalCodes": [
       "1461",
       "1462",
       "1463",
@@ -647,7 +647,7 @@
   },
   "LILLESTRØM": {
     "population": "85983",
-    "postalcodes": [
+    "postalCodes": [
       "1465",
       "1466",
       "1467",
@@ -684,7 +684,7 @@
   },
   "NITTEDAL": {
     "population": "24249",
-    "postalcodes": [
+    "postalCodes": [
       "1480",
       "1481",
       "1482",
@@ -698,11 +698,11 @@
   },
   "GJERDRUM": {
     "population": "6890",
-    "postalcodes": ["2022", "2024"]
+    "postalCodes": ["2022", "2024"]
   },
   "ULLENSAKER": {
     "population": "39625",
-    "postalcodes": [
+    "postalCodes": [
       "2040",
       "2041",
       "2050",
@@ -726,7 +726,7 @@
   },
   "NES": {
     "population": "23092",
-    "postalcodes": [
+    "postalCodes": [
       "1927",
       "1928",
       "1929",
@@ -745,7 +745,7 @@
   },
   "EIDSVOLL": {
     "population": "25436",
-    "postalcodes": [
+    "postalCodes": [
       "2070",
       "2071",
       "2072",
@@ -761,39 +761,39 @@
   },
   "NANNESTAD": {
     "population": "14139",
-    "postalcodes": ["2030", "2031", "2032", "2033", "2034", "2035", "2036"]
+    "postalCodes": ["2030", "2031", "2032", "2033", "2034", "2035", "2036"]
   },
   "HURDAL": {
     "population": "2854",
-    "postalcodes": ["2090", "2091"]
+    "postalCodes": ["2090", "2091"]
   },
   "HOLE": {
     "population": "6799",
-    "postalcodes": ["3529", "3530", "3531", "3538"]
+    "postalCodes": ["3529", "3530", "3531", "3538"]
   },
   "FLÅ": {
     "population": "1050",
-    "postalcodes": ["3539", "3545"]
+    "postalCodes": ["3539", "3545"]
   },
   "NESBYEN": {
     "population": "3273",
-    "postalcodes": ["3540", "3541"]
+    "postalCodes": ["3540", "3541"]
   },
   "GOL": {
     "population": "4608",
-    "postalcodes": ["3550", "3551"]
+    "postalCodes": ["3550", "3551"]
   },
   "HEMSEDAL": {
     "population": "2486",
-    "postalcodes": ["3560", "3561"]
+    "postalCodes": ["3560", "3561"]
   },
   "ÅL": {
     "population": "4674",
-    "postalcodes": ["3570", "3571", "3579"]
+    "postalCodes": ["3570", "3571", "3579"]
   },
   "HOL": {
     "population": "4441",
-    "postalcodes": [
+    "postalCodes": [
       "3575",
       "3576",
       "3577",
@@ -806,19 +806,19 @@
   },
   "SIGDAL": {
     "population": "3467",
-    "postalcodes": ["3350", "3351", "3355", "3357", "3358", "3359"]
+    "postalCodes": ["3350", "3351", "3355", "3357", "3358", "3359"]
   },
   "KRØDSHERAD": {
     "population": "2212",
-    "postalcodes": ["3535", "3536", "3537", "3543"]
+    "postalCodes": ["3535", "3536", "3537", "3543"]
   },
   "MODUM": {
     "population": "14115",
-    "postalcodes": ["3340", "3341", "3342", "3360", "3361", "3370", "3371"]
+    "postalCodes": ["3340", "3341", "3342", "3360", "3361", "3370", "3371"]
   },
   "ØVRE EIKER": {
     "population": "19423",
-    "postalcodes": [
+    "postalCodes": [
       "3300",
       "3301",
       "3302",
@@ -832,7 +832,7 @@
   },
   "LIER": {
     "population": "26811",
-    "postalcodes": [
+    "postalCodes": [
       "3401",
       "3402",
       "3403",
@@ -857,23 +857,23 @@
   },
   "FLESBERG": {
     "population": "2688",
-    "postalcodes": ["3620", "3621", "3622", "3623", "3624"]
+    "postalCodes": ["3620", "3621", "3622", "3623", "3624"]
   },
   "ROLLAG": {
     "population": "1390",
-    "postalcodes": ["3626", "3627", "3628"]
+    "postalCodes": ["3626", "3627", "3628"]
   },
   "NORE OG UVDAL": {
     "population": "2439",
-    "postalcodes": ["3544", "3629", "3630", "3631", "3632", "3634"]
+    "postalCodes": ["3544", "3629", "3630", "3631", "3632", "3634"]
   },
   "JEVNAKER": {
     "population": "6852",
-    "postalcodes": ["3520", "3521"]
+    "postalCodes": ["3520", "3521"]
   },
   "LUNNER": {
     "population": "9048",
-    "postalcodes": [
+    "postalCodes": [
       "2713",
       "2715",
       "2716",
@@ -887,7 +887,7 @@
   },
   "OSLO": {
     "population": "693494",
-    "postalcodes": [
+    "postalCodes": [
       "0001",
       "0010",
       "0015",
@@ -1529,7 +1529,7 @@
   },
   "KONGSVINGER": {
     "population": "17829",
-    "postalcodes": [
+    "postalCodes": [
       "2201",
       "2202",
       "2203",
@@ -1557,7 +1557,7 @@
   },
   "HAMAR": {
     "population": "31369",
-    "postalcodes": [
+    "postalCodes": [
       "2301",
       "2302",
       "2303",
@@ -1585,7 +1585,7 @@
   },
   "LILLEHAMMER": {
     "population": "28345",
-    "postalcodes": [
+    "postalCodes": [
       "2601",
       "2602",
       "2603",
@@ -1614,7 +1614,7 @@
   },
   "GJØVIK": {
     "population": "30560",
-    "postalcodes": [
+    "postalCodes": [
       "2801",
       "2802",
       "2803",
@@ -1646,7 +1646,7 @@
   },
   "RINGSAKER": {
     "population": "34768",
-    "postalcodes": [
+    "postalCodes": [
       "2320",
       "2327",
       "2350",
@@ -1680,11 +1680,11 @@
   },
   "LØTEN": {
     "population": "7674",
-    "postalcodes": ["2340", "2341", "2345"]
+    "postalCodes": ["2340", "2341", "2345"]
   },
   "STANGE": {
     "population": "21064",
-    "postalcodes": [
+    "postalCodes": [
       "2312",
       "2313",
       "2314",
@@ -1704,15 +1704,15 @@
   },
   "NORD-ODAL": {
     "population": "5016",
-    "postalcodes": ["2120", "2121", "2123", "2130", "2132", "2133", "2134"]
+    "postalCodes": ["2120", "2121", "2123", "2130", "2132", "2133", "2134"]
   },
   "SØR-ODAL": {
     "population": "7905",
-    "postalcodes": ["2100", "2101", "2110", "2114", "2116", "2223"]
+    "postalCodes": ["2100", "2101", "2110", "2114", "2116", "2223"]
   },
   "EIDSKOG": {
     "population": "6106",
-    "postalcodes": [
+    "postalCodes": [
       "2220",
       "2230",
       "2231",
@@ -1725,19 +1725,19 @@
   },
   "GRUE": {
     "population": "4612",
-    "postalcodes": ["2251", "2256", "2260", "2261", "2264", "2265"]
+    "postalCodes": ["2251", "2256", "2260", "2261", "2264", "2265"]
   },
   "ÅSNES": {
     "population": "7203",
-    "postalcodes": ["2266", "2270", "2271", "2280", "2283"]
+    "postalCodes": ["2266", "2270", "2271", "2280", "2283"]
   },
   "VÅLER (INNLANDET)": {
     "population": "3662",
-    "postalcodes": ["2434", "2435", "2436", "2437", "2438", "2439"]
+    "postalCodes": ["2434", "2435", "2436", "2437", "2438", "2439"]
   },
   "ELVERUM": {
     "population": "21254",
-    "postalcodes": [
+    "postalCodes": [
       "2401",
       "2402",
       "2403",
@@ -1762,7 +1762,7 @@
   },
   "TRYSIL": {
     "population": "6627",
-    "postalcodes": [
+    "postalCodes": [
       "2420",
       "2421",
       "2422",
@@ -1780,67 +1780,67 @@
   },
   "ÅMOT": {
     "population": "4356",
-    "postalcodes": ["2450", "2451", "2460", "2461"]
+    "postalCodes": ["2450", "2451", "2460", "2461"]
   },
   "STOR-ELVDAL": {
     "population": "2419",
-    "postalcodes": ["2476", "2477", "2480", "2481"]
+    "postalCodes": ["2476", "2477", "2480", "2481"]
   },
   "RENDALEN": {
     "population": "1780",
-    "postalcodes": ["2478", "2484", "2485", "2486", "2487", "2488"]
+    "postalCodes": ["2478", "2484", "2485", "2486", "2487", "2488"]
   },
   "ENGERDAL": {
     "population": "1268",
-    "postalcodes": ["2440", "2441", "2443", "2444", "2446", "2448"]
+    "postalCodes": ["2440", "2441", "2443", "2444", "2446", "2448"]
   },
   "TOLGA": {
     "population": "1562",
-    "postalcodes": ["2540", "2541", "2542", "2544"]
+    "postalCodes": ["2540", "2541", "2542", "2544"]
   },
   "TYNSET": {
     "population": "5578",
-    "postalcodes": ["2500", "2501", "2510", "2512", "2513"]
+    "postalCodes": ["2500", "2501", "2510", "2512", "2513"]
   },
   "ALVDAL": {
     "population": "2432",
-    "postalcodes": ["2560", "2561"]
+    "postalCodes": ["2560", "2561"]
   },
   "FOLLDAL": {
     "population": "1545",
-    "postalcodes": ["2580", "2581", "2582", "2584"]
+    "postalCodes": ["2580", "2581", "2582", "2584"]
   },
   "OS": {
     "population": "1891",
-    "postalcodes": ["2550", "2551", "2552", "2555"]
+    "postalCodes": ["2550", "2551", "2552", "2555"]
   },
   "DOVRE": {
     "population": "2553",
-    "postalcodes": ["2659", "2660", "2661", "2662", "2663", "2664"]
+    "postalCodes": ["2659", "2660", "2661", "2662", "2663", "2664"]
   },
   "LESJA": {
     "population": "1975",
-    "postalcodes": ["2665", "2666", "2667", "2668", "2669", "2671"]
+    "postalCodes": ["2665", "2666", "2667", "2668", "2669", "2671"]
   },
   "SKJÅK": {
     "population": "2197",
-    "postalcodes": ["2690", "2693", "2694", "2695"]
+    "postalCodes": ["2690", "2693", "2694", "2695"]
   },
   "LOM": {
     "population": "2228",
-    "postalcodes": ["2685", "2686", "2687", "2688"]
+    "postalCodes": ["2685", "2686", "2687", "2688"]
   },
   "VÅGÅ": {
     "population": "3570",
-    "postalcodes": ["2680", "2681", "2682", "2683", "2684"]
+    "postalCodes": ["2680", "2681", "2682", "2683", "2684"]
   },
   "NORD-FRON": {
     "population": "5723",
-    "postalcodes": ["2639", "2640", "2641", "2642", "2643", "2644"]
+    "postalCodes": ["2639", "2640", "2641", "2642", "2643", "2644"]
   },
   "SEL": {
     "population": "5739",
-    "postalcodes": [
+    "postalCodes": [
       "2670",
       "2672",
       "2673",
@@ -1854,23 +1854,23 @@
   },
   "SØR-FRON": {
     "population": "3119",
-    "postalcodes": ["2645", "2646", "2647", "2648", "2658"]
+    "postalCodes": ["2645", "2646", "2647", "2648", "2658"]
   },
   "RINGEBU": {
     "population": "4392",
-    "postalcodes": ["2630", "2631", "2632", "2633", "2634"]
+    "postalCodes": ["2630", "2631", "2632", "2633", "2634"]
   },
   "ØYER": {
     "population": "5100",
-    "postalcodes": ["2635", "2636", "2637", "2638"]
+    "postalCodes": ["2635", "2636", "2637", "2638"]
   },
   "GAUSDAL": {
     "population": "6106",
-    "postalcodes": ["2649", "2651", "2652", "2653", "2654", "2656", "2657"]
+    "postalCodes": ["2649", "2651", "2652", "2653", "2654", "2656", "2657"]
   },
   "ØSTRE TOTEN": {
     "population": "14973",
-    "postalcodes": [
+    "postalCodes": [
       "2820",
       "2844",
       "2847",
@@ -1884,7 +1884,7 @@
   },
   "VESTRE TOTEN": {
     "population": "13427",
-    "postalcodes": [
+    "postalCodes": [
       "2830",
       "2831",
       "2833",
@@ -1900,7 +1900,7 @@
   },
   "GRAN": {
     "population": "13630",
-    "postalcodes": [
+    "postalCodes": [
       "2711",
       "2712",
       "2714",
@@ -1914,7 +1914,7 @@
   },
   "SØNDRE LAND": {
     "population": "5617",
-    "postalcodes": [
+    "postalCodes": [
       "2860",
       "2861",
       "2862",
@@ -1927,19 +1927,19 @@
   },
   "NORDRE LAND": {
     "population": "6633",
-    "postalcodes": ["2870", "2880", "2881", "2882"]
+    "postalCodes": ["2870", "2880", "2881", "2882"]
   },
   "SØR-AURDAL": {
     "population": "2954",
-    "postalcodes": ["2929", "2930", "2933", "2936", "2937", "3528"]
+    "postalCodes": ["2929", "2930", "2933", "2936", "2937", "3528"]
   },
   "ETNEDAL": {
     "population": "1279",
-    "postalcodes": ["2890", "2893"]
+    "postalCodes": ["2890", "2893"]
   },
   "NORD-AURDAL": {
     "population": "6413",
-    "postalcodes": [
+    "postalCodes": [
       "2900",
       "2901",
       "2907",
@@ -1953,19 +1953,19 @@
   },
   "VESTRE SLIDRE": {
     "population": "2125",
-    "postalcodes": ["2959", "2960", "2965", "2966", "2967"]
+    "postalCodes": ["2959", "2960", "2965", "2966", "2967"]
   },
   "ØYSTRE SLIDRE": {
     "population": "3229",
-    "postalcodes": ["2939", "2940", "2943", "2950", "2952", "2953", "2954"]
+    "postalCodes": ["2939", "2940", "2943", "2950", "2952", "2953", "2954"]
   },
   "VANG": {
     "population": "1578",
-    "postalcodes": ["2972", "2973", "2974", "2975", "2977", "2985"]
+    "postalCodes": ["2972", "2973", "2974", "2975", "2977", "2985"]
   },
   "HORTEN": {
     "population": "27351",
-    "postalcodes": [
+    "postalCodes": [
       "3167",
       "3179",
       "3180",
@@ -1990,7 +1990,7 @@
   },
   "HOLMESTRAND": {
     "population": "24699",
-    "postalcodes": [
+    "postalCodes": [
       "3070",
       "3071",
       "3072",
@@ -2016,7 +2016,7 @@
   },
   "TØNSBERG": {
     "population": "56293",
-    "postalcodes": [
+    "postalCodes": [
       "3101",
       "3103",
       "3104",
@@ -2063,7 +2063,7 @@
   },
   "SANDEFJORD": {
     "population": "63764",
-    "postalcodes": [
+    "postalCodes": [
       "3156",
       "3158",
       "3159",
@@ -2125,7 +2125,7 @@
   },
   "LARVIK": {
     "population": "47204",
-    "postalcodes": [
+    "postalCodes": [
       "3251",
       "3252",
       "3253",
@@ -2166,7 +2166,7 @@
   },
   "PORSGRUNN": {
     "population": "36397",
-    "postalcodes": [
+    "postalCodes": [
       "3901",
       "3902",
       "3903",
@@ -2214,7 +2214,7 @@
   },
   "SKIEN": {
     "population": "54942",
-    "postalcodes": [
+    "postalCodes": [
       "3701",
       "3702",
       "3703",
@@ -2268,7 +2268,7 @@
   },
   "NOTODDEN": {
     "population": "13049",
-    "postalcodes": [
+    "postalCodes": [
       "3671",
       "3672",
       "3673",
@@ -2287,7 +2287,7 @@
   },
   "FÆRDER": {
     "population": "26730",
-    "postalcodes": [
+    "postalCodes": [
       "3106",
       "3120",
       "3121",
@@ -2312,11 +2312,11 @@
   },
   "SILJAN": {
     "population": "2340",
-    "postalcodes": ["3748", "3749"]
+    "postalCodes": ["3748", "3749"]
   },
   "BAMBLE": {
     "population": "14061",
-    "postalcodes": [
+    "postalCodes": [
       "3960",
       "3961",
       "3962",
@@ -2332,7 +2332,7 @@
   },
   "KRAGERØ": {
     "population": "10380",
-    "postalcodes": [
+    "postalCodes": [
       "3766",
       "3770",
       "3772",
@@ -2349,15 +2349,15 @@
   },
   "DRANGEDAL": {
     "population": "4060",
-    "postalcodes": ["3750", "3753", "3760", "3795"]
+    "postalCodes": ["3750", "3753", "3760", "3795"]
   },
   "NOME": {
     "population": "6515",
-    "postalcodes": ["3825", "3830", "3831", "3832"]
+    "postalCodes": ["3825", "3830", "3831", "3832"]
   },
   "MIDT-TELEMARK": {
     "population": "10444",
-    "postalcodes": [
+    "postalCodes": [
       "3800",
       "3801",
       "3802",
@@ -2373,39 +2373,39 @@
   },
   "TINN": {
     "population": "5691",
-    "postalcodes": ["3650", "3652", "3656", "3658", "3660", "3661", "3666"]
+    "postalCodes": ["3650", "3652", "3656", "3658", "3660", "3661", "3666"]
   },
   "HJARTDAL": {
     "population": "1573",
-    "postalcodes": ["3665", "3690", "3692", "3697"]
+    "postalCodes": ["3665", "3690", "3692", "3697"]
   },
   "SELJORD": {
     "population": "2888",
-    "postalcodes": ["3805", "3835", "3840", "3841", "3844"]
+    "postalCodes": ["3805", "3835", "3840", "3841", "3844"]
   },
   "KVITESEID": {
     "population": "2403",
-    "postalcodes": ["3836", "3848", "3849", "3850", "3852", "3853"]
+    "postalCodes": ["3836", "3848", "3849", "3850", "3852", "3853"]
   },
   "NISSEDAL": {
     "population": "1448",
-    "postalcodes": ["3854", "3855", "3883"]
+    "postalCodes": ["3854", "3855", "3883"]
   },
   "FYRESDAL": {
     "population": "1287",
-    "postalcodes": ["3870", "3885"]
+    "postalCodes": ["3870", "3885"]
   },
   "TOKKE": {
     "population": "2201",
-    "postalcodes": ["3880", "3882", "3886", "3891"]
+    "postalCodes": ["3880", "3882", "3886", "3891"]
   },
   "VINJE": {
     "population": "3676",
-    "postalcodes": ["3864", "3884", "3887", "3888", "3890", "3893", "3895"]
+    "postalCodes": ["3864", "3884", "3887", "3888", "3890", "3893", "3895"]
   },
   "RISØR": {
     "population": "6809",
-    "postalcodes": [
+    "postalCodes": [
       "4950",
       "4951",
       "4952",
@@ -2420,7 +2420,7 @@
   },
   "GRIMSTAD": {
     "population": "23544",
-    "postalcodes": [
+    "postalCodes": [
       "4870",
       "4876",
       "4877",
@@ -2442,7 +2442,7 @@
   },
   "ARENDAL": {
     "population": "44999",
-    "postalcodes": [
+    "postalCodes": [
       "4801",
       "4802",
       "4803",
@@ -2486,7 +2486,7 @@
   },
   "KRISTIANSAND": {
     "population": "111633",
-    "postalcodes": [
+    "postalCodes": [
       "4604",
       "4605",
       "4606",
@@ -2570,7 +2570,7 @@
   },
   "LINDESNES": {
     "population": "23046",
-    "postalcodes": [
+    "postalCodes": [
       "4501",
       "4502",
       "4503",
@@ -2597,7 +2597,7 @@
   },
   "FARSUND": {
     "population": "9691",
-    "postalcodes": [
+    "postalCodes": [
       "4550",
       "4551",
       "4552",
@@ -2611,7 +2611,7 @@
   },
   "FLEKKEFJORD": {
     "population": "9028",
-    "postalcodes": [
+    "postalCodes": [
       "4400",
       "4401",
       "4402",
@@ -2630,15 +2630,15 @@
   },
   "GJERSTAD": {
     "population": "2428",
-    "postalcodes": ["4971", "4972", "4980", "4993"]
+    "postalCodes": ["4971", "4972", "4980", "4993"]
   },
   "VEGÅRSHEI": {
     "population": "2097",
-    "postalcodes": ["4973", "4985"]
+    "postalCodes": ["4973", "4985"]
   },
   "TVEDESTRAND": {
     "population": "6053",
-    "postalcodes": [
+    "postalCodes": [
       "4900",
       "4901",
       "4902",
@@ -2655,43 +2655,43 @@
   },
   "FROLAND": {
     "population": "5951",
-    "postalcodes": ["4820", "4827", "4828", "4830", "4832", "4834", "4855"]
+    "postalCodes": ["4820", "4827", "4828", "4830", "4832", "4834", "4855"]
   },
   "LILLESAND": {
     "population": "11074",
-    "postalcodes": ["4770", "4780", "4790", "4791", "4792", "4793", "4794"]
+    "postalCodes": ["4770", "4780", "4790", "4791", "4792", "4793", "4794"]
   },
   "BIRKENES": {
     "population": "5226",
-    "postalcodes": ["4760", "4766", "4768", "4795"]
+    "postalCodes": ["4760", "4766", "4768", "4795"]
   },
   "ÅMLI": {
     "population": "1836",
-    "postalcodes": ["4863", "4864", "4865", "4868", "4869"]
+    "postalCodes": ["4863", "4864", "4865", "4868", "4869"]
   },
   "IVELAND": {
     "population": "1331",
-    "postalcodes": ["4724", "4725", "4730"]
+    "postalCodes": ["4724", "4725", "4730"]
   },
   "EVJE OG HORNNES": {
     "population": "3634",
-    "postalcodes": ["4733", "4734", "4735", "4737"]
+    "postalCodes": ["4733", "4734", "4735", "4737"]
   },
   "BYGLAND": {
     "population": "1162",
-    "postalcodes": ["4741", "4742", "4744", "4745"]
+    "postalCodes": ["4741", "4742", "4744", "4745"]
   },
   "VALLE": {
     "population": "1164",
-    "postalcodes": ["4746", "4747", "4748", "4749"]
+    "postalCodes": ["4746", "4747", "4748", "4749"]
   },
   "BYKLE": {
     "population": "965",
-    "postalcodes": ["4754", "4755", "4756"]
+    "postalCodes": ["4754", "4755", "4756"]
   },
   "VENNESLA": {
     "population": "14774",
-    "postalcodes": [
+    "postalCodes": [
       "4700",
       "4701",
       "4702",
@@ -2707,11 +2707,11 @@
   },
   "ÅSERAL": {
     "population": "932",
-    "postalcodes": ["4540", "4541", "4544"]
+    "postalCodes": ["4540", "4541", "4544"]
   },
   "LYNGDAL": {
     "population": "10365",
-    "postalcodes": [
+    "postalCodes": [
       "4525",
       "4526",
       "4528",
@@ -2727,19 +2727,19 @@
   },
   "HÆGEBOSTAD": {
     "population": "1680",
-    "postalcodes": ["4590", "4595", "4596", "4597"]
+    "postalCodes": ["4590", "4595", "4596", "4597"]
   },
   "KVINESDAL": {
     "population": "5987",
-    "postalcodes": ["4473", "4480", "4484", "4485", "4490", "4491", "4492"]
+    "postalCodes": ["4473", "4480", "4484", "4485", "4490", "4491", "4492"]
   },
   "SIRDAL": {
     "population": "1822",
-    "postalcodes": ["4440", "4441", "4443"]
+    "postalCodes": ["4440", "4441", "4443"]
   },
   "EIGERSUND": {
     "population": "14811",
-    "postalcodes": [
+    "postalCodes": [
       "4370",
       "4371",
       "4372",
@@ -2754,7 +2754,7 @@
   },
   "STAVANGER": {
     "population": "143574",
-    "postalcodes": [
+    "postalCodes": [
       "4001",
       "4002",
       "4003",
@@ -2842,7 +2842,7 @@
   },
   "HAUGESUND": {
     "population": "37357",
-    "postalcodes": [
+    "postalCodes": [
       "5501",
       "5502",
       "5503",
@@ -2879,7 +2879,7 @@
   },
   "SANDNES": {
     "population": "79537",
-    "postalcodes": [
+    "postalCodes": [
       "4110",
       "4119",
       "4127",
@@ -2928,19 +2928,19 @@
   },
   "SOKNDAL": {
     "population": "3280",
-    "postalcodes": ["4380", "4381"]
+    "postalCodes": ["4380", "4381"]
   },
   "LUND": {
     "population": "3202",
-    "postalcodes": ["4460", "4462", "4463", "4465"]
+    "postalCodes": ["4460", "4462", "4463", "4465"]
   },
   "BJERKREIM": {
     "population": "2787",
-    "postalcodes": ["4384", "4387", "4389"]
+    "postalCodes": ["4384", "4387", "4389"]
   },
   "HÅ": {
     "population": "18991",
-    "postalcodes": [
+    "postalCodes": [
       "4360",
       "4361",
       "4362",
@@ -2954,7 +2954,7 @@
   },
   "KLEPP": {
     "population": "19588",
-    "postalcodes": [
+    "postalCodes": [
       "4341",
       "4343",
       "4350",
@@ -2968,7 +2968,7 @@
   },
   "TIME": {
     "population": "18916",
-    "postalcodes": [
+    "postalCodes": [
       "4340",
       "4342",
       "4344",
@@ -2983,11 +2983,11 @@
   },
   "GJESDAL": {
     "population": "12002",
-    "postalcodes": ["4330", "4331", "4333", "4334", "4335", "4339", "4390"]
+    "postalCodes": ["4330", "4331", "4333", "4334", "4335", "4339", "4390"]
   },
   "SOLA": {
     "population": "27153",
-    "postalcodes": [
+    "postalCodes": [
       "4050",
       "4051",
       "4052",
@@ -3005,11 +3005,11 @@
   },
   "RANDABERG": {
     "population": "11221",
-    "postalcodes": ["4070", "4071", "4072", "4073", "4096"]
+    "postalCodes": ["4070", "4071", "4072", "4073", "4096"]
   },
   "STRAND": {
     "population": "12968",
-    "postalcodes": [
+    "postalCodes": [
       "4100",
       "4102",
       "4103",
@@ -3024,11 +3024,11 @@
   },
   "HJELMELAND": {
     "population": "2574",
-    "postalcodes": ["4130", "4134", "4137", "4139", "4146", "4148", "4167"]
+    "postalCodes": ["4130", "4134", "4137", "4139", "4146", "4148", "4167"]
   },
   "SULDAL": {
     "population": "3804",
-    "postalcodes": [
+    "postalCodes": [
       "4198",
       "4209",
       "4230",
@@ -3043,19 +3043,19 @@
   },
   "SAUDA": {
     "population": "4595",
-    "postalcodes": ["4200", "4201", "4208"]
+    "postalCodes": ["4200", "4201", "4208"]
   },
   "KVITSØY": {
     "population": "517",
-    "postalcodes": ["4180", "4181"]
+    "postalCodes": ["4180", "4181"]
   },
   "BOKN": {
     "population": "852",
-    "postalcodes": ["5561", "5569"]
+    "postalCodes": ["5561", "5569"]
   },
   "TYSVÆR": {
     "population": "11065",
-    "postalcodes": [
+    "postalCodes": [
       "5560",
       "5562",
       "5563",
@@ -3069,7 +3069,7 @@
   },
   "KARMØY": {
     "population": "42186",
-    "postalcodes": [
+    "postalCodes": [
       "4250",
       "4260",
       "4262",
@@ -3099,11 +3099,11 @@
   },
   "UTSIRA": {
     "population": "198",
-    "postalcodes": ["5547"]
+    "postalCodes": ["5547"]
   },
   "VINDAFJORD": {
     "population": "8714",
-    "postalcodes": [
+    "postalCodes": [
       "5568",
       "5574",
       "5576",
@@ -3120,7 +3120,7 @@
   },
   "BERGEN": {
     "population": "283929",
-    "postalcodes": [
+    "postalCodes": [
       "5003",
       "5004",
       "5005",
@@ -3347,7 +3347,7 @@
   },
   "KINN": {
     "population": "17207",
-    "postalcodes": [
+    "postalCodes": [
       "6700",
       "6701",
       "6702",
@@ -3385,15 +3385,15 @@
   },
   "ETNE": {
     "population": "4062",
-    "postalcodes": ["5590", "5591", "5593", "5594", "5596", "5598"]
+    "postalCodes": ["5590", "5591", "5593", "5594", "5596", "5598"]
   },
   "SVEIO": {
     "population": "5766",
-    "postalcodes": ["5550", "5551", "5554", "5555", "5556", "5559"]
+    "postalCodes": ["5550", "5551", "5554", "5555", "5556", "5559"]
   },
   "BØMLO": {
     "population": "11957",
-    "postalcodes": [
+    "postalCodes": [
       "5420",
       "5423",
       "5427",
@@ -3410,7 +3410,7 @@
   },
   "STORD": {
     "population": "18759",
-    "postalcodes": [
+    "postalCodes": [
       "5401",
       "5402",
       "5403",
@@ -3431,11 +3431,11 @@
   },
   "FITJAR": {
     "population": "3189",
-    "postalcodes": ["5418", "5419"]
+    "postalCodes": ["5418", "5419"]
   },
   "TYSNES": {
     "population": "2869",
-    "postalcodes": [
+    "postalCodes": [
       "5680",
       "5683",
       "5685",
@@ -3449,7 +3449,7 @@
   },
   "KVINNHERAD": {
     "population": "13071",
-    "postalcodes": [
+    "postalCodes": [
       "5450",
       "5451",
       "5452",
@@ -3482,7 +3482,7 @@
   },
   "ULLENSVANG": {
     "population": "11048",
-    "postalcodes": [
+    "postalCodes": [
       "5626",
       "5627",
       "5628",
@@ -3508,15 +3508,15 @@
   },
   "EIDFJORD": {
     "population": "906",
-    "postalcodes": ["5783", "5784", "5785", "5786"]
+    "postalCodes": ["5783", "5784", "5785", "5786"]
   },
   "ULVIK": {
     "population": "1080",
-    "postalcodes": ["5719", "5730", "5731"]
+    "postalCodes": ["5719", "5730", "5731"]
   },
   "VOSS": {
     "population": "15740",
-    "postalcodes": [
+    "postalCodes": [
       "5700",
       "5701",
       "5702",
@@ -3541,7 +3541,7 @@
   },
   "KVAM": {
     "population": "8457",
-    "postalcodes": [
+    "postalCodes": [
       "5600",
       "5601",
       "5602",
@@ -3559,11 +3559,11 @@
   },
   "SAMNANGER": {
     "population": "2485",
-    "postalcodes": ["5650", "5651", "5652", "5653"]
+    "postalCodes": ["5650", "5651", "5652", "5653"]
   },
   "BJØRNAFJORDEN": {
     "population": "24908",
-    "postalcodes": [
+    "postalCodes": [
       "5200",
       "5201",
       "5202",
@@ -3595,7 +3595,7 @@
   },
   "AUSTEVOLL": {
     "population": "5236",
-    "postalcodes": [
+    "postalCodes": [
       "5384",
       "5385",
       "5387",
@@ -3611,7 +3611,7 @@
   },
   "ØYGARDEN": {
     "population": "38316",
-    "postalcodes": [
+    "postalCodes": [
       "5177",
       "5331",
       "5333",
@@ -3646,7 +3646,7 @@
   },
   "ASKØY": {
     "population": "29553",
-    "postalcodes": [
+    "postalCodes": [
       "5300",
       "5301",
       "5302",
@@ -3674,7 +3674,7 @@
   },
   "VAKSDAL": {
     "population": "3977",
-    "postalcodes": [
+    "postalCodes": [
       "5720",
       "5721",
       "5722",
@@ -3687,11 +3687,11 @@
   },
   "MODALEN": {
     "population": "388",
-    "postalcodes": ["5729", "5732"]
+    "postalCodes": ["5729", "5732"]
   },
   "OSTERØY": {
     "population": "8098",
-    "postalcodes": [
+    "postalCodes": [
       "5281",
       "5282",
       "5283",
@@ -3705,7 +3705,7 @@
   },
   "ALVER": {
     "population": "29224",
-    "postalcodes": [
+    "postalCodes": [
       "5902",
       "5903",
       "5904",
@@ -3739,19 +3739,19 @@
   },
   "AUSTRHEIM": {
     "population": "2870",
-    "postalcodes": ["5941", "5943", "5952", "5953"]
+    "postalCodes": ["5941", "5943", "5952", "5953"]
   },
   "FEDJE": {
     "population": "548",
-    "postalcodes": ["5947", "5948"]
+    "postalCodes": ["5947", "5948"]
   },
   "MASFJORDEN": {
     "population": "1691",
-    "postalcodes": ["5981", "5982", "5983", "5984", "5985", "5986", "5987"]
+    "postalCodes": ["5981", "5982", "5983", "5984", "5985", "5986", "5987"]
   },
   "GULEN": {
     "population": "2297",
-    "postalcodes": [
+    "postalCodes": [
       "5960",
       "5961",
       "5963",
@@ -3766,15 +3766,15 @@
   },
   "SOLUND": {
     "population": "802",
-    "postalcodes": ["6921", "6924", "6926", "6927", "6928", "6929"]
+    "postalCodes": ["6921", "6924", "6926", "6927", "6928", "6929"]
   },
   "HYLLESTAD": {
     "population": "1328",
-    "postalcodes": ["6951", "6953", "6957", "6958", "6959"]
+    "postalCodes": ["6951", "6953", "6957", "6958", "6959"]
   },
   "HØYANGER": {
     "population": "4101",
-    "postalcodes": [
+    "postalCodes": [
       "5962",
       "5965",
       "6946",
@@ -3789,11 +3789,11 @@
   },
   "VIK": {
     "population": "2635",
-    "postalcodes": ["6891", "6893", "6894", "6895", "6896"]
+    "postalCodes": ["6891", "6893", "6894", "6895", "6896"]
   },
   "SOGNDAL": {
     "population": "11847",
-    "postalcodes": [
+    "postalCodes": [
       "6845",
       "6848",
       "6849",
@@ -3813,7 +3813,7 @@
   },
   "AURLAND": {
     "population": "1781",
-    "postalcodes": [
+    "postalCodes": [
       "5718",
       "5741",
       "5742",
@@ -3827,15 +3827,15 @@
   },
   "LÆRDAL": {
     "population": "2126",
-    "postalcodes": ["6855", "6886", "6887", "6888"]
+    "postalCodes": ["6855", "6886", "6887", "6888"]
   },
   "ÅRDAL": {
     "population": "5193",
-    "postalcodes": ["6881", "6882", "6884", "6885"]
+    "postalCodes": ["6881", "6882", "6884", "6885"]
   },
   "LUSTER": {
     "population": "5174",
-    "postalcodes": [
+    "postalCodes": [
       "6866",
       "6867",
       "6868",
@@ -3854,7 +3854,7 @@
   },
   "ASKVOLL": {
     "population": "3011",
-    "postalcodes": [
+    "postalCodes": [
       "6980",
       "6982",
       "6983",
@@ -3867,11 +3867,11 @@
   },
   "FJALER": {
     "population": "2802",
-    "postalcodes": ["6961", "6963", "6964", "6966", "6967", "6968", "6969"]
+    "postalCodes": ["6961", "6963", "6964", "6966", "6967", "6968", "6969"]
   },
   "SUNNFJORD": {
     "population": "22030",
-    "postalcodes": [
+    "postalCodes": [
       "6800",
       "6801",
       "6802",
@@ -3906,7 +3906,7 @@
   },
   "BREMANGER": {
     "population": "3629",
-    "postalcodes": [
+    "postalCodes": [
       "6719",
       "6721",
       "6723",
@@ -3921,7 +3921,7 @@
   },
   "STAD": {
     "population": "9457",
-    "postalcodes": [
+    "postalCodes": [
       "6708",
       "6711",
       "6715",
@@ -3943,7 +3943,7 @@
   },
   "GLOPPEN": {
     "population": "5854",
-    "postalcodes": [
+    "postalCodes": [
       "6821",
       "6822",
       "6823",
@@ -3957,7 +3957,7 @@
   },
   "STRYN": {
     "population": "7130",
-    "postalcodes": [
+    "postalCodes": [
       "6781",
       "6782",
       "6783",
@@ -3978,7 +3978,7 @@
   },
   "KRISTIANSUND": {
     "population": "24179",
-    "postalcodes": [
+    "postalCodes": [
       "6501",
       "6502",
       "6503",
@@ -4012,7 +4012,7 @@
   },
   "MOLDE": {
     "population": "31967",
-    "postalcodes": [
+    "postalCodes": [
       "6364",
       "6365",
       "6401",
@@ -4058,7 +4058,7 @@
   },
   "ÅLESUND": {
     "population": "66258",
-    "postalcodes": [
+    "postalCodes": [
       "6001",
       "6002",
       "6003",
@@ -4119,7 +4119,7 @@
   },
   "VANYLVEN": {
     "population": "3117",
-    "postalcodes": [
+    "postalCodes": [
       "6138",
       "6139",
       "6140",
@@ -4134,7 +4134,7 @@
   },
   "SANDE": {
     "population": "2461",
-    "postalcodes": [
+    "postalCodes": [
       "6078",
       "6082",
       "6083",
@@ -4148,7 +4148,7 @@
   },
   "HERØY (MØRE OG ROMSDAL)": {
     "population": "8900",
-    "postalcodes": [
+    "postalCodes": [
       "6070",
       "6075",
       "6076",
@@ -4166,15 +4166,15 @@
   },
   "ULSTEIN": {
     "population": "8571",
-    "postalcodes": ["6064", "6065", "6067", "6068"]
+    "postalCodes": ["6064", "6065", "6067", "6068"]
   },
   "HAREID": {
     "population": "5175",
-    "postalcodes": ["6060", "6062", "6063", "6069"]
+    "postalCodes": ["6060", "6062", "6063", "6069"]
   },
   "ØRSTA": {
     "population": "10825",
-    "postalcodes": [
+    "postalCodes": [
       "6150",
       "6151",
       "6152",
@@ -4196,23 +4196,23 @@
   },
   "STRANDA": {
     "population": "4523",
-    "postalcodes": ["6200", "6201", "6212", "6216", "6217", "6218", "6219"]
+    "postalCodes": ["6200", "6201", "6212", "6216", "6217", "6218", "6219"]
   },
   "SYKKYLVEN": {
     "population": "7625",
-    "postalcodes": ["6220", "6222", "6223", "6224", "6230", "6238", "6239"]
+    "postalCodes": ["6220", "6222", "6223", "6224", "6230", "6238", "6239"]
   },
   "SULA": {
     "population": "9310",
-    "postalcodes": ["6030", "6034", "6035", "6036", "6037", "6038", "6039"]
+    "postalCodes": ["6030", "6034", "6035", "6036", "6037", "6038", "6039"]
   },
   "GISKE": {
     "population": "8462",
-    "postalcodes": ["6040", "6050", "6052", "6054", "6055", "6058", "6059"]
+    "postalCodes": ["6040", "6050", "6052", "6054", "6055", "6058", "6059"]
   },
   "VESTNES": {
     "population": "6532",
-    "postalcodes": [
+    "postalCodes": [
       "6389",
       "6390",
       "6391",
@@ -4228,7 +4228,7 @@
   },
   "RAUMA": {
     "population": "7468",
-    "postalcodes": [
+    "postalCodes": [
       "6300",
       "6301",
       "6310",
@@ -4249,15 +4249,15 @@
   },
   "AUKRA": {
     "population": "3509",
-    "postalcodes": ["6409", "6480", "6481", "6486"]
+    "postalCodes": ["6409", "6480", "6481", "6486"]
   },
   "AVERØY": {
     "population": "5788",
-    "postalcodes": ["6530", "6531", "6532", "6533", "6538", "6539"]
+    "postalCodes": ["6530", "6531", "6532", "6533", "6538", "6539"]
   },
   "GJEMNES": {
     "population": "2629",
-    "postalcodes": [
+    "postalCodes": [
       "6631",
       "6632",
       "6633",
@@ -4270,11 +4270,11 @@
   },
   "TINGVOLL": {
     "population": "3025",
-    "postalcodes": ["6627", "6628", "6629", "6630", "6670", "6671", "6674"]
+    "postalCodes": ["6627", "6628", "6629", "6630", "6670", "6671", "6674"]
   },
   "SUNNDAL": {
     "population": "7036",
-    "postalcodes": [
+    "postalCodes": [
       "6600",
       "6601",
       "6610",
@@ -4289,7 +4289,7 @@
   },
   "SURNADAL": {
     "population": "5920",
-    "postalcodes": [
+    "postalCodes": [
       "6640",
       "6642",
       "6643",
@@ -4304,11 +4304,11 @@
   },
   "SMØLA": {
     "population": "2150",
-    "postalcodes": ["6570", "6571"]
+    "postalCodes": ["6570", "6571"]
   },
   "AURE": {
     "population": "3507",
-    "postalcodes": [
+    "postalCodes": [
       "6590",
       "6591",
       "6689",
@@ -4322,7 +4322,7 @@
   },
   "VOLDA": {
     "population": "10473",
-    "postalcodes": [
+    "postalCodes": [
       "6100",
       "6101",
       "6102",
@@ -4341,7 +4341,7 @@
   },
   "FJORD": {
     "population": "2549",
-    "postalcodes": [
+    "postalCodes": [
       "6210",
       "6211",
       "6213",
@@ -4354,7 +4354,7 @@
   },
   "HUSTADVIKA": {
     "population": "13279",
-    "postalcodes": [
+    "postalCodes": [
       "6408",
       "6430",
       "6431",
@@ -4373,7 +4373,7 @@
   },
   "TRONDHEIM": {
     "population": "205163",
-    "postalcodes": [
+    "postalCodes": [
       "7003",
       "7004",
       "7005",
@@ -4554,7 +4554,7 @@
   },
   "STEINKJER": {
     "population": "24357",
-    "postalcodes": [
+    "postalCodes": [
       "7701",
       "7702",
       "7703",
@@ -4593,7 +4593,7 @@
   },
   "NAMSOS": {
     "population": "15230",
-    "postalcodes": [
+    "postalCodes": [
       "7750",
       "7751",
       "7777",
@@ -4617,7 +4617,7 @@
   },
   "FRØYA": {
     "population": "5151",
-    "postalcodes": [
+    "postalCodes": [
       "7260",
       "7261",
       "7263",
@@ -4638,27 +4638,27 @@
   },
   "OSEN": {
     "population": "948",
-    "postalcodes": ["7740", "7741", "7742", "7744", "7748"]
+    "postalCodes": ["7740", "7741", "7742", "7744", "7748"]
   },
   "OPPDAL": {
     "population": "7001",
-    "postalcodes": ["7340", "7341", "7342", "7343", "7345"]
+    "postalCodes": ["7340", "7341", "7342", "7343", "7345"]
   },
   "RENNEBU": {
     "population": "2486",
-    "postalcodes": ["7391", "7392", "7393", "7397", "7398", "7399"]
+    "postalCodes": ["7391", "7392", "7393", "7397", "7398", "7399"]
   },
   "RØROS": {
     "population": "5581",
-    "postalcodes": ["7361", "7370", "7372", "7374", "7375"]
+    "postalCodes": ["7361", "7370", "7372", "7374", "7375"]
   },
   "HOLTÅLEN": {
     "population": "1981",
-    "postalcodes": ["7380", "7383", "7384"]
+    "postalCodes": ["7380", "7383", "7384"]
   },
   "MIDTRE GAULDAL": {
     "population": "6238",
-    "postalcodes": [
+    "postalCodes": [
       "7288",
       "7289",
       "7290",
@@ -4672,7 +4672,7 @@
   },
   "MELHUS": {
     "population": "16733",
-    "postalcodes": [
+    "postalCodes": [
       "7211",
       "7212",
       "7213",
@@ -4691,7 +4691,7 @@
   },
   "SKAUN": {
     "population": "8325",
-    "postalcodes": [
+    "postalCodes": [
       "7350",
       "7351",
       "7353",
@@ -4704,23 +4704,23 @@
   },
   "MALVIK": {
     "population": "14148",
-    "postalcodes": ["7550", "7551", "7560", "7562", "7563", "7566"]
+    "postalCodes": ["7550", "7551", "7560", "7562", "7563", "7566"]
   },
   "SELBU": {
     "population": "4062",
-    "postalcodes": ["7580", "7581", "7583", "7584", "7596"]
+    "postalCodes": ["7580", "7581", "7583", "7584", "7596"]
   },
   "TYDAL": {
     "population": "769",
-    "postalcodes": ["7590", "7591"]
+    "postalCodes": ["7590", "7591"]
   },
   "MERÅKER": {
     "population": "2422",
-    "postalcodes": ["7530", "7531", "7533"]
+    "postalCodes": ["7530", "7531", "7533"]
   },
   "STJØRDAL": {
     "population": "24145",
-    "postalcodes": [
+    "postalCodes": [
       "7500",
       "7501",
       "7502",
@@ -4746,11 +4746,11 @@
   },
   "FROSTA": {
     "population": "2627",
-    "postalcodes": ["7633", "7634"]
+    "postalCodes": ["7633", "7634"]
   },
   "LEVANGER": {
     "population": "20164",
-    "postalcodes": [
+    "postalCodes": [
       "7600",
       "7601",
       "7602",
@@ -4775,7 +4775,7 @@
   },
   "VERDAL": {
     "population": "14948",
-    "postalcodes": [
+    "postalCodes": [
       "7650",
       "7651",
       "7652",
@@ -4791,47 +4791,47 @@
   },
   "SNÅSA": {
     "population": "2063",
-    "postalcodes": ["7760", "7761"]
+    "postalCodes": ["7760", "7761"]
   },
   "LIERNE": {
     "population": "1355",
-    "postalcodes": ["7881", "7882", "7884", "7885"]
+    "postalCodes": ["7881", "7882", "7884", "7885"]
   },
   "RØYRVIK": {
     "population": "461",
-    "postalcodes": ["7897", "7898"]
+    "postalCodes": ["7897", "7898"]
   },
   "NAMSSKOGAN": {
     "population": "843",
-    "postalcodes": ["7890", "7891", "7892", "7893", "7896"]
+    "postalCodes": ["7890", "7891", "7892", "7893", "7896"]
   },
   "GRONG": {
     "population": "2359",
-    "postalcodes": ["7870", "7871", "7873", "7874"]
+    "postalCodes": ["7870", "7871", "7873", "7874"]
   },
   "HØYLANDET": {
     "population": "1231",
-    "postalcodes": ["7876", "7877", "7878"]
+    "postalCodes": ["7876", "7877", "7878"]
   },
   "OVERHALLA": {
     "population": "3884",
-    "postalcodes": ["7860", "7863", "7864", "7869"]
+    "postalCodes": ["7860", "7863", "7864", "7869"]
   },
   "FLATANGER": {
     "population": "1103",
-    "postalcodes": ["7745", "7746", "7770", "7771"]
+    "postalCodes": ["7745", "7746", "7770", "7771"]
   },
   "LEKA": {
     "population": "557",
-    "postalcodes": ["7993", "7994", "7995"]
+    "postalCodes": ["7993", "7994", "7995"]
   },
   "INDERØY": {
     "population": "6816",
-    "postalcodes": ["7670", "7671", "7672", "7690", "7691"]
+    "postalCodes": ["7670", "7671", "7672", "7690", "7691"]
   },
   "INDRE FOSEN": {
     "population": "10084",
-    "postalcodes": [
+    "postalCodes": [
       "7100",
       "7101",
       "7105",
@@ -4852,7 +4852,7 @@
   },
   "HEIM": {
     "population": "5963",
-    "postalcodes": [
+    "postalCodes": [
       "6680",
       "6683",
       "6686",
@@ -4866,7 +4866,7 @@
   },
   "HITRA": {
     "population": "5050",
-    "postalcodes": [
+    "postalCodes": [
       "7239",
       "7240",
       "7241",
@@ -4884,7 +4884,7 @@
   },
   "ØRLAND": {
     "population": "10323",
-    "postalcodes": [
+    "postalCodes": [
       "7127",
       "7129",
       "7130",
@@ -4905,7 +4905,7 @@
   },
   "ÅFJORD": {
     "population": "4288",
-    "postalcodes": [
+    "postalCodes": [
       "7169",
       "7170",
       "7174",
@@ -4921,7 +4921,7 @@
   },
   "ORKLAND": {
     "population": "18217",
-    "postalcodes": [
+    "postalCodes": [
       "7156",
       "7257",
       "7259",
@@ -4949,7 +4949,7 @@
   },
   "NÆRØYSUND": {
     "population": "9623",
-    "postalcodes": [
+    "postalCodes": [
       "7900",
       "7901",
       "7902",
@@ -4968,11 +4968,11 @@
   },
   "RINDAL": {
     "population": "2003",
-    "postalcodes": ["6657", "6658", "6659"]
+    "postalCodes": ["6657", "6658", "6659"]
   },
   "BODØ": {
     "population": "52357",
-    "postalcodes": [
+    "postalCodes": [
       "8001",
       "8002",
       "8003",
@@ -5038,7 +5038,7 @@
   },
   "NARVIK": {
     "population": "21845",
-    "postalcodes": [
+    "postalCodes": [
       "8278",
       "8501",
       "8502",
@@ -5073,15 +5073,15 @@
   },
   "BINDAL": {
     "population": "1426",
-    "postalcodes": ["7979", "7980", "7981", "7982", "7983"]
+    "postalCodes": ["7979", "7980", "7981", "7982", "7983"]
   },
   "SØMNA": {
     "population": "1975",
-    "postalcodes": ["8920", "8921", "8922"]
+    "postalCodes": ["8920", "8921", "8922"]
   },
   "BRØNNØY": {
     "population": "7917",
-    "postalcodes": [
+    "postalCodes": [
       "8900",
       "8901",
       "8902",
@@ -5098,19 +5098,19 @@
   },
   "VEGA": {
     "population": "1200",
-    "postalcodes": ["8980", "8981", "8985"]
+    "postalCodes": ["8980", "8981", "8985"]
   },
   "VEVELSTAD": {
     "population": "462",
-    "postalcodes": ["8870", "8976", "8977"]
+    "postalCodes": ["8870", "8976", "8977"]
   },
   "HERØY (NORDLAND)": {
     "population": "1777",
-    "postalcodes": ["8842", "8844", "8850", "8851", "8852"]
+    "postalCodes": ["8842", "8844", "8850", "8851", "8852"]
   },
   "ALSTAHAUG": {
     "population": "7447",
-    "postalcodes": [
+    "postalCodes": [
       "8800",
       "8801",
       "8802",
@@ -5127,11 +5127,11 @@
   },
   "LEIRFJORD": {
     "population": "2294",
-    "postalcodes": ["8890", "8891", "8892", "8897"]
+    "postalCodes": ["8890", "8891", "8892", "8897"]
   },
   "VEFSN": {
     "population": "13278",
-    "postalcodes": [
+    "postalCodes": [
       "8651",
       "8652",
       "8654",
@@ -5151,23 +5151,23 @@
   },
   "GRANE": {
     "population": "1482",
-    "postalcodes": ["8680", "8681"]
+    "postalCodes": ["8680", "8681"]
   },
   "HATTFJELLDAL": {
     "population": "1297",
-    "postalcodes": ["8690", "8691"]
+    "postalCodes": ["8690", "8691"]
   },
   "DØNNA": {
     "population": "1371",
-    "postalcodes": ["8813", "8820", "8827", "8830"]
+    "postalCodes": ["8813", "8820", "8827", "8830"]
   },
   "NESNA": {
     "population": "1761",
-    "postalcodes": ["8700", "8701", "8720", "8723", "8724"]
+    "postalCodes": ["8700", "8701", "8720", "8723", "8724"]
   },
   "HEMNES": {
     "population": "4454",
-    "postalcodes": [
+    "postalCodes": [
       "8640",
       "8641",
       "8642",
@@ -5180,7 +5180,7 @@
   },
   "RANA": {
     "population": "26184",
-    "postalcodes": [
+    "postalCodes": [
       "8601",
       "8602",
       "8603",
@@ -5207,7 +5207,7 @@
   },
   "LURØY": {
     "population": "1890",
-    "postalcodes": [
+    "postalCodes": [
       "8730",
       "8732",
       "8733",
@@ -5225,11 +5225,11 @@
   },
   "TRÆNA": {
     "population": "435",
-    "postalcodes": ["8742", "8770"]
+    "postalCodes": ["8742", "8770"]
   },
   "RØDØY": {
     "population": "1213",
-    "postalcodes": [
+    "postalCodes": [
       "8181",
       "8182",
       "8183",
@@ -5249,7 +5249,7 @@
   },
   "MELØY": {
     "population": "6288",
-    "postalcodes": [
+    "postalCodes": [
       "8146",
       "8149",
       "8150",
@@ -5268,7 +5268,7 @@
   },
   "GILDESKÅL": {
     "population": "1950",
-    "postalcodes": [
+    "postalCodes": [
       "8094",
       "8120",
       "8130",
@@ -5282,15 +5282,15 @@
   },
   "BEIARN": {
     "population": "1017",
-    "postalcodes": ["8110", "8114", "8118", "8128"]
+    "postalCodes": ["8110", "8114", "8118", "8128"]
   },
   "SALTDAL": {
     "population": "4671",
-    "postalcodes": ["8250", "8251", "8252", "8253", "8255", "8256"]
+    "postalCodes": ["8250", "8251", "8252", "8253", "8255", "8256"]
   },
   "FAUSKE": {
     "population": "9739",
-    "postalcodes": [
+    "postalCodes": [
       "8200",
       "8201",
       "8202",
@@ -5313,35 +5313,35 @@
   },
   "SØRFOLD": {
     "population": "1926",
-    "postalcodes": ["8220", "8226", "8232", "8264", "8266"]
+    "postalCodes": ["8220", "8226", "8232", "8264", "8266"]
   },
   "STEIGEN": {
     "population": "2608",
-    "postalcodes": ["8281", "8283", "8285", "8286", "8287", "8288", "8289"]
+    "postalCodes": ["8281", "8283", "8285", "8286", "8287", "8288", "8289"]
   },
   "LØDINGEN": {
     "population": "2034",
-    "postalcodes": ["8410", "8411", "8412"]
+    "postalCodes": ["8410", "8411", "8412"]
   },
   "EVENES": {
     "population": "1348",
-    "postalcodes": ["8533", "8534", "8535", "8536", "8539"]
+    "postalCodes": ["8533", "8534", "8535", "8536", "8539"]
   },
   "RØST": {
     "population": "498",
-    "postalcodes": ["8064", "8065"]
+    "postalCodes": ["8064", "8065"]
   },
   "VÆRØY": {
     "population": "728",
-    "postalcodes": ["8062", "8063"]
+    "postalCodes": ["8062", "8063"]
   },
   "FLAKSTAD": {
     "population": "1272",
-    "postalcodes": ["8380", "8382", "8384", "8387", "8388"]
+    "postalCodes": ["8380", "8382", "8384", "8387", "8388"]
   },
   "VESTVÅGØY": {
     "population": "11433",
-    "postalcodes": [
+    "postalCodes": [
       "8340",
       "8352",
       "8357",
@@ -5358,7 +5358,7 @@
   },
   "VÅGAN": {
     "population": "9608",
-    "postalcodes": [
+    "postalCodes": [
       "8300",
       "8301",
       "8305",
@@ -5379,7 +5379,7 @@
   },
   "HADSEL": {
     "population": "8061",
-    "postalcodes": [
+    "postalCodes": [
       "8317",
       "8325",
       "8326",
@@ -5394,15 +5394,15 @@
   },
   "BØ": {
     "population": "2569",
-    "postalcodes": ["8465", "8469", "8470", "8475"]
+    "postalCodes": ["8465", "8469", "8470", "8475"]
   },
   "ØKSNES": {
     "population": "4410",
-    "postalcodes": ["8408", "8426", "8428", "8430", "8432", "8438", "8439"]
+    "postalCodes": ["8408", "8426", "8428", "8430", "8432", "8438", "8439"]
   },
   "SORTLAND": {
     "population": "10566",
-    "postalcodes": [
+    "postalCodes": [
       "8400",
       "8401",
       "8402",
@@ -5418,7 +5418,7 @@
   },
   "ANDØY": {
     "population": "4663",
-    "postalcodes": [
+    "postalCodes": [
       "8480",
       "8481",
       "8483",
@@ -5431,11 +5431,11 @@
   },
   "MOSKENES": {
     "population": "1015",
-    "postalcodes": ["8390", "8392", "8393", "8398"]
+    "postalCodes": ["8390", "8392", "8393", "8398"]
   },
   "HAMARØY": {
     "population": "2766",
-    "postalcodes": [
+    "postalCodes": [
       "8260",
       "8261",
       "8270",
@@ -5452,7 +5452,7 @@
   },
   "TROMSØ": {
     "population": "76974",
-    "postalcodes": [
+    "postalCodes": [
       "9006",
       "9007",
       "9008",
@@ -5546,7 +5546,7 @@
   },
   "HARSTAD": {
     "population": "24703",
-    "postalcodes": [
+    "postalCodes": [
       "9402",
       "9403",
       "9404",
@@ -5585,7 +5585,7 @@
   },
   "ALTA": {
     "population": "20789",
-    "postalcodes": [
+    "postalCodes": [
       "9501",
       "9502",
       "9503",
@@ -5615,15 +5615,15 @@
   },
   "VARDØ": {
     "population": "2029",
-    "postalcodes": ["9950", "9951", "9960"]
+    "postalCodes": ["9950", "9951", "9960"]
   },
   "VADSØ": {
     "population": "5788",
-    "postalcodes": ["9800", "9802", "9810", "9811", "9815"]
+    "postalCodes": ["9800", "9802", "9810", "9811", "9815"]
   },
   "HAMMERFEST": {
     "population": "11448",
-    "postalcodes": [
+    "postalCodes": [
       "9600",
       "9601",
       "9602",
@@ -5646,11 +5646,11 @@
   },
   "KVÆFJORD": {
     "population": "2839",
-    "postalcodes": ["8409", "9475", "9476"]
+    "postalCodes": ["8409", "9475", "9476"]
   },
   "TJELDSUND": {
     "population": "4216",
-    "postalcodes": [
+    "postalCodes": [
       "9436",
       "9439",
       "9440",
@@ -5666,27 +5666,27 @@
   },
   "IBESTAD": {
     "population": "1361",
-    "postalcodes": ["9450", "9451", "9453", "9454", "9455", "9456"]
+    "postalCodes": ["9450", "9451", "9453", "9454", "9455", "9456"]
   },
   "GRATANGEN": {
     "population": "1091",
-    "postalcodes": ["9470", "9471"]
+    "postalCodes": ["9470", "9471"]
   },
   "LAVANGEN": {
     "population": "1034",
-    "postalcodes": ["9357", "9358"]
+    "postalCodes": ["9357", "9358"]
   },
   "BARDU": {
     "population": "4005",
-    "postalcodes": ["9360", "9365"]
+    "postalCodes": ["9360", "9365"]
   },
   "SALANGEN": {
     "population": "2146",
-    "postalcodes": ["9350", "9355"]
+    "postalCodes": ["9350", "9355"]
   },
   "MÅLSELV": {
     "population": "6640",
-    "postalcodes": [
+    "postalCodes": [
       "9321",
       "9322",
       "9325",
@@ -5699,15 +5699,15 @@
   },
   "SØRREISA": {
     "population": "3464",
-    "postalcodes": ["9310", "9315"]
+    "postalCodes": ["9310", "9315"]
   },
   "DYRØY": {
     "population": "1083",
-    "postalcodes": ["9311", "9316"]
+    "postalCodes": ["9311", "9316"]
   },
   "SENJA": {
     "population": "14851",
-    "postalcodes": [
+    "postalCodes": [
       "9300",
       "9302",
       "9303",
@@ -5739,11 +5739,11 @@
   },
   "BALSFJORD": {
     "population": "5559",
-    "postalcodes": ["9040", "9042", "9049", "9050", "9055", "9056", "9059"]
+    "postalCodes": ["9040", "9042", "9049", "9050", "9055", "9056", "9059"]
   },
   "KARLSØY": {
     "population": "2200",
-    "postalcodes": [
+    "postalCodes": [
       "9130",
       "9132",
       "9134",
@@ -5756,19 +5756,19 @@
   },
   "LYNGEN": {
     "population": "2794",
-    "postalcodes": ["9060", "9062", "9064", "9068", "9069"]
+    "postalCodes": ["9060", "9062", "9064", "9068", "9069"]
   },
   "STORFJORD": {
     "population": "1829",
-    "postalcodes": ["9046", "9142", "9143"]
+    "postalCodes": ["9046", "9142", "9143"]
   },
   "KÅFJORD": {
     "population": "2071",
-    "postalcodes": ["9144", "9145", "9146", "9147", "9148", "9149"]
+    "postalCodes": ["9144", "9145", "9146", "9147", "9148", "9149"]
   },
   "SKJERVØY": {
     "population": "2927",
-    "postalcodes": [
+    "postalCodes": [
       "9180",
       "9189",
       "9190",
@@ -5781,7 +5781,7 @@
   },
   "NORDREISA": {
     "population": "4861",
-    "postalcodes": [
+    "postalCodes": [
       "9151",
       "9152",
       "9153",
@@ -5796,7 +5796,7 @@
   },
   "KVÆNANGEN": {
     "population": "1191",
-    "postalcodes": [
+    "postalCodes": [
       "9161",
       "9162",
       "9163",
@@ -5809,11 +5809,11 @@
   },
   "KAUTOKEINO": {
     "population": "2910",
-    "postalcodes": ["9520", "9521", "9525"]
+    "postalCodes": ["9520", "9521", "9525"]
   },
   "LOPPA": {
     "population": "888",
-    "postalcodes": [
+    "postalCodes": [
       "9186",
       "9550",
       "9580",
@@ -5827,19 +5827,19 @@
   },
   "HASVIK": {
     "population": "1005",
-    "postalcodes": ["9590", "9591", "9593", "9595"]
+    "postalCodes": ["9590", "9591", "9593", "9595"]
   },
   "MÅSØY": {
     "population": "1225",
-    "postalcodes": ["9670", "9672", "9690", "9691", "9692", "9714"]
+    "postalCodes": ["9670", "9672", "9690", "9691", "9692", "9714"]
   },
   "NORDKAPP": {
     "population": "3162",
-    "postalcodes": ["9750", "9751", "9760", "9763", "9764", "9765", "9768"]
+    "postalCodes": ["9750", "9751", "9760", "9763", "9764", "9765", "9768"]
   },
   "PORSANGER": {
     "population": "3998",
-    "postalcodes": [
+    "postalCodes": [
       "9700",
       "9709",
       "9710",
@@ -5852,35 +5852,35 @@
   },
   "KARASJOK": {
     "population": "2628",
-    "postalcodes": ["9730", "9735"]
+    "postalCodes": ["9730", "9735"]
   },
   "LEBESBY": {
     "population": "1290",
-    "postalcodes": ["9717", "9740", "9742", "9782", "9790"]
+    "postalCodes": ["9717", "9740", "9742", "9782", "9790"]
   },
   "GAMVIK": {
     "population": "1132",
-    "postalcodes": ["9770", "9771", "9772", "9773", "9775"]
+    "postalCodes": ["9770", "9771", "9772", "9773", "9775"]
   },
   "BERLEVÅG": {
     "population": "957",
-    "postalcodes": ["9980", "9981", "9982"]
+    "postalCodes": ["9980", "9981", "9982"]
   },
   "TANA": {
     "population": "2918",
-    "postalcodes": ["9826", "9845", "9846"]
+    "postalCodes": ["9826", "9845", "9846"]
   },
   "NESSEBY": {
     "population": "926",
-    "postalcodes": ["9820", "9840"]
+    "postalCodes": ["9820", "9840"]
   },
   "BÅTSFJORD": {
     "population": "2221",
-    "postalcodes": ["9990", "9991"]
+    "postalCodes": ["9990", "9991"]
   },
   "SØR-VARANGER": {
     "population": "10158",
-    "postalcodes": [
+    "postalCodes": [
       "9900",
       "9901",
       "9910",

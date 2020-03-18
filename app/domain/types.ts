@@ -82,12 +82,12 @@ export type TestResultStats = {
 export type PostalCode = string;
 
 export interface Coordinate {
-  lat: string;
-  lon: string;
+  lat: number;
+  lon: number;
 }
+
 export interface Municipality {
   name: string;
   population: string;
-  postalcodes: PostalCode[];
-  coordinates: Coordinate;
+  postalCodes: PostalCode[];
 }
