@@ -49,6 +49,11 @@ export interface AggregatedCovidReportData {
   numberOfTested: number;
 }
 
+export interface SymptomStat {
+  symptom: Symptom;
+  count: number;
+}
+
 export interface SymptomStats {
   labels: string[];
   values: number[];
