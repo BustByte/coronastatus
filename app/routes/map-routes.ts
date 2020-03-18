@@ -1,5 +1,5 @@
 import express from 'express';
-import { CovidReport, TestResult, Municipality } from '../domain/types';
+import { Coordinate, CovidReport, TestResult } from '../domain/types';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
 import { MunicipalityRepository } from '../repository/MunicipalityRepository';
 import { isShowingAtLeastOneSymptom } from '../util/report-aggregator';
@@ -7,17 +7,6 @@ import { isShowingAtLeastOneSymptom } from '../util/report-aggregator';
 const router = express.Router();
 const reportRepo = new CovidReportRepository();
 const municipalityRepo = new MunicipalityRepository();
-
-interface MapFeature {
-  type: string;
-  geometry: {
-    type: string;
-    coordinates: number[];
-  };
-  properties: {
-    state: string;
-  };
-}
 
 const mapReportToFeatureState = (report: CovidReport): string => {
   let state = 'HEALTHY';
@@ -29,17 +18,14 @@ const mapReportToFeatureState = (report: CovidReport): string => {
   return state;
 };
 
-const mapFeatureFromMunicipalityAndReport = (
-  municipality: Municipality,
+const mapFeatureFromCoordinateAndReport = (
+  coordinate: Coordinate,
   report: CovidReport
-): MapFeature => ({
+) => ({
   type: 'Feature',
   geometry: {
     type: 'Point',
-    coordinates: [
-      Number(municipality.coordinates.lon),
-      Number(municipality.coordinates.lat)
-    ]
+    coordinates: [coordinate.lon, coordinate.lat]
   },
   properties: {
     state: mapReportToFeatureState(report)
@@ -48,18 +34,20 @@ const mapFeatureFromMunicipalityAndReport = (
 
 router.get('/geojson', async (req, res) => {
   const allReports = await reportRepo.getLatestCovidReports();
-  const features = allReports.map(report => {
-    const municipality = municipalityRepo.getMunicipalityForPostalCode(
-      report.postalCode
-    );
-    return municipality
-      ? mapFeatureFromMunicipalityAndReport(municipality, report)
-      : undefined;
-  });
+  const features = allReports
+    .map(report => {
+      const coordinate = municipalityRepo.getCoordinateForPostalCode(
+        report.postalCode
+      );
+      return coordinate
+        ? mapFeatureFromCoordinateAndReport(coordinate, report)
+        : undefined;
+    })
+    .filter(feature => !!feature);
 
-  res.send({
+  res.json({
     type: 'FeatureCollection',
-    features: features.filter(feature => !!feature)
+    features
   });
 });
 

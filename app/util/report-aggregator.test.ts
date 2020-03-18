@@ -16,6 +16,7 @@ const reports: CovidReport[] = [
     testedAt: new Date(), // Not in use
     symptomStart: '2020-03-02', // YYYY-MM-DD
     testResult: TestResult.POSITIVE,
+    hasBeenInContactWithInfected: false,
     symptoms: {
       [Symptom.DRY_COUGH]: true,
       [Symptom.EXHAUSTION]: false,
@@ -24,7 +25,11 @@ const reports: CovidReport[] = [
       [Symptom.MUSCLE_ACHING]: false,
       [Symptom.DIARRHEA]: false,
       [Symptom.HEADACHE]: false,
-      [Symptom.SORE_THROAT]: false
+      [Symptom.SORE_THROAT]: false,
+      [Symptom.NO_TASTE]: false,
+      [Symptom.NO_SMELL]: false,
+      [Symptom.SLIME_COUGH]: false,
+      [Symptom.RUNNY_NOSE]: false
     },
     submissionTimestamp: 123123123,
     age: '50'
@@ -37,6 +42,7 @@ const reports: CovidReport[] = [
     testedAt: new Date(), // YYYY-MM-DD
     symptomStart: '2020-03-02', // YYYY-MM-DD
     testResult: undefined,
+    hasBeenInContactWithInfected: false,
     symptoms: {
       [Symptom.DRY_COUGH]: true,
       [Symptom.EXHAUSTION]: true,
@@ -45,7 +51,11 @@ const reports: CovidReport[] = [
       [Symptom.MUSCLE_ACHING]: false,
       [Symptom.DIARRHEA]: false,
       [Symptom.HEADACHE]: false,
-      [Symptom.SORE_THROAT]: false
+      [Symptom.SORE_THROAT]: false,
+      [Symptom.NO_TASTE]: false,
+      [Symptom.NO_SMELL]: false,
+      [Symptom.SLIME_COUGH]: false,
+      [Symptom.RUNNY_NOSE]: false
     },
     submissionTimestamp: 123123123,
     age: '50'
@@ -58,6 +68,7 @@ const reports: CovidReport[] = [
     testedAt: new Date(), // YYYY-MM-DD
     symptomStart: '2020-03-02', // YYYY-MM-DD
     testResult: TestResult.PENDING,
+    hasBeenInContactWithInfected: false,
     symptoms: {
       [Symptom.DRY_COUGH]: false,
       [Symptom.EXHAUSTION]: false,
@@ -66,7 +77,11 @@ const reports: CovidReport[] = [
       [Symptom.MUSCLE_ACHING]: false,
       [Symptom.DIARRHEA]: false,
       [Symptom.HEADACHE]: false,
-      [Symptom.SORE_THROAT]: false
+      [Symptom.SORE_THROAT]: false,
+      [Symptom.NO_TASTE]: false,
+      [Symptom.NO_SMELL]: false,
+      [Symptom.SLIME_COUGH]: false,
+      [Symptom.RUNNY_NOSE]: false
     },
     submissionTimestamp: 123123123,
     age: '50'
@@ -79,6 +94,7 @@ const reports: CovidReport[] = [
     testedAt: new Date(), // YYYY-MM-DD
     symptomStart: '2020-03-02', // YYYY-MM-DD
     testResult: TestResult.NEGATIVE,
+    hasBeenInContactWithInfected: false,
     symptoms: {
       [Symptom.DRY_COUGH]: true,
       [Symptom.EXHAUSTION]: false,
@@ -87,13 +103,18 @@ const reports: CovidReport[] = [
       [Symptom.MUSCLE_ACHING]: false,
       [Symptom.DIARRHEA]: false,
       [Symptom.HEADACHE]: false,
-      [Symptom.SORE_THROAT]: false
+      [Symptom.SORE_THROAT]: false,
+      [Symptom.NO_TASTE]: false,
+      [Symptom.NO_SMELL]: false,
+      [Symptom.SLIME_COUGH]: false,
+      [Symptom.RUNNY_NOSE]: false
     },
     submissionTimestamp: 123123123,
     age: '50'
   }
 ];
 
+/* eslint-disable no-undef */
 it('should count all correctly', () => {
   const aggregated: AggregatedCovidReportData = aggregateCovidReports(reports);
 
