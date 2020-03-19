@@ -47,23 +47,57 @@
     <section id="main" class="wrapper">
       <div class="inner">
         <div class="info-box-row">
-          <div class="info-box main-info">
-            <div class="info-box__icon">
-              <div class="info-box__icon__circle">
-                <i class="fas fa-question"></i>
+          <!-- Mørketall -->
+          <div class="info-box info">
+            <div>
+              <div class="info-box__icon"><i class="fa fa-moon"></i></div>
+              <div class="info-box__content">
+                <h2>Store mørketall</h2>
+                <p>
+                  Spredningen av COVID-19 i landet vårt er ukjent. Hjelp oss med å skape en bedre oversikt.
+                </p>
               </div>
             </div>
-            <div class="info-box__content">
-              <p class="info-box__bolder">Mørketallene på smittede i Norge er store. Denne tjenesten har som mål å bidra
-                til en bedre oversikt over spredning av coronaviruset i landet vårt. Du kan bidra ved å registrere dine
-                opplysninger anonymt.</p>
-              <p>De innsamlede dataene vil bli delt med helsemyndighetene slik at de står bedre rustet til å håndtere
-                situasjonen. Hvis du kjenner noen med ekspertise på smittevern eller helsefag som kan bidra med innspill
-                om hva de trenger av data, vær snill å be de <a href="mailto:kontakt@bustbyte.no?subject=Coronastatus.no - bistand">
-                kontakte oss</a> for om mulig å hjelpe. Tjenesten er laget i dugnadsånd av et lite konsulentselskap i
-                samarbeid med frivillige.</p>
+          </div>
+
+          <!-- Anonymt -->
+          <div class="info-box">
+            <div>
+              <div class="info-box__icon"><i class="fa fa-hands-helping"></i></div>
+              <div class="info-box__content">
+                <h2>Bidra anonymt</h2>
+                <p>
+                  Rapporter din helsetilstand anonymt i skjemaet under.
+                </p>
+              </div>
             </div>
           </div>
+
+          <!-- Innsikt -->
+          <div class="info-box">
+            <div>
+              <div class="info-box__icon"><i class="fa fa-microscope"></i></div>
+              <div class="info-box__content">
+                <h2>Innsikt til alle</h2>
+                <p>
+                  Dataene er åpne for alle. Last ned dataene og gjør dine egne analyser.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Åpenhet -->
+          <div class="info-box">
+            <div>
+              <div class="info-box__icon"><i class="fa fa-code"></i></div>
+              <div class="info-box__content">
+                <h2>Alt er åpent</h2>
+                <p>Tjenesten er åpen kildekode og laget i dugnadsånd. Du kan bidra i utviklingen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-box-row">
           <div class="info-box stats" id="total-reports">
             <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfReports) %></div>
             <div class="stats__description">Totalt innsendte</div>

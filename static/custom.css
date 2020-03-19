@@ -123,7 +123,7 @@ input[type='checkbox'] + label.normal-font {
 }
 
 .menu.wrapper {
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 @media screen and (max-width: 360px) {
@@ -141,51 +141,49 @@ input[type='checkbox'] + label.normal-font {
 .info-box {
   position: relative;
   padding: 0.75rem 1.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   border-radius: 0.25rem;
-  background-color: #f0f0f0;
-  border-color: #fdfdfe;
   display: -webkit-box;
   display: flex;
-}
-
-.info-box.main-info {
+  width: calc(50%);
   flex-grow: 1;
+  flex-direction: column;
 }
 
 .info-box__icon {
-  width: 50px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  font-size: 2rem;
 }
 
 .info-box__content {
-  width: calc(100% - 50px);
-  padding-left: 1rem;
+  margin: auto;
+  width: auto;
+  padding: 0;
+}
+
+.info-box__content h2 {
+  padding-top: 0;
+  font-weight: 200;
+  text-align: center;
+  color: #d03131;
 }
 
 .info-box__content p {
   margin: 0;
-  padding: 4px;
+  padding: 0;
+  text-align: center;
   line-height: 1.4rem;
-  font-weight: 400;
+  font-weight: 200;
   font-size: 0.9rem;
 }
 
 .info-box__content p.info-box__bolder {
   font-weight: 700;
-}
-
-.info-box__icon__circle {
-  border-radius: 50%;
-  background-color: #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 45px;
-  height: 45px;
-}
-
-.info-box__icon__circle i {
-  color: black;
 }
 
 .info-box-row {
@@ -199,6 +197,7 @@ input[type='checkbox'] + label.normal-font {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #f0f0f0;
 }
 
 .stats__number {
@@ -211,6 +210,7 @@ input[type='checkbox'] + label.normal-font {
   font-weight: 500;
   text-align: center;
   line-height: 1rem;
+  text-transform: uppercase;
 }
 
 .info-box + .info-box {
@@ -226,8 +226,16 @@ input[type='checkbox'] + label.normal-font {
 }
 
 @media (max-width: 992px) {
-  .info-box.main-info {
-    width: 100%;
+  .info-box {
+    width: calc(50% - 1rem);
+  }
+
+  .info-box + .info-box {
+    margin-left: 0;
+  }
+  
+  .info-box:nth-child(even) {
+    margin-left: 0.5rem;
   }
 
   .info-box.stats {
@@ -242,6 +250,24 @@ input[type='checkbox'] + label.normal-font {
 
   .info-box-row {
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 550px) {
+  .info-box__icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1.3rem;
+  }
+
+  .info-box__content h2 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .info-box__content p {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
   }
 }
 
