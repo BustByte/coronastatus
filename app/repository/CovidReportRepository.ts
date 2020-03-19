@@ -60,13 +60,13 @@ export class CovidReportRepository {
 
   async getAllCovidReports(): Promise<PassCodeReports> {
     const allReports = await allReportsCache.getCachedElements(() =>
-      this.allReportsFetcher(this.db)
+      this.fetchAllReportsFromDatabase()
     );
     return allReports;
   }
 
-  async allReportsFetcher(db: SqlLiteDatabase): Promise<PassCodeReports> {
-    const rows = await db.getAll(SELECT_ALL_COVID_REPORTS);
+  async fetchAllReportsFromDatabase(): Promise<PassCodeReports> {
+    const rows = await this.db.getAll(SELECT_ALL_COVID_REPORTS);
     const allReports: PassCodeReports = {};
     rows.forEach((row: CovidReportRow) => {
       const report = this.parseJsonDumpToCovidReport(row.json_dump);
@@ -83,7 +83,7 @@ export class CovidReportRepository {
     const allReports: {
       [passcode: string]: CovidReport[];
     } = (await allReportsCache.getCachedElements(() =>
-      this.allReportsFetcher(this.db)
+      this.fetchAllReportsFromDatabase()
     )) as PassCodeReports;
 
     const latestReports: CovidReport[] = [];

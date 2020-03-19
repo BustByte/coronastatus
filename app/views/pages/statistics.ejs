@@ -18,6 +18,13 @@
       <section id="main" class="wrapper">
         <div class="inner">
           <h1>Statistikk</h1>
+          <form method="GET" action="/api/reports/csv" style="margin-bottom: 0">
+            <ul class="actions">
+              <li>
+                <input type="submit" value="Last ned datasett som CSV">
+              </li>
+            </ul>
+          </form>
           <h2>Symptomer hos covid-19-smittede</h2>
           <p>Totalt har <%= numberWithSpaces(totalInfectedPeopleWithSymptoms) %> personer rapportert at de har testet positivt på COVID-19 og har symptomer.</p>
           <canvas id="infectedSymptomsChart"></canvas>
