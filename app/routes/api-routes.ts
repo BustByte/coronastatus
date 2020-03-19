@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign, no-plusplus */
 import express from 'express';
 import cors from 'cors';
 import 'csv-express';
@@ -32,7 +33,7 @@ interface ExposedCovidReport {
   symptomStart?: string; // YYYY-MM-DD
   testResult?: TestResult;
   symptoms: Symptoms;
-  submissionTimestamp: number;
+  submissionDate: string; // YYYY-MM-DD
   age: string;
 }
 
@@ -42,6 +43,7 @@ const toZeroOrOne = (bool: boolean): ZeroOrOne => (bool ? 1 : 0);
 
 interface ExposedCovidReportCSV extends Record<Symptom, ZeroOrOne> {
   profileId: number;
+  submissionOrder: number;
   age: string;
   sex: Sex;
   hasBeenInContactWithInfected: ZeroOrOne;
@@ -49,8 +51,12 @@ interface ExposedCovidReportCSV extends Record<Symptom, ZeroOrOne> {
   hasBeenTested: ZeroOrOne;
   testResult?: TestResult;
   symptomStart?: string; // YYYY-MM-DD
-  submissionTimestamp: number;
+  submissionDate: string;
 }
+
+const toISODate = (submissionTimestamp: number): string =>
+  // We did not collect submission timestamps the first day (1584284400000)
+  new Date(submissionTimestamp ?? 1584284400000).toISOString().substring(0, 10);
 
 const reportToExposedFormat = (report: CovidReport): ExposedCovidReport => ({
   age: report.age,
@@ -62,7 +68,7 @@ const reportToExposedFormat = (report: CovidReport): ExposedCovidReport => ({
   symptomStart: report.symptomStart,
   testResult: report.testResult,
   symptoms: report.symptoms,
-  submissionTimestamp: report.submissionTimestamp
+  submissionDate: toISODate(report.submissionTimestamp)
 });
 
 const extractSymptomsAsZeroOrOne = (
@@ -84,9 +90,11 @@ const extractSymptomsAsZeroOrOne = (
 
 const reportToExposedCsvFormat = (
   report: CovidReport,
-  index: number
+  passCodeIndex: number,
+  submissionIndex: number
 ): ExposedCovidReportCSV => ({
-  profileId: index,
+  profileId: passCodeIndex + 1,
+  submissionOrder: submissionIndex + 1,
   age: report.age,
   sex: report.sex,
   municipality: municipalityRepo.getMunicipalityForPostalCode(report.postalCode)
@@ -97,7 +105,7 @@ const reportToExposedCsvFormat = (
   ),
   symptomStart: report.symptomStart,
   testResult: report.testResult,
-  submissionTimestamp: report.submissionTimestamp,
+  submissionDate: toISODate(report.submissionTimestamp),
   ...extractSymptomsAsZeroOrOne(report.symptoms)
 });
 
@@ -123,12 +131,25 @@ const csvCache = new CacheWithLifetime<ExposedCovidReportCSV[]>(
   'ExposedCovidReportCSVCache'
 );
 
+function shuffleArray<T>(inputArray: T[]): T[] {
+  for (let i: number = inputArray.length - 1; i >= 0; i--) {
+    const randomIndex: number = Math.floor(Math.random() * (i + 1));
+    const itemAtIndex = inputArray[randomIndex];
+
+    inputArray[randomIndex] = inputArray[i];
+    inputArray[i] = itemAtIndex;
+  }
+  return inputArray;
+}
+
 router.get('/reports/csv', cors(), async (req, res) => {
   const csvReports = await csvCache.getCachedElements(async () => {
     const allReports = await reportRepo.getAllCovidReports();
-    return Object.values(allReports)
-      .map((reportList, index) =>
-        reportList.map(report => reportToExposedCsvFormat(report, index))
+    return shuffleArray(Object.values(allReports))
+      .map((reportList, passCodeIndex) =>
+        reportList.map((report, timestampIndex) =>
+          reportToExposedCsvFormat(report, passCodeIndex, timestampIndex)
+        )
       )
       .flat();
   });
