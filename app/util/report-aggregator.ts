@@ -15,7 +15,8 @@ export const aggregateCovidReports = (
     numberOfReports: 0,
     numberOfPeopleShowingSymptoms: 0,
     numberOfConfirmedInfected: 0,
-    numberOfTested: 0
+    numberOfTested: 0,
+    numberOfContacts: 0
   };
   for (const report of reports) {
     aggredatedData.numberOfReports += 1;
@@ -27,6 +28,9 @@ export const aggregateCovidReports = (
     }
     if (report.testResult === TestResult.POSITIVE) {
       aggredatedData.numberOfConfirmedInfected += 1;
+    }
+    if (report.hasBeenInContactWithInfected) {
+      aggredatedData.numberOfContacts += 1;
     }
   }
   return aggredatedData;

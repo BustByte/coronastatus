@@ -99,8 +99,21 @@
         </div>
         <div class="info-box-row">
           <div class="info-box stats" id="total-reports">
-            <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfReports) %></div>
+            <div class="stats__number">
+              <%= numberWithSpaces(aggregated.numberOfReports) %>
+            </div>
             <div class="stats__description">Totalt innsendte</div>
+          </div>
+          <div class="info-box stats">
+            <div class="stats__number">
+              <%= numberWithSpaces(aggregated.numberOfConfirmedInfected) %> <span class="delimiter">/</span>
+              <%= numberWithSpaces(aggregated.numberOfTested) %>
+            </div>
+            <div class="stats__description">Smittede / har blitt testet</div>
+          </div>
+          <div class="info-box stats">
+            <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfContacts) %></div>
+            <div class="stats__description">I nærkontakt med smittet</div>
           </div>
           <div class="info-box stats">
             <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfPeopleShowingSymptoms) %></div>

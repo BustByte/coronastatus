@@ -47,6 +47,7 @@ export interface AggregatedCovidReportData {
   numberOfPeopleShowingSymptoms: number;
   numberOfConfirmedInfected: number;
   numberOfTested: number;
+  numberOfContacts: number;
 }
 
 export interface SymptomStat {
