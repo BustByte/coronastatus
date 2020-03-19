@@ -228,6 +228,7 @@ input[type='checkbox'] + label.normal-font {
 @media (max-width: 992px) {
   .info-box {
     width: calc(50% - 1rem);
+    padding: 0.25rem 0.5rem;
   }
 
   .info-box + .info-box {
@@ -242,10 +243,6 @@ input[type='checkbox'] + label.normal-font {
     flex-grow: 1;
     padding: 0.5rem 0 1rem;
     width: auto;
-  }
-
-  .info-box.main-info + .info-box.stats {
-    margin-left: 0;
   }
 
   .info-box-row {
