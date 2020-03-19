@@ -13,7 +13,6 @@ const reports: CovidReport[] = [
     sex: Sex.MALE,
     postalCode: '1234',
     hasBeenTested: false,
-    testedAt: new Date(), // Not in use
     symptomStart: '2020-03-02', // YYYY-MM-DD
     testResult: TestResult.POSITIVE,
     hasBeenInContactWithInfected: false,
@@ -39,7 +38,6 @@ const reports: CovidReport[] = [
     sex: Sex.MALE,
     postalCode: '1234',
     hasBeenTested: false,
-    testedAt: new Date(), // YYYY-MM-DD
     symptomStart: '2020-03-02', // YYYY-MM-DD
     testResult: undefined,
     hasBeenInContactWithInfected: false,
@@ -65,7 +63,6 @@ const reports: CovidReport[] = [
     sex: Sex.MALE,
     postalCode: '1234',
     hasBeenTested: false,
-    testedAt: new Date(), // YYYY-MM-DD
     symptomStart: '2020-03-02', // YYYY-MM-DD
     testResult: TestResult.PENDING,
     hasBeenInContactWithInfected: false,
@@ -91,7 +88,6 @@ const reports: CovidReport[] = [
     sex: Sex.MALE,
     postalCode: '1234',
     hasBeenTested: false,
-    testedAt: new Date(), // YYYY-MM-DD
     symptomStart: '2020-03-02', // YYYY-MM-DD
     testResult: TestResult.NEGATIVE,
     hasBeenInContactWithInfected: false,
