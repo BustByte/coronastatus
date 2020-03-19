@@ -3,6 +3,7 @@ import {
   Symptom,
   Symptoms,
   TotalReportsStats,
+  SymptomStat,
   SymptomStats,
   DateStat,
   InContactWithInfectedStat,
@@ -32,6 +33,9 @@ const symptomKeyToLabel = (symptomKey: Symptom): string =>
 const hasSymptoms = (symptoms: Symptoms): boolean =>
   (Object.keys(symptoms) as Symptom[]).some(key => !!symptoms[key]);
 
+const compareSymptomStats = (a: SymptomStat, b: SymptomStat): number =>
+  b.count - a.count;
+
 export function groupBySymptoms(
   reports: CovidReport[],
   reportFilter: (report: CovidReport) => boolean = () => true
@@ -41,31 +45,41 @@ export function groupBySymptoms(
     .filter(reportFilter)
     .map(report => report.symptoms);
 
-  const symptomStats = {
-    [Symptom.DRY_COUGH]: 0,
-    [Symptom.EXHAUSTION]: 0,
-    [Symptom.FEVER]: 0,
-    [Symptom.HEAVY_BREATHING]: 0,
-    [Symptom.MUSCLE_ACHING]: 0,
-    [Symptom.DIARRHEA]: 0,
-    [Symptom.HEADACHE]: 0,
-    [Symptom.SORE_THROAT]: 0,
-    [Symptom.NO_TASTE]: 0,
-    [Symptom.NO_SMELL]: 0,
-    [Symptom.SLIME_COUGH]: 0,
-    [Symptom.RUNNY_NOSE]: 0
-  };
+  const symptomStats: SymptomStat[] = [
+    { symptom: Symptom.DRY_COUGH },
+    { symptom: Symptom.DRY_COUGH },
+    { symptom: Symptom.EXHAUSTION },
+    { symptom: Symptom.FEVER },
+    { symptom: Symptom.HEAVY_BREATHING },
+    { symptom: Symptom.MUSCLE_ACHING },
+    { symptom: Symptom.DIARRHEA },
+    { symptom: Symptom.HEADACHE },
+    { symptom: Symptom.SORE_THROAT },
+    { symptom: Symptom.NO_TASTE },
+    { symptom: Symptom.NO_SMELL },
+    { symptom: Symptom.SLIME_COUGH },
+    { symptom: Symptom.RUNNY_NOSE }
+  ].map(symptom => ({ ...symptom, count: 0 }));
+
   symptoms.forEach(symptom => {
     const symptomKeys = Object.keys(symptom) as Symptom[];
     symptomKeys.forEach(key => {
-      if (symptom[key]) {
-        symptomStats[key] += 1;
+      const stat = symptomStats.find(
+        symptomStat => symptomStat.symptom === key
+      );
+      if (stat) {
+        stat.count += 1;
       }
     });
   });
+
+  const symptomStatsSorted = symptomStats.sort(compareSymptomStats);
+
   return {
-    labels: (Object.keys(symptomStats) as Symptom[]).map(symptomKeyToLabel),
-    values: Object.values(symptomStats),
+    labels: symptomStatsSorted
+      .map(symptomStat => symptomStat.symptom)
+      .map(symptomKeyToLabel),
+    values: symptomStatsSorted.map(symptomStat => symptomStat.count),
     total: symptoms.length
   };
 }

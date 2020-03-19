@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <%- include('partials/head') -%>
+  </head>
+  <body>
+    <%- include('partials/disclaimer') -%>
+    <%- include('partials/menu') -%>
+    <%- include('partials/hamburger-menu') -%>
+    <div id="page-wrapper">
+      <section id="main" class="wrapper">
+        <div class="inner privacy-policy">
+          <h1>Takk for ditt engasjement!</h1>
+          <p class="subtitle">Helsemyndighetene har nå opprettet sitt eget rapporteringssystem, og vi anbefaler at du heller benytter det.</p>
+          <ul class="actions">
+            <li><a target="_blank" class="button next" style="cursor: pointer;" href="https://helsenorge.no/">Til helsenorge.no</a></li>
+          </ul>
+        </div>
+      </section>
+      <%- include('partials/footer') -%>
+    </div>
+    <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
+  </body>
+</html>
