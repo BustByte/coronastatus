@@ -3,17 +3,6 @@ export const getReports = {
   description: 'Returns a report',
   operationId: 'getReports',
   version: '0.0.1',
-  parameters: [
-    {
-      name: 'municipality',
-      in: 'query',
-      description: 'The name of the municipality to generate results for',
-      required: false,
-      schema: {
-        type: 'string'
-      }
-    }
-  ],
   responses: {
     '200': {
       description: 'Report',
