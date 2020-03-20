@@ -1,7 +1,7 @@
 <%
   const totalPeopleInContactWithInfected = locals.inContactWithInfectedStats.total;
-  const totalInfectedPeopleWithSymptoms = locals.allInfectedSymptomsStats.total;
-  const totalPeopleWithSymptoms = locals.allSymptomsStats.total;
+  const totalInfectedPeopleWithSymptoms = locals.infectedStats.symptomStats.total;
+  const totalPeopleWithSymptoms = locals.allSymptomsStats.symptomStats.total;
 
   function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -25,12 +25,93 @@
               </li>
             </ul>
           </form>
-          <h2>Symptomer hos covid-19-smittede</h2>
+          <h2 class="stat-heading">COVID-19-smittede</h2>
           <p>Totalt har <%= numberWithSpaces(totalInfectedPeopleWithSymptoms) %> personer rapportert at de har testet positivt på COVID-19 og har symptomer.</p>
-          <canvas id="infectedSymptomsChart"></canvas>
-          <h2>Alle innrapporterte symptomer.</h2>
-          <p>Totalt har <%= numberWithSpaces(totalPeopleWithSymptoms) %> personer rapportert at de har symptomer</p>
-          <canvas id="allSymptomsChart"></canvas>
+          <div class="stat-layout">
+            <div class="stat-cell">
+              <h3 class="stat-heading">Symptomer</h3>
+              <canvas id="infectedSymptomsChart"></canvas>
+            </div>
+            <div class="stat-cell">
+              <h3 class="stat-heading">Testresultater</h2>
+              <p>Totalt har <%= numberWithSpaces(totalPeopleInContactWithInfected) %> personer rapportert at de har testet seg for COVID-19.</p>
+              <div class="stat-layout">
+                <div class="stat-cell">
+                  <canvas id="testResultStats"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <h2 class="stat-heading">Nærkontakter</h2>
+          <p>Totalt har <%= numberWithSpaces(totalPeopleInContactWithInfected) %> personer rapportert at de har hatt nærkontakt med en person som har testet positivt på COVID-19.</p>
+          <div class="stat-layout">
+            <div class="stat-cell">
+              <h3 class="stat-heading">Symptomer</h3>
+              <canvas id="inContactWithInfectedChart"></canvas>
+            </div>
+            <div class="stat-cell">
+              <h3 class="stat-heading">Nøkkeltall</h3>
+              <div>Av de som har rapportert at de har hatt nærkontakt med en person med påvist COVID-19-smitte, har:</div>
+              <div class="stat-number-layout">
+                <div class="stat-number-cell">
+                  <div class="stat-number-cell__number">
+                    <%= locals.inContactWithInfectedStats.percentageWithTwoMostCommonSymptoms %> %
+                  </div>
+                  <div class="stat-number-cell__description">
+                    rapportert at de har de to vanligste symptomene som smittede har.
+                  </div>
+                </div>
+                <div class="stat-number-cell">
+                  <div class="stat-number-cell__number">
+                    <%= locals.inContactWithInfectedStats.percentageWithThreeMostCommonSymptoms %> %
+                  </div>
+                  <div class="stat-number-cell__description">
+                    rapportert at de har de tre vanligste symptomene som smittede har.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="stat-heading">Alle innrapporterte</h2>
+          <p>Totalt har <%= numberWithSpaces(totalPeopleWithSymptoms) %> personer rapportert at de har symptomer.</p>
+          <div class="stat-layout">
+            <div class="stat-cell">
+              <h3 class="stat-heading">Symptomer</h3>
+              <canvas id="allSymptomsChart"></canvas>
+            </div>
+            <div class="stat-cell">
+              <h3 class="stat-heading">Nøkkeltall</h3>
+              <div>Av alle som har rapportert, har:</div>
+              <div class="stat-number-layout">
+                <div class="stat-number-cell">
+                  <div class="stat-number-cell__number">
+                     <%= locals.allSymptomsStats.percentageWithTwoMostCommonSymptoms %> %
+                  </div>
+                  <div class="stat-number-cell__description">
+                    rapportert at de har de to vanligste symptomene som smittede har.
+                  </div>
+                </div>
+                <div class="stat-number-cell">
+                  <div class="stat-number-cell__number">
+                    <%= locals.allSymptomsStats.percentageWithThreeMostCommonSymptoms %> %
+                  </div>
+                  <div class="stat-number-cell__description">
+                    rapportert at de har de tre vanligste symptomene som smittede har.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="stat-heading">Antall rapporteringer</h2>
+          <canvas id="totalReportsChart"></canvas>
+          
+          <h2 class="stat-heading">Positive testresultater og nærkontakt</h2>
+          <canvas id="infectedAndContactStats"></canvas>
+          <p style="margin: 0.5rem;">PS: Spørsmål om nærkontakt ble lagt til 16. mars kl. 22:30</p>
+          
           <p style="margin-bottom: 0.5rem;">PS: Noen symptomer var ikke en del av skjema fra starten av:</p>
           <div style="max-width: 500px" class="table-wrapper">
             <table class="alt compact">
@@ -68,16 +149,6 @@
               </tbody>
             </table>
           </div>
-          <h2>Antall rapporteringer</h2>
-          <canvas id="totalReportsChart"></canvas>
-          <h2>Nærkontakt med smittede</h2>
-          <p>Totalt har <%= numberWithSpaces(totalPeopleInContactWithInfected) %> personer rapportert at de har hatt nærkontakt med en person som har testet positivt på COVID-19.</p>
-          <canvas id="inContactWithInfectedChart"></canvas>
-          <h2>Positive testresultater og nærkontakt</h2>
-          <canvas id="infectedAndContactStats"></canvas>
-          <p style="margin: 0.5rem;">PS: Spørsmål om nærkontakt ble lagt til 16. mars kl. 22:30</p>
-          <h2>Svar på testresultater</h2>
-          <canvas id="testResultStats"></canvas>
         </div>
         <section>
     </div>
@@ -86,7 +157,7 @@
     <script>
       /* Infected symptom count */
       var ctx = document.getElementById('infectedSymptomsChart').getContext('2d');
-      var infectedSymptoms = <%- JSON.stringify(locals.allInfectedSymptomsStats) %>;
+      var infectedSymptoms = <%- JSON.stringify(locals.infectedStats.symptomStats) %>;
       new Chart(ctx, {
         type: 'bar',
         data: {
@@ -103,7 +174,7 @@
     <script>
       /* Total symptom count */
       var ctx = document.getElementById('allSymptomsChart').getContext('2d');
-      var symptoms = <%- JSON.stringify(locals.allSymptomsStats) %>;
+      var symptoms = <%- JSON.stringify(locals.allSymptomsStats.symptomStats) %>;
       new Chart(ctx, {
         type: 'bar',
         data: {
@@ -224,7 +295,7 @@
               testResultStats.PENDING,
             ],
             backgroundColor: [
-              'rgb(255, 99, 132)',
+              '#af2222',
               'rgb(75, 192, 192)',
               'rgb(255, 205, 86)',
             ],

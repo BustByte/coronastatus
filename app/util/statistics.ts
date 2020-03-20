@@ -6,7 +6,9 @@ import {
   SymptomStat,
   SymptomStats,
   DateStat,
+  InfectedStat,
   InContactWithInfectedStat,
+  AllSymptomsStat,
   TestResult,
   InfectedAndInContactStats,
   TestResultStats
@@ -97,6 +99,7 @@ export function groupBySymptoms(
   const symptomStatsSorted = symptomStats.sort(compareSymptomStats);
 
   return {
+    symptoms: symptomStatsSorted.map(symptomStat => symptomStat.symptom),
     labels: symptomStatsSorted
       .map(symptomStat => symptomStat.symptom)
       .map(symptomKeyToLabel),
@@ -158,8 +161,34 @@ export function calculateTotalReportsStats(
   };
 }
 
+// Calculates the percentage of reports with the given symptoms (AND operand).
+export const getPercentageWithSymptomsOfTotal = (
+  reports: CovidReport[],
+  symptoms: Symptom[]
+): string => {
+  const filteredReports = reports.filter(report =>
+    symptoms.reduce(
+      (acc: boolean, symptom) => acc && report.symptoms[symptom],
+      true
+    )
+  );
+  return ((filteredReports.length / reports.length) * 100).toFixed(0);
+};
+
+export function getInfectedStats(reports: CovidReport[]): InfectedStat {
+  const symptomStats = groupBySymptoms(
+    reports,
+    report => report.testResult === TestResult.POSITIVE
+  );
+
+  return {
+    symptomStats
+  };
+}
+
 export function getInContactWithInfectedStats(
-  reports: CovidReport[]
+  reports: CovidReport[],
+  symptoms: Symptom[]
 ): InContactWithInfectedStat {
   const inContactWithInfected = reports.filter(
     report => !!report.hasBeenInContactWithInfected
@@ -172,10 +201,45 @@ export function getInContactWithInfectedStats(
   const numberOfPeopleWithoutSymptoms =
     inContactWithInfected.length - numberOfPeopleShowingSymptoms;
 
+  const percentageWithTwoMostCommonSymptoms = getPercentageWithSymptomsOfTotal(
+    inContactWithInfected,
+    symptoms.slice(0, 2)
+  );
+
+  const percentageWithThreeMostCommonSymptoms = getPercentageWithSymptomsOfTotal(
+    inContactWithInfected,
+    symptoms.slice(0, 3)
+  );
+
   return {
     numberOfPeopleShowingSymptoms,
     numberOfPeopleWithoutSymptoms,
-    total: inContactWithInfected.length
+    total: inContactWithInfected.length,
+    percentageWithTwoMostCommonSymptoms,
+    percentageWithThreeMostCommonSymptoms
+  };
+}
+
+export function getAllSymptomsStats(
+  reports: CovidReport[],
+  symptoms: Symptom[]
+): AllSymptomsStat {
+  const symptomStats = groupBySymptoms(reports);
+
+  const percentageWithTwoMostCommonSymptoms = getPercentageWithSymptomsOfTotal(
+    reports,
+    symptoms.slice(0, 2)
+  );
+
+  const percentageWithThreeMostCommonSymptoms = getPercentageWithSymptomsOfTotal(
+    reports,
+    symptoms.slice(0, 3)
+  );
+
+  return {
+    symptomStats,
+    percentageWithTwoMostCommonSymptoms,
+    percentageWithThreeMostCommonSymptoms
   };
 }
 

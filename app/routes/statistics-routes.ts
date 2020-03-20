@@ -1,13 +1,13 @@
 import express from 'express';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
 import {
-  groupBySymptoms,
   calculateTotalReportsStats,
   getInContactWithInfectedStats,
   getInfectedAndContactStats,
-  getTestResultStats
+  getTestResultStats,
+  getInfectedStats,
+  getAllSymptomsStats
 } from '../util/statistics';
-import { TestResult } from '../domain/types';
 
 const router = express.Router();
 const reportRepo = new CovidReportRepository();
@@ -19,17 +19,21 @@ router.get('/data', async (req, res) => {
 
 router.get('/', async (req, res) => {
   const allReports = await reportRepo.getLatestCovidReports();
-  const allInfectedSymptomsStats = groupBySymptoms(
+  const infectedStats = getInfectedStats(allReports);
+  const inContactWithInfectedStats = getInContactWithInfectedStats(
     allReports,
-    report => report.testResult === TestResult.POSITIVE
+    infectedStats.symptomStats.symptoms
   );
-  const allSymptomsStats = groupBySymptoms(allReports);
+  const allSymptomsStats = getAllSymptomsStats(
+    allReports,
+    infectedStats.symptomStats.symptoms
+  );
   const totalReportStats = calculateTotalReportsStats(allReports);
-  const inContactWithInfectedStats = getInContactWithInfectedStats(allReports);
   const infectedAndContactStats = getInfectedAndContactStats(allReports);
   const testResultStats = getTestResultStats(allReports);
+
   return res.render('pages/statistics', {
-    allInfectedSymptomsStats,
+    infectedStats,
     allSymptomsStats,
     totalReportStats,
     inContactWithInfectedStats,
