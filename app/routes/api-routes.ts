@@ -142,7 +142,7 @@ function shuffleArray<T>(inputArray: T[]): T[] {
   return inputArray;
 }
 
-router.get('/reports/csv', cors(), async (req, res) => {
+router.get('/reports/reports.csv', cors(), async (req, res) => {
   const csvReports = await csvCache.getCachedElements(async () => {
     const allReports = await reportRepo.getAllCovidReports();
     return shuffleArray(Object.values(allReports))
