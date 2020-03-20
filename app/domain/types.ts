@@ -44,3 +44,12 @@ export interface AggregatedCovidReportData {
   numberOfConfirmedInfected: number;
   numberOfTested: number;
 }
+
+export interface AggregatedCovidReportWithPostalCodeData {
+  poststed: string;
+  koordinater: number[];
+  numberOfReports: number;
+  numberOfPeopleShowingSymptoms: number;
+  numberOfConfirmedInfected: number;
+  numberOfTested: number;
+}
