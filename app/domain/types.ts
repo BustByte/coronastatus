@@ -55,6 +55,7 @@ export interface SymptomStat {
 }
 
 export interface SymptomStats {
+  symptoms: Symptom[];
   labels: string[];
   values: number[];
   total: number;
@@ -65,10 +66,22 @@ export interface DateStat {
   y: number;
 }
 
+export interface InfectedStat {
+  symptomStats: SymptomStats;
+}
+
 export interface InContactWithInfectedStat {
   numberOfPeopleShowingSymptoms: number;
   numberOfPeopleWithoutSymptoms: number;
+  percentageWithTwoMostCommonSymptoms: string;
+  percentageWithThreeMostCommonSymptoms: string;
   total: number;
+}
+
+export interface AllSymptomsStat {
+  symptomStats: SymptomStats;
+  percentageWithTwoMostCommonSymptoms: string;
+  percentageWithThreeMostCommonSymptoms: string;
 }
 
 export interface TotalReportsStats {
