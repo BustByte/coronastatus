@@ -267,13 +267,22 @@ h3 {
   margin: 0;
 }
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 h5 {
   font-size: 1rem;
 }
 h6 {
   font-size: 0.75rem;
+}
+@media (max-width: 768px) {
+  h1 {
+    padding-top: 1.25rem;
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
 }
 sub {
   font-size: 0.8rem;
@@ -3689,7 +3698,7 @@ body.is-preload #banner .inner {
 
 .alert-dismissible.wrapper {
   padding: 0;
-  background-color: #2196F3;
+  background-color: #2196f3;
   font-size: 0.9rem;
   font-weight: 500;
   color: #fff;
@@ -3703,12 +3712,15 @@ body.is-preload #banner .inner {
 .alert-dismissible > .inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .alert-dismissible .close {
-    color: white !important;
-    padding: 0px 0px;
-    border: none;
+  color: white !important;
+  padding: 0px 0px;
+  border: none;
+  font-weight: 400;
+  font-size: 1.6rem;
 }
 
 .alert-primary {

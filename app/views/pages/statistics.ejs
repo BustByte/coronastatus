@@ -1,32 +1,240 @@
+<%
+  const totalPeopleInContactWithInfected = locals.inContactWithInfectedStats.total;
+  const totalInfectedPeopleWithSymptoms = locals.allInfectedSymptomsStats.total;
+  const totalPeopleWithSymptoms = locals.allSymptomsStats.total;
+
+  function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  }
+%>
 <!DOCTYPE html>
-<html> <%- include('partials/head') -%> <body> <%- include('partials/disclaimer') -%> <%- include('partials/menu') -%>
+<html>
+  <%- include('partials/head') -%>
+   <body>
+    <%- include('partials/disclaimer') -%>
+    <%- include('partials/menu') -%>
+    <%- include('partials/hamburger-menu') -%>
     <div id="page-wrapper">
       <section id="main" class="wrapper">
         <div class="inner">
           <h1>Statistikk</h1>
-          <h2>Symptomer</h2>
-          <canvas id="symptomsChart"></canvas>
+          <form method="GET" action="/api/reports/reports.csv" style="margin-bottom: 0">
+            <ul class="actions">
+              <li>
+                <input type="submit" value="Last ned datasett som CSV">
+              </li>
+            </ul>
+          </form>
+          <h2>Symptomer hos covid-19-smittede</h2>
+          <p>Totalt har <%= numberWithSpaces(totalInfectedPeopleWithSymptoms) %> personer rapportert at de har testet positivt på COVID-19 og har symptomer.</p>
+          <canvas id="infectedSymptomsChart"></canvas>
+          <h2>Alle innrapporterte symptomer.</h2>
+          <p>Totalt har <%= numberWithSpaces(totalPeopleWithSymptoms) %> personer rapportert at de har symptomer</p>
+          <canvas id="allSymptomsChart"></canvas>
+          <p style="margin-bottom: 0.5rem;">PS: Noen symptomer var ikke en del av skjema fra starten av:</p>
+          <div style="max-width: 500px" class="table-wrapper">
+            <table class="alt compact">
+              <thead>
+                <tr>
+                  <th>Symptom</th>
+                  <th>Lagt til i skjema</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Hodepine</td>
+                  <td>16. mars kl. 00:23</td>
+                </tr>
+                <tr>
+                  <td>Vondt i halsen</td>
+                  <td>16. mars kl. 00:23</td>
+                </tr>
+                <tr>
+                  <td>Tap av smakssans</td>
+                  <td>17. mars kl. 10:26</td>
+                </tr>
+                <tr>
+                  <td>Tap av luktesans</td>
+                  <td>17. mars kl. 10:26</td>
+                </tr>
+                <tr>
+                  <td>Slimhoste</td>
+                  <td>17. mars kl. 16:28</td>
+                </tr>
+                <tr>
+                  <td>Tett eller rennende nese</td>
+                  <td>17. mars kl. 16:28</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h2>Antall rapporteringer</h2>
+          <canvas id="totalReportsChart"></canvas>
+          <h2>Nærkontakt med smittede</h2>
+          <p>Totalt har <%= numberWithSpaces(totalPeopleInContactWithInfected) %> personer rapportert at de har hatt nærkontakt med en person som har testet positivt på COVID-19.</p>
+          <canvas id="inContactWithInfectedChart"></canvas>
+          <h2>Positive testresultater og nærkontakt</h2>
+          <canvas id="infectedAndContactStats"></canvas>
+          <p style="margin: 0.5rem;">PS: Spørsmål om nærkontakt ble lagt til 16. mars kl. 22:30</p>
+          <h2>Svar på testresultater</h2>
+          <canvas id="testResultStats"></canvas>
         </div>
         <section>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script>
+      /* Infected symptom count */
+      var ctx = document.getElementById('infectedSymptomsChart').getContext('2d');
+      var infectedSymptoms = <%- JSON.stringify(locals.allInfectedSymptomsStats) %>;
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: infectedSymptoms.labels,
+          datasets: [{
+            label: 'Antall rapportert hos påvist covid-19-smittede',
+            backgroundColor: '#af2222',
+            data: infectedSymptoms.values
+          }]
+        },
+        options: {}
+      });
+    </script>
+    <script>
       /* Total symptom count */
-      var ctx = document.getElementById('symptomsChart').getContext('2d');
-      var symptoms = <%- JSON.stringify(locals.symptomStats) %>;
+      var ctx = document.getElementById('allSymptomsChart').getContext('2d');
+      var symptoms = <%- JSON.stringify(locals.allSymptomsStats) %>;
       new Chart(ctx, {
         type: 'bar',
         data: {
           labels: symptoms.labels,
           datasets: [{
             label: 'Antall rapportert',
-            backgroundColor: 'salmon',
+            backgroundColor: '#da7823',
             data: symptoms.values
           }]
         },
         options: {}
       });
     </script>
-    <%- include('partials/footer') -%> </body>
+    <script>
+      /* Number of reports */
+      var ctx = document.getElementById('totalReportsChart').getContext('2d');
+      var totalReportStats = <%- JSON.stringify(locals.totalReportStats) %>;
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          datasets: [
+            {
+              label: 'Rapporteringer med symptomer',
+              data: totalReportStats.numberOfReportsWithSymptomsStat,
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'salmon',
+            },
+            {
+              label: 'Rapporteringer',
+              data: totalReportStats.numberOfReportsStat,
+              backgroundColor: 'rgba(0, 200, 255, 0.2)',
+              borderColor: 'lightblue'
+            }
+          ]
+        },
+        options: {
+          scales: {
+            xAxes: [{
+              type: 'time',
+              time: {
+                displayFormats: {
+                  hour: 'HH:mm'
+                }
+              }
+            }]
+          }
+        }
+      });
+    </script>
+    <script>
+      var ctx = document.getElementById('inContactWithInfectedChart').getContext('2d');
+      var inContactData = <%- JSON.stringify(locals.inContactWithInfectedStats) %>;
+      var myDoughnutChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: [
+              inContactData.numberOfPeopleShowingSymptoms,
+              inContactData.numberOfPeopleWithoutSymptoms
+            ],
+            backgroundColor: [
+              'salmon',
+              'lightblue',
+            ],
+          }],
+          labels: ['I nærkontakt med symptomer', 'I nærkontakt uten symptomer']
+        },
+        options: {}
+      });
+    </script>
+    <script>
+      /* Stats showing number of infected and number of people who has been in contact with infected */
+      var ctx = document.getElementById('infectedAndContactStats').getContext('2d');
+      var infectedAndContactStats = <%- JSON.stringify(locals.infectedAndContactStats) %>;
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          datasets: [
+            {
+              label: 'Testet positivt',
+              data: infectedAndContactStats.numberOfInfectedStat,
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'salmon',
+            },
+            {
+              label: 'Nærkontakt med noen som har testet positivt',
+              data: infectedAndContactStats.numberOfInContactStat,
+              backgroundColor: 'rgba(0, 200, 255, 0.2)',
+              borderColor: 'lightblue'
+            }
+          ]
+        },
+        options: {
+          scales: {
+            xAxes: [{
+              type: 'time',
+              time: {
+                displayFormats: {
+                  hour: 'HH:mm'
+                }
+              }
+            }]
+          }
+        }
+      });
+    </script>
+    <script>
+      /* Stats showing distribution of test results */
+      var ctx = document.getElementById('testResultStats').getContext('2d');
+      var testResultStats = <%- JSON.stringify(locals.testResultStats) %>;
+      var myDoughnutChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          datasets: [{
+            data: [
+              testResultStats.POSITIVE,
+              testResultStats.NEGATIVE,
+              testResultStats.PENDING,
+            ],
+            backgroundColor: [
+              'rgb(255, 99, 132)',
+              'rgb(75, 192, 192)',
+              'rgb(255, 205, 86)',
+            ],
+          }],
+          labels: ['Testet positivt', 'Testet negativt', 'Venter på svar']
+        },
+        options: {}
+      });
+    </script>
+    <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
+    <%- include('partials/footer') -%>
+  </body>
 </html>

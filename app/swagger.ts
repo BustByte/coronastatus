@@ -2,6 +2,7 @@ import {
   getAggregated,
   getAggregatedPostalCode
 } from './openAPI/aggregated.swagger';
+import { getReports, getReportsCsv } from './openAPI/reports.swagger';
 
 export const swaggerDocument = {
   openapi: '3.0.1',
@@ -46,6 +47,12 @@ export const swaggerDocument = {
     },
     '/aggregated/{postalCode}': {
       get: getAggregatedPostalCode
+    },
+    '/reports': {
+      get: getReports
+    },
+    '/reports/reports.csv': {
+      get: getReportsCsv
     }
   }
 };

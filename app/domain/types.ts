@@ -4,13 +4,16 @@ export interface CovidReport {
   postalCode: string;
   hasBeenTested: boolean;
   hasBeenInContactWithInfected: boolean;
-  testedAt?: Date; // YYYY-MM-DD
   symptomStart?: string; // YYYY-MM-DD
   testResult?: TestResult;
-  symptoms: { [key in Symptom]: boolean };
+  symptoms: Symptoms;
   submissionTimestamp: number;
   age: string;
 }
+
+export type Symptoms = {
+  [key in Symptom]: boolean;
+};
 
 export enum Sex {
   MALE = 'MALE',
@@ -43,11 +46,60 @@ export interface AggregatedCovidReportData {
   numberOfPeopleShowingSymptoms: number;
   numberOfConfirmedInfected: number;
   numberOfTested: number;
+  numberOfContacts: number;
+}
+
+export interface SymptomStat {
+  symptom: Symptom;
+  count: number;
+}
+
+export interface SymptomStats {
+  labels: string[];
+  values: number[];
+  total: number;
+}
+
+export interface DateStat {
+  x: Date;
+  y: number;
+}
+
+export interface InContactWithInfectedStat {
+  numberOfPeopleShowingSymptoms: number;
+  numberOfPeopleWithoutSymptoms: number;
+  total: number;
+}
+
+export interface TotalReportsStats {
+  numberOfReportsStat: DateStat[];
+  numberOfReportsWithSymptomsStat: DateStat[];
+}
+
+export interface InfectedAndInContactStats {
+  numberOfInfectedStat: DateStat[];
+  numberOfInContactStat: DateStat[];
+}
+
+export type TestResultStats = {
+  [key in TestResult]: number;
+};
+
+export type PostalCode = string;
+
+export interface Coordinate {
+  lat: number;
+  lon: number;
+}
+
+export interface Municipality {
+  name: string;
+  population: string;
+  postalCodes: PostalCode[];
 }
 
 export interface AggregatedCovidReportWithPostalCodeData {
-  poststed: string;
-  koordinater: number[];
+  municipality: Municipality | undefined;
   numberOfReports: number;
   numberOfPeopleShowingSymptoms: number;
   numberOfConfirmedInfected: number;

@@ -4,8 +4,7 @@ import {
   AggregatedCovidReportWithPostalCodeData,
   TestResult
 } from '../domain/types';
-import postalCodeCoordinates from './postalCodeCoordinates';
-import postalCodeKommune from './postalCodeKommune';
+import { MunicipalityRepository } from '../repository/MunicipalityRepository';
 
 export const isShowingAtLeastOneSymptom = (report: CovidReport): boolean => {
   return Object.values(report.symptoms).includes(true);
@@ -18,7 +17,8 @@ export const aggregateCovidReports = (
     numberOfReports: 0,
     numberOfPeopleShowingSymptoms: 0,
     numberOfConfirmedInfected: 0,
-    numberOfTested: 0
+    numberOfTested: 0,
+    numberOfContacts: 0
   };
   for (const report of reports) {
     aggredatedData.numberOfReports += 1;
@@ -31,6 +31,9 @@ export const aggregateCovidReports = (
     if (report.testResult === TestResult.POSITIVE) {
       aggredatedData.numberOfConfirmedInfected += 1;
     }
+    if (report.hasBeenInContactWithInfected) {
+      aggredatedData.numberOfContacts += 1;
+    }
   }
   return aggredatedData;
 };
@@ -40,16 +43,16 @@ export const aggregateCovidReportsForPostalCode = (
   postalCode: string
 ): AggregatedCovidReportWithPostalCodeData => {
   const aggredatedData: AggregatedCovidReportWithPostalCodeData = {
-    poststed: '',
-    koordinater: [],
+    municipality: { name: '', population: '', postalCodes: [] },
     numberOfReports: 0,
     numberOfPeopleShowingSymptoms: 0,
     numberOfConfirmedInfected: 0,
     numberOfTested: 0
   };
 
-  aggredatedData.poststed = postalCodeKommune(postalCode);
-  aggredatedData.koordinater = postalCodeCoordinates(postalCode);
+  aggredatedData.municipality = new MunicipalityRepository().getMunicipalityForPostalCode(
+    postalCode
+  );
 
   for (const report of reports) {
     if (report.postalCode === postalCode) {

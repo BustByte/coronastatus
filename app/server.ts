@@ -14,6 +14,7 @@ const isDevelopmentEnv = process.env.NODE_ENV === 'dev';
 const swaggerUi = require('swagger-ui-express');
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+const cacheKey = process.env.CACHE_KEY || `${Math.random()}`.replace('.', '');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -21,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use((req, res, next) => {
   // eslint-disable-next-line prefer-destructuring
   res.locals.activePage = req.path.split('/')[1];
+  res.locals.cacheKey = cacheKey;
   next();
 });
 

@@ -6,6 +6,7 @@
   <body>
     <%- include('partials/disclaimer') -%>
     <%- include('partials/menu') -%>
+    <%- include('partials/hamburger-menu') -%>
     <div id="page-wrapper">
       <section id="main" class="wrapper">
         <div class="inner privacy-policy">
@@ -31,7 +32,7 @@
             få et innblikk i hvor store mørketallene potensielt kan være.  
           </p>
           <h2>Informasjonskapsler (Cookies)</h2>
-          <p>Vi benytter ikke informasjonskapsler på denne siden.</p>
+          <p>For å nå ut til flest mulig har vi lagt til en knapp for å dele siden på Facebook. Dette medfører at informasjonskapsler fra Facebook blir satt i din nettleser.</p>
           <h2>Sletting av data</h2>
           <p>All data som blir lagret er anonymisert, og vi lagrer ingen persondata som kan slettes.</p>
           <h2>Deling av data med FHI</h2>
@@ -47,5 +48,6 @@
         window.history.replaceState({}, document.title, window.location.pathname);
       }
     </script>
+    <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
   </body>
 </html>

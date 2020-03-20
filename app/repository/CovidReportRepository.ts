@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import { getInstance, SqlLiteDatabase } from './SqlLiteDatabase';
 import { CovidReport } from '../domain/types';
-import { CacheWithLifetime } from './CovidReportCache';
+import { CacheWithLifetime } from './CacheWithLifetime';
 
 const SELECT_ALL_COVID_REPORTS = 'select passcode, json_dump from covid_report';
 
@@ -17,23 +17,17 @@ interface CovidReportRow {
   json_dump: string;
 }
 
-let latestReportsCache: CacheWithLifetime<CovidReportRow[]> | undefined;
-const getLatestReportsCache = (): CacheWithLifetime<CovidReportRow[]> => {
-  if (!latestReportsCache) {
-    latestReportsCache = new CacheWithLifetime<CovidReportRow[]>(
-      1,
-      'LatestReportsCache'
-    );
-  }
-  return latestReportsCache;
-};
+type PassCodeReports = { [passcode: string]: CovidReport[] };
+
+const allReportsCache = new CacheWithLifetime<PassCodeReports>(
+  1,
+  'AllReportsCache'
+);
 
 export class CovidReportRepository {
   db: SqlLiteDatabase;
-  cache: CacheWithLifetime<CovidReportRow[]>;
 
   constructor() {
-    this.cache = getLatestReportsCache();
     this.db = getInstance('covid_db');
   }
 
@@ -64,17 +58,40 @@ export class CovidReportRepository {
       .then(row => row?.count);
   }
 
-  async getLatestCovidReports(): Promise<CovidReport[]> {
-    const rows = await this.cache.getCachedElements(() =>
-      this.db.getAll(SELECT_ALL_COVID_REPORTS)
+  async getAllCovidReports(): Promise<PassCodeReports> {
+    const allReports = await allReportsCache.getCachedElements(() =>
+      this.fetchAllReportsFromDatabase()
     );
-    const latestReports: { [key: string]: CovidReport } = {};
+    return allReports;
+  }
+
+  async fetchAllReportsFromDatabase(): Promise<PassCodeReports> {
+    const rows = await this.db.getAll(SELECT_ALL_COVID_REPORTS);
+    const allReports: PassCodeReports = {};
     rows.forEach((row: CovidReportRow) => {
-      latestReports[row.passcode] = this.parseJsonDumpToCovidReport(
-        row.json_dump
-      );
+      const report = this.parseJsonDumpToCovidReport(row.json_dump);
+      if (row.passcode in allReports) {
+        allReports[row.passcode].push(report);
+      } else {
+        allReports[row.passcode] = [report];
+      }
     });
-    return Object.values(latestReports);
+    return allReports;
+  }
+
+  async getLatestCovidReports(): Promise<CovidReport[]> {
+    const allReports: {
+      [passcode: string]: CovidReport[];
+    } = (await allReportsCache.getCachedElements(() =>
+      this.fetchAllReportsFromDatabase()
+    )) as PassCodeReports;
+
+    const latestReports: CovidReport[] = [];
+    Object.keys(allReports).forEach((passcode: string) => {
+      const reports = allReports[passcode];
+      latestReports.push(reports[reports.length - 1]);
+    });
+    return latestReports;
   }
 
   private parseJsonDumpToCovidReport(jsonDump: string): CovidReport {

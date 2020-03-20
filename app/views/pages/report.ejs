@@ -36,32 +36,83 @@
   <%- include('partials/disclaimer') -%>
   <div id="has-submitted-alert" class="alert-dismissible wrapper">
     <div class="inner">
-      <button class="close" onclick="hasSubmittedAlertOnClick()">&times;
-      </button>
-      <div><b>Husk</b> For å endre din helsetilstand, bruk lenken du fikk ved registrering.</div>
+      <div><b>Viktig:</b> Bruk lenken du noterte deg sist for å endre din helsetilstand.</div>
+      <button class="close" onclick="hasSubmittedAlertOnClick()">&times;</button>
     </div>
   </div>
   <%- include('partials/menu') -%>
+  <%- include('partials/hamburger-menu') -%>
   <div id="page-wrapper">
     <section id="main" class="wrapper">
       <div class="inner">
         <div class="info-box-row">
-          <div class="info-box main-info">
-            <div class="info-box__icon">
-              <div class="info-box__icon__circle">
-                <i class="fas fa-question"></i>
+          <!-- Mørketall -->
+          <div class="info-box info">
+            <div>
+              <div class="info-box__icon"><i class="fa fa-moon"></i></div>
+              <div class="info-box__content">
+                <h2>Store mørketall</h2>
+                <p>
+                  Spredningen av COVID-19 i landet vårt er ukjent. Hjelp oss med å skape en bedre oversikt.
+                </p>
               </div>
             </div>
-            <div class="info-box__content">
-              <p class="info-box__bolder">Mørketallene på smittede i Norge er store.</p>
-              <p class="info-box__bolder">Denne nettsiden har som mål å få en bedre oversikt over spredning av coronaviruset i landet vårt.</p>
-              <p>Nettsiden er laget i dugnadsånd av et lite konsulentselskap i samarbeid med frivillige. <br/>NB! Rapportering er frivillig.</p>
-              <p>Så fort myndighetene er klare for å motta dataene vi samler inn, står vi klare til å overlevere dem!</p>
+          </div>
+
+          <!-- Anonymt -->
+          <div class="info-box">
+            <div>
+              <div class="info-box__icon"><i class="fa fa-hands-helping"></i></div>
+              <div class="info-box__content">
+                <h2>Bidra anonymt</h2>
+                <p>
+                  Rapporter din helsetilstand anonymt i skjemaet under.
+                </p>
+              </div>
             </div>
           </div>
+
+          <!-- Innsikt -->
+          <div class="info-box">
+            <div>
+              <div class="info-box__icon"><i class="fa fa-microscope"></i></div>
+              <div class="info-box__content">
+                <h2>Innsikt til alle</h2>
+                <p>
+                  Dataene er åpne for alle. Se kart og grafer, eller last ned dataene og gjør dine egne analyser.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Åpenhet -->
+          <div class="info-box">
+            <div>
+              <div class="info-box__icon"><i class="fa fa-code"></i></div>
+              <div class="info-box__content">
+                <h2>Alt er åpent</h2>
+                <p>Tjenesten er åpen kildekode og laget i dugnadsånd. Du kan bidra i utviklingen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info-box-row">
           <div class="info-box stats" id="total-reports">
-            <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfReports) %></div>
+            <div class="stats__number">
+              <%= numberWithSpaces(aggregated.numberOfReports) %>
+            </div>
             <div class="stats__description">Totalt innsendte</div>
+          </div>
+          <div class="info-box stats">
+            <div class="stats__number">
+              <%= numberWithSpaces(aggregated.numberOfConfirmedInfected) %> <span class="delimiter">/</span>
+              <%= numberWithSpaces(aggregated.numberOfTested) %>
+            </div>
+            <div class="stats__description">Smittede / har blitt testet</div>
+          </div>
+          <div class="info-box stats">
+            <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfContacts) %></div>
+            <div class="stats__description">I nærkontakt med smittet</div>
           </div>
           <div class="info-box stats">
             <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfPeopleShowingSymptoms) %></div>
@@ -81,10 +132,10 @@
         <h1><%= profile ? 'Din helsetilstand' : 'Rapporter din helsetilstand' %></h1>
         <% if(locals.success) {%>
           <div class="alert alert-success" role="alert">
-            Takk for ditt svar! Husk å oppdatere skjemaet på denne lenken hvis helsetilstanden din skulle endre seg: <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>. 
+            Takk for ditt svar! Benytt denne lenken hvis helsetilstanden din endrer seg: <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>. 
           </div>
         <% } else { %>
-          <p class="slogan">Bli med på Norges viktigste dugnad!</p>
+          <p class="slogan">Bli med på Norges viktigste dugnad! Selv om du er frisk håper vi du sender inn skjemaet – det er også verdifull informasjon!</p>
         <% } %>
         <%- include('partials/share') -%>
         <form method="post" action="/">
@@ -252,6 +303,7 @@
     </section>
     <%- include('partials/footer') -%>
   </div>
+  <script src="/static/form.js?v=<%= locals.cacheKey %>"></script>
   <script>
     function hasSubmittedAlertOnClick() {
         document.getElementById('has-submitted-alert').style.display = 'none';
@@ -263,11 +315,20 @@
         && window.location.pathname.indexOf("helsetilstand") === -1) {
         document.getElementById('has-submitted-alert').style.display = 'flex';
     }
+
+    var symptoms = document.querySelectorAll('input[name^="symptom-"]:checked');
+
+    if (symptoms != null && symptoms.length > 0) {
+      document.getElementById('symptom-start-question').style.display = 'block';
+    }
+    
+    changeTestResultDisplay(document.getElementById("been-tested-yes").checked);
+
     // Remove query params from url
     if (window.history.replaceState) {
       window.history.replaceState({}, document.title, window.location.pathname);
     }
   </script>
-  <script src="/static/form.js"></script>
+  <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
 </body>
 </html>

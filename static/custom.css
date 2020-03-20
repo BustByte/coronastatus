@@ -123,10 +123,16 @@ input[type='checkbox'] + label.normal-font {
 }
 
 .menu.wrapper {
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
-@media (max-width: 992px) {
+@media screen and (max-width: 360px) {
+  .menu .logo img {
+    height: 40px;
+  }
+}
+
+@media (max-width: 850px) {
   .menu__links {
     display: none;
   }
@@ -135,51 +141,49 @@ input[type='checkbox'] + label.normal-font {
 .info-box {
   position: relative;
   padding: 0.75rem 1.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   border-radius: 0.25rem;
-  background-color: #f0f0f0;
-  border-color: #fdfdfe;
   display: -webkit-box;
   display: flex;
-}
-
-.info-box.main-info {
+  width: calc(50%);
   flex-grow: 1;
+  flex-direction: column;
 }
 
 .info-box__icon {
-  width: 50px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  font-size: 2rem;
 }
 
 .info-box__content {
-  width: calc(100% - 50px);
-  padding-left: 1rem;
+  margin: auto;
+  width: auto;
+  padding: 0;
+}
+
+.info-box__content h2 {
+  padding-top: 0;
+  font-weight: 200;
+  text-align: center;
+  color: #d03131;
 }
 
 .info-box__content p {
   margin: 0;
   padding: 0;
+  text-align: center;
   line-height: 1.4rem;
-  font-weight: 400;
+  font-weight: 200;
   font-size: 0.9rem;
 }
 
 .info-box__content p.info-box__bolder {
   font-weight: 700;
-}
-
-.info-box__icon__circle {
-  border-radius: 50%;
-  background-color: #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 45px;
-  height: 45px;
-}
-
-.info-box__icon__circle i {
-  color: black;
 }
 
 .info-box-row {
@@ -188,11 +192,18 @@ input[type='checkbox'] + label.normal-font {
 }
 
 .info-box.stats {
-  width: 175px;
+  min-width: 150px;
   display: flex;
+  padding: 0.5rem 0 1.2rem;
+  margin-left: 0.5rem;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #f0f0f0;
+}
+
+.info-box.stats:first-child {
+  margin-left: 0;
 }
 
 .stats__number {
@@ -205,10 +216,11 @@ input[type='checkbox'] + label.normal-font {
   font-weight: 500;
   text-align: center;
   line-height: 1rem;
+  text-transform: uppercase;
 }
 
-.info-box + .info-box {
-  margin-left: 0.5rem;
+.delimiter {
+  color: #aaa;
 }
 
 .info-box.link-to-stats {
@@ -220,22 +232,41 @@ input[type='checkbox'] + label.normal-font {
 }
 
 @media (max-width: 992px) {
-  .info-box.main-info {
-    width: 100%;
+  .info-box {
+    width: calc(50% - 1rem);
+    padding: 0.25rem 0.5rem;
   }
 
   .info-box.stats {
     flex-grow: 1;
-    padding: 0.5rem 0 1rem;
-    width: auto;
+    width: calc(50% - 1rem);
+    margin-left: 0;
   }
 
-  .info-box.main-info + .info-box.stats {
-    margin-left: 0;
+  .info-box.stats:nth-child(even) {
+    margin-left: 0.5rem;
   }
 
   .info-box-row {
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 550px) {
+  .info-box__icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1.3rem;
+  }
+
+  .info-box__content h2 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .info-box__content p {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
   }
 }
 
@@ -316,6 +347,73 @@ p.subtitle {
   word-break: break-all;
 }
 
+.hamburger-menu-icon {
+  font-size: 1.3em;
+}
+
+.hamburger-menu-button {
+  display: none;
+  cursor: pointer;
+  border: 3px solid #282828;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+}
+
+.hamburger-menu {
+  display: none;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s;
+  width: calc(100% - 4rem);
+  margin: 0 auto;
+  border-radius: 0.25rem;
+}
+
+.hamburger-menu.active {
+  display: block;
+}
+
+.hamburger-menu.un-collapsed {
+  height: 175px;
+}
+
+.hamburger-menu .inner {
+  padding: 0.5em;
+}
+
+.hamburger-menu ul {
+  list-style-type: none;
+}
+
+.hamburger-menu a {
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 1rem;
+  font-size: 1.2rem;
+}
+
+.hamburger-menu a.active {
+  font-weight: 600;
+}
+
+.hamburger-menu a:hover {
+  border-bottom: 3px solid #ff6666;
+}
+
+@media (max-width: 850px) {
+  .hamburger-menu-button {
+    display: flex;
+  }
+}
+
+@media (min-width: 850px) {
+  .hamburger-menu {
+    display: none !important;
+  }
+}
+
 .input-block {
   padding-bottom: 1rem;
 }
@@ -338,4 +436,12 @@ p.slogan {
 
 .share-buttons > iframe {
   margin-left: 0.5rem;
+}
+
+table.compact tr td {
+  padding: 0.3rem 0.6rem;
+}
+
+table.compact tr th {
+  padding: 0 0.3rem 0.3rem 0.3rem;
 }

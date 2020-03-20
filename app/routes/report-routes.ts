@@ -20,6 +20,11 @@ const router = express.Router();
 const reportRepo = new CovidReportRepository();
 const passcodeCreator = getPasscodeCreator();
 
+// When the government have their systems ready, this should be used on "/" instead.
+router.get('/move-to-root-when-helsenorge-is-ready', async (req, res) => {
+  return res.render('pages/helsenorge');
+});
+
 router.get('/', async (req, res) => {
   const reports = await reportRepo.getLatestCovidReports();
   const aggregated = aggregateCovidReports(reports);

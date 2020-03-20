@@ -58,19 +58,19 @@
             .map-overlay .legend .healthy {
                 height: 10px;
                 width: 100%;
-                background:  linear-gradient(to right, #91cf60, #91cf60);
+                background:  #91cf60;
             }
 
             .map-overlay .legend .positive {
                 height: 10px;
                 width: 100%;
-                background:  linear-gradient(to right, #fc8d59, #fc8d59);
+                background:  #ff0000;
             }
 
             .map-overlay .legend .symptoms {
                 height: 10px;
                 width: 100%;
-                background:  linear-gradient(to right, #ffffbf, #ffffbf);
+                background: #fda429;
             }
 
             .logo__text {
@@ -80,23 +80,45 @@
             a {
                 color: #fff;
             }
+
+            #map-page .fas.fa-bars {
+                color: #fff;
+            }
+
+            #map-page .hamburger-menu.active {
+                position: relative;
+                text-align: right;
+            }
+
+            #map-page .hamburger-menu a {
+                color: #fff;
+            }
+
+            #map-page .hamburger-menu-button {
+                border-color: #fff;
+            }
+
+
         </style>
-        <div id="map"></div>
-        <%- include('partials/menu') -%>
-        <div class="map-overlay top">
-            <div class="map-overlay-info">
-                <h5>Rapportert status per postnummer</h5>
-                <p>Posisjonene vist samsvarer med gitte koordinater per postnummer, og har ingenting med enkeltpersoner og gjøre.<p>
-                <label id="month"></label>
-            </div>
-            <div class="map-overlay-labels">
-                <div id="legend" class="legend">
-                    <div>Frisk</div>
-                    <div class="healthy"></div>
-                    <div>Har symptomer</div>
-                    <div class="symptoms"></div>
-                    <div>Testet positivt</div>
-                    <div class="positive"></div>
+        <div id="map-page">
+            <div id="map"></div>
+            <%- include('partials/menu') -%>
+            <%- include('partials/hamburger-menu') -%>
+            <div class="map-overlay top">
+                <div class="map-overlay-info">
+                    <h5>Rapportert status per postnummer</h5>
+                    <p>Posisjonene vist samsvarer med gitte koordinater per postnummer, og har ingenting med enkeltpersoner og gjøre.<p>
+                    <label id="month"></label>
+                </div>
+                <div class="map-overlay-labels">
+                    <div id="legend" class="legend">
+                        <div>Frisk</div>
+                        <div class="healthy"></div>
+                        <div>Har symptomer</div>
+                        <div class="symptoms"></div>
+                        <div>Testet positivt</div>
+                        <div class="positive"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -114,20 +136,22 @@
             map.on('load', function() {
                 var attributions = document.getElementsByClassName("mapboxgl-ctrl-attrib-inner")[0]
                 if (attributions) {
-                    let newAttrib = document.createElement("a")
+                    var newAttrib = document.createElement("a")
                     newAttrib.href = "http://www.erikbolstad.no/geo/noreg/postnummer/";
                     newAttrib.innerText = "Postnummerinfo "
+                    // Remove «improve this map» link
+                    attributions.removeChild(attributions.lastChild)
                     attributions.insertBefore(newAttrib,  attributions.firstChild)
                 }
             });
 
-            const positive = ['==', ['get', 'state'], 'POSITIVE'];
-            const symptoms = ['==', ['get', 'state'], 'SYMPTOMS'];
-            const healthy = ['==', ['get', 'state'], 'HEALTHY'];
+            var positive = ['==', ['get', 'state'], 'POSITIVE'];
+            var symptoms = ['==', ['get', 'state'], 'SYMPTOMS'];
+            var healthy = ['==', ['get', 'state'], 'HEALTHY'];
 
-            const colors = {
-                positive: "#fc8d59",
-                symptoms: "#ffffbf",
+            var colors = {
+                positive: "#ff0000",
+                symptoms: "#fda429",
                 healthy: "#91cf60"
             };
 
@@ -164,13 +188,13 @@
                 });
             });
 
-            let markers = {};
-            let markersOnScreen = {};
-            let point_counts = [];
-            let totals;
+            var markers = {};
+            var markersOnScreen = {};
+            var point_counts = [];
+            var totals;
 
-            const getPointCount = (features) => {
-              features.forEach(f => {
+            function getPointCount(features) {
+              features.forEach(function(f) {
                 if (f.properties.cluster) {
                   point_counts.push(f.properties.point_count)
                 }
@@ -178,20 +202,20 @@
               return point_counts;
             };
 
-            const updateMarkers = () => {
-              let newMarkers = {};
-              const features = map.querySourceFeatures('reports');
+            function updateMarkers() {
+              var newMarkers = {};
+              var features = map.querySourceFeatures('reports');
               totals = getPointCount(features);
-              features.forEach((feature) => {
-                const coordinates = feature.geometry.coordinates;
-                const props = feature.properties;
+              features.forEach(function(feature) {
+                var coordinates = feature.geometry.coordinates;
+                var props = feature.properties;
                 if (!props.cluster) {
                   return;
                 };
-                const id = props.cluster_id;
-                let marker = markers[id];
+                var id = props.cluster_id;
+                var marker = markers[id];
                 if (!marker) {
-                  const el = createDonutChart(props, totals);
+                  var el = createDonutChart(props, totals);
                   marker = markers[id] = new mapboxgl.Marker({
                     element: el
                   }).setLngLat(coordinates);
@@ -212,57 +236,57 @@
                 markersOnScreen = newMarkers;
             };
 
-            const createDonutChart = (props, totals) => {
-              const div = document.createElement('div');
+            function createDonutChart(props, totals) {
+              var div = document.createElement('div');
 
-              const data = [
+              var data = [
                 {type: 'positive', count: props.positive},
                 {type: 'symptoms', count: props.symptoms},
                 {type: 'healthy', count: props.healthy},
               ];
 
-              const thickness = 10;
+              var thickness = 10;
 
               // this sets the scale for our circle radius
               // and this is why we need the totals. We need to
               // set a mininum and a maximum to define the domain and the range.
-              const scale = d3.scaleLinear()
+              var scale = d3.scaleLinear()
                 .domain([d3.max(totals), d3.min(totals)])
-                .range([1000, d3.max(totals)])
+                .range([2500, 800])//d3.max(totals)])
 
-              const radius = Math.sqrt(scale(props.point_count)) + 10;
-              const circleRadius = radius - thickness;
+              var radius = Math.sqrt(scale(props.point_count)) + 5;
+              var circleRadius = radius - thickness;
 
-              const svg = d3.select(div)
+              var svg = d3.select(div)
                 .append('svg')
                 .attr('class', 'pie')
                 .attr('width', radius * 2)
                 .attr('height', radius * 2);
 
-              const g = svg.append('g')
+              var g = svg.append('g')
                 .attr('transform', `translate(${radius}, ${radius})`);
 
-              const arc = d3.arc()
+              var arc = d3.arc()
                 .innerRadius(radius - thickness)
                 .outerRadius(radius);
 
-              const pie = d3.pie()
-                .value(d => d.count)
+              var pie = d3.pie()
+                    .value(function(d) { return d.count })
                 .sort(null);
 
-              const path = g.selectAll('path')
-                .data(pie(data.sort((x, y) => d3.ascending(y.count, x.count))))
+              var path = g.selectAll('path')
+                    .data(pie(data.sort(function(x, y) { return d3.ascending(y.count, x.count) })))
                 .enter()
                 .append('path')
                 .attr('d', arc)
-                    .attr('fill', (d) => colors[d.data.type])
+                    .attr('fill', function(d) { return colors[d.data.type] })
 
-              const circle = g.append('circle')
+              var circle = g.append('circle')
                 .attr('r', circleRadius)
                 .attr('fill', 'rgba(0, 0, 0, 0.7)')
                 .attr('class', 'center-circle')
 
-              const text = g
+              var text = g
                 .append("text")
                 .attr("class", "total")
                 .text(props.point_count_abbreviated)
@@ -273,7 +297,7 @@
               return div;
             }
 
-            map.on('data', (e) => {
+            map.on('data', function(e) {
               if (e.sourceId !== 'reports' || !e.isSourceLoaded) return;
 
               map.on('move', updateMarkers);
@@ -281,7 +305,20 @@
               updateMarkers();
             });
 
-            map.addControl(new mapboxgl.NavigationControl());
+            map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+
+            navigator.geolocation.getCurrentPosition(
+                function(geolocation) {
+                    map.flyTo({
+                        zoom: 11,
+                        center: [
+                            geolocation.coords.longitude,
+                            geolocation.coords.latitude
+                        ],
+                        essential: true
+                    });
+                });
         </script>
+        <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
     </body>
 </html>

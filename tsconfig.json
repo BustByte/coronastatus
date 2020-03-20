@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
     "target": "es6",
+    "lib": ["es2019"],
     "module": "commonjs",
     "outDir": "./build",
     "strict": true,
     "moduleResolution": "node",
     "baseUrl": "./",
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true
