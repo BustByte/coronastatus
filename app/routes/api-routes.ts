@@ -10,7 +10,6 @@ import {
   aggregateCovidReports,
   aggregateCovidReportsForPostalCode
 } from '../util/report-aggregator';
-import { MunicipalityRepository } from '../repository/MunicipalityRepository';
 import {
   Sex,
   TestResult,
@@ -21,7 +20,6 @@ import {
 
 const router = express.Router();
 const reportRepo = new CovidReportRepository();
-const municipalityRepo = new MunicipalityRepository();
 
 router.get('/aggregated', cors(), async (req, res) => {
   const reports = await reportRepo.getLatestCovidReports();
@@ -47,7 +45,6 @@ router.get('/aggregated/:postalCode', async (req, res) => {
 
 interface ExposedCovidReport {
   sex: Sex;
-  municipality?: string;
   hasBeenTested: boolean;
   hasBeenInContactWithInfected: boolean;
   symptomStart?: string; // YYYY-MM-DD
@@ -67,7 +64,6 @@ interface ExposedCovidReportCSV extends Record<Symptom, ZeroOrOne> {
   age: string;
   sex: Sex;
   hasBeenInContactWithInfected: ZeroOrOne;
-  municipality?: string;
   hasBeenTested: ZeroOrOne;
   testResult?: TestResult;
   symptomStart?: string; // YYYY-MM-DD
@@ -81,8 +77,6 @@ const toISODate = (submissionTimestamp: number): string =>
 const reportToExposedFormat = (report: CovidReport): ExposedCovidReport => ({
   age: report.age,
   sex: report.sex,
-  municipality: municipalityRepo.getMunicipalityForPostalCode(report.postalCode)
-    ?.name,
   hasBeenTested: report.hasBeenTested,
   hasBeenInContactWithInfected: report.hasBeenInContactWithInfected,
   symptomStart: report.symptomStart,
@@ -117,8 +111,6 @@ const reportToExposedCsvFormat = (
   submissionOrder: submissionIndex + 1,
   age: report.age,
   sex: report.sex,
-  municipality: municipalityRepo.getMunicipalityForPostalCode(report.postalCode)
-    ?.name,
   hasBeenTested: toZeroOrOne(report.hasBeenTested),
   hasBeenInContactWithInfected: toZeroOrOne(
     report.hasBeenInContactWithInfected
@@ -128,23 +120,6 @@ const reportToExposedCsvFormat = (
   submissionDate: toISODate(report.submissionTimestamp),
   ...extractSymptomsAsZeroOrOne(report.symptoms)
 });
-
-const municipalityFilter = (
-  municipalityQueryParam: string
-): ((municipality: string | undefined) => boolean) => {
-  if (municipalityQueryParam == null) {
-    return (): boolean => true;
-  }
-  if (Array.isArray(municipalityQueryParam)) {
-    const municipalities = municipalityQueryParam.map((s: string) =>
-      s.toUpperCase()
-    );
-    return (m: string | undefined): boolean =>
-      m !== undefined && municipalities.includes(m);
-  }
-  return (m: string | undefined): boolean =>
-    m !== undefined && m === municipalityQueryParam.toUpperCase();
-};
 
 const csvCache = new CacheWithLifetime<ExposedCovidReportCSV[]>(
   5, // Minutes
@@ -180,27 +155,9 @@ router.get('/reports/reports.csv', cors(), async (req, res) => {
 });
 
 router.get('/reports', cors(), async (req, res) => {
-  const numQueryParams = Object.keys(req.query).length;
-  if (
-    numQueryParams > 1 ||
-    (numQueryParams === 1 && !('municipality' in req.query))
-  ) {
-    return res.status(400).json({
-      status: 400,
-      message: 'Bad Request',
-      error: '«municipality» is the only possible query param'
-    });
-  }
-
   const allReports = await reportRepo.getAllCovidReports();
   const result = Object.values(allReports)
-    .map(reportList =>
-      reportList
-        .map(reportToExposedFormat)
-        .filter(report =>
-          municipalityFilter(req.query.municipality)(report.municipality)
-        )
-    )
+    .map(reportList => reportList.map(reportToExposedFormat))
     .filter(list => list.length > 0);
   return res.json(result);
 });
