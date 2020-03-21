@@ -118,10 +118,6 @@ router.post('/', createReportRateLimit, async (req, res) => {
   return res.render('pages/confirm-profile', { passcode });
 });
 
-router.get('/elements', (req, res) => {
-  return res.render('pages/elements');
-});
-
 router.get('/personvern', (req, res) => {
   return res.render('pages/privacy-policy');
 });
