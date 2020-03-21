@@ -24,16 +24,16 @@ export const swaggerDocument = {
   },
   servers: [
     {
-      url: 'http://localhost:7272/api',
-      description: 'Local server'
+      url: 'https://coronastatus.no/api',
+      description: 'Production environment'
     },
     {
       url: 'https://dev.coronastatus.no/api',
       description: 'DEV Env'
     },
     {
-      url: 'https://coronastatus.no/api',
-      description: 'Production environment'
+      url: 'http://localhost:7272/api',
+      description: 'Local server'
     }
   ],
   tags: [
