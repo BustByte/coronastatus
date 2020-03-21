@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
+import i18n from 'i18n';
 import swaggerUi from 'swagger-ui-express';
 import reportRoutes from './routes/report-routes';
 import mapRoutes from './routes/map-routes';
@@ -12,6 +13,14 @@ import { swaggerDocument } from './swagger';
 const app = express();
 const port = process.env.PORT || 7272;
 const isDevelopmentEnv = process.env.NODE_ENV === 'dev';
+
+i18n.configure({
+  locales: ['en', 'no', 'nl'],
+  defaultLocale: 'en',
+  directory: `${__dirname}/locales`
+});
+
+app.use(i18n.init);
 
 app.use(
   '/api-docs',
