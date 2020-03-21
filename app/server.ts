@@ -9,6 +9,7 @@ import apiRoutes from './routes/api-routes';
 import statisticsRoutes from './routes/statistics-routes';
 import { getInstance } from './repository/SqlLiteDatabase';
 import { swaggerDocument } from './swagger';
+import { LANGUAGE, BASE_URL } from '../config.json';
 
 const app = express();
 const port = process.env.PORT || 7272;
@@ -16,7 +17,7 @@ const isDevelopmentEnv = process.env.NODE_ENV === 'dev';
 
 i18n.configure({
   locales: ['en', 'no', 'nl'],
-  defaultLocale: 'en',
+  defaultLocale: LANGUAGE,
   directory: `${__dirname}/locales`
 });
 
@@ -38,6 +39,8 @@ app.use((req, res, next) => {
   // eslint-disable-next-line prefer-destructuring
   res.locals.activePage = req.path.split('/')[1];
   res.locals.cacheKey = cacheKey;
+  res.locals.imageSubfolder = LANGUAGE;
+  res.locals.baseUrl = BASE_URL;
   next();
 });
 

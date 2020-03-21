@@ -1,8 +1,10 @@
 <%
   const title = locals.metaTitle || 'Bli med på Norges største dugnad!'
   const metaDescription = locals.metaDescription || 'Gi ditt frivillige bidrag til helsevesenet og registrer din helsetilstand nå. Sammen skaper vi oversikt.'
-  const metaImage1 = 'https://coronastatus.no/static/facebook-thumb-1.png';
-  const metaImage2 = 'https://coronastatus.no/static/facebook-thumb-3.png';
+  const baseUrl = locals.baseUrl;
+  const imageSubfolder = locals.imageSubfolder;
+  const metaImage1 = `${baseUrl}/static/${imageSubfolder}/social1.png`;
+  const metaImage2 = `${baseUrl}/static/${imageSubfolder}/social2.png`;
 %>
 
 <meta charset="utf-8">
@@ -25,6 +27,6 @@
 <!-- End Twitter -->
 
 <link href="https://fonts.googleapis.com/css?family=Mada:400,400i,700" rel="stylesheet">
-<link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="/static/<%= imageSubfolder %>/favicon.png" type="image/x-icon">
 <link rel='stylesheet' href='/static/main.css?v=<%= locals.cacheKey %>' type='text/css' media='all' />
 <link rel='stylesheet' href='/static/custom.css?v=<%= locals.cacheKey %>' type='text/css' media='all' />
