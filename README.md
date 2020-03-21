@@ -1,18 +1,19 @@
 # Coronastatus.no
-> Rapporter din helsetilstand slik at vi sammen får bedre oversikt over smittespredningen
+> Report your health status to get a better overview of COVID-19 (currently for Norway only)
 
-## Hva er dette?
-Mørketallene på smittede er store. Vi lager en nettside som lar folk rapportere sin helsetilstand.
+## What is this?
+We don't know how many people have COVID-19. So we made a website where people can self-report symptoms. We plot the submissions on a map and show graphs with trends.
 
-## Hvorfor?
-For å få oversikt over spredning av coronaviruset. Myndighetene vært treige med å få på plass et selvrapporteringssystem.
+## Why?
+The government is working on this, but they're too slow in getting something out fast.
 
-Vi anbefaler denne artikkelen av Petter Bae Brandtzæg: https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona-maa-paa-plass-naa-petter-bae-brandtzaeg
+Norwegian article that inspired us to build this:
+https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona-maa-paa-plass-naa-petter-bae-brandtzaeg
 
-## Hvem står bak?
-Alle som vil kan bidra. Nettsiden er laget i dugnadsånd av BustByte, et lite konsulentselskap. Dette er ikke en offisiell nettside fra norske myndigheter.
+## Who's behind this?
+A bunch of developers from Norway that wanted to help out. This is not an official website from the health services.
 
-## Medieomtale
+## Mentions in the media
 - https://www.tu.no/artikler/utviklere-om-korona-register-vi-kastet-oss-rundt-og-laget-dette/487568
 
 ## Hvordan kan jeg bidra?
