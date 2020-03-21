@@ -37,5 +37,11 @@
   "Thank you for your contribution!": "Bedankt voor je contributie!",
   "The government has now launched their own self-report system, please use that instead.": "De overheid heeft hun eigen rapportagesysteem gemaakt en we raden u aan deze te gebruiken.",
   "www.nhs.uk": "rivm.nl",
-  "Go to the National health service website": "Ga naar de website van het RIVM"
+  "Go to the National health service website": "Ga naar de website van het RIVM",
+  "Report status by zip code": "Gerapporteerde status per postcode",
+  "The markers correspond to coordinates of zip codes, they have nothing to do with individuals.": "De weergegeven posities komen overeen met de opgegeven coördinaten per postcode en hebben niets met individuen te maken.",
+  "Healthy": "Gezond",
+  "Has symptoms": "Heeft symptomen",
+  "Tested positive": "Positief getest",
+  "Zip code information ": "Postcode informatie ",
 }

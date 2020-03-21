@@ -38,5 +38,11 @@
   "Thank you for your contribution!": "Takk for ditt engasjement!",
   "The government has now launched their own self-report system, please use that instead.": "Helsemyndighetene har nå opprettet sitt eget rapporteringssystem, og vi anbefaler at du heller benytter det.",
   "www.nhs.uk": "helsenorge.no",
-  "Go to the National health service website": "Til helsenorge.no"
+  "Go to the National health service website": "Til helsenorge.no",
+  "Report status by zip code": "Rapportert status per postnummer",
+  "The markers correspond to coordinates of zip codes, they have nothing to do with individuals.": "Posisjonene vist samsvarer med gitte koordinater per postnummer, og har ingenting med enkeltpersoner og gjøre.",
+  "Healthy": "Frisk",
+  "Has symptoms": "Har symptomer",
+  "Tested positive": "Testet positivt",
+  "Zip code information ": "Postnummerinfo ",
 }
