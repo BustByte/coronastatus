@@ -113,6 +113,7 @@ input[type='checkbox'] + label.normal-font {
 }
 
 .menu > a {
+  display: -webkit-box;
   display: flex;
   text-decoration: none;
 }
@@ -145,15 +146,21 @@ input[type='checkbox'] + label.normal-font {
   border-radius: 0.25rem;
   display: -webkit-box;
   display: flex;
-  width: calc(50%);
+  width: 50%;
+  -webkit-box-flex: 1;
   flex-grow: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   flex-direction: column;
 }
 
 .info-box__icon {
+  display: -webkit-box;
   display: flex;
   margin: auto;
+  -webkit-box-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   align-items: center;
   width: 45px;
   height: 45px;
@@ -187,17 +194,24 @@ input[type='checkbox'] + label.normal-font {
 }
 
 .info-box-row {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: stretch;
   align-items: stretch;
 }
 
 .info-box.stats {
   min-width: 150px;
+  display: -webkit-box;
   display: flex;
   padding: 0.5rem 0 1.2rem;
   margin-left: 0.5rem;
+  -webkit-box-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   flex-direction: column;
   background-color: #f0f0f0;
 }
@@ -224,8 +238,11 @@ input[type='checkbox'] + label.normal-font {
 }
 
 .info-box.link-to-stats {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   align-items: center;
   text-decoration: none;
   padding: 0.75rem;
@@ -238,6 +255,7 @@ input[type='checkbox'] + label.normal-font {
   }
 
   .info-box.stats {
+    -webkit-box-flex: 1;
     flex-grow: 1;
     width: calc(50% - 1rem);
     margin-left: 0;
@@ -299,7 +317,9 @@ p.subtitle {
   font-weight: 900;
   margin: 2.5rem 0;
   line-height: 1.5;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
   align-items: center;
 }
 
@@ -307,6 +327,7 @@ p.subtitle {
   width: 40px !important;
   height: 40px !important;
   line-height: 1;
+  -webkit-box-pack: center;
   justify-content: center;
   height: auto;
   border-radius: 50%;
@@ -355,7 +376,9 @@ p.subtitle {
   display: none;
   cursor: pointer;
   border: 3px solid #282828;
+  -webkit-box-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   align-items: center;
   width: 38px;
   height: 38px;
@@ -365,6 +388,7 @@ p.subtitle {
   display: none;
   overflow: hidden;
   height: 0;
+  -webkit-transition: height 0.3s;
   transition: height 0.3s;
   width: calc(100% - 4rem);
   margin: 0 auto;
@@ -376,7 +400,7 @@ p.subtitle {
 }
 
 .hamburger-menu.un-collapsed {
-  height: 175px;
+  height: 200px;
 }
 
 .hamburger-menu .inner {
@@ -404,6 +428,7 @@ p.subtitle {
 
 @media (max-width: 850px) {
   .hamburger-menu-button {
+    display: -webkit-box;
     display: flex;
   }
 }
@@ -430,7 +455,9 @@ p.slogan {
 }
 
 .share-buttons {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: end;
   align-items: flex-end;
 }
 
@@ -448,44 +475,54 @@ table.compact tr th {
 
 h2.stat-heading {
   border-bottom: 2px solid #d4d4d4;
-  padding-bottom: .5rem;
-  margin-bottom: .5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-heading + p {
+  margin-bottom: 1rem;
 }
 
 h3.stat-heading {
-  padding-top: .5rem;
+  padding-top: 0.5rem;
 }
 
 .stat-layout {
+  display: -webkit-box;
   display: flex;
 }
 
 .stat-cell {
+  -webkit-box-flex: 1;
   flex-grow: 1;
-  width: calc(60%);
+  width: 60%;
   box-sizing: border-box;
   padding-right: 1rem;
 }
 
 .stat-cell:nth-child(even) {
-  width: calc(40%);
+  width: 40%;
 }
 
 .stat-number-layout {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   flex-direction: row;
 }
 
 .stat-number-cell {
   box-sizing: border-box;
-  width: calc(50%);
-  padding-right: .5rem;
+  width: 50%;
+  padding-right: 0.5rem;
 }
 
 .stat-number-cell__number {
   color: #af2323;
   font-size: 2rem;
   font-weight: 700;
+  margin-top: 0.5rem;
 }
 
 .stat-number-cell__description {
@@ -498,6 +535,6 @@ h3.stat-heading {
   }
 
   .stat-cell {
-    width: calc(100%);
+    width: 100%;
   }
 }
