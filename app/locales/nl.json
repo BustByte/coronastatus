@@ -7,5 +7,12 @@
   "Something went wrong!": "Er is iets misgegaan!",
   "Something must have gone wrong": "Er moet iets mis zijn gegaan.",
   "Send an e-mail to": "Stuur een e-mail naar",
-  " if you can't get it to work.": " als het niet lukt."
+  " if you can't get it to work.": " als het niet lukt.",
+  "Before proceeding please note down the following link": "Voordat je verder gaat, sla de onderstaande link op.",
+  "Save the following link somewhere, or bookmark it in your browser.": "Sla de volgende link ergens op of maak een bladwijzer van de pagina.",
+  "That way you can update your report if your health condition changes.": "U kan dan via deze link uw raportage wijzigen als uw gezondheid veranderd.",
+  "I've noted down the link.": "Ik heb de link opgeslagen",
+  "Proceed":"Verder",
+  "The link has been copied": "De link is gekopieerd.",
+  "Could not copy the link, please copy it yourself": "Kan de link niet kopiëren. Kopieer alstublieft zelf de link.",
 }
