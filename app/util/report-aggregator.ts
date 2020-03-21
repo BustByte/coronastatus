@@ -6,6 +6,8 @@ import {
 } from '../domain/types';
 import { MunicipalityRepository } from '../repository/MunicipalityRepository';
 
+const municipalityRepository = new MunicipalityRepository();
+
 export const isShowingAtLeastOneSymptom = (report: CovidReport): boolean => {
   return Object.values(report.symptoms).includes(true);
 };
@@ -50,7 +52,7 @@ export const aggregateCovidReportsForPostalCode = (
     numberOfTested: 0
   };
 
-  aggredatedData.municipality = new MunicipalityRepository().getMunicipalityForPostalCode(
+  aggredatedData.municipality = municipalityRepository.getMunicipalityForPostalCode(
     postalCode
   );
 
