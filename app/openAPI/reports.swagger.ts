@@ -8,7 +8,7 @@ export const getReports = {
       name: 'municipality',
       in: 'query',
       description: 'The name of the municipality to generate results for',
-      required: true,
+      required: false,
       schema: {
         type: 'string'
       }

@@ -5,6 +5,7 @@ import {
   TestResult
 } from '../domain/types';
 import { MunicipalityRepository } from '../repository/MunicipalityRepository';
+import { NotEnoughReportsError } from '../domain/errors';
 
 const municipalityRepository = new MunicipalityRepository();
 
@@ -45,7 +46,8 @@ export const aggregateCovidReportsForPostalCode = (
   postalCode: string
 ): AggregatedCovidReportWithPostalCodeData => {
   const aggredatedData: AggregatedCovidReportWithPostalCodeData = {
-    municipality: { name: '', population: '', postalCodes: [] },
+    municipality: undefined,
+    postalCode,
     numberOfReports: 0,
     numberOfPeopleShowingSymptoms: 0,
     numberOfConfirmedInfected: 0,
@@ -54,7 +56,7 @@ export const aggregateCovidReportsForPostalCode = (
 
   aggredatedData.municipality = municipalityRepository.getMunicipalityForPostalCode(
     postalCode
-  );
+  )?.name;
 
   for (const report of reports) {
     if (report.postalCode === postalCode) {
@@ -70,5 +72,8 @@ export const aggregateCovidReportsForPostalCode = (
       }
     }
   }
-  return aggredatedData;
+  if (aggredatedData.numberOfReports >= 3) {
+    return aggredatedData;
+  }
+  throw new NotEnoughReportsError('Not enough data in the given postal code');
 };

@@ -75,6 +75,19 @@ export const getAggregatedPostalCode = {
           }
         }
       }
+    },
+    '403': {
+      description: 'Not enough data in the requested postal code.',
+      content: {
+        'application/json': {
+          schema: {
+            message: {
+              type: 'string',
+              description: 'Error message'
+            }
+          }
+        }
+      }
     }
   }
 };
