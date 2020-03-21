@@ -33,11 +33,11 @@ Download and install [nodejs](https://nodejs.org),
 
 1. Clone the repository
 
-  `git clone https://github.com/BustByte/coronastatus.no/`
+  `git clone https://github.com/BustByte/coronastatus`
 
 2. Move into the newly cloned directory
 
-  `cd coronastatus.no`
+  `cd coronastatus`
 
 3. Install dependencies with our package manager
 
