@@ -38,5 +38,10 @@
   "The government has now launched their own self-report system, please use that instead.": "The government has now launched their own self-report system, please use that instead.",
   "www.nhs.uk": "www.nhs.uk",
   "Go to the National health service website": "Go to the National health service website",
-
+  "Report status by zip code": "Report status by zip code",
+  "The markers correspond to coordinates of zip codes, they have nothing to do with individuals.": "The markers correspond to coordinates of zip codes, they have nothing to do with individuals.",
+  "Healthy": "Healthy",
+  "Has symptoms": "Has symptoms",
+  "Tested positive": "Tested positive",
+  "Zip code information ": "Zip code information ",
 }
