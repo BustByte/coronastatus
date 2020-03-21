@@ -1,5 +1,5 @@
-# Coronastatus.no
-> Report your health status to get a better overview of COVID-19 (currently for Norway only, soon available in the Netherlands)
+# Coronastatus
+> Report your health status to get a better overview of COVID-19 in your country (currently available in Norway & The Netherlands)
 
 ## What is this?
 We don't know how many people have COVID-19. So we made a website where people can self-report symptoms. We plot the submissions on a map and show graphs with trends.
@@ -16,42 +16,37 @@ A bunch of developers from Norway that wanted to help out. This is not an offici
 ## Mentions in the media
 - https://www.tu.no/artikler/utviklere-om-korona-register-vi-kastet-oss-rundt-og-laget-dette/487568
 
-## Hvordan kan jeg bidra?
+## How can I contribute?
+Join our Telegram group chat here: https://t.me/onzecorona or reach out on kontakt@bustbyte.no
 
-### Slack
-Vi har en felles Slack-kanal du kan bli medlem av. Her prøver vi å koordinere utviklingen så godt vi kan via. en VoIP-samtale.
-
-Send e-postadressen din til kontakt@bustbyte.no, så legger vi deg til snarest. 
-
-### GitHub Issues
 Klikk på "Issues" i menyen over for å se hva du kan bidra med.
 
-## Oppsett for utvikling / installasjon
+## Start developing
 
-Last ned og installer [nodejs](https://nodejs.org),
-[git](https://git-scm.com/downloads) og [yarn](https://yarnpkg.com/)
+Download and install [nodejs](https://nodejs.org),
+[git](https://git-scm.com/downloads) and [yarn](https://yarnpkg.com/)
 
-1. Clone repository git
+1. Clone the repository
 
   `git clone https://github.com/BustByte/coronastatus.no/`
 
-2. CD into folder
+2. Move into the newly cloned directory
 
   `cd coronastatus.no`
 
-3. Run yarn install
+3. Install dependencies with our package manager
 
   `yarn`
 
-4. Copy config.example.json to config.json
+4. Create a configuration file from the example provided in this repo
 
   `cp config.example.json config.json`
 
-5. Start dev-server
+5. Start the development webserver
 
   `yarn start`
 
-6. Open web-browser at http://localhost:7272/
+6. Open your browser and navigate to http://localhost:7272/
 
 7. Before you create a pull request run the linter. Warnings are ok, but errors should be fixed.
 
