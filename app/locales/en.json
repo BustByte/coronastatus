@@ -7,5 +7,12 @@
   "Something went wrong!": "Something went wrong!",
   "Something must have gone wrong": "Something must have gone wrong",
   "Send an e-mail to": "Send an e-mail to",
-  " if you can't get it to work.": " if you can't get it to work."
+  " if you can't get it to work.": " if you can't get it to work.",
+  "Before proceeding please note down the following link": "Before proceeding please note down the following link",
+  "Save the following link somewhere, or bookmark it in your browser.": "Save the following link somewhere, or bookmark it in your browser.",
+  "That way you can update your report if your health condition changes.": "That way you can update your report if your health condition changes.",
+  "I've noted down the link.": "I've noted down the link.",
+  "Proceed":"Proceed",
+  "The link has been copied": "The link has been copied.",
+  "Could not copy the link, please copy it yourself": "Could not copy the link, please copy it yourself",
 }
