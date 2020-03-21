@@ -1,4 +1,5 @@
 {
   "BASE_URL": "https://coronastatus.no",
+  "SIMPLE_ANALYTICS_DOMAIN": "https://sa.coronastatus.no",
   "LANGUAGE": "no"
 }
