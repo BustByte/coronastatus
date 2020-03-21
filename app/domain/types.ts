@@ -110,3 +110,11 @@ export interface Municipality {
   population: string;
   postalCodes: PostalCode[];
 }
+
+export interface AggregatedCovidReportWithPostalCodeData {
+  municipality: Municipality | undefined;
+  numberOfReports: number;
+  numberOfPeopleShowingSymptoms: number;
+  numberOfConfirmedInfected: number;
+  numberOfTested: number;
+}

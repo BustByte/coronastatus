@@ -5,8 +5,11 @@ import 'csv-express';
 
 import { CacheWithLifetime } from '../repository/CacheWithLifetime';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
+import {
+  aggregateCovidReports,
+  aggregateCovidReportsForPostalCode
+} from '../util/report-aggregator';
 import { MunicipalityRepository } from '../repository/MunicipalityRepository';
-import { aggregateCovidReports } from '../util/report-aggregator';
 import {
   Sex,
   TestResult,
@@ -23,6 +26,15 @@ router.get('/aggregated', cors(), async (req, res) => {
   const reports = await reportRepo.getLatestCovidReports();
   const aggregated = aggregateCovidReports(reports);
   res.json(aggregated);
+});
+
+router.get('/aggregated/:postalCode', async (req, res) => {
+  const reports = await reportRepo.getLatestCovidReports();
+  const aggregated = aggregateCovidReportsForPostalCode(
+    reports,
+    req.params.postalCode
+  );
+  res.send(aggregated);
 });
 
 interface ExposedCovidReport {
