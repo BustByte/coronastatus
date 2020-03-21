@@ -11,7 +11,7 @@ Norwegian article that inspired us to build this:
 https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona-maa-paa-plass-naa-petter-bae-brandtzaeg
 
 ## Who's behind this?
-A bunch of developers from Norway that wanted to help out. This is not an official website from the health services.
+A bunch of developers from around the world that wanted to help out. This is not an official website from the health services.
 
 ## Mentions in the media
 - https://www.tu.no/artikler/utviklere-om-korona-register-vi-kastet-oss-rundt-og-laget-dette/487568
@@ -19,7 +19,7 @@ A bunch of developers from Norway that wanted to help out. This is not an offici
 ## How can I contribute?
 Join our Telegram group chat here: https://t.me/onzecorona or reach out on kontakt@bustbyte.no
 
-Klikk på "Issues" i menyen over for å se hva du kan bidra med.
+Click on "Issues" in the menu above to see what we need help with.
 
 ## Start developing
 
