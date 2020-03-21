@@ -8,5 +8,12 @@
   "Something must have gone wrong": "Her har det skjedd noe galt.",
   "Send an e-mail to": "Send en mail til",
   " if you can't get it to work.": " hvis du ikke finner løsningen på problemet.",
-  "Share on": "Del på"
+  "Share on": "Del på",
+  "Before proceeding please note down the following link": "Før du går videre må du ta vare på følgende lenke",
+  "Save the following link somewhere, or bookmark it in your browser.": "Lagre den følgende lenken et sted, eller opprett et bokmerke til siden.",
+  "That way you can update your report if your health condition changes.": "Da kan du gå inn og endre din helsetilstand dersom den endrer seg.",
+  "I've noted down the link.": "Jeg har tatt vare på lenken",
+  "Proceed":"Gå videre",
+  "The link has been copied": "Linken er kopiert.",
+  "Could not copy the link, please copy it yourself": "Klarte ikke å kopiere linke til utklippstavlen. Skriv ned linken selv.",
 }
