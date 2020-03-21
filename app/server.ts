@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
+import swaggerUi from 'swagger-ui-express';
 import reportRoutes from './routes/report-routes';
 import mapRoutes from './routes/map-routes';
 import apiRoutes from './routes/api-routes';
@@ -11,9 +12,14 @@ import { swaggerDocument } from './swagger';
 const app = express();
 const port = process.env.PORT || 7272;
 const isDevelopmentEnv = process.env.NODE_ENV === 'dev';
-const swaggerUi = require('swagger-ui-express');
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use(
+  '/api-docs',
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerDocument, {
+    customJs: 'https://cdn.simpleanalytics.io/hello.js'
+  })
+);
 const cacheKey = process.env.CACHE_KEY || `${Math.random()}`.replace('.', '');
 
 app.use(bodyParser.json());
