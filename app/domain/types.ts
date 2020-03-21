@@ -108,11 +108,12 @@ export interface Coordinate {
 export interface Municipality {
   name: string;
   population: string;
-  postalCodes: PostalCode[];
+  postalCodes?: PostalCode[];
 }
 
 export interface AggregatedCovidReportWithPostalCodeData {
-  municipality: Municipality | undefined;
+  municipality: string | undefined;
+  postalCode: string;
   numberOfReports: number;
   numberOfPeopleShowingSymptoms: number;
   numberOfConfirmedInfected: number;

@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import 'csv-express';
 
+import { NotEnoughReportsError } from '../domain/errors';
 import { CacheWithLifetime } from '../repository/CacheWithLifetime';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
 import {
@@ -25,16 +26,23 @@ const municipalityRepo = new MunicipalityRepository();
 router.get('/aggregated', cors(), async (req, res) => {
   const reports = await reportRepo.getLatestCovidReports();
   const aggregated = aggregateCovidReports(reports);
-  res.json(aggregated);
+  return res.json(aggregated);
 });
 
 router.get('/aggregated/:postalCode', async (req, res) => {
   const reports = await reportRepo.getLatestCovidReports();
-  const aggregated = aggregateCovidReportsForPostalCode(
-    reports,
-    req.params.postalCode
-  );
-  res.send(aggregated);
+  try {
+    const aggregated = aggregateCovidReportsForPostalCode(
+      reports,
+      req.params.postalCode
+    );
+    return res.send(aggregated);
+  } catch (e) {
+    if (e instanceof NotEnoughReportsError) {
+      return res.status(403).send({ message: e.message });
+    }
+    throw e;
+  }
 });
 
 interface ExposedCovidReport {
