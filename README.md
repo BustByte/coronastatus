@@ -1,5 +1,5 @@
 # Coronastatus.no
-> Report your health status to get a better overview of COVID-19 (currently for Norway only)
+> Report your health status to get a better overview of COVID-19 (currently for Norway only, soon available in Holland)
 
 ## What is this?
 We don't know how many people have COVID-19. So we made a website where people can self-report symptoms. We plot the submissions on a map and show graphs with trends.
