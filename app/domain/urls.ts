@@ -1,6 +1,6 @@
 import { LANGUAGE } from '../../config.json';
 
-export type Locale = 'no' | 'nl' | 'en';
+export type Locale = 'no' | 'nl' | 'en' | 'sk';
 
 type Urls = {
   [locale in Locale]: {
@@ -45,6 +45,16 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics'
+  },
+  sk: {
+    submitReport: '/',
+    profile: '/zdravotny-stav',
+    privacyPolicy: '/ochrana-udajov',
+    map: '/mapa',
+    contributors: '/prispievatelia',
+    api: '/api',
+      apiDocs: '/api-docs',
+      statistics: '/statistiky'
   }
 };
 
