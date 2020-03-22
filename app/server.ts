@@ -28,11 +28,13 @@ i18n.configure({
 app.use(i18n.init);
 
 app.use((req, res, next) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
   // @ts-ignore
   const translate = (text, ...options) => {
-    text = text.replace(/[\s\n\t]+/g, ' ').trim();
+    const replaced = text.replace(/[\s\n\t]+/g, ' ').trim();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
     // @ts-ignore
-    return i18n.__.apply(req, [text, ...options]);
+    return i18n.__.apply(req, [replaced, ...options]);
   };
   res.locals.__ = translate;
   res.__ = translate;
