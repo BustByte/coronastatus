@@ -1,6 +1,6 @@
 # Coronastatus
 
-> Report your health status to get a better overview of COVID-19 in your country (currently available in Norway & The Netherlands)
+> Report your health status to get a better overview of COVID-19 in your country (currently in 🇳🇴🇳🇱🇸🇰)
 
 ## What is this?
 
