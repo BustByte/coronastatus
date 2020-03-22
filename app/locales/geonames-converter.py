@@ -45,5 +45,5 @@ for row in rows:
     if not postal_code in postal_code_coordinates:
          postal_code_coordinates[postal_code] = {'lat': latitude, 'lon': longitude}
 
-with open('%s-postalCodesCoordinates.json' % COUNTRY_CODE, 'w') as f:
+with open('%s-postalCodeCoordinates.json' % COUNTRY_CODE, 'w') as f:
     write_as_json(postal_code_coordinates, f, indent=2, separators=(',', ': '))
