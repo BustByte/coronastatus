@@ -37,7 +37,9 @@ Click on "Issues" in the menu above to see what we need help with.
 
 ## Start developing
 
-### On your own machine
+You can either install and run everything on your own machine or build a docker image and run the the local development environment using docker. Choose one of the ways below that fits best to you:
+
+### Developing on your own machine
 
 #### Prerequisities
 
@@ -74,7 +76,7 @@ Download & install:
 
 `yarn lint`
 
-### Using docker
+### Developing using docker
 
 #### Prerequisities
 
