@@ -288,7 +288,13 @@
           <div class="row">
             <div class="col-12 input-block">
               <input required type="checkbox" id="accept-privacy-policy" name="accept-privacy-policy" <%= passcode ? 'checked' : '' %>>
-              <label for="accept-privacy-policy" class="normal-font"><%= __('I agree to my data being stored in accordance with the privacy statement')%></label>
+              <label for="accept-privacy-policy" class="normal-font"><%= __('I agree to my data being stored in accordance with the privacy statement')%> (<%= __('required')%>)</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 input-block">
+              <input required type="checkbox" id="accept-remember" name="accept-remember" <%= passcode ? 'checked' : '' %>>
+              <label for="accept-remember" class="normal-font"><%= __('I agree to set a cookie so I can change my health condition later e.g. to report recovery/getting sick')%> (<%= __('recommended')%>)</label>
             </div>
           </div>
           <div class="row">

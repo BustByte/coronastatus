@@ -135,5 +135,8 @@
   "Clarifications data basis": "Verduidelijkingen gegevensbasis",
   "Questions about close contact were added on 16 March at. 10:30 p.m.. Some symptoms were not part of the form from the beginning:": "Vragen over nauw contact zijn op 16 maart toegevoegd op. 10:30 p.m .. Sommige symptomen maakten vanaf het begin geen deel uit van het formulier:",
   "Symptom": "Symptoom",
-  "Added to form": "Toegevoegd aan formulier"
+  "Added to form": "Toegevoegd aan formulier",
+	"I agree to set a cookie so I can change my health condition later e.g. to report recovery/getting sick": "Ik ga ermee akkoord om een cookie te plaatsen, zodat ik later mijn gezondheidstoestand kan veranderen, b.v. herstel / ziek worden te melden",
+	"required": "verplicht",
+	"recommended": "aanbevolen"
 }

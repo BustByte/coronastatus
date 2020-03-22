@@ -27,7 +27,6 @@
   "as an attempt to chart these numbers.": "som et forsøk på å kartlegge disse tallene.",
   "This is not an official tool of the authorities, and for more information about the outbreak we refer to health authorities which always have updated information.": "Dette er dermed ikke et offisielt verktøy fra myndighetene, og for mer informasjon rundt utbruddet henviser vi til FHI som alltid har oppdatert informasjon.",
   "https://who.org": "https://fhi.no",
-  "To WHO.org": "Til fhi.no",
   "Developed by": "Utviklet av",
   "BustByte AS": "BustByte AS",
   "and": "og",
@@ -135,5 +134,8 @@
   "Close contact with someone who has tested positive": "Nærkontakt med noen som har testet positivt",
   "Tested negative": "Testet negativt",
   "Map": "Kart",
-  "API": "API"
+  "API": "API",
+	"I agree to set a cookie so I can change my health condition later e.g. to report recovery/getting sick": "Jeg godtar at dere husker nettleseren min til neste gang jeg ønsker å oppdatere helsetilstanden min, i tilfellet jeg blir syk eller frisk.",
+	"required": "påkrevd",
+	"recommended": "anbefalt"
 }
