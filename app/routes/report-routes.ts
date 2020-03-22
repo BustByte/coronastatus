@@ -21,6 +21,9 @@ const reportRepo = new CovidReportRepository();
 const passcodeCreator = getPasscodeCreator();
 
 router.get('/', async (req, res) => {
+  if (req.cookies.passcode) {
+    return res.redirect(`${res.locals.urls.profile}/${req.cookies.passcode}`);
+  }
   const reports = await reportRepo.getLatestCovidReports();
   const aggregated = aggregateCovidReports(reports);
   return res.render('pages/report', { aggregated });
@@ -76,6 +79,7 @@ router.post('/', createReportRateLimit, async (req, res) => {
       aggregated
     });
   }
+
   const covidReport: CovidReport = {
     age: req.body['age'],
     postalCode: req.body['postal-code'],
@@ -100,7 +104,19 @@ router.post('/', createReportRateLimit, async (req, res) => {
     hasBeenInContactWithInfected: req.body['been-in-contact-with'] === 'yes',
     submissionTimestamp: new Date().getTime()
   };
+
   const passcode = req.body['passcode'] || passcodeCreator.createPasscode();
+
+  const acceptRemember = req.body['accept-remember'] === 'on';
+  const cookieOptions = {
+    maxAge: 31557600000, // maxAge is set to 1 year in ms
+    httpOnly: false, // httpOnly means the cookie is only accessible by the web server
+    signed: false // signed indicates if the cookie should be signed
+  };
+
+  // Set cookie with passcode
+  if (acceptRemember) res.cookie('passcode', passcode, cookieOptions);
+
   reportRepo.addNewCovidReport(passcode, covidReport);
   if (req.body['passcode']) {
     return res.redirect(`${res.locals.urls.profile}/${passcode}?success=true`);

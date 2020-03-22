@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
 import path from 'path';
 import i18n from 'i18n';
 import swaggerUi from 'swagger-ui-express';
@@ -36,6 +37,7 @@ const cacheKey = process.env.CACHE_KEY || `${Math.random()}`.replace('.', '');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 app.use((req, res, next) => {
   // eslint-disable-next-line prefer-destructuring
