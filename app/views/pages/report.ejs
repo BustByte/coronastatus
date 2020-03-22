@@ -40,7 +40,10 @@
   <%- include('partials/disclaimer') -%>
   <div id="has-submitted-alert" class="alert-dismissible wrapper">
     <div class="inner">
-      <div><b><%= __('Important') %>:</b><%= __("Use the link you noted down last time to update your health condition") %></div>
+      <div>
+        <b><%= __('Important') %>:</b>
+        <%= __("Use the link you noted down last time to update your health condition") %>
+      </div>
       <button class="close" onclick="hasSubmittedAlertOnClick()">&times;</button>
     </div>
   </div>
@@ -131,7 +134,8 @@
         <h1><%= profile ? __("Your state of health") : __("Report your health condition") %></h1>
         <% if(locals.success) {%>
           <div class="alert alert-success" role="alert">
-            <%= __("Thank you for your contribution! Use this link if your health condition changes:") %><a target="_blank" href="<%= urls.profile %>/<%= passcode %>"><%= baseUrl %><%= urls.profile %>/<%= passcode %></a>.
+            <%= __("Thank you for your contribution! Use this link if your health condition changes:") %>
+            <a target="_blank" href="<%= urls.profile %>/<%= passcode %>"><%= baseUrl %><%= urls.profile %>/<%= passcode %></a>.
           </div>
         <% } else { %>
           <p class="slogan"><%= __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information! ") %></p>
