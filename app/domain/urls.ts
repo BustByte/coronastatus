@@ -53,8 +53,8 @@ const localeAwareUrls: Urls = {
     map: '/mapa',
     contributors: '/prispievatelia',
     api: '/api',
-      apiDocs: '/api-docs',
-      statistics: '/statistiky'
+    apiDocs: '/api-docs',
+    statistics: '/statistiky'
   }
 };
 
