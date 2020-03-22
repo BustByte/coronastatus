@@ -1,6 +1,7 @@
-# Coronastatus
-
+# Coronastatus 
+![](https://github.com/BustByte/coronastatus/workflows/test/badge.svg) 
 > Report your health status to get a better overview of COVID-19 in your country (currently in 🇳🇴🇳🇱🇸🇰)
+
 
 ## What is this?
 
