@@ -17,4 +17,9 @@ router.get(`${urls.contributors}`, (req, res) => {
   return res.render('pages/frivillige');
 });
 
+router.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
+  return res.render('pages/robots');
+});
+
 export default router;
