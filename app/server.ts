@@ -37,10 +37,6 @@ const cacheKey = process.env.CACHE_KEY || `${Math.random()}`.replace('.', '');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const url = require('url');
-
-console.log(url.parse('coronastatus.no'));
-
 app.use((req, res, next) => {
   // eslint-disable-next-line prefer-destructuring
   res.locals.activePage = `/${req.path.split('/')[1]}`;
