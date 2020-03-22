@@ -1,6 +1,10 @@
 <%
-  const profile = locals.profile;
-  const passcode = locals.passcode;
+  const {
+    profile,
+    passcode,
+    baseUrl,
+    urls
+  } = locals;
   const age = profile && locals.profile.age;
   const postalCode = profile && locals.profile.postalCode;
   const sex = profile && locals.profile.sex;
@@ -118,11 +122,6 @@
             <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfPeopleShowingSymptoms) %></div>
             <div class="stats__description">Har symptomer</div>
           </div>
-          <!-- Outcommented until we have added stats on the map page
-          <a href="/kart" class="info-box link-to-stats">
-            <i class="fas fa-chevron-right"></i>
-          </a>
-          -->
         </div>
         <% if(locals.didNotAcceptPrivacyPolicy) {%>
           <div class="alert alert-danger" role="alert">
@@ -132,7 +131,7 @@
         <h1><%= profile ? 'Din helsetilstand' : 'Rapporter din helsetilstand' %></h1>
         <% if(locals.success) {%>
           <div class="alert alert-success" role="alert">
-            Takk for ditt svar! Benytt denne lenken hvis helsetilstanden din endrer seg: <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>. 
+            Takk for ditt svar! Benytt denne lenken hvis helsetilstanden din endrer seg: <a target="_blank" href="<%= urls.profile %>/<%= passcode %>"><%= baseUrl %><%= urls.profile %>/<%= passcode %></a>. 
           </div>
         <% } else { %>
           <p class="slogan">Bli med på Norges viktigste dugnad! Selv om du er frisk håper vi du sender inn skjemaet – det er også verdifull informasjon!</p>
@@ -281,7 +280,7 @@
             </div>
           </div>
           <h2>Hvordan blir dataene mine brukt?</h2>
-          <p class="privacy-info-text">Dine helseopplysninger blir lagret anonymisert, og kan ikke kobles til deg.<br/><a target="_blank" href="/personvern">Vår personvernerklæring finner du her</a>.</p>
+          <p class="privacy-info-text">Dine helseopplysninger blir lagret anonymisert, og kan ikke kobles til deg.<br/><a target="_blank" href="<%= urls.privacyPolicy %>">Vår personvernerklæring finner du her</a>.</p>
           <div class="row">
             <div class="col-12 input-block">
               <input required type="checkbox" id="accept-privacy-policy" name="accept-privacy-policy" <%= passcode ? 'checked' : '' %>>

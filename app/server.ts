@@ -7,9 +7,11 @@ import reportRoutes from './routes/report-routes';
 import mapRoutes from './routes/map-routes';
 import apiRoutes from './routes/api-routes';
 import statisticsRoutes from './routes/statistics-routes';
+import variousRoutes from './routes/various-routes';
 import { getInstance } from './repository/SqlLiteDatabase';
 import { swaggerDocument } from './swagger';
 import { LANGUAGE, BASE_URL } from '../config.json';
+import { urls } from './domain/urls';
 
 const app = express();
 const port = process.env.PORT || 7272;
@@ -24,7 +26,7 @@ i18n.configure({
 app.use(i18n.init);
 
 app.use(
-  '/api-docs',
+  urls.apiDocs,
   swaggerUi.serve,
   swaggerUi.setup(swaggerDocument, {
     customJs: 'https://cdn.simpleanalytics.io/hello.js'
@@ -37,10 +39,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
   // eslint-disable-next-line prefer-destructuring
-  res.locals.activePage = req.path.split('/')[1];
+  res.locals.activePage = `/${req.path.split('/')[1]}`;
   res.locals.cacheKey = cacheKey;
   res.locals.imageSubfolder = LANGUAGE;
   res.locals.baseUrl = BASE_URL;
+  res.locals.urls = urls;
   next();
 });
 
@@ -50,10 +53,11 @@ app.set('views', [
   path.join(__dirname, 'views', 'errors')
 ]);
 
-app.use('/', reportRoutes);
-app.use('/kart', mapRoutes);
-app.use('/api', apiRoutes);
-app.use('/statistikk', statisticsRoutes);
+app.use(urls.submitReport, reportRoutes);
+app.use(urls.map, mapRoutes);
+app.use(urls.map, apiRoutes);
+app.use(urls.statistics, statisticsRoutes);
+app.use('/', variousRoutes);
 
 app.use(
   '/static',

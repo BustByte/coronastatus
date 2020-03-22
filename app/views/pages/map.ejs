@@ -158,7 +158,7 @@
             map.on('load', function() {
                 map.addSource('reports', {
                   'type': 'geojson',
-                  data: '/kart/geojson',
+                  data: '<%= urls.map %>/geojson',
                   cluster: true,
                   clusterMaxZoom: 100, // Max zoom to cluster points on
                   clusterRadius: 80,

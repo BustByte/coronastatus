@@ -1,5 +1,6 @@
 <%
-  const passcode = locals.passcode;
+  const { passcode, baseUrl, urls } = locals;
+
 %>
 
 <!DOCTYPE html>	
@@ -21,15 +22,15 @@
               Da kan du gå inn og endre din helsetilstand dersom den endrer seg.
             </p>
             <div class="profile-url">
-              <span id="link-to-be-copied">coronastatus.no/helsetilstand/<%= passcode %></span>
+              <span id="link-to-be-copied"><%= baseUrl %><%= urls.profile %>/<%= passcode %></span>
               <div>
-                <button id="profile-url-id" class="copy-icon" data-clipboard-text="coronastatus.no/helsetilstand/<%= passcode %>">
+                <button id="profile-url-id" class="copy-icon" data-clipboard-text="<%= baseUrl %><%= urls.profile %>/<%= passcode %>">
                   <i class="fas fa-copy"></i>
                 </button>
               </div>
             </div>
             <div id="profile-copy-status-text" class="alert" style="display:none;" role="alert"></div>
-            <form method="get" action="/helsetilstand/<%= passcode %>">
+            <form method="get" action="<%= urls.profile %>/<%= passcode %>">
               <div class="row">
                 <div class="col-12">
                   <input type="hidden" name="success" value="true" />

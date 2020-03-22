@@ -8,7 +8,7 @@ export const swaggerDocument = {
   openapi: '3.0.1',
   info: {
     version: '0.0.1',
-    title: 'coronastatus.no API',
+    title: 'Coronastatus API',
     description:
       'This API queries the COVID-19 health status reports submitted by users',
     termsOfService: '',
