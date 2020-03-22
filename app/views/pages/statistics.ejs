@@ -2,7 +2,6 @@
   const totalPeopleInContactWithInfected = locals.inContactWithInfectedStats.total;
   const totalInfectedPeopleWithSymptoms = locals.infectedStats.symptomStats.total;
   const totalPeopleWithSymptoms = locals.allSymptomsStats.symptomStats.total;
-
   function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   }
@@ -17,24 +16,24 @@
     <div id="page-wrapper">
       <section id="main" class="wrapper">
         <div class="inner">
-          <h1>Statistikk</h1>
+          <h1><%= __('Statistics') %></h1>
           <form method="GET" action="/api/reports/reports.csv" style="margin-bottom: 0">
             <ul class="actions">
               <li>
-                <input type="submit" value="Last ned datasett som CSV">
+                <input type="submit" value="<%= __('Download the dataset as CSV') %>">
               </li>
             </ul>
           </form>
-          <h2 class="stat-heading">COVID-19-smittede</h2>
-          <p>Totalt har <%= numberWithSpaces(totalInfectedPeopleWithSymptoms) %> personer rapportert at de har testet positivt på COVID-19 og har symptomer.</p>
+          <h2 class="stat-heading"><%= __('COVID-19 infected') %></h2>
+          <p>In total <%= numberWithSpaces(totalInfectedPeopleWithSymptoms) %> people have reported that they have tested positive for COVID-19 and experience symptoms.</p>
           <div class="stat-layout">
             <div class="stat-cell">
-              <h3 class="stat-heading">Symptomer</h3>
+              <h3 class="stat-heading"><%= __('Symptoms') %></h3>
               <canvas id="infectedSymptomsChart"></canvas>
             </div>
             <div class="stat-cell">
-              <h3 class="stat-heading">Testresultater</h2>
-              <p>Totalt har <%= numberWithSpaces(totalPeopleInContactWithInfected) %> personer rapportert at de har testet seg for COVID-19.</p>
+              <h3 class="stat-heading"><%= __('Test results') %></h3>
+              <p>In total <%= numberWithSpaces(totalPeopleInContactWithInfected) %> people have reported that they have been tested for COVID-19.</p>
               <div class="stat-layout">
                 <div class="stat-cell">
                   <canvas id="testResultStats"></canvas>
@@ -42,24 +41,24 @@
               </div>
             </div>
           </div>
-          
-          <h2 class="stat-heading">Nærkontakter</h2>
-          <p>Totalt har <%= numberWithSpaces(totalPeopleInContactWithInfected) %> personer rapportert at de har hatt nærkontakt med en person som har testet positivt på COVID-19.</p>
+
+          <h2 class="stat-heading"><%= __('Close contacts') %></h2>
+          <p>In total <%= numberWithSpaces(totalPeopleInContactWithInfected) %> people have reported that they have been in close contact with a person who was tested positive for COVID-19.</p>
           <div class="stat-layout">
             <div class="stat-cell">
-              <h3 class="stat-heading">Symptomer</h3>
+              <h3 class="stat-heading"><%= __('Symptoms') %></h3>
               <canvas id="inContactWithInfectedChart"></canvas>
             </div>
             <div class="stat-cell">
-              <h3 class="stat-heading">Nøkkeltall</h3>
-              <div>Av de som har rapportert at de har hatt nærkontakt med en person med påvist COVID-19-smitte, har:</div>
+              <h3 class="stat-heading"><%= __('Key figures') %></h3>
+              <div><%= __('Of those who reported that they have been in close contact with someone that tested positive for COVID-19, have:') %></div>
               <div class="stat-number-layout">
                 <div class="stat-number-cell">
                   <div class="stat-number-cell__number">
                     <%= locals.inContactWithInfectedStats.percentageWithTwoMostCommonSymptoms %> %
                   </div>
                   <div class="stat-number-cell__description">
-                    rapportert at de har de to vanligste symptomene som smittede har.
+                      <%= __('reported that they experience the two most common symptoms those who are infected experience.') %>
                   </div>
                 </div>
                 <div class="stat-number-cell">
@@ -67,30 +66,33 @@
                     <%= locals.inContactWithInfectedStats.percentageWithThreeMostCommonSymptoms %> %
                   </div>
                   <div class="stat-number-cell__description">
-                    rapportert at de har de tre vanligste symptomene som smittede har.
+                      <%= __('reported that they experience the three most common symptoms those who are infected experience.') %>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <h2 class="stat-heading">Alle innrapporterte</h2>
-          <p>Totalt har <%= numberWithSpaces(totalPeopleWithSymptoms) %> personer rapportert at de har symptomer.</p>
+          <h2 class="stat-heading"><%= __('All submissions') %></h2>
+          <p>
+            <%= __("In total") %>
+            <%= numberWithSpaces(totalPeopleWithSymptoms) %>
+            <%= __('people have reported that they experience symptoms.') %></p>
           <div class="stat-layout">
             <div class="stat-cell">
-              <h3 class="stat-heading">Symptomer</h3>
+              <h3 class="stat-heading"><%= __('Symptoms') %></h3>
               <canvas id="allSymptomsChart"></canvas>
             </div>
             <div class="stat-cell">
-              <h3 class="stat-heading">Nøkkeltall</h3>
-              <div>Av alle som har rapportert, har:</div>
+              <h3 class="stat-heading"><%= __('Key figures') %></h3>
+              <div><%= __('Everyone who has submitted a report, also has:') %></div>
               <div class="stat-number-layout">
                 <div class="stat-number-cell">
                   <div class="stat-number-cell__number">
                      <%= locals.allSymptomsStats.percentageWithTwoMostCommonSymptoms %> %
                   </div>
                   <div class="stat-number-cell__description">
-                    rapportert at de har de to vanligste symptomene som smittede har.
+                      <%= __('reported that they experience the two most common symptoms those who are infected experience.') %>
                   </div>
                 </div>
                 <div class="stat-number-cell">
@@ -98,52 +100,52 @@
                     <%= locals.allSymptomsStats.percentageWithThreeMostCommonSymptoms %> %
                   </div>
                   <div class="stat-number-cell__description">
-                    rapportert at de har de tre vanligste symptomene som smittede har.
+                      <%= __('reported that they experience the three most common symptoms those who are infected experience.') %>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <h2 class="stat-heading">Antall rapporteringer</h2>
+          <h2 class="stat-heading"><%= __('Total number of reports') %></h2>
           <canvas id="totalReportsChart"></canvas>
-          
-          <h2 class="stat-heading">Positive testresultater og nærkontakt</h2>
+
+          <h2 class="stat-heading"><%= __('Positive test results and close contact') %></h2>
           <canvas id="infectedAndContactStats"></canvas>
 
-          <h2 class="stat-heading">Avklaringer datagrunnlag</h2>
-          <p style="margin-bottom: 0.5rem;">Spørsmål om nærkontakt ble lagt til 16. mars kl. 22:30. Noen symptomer var ikke en del av skjema fra starten av:</p>
+          <h2 class="stat-heading"><%= __('Clarifications data basis') %></h2>
+          <p style="margin-bottom: 0.5rem;"><%= __('Questions about close contact were added on 16 March at. 10:30 p.m.. Some symptoms were not part of the form from the beginning:') %></p>
           <div style="max-width: 500px" class="table-wrapper">
             <table class="alt compact">
               <thead>
                 <tr>
-                  <th>Symptom</th>
-                  <th>Lagt til i skjema</th>
+                  <th><%= __('Symptom') %></th>
+                  <th><%= __('Added to form') %></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Hodepine</td>
+                  <td><%= __('Headache') %></td>
                   <td>16. mars kl. 00:23</td>
                 </tr>
                 <tr>
-                  <td>Vondt i halsen</td>
+                  <td><%= __('Sore throat') %></td>
                   <td>16. mars kl. 00:23</td>
                 </tr>
                 <tr>
-                  <td>Tap av smakssans</td>
+                  <td><%= __('Loss of sense of taste') %></td>
                   <td>17. mars kl. 10:26</td>
                 </tr>
                 <tr>
-                  <td>Tap av luktesans</td>
+                  <td><%= __('Loss of sense of smell') %></td>
                   <td>17. mars kl. 10:26</td>
                 </tr>
                 <tr>
-                  <td>Slimhoste</td>
+                  <td><%= __('Mucus cough') %></td>
                   <td>17. mars kl. 16:28</td>
                 </tr>
                 <tr>
-                  <td>Tett eller rennende nese</td>
+                  <td><%= __('Stuffy or runny nose') %></td>
                   <td>17. mars kl. 16:28</td>
                 </tr>
               </tbody>
@@ -163,7 +165,7 @@
         data: {
           labels: infectedSymptoms.labels,
           datasets: [{
-            label: 'Antall rapportert hos påvist covid-19-smittede',
+            label: '<%= __('Number reported in COVID-19 infected patients') %>',
             backgroundColor: '#af2222',
             data: infectedSymptoms.values
           }]
@@ -180,7 +182,7 @@
         data: {
           labels: symptoms.labels,
           datasets: [{
-            label: 'Antall rapportert',
+            label: '<%= __("Number reported") %>',
             backgroundColor: '#da7823',
             data: symptoms.values
           }]
@@ -197,13 +199,13 @@
         data: {
           datasets: [
             {
-              label: 'Rapporteringer med symptomer',
+              label: '<%= __('Reports with symptoms') %>',
               data: totalReportStats.numberOfReportsWithSymptomsStat,
               backgroundColor: 'rgba(255, 99, 132, 0.2)',
               borderColor: 'salmon',
             },
             {
-              label: 'Rapporteringer',
+              label: '<%= __('Reports') %>',
               data: totalReportStats.numberOfReportsStat,
               backgroundColor: 'rgba(0, 200, 255, 0.2)',
               borderColor: 'lightblue'
@@ -240,7 +242,7 @@
               'lightblue',
             ],
           }],
-          labels: ['I nærkontakt med symptomer', 'I nærkontakt uten symptomer']
+          labels: ['<% __('In close contact with symptoms') %>', '<% __('In close contact without symptoms') %>']
         },
         options: {}
       });
@@ -254,13 +256,13 @@
         data: {
           datasets: [
             {
-              label: 'Testet positivt',
+              label: '<%= __("Tested positive") %>',
               data: infectedAndContactStats.numberOfInfectedStat,
               backgroundColor: 'rgba(255, 99, 132, 0.2)',
               borderColor: 'salmon',
             },
             {
-              label: 'Nærkontakt med noen som har testet positivt',
+              label: '<%= __("Close contact with someone who has tested positive") %>',
               data: infectedAndContactStats.numberOfInContactStat,
               backgroundColor: 'rgba(0, 200, 255, 0.2)',
               borderColor: 'lightblue'
@@ -300,7 +302,7 @@
               'rgb(255, 205, 86)',
             ],
           }],
-          labels: ['Testet positivt', 'Testet negativt', 'Venter på svar']
+          labels: ['<%= __("Tested positive") %>', '<%= __("Tested negative") %>', '<%= __("Waiting for result") %>']
         },
         options: {}
       });
