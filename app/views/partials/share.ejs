@@ -1,8 +1,12 @@
+<%
+  const { baseUrl } = locals;
+%>
+
 <div class="share-buttons" style="margin-top: 1rem;">
   <a
     class="facebook-button"
     target="_blank"
-    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcoronastatus.no%2F&amp;src=sdkpreparse"
+    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F<%= baseUrl %>%2F&amp;src=sdkpreparse"
     ><%= __('Share on') %> Facebook <strong>1,4k</strong></a
   >
 </div>

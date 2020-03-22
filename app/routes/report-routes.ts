@@ -4,6 +4,7 @@ import { Symptom, CovidReport, Sex, TestResult } from '../domain/types';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
 import { getPasscodeCreator } from '../util/PasscodeCreator';
 import { aggregateCovidReports } from '../util/report-aggregator';
+import { urls } from '../domain/urls';
 
 function determineRemoteAddress(req: Request): string {
   const ipWithPort =
@@ -20,27 +21,17 @@ const router = express.Router();
 const reportRepo = new CovidReportRepository();
 const passcodeCreator = getPasscodeCreator();
 
-// When the government have their systems ready, this should be used on "/" instead.
-router.get('/move-to-root-when-helsenorge-is-ready', async (req, res) => {
-  return res.render('pages/helsenorge');
-});
-
 router.get('/', async (req, res) => {
   const reports = await reportRepo.getLatestCovidReports();
   const aggregated = aggregateCovidReports(reports);
   return res.render('pages/report', { aggregated });
 });
 
-router.get('/numberOfReports', async (req, res) => {
-  const numberOfReports = await reportRepo.countNumberOfReports();
-  return res.json({ numberOfReports });
-});
-
-router.get('/helsetilstand/:passcode', async (req, res) => {
+router.get(`${urls.profile}/:passcode`, async (req, res) => {
   const success = req.query?.success === 'true';
   const { passcode } = req.params;
   if (!passcode) {
-    return res.redirect('/');
+    return res.redirect(res.locals.urls.submitReport);
   }
   const profile = await reportRepo.getCovidReportByPasscode(passcode);
   if (profile) {
@@ -53,7 +44,7 @@ router.get('/helsetilstand/:passcode', async (req, res) => {
       aggregated
     });
   }
-  return res.redirect('/');
+  return res.redirect(res.locals.urls.submitReport);
 });
 
 const extractTestResult = (req: Request): TestResult | undefined => {
@@ -113,17 +104,9 @@ router.post('/', createReportRateLimit, async (req, res) => {
   const passcode = req.body['passcode'] || passcodeCreator.createPasscode();
   reportRepo.addNewCovidReport(passcode, covidReport);
   if (req.body['passcode']) {
-    return res.redirect(`/helsetilstand/${passcode}?success=true`);
+    return res.redirect(`${res.locals.urls.profile}/${passcode}?success=true`);
   }
   return res.render('pages/confirm-profile', { passcode });
-});
-
-router.get('/personvern', (req, res) => {
-  return res.render('pages/privacy-policy');
-});
-
-router.get('/frivillige', (req, res) => {
-  return res.render('pages/frivillige');
 });
 
 export default router;
