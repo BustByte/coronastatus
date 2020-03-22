@@ -6,6 +6,12 @@ import { getPasscodeCreator } from '../util/PasscodeCreator';
 import { aggregateCovidReports } from '../util/report-aggregator';
 import { urls } from '../domain/urls';
 
+const cookieOptions = {
+  maxAge: 31557600000, // maxAge is set to 1 year in ms
+  httpOnly: false, // httpOnly means the cookie is only accessible by the web server
+  signed: false // signed indicates if the cookie should be signed
+};
+
 function determineRemoteAddress(req: Request): string {
   const ipWithPort =
     (req.headers['x-real-ip'] as string) || req.connection.remoteAddress;
@@ -26,15 +32,27 @@ router.get('/', async (req, res) => {
   }
   const reports = await reportRepo.getLatestCovidReports();
   const aggregated = aggregateCovidReports(reports);
-  return res.render('pages/report', { aggregated });
+  return res.render('pages/report', {
+    aggregated,
+    cleared: req.query?.cleared === 'true' || false
+  });
 });
 
 router.get(`${urls.profile}/:passcode`, async (req, res) => {
   const success = req.query?.success === 'true';
+  const clear = req.query?.clear === 'true';
+
   const { passcode } = req.params;
   if (!passcode) {
     return res.redirect(res.locals.urls.submitReport);
   }
+
+  // When somebody wants to clear the cookie and register as a new user
+  if (clear) {
+    res.cookie('passcode', '', { ...cookieOptions, maxAge: -1000000 });
+    return res.redirect('/?cleared=true');
+  }
+
   const profile = await reportRepo.getCovidReportByPasscode(passcode);
   if (profile) {
     const reports = await reportRepo.getLatestCovidReports();
@@ -108,11 +126,6 @@ router.post('/', createReportRateLimit, async (req, res) => {
   const passcode = req.body['passcode'] || passcodeCreator.createPasscode();
 
   const acceptRemember = req.body['accept-remember'] === 'on';
-  const cookieOptions = {
-    maxAge: 31557600000, // maxAge is set to 1 year in ms
-    httpOnly: false, // httpOnly means the cookie is only accessible by the web server
-    signed: false // signed indicates if the cookie should be signed
-  };
 
   // Set cookie with passcode
   if (acceptRemember) res.cookie('passcode', passcode, cookieOptions);
@@ -121,7 +134,10 @@ router.post('/', createReportRateLimit, async (req, res) => {
   if (req.body['passcode']) {
     return res.redirect(`${res.locals.urls.profile}/${passcode}?success=true`);
   }
-  return res.render('pages/confirm-profile', { passcode });
+  return res.render('pages/confirm-profile', {
+    passcode,
+    hasCookie: acceptRemember
+  });
 });
 
 export default router;

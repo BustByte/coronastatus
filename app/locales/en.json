@@ -139,5 +139,10 @@
   "I agree to set a cookie so I can change my health condition later e.g. to report recovery/getting sick": "I agree to set a cookie so I can change my health condition later e.g. to report recovery/getting sick",
   "required": "required",
   "recommended": "recommended",
-  "The link has been copied.": "The link has been copied."
+  "Below is your personal health information. If you want to register another person on this computer, save or write down your personal link": "Below is your personal health information. If you want to register another person on this computer, save or write down your personal link",
+  "Your personal health information is cleared from this computer. You can now use this computer for another user.": "Your personal health information is cleared from this computer. You can now use this computer for another user.",
+  "We stored your data in a cookie so come back later to\n                update your status": "We stored your data in a cookie so come back later to\n                update your status",
+  "If you use this computer with multiple users, please use\n                this link to update your status. Write it down somewhere or save\n                it on your computer.": "If you use this computer with multiple users, please use\n                this link to update your status. Write it down somewhere or save\n                it on your computer.",
+  "The link has been copied.": "The link has been copied.",
+  "and clear this form.": "and clear this form."
 }

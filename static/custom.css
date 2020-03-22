@@ -129,7 +129,7 @@ span.logo__text {
 
 span.logo__text::first-letter {
   text-transform: uppercase;
-} 
+}
 
 .menu > a {
   display: -webkit-box;
@@ -471,7 +471,7 @@ label i {
 p.slogan {
   font-size: 1.3rem;
   font-weight: 300;
-  margin: 2rem 0 0;
+  margin: 1rem 0 0;
 }
 
 .share-buttons {
