@@ -16,6 +16,8 @@ We don't know how many people have COVID-19. So we made a website where people c
 
 The government is working on this, but they're too slow in getting something out fast.
 
+## Mentions in the media
+
 | Title                                                                       | Country        | URL       |
 |-----------------------------------------------------------------------------|:--------------:|-----------|           
 | Self-report system for monitoring COVID19 needs to be in place immediately! |     🇳🇴         | [Read here](https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona-maa-paa-plass-naa-petter-bae-brandtzaeg) |
@@ -24,10 +26,6 @@ The government is working on this, but they're too slow in getting something out
 ## Who's behind this?
 
 A bunch of developers from around the world that wanted to help out. This is not an official website from the health services.
-
-## Mentions in the media
-
-- https://www.tu.no/artikler/utviklere-om-korona-register-vi-kastet-oss-rundt-og-laget-dette/487568
 
 ## How can I contribute?
 
