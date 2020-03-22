@@ -36,7 +36,6 @@
   "Privacy Policy": "Privacy Policy",
   "Thank you for your contribution!": "Thank you for your contribution!",
   "The government has now launched their own self-report system, please use that instead.": "The government has now launched their own self-report system, please use that instead.",
-  "www.nhs.uk": "www.nhs.uk",
   "Go to the National health service website": "Go to the National health service website",
   "Report status by zip code": "Report status by zip code",
   "The markers correspond to coordinates of zip codes, they have nothing to do with individuals.": "The markers correspond to coordinates of zip codes, they have nothing to do with individuals.",
@@ -44,4 +43,7 @@
   "Has symptoms": "Has symptoms",
   "Tested positive": "Tested positive",
   "Zip code information ": "Zip code information ",
+  "Join us in the most important crowdsource!": "Join us in the most important crowdsource!",
+  "Make your voluntary contribution to the health care system and register your health condition now. Together we can create an overview.": "Make your voluntary contribution to the health care system and register your health condition now. Together we can create an overview.",
+  "Share on": "Share on"
 }

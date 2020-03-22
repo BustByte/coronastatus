@@ -16,11 +16,11 @@
       <div class="inner">
         <div class="row">
           <div class="col-10 col-12-small">
-            <h1><% __('Before proceeding please note down the following link') %></h1>
+            <h1><%= __('Before proceeding please note down the following link') %></h1>
             <p class="subtitle">
-              <% __('Save the following link somewhere, or bookmark it in your browser.') %>
+              <%= __('Save the following link somewhere, or bookmark it in your browser.') %>
               <br/>
-              <% __('That way you can update your report if your health condition changes.') %>
+              <%= __('That way you can update your report if your health condition changes.') %>
             </p>
             <div class="profile-url">
               <span id="link-to-be-copied"><%= baseUrl %><%= urls.profile %>/<%= passcode %></span>
@@ -36,12 +36,12 @@
                 <div class="col-12">
                   <input type="hidden" name="success" value="true" />
                   <input required type="checkbox" id="accept" name="accept">
-                  <label for="accept" class="normal-font"><% __('I've noted down the link.') %></label>
+                  <label for="accept" class="normal-font"><%= __('I've noted down the link.') %></label>
                 </div>
                 <div class="col-12">
                   <ul class="actions">
                     <li>
-                      <input class="inverse" type="submit" value="<% __('Proceed') %>">
+                      <input class="inverse" type="submit" value="<%= __('Proceed') %>">
                     </li>
                   </ul>
                 </div>
@@ -72,13 +72,13 @@
 
     clipboard.on('success',function(e){
       if(statusText.style.display == 'none'){
-        setStatusAlert(statusText,'<% __('The link has been copied.') %>','alert-success');
+        setStatusAlert(statusText,'<%= __('The link has been copied.') %>','alert-success');
       }
     });
 
     clipboard.on('error',function(e){
       if(statusText.style.display == 'none'){
-        setStatusAlert(statusText,'<% __('Could not copy the link, please copy it yourself') %>','alert-error');
+        setStatusAlert(statusText,'<%= __('Could not copy the link, please copy it yourself') %>','alert-error');
       }
     });
   </script>
