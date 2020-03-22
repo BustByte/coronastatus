@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="<%= locals.htmlLang %>">
 <head>
   <%- include('partials/head') -%>
 </head>
@@ -10,8 +10,8 @@
     <div id="page-wrapper">
       <section id="main" class="wrapper">
         <div class="inner privacy-policy">
-            <h1>Bidragsytere</h1>
-            <p class="with-top-margin">Denne nettsiden er laget med god hjelp fra frivillige. I tilfeldig rekkefølge:</p>
+            <h1><%= __('Contributors') %></h1>
+            <p class="with-top-margin"><%= __("This website is made with help from volunteers. In no particular order:") %></p>
             <ul>
               <li>Kristoffer Sundmyhr</li>
               <li>Jan Magne Andersen</li>
@@ -21,13 +21,13 @@
               <li>William Benjamin Rode</li>
               <li>Kai H T Mortensen-Langhaug</li>
               <li>Kåre Digernes</li>
-              <li><a target="_blank" href="https://github.com/BustByte/coronastatus.no/graphs/contributors">...og flere</a></li>
+              <li><a target="_blank" href="https://github.com/BustByte/coronastatus.no/graphs/contributors"><%= __("...and others") %></a></li>
             </ul>
-            <p>Koden for nettsiden finnes <a href="https://github.com/BustByte/coronastatus.no">her</a>.
+            <p><%= __("The code for the website can be found") %> <a href="https://github.com/BustByte/coronastatus.no"><%= __("here") %></a>.
         </div>
     </section>
-    <%- include('partials/footer') -%>
   </div>
+  <%- include('partials/footer') -%>
   <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
 </body>
 </html>

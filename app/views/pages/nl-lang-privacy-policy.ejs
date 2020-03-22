@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="<%= locals.htmlLang %>">
+
+<head>
+  <%- include('partials/head') -%>
+</head>
+
+<body>
+  <%- include('partials/disclaimer') -%>
+  <%- include('partials/menu') -%>
+  <%- include('partials/hamburger-menu') -%>
+  <div id="page-wrapper">
+    <section id="main" class="wrapper">
+      <div class="inner privacy-policy">
+        <h1><%= __("Privacy Policy") %></h1>
+        <p class="subtitle">Welke gegevens slaan we over u op en waarom?</p>
+        <h3>Geslacht</h3>
+        <p>We slaan geslacht op om iets te kunnen zeggen over de verdeling tussen mannen en vrouwen met klachten.</p>
+        <h3>Leeftijdsgroep</h3>
+        <p>We store age groups to distinguish which age groups experience symptoms.</p>
+        <h3>Postcode</h3>
+        <p>
+          Om het publiek inzicht te geven in hoeveel mensen symptomen vertonen in het gebied waar ze wonen, slaan we
+          postcodes op.
+          Op deze manier kunnen we een overzicht tonen van het aantal dat symptomen heeft op verschillende gebieden.
+        </p>
+        <h3>Test status</h3>
+        <p>
+          We slaan ook op of u bent getest en wat de resultaten zijn van deze test. Met deze informatie kunnen wij een
+          percentage
+          berekenen van de deelnemers die symptomen vertonen. Dit geven wij weer op een kaart.
+        </p>
+        <h3>Symptomen</h3>
+        <p>
+          De symptomen die u indient, geven aan of u mogelijk besmet bent met het Covid-19-virus. De timing van wanneer
+          de symptomen begonnen,
+          geeft ook een indicatie van hoe lang u al besmettelijk bent. We verzamelen deze gegevens en visualiseren deze
+          anoniem.
+          Op deze manier kan het publiek inzicht krijgen in hoe groot de cijfers kunnen zijn.
+        </p>
+        <h2>Cookies</h2>
+        <p>
+          We gebruiken cookies om gegevens van deelnemers op te slaan in hun eigen browser. Wij vragen hiervoor eerst
+          toestemming.
+          Met deze cookies kunnen deelnemers anoniem laten weten als hun klachten zijn afgenomen.
+        </p>
+        <h2>Gegevens verwijderen</h2>
+        <p>Alle opgeslagen gegevens zijn geanonimiseerd en we slaan geen persoonlijke gegevens op die kunnen worden
+          verwijderd.</p>
+        <h2>Gegevens delen met RIVM</h2>
+        <p>Desgewenst verstrekken wij anonieme gegevens aan het Rijksinstituut voor Volksgezondheid en Milieu.</p>
+        <h2>Analytics</h2>
+        <p>
+          We gebruiken analytics om inzicht te krijgen in het gebruik van de website. We gebruiken daarvoor <a
+            href="https://simpleanaltyics.io" target="_blank">Simple Analytics</a>
+          - een partij die geen persoonsgegevens op slaat en geen cookies plaatst.</p>
+        <h2>Vraag je je iets af?</h2>
+        <p>Neem contact op via Twitter: <a href="https://twitter.com/coronastatusNL"
+            target="_blank">@coronastatusNL</a>.</p>
+      </div>
+    </section>
+  </div>
+  <script>
+    // Remove query params from url
+    if (window.history.replaceState) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  </script>
+  <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
+</body>
+
+</html>

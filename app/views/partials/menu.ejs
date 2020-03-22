@@ -1,21 +1,28 @@
 <%
-  const isOnProfile = !locals.activePage || locals.activePage === 'helsetilstand';
-  const isOnMap = locals.activePage === 'kart';
-  const isOnPrivacyPolicy = locals.activePage === 'personvern';
-  const isOnStats = locals.activePage === 'statistikk';
+  const urls = locals.urls;
+  const isOnProfile = locals.activePage === urls.submitReport || locals.activePage === urls.profile;
+  const isOnMap = locals.activePage === urls.map;
+  const isOnPrivacyPolicy = locals.activePage === urls.privacyPolicy;
+  const isOnStats = locals.activePage === urls.statistics;
   const useWhiteLogo = locals.useWhiteLogo;
+  const baseUrl = locals.baseUrl;
   const imageSubfolder = locals.imageSubfolder;
 %>
 
 <div class="menu wrapper">
   <div class="inner">
-    <div class="logo"><a href="/"><img alt="Logo" src="/static/<%= imageSubfolder %>/<%= useWhiteLogo ? 'logo-white.png' : 'logo.png' %>"></a></div>
+    <div class="logo<%= useWhiteLogo && ' white' %>">
+      <a href="/">
+        <img alt="Logo" src="/static/corona-icon.png" />
+        <span class="logo__text"><%= baseUrl %></span>
+      </a>
+    </div>
     <div class="menu__links">
-      <a href="/" class="<%= isOnProfile ? 'active' : '' %>">Din helsetilstand</a>
-      <a href="/kart" class="<%= isOnMap ? 'active' : '' %>">Kart</a>
-      <a href="/statistikk" class="<%= isOnStats ? 'active' : '' %>">Statistikk</a>
-      <a href="/personvern" class="<%= isOnPrivacyPolicy ? 'active' : '' %>">Personvern</a>
-      <a href="/api-docs" target="_blank">API</a></li>
+      <a href="<%= urls.submitReport %>" class="<%= isOnProfile ? 'active' : '' %>"><%= __("Your state of health") %></a>
+      <a href="<%= urls.map %>" class="<%= isOnMap ? 'active' : '' %>"><%= __("Map") %></a>
+      <a href="<%= urls.statistics %>" class="<%= isOnStats ? 'active' : '' %>"><%= __("Statistics") %></a>
+      <a href="<%= urls.privacyPolicy %>" class="<%= isOnPrivacyPolicy ? 'active' : '' %>"><%= __("Privacy") %></a>
+      <a href="<%= urls.apiDocs %>" target="_blank"><%= __("API") %></a></li>
     </div>
     <div class="hamburger-menu-button">
       <i class="fas fa-bars hamburger-menu-icon"></i>

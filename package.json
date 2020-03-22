@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node app/server.ts",
+    "dev": "nodemon",
     "test": "jest",
     "lint": "eslint --ext .ts app/",
     "lintfix": "eslint --ext .ts app/ --fix",
@@ -47,6 +48,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
     "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "ts-jest": "^25.2.1"
   },
