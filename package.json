@@ -7,7 +7,7 @@
     "test": "jest",
     "lint": "eslint --ext .ts app/",
     "lintfix": "eslint --ext .ts app/ --fix",
-    "serve": "NODE_ENV=production ts-node app/server.ts"
+    "serve": "NODE_ENV=production ts-node app/server.ts",
   },
   "dependencies": {
     "body-parser": "^1.19.0",
