@@ -1,15 +1,16 @@
 <%
-  const title = locals.metaTitle || 'Bli med på Norges største dugnad!'
-  const metaDescription = locals.metaDescription || 'Gi ditt frivillige bidrag til helsevesenet og registrer din helsetilstand nå. Sammen skaper vi oversikt.'
-  const baseUrl = locals.baseUrl;
-  const imageSubfolder = locals.imageSubfolder;
-  const metaImage1 = `${baseUrl}/static/${imageSubfolder}/social1.png`;
-  const metaImage2 = `${baseUrl}/static/${imageSubfolder}/social2.png`;
+const title =  __('Join us in the most important crowdsource!');
+const metaDescription = __('Make your voluntary contribution to the health care system and register your health condition now. Together we can create an overview.');
+const baseUrl = locals.baseUrl;
+const imageSubfolder = locals.imageSubfolder;
+const metaImage1 = `${baseUrl}/static/${imageSubfolder}/social1.png`;
+const metaImage2 = `${baseUrl}/static/${imageSubfolder}/social2.png`;
+const networkPathReference  = baseUrl.replace(/(^\w+:|^)\/\//, '');
 %>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coronastatus.no</title>
+<title><%= networkPathReference %></title>
 <meta name="description" content="<%= metaDescription %>">
 
 
