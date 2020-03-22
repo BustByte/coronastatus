@@ -1,3 +1,4 @@
+/* eslint-disable import/no-dynamic-require */
 import { PostalCode, Municipality, Coordinate } from '../domain/types';
 import { LANGUAGE } from '../../config.json';
 
