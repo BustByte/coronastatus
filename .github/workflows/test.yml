@@ -24,5 +24,6 @@ jobs:
     - run: cp config.example.json config.json
     - run: yarn install
     - run: yarn test
+    - run: yarn lint
       env:
         CI: true
