@@ -3,23 +3,24 @@
 
 %>
 
-<!DOCTYPE html>	
-<html lang="no">	
+<!DOCTYPE html>
+<html lang="<%= locals.htmlLang %>">
 <head>
-<%- include('partials/head') -%>	
+<%- include('partials/head') -%>
 </head>
 <body>
   <%- include('partials/disclaimer') -%>
   <%- include('partials/menu') -%>
   <div id="page-wrapper">
-    <section id="main" class="wrapper">	
+    <section id="main" class="wrapper">
       <div class="inner">
         <div class="row">
           <div class="col-10 col-12-small">
-            <h1>Før du går videre må du ta vare på følgende lenke</h1>
+            <h1><%= __('Before proceeding please note down the following link') %></h1>
             <p class="subtitle">
-              Lagre den følgende lenken et sted, eller opprett et bokmerke til siden.<br/>
-              Da kan du gå inn og endre din helsetilstand dersom den endrer seg.
+              <%= __('Save the following link somewhere, or bookmark it in your browser.') %>
+              <br/>
+              <%= __('That way you can update your report if your health condition changes.') %>
             </p>
             <div class="profile-url">
               <span id="link-to-be-copied"><%= baseUrl %><%= urls.profile %>/<%= passcode %></span>
@@ -35,25 +36,25 @@
                 <div class="col-12">
                   <input type="hidden" name="success" value="true" />
                   <input required type="checkbox" id="accept" name="accept">
-                  <label for="accept" class="normal-font">Jeg har tatt vare på lenken</label>
+                  <label for="accept" class="normal-font"><%= __('I've noted down the link.') %></label>
                 </div>
                 <div class="col-12">
                   <ul class="actions">
                     <li>
-                      <input class="inverse" type="submit" value="Gå videre">
+                      <input class="inverse" type="submit" value="<%= __('Proceed') %>">
                     </li>
                   </ul>
                 </div>
               </div>
-            </form>	
-          </div>	
+            </form>
+          </div>
         </div>
       </div>
-    </section>	
-    <%- include('partials/footer') -%>	
-  </div>	
+    </section>
+    <%- include('partials/footer') -%>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
-  <script>	
+  <script>
     // Remove query params from url
     if (window.history.replaceState) {
       window.history.replaceState({}, document.title, window.location.pathname);
@@ -71,13 +72,13 @@
 
     clipboard.on('success',function(e){
       if(statusText.style.display == 'none'){
-        setStatusAlert(statusText,'Linken er kopiert','alert-success');
+        setStatusAlert(statusText,'<%= __('The link has been copied.') %>','alert-success');
       }
     });
 
     clipboard.on('error',function(e){
       if(statusText.style.display == 'none'){
-        setStatusAlert(statusText,'Klarte ikke å kopiere linke til utklippstavlen. Skriv ned linken selv.','alert-error');
+        setStatusAlert(statusText,'<%= __('Could not copy the link, please copy it yourself') %>','alert-error');
       }
     });
   </script>
@@ -85,5 +86,5 @@
     // This is done so that we can show a hint on the front page that a profile might exist, when entering from the same browser at a later time.
     window.localStorage.setItem("hasSubmittedProfile", "true");
   </script>
-</body>	
+</body>
 </html>

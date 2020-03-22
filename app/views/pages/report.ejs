@@ -32,7 +32,7 @@
 %>
 
 <!DOCTYPE html>
-<html lang="no">
+<html lang="<%= locals.htmlLang %>">
 <head>
 <%- include('partials/head') -%>
 </head>
@@ -40,7 +40,7 @@
   <%- include('partials/disclaimer') -%>
   <div id="has-submitted-alert" class="alert-dismissible wrapper">
     <div class="inner">
-      <div><b><%= __('Important') %>:</b> Bruk lenken du noterte deg sist for å endre din helsetilstand.</div>
+      <div><b><%= __('Important') %>:</b><%= __("Use the link you noted down last time to update your health condition") %></div>
       <button class="close" onclick="hasSubmittedAlertOnClick()">&times;</button>
     </div>
   </div>
@@ -55,9 +55,9 @@
             <div>
               <div class="info-box__icon"><i class="fa fa-moon"></i></div>
               <div class="info-box__content">
-                <h2>Store mørketall</h2>
+                <h2><%= __("Unreported cases") %></h2>
                 <p>
-                  Spredningen av COVID-19 i landet vårt er ukjent. Hjelp oss med å skape en bedre oversikt.
+                  <%= __("The spread of COVID-19 in our country is unknown. Help us create a better overview.") %>
                 </p>
               </div>
             </div>
@@ -68,9 +68,9 @@
             <div>
               <div class="info-box__icon"><i class="fa fa-hands-helping"></i></div>
               <div class="info-box__content">
-                <h2>Bidra anonymt</h2>
+                <h2><%= __("Contribute anonymously") %></h2>
                 <p>
-                  Rapporter din helsetilstand anonymt i skjemaet under.
+                  <%= __("Report your health condition anonymously") %>
                 </p>
               </div>
             </div>
@@ -81,9 +81,9 @@
             <div>
               <div class="info-box__icon"><i class="fa fa-microscope"></i></div>
               <div class="info-box__content">
-                <h2>Innsikt til alle</h2>
+                <h2><%= __("Insight for everyone") %></h2>
                 <p>
-                  Dataene er åpne for alle. Se kart og grafer, eller last ned dataene og gjør dine egne analyser.
+                  <%= __("The data is open to everyone. Look at maps and graphs, or download the data and create your own visualizations.") %>
                 </p>
               </div>
             </div>
@@ -94,8 +94,8 @@
             <div>
               <div class="info-box__icon"><i class="fa fa-code"></i></div>
               <div class="info-box__content">
-                <h2>Alt er åpent</h2>
-                <p>Tjenesten er åpen kildekode og laget i dugnadsånd. Du kan bidra i utviklingen.</p>
+                <h2><%= __("Everything is open") %></h2>
+                <p><%= __("The website is open source and built by volunteers. Feel free to join.") %></p>
               </div>
             </div>
           </div>
@@ -105,45 +105,45 @@
             <div class="stats__number">
               <%= numberWithSpaces(aggregated.numberOfReports) %>
             </div>
-            <div class="stats__description">Totalt innsendte</div>
+            <div class="stats__description"><%= __("Total reports") %></div>
           </div>
           <div class="info-box stats">
             <div class="stats__number">
               <%= numberWithSpaces(aggregated.numberOfConfirmedInfected) %> <span class="delimiter">/</span>
               <%= numberWithSpaces(aggregated.numberOfTested) %>
             </div>
-            <div class="stats__description">Smittede / har blitt testet</div>
+            <div class="stats__description"><%= __("Infected / Have been tested") %></div>
           </div>
           <div class="info-box stats">
             <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfContacts) %></div>
-            <div class="stats__description">I nærkontakt med smittet</div>
+            <div class="stats__description"><%= __("In close contact with someone who's infected") %></div>
           </div>
           <div class="info-box stats">
             <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfPeopleShowingSymptoms) %></div>
-            <div class="stats__description">Har symptomer</div>
+            <div class="stats__description"><%= __("Has symptoms") %></div>
           </div>
         </div>
         <% if(locals.didNotAcceptPrivacyPolicy) {%>
           <div class="alert alert-danger" role="alert">
-            Du må godkjenne personvernerklæringen for å rapportere dine data.
+            <%= __("You must approve the privacy statement to report your data.") %>
           </div>
         <% } %>
-        <h1><%= profile ? 'Din helsetilstand' : 'Rapporter din helsetilstand' %></h1>
+        <h1><%= profile ? __("Your state of health") : __("Report your health condition") %></h1>
         <% if(locals.success) {%>
           <div class="alert alert-success" role="alert">
-            Takk for ditt svar! Benytt denne lenken hvis helsetilstanden din endrer seg: <a target="_blank" href="<%= urls.profile %>/<%= passcode %>"><%= baseUrl %><%= urls.profile %>/<%= passcode %></a>. 
+            <%= __("Thank you for your contribution! Use this link if your health condition changes:") %><a target="_blank" href="<%= urls.profile %>/<%= passcode %>"><%= baseUrl %><%= urls.profile %>/<%= passcode %></a>.
           </div>
         <% } else { %>
-          <p class="slogan">Bli med på Norges viktigste dugnad! Selv om du er frisk håper vi du sender inn skjemaet – det er også verdifull informasjon!</p>
+          <p class="slogan"><%= __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information! ") %></p>
         <% } %>
         <%- include('partials/share') -%>
         <form method="post" action="/">
-          <h2>Geografi og demografi</h2>
+          <h2><%= __("Geography and demography") %></h2>
           <div class="row">
             <div class="col-5 col-12-small input-block">
-              <label class="with-top-margin" for="age">Din alder</label>
+              <label class="with-top-margin" for="age"><%= __("Your age") %></label>
               <select required name="age" id="Age">
-                <option value="" disabled selected>Velg din alder</option>
+                <option value="" disabled selected><% __("Choose your age") %></option>
                 <% for(var i=0; i<100; i+=10) {
                   const ageSpan = `${i} - ${i + 9}`;
                 %>
@@ -152,139 +152,139 @@
               </select>
             </div>
             <div class="col-5 col-12-small input-block">
-              <label  class="with-top-margin">Biologisk kjønn</label>
+              <label  class="with-top-margin"><%= __("Biological gender") %></label>
               <div class="row">
                 <div class="col-6">
                   <input required type="radio" id="gender-female" name="gender" value="female" <%= sex === 'FEMALE' ? 'checked' : '' %>>
-                  <label for="gender-female">Kvinne</label>
+                  <label for="gender-female"><%= __("Female") %></label>
                 </div>
                 <div class="col-6">
                   <input required type="radio" id="gender-male" name="gender" value="male" <%= sex === 'MALE' ? 'checked' : '' %>>
-                  <label for="gender-male">Mann</label>
+                  <label for="gender-male"><%= __("Male") %></label>
                 </div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-5 col-12-small input-block">
-              <label class="with-top-margin" for="postal-code"><%= __('Postal code') %></label>
+              <label class="with-top-margin" for="postal-code"><%= __('Zip code') %></label>
               <input required type="text" pattern="[0-9]{4}" maxlength="4" name="postal-code" id="postal-code" placeholder="1234" value="<%= postalCode %>">
             </div>
           </div>
-          <h2>Testing og symptomer</h2>
+          <h2><%= __('Testing and symptoms') %></h2>
           <div class="row">
             <div class="col-10 col-12-small input-block">
-              <label  class="with-top-margin">Har du vært i <a target="_blank" href="https://www.fhi.no/nettpub/coronavirus/helsepersonell/definisjoner-av-mistenkte-og-bekreftede-tilfeller-med-koronavirus-coronavir/">nærkontakt</a> med noen som har testet positivt på COVID-19?</label>
+              <label  class="with-top-margin"><%= __("Have you been in close contact with someone who was tested positive for COVID-19?") %></label>
               <div class="row">
                 <div class="col-3">
                   <input required type="radio" id="been-in-contact-with-yes" name="been-in-contact-with" value="yes" <%= hasBeenInContactWithInfected ? 'checked' : '' %>>
-                  <label for="been-in-contact-with-yes">Ja</label>
+                  <label for="been-in-contact-with-yes"><%= __('Yes') %></label>
                 </div>
                 <div class="col-3">
                   <input required type="radio" id="been-in-contact-with-no" name="been-in-contact-with" value="no" <%= hasBeenInContactWithInfected === false ? 'checked' : '' %>>
-                  <label for="been-in-contact-with-no">Nei</label>
+                  <label for="been-in-contact-with-no"><%= __('No') %></label>
                 </div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-5 col-12-small input-block">
-              <label  class="with-top-margin">Har du blitt testet for COVID-19?</label>
+              <label  class="with-top-margin"><%= __('Have you been tested for COVID-19?')%></label>
               <div class="row">
                 <div class="col-6">
                   <input required type="radio" id="been-tested-yes" name="been-tested" value="yes" onclick="changeTestResultDisplay(true)" <%= hasBeenTested ? 'checked' : '' %>>
-                  <label for="been-tested-yes">Ja</label>
+                  <label for="been-tested-yes"><%= __('Yes')%></label>
                 </div>
                 <div class="col-6">
                   <input required type="radio" id="been-tested-no" name="been-tested" value="no" onclick="changeTestResultDisplay(false)" <%= hasBeenTested === false ? 'checked' : '' %>>
-                  <label for="been-tested-no">Nei</label>
+                  <label for="been-tested-no"><%= __('No')%></label>
                 </div>
               </div>
             </div>
             <div class="col-5 col-12-small input-block" id="test-result-question" style="display:none">
-              <label  class="with-top-margin">Hva var svaret på testen?</label>
+              <label  class="with-top-margin"><%= __('What was the result?')%></label>
               <div class="row">
                 <div class="col-12">
                   <input type="radio" id="test-response-positive" name="test-response" value="positive" <%= testResult === 'POSITIVE' ? 'checked' : '' %>>
-                  <label for="test-response-positive">Positivt</label>
+                  <label for="test-response-positive"><%= __('Positive')%></label>
                 </div>
                 <div class="col-12">
                   <input type="radio" id="test-response-negative" name="test-response" value="negative" <%= testResult === 'NEGATIVE' ? 'checked' : '' %>>
-                  <label for="test-response-negative">Negativt</label>
+                  <label for="test-response-negative"><%= __('Negative') %></label>
                 </div>
                 <div class="col-12">
                   <input type="radio" id="test-response-pending" name="test-response" value="pending" <%= testResult === 'PENDING' ? 'checked' : '' %>>
-                  <label for="test-response-pending">Venter på svar</label>
+                  <label for="test-response-pending"><%= __('Waiting for result') %></label>
                 </div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-5 col-12-small input-block">
-              <label class="with-top-margin">Symptomer du har hatt</label>
-              <p class="info">Ikke velg noen dersom du ikke har hatt symptomer</p>
+              <label class="with-top-margin"><%= __('Symptoms you have experienced') %></label>
+              <p class="info"><%= __('Select only the symptoms you have experienced') %></p>
               <div class="row">
                 <div class="col-12">
                   <input type="checkbox" id="symptom-cough" name="symptom-cough" <%= symptomDryCough ? 'checked' : '' %>>
-                  <label for="symptom-cough">Tørrhoste</label>
+                  <label for="symptom-cough"><%= __('Dry cough') %></label>
                 </div>
                 <div class="col-12">
                   <input type="checkbox" id="symptom-slime-cough" name="symptom-slime-cough" <%= symptomSlimeCough ? 'checked' : '' %>>
-                  <label for="symptom-slime-cough">Slimhoste</label>
+                  <label for="symptom-slime-cough"><%= __('Mucus cough') %></label>
                 </div>
                 <div class="col-12">
                   <input type="checkbox" id="symptom-fatigue" name="symptom-fatigue" <%= symptomFatigue ? 'checked' : '' %>>
-                  <label for="symptom-fatigue">Slitenhet eller utmattelse</label>
+                  <label for="symptom-fatigue"><%= __('Fatigue and exhaustion') %></label>
                 </div>
                 <div class="col-12">
                   <input type="checkbox" id="symptom-fever" name="symptom-fever" <%= symptomFever ? 'checked' : '' %>>
-                  <label for="symptom-fever">Feber</label>
+                  <label for="symptom-fever"><%= __('Fatigue and exhaustion') %></label>
                 </div>
                 <div class="col-12">
                   <input type="checkbox" id="symptom-heavy-breath" name="symptom-heavy-breath" <%= symptomHeavyBreathing ? 'checked' : '' %>>
-                  <label for="symptom-heavy-breath">Tung pust</label>
+                  <label for="symptom-heavy-breath"><%= __('Shortness of breath') %></label>
                 </div>
                 <div class="col-12">
                   <input type="checkbox" id="symptom-muscle-pain" name="symptom-muscle-pain" <%= symptomMuscleAching ? 'checked' : '' %>>
-                  <label for="symptom-muscle-pain">Muskelsmerter</label>
+                  <label for="symptom-muscle-pain"><%= __('Muscle pain') %></label>
                 </div>
                 <div class="col-12">
                   <input type="checkbox" id="symptom-diarrhea" name="symptom-diarrhea" <%= symptomDiarrhea ? 'checked' : '' %>>
-                  <label for="symptom-diarrhea">Diaré</label>
+                  <label for="symptom-diarrhea"><%= __('Diarrhea') %></label>
                 </div>
                 <div class="col-12">
                   <input type="checkbox" id="symptom-headache" name="symptom-headache" <%= symptomHeadache ? 'checked' : '' %>>
-                  <label for="symptom-headache">Hodepine</label>
+                  <label for="symptom-headache"><%= __('Headache') %></label>
                 </div>
                 <div class="col-12">
                   <input type="checkbox" id="symptom-sore-throat" name="symptom-sore-throat" <%= symptomSoreThroat ? 'checked' : '' %>>
-                  <label for="symptom-sore-throat">Vondt i halsen</label>
+                  <label for="symptom-sore-throat"><%= __('Sore throat') %></label>
                 </div>
                 <div class="col-12">
                   <input type="checkbox" id="symptom-no-smell" name="symptom-no-smell" <%= symptomNoSmell ? 'checked' : '' %>>
-                  <label for="symptom-no-smell">Tap av luktesans</label>
+                  <label for="symptom-no-smell"><%= __('Loss of sense of smell') %></label>
                 </div>
                 <div class="col-12">
                   <input type="checkbox" id="symptom-no-taste" name="symptom-no-taste" <%= symptomNoTaste ? 'checked' : '' %>>
-                  <label for="symptom-no-taste">Tap av smakssans</label>
+                  <label for="symptom-no-taste"><%= __('Loss of sense of taste') %></label>
                 </div>
                 <div class="col-12">
                   <input type="checkbox" id="symptom-runny-nose" name="symptom-runny-nose" <%= symptomRunnyNose ? 'checked' : '' %>>
-                  <label for="symptom-runny-nose">Tett eller rennende nese</label>
+                  <label for="symptom-runny-nose"><%= __('Stuffy or runny nose') %></label>
                 </div>
               </div>
             </div>
             <div id="symptom-start-question" class="col-5 col-12-small input-block" style="display: none;">
-              <label class="with-top-margin" for="symptom-start">Når startet symptomene?</label>
+              <label class="with-top-margin" for="symptom-start"><%= __('When did the symptoms start?')%></label>
               <input type="date" name="symptom-start" id="symptom-start" value="<%= symptomStart %>">
             </div>
           </div>
-          <h2>Hvordan blir dataene mine brukt?</h2>
-          <p class="privacy-info-text">Dine helseopplysninger blir lagret anonymisert, og kan ikke kobles til deg.<br/><a target="_blank" href="<%= urls.privacyPolicy %>">Vår personvernerklæring finner du her</a>.</p>
+          <h2><%= __('How will my data be used?')%></h2>
+          <p class="privacy-info-text"><%= __('Your health information is stored anonymously, and can not be used to identify you.')%><br/><a target="_blank" href="<%= urls.privacyPolicy %>"><%= __('Our privacy policy can be found here')%></a>.</p>
           <div class="row">
             <div class="col-12 input-block">
               <input required type="checkbox" id="accept-privacy-policy" name="accept-privacy-policy" <%= passcode ? 'checked' : '' %>>
-              <label for="accept-privacy-policy" class="normal-font">Jeg godtar at mine data lagres i henhold til personvernerklæringen</label>
+              <label for="accept-privacy-policy" class="normal-font"><%= __('I agree to my being data in accordance with the privacy statement')%></label>
             </div>
           </div>
           <div class="row">
@@ -292,7 +292,7 @@
               <ul class="actions">
                 <li>
                   <input type="hidden" name="passcode" value="<%= passcode %>" />
-                  <input class="inverse" type="submit" value="Send inn rapportering">
+                  <input class="inverse" type="submit" value="<%= __('Submit report') %>">
                 </li>
               </ul>
             </div>
@@ -308,21 +308,17 @@
         document.getElementById('has-submitted-alert').style.display = 'none';
         window.localStorage.setItem("hasCrossedOutInfo", "true");
     }
-
     if (window.localStorage.getItem("hasSubmittedProfile") === "true"
         && window.localStorage.getItem("hasCrossedOutInfo") !== "true"
         && window.location.pathname.indexOf("helsetilstand") === -1) {
         document.getElementById('has-submitted-alert').style.display = 'flex';
     }
-
     var symptoms = document.querySelectorAll('input[name^="symptom-"]:checked');
-
     if (symptoms != null && symptoms.length > 0) {
       document.getElementById('symptom-start-question').style.display = 'block';
     }
-    
-    changeTestResultDisplay(document.getElementById("been-tested-yes").checked);
 
+    changeTestResultDisplay(document.getElementById("been-tested-yes").checked);
     // Remove query params from url
     if (window.history.replaceState) {
       window.history.replaceState({}, document.title, window.location.pathname);

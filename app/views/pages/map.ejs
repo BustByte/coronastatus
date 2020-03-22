@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= locals.htmlLang %>">
     <head>
         <%- include('partials/head') -%>
         <meta charset="utf-8" />
@@ -106,17 +106,17 @@
             <%- include('partials/hamburger-menu') -%>
             <div class="map-overlay top">
                 <div class="map-overlay-info">
-                    <h5>Rapportert status per postnummer</h5>
-                    <p>Posisjonene vist samsvarer med gitte koordinater per postnummer, og har ingenting med enkeltpersoner og gjøre.<p>
+                    <h5><% __('Report status by zip code') %></h5>
+                    <p><% __('The markers correspond to coordinates of zip codes, they have nothing to do with individuals.') %><p>
                     <label id="month"></label>
                 </div>
                 <div class="map-overlay-labels">
                     <div id="legend" class="legend">
-                        <div>Frisk</div>
+                        <div><% __('Healthy') %></div>
                         <div class="healthy"></div>
-                        <div>Har symptomer</div>
+                        <div><% __('Has symptoms') %></div>
                         <div class="symptoms"></div>
-                        <div>Testet positivt</div>
+                        <div><% __('Tested positive') %></div>
                         <div class="positive"></div>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                 if (attributions) {
                     var newAttrib = document.createElement("a")
                     newAttrib.href = "http://www.erikbolstad.no/geo/noreg/postnummer/";
-                    newAttrib.innerText = "Postnummerinfo "
+                    newAttrib.innerText = "Zip code information "
                     // Remove «improve this map» link
                     attributions.removeChild(attributions.lastChild)
                     attributions.insertBefore(newAttrib,  attributions.firstChild)
