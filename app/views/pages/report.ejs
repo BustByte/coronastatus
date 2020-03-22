@@ -52,7 +52,7 @@
   <div id="page-wrapper">
     <section id="main" class="wrapper">
       <div class="inner">
-        <div class="info-box-row">
+        <div class="info-box-row" style="margin-top: 2rem;">
           <!-- Mørketall -->
           <div class="info-box info">
             <div>
@@ -103,7 +103,7 @@
             </div>
           </div>
         </div>
-        <div class="info-box-row">
+        <div class="info-box-row" style="margin-bottom: 2rem;">
           <div class="info-box stats" id="total-reports">
             <div class="stats__number">
               <%= numberWithSpaces(aggregated.numberOfReports) %>
@@ -304,8 +304,8 @@
         </form>
       </div>
     </section>
-    <%- include('partials/footer') -%>
   </div>
+  <%- include('partials/footer') -%>
   <script src="/static/form.js?v=<%= locals.cacheKey %>"></script>
   <script>
     function hasSubmittedAlertOnClick() {

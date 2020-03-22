@@ -3069,11 +3069,14 @@ table.alt tbody tr td {
     margin-top: -5rem;
   }
 }
-#page-wrapper {
+#page-wrapper,
+.page-wrapper {
   -webkit-transition: -webkit-filter 0.25s ease;
   transition: -webkit-filter 0.25s ease;
   transition: filter 0.25s ease;
   transition: filter 0.25s ease, -webkit-filter 0.25s ease;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 #menu {
   -moz-align-items: center;
