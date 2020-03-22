@@ -1,5 +1,7 @@
+/* eslint-disable import/no-dynamic-require */
 import { PostalCode, Municipality, Coordinate } from '../domain/types';
 import { LANGUAGE } from '../../config.json';
+
 const rawMunicipalities = require(`../locales/${LANGUAGE}-municipalities.json`);
 const postalCodesWithCoordinates = require(`../locales/${LANGUAGE}-postalCodeCoordinates.json`);
 
