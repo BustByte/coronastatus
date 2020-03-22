@@ -1,6 +1,6 @@
 <%
-  const title = locals.metaTitle || 'Bli med på Norges største dugnad!'
-  const metaDescription = locals.metaDescription || 'Gi ditt frivillige bidrag til helsevesenet og registrer din helsetilstand nå. Sammen skaper vi oversikt.'
+  const title =  __('Join us in the most important crowdsource!');
+  const metaDescription = __('Make your voluntary contribution to the health care system and register your health condition now. Together we can create an overview.');
   const baseUrl = locals.baseUrl;
   const imageSubfolder = locals.imageSubfolder;
   const metaImage1 = `https://${baseUrl}/static/${imageSubfolder}/social1.png`;
@@ -9,7 +9,7 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coronastatus.no</title>
+<title><%= locals.baseUrl %></title>
 <meta name="description" content="<%= metaDescription %>">
 
 

@@ -1,25 +1,24 @@
 <section class="wrapper style2 copyright">
   <div class="inner">
     <div class="content about-us">
-      <header><h2>Om tjenesten</h2></header>
-      <p>I forbindelse med utbruddet av Covid-19 har mange nordmenn blitt testet for viruset, men grunnet ressursmangler har det overveldende
-flertallet ikke blitt testet. Det er derfor antatt at det er store mørketall her i Norge forbindelse med utbruddet.</p>
+      <header><h2><%= __('About the service') %></h2></header>
+      <p><%= __('In connection with the outbreak of COVID-19, many people have been tested for the virus, but due to lack of resources, the overwhelming majority have not been tested. It is therefore assumed that there are large missing numbers here in connection with the outbreak.')%></p>
 
-      <p>Ved hjelp av selvrapportering kan man få et bedre bilde av hvor mange som har symptomer uten å utsette helsearbeidere for potensiell smittefare og uten å bruke opp verdifullt smittevernsutstyr som allerede er mangelvare.
-      Vi i Bustbyte, godt hjulpet av andre frivillige, har laget dette verktøyet som et svar på <a href="https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona-maa-paa-plass-naa-petter-bae-brandtzaeg">denne</a> artikkelen som et forsøk på å kartlegge disse mørketallene.</p>
+      <p><%= __('Using self-report, you can get a better picture of how many people have symptoms without exposing health workers to potential contamination hazards and without using up valuable infection control equipment that is already in short supply. We at Bustbyte, well helped by other volunteers, have created this tool in response to ') %><a href = 'https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona -may-paa-space-naa-petter-bae-brandtzaeg '><%= __('this article') %> </a> <%= __('as an attempt to chart these numbers.')%>
+      </p>
 
-      <p> Dette er dermed ikke et offisielt verktøy fra myndighetene, og for mer informasjon rundt utbruddet henviser vi til FHI som alltid har oppdatert informasjon.</p>
+      <p><%= __('This is not an official tool of the authorities, and for more information about the outbreak we refer to health authorities which always have updated information.') %></p>
       <ul class="actions">
-        <li><a target="_blank" class="button next" style="cursor: pointer;" href="https://fhi.no">Til fhi.no</a></li>
+        <li><a target="_blank" class="button next" style="cursor: pointer;" href="<%= __('https://who.org')%>"><%= __('To WHO.org')%></a></li>
       </ul>
     </div>
   </div>
   <div class="inner" style="margin-bottom: 20px;">
     <a class="icon brands alt fa-github" style="cursor: pointer;" href="https://github.com/BustByte/coronastatus.no" target="_blank"></a>
   </div>
-  <div class="inner">Utviklet av <a target="_blank" href="https://bustbyte.no">BustByte AS</a> samt <a href="<%= urls.contributors %>">frivillige</a> </div>
+  <div class="inner"><%= __('Developed by')%> <a target='_blank' href='https://bustbyte.no'> <%= __('BustByte AS')%> </a> <%= __('and')%> <a href='<%= urls.contributors %>'> <%= __('volunteers')%> </a></div>
   <div class="inner">
-    <a target="_blank" href="<%= urls.privacyPolicy %>">Personvernerklæring</a>
+    <a target="_blank" href="<%= urls.privacyPolicy %>"><%= __('Privacy Policy')%></a>
   </div>
 </section>
 

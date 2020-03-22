@@ -1,5 +1,5 @@
 <%
-  const urls = locals.urls; 
+  const urls = locals.urls;
   const isOnProfile = locals.activePage === urls.submitReport || locals.activePage === urls.profile;
   const isOnMap = locals.activePage === urls.map;
   const isOnPrivacyPolicy = locals.activePage === urls.privacyPolicy;
@@ -18,11 +18,11 @@
       </a>
     </div>
     <div class="menu__links">
-      <a href="<%= urls.submitReport %>" class="<%= isOnProfile ? 'active' : '' %>">Din helsetilstand</a>
-      <a href="<%= urls.map %>" class="<%= isOnMap ? 'active' : '' %>">Kart</a>
-      <a href="<%= urls.statistics %>" class="<%= isOnStats ? 'active' : '' %>">Statistikk</a>
-      <a href="<%= urls.privacyPolicy %>" class="<%= isOnPrivacyPolicy ? 'active' : '' %>">Personvern</a>
-      <a href="<%= urls.apiDocs %>" target="_blank">API</a></li>
+      <a href="<%= urls.submitReport %>" class="<%= isOnProfile ? 'active' : '' %>"><%= __("Your state of health") %></a>
+      <a href="<%= urls.map %>" class="<%= isOnMap ? 'active' : '' %>"><%= __("Map") %></a>
+      <a href="<%= urls.statistics %>" class="<%= isOnStats ? 'active' : '' %>"><%= __("Statistics") %></a>
+      <a href="<%= urls.privacyPolicy %>" class="<%= isOnPrivacyPolicy ? 'active' : '' %>"><%= __("Privacy") %></a>
+      <a href="<%= urls.apiDocs %>" target="_blank"><%= __("API") %></a></li>
     </div>
     <div class="hamburger-menu-button">
       <i class="fas fa-bars hamburger-menu-icon"></i>

@@ -42,6 +42,7 @@ app.use((req, res, next) => {
   res.locals.activePage = `/${req.path.split('/')[1]}`;
   res.locals.cacheKey = cacheKey;
   res.locals.imageSubfolder = LANGUAGE;
+  res.locals.htmlLang = LANGUAGE;
   res.locals.baseUrl = BASE_URL;
   res.locals.tld = TLD;
   res.locals.urls = urls;
