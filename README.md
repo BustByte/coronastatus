@@ -16,8 +16,10 @@ We don't know how many people have COVID-19. So we made a website where people c
 
 The government is working on this, but they're too slow in getting something out fast.
 
-Norwegian article that inspired us to build this:
-https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona-maa-paa-plass-naa-petter-bae-brandtzaeg
+| Title                                                                       | Country        | URL       |
+|-----------------------------------------------------------------------------|:--------------:|-----------|           
+| Self-report system for monitoring COVID19 needs to be in place immediately! |     🇳🇴         | [Read here](https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona-maa-paa-plass-naa-petter-bae-brandtzaeg) |
+| Are you ill? Health services will soon let you self-report symtoms.         |     🇳🇴         | [Read here](https://www.bt.no/innenriks/i/QoAdAx/har-du-vaert-syk-snart-kan-du-hjelpe-helsemyndighetene-med-aa-registrer) |
 
 ## Who's behind this?
 
