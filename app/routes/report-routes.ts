@@ -11,7 +11,6 @@ function determineRemoteAddress(req: Request): string {
     (req.headers['x-real-ip'] as string) || req.connection.remoteAddress;
   if (ipWithPort) {
     const [ipWithoutPort] = ipWithPort.split(':');
-    console.log(ipWithoutPort);
     return ipWithoutPort;
   }
   return req.ip;
