@@ -538,3 +538,8 @@ h3.stat-heading {
     width: 100%;
   }
 }
+
+.flag {
+  height: 128px;
+  width: 128px;
+}
