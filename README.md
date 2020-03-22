@@ -4,6 +4,11 @@
 ## What is this?
 We don't know how many people have COVID-19. So we made a website where people can self-report symptoms. We plot the submissions on a map and show graphs with trends.
 
+### Currently available in
+* 🇳🇴 Norway: https://coronastatus.no
+* 🇳🇱 The Netherlands: https://coronastatus.nl
+* ... want one for your country? Join our community: https://t.me/onzecorona
+
 ## Why?
 The government is working on this, but they're too slow in getting something out fast.
 
@@ -28,11 +33,11 @@ Download and install [nodejs](https://nodejs.org),
 
 1. Clone the repository
 
-  `git clone https://github.com/BustByte/coronastatus.no/`
+  `git clone https://github.com/BustByte/coronastatus`
 
 2. Move into the newly cloned directory
 
-  `cd coronastatus.no`
+  `cd coronastatus`
 
 3. Install dependencies with our package manager
 

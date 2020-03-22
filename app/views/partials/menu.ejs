@@ -4,11 +4,12 @@
   const isOnPrivacyPolicy = locals.activePage === 'personvern';
   const isOnStats = locals.activePage === 'statistikk';
   const useWhiteLogo = locals.useWhiteLogo;
+  const imageSubfolder = locals.imageSubfolder;
 %>
 
 <div class="menu wrapper">
   <div class="inner">
-    <div class="logo"><a href="/"><img alt="Logo" src="/static/<%= useWhiteLogo ? 'logo-white.png' : 'logo.png' %>"></a></div>
+    <div class="logo"><a href="/"><img alt="Logo" src="/static/<%= imageSubfolder %>/<%= useWhiteLogo ? 'logo-white.png' : 'logo.png' %>"></a></div>
     <div class="menu__links">
       <a href="/" class="<%= isOnProfile ? 'active' : '' %>">Din helsetilstand</a>
       <a href="/kart" class="<%= isOnMap ? 'active' : '' %>">Kart</a>
