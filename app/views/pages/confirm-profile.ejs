@@ -14,12 +14,13 @@
             <div class="col-10 col-12-small">
               <% if (hasCookie) { %>
               <h1>
-                <%= __(`We stored your data in a cookie so come back later to update your status`) %>
+                <%= __(`We stored your data in a cookie so come back later to
+                update your status`) %>
               </h1>
               <p class="subtitle">
                 <%= __(`If you use this computer with multiple users, please use
-                this link to update your status. Write it down somewhere or save
-                it on your computer.`) %>
+                this link to update your status.`) %> <%= __(`Write it down
+                somewhere or save it on your computer.`) %>
               </p>
 
               <% } else { %>
