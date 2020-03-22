@@ -1,3 +1,7 @@
+<%
+  const shouldAddAnalytics = !locals.profile;
+%>
+
 <section class="wrapper style2 copyright">
   <div class="inner">
     <div class="content about-us">
@@ -22,6 +26,8 @@
   </div>
 </section>
 
-<!-- Simple Analytics -->
-<script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
-<noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
+<% if(shouldAddAnalytics) {%>
+  <!-- Simple Analytics -->
+  <script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
+  <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
+<% } %>
