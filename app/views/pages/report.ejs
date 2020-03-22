@@ -143,19 +143,20 @@
           </div>
         <% } else if (locals.cleared) {%>
           <div class="alert alert-success" role="alert">
-            <%= __("Your personal health information is cleared from this computer. You can now use this computer for another user.") %>
+            <%= __("Your personal health information is cleared from this computer.") %>
+            <%= __("You can now use this computer for another user.") %>
           </div>
         <% } else if (locals.passcode) {%>
           <div class="alert alert-info" role="alert">
-            <%= __("Below is your personal health information."%>
+            <%= __("Below is your personal health information.") %>
             <%= __("If you want to register another person on this computer, save or write down your personal link") %>
             <strong><%= baseUrl %><%= urls.profile %>/<%= passcode %></strong>
             <%= __("and") %> <a href="<%= urls.profile %>/<%= passcode %>?clear=true"> <%= __("clear this form") %>.</a>
           </div>
         <% } else { %>
           <p class="slogan">
-            <%= __('Are you from') %> <%= __(locals.country) %>? 
-            <%= __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information! ") %></p>
+            <%= __("Are you from") %> <%= __(locals.country) %>?
+            <%= __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information!") %></p>
         <% } %>
 
         <%- include('partials/share') -%>

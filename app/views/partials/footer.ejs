@@ -6,29 +6,30 @@
       <div class="content about-us">
         <header><h2><%= __('About the service') %></h2></header>
         <p>
-          <%= __('In connection with the outbreak of COVID-19, many people have
+          <%= __(`In connection with the outbreak of COVID-19, many people have
           been tested for the virus, but due to lack of resources, the
           overwhelming majority have not been tested. It is therefore assumed
           that there are large missing numbers here in connection with the
-          outbreak.')%>
+          outbreak.`)%>
         </p>
 
         <p>
-          <%= __('Using self-report, you can get a better picture of how many
+          <%= __(`Using self-report, you can get a better picture of how many
           people have symptoms without exposing health workers to potential
           contamination hazards and without using up valuable infection control
           equipment that is already in short supply. We at Bustbyte, well helped
-          by other volunteers, have created this tool in response to ') %><a
+          by other volunteers, have created this tool in response to`) %>
+          <a
             href="https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona -may-paa-space-naa-petter-bae-brandtzaeg "
-            ><%= __('this article') %>
-          </a>
+            ><%= __('this article') %></a
+          >
           <%= __('as an attempt to chart these numbers.')%>
         </p>
 
         <p>
-          <%= __('This is not an official tool of the authorities, and for more
+          <%= __(`This is not an official tool of the authorities, and for more
           information about the outbreak we refer to health authorities which
-          always have updated information.') %>
+          always have updated information.`) %>
         </p>
         <ul class="actions">
           <li>
@@ -36,8 +37,8 @@
               target="_blank"
               class="button next"
               style="cursor: pointer;"
-              href="<%= __('https://who.org')%>"
-              ><%= __('Go to the National health service website')%></a
+              href="<%= __('https://who.org') %>"
+              ><%= __(`Go to the National health service website`)%></a
             >
           </li>
         </ul>
@@ -53,10 +54,8 @@
     </div>
     <div class="inner" style="font-size: 12px;">
       <%= __('Developed by')%>
-      <a target="_blank" href="https://bustbyte.no">
-        <%= __('BustByte AS')%>
-      </a>
-      <%= __('and')%>
+      <a target="_blank" href="https://bustbyte.no"><%= __('BustByte AS')%></a>
+      <%= __('and') %>
       <a href="<%= urls.contributors %>">
         <%= __('volunteers')%>
       </a>

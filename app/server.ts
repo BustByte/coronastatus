@@ -27,6 +27,18 @@ i18n.configure({
 
 app.use(i18n.init);
 
+app.use((req, res, next) => {
+  // @ts-ignore
+  const translate = (text, ...options) => {
+    text = text.replace(/[\s\n\t]+/g, ' ').trim()
+    // @ts-ignore
+    return i18n.__.apply(req, [text, ...options]);
+  }
+  res.locals.__ = translate
+  res.__ = translate;
+  next();
+});
+
 app.use(
   urls.apiDocs,
   swaggerUi.serve,
