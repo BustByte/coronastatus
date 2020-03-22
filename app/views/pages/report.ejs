@@ -279,13 +279,8 @@
               <input type="date" name="symptom-start" id="symptom-start" value="<%= symptomStart %>">
             </div>
           </div>
-<<<<<<< HEAD
-          <h2>Hvordan blir dataene mine brukt?</h2>
-          <p class="privacy-info-text">Dine helseopplysninger blir lagret anonymisert, og kan ikke kobles til deg.<br/><a target="_blank" href="<%= urls.privacyPolicy %>">Vår personvernerklæring finner du her</a>.</p>
-=======
           <h2><%= __('How will my data be used?')%></h2>
           <p class="privacy-info-text"><%= __('Your health information is stored anonymously, and can not be used to identify you.')%><br/><a target="_blank" href="<%= urls.privacyPolicy %>"><%= __('Our privacy policy can be found here')%></a>.</p>
->>>>>>> add report and disclaimer by @zacel
           <div class="row">
             <div class="col-12 input-block">
               <input required type="checkbox" id="accept-privacy-policy" name="accept-privacy-policy" <%= passcode ? 'checked' : '' %>>
