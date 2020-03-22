@@ -46,6 +46,8 @@ Download & install:
 * [nodejs](https://nodejs.org),
 * [yarn](https://yarnpkg.com/)
 
+#### Steps
+
 1. Clone the repository
 
 `git clone https://github.com/BustByte/coronastatus`
