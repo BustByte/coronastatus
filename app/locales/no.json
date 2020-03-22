@@ -135,5 +135,10 @@
   "Close contact with someone who has tested positive": "Nærkontakt med noen som har testet positivt",
   "Tested negative": "Testet negativt",
   "Map": "Kart",
-  "API": "API"
+  "API": "API",
+  "Are you from ":"Er du fra ",
+  "Norway":"Norge",
+	"Netherlands":"Nederland",
+	"Slovakia":"Slovakia",
+	"United Kingdom": "Storbritannia",
 }
