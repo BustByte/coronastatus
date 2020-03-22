@@ -25,7 +25,7 @@
             </ul>
           </form>
           <h2 class="stat-heading"><%= __('COVID-19 infected') %></h2>
-          <p>In total <%= numberWithSpaces(totalInfectedPeopleWithSymptoms) %> people have reported that they have tested positive for COVID-19 and experience symptoms.</p>
+          <p><%= __('In total') %> <%= numberWithSpaces(totalInfectedPeopleWithSymptoms) %> <%= __('people have reported that they have tested positive for COVID-19 and experience symptoms.') %></p>
           <div class="stat-layout">
             <div class="stat-cell">
               <h3 class="stat-heading"><%= __('Symptoms') %></h3>
@@ -33,7 +33,7 @@
             </div>
             <div class="stat-cell">
               <h3 class="stat-heading"><%= __('Test results') %></h3>
-              <p>In total <%= numberWithSpaces(totalPeopleInContactWithInfected) %> people have reported that they have been tested for COVID-19.</p>
+              <p><%= __('In total') %> <%= numberWithSpaces(totalPeopleInContactWithInfected) %> <%= __('people have reported that they have been tested for COVID-19.') %></p>
               <div class="stat-layout">
                 <div class="stat-cell">
                   <canvas id="testResultStats"></canvas>
@@ -43,7 +43,7 @@
           </div>
 
           <h2 class="stat-heading"><%= __('Close contacts') %></h2>
-          <p>In total <%= numberWithSpaces(totalPeopleInContactWithInfected) %> people have reported that they have been in close contact with a person who was tested positive for COVID-19.</p>
+          <p><%= __('In total') %> <%= numberWithSpaces(totalPeopleInContactWithInfected) %> <%= __('people have reported that they have been in close contact with a person who was tested positive for COVID-19.') %></p>
           <div class="stat-layout">
             <div class="stat-cell">
               <h3 class="stat-heading"><%= __('Symptoms') %></h3>
