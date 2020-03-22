@@ -1,0 +1,41 @@
+name: prettier
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Prettier Action on PR
+        if: github.event_name == 'pull_request'
+        uses: creyD/prettier_action@v1.0
+        with:
+          prettier_options: "--write {**/*,*}.{js,hbs,html,json,md,yml,css,scss} !.github/workflows/**/* !dist/**/*"
+          commit_message: "Run prettier via GitHub Action"
+          branch: ${{ github.head_ref }}
+          file_pattern: "."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Prettier Action on master
+        if: github.ref == 'refs/heads/master'
+        uses: creyD/prettier_action@v1.0
+        with:
+          prettier_options: "--write {**/*,*}.{js,html,json,md,yml,css,scss} !.github/workflows/**/* !dist/**/*"
+          commit_message: "Run prettier via GitHub Action"
+          branch: master
+          file_pattern: "."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
