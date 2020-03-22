@@ -1,5 +1,6 @@
 import express from 'express';
 import { urls } from '../domain/urls';
+import { LANGUAGE } from '../../config.json';
 
 const router = express.Router();
 
@@ -9,7 +10,7 @@ router.get('/move-to-root-when-helsenorge-is-ready', async (req, res) => {
 });
 
 router.get(`${urls.privacyPolicy}`, (req, res) => {
-  return res.render('pages/privacy-policy');
+  return res.render(`pages/${LANGUAGE}-privacy-policy`);
 });
 
 router.get(`${urls.contributors}`, (req, res) => {
