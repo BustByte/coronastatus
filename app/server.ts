@@ -21,6 +21,7 @@ const isDevelopmentEnv = process.env.NODE_ENV === 'dev';
 i18n.configure({
   locales: ['en', 'no', 'nl'],
   defaultLocale: LANGUAGE,
+  updateFiles: false,
   directory: `${__dirname}/locales`
 });
 
