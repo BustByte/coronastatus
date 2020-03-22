@@ -37,8 +37,14 @@ Click on "Issues" in the menu above to see what we need help with.
 
 ## Start developing
 
-Download and install [nodejs](https://nodejs.org),
-[git](https://git-scm.com/downloads) and [yarn](https://yarnpkg.com/)
+### On your own machine
+
+#### Prerequisities
+
+Download & install:
+* [git](https://git-scm.com/downloads)
+* [nodejs](https://nodejs.org),
+* [yarn](https://yarnpkg.com/)
 
 1. Clone the repository
 
@@ -65,3 +71,36 @@ Download and install [nodejs](https://nodejs.org),
 7. Before you create a pull request run the linter. Warnings are ok, but errors should be fixed.
 
 `yarn lint`
+
+### Using docker
+
+#### Prerequisities
+
+Download & install:
+* [git](https://git-scm.com/downloads)
+* [Docker CE](https://docs.docker.com/install/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
+
+#### Steps
+
+1. Clone the repository
+
+`git clone https://github.com/BustByte/coronastatus`
+
+2. Move into the newly cloned directory
+
+`cd coronastatus`
+
+3. Create a configuration file from the example provided in this repo
+
+`cp config.example.json config.json`
+
+4. Build docker image and start the development environment:
+
+`docker-compose up --build -d`
+
+5. Open your browser and navigate to http://localhost:7272/
+
+6. Before you create a pull request run the linter. Warnings are ok, but errors should be fixed.
+
+`docker-compose exec app yarn lint`
