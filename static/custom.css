@@ -127,14 +127,9 @@ span.logo__text {
   font-weight: 400;
 }
 
-span.logo__dot {
-  display: inline-block;
-  padding: 0 0.1rem;
-}
-
-span.logo__tld {
-  font-weight: 700;
-}
+span.logo__text::first-letter {
+  text-transform: uppercase;
+} 
 
 .menu > a {
   display: -webkit-box;

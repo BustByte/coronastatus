@@ -10,7 +10,7 @@ import statisticsRoutes from './routes/statistics-routes';
 import variousRoutes from './routes/various-routes';
 import { getInstance } from './repository/SqlLiteDatabase';
 import { swaggerDocument } from './swagger';
-import { LANGUAGE, BASE_URL, TLD } from '../config.json';
+import { LANGUAGE, BASE_URL } from '../config.json';
 import { urls } from './domain/urls';
 
 const app = express();
@@ -37,6 +37,10 @@ const cacheKey = process.env.CACHE_KEY || `${Math.random()}`.replace('.', '');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const url = require('url');
+
+console.log(url.parse('coronastatus.no'));
+
 app.use((req, res, next) => {
   // eslint-disable-next-line prefer-destructuring
   res.locals.activePage = `/${req.path.split('/')[1]}`;
@@ -44,7 +48,6 @@ app.use((req, res, next) => {
   res.locals.imageSubfolder = LANGUAGE;
   res.locals.htmlLang = LANGUAGE;
   res.locals.baseUrl = BASE_URL;
-  res.locals.tld = TLD;
   res.locals.urls = urls;
   next();
 });

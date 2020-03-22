@@ -5,7 +5,7 @@
   const isOnPrivacyPolicy = locals.activePage === urls.privacyPolicy;
   const isOnStats = locals.activePage === urls.statistics;
   const useWhiteLogo = locals.useWhiteLogo;
-  const tld = locals.tld;
+  const baseUrl = locals.baseUrl;
   const imageSubfolder = locals.imageSubfolder;
 %>
 
@@ -14,7 +14,7 @@
     <div class="logo<%= useWhiteLogo && ' white' %>">
       <a href="/">
         <img alt="Logo" src="/static/corona-icon.png" />
-        <span class="logo__text">Coronastatus<span class="logo__dot">.</span><span class="logo__tld"><%= tld %></span></span>
+        <span class="logo__text"><%= baseUrl %></span>
       </a>
     </div>
     <div class="menu__links">
