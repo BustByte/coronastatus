@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Coronastatus for the EU</title>
+  <style>
+    /* Define the "system" font family */
+    @font-face {
+      font-family: system;
+      font-style: normal;
+      font-weight: 300;
+      src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+    }
+
+    body, html {
+      font-family: "system";
+      width: 100%;
+    }
+
+    #wrapper {
+      margin: 0 auto;
+      width: 800px;
+    }
+
+    #header {
+    }
+
+    #country-wrapper {
+      text-align: center;
+    }
+    #countries {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    #countries .country {
+      flex: 1;
+    }
+    #countries .flag {
+      width: 128px;
+      height: 128px;
+    }
+
+    #do-your-part {
+      display: flex;
+      justify-content: space-evenly;
+      flex: 2;
+    }
+
+    #add-country, #contribute {
+      flex-grow: 0;
+    }
+
+    #add-country {
+      padding-right: 25px;
+    }
+
+    #contribute {
+      border-left: 1px solid black;
+      padding-left: 25px;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="header">
+      <img alt="Logo" src="/logo.png">
+      <h1>Coronastatus.eu</h1>
+    </div>
+    <p>
+      Coronastatus is an attempt to capture and map reports of symptoms of COVID-19 in various EU countries. Please see below to see if your country is supported yet.
+    </p>
+
+    <div id="country-wrapper">
+      <h2>Countries</h2>
+      <div id="countries">
+        <div class="country">
+          <a href="https://coronastatus.nl">
+            <img class="flag" alt="Netherlands" src="/flags/flag-nl.png">
+          </a>
+          <h4>Netherlands</h4>
+        </div>
+        <div class="country">
+          <a href="https://coronastatus.no">
+            <img class="flag" alt="Norway" src="/flags/flag-no.png">
+          </a>
+          <h4>Norway</h4>
+        </div>
+        <div class="country">
+          <a href="https://coronastatus.sk">
+            <img class="flag" alt="Slovakia" src="/flags/flag-sk.png">
+          </a>
+          <h4>Slovakia</h4>
+        </div>
+      </div>
+    </div>
+
+    <div id="do-your-part">
+      <div id="add-country">
+        <h3>Add a Country</h3>
+        <ol>
+          <li>Make stuff happen</li>
+          <li>Make stuff happen</li>
+          <li>Make stuff happen</li>
+          <li>Make stuff happen</li>
+        </ol>
+      </div>
+      <div id="contribute">
+        <h3>How to Contribute</h3>
+        <ol>
+          <li>Share your local version of Coronastatus</li>
+          <li>Help build</li>
+        </ol>
+      </div>
+    </div>
+
+    <p>
+      <i>
+      Flags courtesy of <a href="https://www.iconfinder.com/iconsets/world-flag-icons">world-flag-icons</a> by <a href="http://vathanx.deviantart.com/">vathanx</a>. Licensed under <a href="https://creativecommons.org/licenses/by-nc/3.0/nl/deed.en_GB">Attribution-NonCommercial 3.0 Netherlands</a>.
+      </i>
+    </p>
+  </div>
+</body>
+</html>

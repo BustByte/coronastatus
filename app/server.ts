@@ -3,7 +3,6 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import i18n from 'i18n';
 import swaggerUi from 'swagger-ui-express';
-import internationalRoutes from './routes/international-routes';
 import reportRoutes from './routes/report-routes';
 import mapRoutes from './routes/map-routes';
 import apiRoutes from './routes/api-routes';
@@ -52,7 +51,6 @@ app.set('views', [
 ]);
 
 app.use('/', reportRoutes);
-app.use('/international-landing', internationalRoutes);
 app.use('/kart', mapRoutes);
 app.use('/api', apiRoutes);
 app.use('/statistikk', statisticsRoutes);
