@@ -112,6 +112,30 @@ input[type='checkbox'] + label.normal-font {
   align-items: center;
 }
 
+.menu .logo.white {
+  color: #fff;
+}
+
+.menu .logo a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+span.logo__text {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+span.logo__dot {
+  display: inline-block;
+  padding: 0 0.1rem;
+}
+
+span.logo__tld {
+  font-weight: 700;
+}
+
 .menu > a {
   display: -webkit-box;
   display: flex;
@@ -121,6 +145,7 @@ input[type='checkbox'] + label.normal-font {
 .menu .logo img {
   width: auto;
   height: 50px;
+  margin-right: 0.5rem;
 }
 
 .menu.wrapper {

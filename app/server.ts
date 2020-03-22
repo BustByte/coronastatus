@@ -10,7 +10,7 @@ import statisticsRoutes from './routes/statistics-routes';
 import variousRoutes from './routes/various-routes';
 import { getInstance } from './repository/SqlLiteDatabase';
 import { swaggerDocument } from './swagger';
-import { LANGUAGE, BASE_URL } from '../config.json';
+import { LANGUAGE, BASE_URL, TLD } from '../config.json';
 import { urls } from './domain/urls';
 
 const app = express();
@@ -43,6 +43,7 @@ app.use((req, res, next) => {
   res.locals.cacheKey = cacheKey;
   res.locals.imageSubfolder = LANGUAGE;
   res.locals.baseUrl = BASE_URL;
+  res.locals.tld = TLD;
   res.locals.urls = urls;
   next();
 });
