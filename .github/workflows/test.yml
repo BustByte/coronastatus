@@ -21,6 +21,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: cp config.example.json config.json
     - run: yarn install
     - run: yarn test
       env:
