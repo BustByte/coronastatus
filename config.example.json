@@ -1,4 +1,5 @@
 {
   "BASE_URL": "coronastatus.no",
-  "LANGUAGE": "no"
+  "LANGUAGE": "no",
+  "COUNTRY":"Norway"
 }
