@@ -28,7 +28,9 @@ html {
   margin: auto;
 } */
 
-input,
+input[type='text'],
+input[type='date'],
+input[type='number'],
 select {
   max-width: 100%;
   width: 300px;
