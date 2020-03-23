@@ -160,10 +160,11 @@
       /* Infected symptom count */
       var ctx = document.getElementById('infectedSymptomsChart').getContext('2d');
       var infectedSymptoms = <%- JSON.stringify(locals.infectedStats.symptomStats) %>;
+      var infectedSymptomslabels = <%- JSON.stringify(locals.infectedStats.symptomStats.labels.map(label => __(label))) %>;
       new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: infectedSymptoms.labels,
+          labels: infectedSymptomslabels,
           datasets: [{
             label: '<%= __('Number reported in COVID-19 infected patients') %>',
             backgroundColor: '#af2222',
@@ -177,10 +178,11 @@
       /* Total symptom count */
       var ctx = document.getElementById('allSymptomsChart').getContext('2d');
       var symptoms = <%- JSON.stringify(locals.allSymptomsStats.symptomStats) %>;
+      var symptomslabels = <%- JSON.stringify(locals.allSymptomsStats.symptomStats.labels.map(label => __(label))) %>;
       new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: symptoms.labels,
+          labels: symptomslabels,
           datasets: [{
             label: '<%= __("Number reported") %>',
             backgroundColor: '#da7823',
