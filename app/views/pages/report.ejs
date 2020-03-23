@@ -12,6 +12,10 @@
   const hasBeenInContactWithInfected = profile && locals.profile.hasBeenInContactWithInfected;
   const symptomStart = profile && locals.profile.symptomStart;
   const testResult = profile && locals.profile.testResult;
+  const bodyTemperature = profile && locals.profile.bodyTemperature;
+  const isolationStatus = profile && locals.profile.isolationStatus;
+  const smokingHabit = profile && locals.profile.smokingHabit;
+  const diagnosedWithOtherConditions = profile && locals.profile.diagnosedWithOtherConditions;
   const symptoms = profile && locals.profile.symptoms;
   const symptomDryCough = symptoms && symptoms['DRY_COUGH'];
   const symptomFatigue = symptoms && symptoms['EXHAUSTION'];
@@ -25,6 +29,7 @@
   const symptomNoTaste = symptoms && symptoms['NO_TASTE'];
   const symptomSlimeCough = symptoms && symptoms['SLIME_COUGH'];
   const symptomRunnyNose = symptoms && symptoms['RUNNY_NOSE'];
+  const symptomNauseaOrVomiting = symptoms && symptoms['NAUSEA_OR_VOMITING'];
 
   function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -295,11 +300,76 @@
                   <input type="checkbox" id="symptom-runny-nose" name="symptom-runny-nose" <%= symptomRunnyNose ? 'checked' : '' %>>
                   <label for="symptom-runny-nose"><%= __('Stuffy or runny nose') %></label>
                 </div>
+                <div class="col-12">
+                  <input type="checkbox" id="symptom-nausea-or-vomiting" name="symptom-nausea-or-vomiting" <%= symptomNauseaOrVomiting ? 'checked' : '' %>>
+                  <label for="symptom-nausea-or-vomiting"><%= __('Nausea or vomiting') %></label>
+                </div>
               </div>
             </div>
             <div id="symptom-start-question" class="col-5 col-12-small input-block" style="display: none;">
               <label class="with-top-margin" for="symptom-start"><%= __('When did the symptoms start?')%></label>
               <input type="date" name="symptom-start" id="symptom-start" value="<%= symptomStart %>">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 input-block">
+              <label class="with-top-margin"><%= __('Have you been diagnosed with any of the following conditions?') %></label>
+              <p class="info"><%= __('Diabetes mellitus, Hypertension, Ischemic heart disease, Asthma, Chronic lung disease, Chronic kidney disease') %></p>
+              <div class="row">
+                <div class="col-3 col-6-small">
+                  <input required type="radio" id="diagnosed-other-conditions-yes" name="diagnosed-other-conditions" value="yes" <%= diagnosedWithOtherConditions ? 'checked' : '' %>>
+                  <label for="diagnosed-other-conditions-yes"><%= __("Yes") %></label>
+                </div>
+                <div class="col-3 col-6-small">
+                  <input required type="radio" id="diagnosed-other-conditions-no" name="diagnosed-other-conditions" value="no" <%= diagnosedWithOtherConditions === false ? 'checked' : '' %>>
+                  <label for="diagnosed-other-conditions-no"><%= __("No") %></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 input-block">
+              <label class="with-top-margin"><%= __('I am currently:') %></label>
+              <div class="row">
+                <div class="col-12">
+                  <input required type="radio" id="not-in-isolation" name="isolation-status" value="not-in-isolation" <%= isolationStatus === 'NOT_IN_ISOLATION' ? 'checked' : '' %>>
+                  <label for="not-in-isolation"><%= __("Not in isolation") %></label>
+                </div>
+                <div class="col-12">
+                  <input required type="radio" id="isolation-due-to-travel" name="isolation-status" value="isolation-due-to-travel" <%= isolationStatus === 'ISOLATION_DUE_TO_TRAVEL' ? 'checked' : '' %>>
+                  <label for="isolation-due-to-travel"><%= __("In isolation due to a recent international travel") %></label>
+                </div>
+                <div class="col-12">
+                  <input required type="radio" id="isolation-due-to-contact" name="isolation-status" value="isolation-due-to-contact" <%= isolationStatus === 'ISOLATION_DUE_TO_CONTACT' ? 'checked' : '' %>>
+                  <label for="isolation-due-to-contact"><%= __("In isolation due to contact with an individual who has been exposed to the coronavirus.") %></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 input-block">
+              <label class="with-top-margin"><%= __('Cigarette smoking habits:') %></label>
+              <div class="row">
+                <div class="col-12">
+                  <input required type="radio" id="currently-smoking" name="smoking-habits" value="currently-smoking" <%= smokingHabit === 'CURRENTLY' ? 'checked' : '' %>>
+                  <label for="currently-smoking"><%= __("I currently smoke") %></label>
+                </div>
+                <div class="col-12">
+                  <input required type="radio" id="used-to-smoke" name="smoking-habits" value="used-to-smoke" <%= smokingHabit === 'USED_TO' ? 'checked' : '' %>>
+                  <label for="used-to-smoke"><%= __("I used to smoke") %></label>
+                </div>
+                <div class="col-12">
+                  <input required type="radio" id="never-smoked" name="smoking-habits" value="never-smoked" <%= smokingHabit === 'NEVER' ? 'checked' : '' %>>
+                  <label for="never-smoked"><%= __("I have never smoked") %></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 input-block">
+              <label class="with-top-margin" for="body-temperature"><%= __('What is your current body temperature? (Celcius)') %></label>
+              <p class="info"><%= __('This field is optional') %></p>
+              <input type="number" step="0.1" placeholder="37.0" min="35" max="45" name="body-temperature" id="body-temperature" value="<%= bodyTemperature %>">
             </div>
           </div>
           <h2><%= __('How will my data be used?')%></h2>

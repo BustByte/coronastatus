@@ -28,7 +28,8 @@ const reports: CovidReport[] = [
       [Symptom.NO_TASTE]: false,
       [Symptom.NO_SMELL]: false,
       [Symptom.SLIME_COUGH]: false,
-      [Symptom.RUNNY_NOSE]: false
+      [Symptom.RUNNY_NOSE]: false,
+      [Symptom.NAUSEA_OR_VOMITING]: false
     },
     submissionTimestamp: 123123123,
     age: '50'
@@ -53,7 +54,8 @@ const reports: CovidReport[] = [
       [Symptom.NO_TASTE]: false,
       [Symptom.NO_SMELL]: false,
       [Symptom.SLIME_COUGH]: false,
-      [Symptom.RUNNY_NOSE]: false
+      [Symptom.RUNNY_NOSE]: false,
+      [Symptom.NAUSEA_OR_VOMITING]: false
     },
     submissionTimestamp: 123123123,
     age: '50'
@@ -78,7 +80,8 @@ const reports: CovidReport[] = [
       [Symptom.NO_TASTE]: false,
       [Symptom.NO_SMELL]: false,
       [Symptom.SLIME_COUGH]: false,
-      [Symptom.RUNNY_NOSE]: false
+      [Symptom.RUNNY_NOSE]: false,
+      [Symptom.NAUSEA_OR_VOMITING]: false
     },
     submissionTimestamp: 123123123,
     age: '50'
@@ -103,7 +106,8 @@ const reports: CovidReport[] = [
       [Symptom.NO_TASTE]: false,
       [Symptom.NO_SMELL]: false,
       [Symptom.SLIME_COUGH]: false,
-      [Symptom.RUNNY_NOSE]: false
+      [Symptom.RUNNY_NOSE]: false,
+      [Symptom.NAUSEA_OR_VOMITING]: false
     },
     submissionTimestamp: 123123123,
     age: '50'

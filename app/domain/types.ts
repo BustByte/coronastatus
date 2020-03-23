@@ -9,6 +9,10 @@ export interface CovidReport {
   symptoms: Symptoms;
   submissionTimestamp: number;
   age: string;
+  bodyTemperature?: string;
+  smokingHabit?: SmokingHabit;
+  isolationStatus?: IsolationStatus;
+  diagnosedWithOtherConditions?: boolean;
 }
 
 export type Symptoms = {
@@ -26,6 +30,18 @@ export enum TestResult {
   PENDING = 'PENDING'
 }
 
+export enum SmokingHabit {
+  CURRENTLY = 'CURRENTLY',
+  USED_TO = 'USED_TO',
+  NEVER = 'NEVER'
+}
+
+export enum IsolationStatus {
+  NOT_IN_ISOLATION = 'NOT_IN_ISOLATION',
+  ISOLATION_DUE_TO_TRAVEL = 'ISOLATION_DUE_TO_TRAVEL',
+  ISOLATION_DUE_TO_CONTACT = 'ISOLATION_DUE_TO_CONTACT'
+}
+
 export enum Symptom {
   DRY_COUGH = 'DRY_COUGH',
   EXHAUSTION = 'EXHAUSTION',
@@ -38,7 +54,8 @@ export enum Symptom {
   NO_TASTE = 'NO_TASTE',
   NO_SMELL = 'NO_SMELL',
   SLIME_COUGH = 'SLIME_COUGH',
-  RUNNY_NOSE = 'RUNNY_NOSE'
+  RUNNY_NOSE = 'RUNNY_NOSE',
+  NAUSEA_OR_VOMITING = 'NAUSEA_OR_VOMITING'
 }
 
 export interface AggregatedCovidReportData {

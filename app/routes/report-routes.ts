@@ -1,6 +1,13 @@
 import express, { Request } from 'express';
 import rateLimit from 'express-rate-limit';
-import { Symptom, CovidReport, Sex, TestResult } from '../domain/types';
+import {
+  Symptom,
+  CovidReport,
+  Sex,
+  TestResult,
+  SmokingHabit,
+  IsolationStatus
+} from '../domain/types';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
 import { getPasscodeCreator } from '../util/PasscodeCreator';
 import { aggregateCovidReports } from '../util/report-aggregator';
@@ -87,6 +94,32 @@ const createReportRateLimit = rateLimit({
   keyGenerator: req => determineRemoteAddress(req)
 });
 
+const toSmokingHabit = (inputValue: string): SmokingHabit | undefined => {
+  if (inputValue === 'currently-smoking') {
+    return SmokingHabit.CURRENTLY;
+  }
+  if (inputValue === 'used-to-smoke') {
+    return SmokingHabit.USED_TO;
+  }
+  if (inputValue === 'never-smoked') {
+    return SmokingHabit.NEVER;
+  }
+  return undefined;
+};
+
+const toIsolationStatus = (inputValue: string): IsolationStatus | undefined => {
+  if (inputValue === 'not-in-isolation') {
+    return IsolationStatus.NOT_IN_ISOLATION;
+  }
+  if (inputValue === 'isolation-due-to-travel') {
+    return IsolationStatus.ISOLATION_DUE_TO_TRAVEL;
+  }
+  if (inputValue === 'isolation-due-to-contact') {
+    return IsolationStatus.ISOLATION_DUE_TO_CONTACT;
+  }
+  return undefined;
+};
+
 router.post('/', createReportRateLimit, async (req, res) => {
   const acceptPrivacyPolicy = req.body['accept-privacy-policy'] === 'on';
   if (!acceptPrivacyPolicy) {
@@ -116,10 +149,17 @@ router.post('/', createReportRateLimit, async (req, res) => {
       [Symptom.NO_TASTE]: req.body['symptom-no-taste'] === 'on',
       [Symptom.NO_SMELL]: req.body['symptom-no-smell'] === 'on',
       [Symptom.SLIME_COUGH]: req.body['symptom-slime-cough'] === 'on',
-      [Symptom.RUNNY_NOSE]: req.body['symptom-runny-nose'] === 'on'
+      [Symptom.RUNNY_NOSE]: req.body['symptom-runny-nose'] === 'on',
+      [Symptom.NAUSEA_OR_VOMITING]:
+        req.body['symptom-nausea-or-vomiting'] === 'on'
     },
     symptomStart: req.body['symptom-start'],
     hasBeenInContactWithInfected: req.body['been-in-contact-with'] === 'yes',
+    bodyTemperature: req.body['body-temperature'],
+    smokingHabit: toSmokingHabit(req.body['smoking-habits']),
+    isolationStatus: toIsolationStatus(req.body['isolation-status']),
+    diagnosedWithOtherConditions:
+      req.body['diagnosed-other-conditions'] === 'yes',
     submissionTimestamp: new Date().getTime()
   };
 
