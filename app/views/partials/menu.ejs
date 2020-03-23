@@ -15,36 +15,45 @@ locals.activePage === urls.profile; %>
 <!---->
 <% const imageSubfolder = locals.imageSubfolder; %>
 
-<nav class="flex flex-row">
-  <% if (!home) { %>
-  <a
-    href="<%= urls.submitReport %>"
-    class="custom-nav-link text-white font-medium py-2 px-4 m-2 rounded-full <%= isOnProfile ? 'active' : '' %>"
-    ><%= __("Your state of health") %></a
-  >
-  <% } %>
+<div class="block lg:hidden">
+  <button id="nav-toggle" class="flex items-center text-cvs-green-light hover:text-cvs-gold">
+    <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+  </button>
+</div>
 
-  <a
-    href="<%= urls.map %>"
-    class="text-white font-medium py-2 px-4 m-2 <%= isOnMap ? 'active' : '' %>"
-    ><%= __("Map") %></a
-  >
-  <a
-    href="<%= urls.statistics %>"
-    class="text-white font-medium py-2 px-4 m-2 <%= isOnStats ? 'active' : '' %>"
-    ><%= __("Statistics") %></a
-  >
+<nav class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0" id="nav-content">
+  <ul class="list-reset lg:flex justify-end flex-1 items-center text-right lg:text-left">
+    <% if (!home) { %>
+    <li class="mr-3 py-8 lg:py-2 rounded hover:bg-cvs-red">
+        <a
+          href="<%= urls.submitReport %>"
+          class="custom-nav-link text-xl py-4 lg:text-base text-white font-medium lg:py-2 px-4 m-2 rounded-full <%= isOnProfile ? 'active' : '' %>"
+          ><%= __("Your state of health") %></a
+        >
+    </li>
+    <% } %>
+    <li class="mr-3 py-8 lg:py-2 rounded hover:bg-cvs-red">
+      <a
+        href="<%= urls.map %>"
+        class="text-white text-xl py-4 lg:text-base font-medium lg:py-2 px-4 m-2 <%= isOnMap ? 'active' : '' %>"
+        ><%= __("Map") %></a
+      >
+    </li>
+    <li class="mr-3 py-8 lg:py-2 rounded hover:bg-cvs-red">
+      <a
+        href="<%= urls.statistics %>"
+        class="text-white text-xl py-4 lg:text-base font-medium lg:py-2 px-4 m-2 <%= isOnStats ? 'active' : '' %>"
+        ><%= __("Statistics") %></a
+      >
+    </li>
+    <li class="mr-3 py-8 lg:py-2 rounded hover:bg-cvs-red">
+      <a
+        href="<%= urls.apiDocs %>"
+        class="text-white text-xl py-4 lg:text-base font-medium lg:py-2 px-4 m-2"
+        target="_blank"
+        ><%= __("API") %></a
+      >
+    </li>
+  </ul>
 
-  <a
-    href="<%= urls.privacyPolicy %>"
-    class="text-white font-medium py-2 px-4 m-2 <%= isOnPrivacyPolicy ? 'active' : '' %>"
-    ><%= __("Privacy") %></a
-  >
-
-  <a
-    href="<%= urls.apiDocs %>"
-    class="text-white font-medium py-2 px-4 m-2"
-    target="_blank"
-    ><%= __("API") %></a
-  >
 </nav>

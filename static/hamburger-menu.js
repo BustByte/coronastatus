@@ -1,4 +1,4 @@
-var hamburgerMenuButton = document.getElementsByClassName(
+/*var hamburgerMenuButton = document.getElementsByClassName(
   'hamburger-menu-button'
 )[0];
 
@@ -17,3 +17,9 @@ hamburgerMenuButton.addEventListener('click', function() {
     }, 1);
   }
 });
+*/
+
+	//Javascript to toggle the menu
+  document.getElementById('nav-toggle').onclick = function(){
+    document.getElementById("nav-content").classList.toggle("hidden");
+  }
