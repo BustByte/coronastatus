@@ -18,10 +18,21 @@ const mapReportToFeatureState = (report: CovidReport): string => {
   return state;
 };
 
+interface Feature {
+  type: 'Feature';
+  geometry: {
+    type: 'Point';
+    coordinates: [number, number];
+  };
+  properties: {
+    state: string;
+  };
+}
+
 const mapFeatureFromCoordinateAndReport = (
   coordinate: Coordinate,
   report: CovidReport
-) => ({
+): Feature => ({
   type: 'Feature',
   geometry: {
     type: 'Point',

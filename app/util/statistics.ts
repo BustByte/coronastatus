@@ -50,7 +50,7 @@ function compareSymptomStats(a: SymptomStat, b: SymptomStat): number {
 
 export function groupBySymptoms(
   reports: CovidReport[],
-  reportFilter: (report: CovidReport) => boolean = () => true
+  reportFilter: (report: CovidReport) => boolean = (): boolean => true
 ): SymptomStats {
   const symptoms = reports
     .filter(report => hasSymptoms(report.symptoms))
