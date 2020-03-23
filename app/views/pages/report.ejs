@@ -36,16 +36,7 @@
 }
 %>
 
-<!DOCTYPE html>
-<html lang="<%= locals.htmlLang %>">
-<head>
-<%- include('partials/head') -%>
-</head>
-<body>
-  <div class="static w-full top-0 left-0 right-0">
-    <%- include('partials/banner', { start: __('NB!'), message: __('This page is currently not affiliated with the authorities in any way.'), link: urls.privacyPolicy, linkText: __('Read how the data you enter is processed here!'), color: '#efbc2e' }) -%>
-    <%- include('partials/banner', { start: __('Important'), message: __('Use the link you noted down last time to update your health condition'), color: '#62C4C3', id: 'has-submitted-alert' }) -%>
-  </div>
+<%- include('partials/header', { home: true, menu: false }) -%>
 
   <section class="custom-section custom-hero p-4">
     <div class="custom-section-content">

@@ -1,3 +1,5 @@
+<% const { show = true, menu = true, home = false } = locals; %>
+
 <!DOCTYPE html>
 <html lang="<%= locals.htmlLang %>">
 <head>
@@ -9,11 +11,17 @@
     <%- include('partials/banner', { start: __('Important'), message: __('Use the link you noted down last time to update your health condition'), color: '#62C4C3', id: 'has-submitted-alert' }) -%>
   </div>
 
-  <section class="custom-section custom-hero p-4 w-full">
-    <div class="custom-section-content">
-      <header class="py-2 flex justify-between items-center">
-        <%- include('partials/logo') -%>
-        <%- include('partials/menu', ) -%>
-      </header>
-    </div>
-  </section>
+  <% if (menu) { %>
+    <section class="custom-section custom-hero p-4 w-full">
+      <div class="custom-section-content">
+        <header class="py-2 flex justify-between items-center">
+          <%- include('partials/logo') -%>
+          <%- include('partials/menu', ) -%>
+        </header>
+      </div>
+    </section>
+  <% } %>
+
+  <% if (show && !home) { %>
+    <section class="custom-section-content">
+  <% } %>

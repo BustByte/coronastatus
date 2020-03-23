@@ -1,325 +1,346 @@
-<!DOCTYPE html>
-<html lang="<%= locals.htmlLang %>">
-    <head>
-        <%- include('partials/head') -%>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-        <script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
-        <link href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css" rel="stylesheet" />
-        <style>
-            #map { position: fixed; width: 100%; height: 100% }
-        </style>
-    </head>
-    <body>
-        <style>
-            .map-overlay {
-                font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-                position: absolute;
-                width: 7%;
-                min-width: 150px;
-                top: 100px;
-                left: 0;
-                padding: 10px;
-            }
+<%- include('partials/header', { show: false }) -%>
 
-            .map-overlay .map-overlay-labels {
-                background-color: #fff;
-                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-                min-width: 140px;
-                border-radius: 3px;
-                padding: 10px;
-                margin-bottom: 10px;
-            }
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
 
-            .map-overlay .map-overlay-info {
-                background-color: #fff;
-                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-                min-width: 140px;
-                border-radius: 3px;
-                padding: 10px;
-                margin-bottom: 10px;
-            }
+<link
+  href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css"
+  rel="stylesheet"
+/>
 
-            @media screen and (max-width: 1024px) {
-                .map-overlay-info {
-                    display: none !important;
-                }
-            }
+<style>
+  #map {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  .map-overlay {
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    position: absolute;
+    width: 7%;
+    min-width: 150px;
+    top: 100px;
+    left: 0;
+    padding: 10px;
+  }
 
-            .map-overlay-bottom {
-                font: 11px Arial;
-                color: #fff;
-                position: fixed;
-                height: 40px;
-                bottom: 5px;
-                right: 10px;
-            }
+  .map-overlay .map-overlay-labels {
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    min-width: 140px;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
 
-            .map-overlay .legend .healthy {
-                height: 10px;
-                width: 100%;
-                background:  #91cf60;
-            }
+  .map-overlay .map-overlay-info {
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    min-width: 140px;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
 
-            .map-overlay .legend .positive {
-                height: 10px;
-                width: 100%;
-                background:  #ff0000;
-            }
+  @media screen and (max-width: 1024px) {
+    .map-overlay-info {
+      display: none !important;
+    }
+  }
 
-            .map-overlay .legend .symptoms {
-                height: 10px;
-                width: 100%;
-                background: #fda429;
-            }
+  .map-overlay-bottom {
+    font: 11px Arial;
+    color: #fff;
+    position: fixed;
+    height: 40px;
+    bottom: 5px;
+    right: 10px;
+  }
 
-            .logo__text {
-                color: #fff;
-            }
+  .map-overlay .legend .healthy {
+    height: 10px;
+    width: 100%;
+    background: #91cf60;
+  }
 
-            a {
-                color: #fff;
-            }
+  .map-overlay .legend .positive {
+    height: 10px;
+    width: 100%;
+    background: #ff0000;
+  }
 
-            #map-page .fas.fa-bars {
-                color: #fff;
-            }
+  .map-overlay .legend .symptoms {
+    height: 10px;
+    width: 100%;
+    background: #fda429;
+  }
 
-            #map-page .hamburger-menu.active {
-                position: relative;
-                text-align: right;
-            }
+  .logo__text {
+    color: #fff;
+  }
 
-            #map-page .hamburger-menu a {
-                color: #fff;
-            }
+  a {
+    color: #fff;
+  }
 
-            #map-page .hamburger-menu-button {
-                border-color: #fff;
-            }
+  #map-page .fas.fa-bars {
+    color: #fff;
+  }
 
+  #map-page .hamburger-menu.active {
+    position: relative;
+    text-align: right;
+  }
 
-        </style>
-        <div id="map-page">
-            <div id="map"></div>
-            <%- include('partials/menu') -%>
-            <%- include('partials/hamburger-menu') -%>
-            <div class="map-overlay top">
-                <div class="map-overlay-info">
-                    <h5><%= __('Report status by zip code') %></h5>
-                    <p><%= __('The markers correspond to coordinates of zip codes, they have nothing to do with individuals.') %><p>
-                    <label id="month"></label>
-                </div>
-                <div class="map-overlay-labels">
-                    <div id="legend" class="legend">
-                        <div><%= __('Healthy') %></div>
-                        <div class="healthy"></div>
-                        <div><%= __('Has symptoms') %></div>
-                        <div class="symptoms"></div>
-                        <div><%= __('Tested positive') %></div>
-                        <div class="positive"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="https://d3js.org/d3.v4.js"></script>
-        <script>
-            var map = new mapboxgl.Map({
-                container: 'map',
-                style: 'https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json',
-                center: [10.7522, 63.9139],
-                zoom: 4,
-                hash: true
-            });
+  #map-page .hamburger-menu a {
+    color: #fff;
+  }
 
-            map.on('load', function() {
-                var attributions = document.getElementsByClassName("mapboxgl-ctrl-attrib-inner")[0]
-                if (attributions) {
-                    var newAttrib = document.createElement("a")
-                    newAttrib.href = "http://www.erikbolstad.no/geo/noreg/postnummer/";
-                    newAttrib.innerText = "Zip code information "
-                    // Remove «improve this map» link
-                    attributions.removeChild(attributions.lastChild)
-                    attributions.insertBefore(newAttrib,  attributions.firstChild)
-                }
-            });
+  #map-page .hamburger-menu-button {
+    border-color: #fff;
+  }
+</style>
 
-            var positive = ['==', ['get', 'state'], 'POSITIVE'];
-            var symptoms = ['==', ['get', 'state'], 'SYMPTOMS'];
-            var healthy = ['==', ['get', 'state'], 'HEALTHY'];
+<div id="map-page">
+  <div id="map"></div>
+  <%- include('partials/menu') -%> <%- include('partials/hamburger-menu') -%>
+  <div class="map-overlay top">
+    <div class="map-overlay-info">
+      <h5><%= __('Report status by zip code') %></h5>
+      <p>
+        <%= __('The markers correspond to coordinates of zip codes, they have
+        nothing to do with individuals.') %>
+      </p>
+      <p>
+        <label id="month"></label>
+      </p>
+    </div>
 
-            var colors = {
-                positive: "#ff0000",
-                symptoms: "#fda429",
-                healthy: "#91cf60"
-            };
+    <div class="map-overlay-labels">
+      <div id="legend" class="legend">
+        <div><%= __('Healthy') %></div>
+        <div class="healthy"></div>
+        <div><%= __('Has symptoms') %></div>
+        <div class="symptoms"></div>
+        <div><%= __('Tested positive') %></div>
+        <div class="positive"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script>
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json',
+    center: [10.7522, 63.9139],
+    zoom: 4,
+    hash: true
+  });
 
-            map.on('load', function() {
-                map.addSource('reports', {
-                  'type': 'geojson',
-                  data: '<%= urls.map %>/geojson',
-                  cluster: true,
-                  clusterMaxZoom: 100, // Max zoom to cluster points on
-                  clusterRadius: 80,
-                  clusterProperties: {
-                    positive: ['+', ['case', positive, 1, 0]],
-                    symptoms: ['+', ['case', symptoms, 1, 0]],
-                    healthy: ['+', ['case', healthy, 1, 0]],
-                  }
-                });
+  map.on('load', function() {
+    var attributions = document.getElementsByClassName(
+      'mapboxgl-ctrl-attrib-inner'
+    )[0];
+    if (attributions) {
+      var newAttrib = document.createElement('a');
+      newAttrib.href = 'http://www.erikbolstad.no/geo/noreg/postnummer/';
+      newAttrib.innerText = 'Zip code information ';
+      // Remove «improve this map» link
+      attributions.removeChild(attributions.lastChild);
+      attributions.insertBefore(newAttrib, attributions.firstChild);
+    }
+  });
 
-                map.addLayer({
-                  'id': 'report_individual',
-                  'type': 'circle',
-                  'source': 'reports',
-                  'filter': ['!=', ['get', 'cluster'], true],
-                  'paint': {
-                    'circle-color': ['case',
-                      positive, colors.positive,
-                      symptoms, colors.symptoms,
-                      healthy, colors.healthy,
-                      "#000000"
-                    ],
-                    // We do not show these single points at all. They are only here
-                    // because the markers wouldn't render without.
-                    'circle-radius': 0
-                  }
-                });
-            });
+  var positive = ['==', ['get', 'state'], 'POSITIVE'];
+  var symptoms = ['==', ['get', 'state'], 'SYMPTOMS'];
+  var healthy = ['==', ['get', 'state'], 'HEALTHY'];
 
-            var markers = {};
-            var markersOnScreen = {};
-            var point_counts = [];
-            var totals;
+  var colors = {
+    positive: '#ff0000',
+    symptoms: '#fda429',
+    healthy: '#91cf60'
+  };
 
-            function getPointCount(features) {
-              features.forEach(function(f) {
-                if (f.properties.cluster) {
-                  point_counts.push(f.properties.point_count)
-                }
-              })
-              return point_counts;
-            };
+  map.on('load', function() {
+    map.addSource('reports', {
+      type: 'geojson',
+      data: '<%= urls.map %>/geojson',
+      cluster: true,
+      clusterMaxZoom: 100, // Max zoom to cluster points on
+      clusterRadius: 80,
+      clusterProperties: {
+        positive: ['+', ['case', positive, 1, 0]],
+        symptoms: ['+', ['case', symptoms, 1, 0]],
+        healthy: ['+', ['case', healthy, 1, 0]]
+      }
+    });
 
-            function updateMarkers() {
-              var newMarkers = {};
-              var features = map.querySourceFeatures('reports');
-              totals = getPointCount(features);
-              features.forEach(function(feature) {
-                var coordinates = feature.geometry.coordinates;
-                var props = feature.properties;
-                if (!props.cluster) {
-                  return;
-                };
-                var id = props.cluster_id;
-                var marker = markers[id];
-                if (!marker) {
-                  var el = createDonutChart(props, totals);
-                  marker = markers[id] = new mapboxgl.Marker({
-                    element: el
-                  }).setLngLat(coordinates);
-                }
+    map.addLayer({
+      id: 'report_individual',
+      type: 'circle',
+      source: 'reports',
+      filter: ['!=', ['get', 'cluster'], true],
+      paint: {
+        'circle-color': [
+          'case',
+          positive,
+          colors.positive,
+          symptoms,
+          colors.symptoms,
+          healthy,
+          colors.healthy,
+          '#000000'
+        ],
+        // We do not show these single points at all. They are only here
+        // because the markers wouldn't render without.
+        'circle-radius': 0
+      }
+    });
+  });
 
-                newMarkers[id] = marker;
+  var markers = {};
+  var markersOnScreen = {};
+  var point_counts = [];
+  var totals;
 
-                if (!markersOnScreen[id]) {
-                  marker.addTo(map);
-                }
-              });
+  function getPointCount(features) {
+    features.forEach(function(f) {
+      if (f.properties.cluster) {
+        point_counts.push(f.properties.point_count);
+      }
+    });
+    return point_counts;
+  }
 
-              for (id in markersOnScreen) {
-                if (!newMarkers[id]) {
-                  markersOnScreen[id].remove();
-                }
-              }
-                markersOnScreen = newMarkers;
-            };
+  function updateMarkers() {
+    var newMarkers = {};
+    var features = map.querySourceFeatures('reports');
+    totals = getPointCount(features);
+    features.forEach(function(feature) {
+      var coordinates = feature.geometry.coordinates;
+      var props = feature.properties;
+      if (!props.cluster) {
+        return;
+      }
+      var id = props.cluster_id;
+      var marker = markers[id];
+      if (!marker) {
+        var el = createDonutChart(props, totals);
+        marker = markers[id] = new mapboxgl.Marker({
+          element: el
+        }).setLngLat(coordinates);
+      }
 
-            function createDonutChart(props, totals) {
-              var div = document.createElement('div');
+      newMarkers[id] = marker;
 
-              var data = [
-                {type: 'positive', count: props.positive},
-                {type: 'symptoms', count: props.symptoms},
-                {type: 'healthy', count: props.healthy},
-              ];
+      if (!markersOnScreen[id]) {
+        marker.addTo(map);
+      }
+    });
 
-              var thickness = 10;
+    for (id in markersOnScreen) {
+      if (!newMarkers[id]) {
+        markersOnScreen[id].remove();
+      }
+    }
+    markersOnScreen = newMarkers;
+  }
 
-              // this sets the scale for our circle radius
-              // and this is why we need the totals. We need to
-              // set a mininum and a maximum to define the domain and the range.
-              var scale = d3.scaleLinear()
-                .domain([d3.max(totals), d3.min(totals)])
-                .range([2500, 800])//d3.max(totals)])
+  function createDonutChart(props, totals) {
+    var div = document.createElement('div');
 
-              var radius = Math.sqrt(scale(props.point_count)) + 5;
-              var circleRadius = radius - thickness;
+    var data = [
+      { type: 'positive', count: props.positive },
+      { type: 'symptoms', count: props.symptoms },
+      { type: 'healthy', count: props.healthy }
+    ];
 
-              var svg = d3.select(div)
-                .append('svg')
-                .attr('class', 'pie')
-                .attr('width', radius * 2)
-                .attr('height', radius * 2);
+    var thickness = 10;
 
-              var g = svg.append('g')
-                .attr('transform', `translate(${radius}, ${radius})`);
+    // this sets the scale for our circle radius
+    // and this is why we need the totals. We need to
+    // set a mininum and a maximum to define the domain and the range.
+    var scale = d3
+      .scaleLinear()
+      .domain([d3.max(totals), d3.min(totals)])
+      .range([2500, 800]); //d3.max(totals)])
 
-              var arc = d3.arc()
-                .innerRadius(radius - thickness)
-                .outerRadius(radius);
+    var radius = Math.sqrt(scale(props.point_count)) + 5;
+    var circleRadius = radius - thickness;
 
-              var pie = d3.pie()
-                    .value(function(d) { return d.count })
-                .sort(null);
+    var svg = d3
+      .select(div)
+      .append('svg')
+      .attr('class', 'pie')
+      .attr('width', radius * 2)
+      .attr('height', radius * 2);
 
-              var path = g.selectAll('path')
-                    .data(pie(data.sort(function(x, y) { return d3.ascending(y.count, x.count) })))
-                .enter()
-                .append('path')
-                .attr('d', arc)
-                    .attr('fill', function(d) { return colors[d.data.type] })
+    var g = svg
+      .append('g')
+      .attr('transform', `translate(${radius}, ${radius})`);
 
-              var circle = g.append('circle')
-                .attr('r', circleRadius)
-                .attr('fill', 'rgba(0, 0, 0, 0.7)')
-                .attr('class', 'center-circle')
+    var arc = d3
+      .arc()
+      .innerRadius(radius - thickness)
+      .outerRadius(radius);
 
-              var text = g
-                .append("text")
-                .attr("class", "total")
-                .text(props.point_count_abbreviated)
-                .attr('text-anchor', 'middle')
-                .attr('dy', 5)
-                .attr('fill', 'white')
+    var pie = d3
+      .pie()
+      .value(function(d) {
+        return d.count;
+      })
+      .sort(null);
 
-              return div;
-            }
+    var path = g
+      .selectAll('path')
+      .data(
+        pie(
+          data.sort(function(x, y) {
+            return d3.ascending(y.count, x.count);
+          })
+        )
+      )
+      .enter()
+      .append('path')
+      .attr('d', arc)
+      .attr('fill', function(d) {
+        return colors[d.data.type];
+      });
 
-            map.on('data', function(e) {
-              if (e.sourceId !== 'reports' || !e.isSourceLoaded) return;
+    var circle = g
+      .append('circle')
+      .attr('r', circleRadius)
+      .attr('fill', 'rgba(0, 0, 0, 0.7)')
+      .attr('class', 'center-circle');
 
-              map.on('move', updateMarkers);
-              map.on('moveend', updateMarkers);
-              updateMarkers();
-            });
+    var text = g
+      .append('text')
+      .attr('class', 'total')
+      .text(props.point_count_abbreviated)
+      .attr('text-anchor', 'middle')
+      .attr('dy', 5)
+      .attr('fill', 'white');
 
-            map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+    return div;
+  }
 
-            navigator.geolocation.getCurrentPosition(
-                function(geolocation) {
-                    map.flyTo({
-                        zoom: 11,
-                        center: [
-                            geolocation.coords.longitude,
-                            geolocation.coords.latitude
-                        ],
-                        essential: true
-                    });
-                });
-        </script>
-        <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
-        <script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
-        <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
-    </body>
-</html>
+  map.on('data', function(e) {
+    if (e.sourceId !== 'reports' || !e.isSourceLoaded) return;
+
+    map.on('move', updateMarkers);
+    map.on('moveend', updateMarkers);
+    updateMarkers();
+  });
+
+  map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+
+  navigator.geolocation.getCurrentPosition(function(geolocation) {
+    map.flyTo({
+      zoom: 11,
+      center: [geolocation.coords.longitude, geolocation.coords.latitude],
+      essential: true
+    });
+  });
+</script>
+
+<%- include('partials/footer', { show: false }) -%>
