@@ -15,18 +15,18 @@ import {
 } from '../domain/types';
 
 const symptomToLabelMap = {
-  [Symptom.DRY_COUGH]: 'Tørrhoste',
-  [Symptom.EXHAUSTION]: 'Slitenhet eller utmattelse',
-  [Symptom.FEVER]: 'Feber',
-  [Symptom.HEAVY_BREATHING]: 'Tung pust',
-  [Symptom.MUSCLE_ACHING]: 'Muskelsmerter',
-  [Symptom.DIARRHEA]: 'Diaré',
-  [Symptom.HEADACHE]: 'Hodepine',
-  [Symptom.SORE_THROAT]: 'Vondt i halsen',
-  [Symptom.NO_TASTE]: 'Tap av smakssans',
-  [Symptom.NO_SMELL]: 'Tap av luktesans',
-  [Symptom.SLIME_COUGH]: 'Slimhoste',
-  [Symptom.RUNNY_NOSE]: 'Tett eller rennende nese'
+  [Symptom.DRY_COUGH]: 'Dry cough',
+  [Symptom.EXHAUSTION]: 'Fatigue and exhaustion',
+  [Symptom.FEVER]: 'Fever',
+  [Symptom.HEAVY_BREATHING]: 'Shortness of breath',
+  [Symptom.MUSCLE_ACHING]: 'Muscle pain',
+  [Symptom.DIARRHEA]: 'Diarrhea',
+  [Symptom.HEADACHE]: 'Headache',
+  [Symptom.SORE_THROAT]: 'Sore throat',
+  [Symptom.NO_TASTE]: 'Loss of sense of taste',
+  [Symptom.NO_SMELL]: 'Loss of sense of smell',
+  [Symptom.SLIME_COUGH]: 'Mucus cough',
+  [Symptom.RUNNY_NOSE]: 'Stuffy or runny nose'
 };
 
 const symptomKeyToLabel = (symptomKey: Symptom): string =>
