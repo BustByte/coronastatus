@@ -133,7 +133,7 @@
 	"Total number of reports": "Totaal aantal meldingen",
 	"Positive test results and close contact": "Positieve testresultaten en nauw contact",
 	"Clarifications data basis": "Verduidelijkingen gegevensbasis",
-	"Questions about close contact were added on 16 March at. 10:30 p.m.. Some symptoms were not part of the form from the beginning:": "Vragen over nauw contact zijn op 16 maart toegevoegd op. 10:30 p.m .. Sommige symptomen zijn later toegevoegd aan het formulier:",
+	"Questions about close contact were added on 16 March at. 10:30 p.m.. Some symptoms were not part of the form from the beginning:": "Vragen over nauw contact zijn op 16 maart toegevoegd om 10:30. Sommige symptomen zijn later toegevoegd aan het formulier:",
 	"Symptom": "Symptoom",
 	"Added to form": "Toegevoegd aan formulier",
 	"https://who.int": "https://rivm.nl",
@@ -143,5 +143,8 @@
 	"Netherlands": "Nederland",
 	"Slovakia": "Slowakije",
 	"United Kingdom": "Verenigd Koninkrijk",
-	"Nederland": "Nederland"
+	"Nederland": "Nederland",
+	"March 16" : "16 maart",
+  "March 17" : "17 maart",
+  "at": "om"
 }

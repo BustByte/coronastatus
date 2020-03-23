@@ -121,7 +121,7 @@
 	"Total number of reports": "Total number of reports",
 	"Positive test results and close contact": "Positive test results and close contact",
 	"Clarifications data basis": "Clarifications data basis",
-	"Questions about close contact were added on 16 March at. 10:30 p.m.. Some symptoms were not part of the form from the beginning:": "Questions about close contact were added on 16 March at. 10:30 p.m.. Some symptoms were not part of the form from the beginning:",
+	"Questions about close contact were added on 16 March at. 10:30 p.m.. Some symptoms were not part of the form from the beginning:": "Questions about close contact were added on 16 March at 10:30 p.m.. Some symptoms were not part of the form from the beginning:",
 	"Symptom": "Symptom",
 	"Added to form": "Added to form",
 	"In total": "In total",
@@ -143,5 +143,8 @@
 	"Netherlands": "The Netherlands",
 	"Slovakia": "Slovakia",
 	"United Kingdom": "The United Kingdom",
-	"Nederland": "Nederland"
+	"Nederland": "Nederland",
+	"March 16" : "March 16",
+  "March 17" : "March 17",
+  "at": "at"
 }
