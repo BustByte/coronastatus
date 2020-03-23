@@ -117,9 +117,11 @@
     </div>
   <% } %>
 
-  <section class="p-4 pb-24 w-full">
+  <section class="custom-section-content p-4 pb-24 w-full">
     <form method="post" action="/" class="custom-form p-24 py-12 my-4 rounded-lg flex flex-col items-start">
-      <h1 style="margin-bottom: 1rem;"><%= profile ? __("Your state of health") : __("Report your health condition") %></h1>
+      <h1 class="text-5xl text-center font-bold text-red-500 m-2 self-center">
+        <%= profile ? __("Your state of health") : __("Report your health condition") %>
+      </h1>
 
       <% if (locals.success) {%>
         <div class="alert alert-success" role="alert">
@@ -141,7 +143,7 @@
           <%= __("and") %> <a href="<%= urls.profile %>/<%= passcode %>?clear=true"> <%= __("clear this form") %>.</a>
         </div>
       <% } else { %>
-        <p class="slogan">
+        <p class="text-center text-xl font-medium m-4 mt-0 self-center">
           <%= __("Are you from") %> <%= __(locals.country) %>?
           <%= __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information!") %></p>
       <% } %>
