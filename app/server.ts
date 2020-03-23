@@ -74,7 +74,7 @@ app.set('views', [
 
 app.use(urls.submitReport, reportRoutes);
 app.use(urls.map, mapRoutes);
-app.use(urls.map, apiRoutes);
+app.use(urls.api, apiRoutes);
 app.use(urls.statistics, statisticsRoutes);
 app.use('/', variousRoutes);
 

@@ -15,7 +15,9 @@ import {
   TestResult,
   Symptoms,
   CovidReport,
-  Symptom
+  Symptom,
+  SmokingHabit,
+  IsolationStatus
 } from '../domain/types';
 
 const router = express.Router();
@@ -52,11 +54,15 @@ interface ExposedCovidReport {
   symptoms: Symptoms;
   submissionDate: string; // YYYY-MM-DD
   age: string;
+  bodyTemperature?: string;
+  smokingHabit?: SmokingHabit;
+  isolationStatus?: IsolationStatus;
+  diagnosedWithOtherConditions?: boolean;
 }
 
 type ZeroOrOne = 0 | 1;
 
-const toZeroOrOne = (bool: boolean): ZeroOrOne => (bool ? 1 : 0);
+const toZeroOrOne = (bool?: boolean): ZeroOrOne => (bool ? 1 : 0);
 
 interface ExposedCovidReportCSV extends Record<Symptom, ZeroOrOne> {
   profileId: number;
@@ -68,6 +74,10 @@ interface ExposedCovidReportCSV extends Record<Symptom, ZeroOrOne> {
   testResult?: TestResult;
   symptomStart?: string; // YYYY-MM-DD
   submissionDate: string;
+  bodyTemperature?: string;
+  smokingHabit?: SmokingHabit;
+  isolationStatus?: IsolationStatus;
+  diagnosedWithOtherConditions?: ZeroOrOne;
 }
 
 const toISODate = (submissionTimestamp: number): string =>
@@ -82,7 +92,11 @@ const reportToExposedFormat = (report: CovidReport): ExposedCovidReport => ({
   symptomStart: report.symptomStart,
   testResult: report.testResult,
   symptoms: report.symptoms,
-  submissionDate: toISODate(report.submissionTimestamp)
+  submissionDate: toISODate(report.submissionTimestamp),
+  bodyTemperature: report.bodyTemperature,
+  smokingHabit: report.smokingHabit,
+  isolationStatus: report.isolationStatus,
+  diagnosedWithOtherConditions: report.diagnosedWithOtherConditions
 });
 
 const extractSymptomsAsZeroOrOne = (
@@ -119,6 +133,12 @@ const reportToExposedCsvFormat = (
   symptomStart: report.symptomStart,
   testResult: report.testResult,
   submissionDate: toISODate(report.submissionTimestamp),
+  bodyTemperature: report.bodyTemperature,
+  smokingHabit: report.smokingHabit,
+  isolationStatus: report.isolationStatus,
+  diagnosedWithOtherConditions: toZeroOrOne(
+    report.diagnosedWithOtherConditions
+  ),
   ...extractSymptomsAsZeroOrOne(report.symptoms)
 });
 
