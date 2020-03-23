@@ -1,9 +1,10 @@
 <% const shouldAddAnalytics = !locals.profile; %>
+<% const { show = true, home = false } = locals; %>
 
 <!-- spacer -->
 
-<% if (typeof show === 'undefined' || typeof show === 'boolean' && show == true) { %>
-  </section> <!-- custom-section-content -->
+<% if (show && !home) { %>
+</section> <!-- custom-section-content -->
 <% } %>
 
 <!-- spacer -->
