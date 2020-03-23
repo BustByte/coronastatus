@@ -464,4 +464,6 @@
   }
 </script>
 
-<%- include('partials/footer') -%>
+<script src="/static/form.js?v=<%= locals.cacheKey %>"></script>
+
+<%- include('partials/footer', { home: true }) -%>
