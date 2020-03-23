@@ -395,45 +395,45 @@
   </form>
 </section>
 
-<section class="custom-section custom-section-about py-24 bg-white">
+<section class="custom-section custom-section-about px-6 lg:px-0 py-12 lg:py-24 bg-white">
   <div class="custom-section-content">
-    <div class="section-about-header flex flex-row items-center">
+    <div class="section-about-header flex flex-row items-center mb-8">
       <img class="section-about-header__img h-24 w-24"
         src="/static/images/recovery-path.svg" alt="">
-      <div class="section-about-header__title m-4 text-red-500 text-5xl font-bold"><%= __('About the service') %></div>
+      <div class="section-about-header__title ml-4 text-cvs-red text-2xl md:text-3xl lg:text-4xl font-bold"><%= __('About the service') %></div>
     </div>
-    <p class="section-about-paragraph p-4 text-xl font-medium">
+    <p class="section-about-paragraph p-4 text-base lg:text-xl font-medium">
       <%= __(`In connection with the outbreak of COVID-19, many people have
             been tested for the virus, but due to lack of resources, the
             overwhelming majority have not been tested. It is therefore assumed
             that there are large missing numbers here in connection with the
             outbreak.`)%>
     </p>
-    <p class="section-about-paragraph p-4 text-xl font-medium">
+    <p class="section-about-paragraph p-4 text-base lg:text-xl font-medium">
       <%= __(`Using self-report, you can get a better picture of how many
             people have symptoms without exposing health workers to potential
             contamination hazards and without using up valuable infection control
             equipment that is already in short supply. We at Bustbyte, well helped
             by other volunteers, have created this tool in response to`) %>
-    <a
+    <a class="text-cvs-red font-bold hover:underline"
       href="https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona -may-paa-space-naa-petter-bae-brandtzaeg "><%= __('this article') %></a>
     <%= __('as an attempt to chart these numbers.')%>
     </p>
-    <p class="section-about-paragraph p-4 text-xl font-medium">
+    <p class="section-about-paragraph p-4 text-base lg:text-xl font-medium">
       <%= __(`This is not an official tool of the authorities, and for more
             information about the outbreak we refer to health authorities which
             always have updated information.`) %>
     </p>
     <div class="hashtag-item-container flex flex-row justify-around" style="margin: 4rem 0 -14rem 0;">
-      <div class="hashtag-item flex flex-col items-center">
-        <div class="hashtag-item__title text-red-500 font-medium text-3xl uppercase m-2">#washyourhands</div>
+      <div class="hashtag-item flex flex-col items-center w-1/2">
+        <div class="hashtag-item__title text-cvs-red font-medium text-xl md:text-3xl uppercase m-2">#washyourhands</div>
         <img src="/static/images/washing-hands.svg" alt=""
-          class="hashtag-item__img h-64 w-64 m-2">
+          class="hashtag-item__img h-48 w-48 lg:h-64 lg:w-64 m-2">
       </div>
-      <div class="hashtag-item">
-        <div class="hashtag-item__title text-red-500 font-medium text-3xl uppercase m-2">#staythefuckhome</div>
+      <div class="hashtag-item flex flex-col items-center w-1/2">
+        <div class="hashtag-item__title text-cvs-red font-medium text-xl md:text-3xl uppercase m-2">#staythefuckhome</div>
         <img src="/static/images/stay-home.svg" alt=""
-          class="hashtag-item__img h-64 w-64 m-2">
+          class="hashtag-item__img h-48 w-48 lg:h-64 lg:w-64 m-2">
       </div>
     </div>
   </div>

@@ -21,29 +21,29 @@
       <img
         src="/static/images/github.svg"
         alt=""
-        class="footer-logo-link__img h-24 w-24"
+        class="footer-logo-link__img mt-12 h-16 w-16 lg:h-24 lg:w-24"
       />
     </a>
     <div
-      class="footer-links flex flex-row justify-between flex-wrap items-center self-stretch my-8"
+      class="footer-links flex flex-row justify-between flex-wrap items-center self-stretch my-8 text-base lg:text-xl text-center"
     >
-      <a class="footer-link text-red-500 font-medium text-xl whitespace-no-wrap"
+      <a class="footer-link text-cvs-green-dark font-medium whitespace-no-wrap"
         >Credits & Thanks</a
       >
       <span
-        class="footer-link text-red-500 font-medium text-xl whitespace-no-wrap"
+        class="footer-link text-cvs-green-dark font-medium whitespace-no-wrap"
       >
         <%= __('Developed by')%>
-        <a target="_blank" href="https://bustbyte.no"
+        <a target="_blank" class="font-bold hover:text-cvs-red hover:underline" href="https://bustbyte.no"
           ><%= __('BustByte AS')%></a
         >
         <%= __('and') %>
-        <a href="<%= urls.contributors %>">
+        <a class="font-bold hover:text-cvs-red hover:underline" href="<%= urls.contributors %>">
           <%= __('volunteers')%>
         </a>
       </span>
       <a
-        class="footer-link text-red-500 font-medium text-xl whitespace-no-wrap"
+        class="footer-link text-cvs-green-dark hover:text-cvs-red font-bold hover:underline whitespace-no-wrap"
         target="_blank"
         href="<%= urls.privacyPolicy %>"
         ><%= __('Privacy Policy')%></a
