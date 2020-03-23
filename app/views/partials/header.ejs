@@ -1,22 +1,24 @@
-<% const { show = true, menu = true, home = false } = locals; %>
+<% const { show = true, menu = true, home = false, fullscreen = false } = locals; %>
 
 <!DOCTYPE html>
 <html lang="<%= locals.htmlLang %>">
 <head>
 <%- include('partials/head') -%>
 </head>
-<body>
+<body class="flex flex-col">
   <div class="static w-full top-0 left-0 right-0">
     <%- include('partials/banner', { start: __('NB!'), message: __('This page is currently not affiliated with the authorities in any way.'), link: urls.privacyPolicy, linkText: __('Read how the data you enter is processed here!'), color: '#efbc2e' }) -%>
     <%- include('partials/banner', { start: __('Important'), message: __('Use the link you noted down last time to update your health condition'), color: '#62C4C3', id: 'has-submitted-alert' }) -%>
   </div>
 
+  <div class="main-container flex flex-col flex-grow">
+
   <% if (menu) { %>
-    <section class="custom-section custom-hero p-4 w-full">
+    <section class="custom-section custom-hero p-4 w-full <% if (fullscreen) { %>custom-fullscreen<% } %>">
       <div class="custom-section-content">
         <header class="py-2 flex justify-between items-center">
           <%- include('partials/logo') -%>
-          <%- include('partials/menu', ) -%>
+          <%- include('partials/menu', { home }) -%>
         </header>
       </div>
     </section>

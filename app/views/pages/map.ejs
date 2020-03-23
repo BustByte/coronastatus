@@ -1,4 +1,4 @@
-<%- include('partials/header', { show: false }) -%>
+<%- include('partials/header', { show: false, fullscreen: true}) -%>
 
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
 
@@ -7,126 +7,32 @@
   rel="stylesheet"
 />
 
-<style>
-  #map {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-  }
-  .map-overlay {
-    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    position: absolute;
-    width: 7%;
-    min-width: 150px;
-    top: 100px;
-    left: 0;
-    padding: 10px;
-  }
+<div id="map"></div>
 
-  .map-overlay .map-overlay-labels {
-    background-color: #fff;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    min-width: 140px;
-    border-radius: 3px;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
+<div class="map-overlay top">
+  <div class="map-overlay-info">
+    <h5><%= __(`Report status by zip code`) %></h5>
+    <p>
+      <%= __(`The markers correspond to coordinates of zip codes, they have
+      nothing to do with individuals.`) %>
+    </p>
+    <p>
+      <label id="month"></label>
+    </p>
+  </div>
 
-  .map-overlay .map-overlay-info {
-    background-color: #fff;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    min-width: 140px;
-    border-radius: 3px;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-
-  @media screen and (max-width: 1024px) {
-    .map-overlay-info {
-      display: none !important;
-    }
-  }
-
-  .map-overlay-bottom {
-    font: 11px Arial;
-    color: #fff;
-    position: fixed;
-    height: 40px;
-    bottom: 5px;
-    right: 10px;
-  }
-
-  .map-overlay .legend .healthy {
-    height: 10px;
-    width: 100%;
-    background: #91cf60;
-  }
-
-  .map-overlay .legend .positive {
-    height: 10px;
-    width: 100%;
-    background: #ff0000;
-  }
-
-  .map-overlay .legend .symptoms {
-    height: 10px;
-    width: 100%;
-    background: #fda429;
-  }
-
-  .logo__text {
-    color: #fff;
-  }
-
-  a {
-    color: #fff;
-  }
-
-  #map-page .fas.fa-bars {
-    color: #fff;
-  }
-
-  #map-page .hamburger-menu.active {
-    position: relative;
-    text-align: right;
-  }
-
-  #map-page .hamburger-menu a {
-    color: #fff;
-  }
-
-  #map-page .hamburger-menu-button {
-    border-color: #fff;
-  }
-</style>
-
-<div id="map-page">
-  <div id="map"></div>
-  <%- include('partials/menu') -%> <%- include('partials/hamburger-menu') -%>
-  <div class="map-overlay top">
-    <div class="map-overlay-info">
-      <h5><%= __('Report status by zip code') %></h5>
-      <p>
-        <%= __('The markers correspond to coordinates of zip codes, they have
-        nothing to do with individuals.') %>
-      </p>
-      <p>
-        <label id="month"></label>
-      </p>
-    </div>
-
-    <div class="map-overlay-labels">
-      <div id="legend" class="legend">
-        <div><%= __('Healthy') %></div>
-        <div class="healthy"></div>
-        <div><%= __('Has symptoms') %></div>
-        <div class="symptoms"></div>
-        <div><%= __('Tested positive') %></div>
-        <div class="positive"></div>
-      </div>
+  <div class="map-overlay-labels">
+    <div id="legend" class="legend">
+      <div><%= __(`Healthy`) %></div>
+      <div class="healthy"></div>
+      <div><%= __(`Has symptoms`) %></div>
+      <div class="symptoms"></div>
+      <div><%= __(`Tested positive`) %></div>
+      <div class="positive"></div>
     </div>
   </div>
 </div>
+
 <script src="https://d3js.org/d3.v4.js"></script>
 <script>
   var map = new mapboxgl.Map({

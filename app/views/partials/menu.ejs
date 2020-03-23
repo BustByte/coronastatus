@@ -1,18 +1,50 @@
-<%
-  const urls = locals.urls;
-  const isOnProfile = locals.activePage === urls.submitReport || locals.activePage === urls.profile;
-  const isOnMap = locals.activePage === urls.map;
-  const isOnPrivacyPolicy = locals.activePage === urls.privacyPolicy;
-  const isOnStats = locals.activePage === urls.statistics;
-  const useWhiteLogo = locals.useWhiteLogo;
-  const baseUrl = locals.baseUrl;
-  const imageSubfolder = locals.imageSubfolder;
-%>
+<% const { urls, home = false } = locals; %>
+<!-- prettier spacer -->
+<% const isOnProfile = locals.activePage === urls.submitReport ||
+locals.activePage === urls.profile; %>
+<!---->
+<% const isOnMap = locals.activePage === urls.map; %>
+<!---->
+<% const isOnPrivacyPolicy = locals.activePage === urls.privacyPolicy; %>
+<!---->
+<% const isOnStats = locals.activePage === urls.statistics; %>
+<!---->
+<% const useWhiteLogo = locals.useWhiteLogo; %>
+<!---->
+<% const baseUrl = locals.baseUrl; %>
+<!---->
+<% const imageSubfolder = locals.imageSubfolder; %>
 
 <nav class="flex flex-row">
-  <a href="<%= urls.submitReport %>" class="custom-nav-link text-white font-medium py-2 px-4 m-2 rounded-full <%= isOnProfile ? 'active' : '' %>"><%= __("Your state of health") %></a>
-  <a href="<%= urls.map %>" class="text-white font-medium py-2 px-4 m-2 <%= isOnMap ? 'active' : '' %>"><%= __("Map") %></a>
-  <a href="<%= urls.statistics %>" class="text-white font-medium py-2 px-4 m-2 <%= isOnStats ? 'active' : '' %>"><%= __("Statistics") %></a>
-  <a href="<%= urls.privacyPolicy %>" class="text-white font-medium py-2 px-4 m-2 <%= isOnPrivacyPolicy ? 'active' : '' %>"><%= __("Privacy") %></a>
-  <a href="<%= urls.apiDocs %>" class="text-white font-medium py-2 px-4 m-2" target="_blank"><%= __("API") %></a></li>
+  <% if (!home) { %>
+  <a
+    href="<%= urls.submitReport %>"
+    class="custom-nav-link text-white font-medium py-2 px-4 m-2 rounded-full <%= isOnProfile ? 'active' : '' %>"
+    ><%= __("Your state of health") %></a
+  >
+  <% } %>
+
+  <a
+    href="<%= urls.map %>"
+    class="text-white font-medium py-2 px-4 m-2 <%= isOnMap ? 'active' : '' %>"
+    ><%= __("Map") %></a
+  >
+  <a
+    href="<%= urls.statistics %>"
+    class="text-white font-medium py-2 px-4 m-2 <%= isOnStats ? 'active' : '' %>"
+    ><%= __("Statistics") %></a
+  >
+
+  <a
+    href="<%= urls.privacyPolicy %>"
+    class="text-white font-medium py-2 px-4 m-2 <%= isOnPrivacyPolicy ? 'active' : '' %>"
+    ><%= __("Privacy") %></a
+  >
+
+  <a
+    href="<%= urls.apiDocs %>"
+    class="text-white font-medium py-2 px-4 m-2"
+    target="_blank"
+    ><%= __("API") %></a
+  >
 </nav>
