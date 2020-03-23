@@ -111,7 +111,7 @@
 <% } %>
 
 <section class="custom-section-content p-4 pb-24 w-full">
-  <form id="form" method="post" action="/" class="custom-form p-6 py-6 lg:p-24 lg:py-12 my-4 rounded-lg flex flex-col items-start">
+  <form id="contribute" method="post" action="/" class="custom-form p-6 py-6 lg:p-24 lg:py-12 my-4 rounded-lg flex flex-col items-start">
     <h3 class="text-2xl md:text-3xl lg:text-5xl text-center font-bold text-cvs-red m-2 self-center">
       <%= profile ? __("Your state of health") : __("Report your health condition") %>
     </h3>
@@ -439,6 +439,8 @@
   </div>
 </section>
 
+<script src="/static/form.js?v=<%= locals.cacheKey %>"></script>
+
 <script>
   function hasSubmittedAlertOnClick() {
       document.getElementById('has-submitted-alert').style.display = 'none';
@@ -464,6 +466,18 @@
   }
 </script>
 
-<script src="/static/form.js?v=<%= locals.cacheKey %>"></script>
+<script>
+  (function scrollCallToAction() {
+    document.querySelectorAll('[href="#contribute"]').forEach(function(element) {
+      element.addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("contribute").scrollIntoView({ behavior: "smooth" });
+        // setTimeout(function() {
+        //   document.querySelector("#plans").classList.add("pulse");
+        // }, 1000);
+      });
+    });
+  })()
+</script>
 
 <%- include('partials/footer', { home: true }) -%>
