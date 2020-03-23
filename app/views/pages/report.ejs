@@ -54,25 +54,25 @@
         <%- include('partials/menu') -%>
       </header>
       <div class="my-8 flex flex-row flex-wrap justify-between">
-        <%- include('partials/app-feature-text', {
+        <%- include('partials/app-feature-block', {
           image: '/static/images/hospital.svg',
           title: __('Unreported cases'),
           description: __('The spread of COVID-19 in our country is unknown. Help us create a better overview.')
         }) -%>
 
-        <%- include('partials/app-feature-text', {
+        <%- include('partials/app-feature-block', {
           image: '/static/images/doctor.svg',
           title: __('Contribute anonymously'),
           description: __('Report your health condition anonymously')
         }) -%>
 
-        <%- include('partials/app-feature-text', {
+        <%- include('partials/app-feature-block', {
           image: '/static/images/research.svg',
           title: __('Insight for everyone'),
           description: __('The data is open to everyone. Look at maps and graphs, or download the data and create your own visualizations.')
         }) -%>
 
-        <%- include('partials/app-feature-text', {
+        <%- include('partials/app-feature-block', {
           image: '/static/images/mobile.svg',
           title: __('Everything is open'),
           description: __('The website is open source and built by volunteers. Feel free to join.')
@@ -81,38 +81,46 @@
     </div>
   </section>
 
+  <section class="section p-4">
+    <div class="section-content">
+      <div class="my-8 flex flex-row flex-wrap justify-between">
+        <%- include('partials/app-stats-block', {
+          image: '/static/images/napkin.svg',
+          title: __('Total reports'),
+          number: numberWithSpaces(aggregated.numberOfReports)
+        }) -%>
+
+        <%- include('partials/app-stats-block', {
+          image: '/static/images/temperature-check.svg',
+          title: __('Infected / Have been tested'),
+          number: `${numberWithSpaces(aggregated.numberOfConfirmedInfected)}/${numberWithSpaces(aggregated.numberOfTested)}`
+        }) -%>
+
+        <%- include('partials/app-stats-block', {
+          image: '/static/images/transfer.svg',
+          title: __(`In close contact with someone who's infected`),
+          number: numberWithSpaces(aggregated.numberOfContacts)
+        }) -%>
+
+        <%- include('partials/app-stats-block', {
+          image: '/static/images/symptoms.svg',
+          title: __('Has symptoms'),
+          number: numberWithSpaces(aggregated.numberOfPeopleShowingSymptoms)
+        }) -%>
+      </div>
+    </div>
+  </section>
+
+  <% if(locals.didNotAcceptPrivacyPolicy) {%>
+    <div class="" role="alert">
+      <%= __("You must approve the privacy statement to report your data.") %>
+    </div>
+  <% } %>
+
   <div id="page-wrapper">
     <section id="main" class="wrapper">
       <div class="inner">
 
-        <div class="info-box-row" style="margin-bottom: 2rem;">
-          <div class="info-box stats" id="total-reports">
-            <div class="stats__number">
-              <%= numberWithSpaces(aggregated.numberOfReports) %>
-            </div>
-            <div class="stats__description"><%= __("Total reports") %></div>
-          </div>
-          <div class="info-box stats">
-            <div class="stats__number">
-              <%= numberWithSpaces(aggregated.numberOfConfirmedInfected) %> <span class="delimiter">/</span>
-              <%= numberWithSpaces(aggregated.numberOfTested) %>
-            </div>
-            <div class="stats__description"><%= __("Infected / Have been tested") %></div>
-          </div>
-          <div class="info-box stats">
-            <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfContacts) %></div>
-            <div class="stats__description"><%= __("In close contact with someone who's infected") %></div>
-          </div>
-          <div class="info-box stats">
-            <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfPeopleShowingSymptoms) %></div>
-            <div class="stats__description"><%= __("Has symptoms") %></div>
-          </div>
-        </div>
-        <% if(locals.didNotAcceptPrivacyPolicy) {%>
-          <div class="alert alert-danger" role="alert">
-            <%= __("You must approve the privacy statement to report your data.") %>
-          </div>
-        <% } %>
 
         <h1 style="margin-bottom: 1rem;"><%= profile ? __("Your state of health") : __("Report your health condition") %></h1>
 
