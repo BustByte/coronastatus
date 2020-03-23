@@ -1,0 +1,15 @@
+<div
+  class="w-full py-4 px-12 flex flex-row justify-between bg-blue-200"
+  style="background-color: <%= color %>;"
+  <%= (typeof id === 'string') ? `id=${id}` : '' %>
+>
+  <div class="font-medium">
+    <b><%= (typeof start === 'string') ? start : 'Important:' %></b>
+    <%= message %>
+  </div>
+  <% if (typeof link === 'string') { %>
+  <div class="text-gray-900">
+    <a target="_blank" href="<%= link %>"><%= linkText %></a>
+  </div>
+  <% } %>
+</div>
