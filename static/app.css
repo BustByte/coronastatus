@@ -34,7 +34,22 @@ select {
   width: 300px;
 }
 
+h1 {
+  font-size: 3rem;
+  color: #f56565;
+  margin: 1rem 0;
+  font-weight: 700;
+}
+
 h3 {
+  text-transform: uppercase;
+  font-size: 1.875rem;
+  color: #f56565;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+h4 {
   margin: 1.5rem 0 1rem;
   font-size: 16px;
   font-weight: bold;
@@ -51,6 +66,7 @@ h3 {
   bottom: 0;
   left: 0;
   right: 0;
+  background-color: #333333;
 }
 .map-overlay {
   font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
