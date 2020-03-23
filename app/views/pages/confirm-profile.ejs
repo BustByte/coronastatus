@@ -1,143 +1,119 @@
-<% const { hasCookie, passcode, baseUrl, urls, htmlLang } = locals; %>
+<%- include('partials/header') -%>
 
-<!DOCTYPE html>
-<html lang="<%= htmlLang %>">
-  <head>
-    <%- include('partials/head') -%>
-  </head>
-  <body>
-    <%- include('partials/disclaimer') -%> <%- include('partials/menu') -%>
-    <div id="page-wrapper">
-      <section id="main" class="wrapper">
-        <div class="inner">
-          <div class="row">
-            <div class="col-10 col-12-small">
-              <% if (hasCookie) { %>
-              <h1>
-                <%= __(`We stored your data in a cookie so come back later to
-                update your status`) %>
-              </h1>
-              <p class="subtitle">
-                <%= __(`If you use this computer with multiple users, please use
-                this link to update your status.`) %> <%= __(`Write it down
-                somewhere or save it on your computer.`) %>
-              </p>
+<!-- prettier spacer -->
 
-              <% } else { %>
+<% if (hasCookie) { %>
+<h1>
+  <%= __(`We stored your data in a cookie so come back later to update your
+  status`) %>
+</h1>
+<p class="subtitle">
+  <%= __(`If you use this computer with multiple users, please use this link to
+  update your status.`) %> <%= __(`Write it down somewhere or save it on your
+  computer.`) %>
+</p>
 
-              <h1>
-                <%= __(`Before proceeding please note down the following link`)
-                %>
-              </h1>
-              <p class="subtitle">
-                <%= __(`Save the following link somewhere, or bookmark it in
-                your browser.`) %>
-                <br />
-                <%= __(`That way you can update your report if your health
-                condition changes.`) %>
-              </p>
-              <% }%>
+<% } else { %>
 
-              <div class="profile-url">
-                <span id="link-to-be-copied"
-                  ><%= baseUrl %><%= urls.profile %>/<%= passcode %></span
-                >
-                <div>
-                  <button
-                    id="profile-url-id"
-                    class="copy-icon"
-                    data-clipboard-text="<%= baseUrl %><%= urls.profile %>/<%= passcode %>"
-                  >
-                    <i class="fas fa-copy"></i>
-                  </button>
-                </div>
-              </div>
+<h1>
+  <%= __(`Before proceeding please note down the following link`) %>
+</h1>
+<p class="subtitle">
+  <%= __(`Save the following link somewhere, or bookmark it in your browser.`)
+  %>
+  <br />
+  <%= __(`That way you can update your report if your health condition
+  changes.`) %>
+</p>
+<% }%>
 
-              <div
-                id="profile-copy-status-text"
-                class="alert"
-                style="display:none;"
-                role="alert"
-              ></div>
-              <form method="get" action="<%= urls.profile %>/<%= passcode %>">
-                <div class="row">
-                  <div class="col-12">
-                    <input type="hidden" name="success" value="true" />
-                    <% if (!hasCookie) { %>
-                    <input required type="checkbox" id="accept" name="accept" />
-                    <label for="accept" class="normal-font"
-                      ><%= __("I've noted down the link.") %></label
-                    >
-                    <% } %>
-                  </div>
-                  <div class="col-12">
-                    <ul class="actions">
-                      <li>
-                        <input
-                          class="inverse"
-                          type="submit"
-                          value="<%= __('Proceed') %>"
-                        />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+<div class="profile-url">
+  <span id="link-to-be-copied"
+    ><%= baseUrl %><%= urls.profile %>/<%= passcode %></span
+  >
+  <div>
+    <button
+      id="profile-url-id"
+      class="copy-icon"
+      data-clipboard-text="<%= baseUrl %><%= urls.profile %>/<%= passcode %>"
+    >
+      <i class="fas fa-copy"></i>
+    </button>
+  </div>
+</div>
+
+<div
+  id="profile-copy-status-text"
+  class="alert"
+  style="display:none;"
+  role="alert"
+></div>
+<form method="get" action="<%= urls.profile %>/<%= passcode %>">
+  <div class="row">
+    <div class="col-12">
+      <input type="hidden" name="success" value="true" />
+      <% if (!hasCookie) { %>
+      <input required type="checkbox" id="accept" name="accept" />
+      <label for="accept" class="normal-font"
+        ><%= __("I've noted down the link.") %></label
+      >
+      <% } %>
     </div>
-    <%- include('partials/footer') -%>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
-    <script>
-      // Remove query params from url
-      if (window.history.replaceState) {
-        window.history.replaceState(
-          {},
-          document.title,
-          window.location.pathname
-        );
-      }
+    <div class="col-12">
+      <ul class="actions">
+        <li>
+          <input class="inverse" type="submit" value="<%= __('Proceed') %>" />
+        </li>
+      </ul>
+    </div>
+  </div>
+</form>
 
-      var clipboard = new ClipboardJS('#profile-url-id');
-      var statusText = document.getElementById('profile-copy-status-text');
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+<script>
+  // Remove query params from url
+  if (window.history.replaceState) {
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
 
-      function setStatusAlert(element, text, alert_class) {
-        txt = document.createTextNode(text);
-        element.appendChild(txt);
-        element.style.display = 'block';
-        element.classList.add(alert_class);
-      }
+  var clipboard = new ClipboardJS('#profile-url-id');
+  var statusText = document.getElementById('profile-copy-status-text');
 
-      clipboard.on('success', function(e) {
-        if (statusText.style.display == 'none') {
-          setStatusAlert(
-            statusText,
-            '<%= __("The link has been copied.") %>',
-            'alert-success'
-          );
-        }
-      });
+  function setStatusAlert(element, text, alert_class) {
+    txt = document.createTextNode(text);
+    element.appendChild(txt);
+    element.style.display = 'block';
+    element.classList.add(alert_class);
+  }
 
-      clipboard.on('error', function(e) {
-        if (statusText.style.display == 'none') {
-          setStatusAlert(
-            statusText,
-            '<%= __("Could not copy the link, please copy it yourself") %>',
-            'alert-error'
-          );
-        }
-      });
-    </script>
+  clipboard.on('success', function(e) {
+    if (statusText.style.display == 'none') {
+      setStatusAlert(
+        statusText,
+        '<%= __("The link has been copied.") %>',
+        'alert-success'
+      );
+    }
+  });
 
-    <script>
-      // This is done so that we can show a hint on the front page that a profile might exist
-      // when entering from the same browser at a later time.
-      var hasCookie = 'true' === '<%= hasCookie %>';
-      if (!hasCookie) {
-        window.localStorage.setItem('isUsingPasscodeLink', 'true');
-      }
-    </script>
-  </body>
-</html>
+  clipboard.on('error', function(e) {
+    if (statusText.style.display == 'none') {
+      setStatusAlert(
+        statusText,
+        '<%= __("Could not copy the link, please copy it yourself") %>',
+        'alert-error'
+      );
+    }
+  });
+</script>
+
+<script>
+  // This is done so that we can show a hint on the front page that a profile might exist
+  // when entering from the same browser at a later time.
+  var hasCookie = 'true' === '<%= hasCookie %>';
+  if (!hasCookie) {
+    window.localStorage.setItem('isUsingPasscodeLink', 'true');
+  }
+</script>
+
+<%- include('partials/footer') -%>
