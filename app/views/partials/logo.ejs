@@ -1,12 +1,19 @@
+<% let parts = []; if (baseUrl.includes('corona')) { parts =
+baseUrl.split('corona').map(part => !part ? 'corona' : `<span
+  style="color: #f7bb00;"
+  >${part}</span
+>`) } else { parts = baseUrl.split('.'); parts[parts.length - 1] = `<span
+  style="color: #f7bb00;"
+  >.${parts[parts.length - 1]}</span
+>` } const name = parts.join('') %>
+
 <div class="flex flex-row">
   <img src="/static/images/logo.svg" alt="icon" class="w-20 h-20" />
   <div class="flex flex-row items-center" style="color: #CAEAE9;">
     <div
       class="flex flex-row flex-no-wrap text-3xl font-bold whitespace-no-wrap"
     >
-      <span>corona</span>
-      <span style="color: #f7bb00;">status.eu</span>
-      <span> 🇪🇺 ▼</span>
+      <%- name %>
     </div>
   </div>
 </div>
