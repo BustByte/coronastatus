@@ -150,7 +150,11 @@
 
       <%- include('partials/share') -%>
 
-      <h2><%= __("Geography and demography") %></h2>
+      <div class="flex flex-row items-center">
+        <img src="/static/images/map.svg" alt="" class="h-16 w-16">
+        <h2 class="text-red-500 text-xl font-bold m-4"><%= __("Geography and demography") %></h2>
+      </div>
+
       <div class="row">
         <div class="col-5 col-12-small input-block">
           <label class="with-top-margin" for="age"><%= __("Your age") %></label>
@@ -183,7 +187,12 @@
           <input required type="text" pattern="[0-9]{4}" maxlength="4" name="postal-code" id="postal-code" placeholder="1234" value="<%= postalCode %>">
         </div>
       </div>
-      <h2><%= __('Testing and symptoms') %></h2>
+
+      <div class="flex flex-row items-center">
+        <img src="/static/images/mask.svg" alt="" class="h-16 w-16">
+        <h2 class="text-red-500 text-xl font-bold m-4"><%= __("Testing and symptoms") %></h2>
+      </div>
+
       <div class="row">
         <div class="col-10 col-12-small input-block">
           <label  class="with-top-margin"><%= __("Have you been in close contact with someone who was tested positive for COVID-19?") %></label>
@@ -356,7 +365,9 @@
           <input type="number" step="0.1" placeholder="37.0" min="35" max="45" name="body-temperature" id="body-temperature" value="<%= bodyTemperature %>">
         </div>
       </div>
-      <h2><%= __('How will my data be used?')%></h2>
+
+      <h2 class="text-red-500 text-xl font-bold m-4 ml-0"><%= __("How will my data be used") %></h2>
+
       <p class="privacy-info-text"><%= __('Your health information is stored anonymously, and can not be used to identify you.')%><br/><a target="_blank" href="<%= urls.privacyPolicy %>"><%= __('Our privacy policy can be found here')%></a>.</p>
       <div class="row">
         <div class="col-12 input-block">
