@@ -1,4 +1,7 @@
 # Coronastatus 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 ![](https://github.com/BustByte/coronastatus/workflows/test/badge.svg) 
 > Report your health status to get a better overview of COVID-19 in your country (currently in 🇳🇴🇳🇱🇸🇰)
 
@@ -37,8 +40,18 @@ Click on "Issues" in the menu above to see what we need help with.
 
 ## Start developing
 
-Download and install [nodejs](https://nodejs.org),
-[git](https://git-scm.com/downloads) and [yarn](https://yarnpkg.com/)
+You can either install and run everything on your own machine or build a docker image and run the the local development environment using docker. Choose one of the ways below that fits best to you:
+
+### Developing on your own machine
+
+#### Prerequisities
+
+Download & install:
+* [git](https://git-scm.com/downloads)
+* [nodejs](https://nodejs.org),
+* [yarn](https://yarnpkg.com/)
+
+#### Steps
 
 1. Clone the repository
 
@@ -65,3 +78,56 @@ Download and install [nodejs](https://nodejs.org),
 7. Before you create a pull request run the linter. Warnings are ok, but errors should be fixed.
 
 `yarn lint`
+
+### Developing using docker
+
+#### Prerequisities
+
+Download & install:
+* [git](https://git-scm.com/downloads)
+* [Docker CE](https://docs.docker.com/install/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
+
+#### Steps
+
+1. Clone the repository
+
+`git clone https://github.com/BustByte/coronastatus`
+
+2. Move into the newly cloned directory
+
+`cd coronastatus`
+
+3. Create a configuration file from the example provided in this repo
+
+`cp config.example.json config.json`
+
+4. Build docker image and start the development environment:
+
+`docker-compose up --build -d`
+
+5. Open your browser and navigate to http://localhost:7272/
+
+6. Before you create a pull request run the linter. Warnings are ok, but errors should be fixed.
+
+`docker-compose exec app yarn lint`
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://www.juniq.net"><img src="https://avatars3.githubusercontent.com/u/4834459?v=4" width="100px;" alt=""/><br /><sub><b>Stano Bo</b></sub></a><br /><a href="#translation-sbocinec" title="Translation">🌍</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+

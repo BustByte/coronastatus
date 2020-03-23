@@ -3,8 +3,7 @@
   const metaDescription = __('Make your voluntary contribution to the health care system and register your health condition now. Together we can create an overview.');
   const baseUrl = locals.baseUrl;
   const imageSubfolder = locals.imageSubfolder;
-  const metaImage1 = `https://${baseUrl}/static/${imageSubfolder}/social1.png`;
-  const metaImage2 = `https://${baseUrl}/static/${imageSubfolder}/social2.png`;
+  const shareImageUrl = `https://${baseUrl}/static/${imageSubfolder}/social1.png`;
 %>
 
 <meta charset="utf-8">
@@ -16,14 +15,14 @@
 <!-- Open Graph -->
 <meta property="og:title" content="<%= title %>">
 <meta property="og:description" content="<%= metaDescription %>">
-<meta property="og:image" content="<%= metaImage1 %>">
+<meta property="og:image" content="<%= shareImageUrl %>">
 <meta property="og:site_name" content="<%= title %>">
 
 <!-- Twitter -->
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="<%= title %>">
 <meta name="twitter:description" content="<%= metaDescription %>">
-<meta name="twitter:image" content="<%= metaImage2 %>">
+<meta name="twitter:image" content="<%= shareImageUrl %>">
 <!-- End Twitter -->
 
 <link href="https://fonts.googleapis.com/css?family=Mada:400,400i,700" rel="stylesheet">
