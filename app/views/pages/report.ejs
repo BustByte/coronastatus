@@ -55,8 +55,6 @@
   <section class="section section-hero p-4">
     <div class="section-content">
       <header class="py-2 flex justify-between items-center">
-        <!-- <TheRegionSelector />
-        <TheNavBar /> -->
         <%- include('partials/logo') -%>
         <%- include('partials/menu') -%>
       </header>
@@ -88,62 +86,10 @@
     </div>
   </section>
 
-
-  <%- include('partials/hamburger-menu') -%>
   <div id="page-wrapper">
     <section id="main" class="wrapper">
       <div class="inner">
-        <div class="info-box-row" style="margin-top: 2rem;">
-          <!-- Mørketall -->
-          <div class="info-box info">
-            <div>
-              <div class="info-box__icon"><i class="fa fa-moon"></i></div>
-              <div class="info-box__content">
-                <h2><%= __("Unreported cases") %></h2>
-                <p>
-                  <%= __("The spread of COVID-19 in our country is unknown. Help us create a better overview.") %>
-                </p>
-              </div>
-            </div>
-          </div>
 
-          <!-- Anonymt -->
-          <div class="info-box">
-            <div>
-              <div class="info-box__icon"><i class="fa fa-hands-helping"></i></div>
-              <div class="info-box__content">
-                <h2><%= __("Contribute anonymously") %></h2>
-                <p>
-                  <%= __("Report your health condition anonymously") %>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Innsikt -->
-          <div class="info-box">
-            <div>
-              <div class="info-box__icon"><i class="fa fa-microscope"></i></div>
-              <div class="info-box__content">
-                <h2><%= __("Insight for everyone") %></h2>
-                <p>
-                  <%= __("The data is open to everyone. Look at maps and graphs, or download the data and create your own visualizations.") %>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Åpenhet -->
-          <div class="info-box">
-            <div>
-              <div class="info-box__icon"><i class="fa fa-code"></i></div>
-              <div class="info-box__content">
-                <h2><%= __("Everything is open") %></h2>
-                <p><%= __("The website is open source and built by volunteers. Feel free to join.") %></p>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="info-box-row" style="margin-bottom: 2rem;">
           <div class="info-box stats" id="total-reports">
             <div class="stats__number">
