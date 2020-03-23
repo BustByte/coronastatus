@@ -10,7 +10,7 @@
 %>
 
 <nav class="flex flex-row">
-  <a href="<%= urls.submitReport %>" class="nav-link-important text-white font-medium py-2 px-4 m-2 rounded-full <%= isOnProfile ? 'active' : '' %>"><%= __("Your state of health") %></a>
+  <a href="<%= urls.submitReport %>" class="custom-nav-link text-white font-medium py-2 px-4 m-2 rounded-full <%= isOnProfile ? 'active' : '' %>"><%= __("Your state of health") %></a>
   <a href="<%= urls.map %>" class="text-white font-medium py-2 px-4 m-2 <%= isOnMap ? 'active' : '' %>"><%= __("Map") %></a>
   <a href="<%= urls.statistics %>" class="text-white font-medium py-2 px-4 m-2 <%= isOnStats ? 'active' : '' %>"><%= __("Statistics") %></a>
   <a href="<%= urls.privacyPolicy %>" class="text-white font-medium py-2 px-4 m-2 <%= isOnPrivacyPolicy ? 'active' : '' %>"><%= __("Privacy") %></a>
