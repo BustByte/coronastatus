@@ -131,17 +131,34 @@
             <%= __("You must approve the privacy statement to report your data.") %>
           </div>
         <% } %>
-        <h1><%= profile ? __("Your state of health") : __("Report your health condition") %></h1>
-        <% if(locals.success) {%>
+
+        <h1 style="margin-bottom: 1rem;"><%= profile ? __("Your state of health") : __("Report your health condition") %></h1>
+
+        <% if (locals.success) {%>
           <div class="alert alert-success" role="alert">
-            <%= __("Thank you for your contribution! Use this link if your health condition changes:") %>
-            <a target="_blank" href="<%= urls.profile %>/<%= passcode %>"><%= baseUrl %><%= urls.profile %>/<%= passcode %></a>.
+            <%= __("Thank you for your contribution!") %>
+            <%= __("If you want to register another person on this computer, save or write down your personal link") %>
+            <strong><%= baseUrl %><%= urls.profile %>/<%= passcode %></strong>
+            <%= __("and") %> <a href="<%= urls.profile %>/<%= passcode %>?clear=true"> <%= __("clear this form") %>.</a>
+          </div>
+        <% } else if (locals.cleared) {%>
+          <div class="alert alert-success" role="alert">
+            <%= __("Your personal health information is cleared from this computer.") %>
+            <%= __("You can now use this computer for another user.") %>
+          </div>
+        <% } else if (locals.passcode) {%>
+          <div class="alert alert-info" role="alert">
+            <%= __("Below is your personal health information.") %>
+            <%= __("If you want to register another person on this computer, save or write down your personal link") %>
+            <strong><%= baseUrl %><%= urls.profile %>/<%= passcode %></strong>
+            <%= __("and") %> <a href="<%= urls.profile %>/<%= passcode %>?clear=true"> <%= __("clear this form") %>.</a>
           </div>
         <% } else { %>
           <p class="slogan">
-            <%= __('Are you from') %> <%= __(locals.country) %>? 
-            <%= __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information! ") %></p>
+            <%= __("Are you from") %> <%= __(locals.country) %>?
+            <%= __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information!") %></p>
         <% } %>
+
         <%- include('partials/share') -%>
         <form method="post" action="/">
           <h2><%= __("Geography and demography") %></h2>
@@ -290,7 +307,13 @@
           <div class="row">
             <div class="col-12 input-block">
               <input required type="checkbox" id="accept-privacy-policy" name="accept-privacy-policy" <%= passcode ? 'checked' : '' %>>
-              <label for="accept-privacy-policy" class="normal-font"><%= __('I agree to my data being stored in accordance with the privacy statement')%></label>
+              <label for="accept-privacy-policy" class="normal-font"><%= __(`I agree to my data being stored in accordance with the privacy statement`)%> (<%= __('required')%>)</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 input-block">
+              <input type="checkbox" id="accept-remember" name="accept-remember">
+              <label for="accept-remember" class="normal-font"><%= __(`I agree to set a cookie so I can change my health condition later e.g. to report recovery/getting sick`)%> (<%= __('recommended')%>)</label>
             </div>
           </div>
           <div class="row">
@@ -314,11 +337,14 @@
         document.getElementById('has-submitted-alert').style.display = 'none';
         window.localStorage.setItem("hasCrossedOutInfo", "true");
     }
-    if (window.localStorage.getItem("hasSubmittedProfile") === "true"
+
+    if ((window.localStorage.getItem("hasSubmittedProfile") === "true"
+        || window.localStorage.getItem("isUsingPasscodeLink") === "true")
         && window.localStorage.getItem("hasCrossedOutInfo") !== "true"
         && window.location.pathname.indexOf("helsetilstand") === -1) {
         document.getElementById('has-submitted-alert').style.display = 'flex';
     }
+
     var symptoms = document.querySelectorAll('input[name^="symptom-"]:checked');
     if (symptoms != null && symptoms.length > 0) {
       document.getElementById('symptom-start-question').style.display = 'block';

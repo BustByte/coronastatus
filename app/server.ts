@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
 import path from 'path';
 import i18n from 'i18n';
 import swaggerUi from 'swagger-ui-express';
@@ -20,10 +21,25 @@ const isDevelopmentEnv = process.env.NODE_ENV === 'dev';
 i18n.configure({
   locales: ['en', 'no', 'nl'],
   defaultLocale: LANGUAGE,
+  updateFiles: false,
   directory: `${__dirname}/locales`
 });
 
 app.use(i18n.init);
+
+app.use((req, res, next) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+  // @ts-ignore
+  const translate = (text, ...options) => {
+    const replaced = text.replace(/[\s\n\t]+/g, ' ').trim();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    return i18n.__.apply(req, [replaced, ...options]);
+  };
+  res.locals.__ = translate;
+  res.__ = translate;
+  next();
+});
 
 app.use(
   urls.apiDocs,
@@ -36,6 +52,7 @@ const cacheKey = process.env.CACHE_KEY || `${Math.random()}`.replace('.', '');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 app.use((req, res, next) => {
   // eslint-disable-next-line prefer-destructuring
