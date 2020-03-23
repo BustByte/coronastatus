@@ -17,6 +17,11 @@ html {
   margin: 0;
 }
 
+section {
+  max-width: 68rem;
+  margin: auto;
+}
+
 input,
 select {
   max-width: 100%;

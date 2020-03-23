@@ -1,16 +1,36 @@
 <% const shouldAddAnalytics = !locals.profile; %>
 
+<!-- spacer -->
 
+<% if (typeof show === 'undefined' || typeof show === 'boolean' && show == true) { %>
 <footer class="custom-section custom-section-footer p-8 pt-32">
-  <div class="custom-section-content custom-section-footer-content flex flex-col items-center">
-    <a href="https://github.com/BustByte/coronastatus" target="_blank" class="footer-logo-link m-6">
-      <img src="/static/images/github.svg" alt="" class="footer-logo-link__img h-24 w-24">
+  <div
+    class="custom-section-content custom-section-footer-content flex flex-col items-center"
+  >
+    <a
+      href="https://github.com/BustByte/coronastatus"
+      target="_blank"
+      class="footer-logo-link m-6"
+    >
+      <img
+        src="/static/images/github.svg"
+        alt=""
+        class="footer-logo-link__img h-24 w-24"
+      />
     </a>
-    <div class="footer-links flex flex-row justify-between flex-wrap items-center self-stretch my-8">
-      <a class="footer-link text-red-500 font-medium text-xl whitespace-no-wrap">Credits & Thanks</a>
-      <span class="footer-link text-red-500 font-medium text-xl whitespace-no-wrap">
+    <div
+      class="footer-links flex flex-row justify-between flex-wrap items-center self-stretch my-8"
+    >
+      <a class="footer-link text-red-500 font-medium text-xl whitespace-no-wrap"
+        >Credits & Thanks</a
+      >
+      <span
+        class="footer-link text-red-500 font-medium text-xl whitespace-no-wrap"
+      >
         <%= __('Developed by')%>
-        <a target="_blank" href="https://bustbyte.no"><%= __('BustByte AS')%></a>
+        <a target="_blank" href="https://bustbyte.no"
+          ><%= __('BustByte AS')%></a
+        >
         <%= __('and') %>
         <a href="<%= urls.contributors %>">
           <%= __('volunteers')%>
@@ -25,6 +45,9 @@
     </div>
   </div>
 </footer>
+<% } %>
+
+<!-- spacer -->
 
 <% if(shouldAddAnalytics) {%>
 <!-- Simple Analytics -->
@@ -33,3 +56,8 @@
   ><img src="https://api.simpleanalytics.io/hello.gif" alt=""
 /></noscript>
 <% } %>
+
+<script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
+
+</body>
+</html>
