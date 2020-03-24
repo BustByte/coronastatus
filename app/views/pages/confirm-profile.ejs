@@ -58,11 +58,11 @@
   `profile-copy-status-fail`, message: __(`Could not copy the link, please copy
   it yourself`) }) -%>
 
-  <form method="get" action="<%= urls.profile %>/<%= passcode %>">
+  <form method="get" action="<%= urls.profile %>/<%= passcode %>#contribute">
     <input type="hidden" name="success" value="true" />
 
     <% if (!hasCookie) { %>
-    <p>
+    <p class="mt-4">
       <label class="checkbox" for="accept">
         <input type="checkbox" id="accept" name="accept" />
         <span><%= __(`I've noted down the link.`)%></span>

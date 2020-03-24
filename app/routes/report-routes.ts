@@ -172,7 +172,9 @@ router.post('/', createReportRateLimit, async (req, res) => {
 
   reportRepo.addNewCovidReport(passcode, covidReport);
   if (req.body['passcode']) {
-    return res.redirect(`${res.locals.urls.profile}/${passcode}?success=true`);
+    return res.redirect(
+      `${res.locals.urls.profile}/${passcode}?success=true#contribute`
+    );
   }
   return res.render('pages/confirm-profile', {
     passcode,
