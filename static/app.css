@@ -384,6 +384,7 @@ button,
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
+  border-color: #000;
 }
 
 input[type='submit']:hover,
