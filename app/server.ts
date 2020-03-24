@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import path from 'path';
-import i18n from 'i18n';
+import i18n, { Replacements } from 'i18n';
 import swaggerUi from 'swagger-ui-express';
 import reportRoutes from './routes/report-routes';
 import mapRoutes from './routes/map-routes';
@@ -28,9 +28,10 @@ i18n.configure({
 app.use(i18n.init);
 
 app.use((req, res, next) => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-  // @ts-ignore
-  const translate = (text, ...options) => {
+  const translate = (
+    text: string,
+    ...options: string[] | [Replacements]
+  ): string => {
     const replaced = text.replace(/[\s\n\t]+/g, ' ').trim();
     // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
     // @ts-ignore
@@ -82,7 +83,7 @@ app.use(
   '/static',
   express.static('static', {
     ...(!isDevelopmentEnv && {
-      setHeaders(res) {
+      setHeaders(res): void {
         res.set(
           'Cache-Control',
           'max-age=86400, no-cache="Set-Cookie", public'
@@ -114,7 +115,7 @@ app.use(
   }
 );
 
-async function initializeDatabase() {
+async function initializeDatabase(): Promise<void> {
   const db = getInstance('covid_db');
   const numberOfTables = (await db.listTables()).length;
   if (numberOfTables === 0) {
