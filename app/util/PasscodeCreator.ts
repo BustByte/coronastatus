@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs';
 import { resolve, join } from 'path';
+import { LANGUAGE } from '../../config.json';
 
 const hasEnglishCharsOnly = (word: string): boolean => {
   return word.match('^[a-zA-Z]+$') !== null;
@@ -8,7 +9,10 @@ class PasscodeCreator {
   private availableWords: string[];
   private separator: string;
 
-  constructor(filePath = '../../wordList.txt', separator = '-') {
+  constructor(
+    filePath = `../locales/${LANGUAGE}-word-list.txt`,
+    separator = '-'
+  ) {
     this.availableWords = this.readAvailableWordsFromFile(filePath);
     this.separator = separator;
   }
