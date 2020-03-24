@@ -26,17 +26,18 @@ html {
   margin: 0;
 }
 
-/* section {
-  max-width: 68rem;
-  margin: auto;
-} */
-
 input[type='text'],
 input[type='date'],
 input[type='number'],
 select {
   max-width: 100%;
   width: 300px;
+}
+input[type='text'].w-auto,
+input[type='date'].w-auto,
+input[type='number'].w-auto,
+select.w-auto {
+  width: auto;
 }
 
 canvas {

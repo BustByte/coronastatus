@@ -5,7 +5,7 @@
 >
   <% if (hasCookie) { %>
 
-  <h1 class="mt-0">
+  <h1 class="mt-0 text-3xl sm:text-4xl">
     <%= __(`We stored your data in a cookie so come back later to update your
     status`) %>
   </h1>
@@ -17,7 +17,7 @@
 
   <% } else { %>
 
-  <h1 class="mt-0">
+  <h1 class="mt-0 text-3xl sm:text-4xl">
     <%= __(`Before proceeding please note down the following link`) %>
   </h1>
   <p class="subtitle">
@@ -29,16 +29,17 @@
   </p>
   <% }%>
 
-  <input
-    id="link-to-be-copied"
-    type="text"
-    readonly
-    value="<%= baseUrl %><%= urls.profile %>/<%= passcode %>"
-    class="my-4 bg-gray-200 appearance-none border-2 border-cvs-red rounded w-full py-2 px-4 leading-tight focus:outline-none"
-  />
-  <div class="mb-4">
+  <div class="flex items-center justify-between mt-4" style="max-width: 100%">
+    <input
+      id="link-to-be-copied"
+      type="text"
+      readonly
+      value="<%= baseUrl %><%= urls.profile %>/<%= passcode %>"
+      class="h-12 flex-grow w-auto flex-shrink mr-4 bg-gray-200 appearance-none border-2 border-cvs-red rounded py-2 px-4 leading-tight focus:outline-none"
+    />
     <button
       id="profile-url-id"
+      class="h-12 rounded"
       data-clipboard-text="<%= baseUrl %><%= urls.profile %>/<%= passcode %>"
     >
       <%= __(`Copy`) %>
@@ -46,11 +47,11 @@
   </div>
 
   <!-- If you change the color make sure it's in postcss.config.js -->
-  <%- include('partials/alert', { color: 'blue', class: `my-4 hidden`, id:
+  <%- include('partials/alert', { color: 'blue', class: `mb-4 hidden`, id:
   `profile-copy-status-success`, message: __(`The link has been copied.`) })-%>
 
   <!-- If you change the color make sure it's in postcss.config.js -->
-  <%- include('partials/alert', { color: 'red', class: `my-4 hidden`, id:
+  <%- include('partials/alert', { color: 'red', class: `mb-4 hidden`, id:
   `profile-copy-status-fail`, message: __(`Could not copy the link, please copy
   it yourself`) }) -%>
 
