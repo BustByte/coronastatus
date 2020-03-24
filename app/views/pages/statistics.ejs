@@ -1,8 +1,13 @@
-<% const totalPeopleInContactWithInfected =
-locals.inContactWithInfectedStats.total; const totalInfectedPeopleWithSymptoms =
-locals.infectedStats.symptomStats.total; const totalPeopleWithSymptoms =
-locals.allSymptomsStats.symptomStats.total; function numberWithSpaces(x) {
-return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); } %>
+<%
+const totalPeopleInContactWithInfected = locals.inContactWithInfectedStats.total;
+const totalInfectedPeopleWithSymptoms = locals.infectedStats.symptomStats.total;
+const totalPeopleWithSymptoms = locals.allSymptomsStats.symptomStats.total;
+const totalTested = locals.totalTested;
+  
+function numberWithSpaces(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+%>
 
 <!-- prettier spacer -->
 
@@ -43,7 +48,7 @@ return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); } %>
     <h3><%= __(`Test results`) %></h3>
     <p>
       <%= __(`In total`) %> <%=
-      numberWithSpaces(totalPeopleInContactWithInfected) %> <%= __(`people have
+      numberWithSpaces(totalTested) %> <%= __(`people have
       reported that they have been tested for COVID-19.`) %>
     </p>
     <canvas id="testResultStats"></canvas>

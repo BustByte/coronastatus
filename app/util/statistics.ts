@@ -276,3 +276,6 @@ export const getTestResultStats = (
     report => report.testResult === TestResult.PENDING
   ).length
 });
+
+export const getTotalTested = (reports: CovidReport[]): number =>
+  reports.filter(report => report.hasBeenTested).length;
