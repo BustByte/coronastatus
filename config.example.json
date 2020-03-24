@@ -7,5 +7,6 @@
   "TWITTER": "coronastatusNO",
   "ZIP_LENGTH": 4,
   "ZIP_PLACEHOLDER": "1234",
-  "REDIRECT_TO_GOVERNMENT": false
+  "REDIRECT_TO_GOVERNMENT": false,
+  "PASSCODE_LENGTH": 3
 }

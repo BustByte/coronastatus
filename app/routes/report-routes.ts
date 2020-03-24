@@ -9,7 +9,7 @@ import {
   IsolationStatus
 } from '../domain/types';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
-import { getPasscodeCreator } from '../util/PasscodeCreator';
+import { getPasscodeCreator } from '../util/passcode-creator';
 import { aggregateCovidReports } from '../util/report-aggregator';
 import { urls } from '../domain/urls';
 
