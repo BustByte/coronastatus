@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { resolve, join } from 'path';
-import { LANGUAGE } from '../../config.json';
+import { LANGUAGE, PASSCODE_LENGTH } from '../../config.json';
 
 const hasEnglishCharsOnly = (word: string): boolean => {
   return word.match('^[a-zA-Z]+$') !== null;
@@ -28,11 +28,9 @@ class PasscodeCreator {
   }
 
   createPasscode(): string {
-    return [
-      this.selectRandomWord(),
-      this.selectRandomWord(),
-      this.selectRandomWord()
-    ].join(this.separator);
+    return [...Array(PASSCODE_LENGTH)]
+      .map(() => this.selectRandomWord())
+      .join(this.separator);
   }
 }
 
