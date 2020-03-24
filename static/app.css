@@ -52,9 +52,15 @@ h1 {
   line-height: 120%;
 }
 
-h3 {
-  text-transform: uppercase;
+h2{
   font-size: 1.875rem;
+  color: #d36767;
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
   color: #d36767;
   margin: 0.5rem 0;
   font-weight: 500;
@@ -393,4 +399,15 @@ input[type='submit']:focus {
   color: #fff;
   background: #d36767;
   border-color: #000;
+}
+
+.contributor-list::before {
+  content: "\2022";
+  color: #d36767;
+  font-size: larger;
+  display: inline-block;
+  width: 1.2em;
+}
+.contributor-list{
+  align-self: center;
 }
