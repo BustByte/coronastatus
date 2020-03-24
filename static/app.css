@@ -381,3 +381,18 @@ button,
   text-transform: uppercase;
   white-space: nowrap;
 }
+
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover,
+button:hover,
+.button:hover,
+input[type='submit']:focus,
+input[type='reset']:focus,
+input[type='button']:focus,
+button:focus,
+.button:focus {
+  color: #fff;
+  background:#d36767;
+  border-color:#000;
+}
