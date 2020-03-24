@@ -138,8 +138,14 @@ h4 {
   background: linear-gradient(118.81deg, #5d7979 22.4%, #56beab 105.76%);
 }
 .custom-nav-link {
-  background: linear-gradient(131.3deg, #aa494a 22.4%, #d17c0c 105.76%);
+  background: #d36767 linear-gradient(131.3deg, #aa494a 22.4%, #d17c0c 105.76%);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease-in-out box-shadow;
+}
+.custom-nav-link:hover,
+.custom-nav-link:focus {
+  background: #d36767;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.06);
 }
 .custom-form {
   background-color: #cde2e2;
