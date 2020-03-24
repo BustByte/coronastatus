@@ -16,7 +16,9 @@ return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); } %>
   </div>
   <div>
     <p class="mb-4">
-      <a href="/api/reports/reports.csv"
+      <a
+        href="/api/reports/reports.csv"
+        class="text-cvs-red font-bold hover:underline"
         ><%= __(`Download the dataset as CSV`) %></a
       >
     </p>

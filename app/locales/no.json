@@ -173,5 +173,7 @@
   "I have never smoked": "Jeg har aldri røyket",
   "What is your current body temperature? (Celcius)": "Hva er din kroppstemperatur i Celsius?",
   "This field is optional": "Dette feltet er valgfritt",
-  "Close": "Lukk"
+  "Close": "Lukk",
+  "Contribute now": "Bidra nå",
+  "Help us uncover and predict the corona spread in your area": "Hjelp oss å <span>avdekke</span> og <span>forutsi</span> koronautbredelsen i ditt område"
 }

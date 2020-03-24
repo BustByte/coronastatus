@@ -173,5 +173,7 @@
   "I have never smoked": "I have never smoked",
   "What is your current body temperature? (Celcius)": "What is your current body temperature in Celcius?",
   "This field is optional": "This field is optional",
-  "Close": "Close"
+  "Close": "Close",
+  "Contribute now": "Contribute now",
+  "Help us uncover and predict the corona spread in your area": "Help us <span>uncover</span> and <span>predict</span> the corona spread in your area"
 }
