@@ -10,7 +10,7 @@
     "lintfix": "eslint --ext .ts app/ --fix",
     "serve": "NODE_ENV=production ts-node app/server.ts",
     "dev:css": "./node_modules/.bin/tailwind build tailwind.config.css -c tailwind.config.js -o static/tailwind.min.css",
-    "build:css": "postcss tailwind.config.css -o static/tailwind.min.css"
+    "build:css": "yarn run dev:css && postcss tailwind.config.css -o static/tailwind.min.css"
   },
   "dependencies": {
     "autoprefixer": "^9.7.4",
