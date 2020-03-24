@@ -6,7 +6,8 @@ import {
   getInfectedAndContactStats,
   getTestResultStats,
   getInfectedStats,
-  getAllSymptomsStats
+  getAllSymptomsStats,
+  getTotalTested
 } from '../util/statistics';
 
 const router = express.Router();
@@ -31,6 +32,7 @@ router.get('/', async (req, res) => {
   const totalReportStats = calculateTotalReportsStats(allReports);
   const infectedAndContactStats = getInfectedAndContactStats(allReports);
   const testResultStats = getTestResultStats(allReports);
+  const totalTested = getTotalTested(allReports);
 
   return res.render('pages/statistics', {
     infectedStats,
@@ -38,7 +40,8 @@ router.get('/', async (req, res) => {
     totalReportStats,
     inContactWithInfectedStats,
     infectedAndContactStats,
-    testResultStats
+    testResultStats,
+    totalTested
   });
 });
 
