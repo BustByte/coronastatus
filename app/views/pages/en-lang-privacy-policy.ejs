@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="<%= locals.htmlLang %>">
+
+<head>
+    <%- include('partials/head') -%>
+</head>
+
+<body>
+<%- include('partials/disclaimer') -%>
+<%- include('partials/menu') -%>
+<%- include('partials/hamburger-menu') -%>
+<div id="page-wrapper">
+    <section id="main" class="wrapper">
+        <div class="inner privacy-policy">
+            <h1><%= __("Privacy Policy") %></h1>
+            <p class="subtitle">What data do we store about you and why?</p>
+            <h3>Gender</h3>
+            <p>We store gender to be able to say something about the distribution between men and women with
+                symptoms.</p>
+            <h3>Age goup</h3>
+            <p>We store age groups to distinguish which age groups experience symptoms.</p>
+            <h3>Postcode</h3>
+            <p>
+                To give the public insight into how many people show symptoms in the area where they live, we store
+                postcodes.
+                In this way we can show overview of the number of people with specific symptoms in different areas.
+            </p>
+            <h3>Test status</h3>
+            <p>
+                We also save whether you have been tested and what the results of this test are. With this information
+                we can calculate the percentage of the participants who show symptoms. We display this on a map.
+            </p>
+            <h3>Symptoms</h3>
+            <p>
+                The symptoms you submit indicate whether you may be infected with the Covid-19 virus. The timing of the
+                onset of symptoms also gives an indication of how long you've been contagious. We collect this data and
+                visualize it anonymously. In this way, the public can gain insight into how big the figures can be.
+            </p>
+            <h2>Cookies</h2>
+            <p>
+                We use cookies to store participant data in their own browser. We first ask permission for this. With
+                these cookies, participants can anonymously report if their symptoms have decreased.
+            </p>
+            <h2>Delete data</h2>
+            <p>All stored data is anonymized and we do not store any personal data that can be deleted.</p>
+            <h2>Share data with National Health Service</h2>
+            <p>If desired, we provide anonymous data to the NHS.</p>
+            <h2>Analytics</h2>
+            <p>
+                We use analytics to gain insight into the use of the website. We use <a
+                        href="https://simpleanaltyics.io" target="_blank">Simple Analytics</a> for this - a party that
+                does not store personal data and does not place cookies.</p>
+            <h2>More questions?</h2>
+            <p>Contact us on Twitter: <a href="https://twitter.com/coronastatusNL"
+                                         target="_blank">@coronastatusNL</a>.</p>
+        </div>
+    </section>
+</div>
+<script>
+  // Remove query params from url
+  if (window.history.replaceState) {
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+</script>
+<script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
+</body>
+
+</html>
