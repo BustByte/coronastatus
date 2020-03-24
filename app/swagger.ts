@@ -2,6 +2,8 @@ import {
   getAggregated,
   getAggregatedPostalCode
 } from './openAPI/aggregated.swagger';
+import { BASE_URL } from '../config.json';
+import { urls } from './domain/urls';
 import { getReports, getReportsCsv } from './openAPI/reports.swagger';
 
 export const swaggerDocument = {
@@ -24,15 +26,11 @@ export const swaggerDocument = {
   },
   servers: [
     {
-      url: 'https://coronastatus.no/api',
+      url: `https://${BASE_URL}${urls.api}`,
       description: 'Production environment'
     },
     {
-      url: 'https://dev.coronastatus.no/api',
-      description: 'DEV Env'
-    },
-    {
-      url: 'http://localhost:7272/api',
+      url: `http://localhost:7272${urls.api}`,
       description: 'Local server'
     }
   ],
