@@ -11,7 +11,13 @@ import statisticsRoutes from './routes/statistics-routes';
 import variousRoutes from './routes/various-routes';
 import { getInstance } from './repository/SqlLiteDatabase';
 import { swaggerDocument } from './swagger';
-import { LANGUAGE, BASE_URL, COUNTRY } from '../config.json';
+import {
+  LANGUAGE,
+  BASE_URL,
+  COUNTRY,
+  MAP_CENTER,
+  MAP_ZOOM
+} from '../config.json';
 import { urls } from './domain/urls';
 
 const app = express();
@@ -63,6 +69,8 @@ app.use((req, res, next) => {
   res.locals.htmlLang = LANGUAGE;
   res.locals.country = COUNTRY;
   res.locals.baseUrl = BASE_URL;
+  res.locals.mapCenter = MAP_CENTER;
+  res.locals.mapZoom = MAP_ZOOM;
   res.locals.urls = urls;
   next();
 });

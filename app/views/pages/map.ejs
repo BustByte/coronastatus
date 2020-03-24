@@ -38,8 +38,8 @@
   var map = new mapboxgl.Map({
     container: 'map',
     style: 'https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json',
-    center: [10.7522, 63.9139],
-    zoom: 4,
+    center: [<%= locals.mapCenter %>],
+    zoom: <%= locals.mapZoom %>,
     hash: true
   });
 
