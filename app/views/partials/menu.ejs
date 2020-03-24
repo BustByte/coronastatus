@@ -39,32 +39,32 @@ locals.activePage === urls.profile; %>
     class="list-reset lg:flex justify-end flex-1 items-center text-right lg:text-left"
   >
     <% if (!home) { %>
-    <li class="mr-3 py-8 lg:py-2 rounded">
+    <li class="mr-3 rounded">
       <a
         href="<%= urls.submitReport %>"
-        class="custom-nav-link whitespace-no-wrap text-xl py-4 lg:text-base text-white font-medium lg:py-2 px-4 m-2 rounded-full <%= isOnProfile ? 'active' : '' %>"
+        class="custom-nav-link text-center whitespace-no-wrap block text-xl py-4 lg:text-base text-white font-medium lg:py-4 px-4 rounded-full <%= isOnProfile ? 'active' : '' %>"
         ><%= __("Your state of health") %></a
       >
     </li>
     <% } %>
-    <li class="mr-3 py-8 lg:py-2 rounded hover:bg-cvs-red">
+    <li class="mr-3 rounded hover:bg-cvs-red">
       <a
         href="<%= urls.map %>"
-        class="whitespace-no-wrap text-white text-xl py-4 lg:text-base font-medium lg:py-2 px-4 m-2 <%= isOnMap ? 'active' : '' %>"
+        class="whitespace-no-wrap block text-white text-xl py-4 lg:text-base font-medium lg:py-4 px-4 <%= isOnMap ? 'active' : '' %>"
         ><%= __("Map") %></a
       >
     </li>
-    <li class="mr-3 py-8 lg:py-2 rounded hover:bg-cvs-red">
+    <li class="mr-3 rounded hover:bg-cvs-red">
       <a
         href="<%= urls.statistics %>"
-        class="whitespace-no-wrap text-white text-xl py-4 lg:text-base font-medium lg:py-2 px-4 m-2 <%= isOnStats ? 'active' : '' %>"
+        class="whitespace-no-wrap block text-white text-xl py-4 lg:text-base font-medium lg:py-4 px-4 <%= isOnStats ? 'active' : '' %>"
         ><%= __("Statistics") %></a
       >
     </li>
-    <li class="mr-3 py-8 lg:py-2 rounded hover:bg-cvs-red">
+    <li class="mr-3 rounded hover:bg-cvs-red">
       <a
         href="<%= urls.apiDocs %>"
-        class="whitespace-no-wrap text-white text-xl py-4 lg:text-base font-medium lg:py-2 px-4 m-2"
+        class="whitespace-no-wrap block text-white text-xl py-4 lg:text-base font-medium lg:py-4 px-4"
         target="_blank"
         ><%= __("API") %></a
       >
