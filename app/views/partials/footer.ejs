@@ -85,12 +85,14 @@
 </script>
 
 <script>
-  // Remove query params from url
-  (function removeQueryParams(window) {
-    if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, document.title, window.location.pathname);
-    }
-  })(window);
+  // Remove query params from url after page load so #hashtags keep working
+  (function removeQueryParams() {
+    window.addEventListener('load', function(event) {
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    });
+  })();
 </script>
 
 <script>
