@@ -2,8 +2,10 @@ function changeTestResultDisplay(show) {
   var testResultElement = document.getElementById('test-result-question');
   if (show) {
     testResultElement.style.display = 'block';
+    testResultElement.getElementsByTagName('input').forEach(el => el.required = true);
   } else {
     testResultElement.style.display = 'none';
+    testResultElement.getElementsByTagName('input').forEach(el => el.required = false);
   }
 }
 
