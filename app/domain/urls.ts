@@ -39,7 +39,7 @@ const localeAwareUrls: Urls = {
   en: {
     submitReport: '/',
     profile: '/healthcondition',
-    privacyPolicy: '/privacy-policy',
+    privacyPolicy: '/privacy-statement',
     map: '/map',
     contributors: '/contributors',
     api: '/api',
