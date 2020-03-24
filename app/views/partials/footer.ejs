@@ -1,75 +1,61 @@
 <% const shouldAddAnalytics = !locals.profile; %>
+<% const { show = true, home = false } = locals; %>
 
-<section class="wrapper style2 copyright">
-  <div class="page-wrapper">
-    <div class="inner">
-      <div class="content about-us">
-        <header><h2><%= __('About the service') %></h2></header>
-        <p>
-          <%= __(`In connection with the outbreak of COVID-19, many people have
-          been tested for the virus, but due to lack of resources, the
-          overwhelming majority have not been tested. It is therefore assumed
-          that there are large missing numbers here in connection with the
-          outbreak.`)%>
-        </p>
+<!-- spacer -->
 
-        <p>
-          <%= __(`Using self-report, you can get a better picture of how many
-          people have symptoms without exposing health workers to potential
-          contamination hazards and without using up valuable infection control
-          equipment that is already in short supply. We at Bustbyte, well helped
-          by other volunteers, have created this tool in response to`) %>
-          <a
-            href="https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona -may-paa-space-naa-petter-bae-brandtzaeg "
-            ><%= __('this article') %></a
-          >
-          <%= __('as an attempt to chart these numbers.')%>
-        </p>
+<% if (show && !home) { %>
+</section> <!-- main-container -->
+<% } %>
 
-        <p>
-          <%= __(`This is not an official tool of the authorities, and for more
-          information about the outbreak we refer to health authorities which
-          always have updated information.`) %>
-        </p>
-        <ul class="actions">
-          <li>
-            <a
-              target="_blank"
-              class="button next"
-              style="cursor: pointer;"
-              href="<%= __('https://who.int') %>"
-              ><%= __(`Go to the National health service website`)%></a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="inner" style="margin-bottom: 20px;">
+<!-- spacer -->
+
+<% if (typeof show === 'undefined' || typeof show === 'boolean' && show == true) { %>
+<footer class="custom-section custom-section-footer p-8 pt-32">
+  <div
+    class="custom-section-content mx-auto custom-section-footer-content flex flex-col items-center"
+  >
+    <a
+      href="https://github.com/BustByte/coronastatus"
+      target="_blank"
+      class="footer-logo-link m-6"
+    >
+      <img
+        src="/static/images/github.svg"
+        alt=""
+        class="footer-logo-link__img mt-12 h-16 w-16 lg:h-24 lg:w-24"
+      />
+    </a>
+    <div
+      class="flex flex-row justify-between flex-wrap items-center self-stretch my-8 text-base lg:text-xl text-center"
+    >
+      <a class="text-cvs-green-dark font-medium whitespace-no-wrap"
+        >Credits & Thanks</a
+      >
+      <span
+        class="text-cvs-green-dark font-medium text-left md:text-center md:whitespace-no-wrap"
+      >
+        <%= __('Developed by')%>
+        <a target="_blank" class="font-bold hover:text-cvs-red hover:underline" href="https://bustbyte.no"
+          ><%= __('BustByte AS')%></a
+        >
+        <%= __('and') %>
+        <a class="font-bold hover:text-cvs-red hover:underline" href="<%= urls.contributors %>">
+          <%= __('volunteers')%>
+        </a>
+      </span>
       <a
-        class="icon brands alt fa-github"
-        style="cursor: pointer;"
-        href="https://github.com/BustByte/coronastatus"
-        target="_blank"
-      ></a>
-    </div>
-    <div class="inner" style="font-size: 12px;">
-      <%= __('Developed by')%>
-      <a target="_blank" href="https://bustbyte.no"><%= __('BustByte AS')%></a>
-      <%= __('and') %>
-      <a href="<%= urls.contributors %>">
-        <%= __('volunteers')%>
-      </a>
-    </div>
-    <div class="inner">
-      <a
-        target="_blank"
-        style="font-size: 12px;"
+        class="text-cvs-green-dark hover:text-cvs-red font-bold hover:underline whitespace-no-wrap"
         href="<%= urls.privacyPolicy %>"
         ><%= __('Privacy Policy')%></a
       >
     </div>
   </div>
-</section>
+</footer>
+<% } %>
+
+</div> <!-- container -->
+
+<!-- spacer -->
 
 <% if(shouldAddAnalytics) {%>
 <!-- Simple Analytics -->
@@ -78,3 +64,15 @@
   ><img src="https://api.simpleanalytics.io/hello.gif" alt=""
 /></noscript>
 <% } %>
+
+<script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
+
+<script>
+  // Remove query params from url
+  if (window.history.replaceState) {
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+</script>
+
+</body>
+</html>

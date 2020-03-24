@@ -1,24 +1,11 @@
-<!DOCTYPE html>
-<html lang="<%= locals.htmlLang %>">
-  <head>
-    <%- include('partials/head') -%>
-  </head>
-  <body>
-    <%- include('partials/disclaimer') -%> <%- include('partials/menu') -%> <%-
-    include('partials/hamburger-menu') -%>
-    <div id="page-wrapper">
-      <section id="main" class="wrapper">
-        <div class="inner privacy-policy">
-          <h1><%= __('Something went wrong!') %></h1>
-          <p class="subtitle"><%= __('Something must have gone wrong') %></p>
-          <p>
-            <%= __('Send an e-mail to') %>
-            <a href="mailto:kontakt@bustbyte.no">kontakt@bustbyte.no</a>
-            <%= __("if you can't get it to work.") %>
-          </p>
-        </div>
-      </section>
-    </div>
-    <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
-  </body>
-</html>
+<%- include('partials/header') -%>
+
+<h1><%= __('Something went wrong!') %></h1>
+<p><%= __('Something must have gone wrong') %></p>
+<p>
+  <%= __('Send an e-mail to') %>
+  <a href="mailto:kontakt@bustbyte.no">kontakt@bustbyte.no</a>
+  <%= __("if you can't get it to work.") %>
+</p>
+
+<%- include('partials/footer') -%>

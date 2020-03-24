@@ -1,319 +1,373 @@
-<%
-  const totalPeopleInContactWithInfected = locals.inContactWithInfectedStats.total;
-  const totalInfectedPeopleWithSymptoms = locals.infectedStats.symptomStats.total;
-  const totalPeopleWithSymptoms = locals.allSymptomsStats.symptomStats.total;
-  function numberWithSpaces(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  }
-%>
-<!DOCTYPE html>
-<html lang="<%= locals.htmlLang %>">
-  <%- include('partials/head') -%>
-   <body>
-    <%- include('partials/disclaimer') -%>
-    <%- include('partials/menu') -%>
-    <%- include('partials/hamburger-menu') -%>
-    <div id="page-wrapper">
-      <section id="main" class="wrapper">
-        <div class="inner">
-          <h1><%= __('Statistics') %></h1>
-          <form method="GET" action="/api/reports/reports.csv" style="margin-bottom: 0">
-            <ul class="actions">
-              <li>
-                <input type="submit" value="<%= __('Download the dataset as CSV') %>">
-              </li>
-            </ul>
-          </form>
-          <h2 class="stat-heading"><%= __('COVID-19 infected') %></h2>
-          <p><%= __('In total') %> <%= numberWithSpaces(totalInfectedPeopleWithSymptoms) %> <%= __('people have reported that they have tested positive for COVID-19 and experience symptoms.') %></p>
-          <div class="stat-layout">
-            <div class="stat-cell">
-              <h3 class="stat-heading"><%= __('Symptoms') %></h3>
-              <canvas id="infectedSymptomsChart"></canvas>
-            </div>
-            <div class="stat-cell">
-              <h3 class="stat-heading"><%= __('Test results') %></h3>
-              <p><%= __('In total') %> <%= numberWithSpaces(totalPeopleInContactWithInfected) %> <%= __('people have reported that they have been tested for COVID-19.') %></p>
-              <div class="stat-layout">
-                <div class="stat-cell">
-                  <canvas id="testResultStats"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
+<% const totalPeopleInContactWithInfected =
+locals.inContactWithInfectedStats.total; const totalInfectedPeopleWithSymptoms =
+locals.infectedStats.symptomStats.total; const totalPeopleWithSymptoms =
+locals.allSymptomsStats.symptomStats.total; function numberWithSpaces(x) {
+return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); } %>
 
-          <h2 class="stat-heading"><%= __('Close contacts') %></h2>
-          <p><%= __('In total') %> <%= numberWithSpaces(totalPeopleInContactWithInfected) %> <%= __('people have reported that they have been in close contact with a person who was tested positive for COVID-19.') %></p>
-          <div class="stat-layout">
-            <div class="stat-cell">
-              <h3 class="stat-heading"><%= __('Symptoms') %></h3>
-              <canvas id="inContactWithInfectedChart"></canvas>
-            </div>
-            <div class="stat-cell">
-              <h3 class="stat-heading"><%= __('Key figures') %></h3>
-              <div><%= __('Of those who reported that they have been in close contact with someone that tested positive for COVID-19, have:') %></div>
-              <div class="stat-number-layout">
-                <div class="stat-number-cell">
-                  <div class="stat-number-cell__number">
-                    <%= locals.inContactWithInfectedStats.percentageWithTwoMostCommonSymptoms %> %
-                  </div>
-                  <div class="stat-number-cell__description">
-                      <%= __('reported that they experience the two most common symptoms those who are infected experience.') %>
-                  </div>
-                </div>
-                <div class="stat-number-cell">
-                  <div class="stat-number-cell__number">
-                    <%= locals.inContactWithInfectedStats.percentageWithThreeMostCommonSymptoms %> %
-                  </div>
-                  <div class="stat-number-cell__description">
-                      <%= __('reported that they experience the three most common symptoms those who are infected experience.') %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- prettier spacer -->
 
-          <h2 class="stat-heading"><%= __('All submissions') %></h2>
-          <p>
-            <%= __("In total") %>
-            <%= numberWithSpaces(totalPeopleWithSymptoms) %>
-            <%= __('people have reported that they experience symptoms.') %></p>
-          <div class="stat-layout">
-            <div class="stat-cell">
-              <h3 class="stat-heading"><%= __('Symptoms') %></h3>
-              <canvas id="allSymptomsChart"></canvas>
-            </div>
-            <div class="stat-cell">
-              <h3 class="stat-heading"><%= __('Key figures') %></h3>
-              <div><%= __('Everyone who has submitted a report, also has:') %></div>
-              <div class="stat-number-layout">
-                <div class="stat-number-cell">
-                  <div class="stat-number-cell__number">
-                     <%= locals.allSymptomsStats.percentageWithTwoMostCommonSymptoms %> %
-                  </div>
-                  <div class="stat-number-cell__description">
-                      <%= __('reported that they experience the two most common symptoms those who are infected experience.') %>
-                  </div>
-                </div>
-                <div class="stat-number-cell">
-                  <div class="stat-number-cell__number">
-                    <%= locals.allSymptomsStats.percentageWithThreeMostCommonSymptoms %> %
-                  </div>
-                  <div class="stat-number-cell__description">
-                      <%= __('reported that they experience the three most common symptoms those who are infected experience.') %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+<%- include('partials/header') -%>
 
-          <h2 class="stat-heading"><%= __('Total number of reports') %></h2>
-          <canvas id="totalReportsChart"></canvas>
+<div class="sm:flex items-end justify-between mt-8">
+  <div>
+    <h1 class="m-0">
+      <%= __(`Statistics`) %>
+    </h1>
+  </div>
+  <div>
+    <p class="mb-2">
+      <a
+        href="/api/reports/reports.csv"
+        class="text-cvs-red font-bold hover:underline"
+        ><%= __(`Download the dataset as CSV`) %></a
+      >
+    </p>
+  </div>
+</div>
 
-          <h2 class="stat-heading"><%= __('Positive test results and close contact') %></h2>
-          <canvas id="infectedAndContactStats"></canvas>
+<h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
+  <%= __(`COVID-19 infected`) %>
+</h2>
+<p>
+  <%= __(`In total`) %> <%= numberWithSpaces(totalInfectedPeopleWithSymptoms) %>
+  <%= __(`people have reported that they have tested positive for COVID-19 and
+  experience symptoms.`) %>
+</p>
 
-          <h2 class="stat-heading"><%= __('Clarifications data basis') %></h2>
-          <p style="margin-bottom: 0.5rem;"><%= __('Questions about close contact were added on 16 March at. 10:30 p.m.. Some symptoms were not part of the form from the beginning:') %></p>
-          <div style="max-width: 500px" class="table-wrapper">
-            <table class="alt compact">
-              <thead>
-                <tr>
-                  <th><%= __('Symptom') %></th>
-                  <th><%= __('Added to form') %></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><%= __('Headache') %></td>
-                  <td><%= __('March 16') %> <%= __('at') %> 00:23</td>
-                </tr>
-                <tr>
-                  <td><%= __('Sore throat') %></td>
-                  <td><%= __('March 16') %> <%= __('at') %> 00:23</td>
-                </tr>
-                <tr>
-                  <td><%= __('Loss of sense of taste') %></td>
-                  <td><%= __('March 17') %> <%= __('at') %> 10:26</td>
-                </tr>
-                <tr>
-                  <td><%= __('Loss of sense of smell') %></td>
-                  <td><%= __('March 17') %> <%= __('at') %> 10:26</td>
-                </tr>
-                <tr>
-                  <td><%= __('Mucus cough') %></td>
-                  <td><%= __('March 17') %> <%= __('at') %> 16:28</td>
-                </tr>
-                <tr>
-                  <td><%= __('Stuffy or runny nose') %></td>
-                  <td><%= __('March 17') %> <%= __('at') %> 16:28</td>
-                </tr>
-                <tr>
-                  <td><%= __('Nausea or vomiting') %></td>
-                  <td><%= __('March 23') %> <%= __('at') %> 20:00</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <section>
+<div class="grid sm:grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+  <div>
+    <h3><%= __(`Symptoms`) %></h3>
+    <canvas id="infectedSymptomsChart"></canvas>
+  </div>
+  <div>
+    <h3><%= __(`Test results`) %></h3>
+    <p>
+      <%= __(`In total`) %> <%=
+      numberWithSpaces(totalPeopleInContactWithInfected) %> <%= __(`people have
+      reported that they have been tested for COVID-19.`) %>
+    </p>
+    <canvas id="testResultStats"></canvas>
+  </div>
+</div>
+
+<h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
+  <%= __(`Close contacts`) %>
+</h2>
+<p>
+  <%= __(`In total`) %> <%= numberWithSpaces(totalPeopleInContactWithInfected)
+  %> <%= __(`people have reported that they have been in close contact with a
+  person who was tested positive for COVID-19.`) %>
+</p>
+
+<div class="grid sm:grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+  <div>
+    <h3><%= __(`Symptoms`) %></h3>
+    <canvas id="inContactWithInfectedChart"></canvas>
+  </div>
+  <div>
+    <h3><%= __(`Key figures`) %></h3>
+    <div>
+      <%= __(`Of those who reported that they have been in close contact with
+      someone that tested positive for COVID-19, have:`) %>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script>
-      /* Infected symptom count */
-      var ctx = document.getElementById('infectedSymptomsChart').getContext('2d');
-      var infectedSymptoms = <%- JSON.stringify(locals.infectedStats.symptomStats) %>;
-      var infectedSymptomslabels = <%- JSON.stringify(locals.infectedStats.symptomStats.labels.map(label => __(label))) %>;
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: infectedSymptomslabels,
-          datasets: [{
-            label: '<%= __('Number reported in COVID-19 infected patients') %>',
-            backgroundColor: '#af2222',
-            data: infectedSymptoms.values
-          }]
+
+    <div class="grid grid-cols-2 gap-4 mt-4">
+      <div>
+        <p class="text-3xl font-bold text-cvs-red">
+          <%=
+          locals.inContactWithInfectedStats.percentageWithTwoMostCommonSymptoms
+          %> %
+        </p>
+        <p>
+          <%= __(`reported that they experience the two most common symptoms
+          those who are infected experience.`) %>
+        </p>
+      </div>
+      <div>
+        <p class="text-3xl font-bold text-cvs-red">
+          <%=
+          locals.inContactWithInfectedStats.percentageWithThreeMostCommonSymptoms
+          %> %
+        </p>
+        <p>
+          <%= __(`reported that they experience the three most common symptoms
+          those who are infected experience.`) %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
+  <%= __(`All submissions`) %>
+</h2>
+<p>
+  <%= __("In total") %> <%= numberWithSpaces(totalPeopleWithSymptoms) %> <%=
+  __(`people have reported that they experience symptoms.`) %>
+</p>
+
+<div class="grid sm:grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+  <div>
+    <h3><%= __(`Symptoms`) %></h3>
+    <canvas id="allSymptomsChart"></canvas>
+  </div>
+  <div>
+    <h3><%= __(`Key figures`) %></h3>
+    <div><%= __(`Everyone who has submitted a report, also has:`) %></div>
+    <div class="grid grid-cols-2 gap-4 mt-4">
+      <div>
+        <p class="text-3xl font-bold text-cvs-red">
+          <%= locals.allSymptomsStats.percentageWithTwoMostCommonSymptoms %> %
+        </p>
+        <p>
+          <%= __(`reported that they experience the two most common symptoms
+          those who are infected experience.`) %>
+        </p>
+      </div>
+      <div>
+        <p class="text-3xl font-bold text-cvs-red">
+          <%= locals.allSymptomsStats.percentageWithThreeMostCommonSymptoms %> %
+        </p>
+        <p>
+          <%= __(`reported that they experience the three most common symptoms
+          those who are infected experience.`) %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
+  <%= __(`Total number of reports`) %>
+</h2>
+<canvas id="totalReportsChart"></canvas>
+
+<h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
+  <%= __(`Positive test results and close contact`) %>
+</h2>
+<canvas id="infectedAndContactStats"></canvas>
+
+<h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
+  <%= __(`Clarifications data basis`) %>
+</h2>
+<p>
+  <%= __(`Questions about close contact were added on 16 March at. 10:30 p.m..
+  Some symptoms were not part of the form from the beginning:`) %>
+</p>
+
+<div style="max-width: 500px" class="table-auto mt-4">
+  <table>
+    <thead>
+      <tr>
+        <th class="border px-4 py-2 text-left font-semibold">
+          <%= __(`Symptom`) %>
+        </th>
+        <th class="border px-4 py-2 text-left font-semibold">
+          <%= __(`Added to form`) %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border px-4 py-2"><%= __(`Headache`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`March 16`) %> <%= __(`at`) %> 00:23
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2"><%= __(`Sore throat`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`March 16`) %> <%= __(`at`) %> 00:23
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2"><%= __(`Loss of sense of taste`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`March 17`) %> <%= __(`at`) %> 10:26
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2"><%= __(`Loss of sense of smell`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`March 17`) %> <%= __(`at`) %> 10:26
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2"><%= __(`Mucus cough`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`March 17`) %> <%= __(`at`) %> 16:28
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2"><%= __(`Stuffy or runny nose`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`March 17`) %> <%= __(`at`) %> 16:28
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2"><%= __(`Nausea or vomiting`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`March 23`) %> <%= __(`at`) %> 20:00
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script>
+  /* Infected symptom count */
+  var ctx = document.getElementById('infectedSymptomsChart').getContext('2d');
+  var infectedSymptoms = <%- JSON.stringify(locals.infectedStats.symptomStats) %>;
+  var infectedSymptomslabels = <%- JSON.stringify(locals.infectedStats.symptomStats.labels.map(label => __(label))) %>;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: infectedSymptomslabels,
+      datasets: [{
+        label: '<%= __(`Number reported in COVID-19 infected patients`) %>',
+        backgroundColor: '#af2222',
+        data: infectedSymptoms.values
+      }]
+    },
+    options: {}
+  });
+</script>
+<script>
+  /* Total symptom count */
+  var ctx = document.getElementById('allSymptomsChart').getContext('2d');
+  var symptoms = <%- JSON.stringify(locals.allSymptomsStats.symptomStats) %>;
+  var symptomslabels = <%- JSON.stringify(locals.allSymptomsStats.symptomStats.labels.map(label => __(label))) %>;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: symptomslabels,
+      datasets: [{
+        label: '<%= __("Number reported") %>',
+        backgroundColor: '#da7823',
+        data: symptoms.values
+      }]
+    },
+    options: {}
+  });
+</script>
+<script>
+  /* Number of reports */
+  var ctx = document.getElementById('totalReportsChart').getContext('2d');
+  var totalReportStats = <%- JSON.stringify(locals.totalReportStats) %>;
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      datasets: [
+        {
+          label: '<%= __(`Reports with symptoms`) %>',
+          data: totalReportStats.numberOfReportsWithSymptomsStat,
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'salmon',
         },
-        options: {}
-      });
-    </script>
-    <script>
-      /* Total symptom count */
-      var ctx = document.getElementById('allSymptomsChart').getContext('2d');
-      var symptoms = <%- JSON.stringify(locals.allSymptomsStats.symptomStats) %>;
-      var symptomslabels = <%- JSON.stringify(locals.allSymptomsStats.symptomStats.labels.map(label => __(label))) %>;
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: symptomslabels,
-          datasets: [{
-            label: '<%= __("Number reported") %>',
-            backgroundColor: '#da7823',
-            data: symptoms.values
-          }]
-        },
-        options: {}
-      });
-    </script>
-    <script>
-      /* Number of reports */
-      var ctx = document.getElementById('totalReportsChart').getContext('2d');
-      var totalReportStats = <%- JSON.stringify(locals.totalReportStats) %>;
-      new Chart(ctx, {
-        type: 'line',
-        data: {
-          datasets: [
-            {
-              label: '<%= __('Reports with symptoms') %>',
-              data: totalReportStats.numberOfReportsWithSymptomsStat,
-              backgroundColor: 'rgba(255, 99, 132, 0.2)',
-              borderColor: 'salmon',
-            },
-            {
-              label: '<%= __('Reports') %>',
-              data: totalReportStats.numberOfReportsStat,
-              backgroundColor: 'rgba(0, 200, 255, 0.2)',
-              borderColor: 'lightblue'
-            }
-          ]
-        },
-        options: {
-          scales: {
-            xAxes: [{
-              type: 'time',
-              time: {
-                displayFormats: {
-                  hour: 'HH:mm'
-                }
-              }
-            }]
-          }
+        {
+          label: '<%= __(`Reports`) %>',
+          data: totalReportStats.numberOfReportsStat,
+          backgroundColor: 'rgba(0, 200, 255, 0.2)',
+          borderColor: 'lightblue'
         }
-      });
-    </script>
-    <script>
-      var ctx = document.getElementById('inContactWithInfectedChart').getContext('2d');
-      var inContactData = <%- JSON.stringify(locals.inContactWithInfectedStats) %>;
-      var myDoughnutChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          datasets: [{
-            data: [
-              inContactData.numberOfPeopleShowingSymptoms,
-              inContactData.numberOfPeopleWithoutSymptoms
-            ],
-            backgroundColor: [
-              'salmon',
-              'lightblue',
-            ],
-          }],
-          labels: ['<%= __('In close contact with symptoms') %>', '<%= __('In close contact without symptoms') %>']
-        },
-        options: {}
-      });
-    </script>
-    <script>
-      /* Stats showing number of infected and number of people who has been in contact with infected */
-      var ctx = document.getElementById('infectedAndContactStats').getContext('2d');
-      var infectedAndContactStats = <%- JSON.stringify(locals.infectedAndContactStats) %>;
-      new Chart(ctx, {
-        type: 'line',
-        data: {
-          datasets: [
-            {
-              label: '<%= __("Tested positive") %>',
-              data: infectedAndContactStats.numberOfInfectedStat,
-              backgroundColor: 'rgba(255, 99, 132, 0.2)',
-              borderColor: 'salmon',
-            },
-            {
-              label: '<%= __("Close contact with someone who has tested positive") %>',
-              data: infectedAndContactStats.numberOfInContactStat,
-              backgroundColor: 'rgba(0, 200, 255, 0.2)',
-              borderColor: 'lightblue'
+      ]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          type: 'time',
+          time: {
+            displayFormats: {
+              hour: 'HH:mm'
             }
-          ]
-        },
-        options: {
-          scales: {
-            xAxes: [{
-              type: 'time',
-              time: {
-                displayFormats: {
-                  hour: 'HH:mm'
-                }
-              }
-            }]
           }
-        }
-      });
-    </script>
-    <script>
-      /* Stats showing distribution of test results */
-      var ctx = document.getElementById('testResultStats').getContext('2d');
-      var testResultStats = <%- JSON.stringify(locals.testResultStats) %>;
-      var myDoughnutChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-          datasets: [{
-            data: [
-              testResultStats.POSITIVE,
-              testResultStats.NEGATIVE,
-              testResultStats.PENDING,
-            ],
-            backgroundColor: [
-              '#af2222',
-              'rgb(75, 192, 192)',
-              'rgb(255, 205, 86)',
-            ],
-          }],
-          labels: ['<%= __("Tested positive") %>', '<%= __("Tested negative") %>', '<%= __("Waiting for result") %>']
+        }]
+      }
+    }
+  });
+</script>
+<script>
+  var ctx = document.getElementById('inContactWithInfectedChart').getContext('2d');
+  var inContactData = <%- JSON.stringify(locals.inContactWithInfectedStats) %>;
+  var myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: [
+          inContactData.numberOfPeopleShowingSymptoms,
+          inContactData.numberOfPeopleWithoutSymptoms
+        ],
+        backgroundColor: [
+          'salmon',
+          'lightblue',
+        ],
+      }],
+      labels: ['<%= __(`In close contact with symptoms`) %>', '<%= __(`In close contact without symptoms`) %>']
+    },
+    options: {}
+  });
+</script>
+<script>
+  /* Stats showing number of infected and number of people who has been in contact with infected */
+  var ctx = document.getElementById('infectedAndContactStats').getContext('2d');
+  var infectedAndContactStats = <%- JSON.stringify(locals.infectedAndContactStats) %>;
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      datasets: [
+        {
+          label: '<%= __("Tested positive") %>',
+          data: infectedAndContactStats.numberOfInfectedStat,
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'salmon',
         },
-        options: {}
-      });
-    </script>
-    <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
-    <%- include('partials/footer') -%>
-  </body>
-</html>
+        {
+          label: '<%= __("Close contact with someone who has tested positive") %>',
+          data: infectedAndContactStats.numberOfInContactStat,
+          backgroundColor: 'rgba(0, 200, 255, 0.2)',
+          borderColor: 'lightblue'
+        }
+      ]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          type: 'time',
+          time: {
+            displayFormats: {
+              hour: 'HH:mm'
+            }
+          }
+        }]
+      }
+    }
+  });
+</script>
+<script>
+  /* Stats showing distribution of test results */
+  var ctx = document.getElementById('testResultStats').getContext('2d');
+  var testResultStats = <%- JSON.stringify(locals.testResultStats) %>;
+  var myDoughnutChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      datasets: [{
+        data: [
+          testResultStats.POSITIVE,
+          testResultStats.NEGATIVE,
+          testResultStats.PENDING,
+        ],
+        backgroundColor: [
+          '#af2222',
+          'rgb(75, 192, 192)',
+          'rgb(255, 205, 86)',
+        ],
+      }],
+      labels: ['<%= __("Tested positive") %>', '<%= __("Tested negative") %>', '<%= __("Waiting for result") %>']
+    },
+    options: {}
+  });
+</script>
+
+<%- include('partials/footer') -%>

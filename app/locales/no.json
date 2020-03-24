@@ -14,6 +14,7 @@
   "I've noted down the link.": "Jeg har tatt vare på lenken",
   "Proceed": "Gå videre",
   "The link has been copied": "Linken er kopiert.",
+  "Copy": "Kopier",
   "Could not copy the link, please copy it yourself": "Klarte ikke å kopiere linke til utklippstavlen. Skriv ned linken selv.",
   "Contributors": "Bidragsytere",
   "This website is made with help from volunteers. In no particular order:": "Denne nettsiden er laget med god hjelp fra frivillige. I tilfeldig rekkefølge:",
@@ -170,5 +171,8 @@
   "I used to smoke": "Jeg røyket tidligere",
   "I have never smoked": "Jeg har aldri røyket",
   "What is your current body temperature? (Celcius)": "Hva er din kroppstemperatur i Celsius?",
-  "This field is optional": "Dette feltet er valgfritt"
+  "This field is optional": "Dette feltet er valgfritt",
+  "Close": "Lukk",
+  "Contribute now": "Bidra nå",
+  "Help us uncover and predict the corona spread in your area": "Hjelp oss å <span>avdekke</span> og <span>forutsi</span> koronautbredelsen i ditt område"
 }

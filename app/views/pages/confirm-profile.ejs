@@ -1,143 +1,102 @@
-<% const { hasCookie, passcode, baseUrl, urls, htmlLang } = locals; %>
+<%- include('partials/header') -%>
 
-<!DOCTYPE html>
-<html lang="<%= htmlLang %>">
-  <head>
-    <%- include('partials/head') -%>
-  </head>
-  <body>
-    <%- include('partials/disclaimer') -%> <%- include('partials/menu') -%>
-    <div id="page-wrapper">
-      <section id="main" class="wrapper">
-        <div class="inner">
-          <div class="row">
-            <div class="col-10 col-12-small">
-              <% if (hasCookie) { %>
-              <h1>
-                <%= __(`We stored your data in a cookie so come back later to
-                update your status`) %>
-              </h1>
-              <p class="subtitle">
-                <%= __(`If you use this computer with multiple users, please use
-                this link to update your status.`) %> <%= __(`Write it down
-                somewhere or save it on your computer.`) %>
-              </p>
+<section
+  class="max-w-xl sm:mt-20 mx-auto sm:bg-cvs-green sm:rounded-lg py-4 sm:p-10 mx-3"
+>
+  <% if (hasCookie) { %>
 
-              <% } else { %>
+  <h1 class="mt-0 text-3xl sm:text-4xl">
+    <%= __(`We stored your data in a cookie so come back later to update your
+    status`) %>
+  </h1>
+  <p class="subtitle">
+    <%= __(`If you use this computer with multiple users, please use this link
+    to update your status.`) %> <%= __(`Write it down somewhere or save it on
+    your computer.`) %>
+  </p>
 
-              <h1>
-                <%= __(`Before proceeding please note down the following link`)
-                %>
-              </h1>
-              <p class="subtitle">
-                <%= __(`Save the following link somewhere, or bookmark it in
-                your browser.`) %>
-                <br />
-                <%= __(`That way you can update your report if your health
-                condition changes.`) %>
-              </p>
-              <% }%>
+  <% } else { %>
 
-              <div class="profile-url">
-                <span id="link-to-be-copied"
-                  ><%= baseUrl %><%= urls.profile %>/<%= passcode %></span
-                >
-                <div>
-                  <button
-                    id="profile-url-id"
-                    class="copy-icon"
-                    data-clipboard-text="<%= baseUrl %><%= urls.profile %>/<%= passcode %>"
-                  >
-                    <i class="fas fa-copy"></i>
-                  </button>
-                </div>
-              </div>
+  <h1 class="mt-0 text-3xl sm:text-4xl">
+    <%= __(`Before proceeding please note down the following link`) %>
+  </h1>
+  <p class="subtitle">
+    <%= __(`Save the following link somewhere, or bookmark it in your browser.`)
+    %>
+    <br />
+    <%= __(`That way you can update your report if your health condition
+    changes.`) %>
+  </p>
+  <% }%>
 
-              <div
-                id="profile-copy-status-text"
-                class="alert"
-                style="display:none;"
-                role="alert"
-              ></div>
-              <form method="get" action="<%= urls.profile %>/<%= passcode %>">
-                <div class="row">
-                  <div class="col-12">
-                    <input type="hidden" name="success" value="true" />
-                    <% if (!hasCookie) { %>
-                    <input required type="checkbox" id="accept" name="accept" />
-                    <label for="accept" class="normal-font"
-                      ><%= __("I've noted down the link.") %></label
-                    >
-                    <% } %>
-                  </div>
-                  <div class="col-12">
-                    <ul class="actions">
-                      <li>
-                        <input
-                          class="inverse"
-                          type="submit"
-                          value="<%= __('Proceed') %>"
-                        />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-    <%- include('partials/footer') -%>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
-    <script>
-      // Remove query params from url
-      if (window.history.replaceState) {
-        window.history.replaceState(
-          {},
-          document.title,
-          window.location.pathname
-        );
-      }
+  <div class="flex items-center justify-between mt-4" style="max-width: 100%">
+    <input
+      id="link-to-be-copied"
+      type="text"
+      readonly
+      value="<%= baseUrl %><%= urls.profile %>/<%= passcode %>"
+      class="h-12 flex-grow w-auto flex-shrink mr-4 bg-gray-200 appearance-none border-2 border-cvs-red rounded py-2 px-4 leading-tight focus:outline-none"
+    />
+    <button
+      id="profile-url-id"
+      class="h-12 rounded"
+      data-clipboard-text="<%= baseUrl %><%= urls.profile %>/<%= passcode %>"
+    >
+      <%= __(`Copy`) %>
+    </button>
+  </div>
 
-      var clipboard = new ClipboardJS('#profile-url-id');
-      var statusText = document.getElementById('profile-copy-status-text');
+  <!-- If you change the color make sure it's in postcss.config.js -->
+  <%- include('partials/alert', { color: 'blue', class: `mb-4 hidden`, id:
+  `profile-copy-status-success`, message: __(`The link has been copied.`) })-%>
 
-      function setStatusAlert(element, text, alert_class) {
-        txt = document.createTextNode(text);
-        element.appendChild(txt);
-        element.style.display = 'block';
-        element.classList.add(alert_class);
-      }
+  <!-- If you change the color make sure it's in postcss.config.js -->
+  <%- include('partials/alert', { color: 'red', class: `mb-4 hidden`, id:
+  `profile-copy-status-fail`, message: __(`Could not copy the link, please copy
+  it yourself`) }) -%>
 
-      clipboard.on('success', function(e) {
-        if (statusText.style.display == 'none') {
-          setStatusAlert(
-            statusText,
-            '<%= __("The link has been copied.") %>',
-            'alert-success'
-          );
-        }
-      });
+  <form method="get" action="<%= urls.profile %>/<%= passcode %>">
+    <input type="hidden" name="success" value="true" />
 
-      clipboard.on('error', function(e) {
-        if (statusText.style.display == 'none') {
-          setStatusAlert(
-            statusText,
-            '<%= __("Could not copy the link, please copy it yourself") %>',
-            'alert-error'
-          );
-        }
-      });
-    </script>
+    <% if (!hasCookie) { %>
+    <p>
+      <label class="checkbox" for="accept">
+        <input type="checkbox" id="accept" name="accept" />
+        <span><%= __(`I've noted down the link.`)%></span>
+        <span class="checkmark"></span>
+      </label>
+    </p>
+    <% } %>
 
-    <script>
-      // This is done so that we can show a hint on the front page that a profile might exist
-      // when entering from the same browser at a later time.
-      var hasCookie = 'true' === '<%= hasCookie %>';
-      if (!hasCookie) {
-        window.localStorage.setItem('isUsingPasscodeLink', 'true');
-      }
-    </script>
-  </body>
-</html>
+    <p class="my-4">
+      <input class="inverse" type="submit" value="<%= __('Proceed') %>" />
+    </p>
+  </form>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+
+<script>
+  var clipboard = new ClipboardJS('#profile-url-id');
+  var successElement = document.getElementById('profile-copy-status-success');
+  var failElement = document.getElementById('profile-copy-status-fail');
+
+  clipboard.on('success', function(e) {
+    successElement.style.display = 'block';
+  });
+
+  clipboard.on('error', function(e) {
+    failElement.style.display = 'block';
+  });
+</script>
+
+<script>
+  // This is done so that we can show a hint on the front page that a profile might exist
+  // when entering from the same browser at a later time.
+  var hasCookie = 'true' === '<%= hasCookie %>';
+  if (!hasCookie) {
+    window.localStorage.setItem('isUsingPasscodeLink', 'true');
+  }
+</script>
+
+<%- include('partials/footer') -%>
