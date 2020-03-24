@@ -39,6 +39,10 @@ select {
   width: 300px;
 }
 
+canvas {
+  max-width: 100%;
+}
+
 h1 {
   font-size: 3rem;
   color: #d36767;
@@ -385,6 +389,6 @@ button,
 input[type='submit']:hover,
 input[type='submit']:focus {
   color: #fff;
-  background:#d36767;
-  border-color:#000;
+  background: #d36767;
+  border-color: #000;
 }

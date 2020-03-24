@@ -8,14 +8,14 @@ return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); } %>
 
 <%- include('partials/header') -%>
 
-<div class="flex items-end justify-between mt-8">
+<div class="sm:flex items-end justify-between mt-8">
   <div>
     <h1 class="m-0">
       <%= __(`Statistics`) %>
     </h1>
   </div>
   <div>
-    <p class="mb-4">
+    <p class="mb-2">
       <a
         href="/api/reports/reports.csv"
         class="text-cvs-red font-bold hover:underline"
@@ -37,7 +37,7 @@ return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); } %>
 <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-8 mt-8">
   <div>
     <h3><%= __(`Symptoms`) %></h3>
-    <canvas id="infectedSymptomsChart" style="max-width: 100%;"></canvas>
+    <canvas id="infectedSymptomsChart"></canvas>
   </div>
   <div>
     <h3><%= __(`Test results`) %></h3>
@@ -46,7 +46,7 @@ return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); } %>
       numberWithSpaces(totalPeopleInContactWithInfected) %> <%= __(`people have
       reported that they have been tested for COVID-19.`) %>
     </p>
-    <canvas id="testResultStats" style="max-width: 100%;"></canvas>
+    <canvas id="testResultStats"></canvas>
   </div>
 </div>
 
