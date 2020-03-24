@@ -117,6 +117,7 @@
     </h3>
 
     <% if (locals.success) {%>
+      <!-- If you change the color make sure it's in postcss.config.js -->
       <%- include('partials/alert', {
         color: 'blue',
         message:
@@ -127,6 +128,7 @@
           <a href="${urls.profile}/${passcode}?clear=true"> ${ __(`clear this form`)}.</a>`,
       }) -%>
     <% } else if (locals.cleared) {%>
+      <!-- If you change the color make sure it's in postcss.config.js -->
       <%- include('partials/alert', {
         color: 'blue',
         message:
@@ -134,6 +136,7 @@
           ${__("You can now use this computer for another user.")}`,
       }) -%>
     <% } else if (locals.passcode) {%>
+      <!-- If you change the color make sure it's in postcss.config.js -->
       <%- include('partials/alert', {
         color: 'blue',
         message:
