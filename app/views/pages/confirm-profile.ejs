@@ -29,17 +29,20 @@
   </p>
   <% }%>
 
-  <div class="flex items-center justify-between mt-4" style="max-width: 100%">
+  <div
+    class="flex-wrap flex sm:flex-no-wrap items-center justify-between mt-4"
+    style="max-width: 100%"
+  >
     <input
       id="link-to-be-copied"
       type="text"
       readonly
       value="<%= baseUrl %><%= urls.profile %>/<%= passcode %>"
-      class="h-12 flex-grow w-auto flex-shrink mr-4 bg-gray-200 appearance-none border-2 border-cvs-red rounded py-2 px-4 leading-tight focus:outline-none"
+      class="mb-4 h-12 flex-grow w-auto flex-shrink mr-4 bg-gray-200 appearance-none border-2 border-cvs-red rounded py-2 px-4 leading-tight focus:outline-none"
     />
     <button
       id="profile-url-id"
-      class="h-12 rounded"
+      class="mb-4 h-12 rounded"
       data-clipboard-text="<%= baseUrl %><%= urls.profile %>/<%= passcode %>"
     >
       <%= __(`Copy`) %>

@@ -71,6 +71,11 @@ h4 {
   z-index: 10000;
 }
 
+#nav-cta-button,
+#home-cta-button {
+  transition: opacity 250ms ease-in-out;
+}
+
 #map {
   position: absolute;
   top: 0;
