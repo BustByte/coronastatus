@@ -4,11 +4,6 @@ import { LANGUAGE } from '../../config.json';
 
 const router = express.Router();
 
-// When the government have their systems ready, this should be used on "/" instead.
-router.get('/move-to-root-when-helsenorge-is-ready', async (req, res) => {
-  return res.render('pages/government');
-});
-
 router.get(`${urls.privacyPolicy}`, (req, res) => {
   return res.render(`privacy-statements/${LANGUAGE}-lang-privacy-statement`);
 });

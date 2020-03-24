@@ -116,7 +116,24 @@
       <%= profile ? __("Your state of health") : __("Report your health condition") %>
     </h3>
 
-    <% if (locals.success) {%>
+    <% if (locals.redirectToGovernment) {%>
+      <!-- If you change the color make sure it's in postcss.config.js -->
+      <%- include('partials/alert', {
+        color: 'red',
+        message:
+          `${__(`Thank you for your contribution!`)}
+          ${__(`The government has now launched their own self-report system, please use that instead.`)}
+          <br/>
+          <a
+            class="hover:text-cvs-red font-bold hover:underline whitespace-no-wrap"
+            target="_blank"
+            style="cursor: pointer;"
+            href="${__('www.nhs.uk')}"
+          >
+            ${__(`Go to the National health service website`)}
+          </a>`,
+      }) -%>
+    <% } else if (locals.success) {%>
       <!-- If you change the color make sure it's in postcss.config.js -->
       <%- include('partials/alert', {
         color: 'blue',

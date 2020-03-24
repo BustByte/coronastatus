@@ -19,7 +19,8 @@ import {
   MAP_ZOOM,
   TWITTER,
   ZIP_LENGTH,
-  ZIP_PLACEHOLDER
+  ZIP_PLACEHOLDER,
+  REDIRECT_TO_GOVERNMENT
 } from '../config.json';
 import { urls } from './domain/urls';
 
@@ -78,6 +79,7 @@ app.use((req, res, next) => {
   res.locals.urls = urls;
   res.locals.zipLength = ZIP_LENGTH;
   res.locals.zipPlaceHolder = ZIP_PLACEHOLDER;
+  res.locals.redirectToGovernment = REDIRECT_TO_GOVERNMENT;
   next();
 });
 
