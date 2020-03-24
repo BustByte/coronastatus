@@ -97,18 +97,23 @@
   // Show button "Your state of health" when people did fill in the form
   // and show button "Contribute now" when they didn't
   (function updateMainCTA() {
-    var button = document.getElementById('nav-cta-button');
-    if (!button) return;
+    window.addEventListener('load', function(event) {
+      var button = document.getElementById('nav-cta-button') ||
+        document.getElementById('home-cta-button');
 
-    var submitted =
-      window.localStorage.getItem('hasSubmittedProfile') === 'true' ||
-      window.localStorage.getItem('isUsingPasscodeLink') === 'true' ||
-      readCookie('passcode');
+      if (!button) return;
 
-    if (submitted) {
-      button.textContent = '<%= __(`Your state of health`) %>';
-    }
-    button.classList.remove('hidden');
+      var submitted =
+        window.localStorage.getItem('hasSubmittedProfile') === 'true' ||
+        window.localStorage.getItem('isUsingPasscodeLink') === 'true' ||
+        readCookie('passcode');
+
+      if (submitted) {
+        button.textContent = '<%= __(`Your state of health`) %>';
+      }
+
+      button.classList.remove('opacity-0');
+    });
   })();
 </script>
 
