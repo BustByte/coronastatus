@@ -57,7 +57,7 @@
 
 <!-- spacer -->
 
-<% if(shouldAddAnalytics) {%>
+<% if (shouldAddAnalytics) { %>
 <!-- Simple Analytics -->
 <script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
 <noscript
@@ -68,10 +68,48 @@
 <script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
 
 <script>
-  // Remove query params from url
-  if (window.history.replaceState) {
-    window.history.replaceState({}, document.title, window.location.pathname);
+  function readCookie(name) {
+    var nameEQ = name + '=';
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) === ' ') {
+        c = c.substring(1, c.length);
+      }
+      if (c.indexOf(nameEQ) === 0) {
+        return c.substring(nameEQ.length, c.length);
+      }
+    }
+    return null;
   }
+</script>
+
+<script>
+  // Remove query params from url
+  (function removeQueryParams(window) {
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  })(window);
+</script>
+
+<script>
+  // Show button "Your state of health" when people did fill in the form
+  // and show button "Contribute now" when they didn't
+  (function updateMainCTA() {
+    var button = document.getElementById('nav-cta-button');
+    if (!button) return;
+
+    var submitted =
+      window.localStorage.getItem('hasSubmittedProfile') === 'true' ||
+      window.localStorage.getItem('isUsingPasscodeLink') === 'true' ||
+      readCookie('passcode');
+
+    if (submitted) {
+      button.textContent = '<%= __(`Your state of health`) %>';
+    }
+    button.classList.remove('hidden');
+  })();
 </script>
 
 </body>
