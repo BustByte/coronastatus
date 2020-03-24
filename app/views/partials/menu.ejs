@@ -41,9 +41,10 @@ locals.activePage === urls.profile; %>
     <% if (!home) { %>
     <li class="mr-3 rounded">
       <a
-        href="<%= urls.submitReport %>"
-        class="custom-nav-link text-center whitespace-no-wrap block text-xl py-4 lg:text-base text-white font-medium lg:py-4 px-4 rounded-full <%= isOnProfile ? 'active' : '' %>"
-        ><%= __("Your state of health") %></a
+        id="nav-cta-button"
+        href="<%= urls.submitReport %>#contribute"
+        class="hidden custom-nav-link text-center whitespace-no-wrap block text-xl py-4 lg:text-base text-white font-medium lg:py-4 px-4 rounded-full <%= isOnProfile ? 'active' : '' %>"
+        ><%= __("Contribute now") %></a
       >
     </li>
     <% } %>
