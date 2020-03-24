@@ -15,6 +15,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  word-wrap: anywhere;
+  word-break: break-word;
+  scroll-behavior: smooth;
 }
 *,
 *:before,
@@ -41,6 +44,7 @@ h1 {
   color: #d36767;
   margin: 1rem 0;
   font-weight: 700;
+  line-height: 120%;
 }
 
 h3 {
@@ -129,7 +133,6 @@ h4 {
 }
 .custom-section-content {
   max-width: 68rem;
-  margin: auto;
 }
 .custom-hero {
   background: linear-gradient(118.81deg, #5d7979 22.4%, #56beab 105.76%);
@@ -157,8 +160,6 @@ h4 {
 }
 .custom-fullscreen .custom-section-content {
   max-width: initial;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 /* Checkbox and radio button styling */

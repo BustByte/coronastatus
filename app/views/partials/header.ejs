@@ -30,7 +30,7 @@
 
   <% if (menu) { %>
     <section class="custom-section custom-hero p-4 w-full <% if (fullscreen) { %>custom-fullscreen<% } %>">
-      <div class="custom-section-content">
+      <div class="custom-section-content <% if (fullscreen) { %>mx-4<% } else { %>mx-auto<% } %>">
         <header class="py-2 flex justify-between items-center flex-wrap">
           <%- include('partials/logo') -%>
           <%- include('partials/menu') -%>
@@ -40,5 +40,5 @@
   <% } %>
 
   <% if (show && !home) { %>
-    <section class="custom-section-content px-6 lg:px-0">
+    <section class="custom-section-content flex-grow mx-auto px-6 lg:px-0">
   <% } %>

@@ -1,8 +1,10 @@
-<% const { prefix = false, message, color = 'red', close = false } = locals; %>
+<% const { prefix = false, message, color = 'red', close = false, id = null, style = null, class: classes = null } = locals; %>
 
 <div
-  class="my-4 bg-<%= color %>-100 border border-<%= color %>-400 text-<%= color %>-700 px-4 py-3 rounded relative"
+  class="my-4 bg-<%= color %>-100 border border-<%= color %>-400 text-<%= color %>-700 px-4 py-3 rounded relative <%= classes ? `${classes}` : '' %>"
   role="alert"
+  <%= id ? `id=${id}` : '' %>
+  <%= style ? `style=${style}` : '' %>
 >
   <% if (prefix) { %>
   <strong class="font-bold"><%- prefix %></strong>

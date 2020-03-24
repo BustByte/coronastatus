@@ -16,12 +16,13 @@ const name = parts.join('')
 %>
 
 <a class="flex flex-row" href="/">
-  <img src="/static/images/logo.svg" alt="icon" class="w-20 h-20" />
+  <img src="/static/images/logo.svg" alt="icon" class="w-20 h-20 hidden sm:block" />
   <div class="flex flex-row items-center" style="color: #CAEAE9;">
     <div
-      class="flex flex-row flex-no-wrap text-3xl font-bold whitespace-no-wrap"
+      class="flex flex-row flex-no-wrap text-2xl sm:text-3xl font-bold whitespace-no-wrap"
     >
       <%- name %>
     </div>
   </div>
 </a>
+

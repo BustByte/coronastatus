@@ -12,7 +12,7 @@
 <% if (typeof show === 'undefined' || typeof show === 'boolean' && show == true) { %>
 <footer class="custom-section custom-section-footer p-8 pt-32">
   <div
-    class="custom-section-content custom-section-footer-content flex flex-col items-center"
+    class="custom-section-content mx-auto custom-section-footer-content flex flex-col items-center"
   >
     <a
       href="https://github.com/BustByte/coronastatus"
@@ -26,13 +26,13 @@
       />
     </a>
     <div
-      class="footer-links flex flex-row justify-between flex-wrap items-center self-stretch my-8 text-base lg:text-xl text-center"
+      class="flex flex-row justify-between flex-wrap items-center self-stretch my-8 text-base lg:text-xl text-center"
     >
-      <a class="footer-link text-cvs-green-dark font-medium whitespace-no-wrap"
+      <a class="text-cvs-green-dark font-medium whitespace-no-wrap"
         >Credits & Thanks</a
       >
       <span
-        class="footer-link text-cvs-green-dark font-medium whitespace-no-wrap"
+        class="text-cvs-green-dark font-medium text-left md:text-center md:whitespace-no-wrap"
       >
         <%= __('Developed by')%>
         <a target="_blank" class="font-bold hover:text-cvs-red hover:underline" href="https://bustbyte.no"
@@ -44,7 +44,7 @@
         </a>
       </span>
       <a
-        class="footer-link text-cvs-green-dark hover:text-cvs-red font-bold hover:underline whitespace-no-wrap"
+        class="text-cvs-green-dark hover:text-cvs-red font-bold hover:underline whitespace-no-wrap"
         target="_blank"
         href="<%= urls.privacyPolicy %>"
         ><%= __('Privacy Policy')%></a

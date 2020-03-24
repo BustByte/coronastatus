@@ -39,7 +39,7 @@
 <%- include('partials/header', { home: true, menu: false }) -%>
 
 <section class="custom-section custom-hero p-4">
-  <div class="custom-section-content">
+  <div class="custom-section-content mx-auto">
     <header class="py-2 flex justify-between items-center flex-wrap">
       <%- include('partials/logo') -%>
       <%- include('partials/menu', { home: true }) -%>
@@ -75,7 +75,7 @@
 </section>
 
 <section class="custom-section p-4">
-  <div class="custom-section-content">
+  <div class="custom-section-content mx-auto">
     <div class="my-8 flex flex-row flex-wrap justify-between">
       <%- include('partials/app-stats-block', {
         image: '/static/images/napkin.svg',
@@ -110,7 +110,7 @@
   </div>
 <% } %>
 
-<section class="custom-section-content p-4 pb-24 w-full">
+<section class="custom-section-content mx-auto p-4 pb-24 w-full">
   <form id="contribute" method="post" action="/" class="custom-form p-6 py-6 lg:p-24 lg:py-12 my-4 rounded-lg flex flex-col items-start">
     <h3 class="text-2xl md:text-3xl lg:text-5xl text-center font-bold text-cvs-red m-2 self-center">
       <%= profile ? __("Your state of health") : __("Report your health condition") %>
@@ -396,7 +396,7 @@
 </section>
 
 <section class="custom-section custom-section-about px-6 lg:px-0 py-12 lg:py-24 bg-white">
-  <div class="custom-section-content">
+  <div class="custom-section-content mx-auto">
     <div class="section-about-header flex flex-row items-center mb-8">
       <img class="section-about-header__img h-24 w-24"
         src="/static/images/recovery-path.svg" alt="">
@@ -460,10 +460,6 @@
   }
 
   changeTestResultDisplay(document.getElementById("been-tested-yes").checked);
-  // Remove query params from url
-  if (window.history.replaceState) {
-    window.history.replaceState({}, document.title, window.location.pathname);
-  }
 </script>
 
 <script>
