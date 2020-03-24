@@ -4,6 +4,10 @@ import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 import { promisify } from 'util';
 
+interface TableName {
+  name: string;
+}
+
 /**
  * A wrapper class around the sqlite3 module, providing promisified
  * querying methods
@@ -23,8 +27,8 @@ export class SqlLiteDatabase {
    * @returns A Promise resolving to a list of all the tables in the database
    * @memberof SqlLiteDatabase
    */
-  async listTables() {
-    return this.getAll(
+  async listTables(): Promise<TableName[]> {
+    return this.getAll<TableName>(
       "select name from sqlite_master where type='table' order by name"
     );
   }
@@ -36,7 +40,7 @@ export class SqlLiteDatabase {
    *
    * @memberof SqlLiteDatabase
    */
-  async applyMigrationScripts(directory: string) {
+  async applyMigrationScripts(directory: string): Promise<void> {
     const files = readdirSync(directory);
 
     const scripts = files
@@ -62,7 +66,7 @@ export class SqlLiteDatabase {
    * @returns A Promise resolving to an object {lastID: <ID of last inserted>}
    * @memberof SqlLiteDatabase
    */
-  async run<T>(query: string, parameters: string[] = []) {
+  async run<T>(query: string, parameters: string[] = []): Promise<T> {
     const statement = this.db.prepare(query);
 
     return new Promise<T>((resolve, reject) => {
@@ -104,7 +108,7 @@ export class SqlLiteDatabase {
    *          the query or an empty array if result set is empty
    * @memberof SqlLiteDatabase
    */
-  async getAll(query: string, parameters: string[] = []) {
+  async getAll<T>(query: string, parameters: string[] = []): Promise<T[]> {
     const statement = this.db.prepare(query);
     // @ts-ignore
     const results = await promisify(statement.all).bind(statement)(parameters);
@@ -118,12 +122,12 @@ export class SqlLiteDatabase {
    * @returns A promise resolving once the database is closed
    * @memberof SqlLiteDatabase
    */
-  async closeConnection() {
+  async closeConnection(): Promise<void> {
     return promisify(this.db.close).bind(this.db)();
   }
 
-  async dropTables() {
-    const tables = await this.getAll(
+  async dropTables(): Promise<void> {
+    const tables = await this.getAll<TableName>(
       "select name from sqlite_master where type='table'"
     );
     for (const table of tables) {
@@ -134,7 +138,7 @@ export class SqlLiteDatabase {
 }
 
 let instance: SqlLiteDatabase | null = null;
-export const getInstance = (dbName: string) => {
+export const getInstance = (dbName: string): SqlLiteDatabase => {
   if (instance === null) {
     instance = new SqlLiteDatabase(dbName);
   }

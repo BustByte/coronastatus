@@ -45,9 +45,12 @@ export class CovidReportRepository {
   async getCovidReportByPasscode(
     passcode: string
   ): Promise<CovidReport | undefined> {
-    const rows = await this.db.getAll(SELECT_COVID_REPORT, [passcode]);
-    if (rows?.length) {
-      return this.parseJsonDumpToCovidReport(rows.pop().json_dump);
+    const rows = await this.db.getAll<CovidReportRow>(SELECT_COVID_REPORT, [
+      passcode
+    ]);
+    const lastRow = rows.pop();
+    if (lastRow) {
+      return this.parseJsonDumpToCovidReport(lastRow.json_dump);
     }
     return undefined;
   }
@@ -66,7 +69,7 @@ export class CovidReportRepository {
   }
 
   async fetchAllReportsFromDatabase(): Promise<PassCodeReports> {
-    const rows = await this.db.getAll(SELECT_ALL_COVID_REPORTS);
+    const rows = await this.db.getAll<CovidReportRow>(SELECT_ALL_COVID_REPORTS);
     const allReports: PassCodeReports = {};
     rows.forEach((row: CovidReportRow) => {
       const report = this.parseJsonDumpToCovidReport(row.json_dump);
