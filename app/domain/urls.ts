@@ -28,7 +28,7 @@ const localeAwareUrls: Urls = {
   },
   nl: {
     submitReport: '/',
-    profile: '/gezondheidstoestand',
+    profile: '/melding',
     privacyPolicy: '/privacy-policy',
     map: '/kaart',
     contributors: '/bijdragers',
