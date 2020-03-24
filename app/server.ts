@@ -25,7 +25,7 @@ const port = process.env.PORT || 7272;
 const isDevelopmentEnv = process.env.NODE_ENV === 'dev';
 
 i18n.configure({
-  locales: ['en', 'no', 'nl'],
+  locales: [LANGUAGE],
   defaultLocale: LANGUAGE,
   updateFiles: false,
   directory: `${__dirname}/locales`
