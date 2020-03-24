@@ -17,7 +17,9 @@ import {
   COUNTRY,
   MAP_CENTER,
   MAP_ZOOM,
-  TWITTER
+  TWITTER,
+  ZIP_LENGTH,
+  ZIP_PLACEHOLDER
 } from '../config.json';
 import { urls } from './domain/urls';
 
@@ -74,6 +76,8 @@ app.use((req, res, next) => {
   res.locals.mapZoom = MAP_ZOOM;
   res.locals.twitter = TWITTER;
   res.locals.urls = urls;
+  res.locals.zipLength = ZIP_LENGTH;
+  res.locals.zipPlaceHolder = ZIP_PLACEHOLDER;
   next();
 });
 

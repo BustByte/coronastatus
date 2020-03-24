@@ -180,7 +180,7 @@
     </p>
 
     <h4 for="postal-code"><%= __('Zip code') %></h4>
-    <input class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="[0-9]{4}" maxlength="4" name="postal-code" id="postal-code" placeholder="1234" value="<%= postalCode %>">
+    <input class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="[0-9]{<%= locals.zipLength %>}" maxlength="<%= locals.zipLength %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
 
     <div class="flex flex-row items-center mt-8">
       <img src="/static/images/mask.svg" alt="" class="h-16 w-16">
