@@ -16,7 +16,8 @@ import {
   BASE_URL,
   COUNTRY,
   MAP_CENTER,
-  MAP_ZOOM
+  MAP_ZOOM,
+  TWITTER
 } from '../config.json';
 import { urls } from './domain/urls';
 
@@ -71,6 +72,7 @@ app.use((req, res, next) => {
   res.locals.baseUrl = BASE_URL;
   res.locals.mapCenter = MAP_CENTER;
   res.locals.mapZoom = MAP_ZOOM;
+  res.locals.twitter = TWITTER;
   res.locals.urls = urls;
   next();
 });
