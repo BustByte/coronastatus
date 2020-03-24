@@ -52,7 +52,7 @@ h1 {
   line-height: 120%;
 }
 
-h2{
+h2 {
   font-size: 1.875rem;
   color: #d36767;
   margin: 0.5rem 0;
@@ -407,12 +407,12 @@ input[type='submit']:focus {
 }
 
 .contributor-list::before {
-  content: "\2022";
+  content: '\2022';
   color: #d36767;
   font-size: larger;
   display: inline-block;
   width: 1.2em;
 }
-.contributor-list{
+.contributor-list {
   align-self: center;
 }

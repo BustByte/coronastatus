@@ -29,7 +29,7 @@ module.exports = {
       preset: 'default'
     }),
     purgecss({
-      content: ['app/view/pages/*.ejs', 'app/views/partials/*.ejs'],
+      content: ['app/views/pages/*.ejs', 'app/views/partials/*.ejs'],
       whitelist: colors.reduce((list, color) => {
         // Add classes here when you add them in alert.ejs
         list.push(
