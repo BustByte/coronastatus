@@ -1,10 +1,14 @@
-# Coronastatus 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-![](https://github.com/BustByte/coronastatus/workflows/test/badge.svg) 
-> Report your health status to get a better overview of COVID-19 in your country (currently in 🇳🇴🇳🇱🇸🇰)
+# Coronastatus
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+![](https://github.com/BustByte/coronastatus/workflows/test/badge.svg)
+
+> Report your health status to get a better overview of COVID-19 in your country (currently in 🇳🇴🇳🇱🇸🇰)
 
 ## What is this?
 
@@ -23,10 +27,10 @@ The government is working on this, but they're too slow in getting something out
 
 ## Mentions in the media
 
-| Title                                                                       | Country        | URL       |
-|-----------------------------------------------------------------------------|:--------------:|-----------|           
-| Self-report system for monitoring COVID19 needs to be in place immediately! |     🇳🇴         | [Read here](https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona-maa-paa-plass-naa-petter-bae-brandtzaeg) |
-| Are you ill? Health services will soon let you self-report symtoms.         |     🇳🇴         | [Read here](https://www.bt.no/innenriks/i/QoAdAx/har-du-vaert-syk-snart-kan-du-hjelpe-helsemyndighetene-med-aa-registrer) |
+| Title                                                                       | Country | URL                                                                                                                                                        |
+| --------------------------------------------------------------------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Self-report system for monitoring COVID19 needs to be in place immediately! |   🇳🇴    | [Read here](https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona-maa-paa-plass-naa-petter-bae-brandtzaeg) |
+| Are you ill? Health services will soon let you self-report symtoms.         |   🇳🇴    | [Read here](https://www.bt.no/innenriks/i/QoAdAx/har-du-vaert-syk-snart-kan-du-hjelpe-helsemyndighetene-med-aa-registrer)                                  |
 
 ## Who's behind this?
 
@@ -38,6 +42,20 @@ Join our Telegram group chat here: https://t.me/onzecorona or reach out on konta
 
 Click on "Issues" in the menu above to see what we need help with.
 
+## How to launch the site in your country
+
+Adding a new language should be pretty straightforward. If you need help, you can always ask in the Telegram group chat or contact us by email. The following is needed in order to set up a new language:
+
+- Add language-specific fields to the config
+- In `app/locales` you have to add (follow filename convention of the files that are already there):
+  - A word list that is used for generating unique profile links. If the word list contains between 1000 and 10000 words, you should set `PASSCODE_LENGTH: 4` in the config. If it contains more than 10000 words, `PASSCODE_LENGTH: 3` should be sufficient.
+  - Translations for all the sentences in `en.json`. The keys are the same in all the `xx.json`-files, and the values are the translations. We recommend translating everything in the file first, and then testing the site in order to verify that the translations look ok in context.
+  - List of municipalities (we can help with this).
+  - List of postal code coordinates (we have a script for this).
+- Configure URL paths in `app/domain/urls`
+- Write a privacy statement in `app/views/privacy-statement`
+- You also need a domain (preferably `coronastatus.tld` if it is available), and a server to run the app on. We can assist you with setting this up.
+
 ## Start developing
 
 You can either install and run everything on your own machine or build a docker image and run the the local development environment using docker. Choose one of the ways below that fits best to you:
@@ -47,9 +65,10 @@ You can either install and run everything on your own machine or build a docker 
 #### Prerequisities
 
 Download & install:
-* [git](https://git-scm.com/downloads)
-* [nodejs](https://nodejs.org),
-* [yarn](https://yarnpkg.com/)
+
+- [git](https://git-scm.com/downloads)
+- [nodejs](https://nodejs.org),
+- [yarn](https://yarnpkg.com/)
 
 #### Steps
 
@@ -84,9 +103,10 @@ Download & install:
 #### Prerequisities
 
 Download & install:
-* [git](https://git-scm.com/downloads)
-* [Docker CE](https://docs.docker.com/install/)
-* [Docker Compose](https://docs.docker.com/compose/install/)
+
+- [git](https://git-scm.com/downloads)
+- [Docker CE](https://docs.docker.com/install/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
 #### Steps
 
@@ -127,7 +147,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-

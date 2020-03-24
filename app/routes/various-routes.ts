@@ -10,7 +10,7 @@ router.get('/move-to-root-when-helsenorge-is-ready', async (req, res) => {
 });
 
 router.get(`${urls.privacyPolicy}`, (req, res) => {
-  return res.render(`pages/${LANGUAGE}-lang-privacy-policy`);
+  return res.render(`privacy-statements/${LANGUAGE}-lang-privacy-statement`);
 });
 
 router.get(`${urls.contributors}`, (req, res) => {
