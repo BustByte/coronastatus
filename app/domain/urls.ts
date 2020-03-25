@@ -1,6 +1,6 @@
 import { LANGUAGE } from '../../config.json';
 
-export type Locale = 'no' | 'nl' | 'en' | 'sk' | 'tr';
+export type Locale = 'no' | 'nl' | 'en' | 'sk';
 
 type Urls = {
   [locale in Locale]: {
