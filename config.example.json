@@ -8,5 +8,6 @@
   "ZIP_LENGTH": 4,
   "ZIP_PLACEHOLDER": "1234",
   "REDIRECT_TO_GOVERNMENT": false,
-  "PASSCODE_LENGTH": 3
+  "PASSCODE_LENGTH": 3,
+  "DB_PATH": "./covid_db"
 }

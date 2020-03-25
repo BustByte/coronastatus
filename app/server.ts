@@ -20,7 +20,8 @@ import {
   TWITTER,
   ZIP_LENGTH,
   ZIP_PLACEHOLDER,
-  REDIRECT_TO_GOVERNMENT
+  REDIRECT_TO_GOVERNMENT,
+  DB_PATH
 } from '../config.json';
 import { urls } from './domain/urls';
 
@@ -132,7 +133,7 @@ app.use(
 );
 
 async function initializeDatabase(): Promise<void> {
-  const db = getInstance('covid_db');
+  const db = getInstance(DB_PATH);
   const numberOfTables = (await db.listTables()).length;
   if (numberOfTables === 0) {
     await db.applyMigrationScripts(
