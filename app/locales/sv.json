@@ -8,7 +8,7 @@
   "Something must have gone wrong": "Något verkar ha blivit fel",
   "Send an e-mail to": "Skicka ett mail till",
   "if you can't get it to work.": "om du inte får det att fungera.",
-  "Before proceeding please note down the following link": "Var god kopiera följade länk innan du fortsätter",
+  "Before proceeding please note down the following link": "Var god kopiera följande länk innan du fortsätter",
   "Save the following link somewhere, or bookmark it in your browser.": "Spara följande länk, eller sätt ett bokmärke till den i din webbläsare.",
   "That way you can update your report if your health condition changes.": "På så sätt kan du uppdatera din rapport om ditt hälsotillstånd förändras.",
   "I've noted down the link.": "Jag har kopierat länken.",
@@ -188,10 +188,10 @@
   "at": "klockan",
   "Nausea or vomiting": "Illamående eller kräkningar",
   "Have you been diagnosed with any of the following conditions?":
-  "Har du blivit diagnoserad med något av följade symptom?",
+  "Har du blivit diagnostiserad med något av följande symptom?",
   "Diabetes mellitus, Hypertension, Ischemic heart disease, Asthma, Chronic lung disease, Chronic kidney disease":
   "Diabetes, högt blodtryck, hjärt- och kärlsjukdom, astma, kronisk lungsjukdom, kronisk njursjukdom",
-  "I am currently:": "Jag befinner mig förnärvarande",
+  "I am currently:": "Jag befinner mig för närvarande",
   "Not in isolation": "Inte i karantän",
   "In isolation due to a recent international travel": "I karantän pga nylig utomlandsresa",
   "In isolation due to contact with an individual who has been exposed to the coronavirus.":
