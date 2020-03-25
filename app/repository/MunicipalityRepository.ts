@@ -1,9 +1,9 @@
 /* eslint-disable import/no-dynamic-require */
 import { PostalCode, Municipality, Coordinate } from '../domain/types';
-import { LANGUAGE } from '../../config.json';
+import config from '../config';
 
-const rawMunicipalities = require(`../locales/${LANGUAGE}-municipalities.json`);
-const postalCodesWithCoordinates = require(`../locales/${LANGUAGE}-postalCodeCoordinates.json`);
+const rawMunicipalities = require(`../locales/${config.LANGUAGE}-municipalities.json`);
+const postalCodesWithCoordinates = require(`../locales/${config.LANGUAGE}-postalCodeCoordinates.json`);
 
 interface MunicipalityFromFile {
   population: string;
