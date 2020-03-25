@@ -8,7 +8,7 @@
 
 ![](https://github.com/BustByte/coronastatus/workflows/test/badge.svg)
 
-> Report your health status to get a better overview of COVID-19 in your country (currently in 🇳🇴🇳🇱🇸🇰)
+> Report your health status to get a better overview of COVID-19 in your country
 
 ## What is this?
 
@@ -64,6 +64,7 @@ Adding a new language should be pretty straightforward. If you need help, you ca
   - List of postal code coordinates (we have a script for this [Check Here](app/locales/README.md)).
 - Configure URL paths in `app/domain/urls`
 - Write a privacy statement in `app/views/privacy-statement`
+- Add a iamge that will used when sharing the url in social media in `/static/xx/social-media.png`. @amritnagi or @adriaanvanrossum can create one if you provide them with text.
 - You also need a domain (preferably `coronastatus.tld` if it is available), and a server to run the app on. We can assist you with setting this up.
 
 ## Start developing
