@@ -147,8 +147,8 @@ initializeDatabase().then(() => {
         path.join(localesPath, localeFilename),
         'utf-8'
       );
-      const { success, message } = checkIfValidLocaleJSON(localeFilename, json);
-      if (!success && message) {
+      const message = checkIfValidLocaleJSON(localeFilename, json);
+      if (message) {
         throw new Error(message);
       }
     });
