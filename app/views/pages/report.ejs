@@ -125,7 +125,7 @@
           ${__(`If you want to register another person on this computer, save or write down your personal link`)}
           <strong>${baseUrl}${urls.profile}/${passcode}</strong>
           ${__("and")}
-          <a href="${urls.profile}/${passcode}?clear=true"> ${ __(`clear this form`)}.</a>`,
+          <a href="${urls.profile}/${passcode}?clear=true" class="font-bold hover:text-cvs-red hover:underline"> ${ __(`clear this form`)}.</a>`,
       }) -%>
     <% } else if (locals.cleared) {%>
       <!-- If you change the color make sure it's in postcss.config.js -->
@@ -144,7 +144,7 @@
           ${__(`If you want to register another person on this computer, save or write down your personal link`)}
           <strong>${baseUrl}${urls.profile}/${passcode}</strong>
           ${__("and")}
-          <a href="${urls.profile}/${passcode}?clear=true"> ${ __(`clear this form`)}.</a>`,
+          <a href="${urls.profile}/${passcode}?clear=true" class="font-bold hover:text-cvs-red hover:underline"> ${ __(`clear this form`)}.</a>`,
       }) -%>
     <% } else { %>
       <p class="text-center text-base lg:text-xl font-medium m-4 mt-0 self-center">
