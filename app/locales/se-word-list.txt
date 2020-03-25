@@ -1398,7 +1398,6 @@ part
 pass
 patt
 paus
-PCIe
 peak
 pejl
 peka
@@ -1751,7 +1750,6 @@ sorg
 sork
 sorl
 sort
-SOSs
 sota
 sots
 soul
