@@ -23,6 +23,7 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇮🇹 Italy: coming soon
 - 🇮🇳 India: coming soon
 - 🇵🇭 Philippines: coming soon
+- 🇸🇪 Sweden: coming soon
 - ... want one for your country? Join our community: https://t.me/onzecorona
 
 ## Why?
