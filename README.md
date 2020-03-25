@@ -24,6 +24,7 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇮🇳 India: coming soon
 - 🇵🇭 Philippines: coming soon
 - 🇸🇪 Sweden: coming soon
+- 🇹🇷 Turkey: coming soon (work group Telegram chat: https://t.me/turkeycoronastatus)
 - ... want one for your country? Join our community: https://t.me/onzecorona
 
 ## Why?
