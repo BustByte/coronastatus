@@ -76,7 +76,8 @@
 
 <section class="custom-section p-4">
   <div class="custom-section-content mx-auto">
-    <div class="my-8 flex flex-row flex-wrap justify-between">
+    <h2 class="sr-only"><%= __('Numbers') %></h2>
+    <ul class="my-8 flex flex-row flex-wrap justify-between">
       <%- include('partials/app-stats-block', {
         image: '/static/images/napkin.svg',
         title: __('Total reports'),
@@ -101,7 +102,7 @@
         number: numberWithSpaces(aggregated.numberOfPeopleShowingSymptoms)
       }) -%>
     </div>
-  </div>
+  </ul>
 </section>
 
 <% if(locals.didNotAcceptPrivacyPolicy) {%>
