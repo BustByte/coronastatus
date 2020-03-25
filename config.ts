@@ -1,5 +1,18 @@
 import app from './config.json';
 
+type Config = {
+  BASE_URL: string;
+  LANGUAGE: string;
+  COUNTRY: string;
+  MAP_CENTER: string;
+  MAP_ZOOM: number;
+  TWITTER: string;
+  ZIP_LENGTH: number;
+  ZIP_PLACEHOLDER: string;
+  REDIRECT_TO_GOVERNMENT: boolean;
+  PASSCODE_LENGTH: number;
+};
+
 const {
   BASE_URL = 'coronastatus.no',
   LANGUAGE = 'no',
@@ -11,7 +24,7 @@ const {
   ZIP_PLACEHOLDER = '1234',
   REDIRECT_TO_GOVERNMENT = false,
   PASSCODE_LENGTH = 3
-} = app;
+}: Config = app;
 
 export default {
   BASE_URL,
