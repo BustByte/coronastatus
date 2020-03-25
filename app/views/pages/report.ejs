@@ -101,8 +101,8 @@
         title: __('Has symptoms'),
         number: numberWithSpaces(aggregated.numberOfPeopleShowingSymptoms)
       }) -%>
-    </div>
-  </ul>
+    </ul>
+  </div>
 </section>
 
 <% if(locals.didNotAcceptPrivacyPolicy) {%>
@@ -403,7 +403,7 @@
     <h3 class="text-cvs-red text-xl font-bold m-4 ml-0 mt-8 mb-0"><%= __("How will my data be used?") %></h3>
 
     <p class="mt-0 mb-4"><%= __('Your health information is stored anonymously, and can not be used to identify you.')%><br />
-      <a target="_blank" href="<%= urls.privacyPolicy %>"><%= __('Our privacy policy can be found here')%></a>.
+      <a target="_blank" class="text-cvs-red hover:underline"href="<%= urls.privacyPolicy %>"><%= __('Our privacy policy can be found here')%></a>.
     </p>
 
     <p>
