@@ -1,4 +1,4 @@
-import { LANGUAGE } from '../../config.json';
+import config from '../config';
 
 export type Locale = 'no' | 'nl' | 'en' | 'sk';
 
@@ -58,4 +58,4 @@ const localeAwareUrls: Urls = {
   }
 };
 
-export const urls = localeAwareUrls[LANGUAGE as Locale];
+export const urls = localeAwareUrls[config.LANGUAGE as Locale];
