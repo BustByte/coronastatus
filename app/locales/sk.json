@@ -154,12 +154,6 @@
   "United Kingdom": "Spojeného Kráľovstva",
   "https://who.int": "https://www.uvzsr.sk",
   "To WHO.int": "Prejsť na www.uvzsr.sk",
-  "Close": "Zavrieť",
-  "Contribute now": "Prispejte teraz",
-  "Help us uncover and predict the corona spread in your area": "Pomôžte nám <span>odhaliť</span> a <span>predpovedať</span> šírenie vírusu vo Vašej lokalite",
-  "Numbers": "čísla",
-  "#washyourhands": "#wash<wbr/>your<wbr/>hands",
-  "#stayindoors": "#stay<wbr/>indoors",
   "March 16": "16 marca",
   "March 17": "17 marca",
   "March 23": "23 marca",
@@ -179,5 +173,8 @@
   "This field is optional": "Toto pole je voliteľné",
   "Close": "Zavrieť",
   "Contribute now": "Nahláste stav anonymne",
-  "Help us uncover and predict the corona spread in your area": "Pomôžte nám <span>odhaliť</span> a <span>predvídať</span> šírenie vírusu vo vašej lokalite"
+  "Help us uncover and predict the corona spread in your area": "Pomôžte nám <span>odhaliť</span> a <span>predvídať</span> šírenie vírusu vo vašej lokalite",
+  "Numbers": "čísla",
+  "#washyourhands": "#umývaj<wbr/>si<wbr/>ruky",
+  "#stayindoors": "#zostaň<wbr/>doma"
 }
