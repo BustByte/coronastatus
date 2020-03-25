@@ -1,11 +1,13 @@
 import express from 'express';
 import { urls } from '../domain/urls';
-import { LANGUAGE } from '../../config.json';
+import config from '../config';
 
 const router = express.Router();
 
 router.get(`${urls.privacyPolicy}`, (req, res) => {
-  return res.render(`privacy-statements/${LANGUAGE}-lang-privacy-statement`);
+  return res.render(
+    `privacy-statements/${config.LANGUAGE}-lang-privacy-statement`
+  );
 });
 
 router.get(`${urls.contributors}`, (req, res) => {
