@@ -136,3 +136,16 @@ export interface AggregatedCovidReportWithPostalCodeData {
   numberOfConfirmedInfected: number;
   numberOfTested: number;
 }
+
+export interface Config {
+  BASE_URL: string;
+  LANGUAGE: string;
+  COUNTRY: string;
+  MAP_CENTER: string;
+  MAP_ZOOM: number;
+  TWITTER: string;
+  ZIP_LENGTH: number;
+  ZIP_PLACEHOLDER: string;
+  REDIRECT_TO_GOVERNMENT: boolean;
+  PASSCODE_LENGTH: number;
+}

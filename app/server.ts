@@ -12,7 +12,17 @@ import variousRoutes from './routes/various-routes';
 import { getInstance } from './repository/SqlLiteDatabase';
 import { swaggerDocument } from './swagger';
 import { urls } from './domain/urls';
-import { LANGUAGE } from '../config';
+import {
+  LANGUAGE,
+  BASE_URL,
+  COUNTRY,
+  MAP_CENTER,
+  MAP_ZOOM,
+  TWITTER,
+  ZIP_LENGTH,
+  ZIP_PLACEHOLDER,
+  REDIRECT_TO_GOVERNMENT
+} from './config';
 
 const app = express();
 const port = process.env.PORT || 7272;
