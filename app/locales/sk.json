@@ -140,5 +140,7 @@
   "Close": "Zavrieť",
   "Contribute now": "Prispejte teraz",
   "Help us uncover and predict the corona spread in your area": "Pomôžte nám <span>odhaliť</span> a <span>predpovedať</span> šírenie korónov vo vašej oblasti",
-  "Numbers": "čísla"
+  "Numbers": "čísla",
+  "#washyourhands": "#wash<wbr/>your<wbr/>hands",
+  "#stayindoors": "#stay<wbr/>indoors"
 }

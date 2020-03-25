@@ -60,8 +60,8 @@ Adding a new language should be pretty straightforward. If you need help, you ca
 - In `app/locales` you have to add (follow filename convention of the files that are already there):
   - A word list that is used for generating unique profile links. If the word list contains between 1000 and 10000 words, you should set `PASSCODE_LENGTH: 4` in the config. If it contains more than 10000 words, `PASSCODE_LENGTH: 3` should be sufficient.
   - Translations for all the sentences in `en.json`. The keys are the same in all the `xx.json`-files, and the values are the translations. We recommend translating everything in the file first, and then testing the site in order to verify that the translations look ok in context.
-  - List of municipalities (we can help with this).
-  - List of postal code coordinates (we have a script for this).
+  - List of municipalities (we can help with this [Check Here](app/locales/README.md)).
+  - List of postal code coordinates (we have a script for this [Check Here](app/locales/README.md)).
 - Configure URL paths in `app/domain/urls`
 - Write a privacy statement in `app/views/privacy-statement`
 - You also need a domain (preferably `coronastatus.tld` if it is available), and a server to run the app on. We can assist you with setting this up.
