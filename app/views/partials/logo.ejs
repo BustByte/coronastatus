@@ -4,7 +4,7 @@ let parts = [];
 // If url contains corona, make the rest of it yellow
 if (baseUrl.includes('corona')) {
   parts = baseUrl.split('corona').map(part => {
-    return !part ? 'corona' : `<span style="color: #f7bb00;" >${part}</span>`
+    return !part ? 'corona' : `<span style="color: #F2CC20;" >${part}</span>`
   })
 // Otherwise make tld including dot yellow
 } else {
@@ -25,4 +25,3 @@ const name = parts.join('')
     </div>
   </div>
 </a>
-

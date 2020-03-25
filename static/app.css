@@ -153,7 +153,7 @@ h4 {
   max-width: 68rem;
 }
 .custom-hero {
-  background: linear-gradient(118.81deg, #5d7979 22.4%, #56beab 105.76%);
+  background: #5d7979 linear-gradient(118.81deg, #5d7979 22.4%, #56beab 105.76%);
 }
 .custom-nav-link {
   background: #d36767 linear-gradient(131.3deg, #aa494a 22.4%, #d17c0c 105.76%);
