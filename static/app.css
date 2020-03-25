@@ -292,7 +292,9 @@ legend {
   background: white;
 }
 [type='radio']:checked + label:hover:before,
-[type='radio']:not(:checked) + label:hover:before {
+[type='radio']:checked + label:focus:before,
+[type='radio']:not(:checked) + label:hover:before,
+[type='radio']:not(:checked) + label:focus:before {
   border: 1px solid black;
 }
 [type='radio']:checked + label:after,
