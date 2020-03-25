@@ -1,6 +1,12 @@
 import config from '../config.json';
 import { Config } from './domain/types';
 
+/**
+ * The values in this file are just fallback values, in case someone forgets to update
+ * the config in production when new config fields are added.
+ * This file should not be modified, only add new fallback values when a new config
+ * field is added.
+ * */
 export const {
   BASE_URL = 'coronastatus.no',
   LANGUAGE = 'no',
