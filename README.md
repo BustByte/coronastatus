@@ -28,7 +28,7 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇨🇦 Canada: coming soon
 - 🇫🇷 France: coming soon
 - 🇧🇪 Belgium: coming soon
-- 🇩🇰 Denmark: https://www.coronastats.dk/
+- 🇩🇰 Denmark: https://coronastatus.dk
 - ... want one for your country? Join our community: https://t.me/onzecorona
 
 ## Why?
