@@ -3,7 +3,7 @@ import { getInstance, SqlLiteDatabase } from './SqlLiteDatabase';
 import { CovidReport } from '../domain/types';
 import { CacheWithLifetime } from './CacheWithLifetime';
 
-import { DB_PATH } from '../../config.json';
+import config from '../config';
 
 const SELECT_ALL_COVID_REPORTS = 'select passcode, json_dump from covid_report';
 
@@ -30,7 +30,7 @@ export class CovidReportRepository {
   db: SqlLiteDatabase;
 
   constructor() {
-    this.db = getInstance(DB_PATH);
+    this.db = getInstance(config.DB_PATH);
   }
 
   async addNewCovidReport(
