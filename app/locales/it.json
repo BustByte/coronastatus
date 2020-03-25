@@ -22,11 +22,11 @@
   "The code for the website can be found": "Il codice della piattaforma si trova",
   "here": "qui",
   "About the service": "In merito al servizio",
-  "In connection with the outbreak of COVID-19, many people have been tested for the virus, but due to lack of resources, the overwhelming majority have not been tested. It is therefore assumed that there are large missing numbers here in connection with the outbreak.": "In relazione all'epidemia del COVID-19 molte persone sono state sottoposte al test ma, a causa della mancanza di tempo e/o risorse, la stragrande maggioranza non ha eseguito il test. Di conseguenza, è possibile che ci siano diverse persone che hanno contratto il Coronavirus ma sono mancanti nei dati ufficiali riguardanti l'epidemia.",
-  "Using self-report, you can get a better picture of how many people have symptoms without exposing health workers to potential contamination hazards and without using up valuable infection control equipment that is already in short supply. We at Bustbyte, well helped by other volunteers, have created this tool in response to": "Utilizzando uno strumento di autovalutazione possiamo avere un quadro più dettagliato di quante persone hanno i sintomi senza esporre la salute dei lavoratori a potenziali contaminazioni e senza esaurire i presidi medici necessari. La piattaforma è stata creata originariamente in Norvegia, da una azienda di nome Bustbyte. A seguito, molti altri volontari si sono uniti per dar vita alle versioni internazionali (tradotte e configurate) della piattaforma.",
-  "this article": "Si è preso spunto da questo articolo norgevese",
-  "as an attempt to chart these numbers.": "e la piattaforma si è iniziato a sviluppare la piattaforma per raccogliere questi dati.",
-  "This is not an official tool of the authorities, and for more information about the outbreak we refer to health authorities which always have updated information.": "Questo non è uno strumento ufficiale del governo e, per ulteriori informazioni riguardo l'epidemia, ti consigliamo di fare riferimento alle autorità sanitarie italiane (o alla protezione civile) che hanno sempre informazioni aggiornate e ufficiali",
+  "In connection with the outbreak of COVID-19, many people have been tested for the virus, but due to lack of resources, the overwhelming majority have not been tested. It is therefore assumed that there are large missing numbers here in connection with the outbreak.": "In relazione all'epidemia del COVID-19 molte persone sono state sottoposte al test ma, a causa della mancanza di tempo o risorse, la stragrande maggioranza non ha eseguito il test. Di conseguenza, è possibile che ci siano diverse persone che hanno contratto il Coronavirus ma sono mancanti nei dati ufficiali riguardanti l'epidemia.",
+  "Using self-report, you can get a better picture of how many people have symptoms without exposing health workers to potential contamination hazards and without using up valuable infection control equipment that is already in short supply. We at Bustbyte, well helped by other volunteers, have created this tool in response to": "Utilizzando uno strumento di autovalutazione possiamo avere un quadro più dettagliato di quante persone hanno i sintomi senza esporre la salute dei lavoratori a potenziali contaminazioni e senza esaurire i presidi medici necessari. La piattaforma è stata creata originariamente in Norvegia, da una azienda di nome Bustbyte. A seguito, molti altri volontari si sono uniti per dar vita alle versioni internazionali (tradotte e configurate) della piattaforma. Si è preso spunto ",
+  "this article": "da questo articolo norgevese",
+  "as an attempt to chart these numbers.": "e la piattaforma si è iniziato a sviluppare per raccogliere questi dati.",
+  "This is not an official tool of the authorities, and for more information about the outbreak we refer to health authorities which always have updated information.": "Questo non è uno strumento ufficiale del Governo e, per ulteriori informazioni riguardo l'epidemia, ti consigliamo di fare riferimento alle autorità sanitarie italiane (o alla Protezione Civile) che hanno sempre informazioni aggiornate e ufficiali",
   "Developed by": "Sviluppato originariamente da",
   "BustByte AS": "BustByte AS",
   "and": "e",
@@ -55,7 +55,7 @@
   "Contribute anonymously": "Contribuisci in modo anonimo",
   "Report your health condition anonymously": "Segnala anonimamente la tua condizione di salute.",
   "Insight for everyone": "I dati sono disponibili per chiunque",
-  "The data is open to everyone. Look at maps and graphs, or download the data and create your own visualizations.": "Tutti i dati sono accessibili a tutti. Guarda le mappe ed i grafici oppure scarica i dati e crea la tua visualizzazione.",
+  "The data is open to everyone. Look at maps and graphs, or download the data and create your own visualizations.": "Tutti i dati sono accessibili a tutti. Guarda le mappe ed i grafici. Oppure scarica ifix dati e crea la tua visualizzazione.",
   "Everything is open": "Piattaforma open source ed accessibile",
   "The website is open source and built by volunteers. Feel free to join.": "Il sito è un progetto open source ed è stato creato da volontari. Sentiti libero di dare una mano al progetto!",
   "Total reports": "Totale partecipanti",
@@ -173,5 +173,5 @@
   "This field is optional": "Questo campo è opzionale",
   "Close": "Chiudi",
   "Contribute now": "Partecipa anche tu",
-  "Help us uncover and predict the corona spread in your area": "Aiutaci a <span>scoprire</span> e <span>prevedere</span> la diffusione del corona virus nella tua zona"
+  "Help us uncover and predict the corona spread in your area": "Aiutaci a <span>scoprire</span> e <span>prevedere</span> la diffusione del coronavirus nella tua zona"
 }
