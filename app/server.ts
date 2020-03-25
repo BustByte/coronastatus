@@ -4,7 +4,6 @@ import cookieParser from 'cookie-parser';
 import path from 'path';
 import i18n, { Replacements } from 'i18n';
 import swaggerUi from 'swagger-ui-express';
-import { readdirSync, readFileSync } from 'fs';
 import reportRoutes from './routes/report-routes';
 import mapRoutes from './routes/map-routes';
 import apiRoutes from './routes/api-routes';
@@ -14,8 +13,7 @@ import { getInstance } from './repository/SqlLiteDatabase';
 import { swaggerDocument } from './swagger';
 import { urls } from './domain/urls';
 import config from './config';
-
-import { checkIfValidLocaleJSON } from './util/locale-validation';
+import { ensureAllLocalesAreValidJSON } from './util/locale-validation';
 
 const app = express();
 const port = process.env.PORT || 7272;
@@ -138,21 +136,7 @@ async function initializeDatabase(): Promise<void> {
 }
 
 initializeDatabase().then(() => {
-  // Check that each JSON file in app/locales are valid JSON.
-  const localesPath = 'app/locales';
-  readdirSync(localesPath)
-    .filter((filename: string) => filename.endsWith('.json'))
-    .forEach((localeFilename: string) => {
-      const json = readFileSync(
-        path.join(localesPath, localeFilename),
-        'utf-8'
-      );
-      const message = checkIfValidLocaleJSON(localeFilename, json);
-      if (message) {
-        throw new Error(message);
-      }
-    });
-
+  ensureAllLocalesAreValidJSON();
   app.listen(port);
   console.log(`API up and running on port ${port}`);
 });

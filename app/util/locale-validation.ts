@@ -1,3 +1,6 @@
+import { join } from 'path';
+import { readdirSync, readFileSync } from 'fs';
+
 /**
  * Check that a locale (or "translation") contains valid JSON. Returns the
  * JSONParseError if the provided JSON is invalid.
@@ -17,4 +20,21 @@ export function checkIfValidLocaleJSON(
     const hint = `${filename} locale has a JSON syntax error. Have you forgotten a comma (,)?`;
     return [hint, error.message].join('\n');
   }
+}
+
+/**
+ * Throw exception if function above fails. Called on server boot.
+ */
+export function ensureAllLocalesAreValidJSON(): void {
+  const localesPath = 'app/locales';
+  readdirSync(localesPath)
+    .filter((filename: string) => filename.endsWith('.json'))
+    .map((localeFilename: string) => join(localesPath, localeFilename))
+    .forEach((localePath: string) => {
+      const json = readFileSync(localePath, 'utf-8');
+      const message = checkIfValidLocaleJSON(localePath, json);
+      if (message) {
+        throw new Error(message);
+      }
+    });
 }
