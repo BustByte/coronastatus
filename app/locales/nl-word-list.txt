@@ -738,7 +738,6 @@ balkje
 balkon
 balkons
 ballast
-ballen
 ballet
 ballon
 ballons
@@ -747,7 +746,6 @@ ballum
 balpen
 balsem
 balzaal
-balzak
 bami
 banaan
 banale
@@ -899,7 +897,6 @@ beetje
 beetjes
 beets
 befaamd
-beffen
 begaafd
 begaan
 begaf
@@ -1334,7 +1331,6 @@ bikken
 biljart
 biljet
 biljoen
-billen
 billet
 billijk
 bilt
@@ -1594,8 +1590,6 @@ born
 borne
 borrel
 borrelt
-borst
-borsten
 bosbes
 bosduif
 boseind
@@ -2067,7 +2061,6 @@ crisis
 critici
 cruise
 crypt
-ctrl
 cuba
 cultuur
 cupido
@@ -3587,7 +3580,6 @@ gefilmd
 gefokt
 gegaan
 gegaapt
-gegeild
 gegeten
 gegeven
 gegil
@@ -3639,11 +3631,6 @@ gehuwde
 geijkt
 geijkte
 geijld
-geil
-geilde
-geilden
-geilen
-geilt
 gein
 geiser
 geisers
@@ -3884,7 +3871,6 @@ gesport
 gesprek
 gespuid
 gespuis
-gespuit
 gestaag
 gestaan
 gestage
@@ -8937,8 +8923,6 @@ piek
 pieken
 pieker
 piekert
-piemel
-piemels
 pienter
 piep
 piepen
@@ -8960,9 +8944,6 @@ pijlers
 pijltje
 pijn
 pijnigt
-pijp
-pijpen
-pijper
 pilaar
 pilaren
 pillen
@@ -9539,8 +9520,6 @@ reeksen
 reep
 reepjes
 rees
-reet
-reeth
 referee
 reflex
 reform
@@ -10440,11 +10419,6 @@ slijmen
 slijt
 slijten
 slijter
-slik
-slikken
-slikt
-slikte
-slikten
 slim
 slimme
 slimmer
@@ -10832,9 +10806,6 @@ spuide
 spuiden
 spuien
 spuier
-spuit
-spuiten
-spuitje
 spul
 spullen
 spurkt
@@ -11531,7 +11502,6 @@ tiental
 tientje
 tieren
 tierend
-tieten
 tiggelt
 tijd
 tijdbom
@@ -12072,7 +12042,6 @@ vaders
 vadsig
 vage
 vager
-vagina
 vakblad
 vakbond
 vaker
@@ -12415,7 +12384,6 @@ vezelig
 vezels
 viaduct
 vianen
-vibrato
 vice
 video
 viel
@@ -12707,7 +12675,6 @@ vouw
 vouwde
 vouwden
 voyeur
-vpro
 vraag
 vraagt
 vracht
@@ -12774,7 +12741,6 @@ vuist
 vuisten
 vulde
 vulden
-vulgair
 vulkaan
 vullen
 vulling
@@ -13333,7 +13299,6 @@ yoghurt
 york
 yucca
 yuppie
-zaad
 zaag
 zaagde
 zaagden
@@ -13509,13 +13474,6 @@ zichel
 zicht
 zieden
 ziedend
-ziek
-ziekbed
-zieke
-zieken
-ziekte
-ziekten
-ziektes
 ziel
 ziele
 zielen
