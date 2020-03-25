@@ -59,7 +59,7 @@ const localeAwareUrls: Urls = {
   sk: {
     submitReport: '/',
     profile: '/zdravotny-stav',
-    privacyPolicy: '/ochrana-udajov',
+    privacyPolicy: '/ochrana-sukromia',
     map: '/mapa',
     contributors: '/prispievatelia',
     api: '/api',
