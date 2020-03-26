@@ -1,6 +1,6 @@
 import config from '../config';
 
-export type Locale = 'no' | 'nl' | 'en' | 'es-mx' | 'sk' | 'it' | 'tr';
+export type Locale = 'no' | 'nl' | 'en' | 'es-MX' | 'sk' | 'it' | 'tr';
 
 type Urls = {
   [locale in Locale]: {
@@ -46,7 +46,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
-  'es-mx': {
+  'es-MX': {
     submitReport: '/',
     profile: '/estadosalud',
     privacyPolicy: '/aviso-privacidad',
