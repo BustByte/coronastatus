@@ -16,6 +16,7 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇨🇴 Colombia: https://coronastatus.co
 - 🇮🇹 Italy: https://coronastatus.it
 - 🇫🇷 France: https://coronastatus.fr
+- 🇺🇸 United States of America (USA): https://coronastatus.us
 - 🇸🇪 Sweden: coming soon
 - 🇲🇽 Mexico: coming soon
 - 🇮🇳 India: coming soon
