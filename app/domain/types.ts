@@ -145,9 +145,6 @@ export interface Config {
   MAP_CENTER: string;
   MAP_ZOOM: number;
   MAP_MAX_ZOOM: number;
-  ZIP_DATA_ATTRIBUTION_TEXT: string;
-  ZIP_DATA_ATTRIBUTION_PROVIDER_NAME: string;
-  ZIP_DATA_ATTRIBUTION_PROVIDER_LINK: string;
   TWITTER: string;
   ZIP_LENGTH: number;
   ZIP_PLACEHOLDER: string;

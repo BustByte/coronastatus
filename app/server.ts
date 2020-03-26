@@ -67,11 +67,6 @@ app.use((req, res, next) => {
   res.locals.mapCenter = config.MAP_CENTER;
   res.locals.mapZoom = config.MAP_ZOOM;
   res.locals.mapMaxZoom = config.MAP_MAX_ZOOM;
-  res.locals.zipDataAttributionText = config.ZIP_DATA_ATTRIBUTION_TEXT;
-  res.locals.zipDataAttributionProviderName =
-    config.ZIP_DATA_ATTRIBUTION_PROVIDER_NAME;
-  res.locals.zipDataAttributionProviderLink =
-    config.ZIP_DATA_ATTRIBUTION_PROVIDER_LINK;
   res.locals.twitter = config.TWITTER;
   res.locals.urls = urls;
   res.locals.zipLength = config.ZIP_LENGTH;
