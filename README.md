@@ -62,7 +62,7 @@ Adding a new language should be pretty straightforward. If you need help, you ca
   - List of postal code coordinates (we have a script for this [Check Here](app/locales/README.md)).
 - Configure URL paths in `app/domain/urls.ts`
 - Write a privacy statement in `app/views/privacy-statement/{LANGUAGE}-lang-privacy-statement.ejs`
-- Add a iamge that will used when sharing the url in social media in `/static/{LANGUAGE}/social-media.png`. @amritnagi or @adriaanvanrossum can create one if you provide them with text.
+- Add an image that will be used when sharing the url on social media in `/static/{LANGUAGE}/social-media.png`. @amritnagi or @adriaanvanrossum can create one if you provide them with text.
 - You also need a domain (preferably `coronastatus.tld` if it is available), and a server to run the app on. We can assist you with setting this up.
 
 ## Start developing
