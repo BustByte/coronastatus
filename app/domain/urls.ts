@@ -1,6 +1,6 @@
 import config from '../config';
 
-export type Locale = 'no' | 'nl' | 'en' | 'es-MX' | 'sk' | 'it' | 'tr';
+export type Locale = 'no' | 'nl' | 'en' | 'es-MX' | 'sk' | 'it' | 'tr' | 'dk';
 
 type Urls = {
   [locale in Locale]: {
@@ -85,6 +85,16 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/istatistikler'
+  },
+  dk: {
+    submitReport: '/',
+    profile: '/helbredstilstand',
+    privacyPolicy: '/privat-politik',
+    map: '/kort',
+    contributors: '/frivillige',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistikker'
   }
 };
 
