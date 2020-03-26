@@ -43,7 +43,7 @@
   "Has symptoms": "Présentant des symptômes",
   "Tested positive": "Testé positif",
   "Zip code information": "Code postal",
-  "Join us in the most important crowdsource!": "Rejoignez-nous dans cette collecte massive de données !",
+  "Join us in the most important crowdsource!": "Rejoignez-nous dans cette collecte participative de données !",
   "Make your voluntary contribution to the health care system and register your health condition now. Together we can create an overview.": "Contribuez au système de santé en renseignant votre état de santé actuel. Ensemble, nous pouvons créer une vue d'ensemble.",
   "Share on": "Partager sur",
   "NB!": "NB!",
@@ -176,8 +176,8 @@
   "Contribute now": "Participer",
   "Help us uncover and predict the corona spread in your area": "Aidez-nous à <span>estimer</span> et <span>prédire</span> la propagation du corona-virus dans votre région",
   "Numbers": "Chiffres",
-  "In isolation due to orders from the government": "In isolation due to orders from the government",
-  "In isolation due to COVID-19 infection": "In isolation due to COVID-19 infection",
-  "Some questions and alternatives were not a part from the beginning:": "Some questions and alternatives were not a part from the beginning:",
+  "In isolation due to orders from the government": "isolé(e) en raison des ordres du gouvernement",
+  "In isolation due to COVID-19 infection": "isolé(e) car vous êtes infecté(e) par le COVID-19",
+  "Some questions and alternatives were not a part of the form from the beginning:": "Certaines questions ou alternatives n'étaient pas présentes au début:",
   "March 27": "27 mars"
 }
