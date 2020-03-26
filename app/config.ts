@@ -28,7 +28,8 @@ const fallbackConfig: Config = {
   REDIRECT_TO_GOVERNMENT:
     process.env.REDIRECT_TO_GOVERNMENT === 'true' || false,
   PASSCODE_LENGTH: parseInt(process.env.PASSCODE_LENGTH || '3', 10),
-  DB_PATH: process.env.DB_PATH || './covid_db'
+  DB_PATH: process.env.DB_PATH || './covid_db',
+  USE_TRUST_PROXY: process.env.USE_TRUST_PROXY === 'true' || false
 };
 
 export default {

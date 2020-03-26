@@ -152,6 +152,7 @@ export interface Config {
   REDIRECT_TO_GOVERNMENT: boolean;
   PASSCODE_LENGTH: number;
   DB_PATH: string;
+  USE_TRUST_PROXY: boolean;
 }
 
 export type DatabaseType = 'pg' | 'sqlite';

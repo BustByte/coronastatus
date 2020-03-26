@@ -26,6 +26,7 @@ function determineRemoteAddress(req: Request): string {
     const [ipWithoutPort] = ipWithPort.split(':');
     return ipWithoutPort;
   }
+  console.log(req.ip)
   return req.ip;
 }
 

@@ -87,7 +87,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use((req, res, next) => {
-  if (req.header('x-forwarded-proto') !== 'https' && !isDevelopmentEnv) {
+  if (req.header('x-forwarded-proto') !== 'https' && config.USE_TRUST_PROXY) {
     res.redirect(`https://${req.header('host')}${req.url}`);
   } else {
     next();
