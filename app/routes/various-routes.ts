@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get(`${urls.privacyPolicy}`, (req, res) => {
   return res.render(
-    `privacy-statements/${config.LANGUAGE}-lang-privacy-statement`
+    `privacy-statements/${config.LOCALE}-lang-privacy-statement`
   );
 });
 

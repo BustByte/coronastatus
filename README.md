@@ -63,15 +63,16 @@ Click on "Issues" in the menu above to see what we need help with.
 
 Adding a new language should be pretty straightforward. If you need help, you can always ask in the Telegram group chat or contact us by email. The following is needed in order to set up a new language:
 
-- Set up a new config file: `cp config.example.json config.json`. `LANGUAGE` should be one of the locales from [here](https://github.com/ladjs/i18n-locales).
-- In `app/locales` you have to add (follow filename convention of the files that are already there):
+- Set up a new config file: `cp config.example.json config.json`. `LOCALE` should be one of the locales from [here](https://github.com/ladjs/i18n-locales). `CONTRY_CODE` should be the Alpha-2-code listed here: https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
+- In `app/locales` you have to add
+  - Translations for all the sentences in `en.json`. The keys are the same in all the `{LOCALE}.json`-files, and the values are the translations. We recommend translating everything in the file first, and then testing the site in order to verify that the translations look ok in context.
+- In `app/countrySpecific` you have to add (follow filename convention of the files that are already there):
   - A word list that is used for generating unique profile links. If the word list contains between 1000 and 10000 words, you should set `PASSCODE_LENGTH: 4` in the config. If it contains more than 10000 words, `PASSCODE_LENGTH: 3` should be sufficient.
-  - Translations for all the sentences in `en.json`. The keys are the same in all the `{LANGUAGE}.json`-files, and the values are the translations. We recommend translating everything in the file first, and then testing the site in order to verify that the translations look ok in context.
-  - List of municipalities (we can help with this [Check Here](app/locales/README.md)).
-  - List of postal code coordinates (we have a script for this [Check Here](app/locales/README.md)).
-- Configure URL paths in `app/domain/urls.ts`
-- Write a privacy statement in `app/views/privacy-statement/{LANGUAGE}-lang-privacy-statement.ejs`
-- Add an image that will be used when sharing the url on social media in `/static/{LANGUAGE}/social-media.png`. @amritnagi or @adriaanvanrossum can create one if you provide them with text.
+  - List of municipalities (we can help with this [Check Here](app/countrySpecific/README.md)).
+  - List of postal code coordinates (we have a script for this [Check Here](app/countrySpecific/README.md)).
+- Configure URL paths in `app/domain/urls.ts` (set up for the `COUNTRY_CODE` you added)
+- Write a privacy statement in `app/views/privacy-statement/{COUNTRY_CODE}-lang-privacy-statement.ejs`
+- Add an iamge that will used when sharing the url in social media in `/static/{COUNTRY_CODE}/social-media.png`. @amritnagi or @adriaanvanrossum can create one if you provide them with text.
 - You also need a domain (preferably `coronastatus.tld` if it is available), and a server to run the app on. We can assist you with setting this up.
 
 ## Start developing

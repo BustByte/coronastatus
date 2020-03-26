@@ -20,8 +20,8 @@ const port = process.env.PORT || 7272;
 const isDevelopmentEnv = process.env.NODE_ENV === 'dev';
 
 i18n.configure({
-  locales: [config.LANGUAGE],
-  defaultLocale: config.LANGUAGE,
+  locales: [config.LOCALE],
+  defaultLocale: config.LOCALE,
   updateFiles: false,
   directory: `${__dirname}/locales`
 });
@@ -61,8 +61,8 @@ app.use((req, res, next) => {
   res.locals.activePage = `/${req.path.split('/')[1]}`;
   res.locals.cacheKey = cacheKey;
   res.locals.lastCommit = process.env.CACHE_KEY || null;
-  res.locals.imageSubfolder = config.LANGUAGE;
-  res.locals.htmlLang = config.LANGUAGE;
+  res.locals.imageSubfolder = config.COUNTRY_CODE;
+  res.locals.htmlLang = config.LOCALE;
   res.locals.country = config.COUNTRY;
   res.locals.baseUrl = config.BASE_URL;
   res.locals.zipGuide = config.ZIP_GUIDE;
