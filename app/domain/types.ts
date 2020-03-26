@@ -150,3 +150,5 @@ export interface Config {
   PASSCODE_LENGTH: number;
   DB_PATH: string;
 }
+
+export type DatabaseType = 'pg' | 'sqlite';
