@@ -1,10 +1,12 @@
+import { Config } from './domain/types';
+
 let config = {};
 try {
+  /* eslint-disable-next-line */
   config = require('../config.json');
 } catch (err) {
   console.log('No config file found....fallback to env/defaults');
 }
-import { Config } from './domain/types';
 
 /**
  * The values in this file are just fallback values, in case someone forgets to update
