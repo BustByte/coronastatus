@@ -2,6 +2,9 @@
   "name": "covid",
   "version": "1.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "12.14.x"
+  },
   "scripts": {
     "start": "ts-node app/server.ts",
     "dev": "nodemon",
