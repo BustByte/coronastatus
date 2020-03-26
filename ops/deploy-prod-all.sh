@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Do not proceed if a deployment fails.
+set -e
+
 # All the coronastatus sites that are hosted on DO.
 declare -a HOSTS=(
     'coronastatus.es'
@@ -19,12 +22,12 @@ declare -a HOSTS=(
 #   'coronastatus.sk'
 #   'coronastatus.dk'
 #   'coronastatus.it'
-)
+);
 
 # Deploy procedure over ssh.
 DEPLOY_COMMAND='cd /srv/scripts && ./deploy-prod.sh'
 for HOST in "${HOSTS[@]}"; do
-    echo "> Deploying to ${HOST}:"
-    ssh "app@${HOST}" $DEPLOY_COMMAND
-    echo "> Finished deploying to ${HOST}."
+    echo "> Deploying to ${HOST}:";
+    ssh "app@${HOST}" $DEPLOY_COMMAND;
+    echo "> Finished deploying to ${HOST}.";
 done
