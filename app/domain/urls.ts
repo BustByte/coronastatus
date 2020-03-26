@@ -118,9 +118,9 @@ const localeAwareUrls: Urls = {
   },
   'fr-FR': {
     submitReport: '/',
-    profile: '/profils',
+    profile: '/profil',
     privacyPolicy: '/politique-de-confidentialite',
-    map: '/mappa',
+    map: '/carte',
     contributors: '/contributeurs',
     api: '/api',
     apiDocs: '/api-docs',
