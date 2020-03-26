@@ -194,7 +194,10 @@
       <label class="mr-4" for="gender-female"><%= __("Female") %></label>
 
       <input required type="radio" id="gender-male" name="gender" value="male" <%= sex === 'MALE' ? 'checked' : '' %>>
-      <label for="gender-male"><%= __("Male") %></label>
+      <label class="mr-4" for="gender-male"><%= __("Male") %></label>
+
+      <input required type="radio" id="gender-x" name="gender" value="x" <%= sex === 'X' ? 'checked' : '' %>>
+      <label for="gender-x"><%= __("X") %></label>
     </p>
     </fieldset>
 

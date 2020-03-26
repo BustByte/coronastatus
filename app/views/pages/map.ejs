@@ -41,21 +41,8 @@
     center: [<%= locals.mapCenter %>],
     zoom: <%= locals.mapZoom %>,
     maxZoom: <%= locals.mapMaxZoom %>,
+    customAttribution: '<%= locals.zipDataAttributionText %> <a href="<%= zipDataAttributionProviderLink %>" target="_blank">&copy;<%= zipDataAttributionProviderName %></a>',
     hash: true
-  });
-
-  map.on('load', function() {
-    var attributions = document.getElementsByClassName(
-      'mapboxgl-ctrl-attrib-inner'
-    )[0];
-    if (attributions) {
-      var newAttrib = document.createElement('a');
-      newAttrib.href = 'http://www.erikbolstad.no/geo/noreg/postnummer/';
-      newAttrib.innerText = 'Zip code information ';
-      // Remove «improve this map» link
-      attributions.removeChild(attributions.lastChild);
-      attributions.insertBefore(newAttrib, attributions.firstChild);
-    }
   });
 
   var positive = ['==', ['get', 'state'], 'POSITIVE'];
