@@ -10,7 +10,7 @@ export type Locale =
   | 'tr'
   | 'dk'
   | 'es-CO'
-  | 'fr-FR'  ;
+  | 'fr-FR';
 
 type Urls = {
   [locale in Locale]: {
