@@ -9,7 +9,8 @@ export type Locale =
   | 'it'
   | 'tr'
   | 'dk'
-  | 'es-CO';
+  | 'es-CO'
+  | 'fr-FR';
 
 type Urls = {
   [locale in Locale]: {
@@ -114,6 +115,16 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estadisticas'
+  },
+  'fr-FR': {
+    submitReport: '/',
+    profile: '/profil',
+    privacyPolicy: '/politique-de-confidentialite',
+    map: '/carte',
+    contributors: '/contributeurs',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistiques'
   }
 };
 
