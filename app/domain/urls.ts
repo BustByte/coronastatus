@@ -9,6 +9,7 @@ export type Locale =
   | 'it'
   | 'tr'
   | 'dk'
+  | 'ua'
   | 'es-CO'
   | 'fr-FR';
 
@@ -105,6 +106,16 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistikker'
+  },
+  ua: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
   },
   'es-CO': {
     submitReport: '/',
