@@ -1,8 +1,8 @@
-let config = {}
-try {  
+let config = {};
+try {
   config = require('../config.json');
 } catch (err) {
-  console.log('No config file found....fallback to env/defaults')
+  console.log('No config file found....fallback to env/defaults');
 }
 import { Config } from './domain/types';
 
@@ -17,12 +17,13 @@ const fallbackConfig: Config = {
   LANGUAGE: process.env.LANGUAGE || 'no',
   COUNTRY: process.env.COUNTRY || 'Norway',
   MAP_CENTER: process.env.BASE_URL || '10.7522, 63.9139',
-  MAP_ZOOM: parseInt(process.env.MAP_ZOOM || '4'),
-  TWITTER: process.env.TWITTER ||'coronastatusNO',
-  ZIP_LENGTH: parseInt(process.env.ZIP_LENGTH || '4'),
+  MAP_ZOOM: parseInt(process.env.MAP_ZOOM || '4', 10),
+  TWITTER: process.env.TWITTER || 'coronastatusNO',
+  ZIP_LENGTH: parseInt(process.env.ZIP_LENGTH || '4', 10),
   ZIP_PLACEHOLDER: process.env.ZIP_PLACEHOLDER || '1234',
-  REDIRECT_TO_GOVERNMENT: process.env.REDIRECT_TO_GOVERNMENT === 'true' ||  false,
-  PASSCODE_LENGTH: parseInt(process.env.PASSCODE_LENGTH || '3'),
+  REDIRECT_TO_GOVERNMENT:
+    process.env.REDIRECT_TO_GOVERNMENT === 'true' || false,
+  PASSCODE_LENGTH: parseInt(process.env.PASSCODE_LENGTH || '3', 10),
   DB_PATH: process.env.DB_PATH || './covid_db'
 };
 
