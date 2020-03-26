@@ -101,7 +101,7 @@ const toSex = (inputValue: string): Sex => {
   if (inputValue === 'female') {
     return Sex.FEMALE;
   }
-  return Sex.X;
+  return Sex.OTHER;
 };
 
 const toSmokingHabit = (inputValue: string): SmokingHabit | undefined => {

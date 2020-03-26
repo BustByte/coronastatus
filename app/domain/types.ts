@@ -22,7 +22,7 @@ export type Symptoms = {
 export enum Sex {
   MALE = 'MALE',
   FEMALE = 'FEMALE',
-  X = 'X'
+  OTHER = 'OTHER'
 }
 
 export enum TestResult {
