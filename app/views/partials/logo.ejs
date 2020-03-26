@@ -1,23 +1,13 @@
 <%
 let parts = [];
 
-// If url contains corona, make the rest of it yellow
-if (baseUrl.includes('corona')) {
-  parts = baseUrl.split('corona').map(part => {
-    return !part ? 'corona' : `<span style="color: #f7bb00;" >${part}</span>`
-  })
-// Otherwise make tld including dot yellow
-} else {
-  parts = baseUrl.split('.');
-  parts[parts.length - 1] = `<span style="color: #f7bb00;">.${parts[parts.length - 1]}</span>`
-}
-
-const name = parts.join('')
+// If url contains corona, make the rest it white
+const name =  baseUrl.replace('corona', '<span style="color: #CAEAE9;" >corona</span>')
 %>
 
 <a class="flex flex-row" href="/">
   <img src="/static/images/logo.svg" alt="icon" class="w-20 h-20 hidden sm:block" />
-  <div class="flex flex-row items-center" style="color: #CAEAE9;">
+  <div class="flex flex-row items-center" style="color: #F2CC20;">
     <div
       class="flex flex-row flex-no-wrap text-2xl sm:text-3xl font-bold whitespace-no-wrap"
     >
@@ -25,4 +15,3 @@ const name = parts.join('')
     </div>
   </div>
 </a>
-

@@ -1,16 +1,34 @@
 /* eslint-disable camelcase */
-import { getInstance, SqlLiteDatabase } from './SqlLiteDatabase';
+import { getInstance } from './Database';
+import { SqlLiteDatabase } from './SqlLiteDatabase';
+import { PostgresDatabase } from './PostgresDatabase';
 import { CovidReport } from '../domain/types';
 import { CacheWithLifetime } from './CacheWithLifetime';
 
-const SELECT_ALL_COVID_REPORTS = 'select passcode, json_dump from covid_report';
+import config from '../config';
 
-const SELECT_COVID_REPORT = 'select * from covid_report where passcode = (?)';
+const queries = {
+  sqlite: {
+    SELECT_ALL_COVID_REPORTS: 'select passcode, json_dump from covid_report',
 
-const INSERT_NEW_COVID_REPORT =
-  'insert into covid_report(passcode, json_dump) values((?), (?))';
+    SELECT_COVID_REPORT: 'select * from covid_report where passcode = (?)',
 
-const COUNT_NUMBER_OF_REPORTS = 'select count(*) as count from covid_report';
+    INSERT_NEW_COVID_REPORT:
+      'insert into covid_report(passcode, json_dump) values((?), (?))',
+
+    COUNT_NUMBER_OF_REPORTS: 'select count(*) as count from covid_report'
+  },
+  pg: {
+    SELECT_ALL_COVID_REPORTS: 'select passcode, json_dump from covid_report',
+
+    SELECT_COVID_REPORT: 'select * from covid_report where passcode = $1',
+
+    INSERT_NEW_COVID_REPORT:
+      'insert into covid_report(passcode, json_dump) values($1, $2)',
+
+    COUNT_NUMBER_OF_REPORTS: 'select count(*) as count from covid_report'
+  }
+};
 
 interface CovidReportRow {
   passcode: string;
@@ -25,10 +43,10 @@ const allReportsCache = new CacheWithLifetime<PassCodeReports>(
 );
 
 export class CovidReportRepository {
-  db: SqlLiteDatabase;
+  db: PostgresDatabase | SqlLiteDatabase;
 
   constructor() {
-    this.db = getInstance('covid_db');
+    this.db = getInstance(config.DB_PATH);
   }
 
   async addNewCovidReport(
@@ -36,7 +54,7 @@ export class CovidReportRepository {
     report: CovidReport
   ): Promise<void> {
     const stringifiedReport = JSON.stringify(report);
-    return this.db.run<void>(INSERT_NEW_COVID_REPORT, [
+    return this.db.run<void>(queries[this.db.type].INSERT_NEW_COVID_REPORT, [
       passcode,
       stringifiedReport
     ]);
@@ -45,9 +63,10 @@ export class CovidReportRepository {
   async getCovidReportByPasscode(
     passcode: string
   ): Promise<CovidReport | undefined> {
-    const rows = await this.db.getAll<CovidReportRow>(SELECT_COVID_REPORT, [
-      passcode
-    ]);
+    const rows = await this.db.getAll<CovidReportRow>(
+      queries[this.db.type].SELECT_COVID_REPORT,
+      [passcode]
+    );
     const lastRow = rows.pop();
     if (lastRow) {
       return this.parseJsonDumpToCovidReport(lastRow.json_dump);
@@ -57,7 +76,9 @@ export class CovidReportRepository {
 
   async countNumberOfReports(): Promise<number | undefined> {
     return this.db
-      .getFirst<{ count: number }>(COUNT_NUMBER_OF_REPORTS)
+      .getFirst<{ count: number }>(
+        queries[this.db.type].COUNT_NUMBER_OF_REPORTS
+      )
       .then(row => row?.count);
   }
 
@@ -69,7 +90,9 @@ export class CovidReportRepository {
   }
 
   async fetchAllReportsFromDatabase(): Promise<PassCodeReports> {
-    const rows = await this.db.getAll<CovidReportRow>(SELECT_ALL_COVID_REPORTS);
+    const rows = await this.db.getAll<CovidReportRow>(
+      queries[this.db.type].SELECT_ALL_COVID_REPORTS
+    );
     const allReports: PassCodeReports = {};
     rows.forEach((row: CovidReportRow) => {
       const report = this.parseJsonDumpToCovidReport(row.json_dump);

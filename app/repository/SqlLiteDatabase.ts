@@ -3,6 +3,7 @@ import { Database } from 'sqlite3';
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 import { promisify } from 'util';
+import { DatabaseType } from '../domain/types';
 
 interface TableName {
   name: string;
@@ -16,9 +17,11 @@ interface TableName {
  */
 export class SqlLiteDatabase {
   db: Database;
+  type: DatabaseType;
 
   constructor(dbName: string) {
     this.db = new Database(dbName);
+    this.type = 'sqlite';
   }
 
   /**

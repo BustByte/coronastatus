@@ -11,7 +11,7 @@
 
 <div class="map-overlay top">
   <div class="map-overlay-info">
-    <h5><%= __(`Report status by zip code`) %></h5>
+    <h4><%= __(`Report status by zip code`) %></h4>
     <p>
       <%= __(`The markers correspond to coordinates of zip codes, they have
       nothing to do with individuals.`) %>
@@ -40,21 +40,9 @@
     style: 'https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json',
     center: [<%= locals.mapCenter %>],
     zoom: <%= locals.mapZoom %>,
+    maxZoom: <%= locals.mapMaxZoom %>,
+    customAttribution: 'Postal Codes <a href="https://geonames.org/" target="_blank">&copy;GeoNames</a>',
     hash: true
-  });
-
-  map.on('load', function() {
-    var attributions = document.getElementsByClassName(
-      'mapboxgl-ctrl-attrib-inner'
-    )[0];
-    if (attributions) {
-      var newAttrib = document.createElement('a');
-      newAttrib.href = 'http://www.erikbolstad.no/geo/noreg/postnummer/';
-      newAttrib.innerText = 'Zip code information ';
-      // Remove «improve this map» link
-      attributions.removeChild(attributions.lastChild);
-      attributions.insertBefore(newAttrib, attributions.firstChild);
-    }
   });
 
   var positive = ['==', ['get', 'state'], 'POSITIVE'];

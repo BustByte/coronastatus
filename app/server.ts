@@ -9,28 +9,19 @@ import mapRoutes from './routes/map-routes';
 import apiRoutes from './routes/api-routes';
 import statisticsRoutes from './routes/statistics-routes';
 import variousRoutes from './routes/various-routes';
-import { getInstance } from './repository/SqlLiteDatabase';
+import { getInstance } from './repository/Database';
 import { swaggerDocument } from './swagger';
-import {
-  LANGUAGE,
-  BASE_URL,
-  COUNTRY,
-  MAP_CENTER,
-  MAP_ZOOM,
-  TWITTER,
-  ZIP_LENGTH,
-  ZIP_PLACEHOLDER,
-  REDIRECT_TO_GOVERNMENT
-} from '../config.json';
 import { urls } from './domain/urls';
+import config from './config';
+import { ensureAllLocalesAreValidJSON } from './util/locale-validation';
 
 const app = express();
 const port = process.env.PORT || 7272;
-const isDevelopmentEnv = process.env.NODE_ENV === 'dev';
+const isDevelopmentEnv = process.env.NODE_ENV !== 'production';
 
 i18n.configure({
-  locales: [LANGUAGE],
-  defaultLocale: LANGUAGE,
+  locales: [config.LANGUAGE],
+  defaultLocale: config.LANGUAGE,
   updateFiles: false,
   directory: `${__dirname}/locales`
 });
@@ -69,17 +60,19 @@ app.use((req, res, next) => {
   // eslint-disable-next-line prefer-destructuring
   res.locals.activePage = `/${req.path.split('/')[1]}`;
   res.locals.cacheKey = cacheKey;
-  res.locals.imageSubfolder = LANGUAGE;
-  res.locals.htmlLang = LANGUAGE;
-  res.locals.country = COUNTRY;
-  res.locals.baseUrl = BASE_URL;
-  res.locals.mapCenter = MAP_CENTER;
-  res.locals.mapZoom = MAP_ZOOM;
-  res.locals.twitter = TWITTER;
+  res.locals.imageSubfolder = config.LANGUAGE;
+  res.locals.htmlLang = config.LANGUAGE;
+  res.locals.country = config.COUNTRY;
+  res.locals.baseUrl = config.BASE_URL;
+  res.locals.zipGuide = config.ZIP_GUIDE;
+  res.locals.mapCenter = config.MAP_CENTER;
+  res.locals.mapZoom = config.MAP_ZOOM;
+  res.locals.mapMaxZoom = config.MAP_MAX_ZOOM;
+  res.locals.twitter = config.TWITTER;
   res.locals.urls = urls;
-  res.locals.zipLength = ZIP_LENGTH;
-  res.locals.zipPlaceHolder = ZIP_PLACEHOLDER;
-  res.locals.redirectToGovernment = REDIRECT_TO_GOVERNMENT;
+  res.locals.zipLength = config.ZIP_LENGTH;
+  res.locals.zipPlaceHolder = config.ZIP_PLACEHOLDER;
+  res.locals.redirectToGovernment = config.REDIRECT_TO_GOVERNMENT;
   next();
 });
 
@@ -88,6 +81,14 @@ app.set('views', [
   path.join(__dirname, 'views'),
   path.join(__dirname, 'views', 'errors')
 ]);
+
+app.use((req, res, next) => {
+  if (req.header('x-forwarded-proto') !== 'https' && !isDevelopmentEnv) {
+    res.redirect(`https://${req.header('host')}${req.url}`);
+  } else {
+    next();
+  }
+});
 
 app.use(urls.submitReport, reportRoutes);
 app.use(urls.map, mapRoutes);
@@ -132,11 +133,12 @@ app.use(
 );
 
 async function initializeDatabase(): Promise<void> {
-  const db = getInstance('covid_db');
+  const db = getInstance(config.DB_PATH);
+
   const numberOfTables = (await db.listTables()).length;
   if (numberOfTables === 0) {
     await db.applyMigrationScripts(
-      path.join(__dirname, 'migrations', 'schema')
+      path.join(__dirname, 'migrations', `schema_${db.type}`)
     );
     console.info('Database was clean, applying migration scripts');
   } else {
@@ -145,6 +147,7 @@ async function initializeDatabase(): Promise<void> {
 }
 
 initializeDatabase().then(() => {
+  ensureAllLocalesAreValidJSON();
   app.listen(port);
   console.log(`API up and running on port ${port}`);
 });

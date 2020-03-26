@@ -23,7 +23,7 @@
   "here": "her",
   "About the service": "Om tjenesten",
   "In connection with the outbreak of COVID-19, many people have been tested for the virus, but due to lack of resources, the overwhelming majority have not been tested. It is therefore assumed that there are large missing numbers here in connection with the outbreak.": "I forbindelse med utbruddet av Covid-19 har mange nordmenn blitt testet for viruset, men grunnet ressursmangler har det overveldende flertallet ikke blitt testet. Det er derfor antatt at det er store mørketall her i Norge forbindelse med utbruddet.",
-  "Using self-report, you can get a better picture of how many people have symptoms without exposing health workers to potential contamination hazards and without using up valuable infection control equipment that is already in short supply. We at Bustbyte, well helped by other volunteers, have created this tool in response to": "Ved hjelp av egenrapport kan du få et bedre bilde av hvor mange som har symptomer uten å utsette helsearbeidere for potensielle forurensningsfare og uten å bruke opp verdifullt infeksjonskontrollutstyr som allerede er mangelvare. Vi i Bustbyte, godt hjulpet av andre frivillige, har laget dette verktøyet som svar på ",
+  "Using self-report, you can get a better picture of how many people have symptoms without exposing health workers to potential contamination hazards and without using up valuable infection control equipment that is already in short supply. We at Bustbyte, well helped by other volunteers, have created this tool in response to": "Ved hjelp av egenrapport kan du få et bedre bilde av hvor mange som har symptomer uten å utsette helsearbeidere for potensielle forurensningsfare og uten å bruke opp verdifullt infeksjonskontrollutstyr som allerede er mangelvare. Vi i BustByte, godt hjulpet av andre frivillige, har laget dette verktøyet som svar på ",
   "this article": "denne artikkelen",
   "as an attempt to chart these numbers.": "som et forsøk på å kartlegge disse tallene.",
   "This is not an official tool of the authorities, and for more information about the outbreak we refer to health authorities which always have updated information.": "Dette er dermed ikke et offisielt verktøy fra myndighetene, og for mer informasjon rundt utbruddet henviser vi til FHI som alltid har oppdatert informasjon.",
@@ -174,5 +174,13 @@
   "This field is optional": "Dette feltet er valgfritt",
   "Close": "Lukk",
   "Contribute now": "Bidra nå",
-  "Help us uncover and predict the corona spread in your area": "Hjelp oss å <span>avdekke</span> og <span>forutsi</span> koronautbredelsen i ditt område"
+  "Help us uncover and predict the corona spread in your area": "Hjelp oss å <span>avdekke</span> og <span>forutsi</span> koronautbredelsen i ditt område",
+  "Numbers": "Tall",
+  "#washyourhands": "#wash<wbr/>your<wbr/>hands",
+  "#stayindoors": "#stay<wbr/>home",
+  "In isolation due to orders from the government": "I karantene pålagt av myndighetene",
+  "In isolation due to COVID-19 infection": "I karantene på grunn av COVID-19-infeksjon",
+  "Some questions and alternatives were not a part of the form from the beginning:": "Noen spørsmål og svaralternativer har kommet til etter hvert:",
+  "March 27": "27. mars",
+  "Other": "Annet / ønsker ikke å oppgi"
 }
