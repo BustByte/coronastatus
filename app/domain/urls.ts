@@ -150,6 +150,16 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistiques'
   },
+  'es-ES': {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
   ca: {
     submitReport: '/',
     profile: '/healthcondition',

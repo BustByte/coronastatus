@@ -20,7 +20,7 @@ const fallbackConfig: Config = {
   COUNTRY: process.env.COUNTRY || 'Norway',
   MAP_CENTER: process.env.MAP_CENTER || '10.7522, 63.9139',
   MAP_ZOOM: parseInt(process.env.MAP_ZOOM || '4', 10),
-  MAP_MAX_ZOOM: parseInt(process.env.MAP_MAX_ZOOM || '13', 10),,
+  MAP_MAX_ZOOM: parseInt(process.env.MAP_MAX_ZOOM || '13', 10),
   TWITTER: process.env.TWITTER || 'coronastatusNO',
   ZIP_LENGTH: parseInt(process.env.ZIP_LENGTH || '4', 10),
   ZIP_PLACEHOLDER: process.env.ZIP_PLACEHOLDER || '1234',
