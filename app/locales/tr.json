@@ -175,5 +175,12 @@
   "Close": "Kapat",
   "Contribute now": "Şimdi destek ol",
   "Help us uncover and predict the corona spread in your area": "Bölgendeki corona yayılımını analiz edebilmemiz için bize destek ol",
-  "Numbers": "Sayılar"
+  "Numbers": "Sayılar",
+  "#washyourhands": "#elini<wbr/>yika",
+  "#stayindoors": "#evde<wbr/>kal",
+  "In isolation due to orders from the government": "Hükümet tarafından alınan kararlar dolayısıyla karantinada",
+  "In isolation due to COVID-19 infection": "COVID-19 enfeksiyonu yüzünden karantinada",
+  "Some questions and alternatives were not a part of the form from the beginning:": "Bazı sorular ve alternatifler en başından beri yoktu:",
+  "March 27": "27 Mart",
+  "Other": "Diğer"
 }
