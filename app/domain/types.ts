@@ -148,7 +148,10 @@ export interface Config {
   TWITTER: string;
   ZIP_LENGTH: number;
   ZIP_PLACEHOLDER: string;
+  ZIP_GUIDE: boolean;
   REDIRECT_TO_GOVERNMENT: boolean;
   PASSCODE_LENGTH: number;
   DB_PATH: string;
 }
+
+export type DatabaseType = 'pg' | 'sqlite';

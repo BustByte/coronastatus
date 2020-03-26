@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-ignore */
-import { Database } from 'sqlite3';
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
-import { promisify } from 'util';
+import { Pool } from 'pg';
 import { DatabaseType } from '../domain/types';
 
 interface TableName {
@@ -10,29 +9,29 @@ interface TableName {
 }
 
 /**
- * A wrapper class around the sqlite3 module, providing promisified
- * querying methods
+ * A wrapper class around the pg module, providing
+ * querying methods with async/await
  *
- * @class SqlLiteDatabase
+ * @class PostgresDatabase
  */
-export class SqlLiteDatabase {
-  db: Database;
+export class PostgresDatabase {
+  db: Pool;
   type: DatabaseType;
 
-  constructor(dbName: string) {
-    this.db = new Database(dbName);
-    this.type = 'sqlite';
+  constructor(parameters: { [connectionString: string]: string }) {
+    this.db = new Pool(parameters);
+    this.type = 'pg';
   }
 
   /**
    * Lists all tables in the database
    *
    * @returns A Promise resolving to a list of all the tables in the database
-   * @memberof SqlLiteDatabase
+   * @memberof PostgresDatabase
    */
   async listTables(): Promise<TableName[]> {
     return this.getAll<TableName>(
-      "select name from sqlite_master where type='table' order by name"
+      "SELECT table_name FROM information_schema.tables WHERE table_schema='public' order by table_name"
     );
   }
 
@@ -41,7 +40,7 @@ export class SqlLiteDatabase {
    * Any file ending in .sql is regarded as a migration script,
    * Scripts are applied in alphebetic order
    *
-   * @memberof SqlLiteDatabase
+   * @memberof PostgresDatabase
    */
   async applyMigrationScripts(directory: string): Promise<void> {
     const files = readdirSync(directory);
@@ -67,14 +66,11 @@ export class SqlLiteDatabase {
    * @param {*} query The query to run
    * @param {*} [parameters=[]] The parameters to use in the query
    * @returns A Promise resolving to an object {lastID: <ID of last inserted>}
-   * @memberof SqlLiteDatabase
+   * @memberof PostgresDatabase
    */
   async run<T>(query: string, parameters: string[] = []): Promise<T> {
-    const statement = this.db.prepare(query);
-
     return new Promise<T>((resolve, reject) => {
-      statement.run(parameters, function cb(err) {
-        statement.finalize();
+      this.db.query(query, parameters, function cb(err) {
         if (err) {
           return reject(err);
         }
@@ -89,17 +85,14 @@ export class SqlLiteDatabase {
    * @param {*} query The query to run
    * @param {*} [parameters=[]] The parameters to use in the query
    * @returns A Promise resolving to the first row that matches, null if result set is empty
-   * @memberof SqlLiteDatabase
+   * @memberof PostgresDatabase
    */
   async getFirst<T>(
     query: string,
     parameters: string[] = []
   ): Promise<T | undefined> {
-    const statement = this.db.prepare(query);
-    // @ts-ignore
-    const result = await promisify(statement.get).bind(statement)(parameters);
-    statement.finalize();
-    return result || undefined;
+    const result = await this.db.query(query, parameters);
+    return result.rows[0] || undefined;
   }
 
   /**
@@ -109,41 +102,40 @@ export class SqlLiteDatabase {
    * @param {*} [parameters=[]] The parameters to use in the query
    * @returns A promise that resolves to a list containing all rows that match
    *          the query or an empty array if result set is empty
-   * @memberof SqlLiteDatabase
+   * @memberof PostgresDatabase
    */
   async getAll<T>(query: string, parameters: string[] = []): Promise<T[]> {
-    const statement = this.db.prepare(query);
-    // @ts-ignore
-    const results = await promisify(statement.all).bind(statement)(parameters);
-    statement.finalize();
-    return results;
+    const results = await this.db.query(query, parameters);
+    return results.rows;
   }
 
   /**
    * Closes the database connection
    *
    * @returns A promise resolving once the database is closed
-   * @memberof SqlLiteDatabase
+   * @memberof PostgresDatabase
    */
   async closeConnection(): Promise<void> {
-    return promisify(this.db.close).bind(this.db)();
+    return this.db.end();
   }
 
   async dropTables(): Promise<void> {
     const tables = await this.getAll<TableName>(
-      "select name from sqlite_master where type='table'"
+      "SELECT table_name FROM information_schema.tables WHERE table_schema='public' order by table_name"
     );
     for (const table of tables) {
       // eslint-disable-next-line no-await-in-loop
-      await this.run(`drop table if exists ${table.name}`);
+      await this.db.query(`drop table if exists ${table.name}`);
     }
   }
 }
 
-let instance: SqlLiteDatabase | null = null;
-export const getInstance = (dbName: string): SqlLiteDatabase => {
+let instance: PostgresDatabase | null = null;
+export const getInstance = (parameters: {
+  [connectionString: string]: string;
+}): PostgresDatabase => {
   if (instance === null) {
-    instance = new SqlLiteDatabase(dbName);
+    instance = new PostgresDatabase(parameters);
   }
   return instance;
 };

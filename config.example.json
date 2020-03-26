@@ -8,6 +8,7 @@
   "TWITTER": "coronastatusNO",
   "ZIP_LENGTH": 4,
   "ZIP_PLACEHOLDER": "1234",
+  "ZIP_GUIDE": false,
   "REDIRECT_TO_GOVERNMENT": false,
   "PASSCODE_LENGTH": 3,
   "DB_PATH": "./covid_db"

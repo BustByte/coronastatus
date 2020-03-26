@@ -1,6 +1,20 @@
 import config from '../config';
 
-export type Locale = 'no' | 'nl' | 'en' | 'es-MX' | 'sk' | 'it' | 'tr' | 'ca';
+export type Locale =
+  | 'no'
+  | 'nl'
+  | 'en'
+  | 'en-US'
+  | 'es-MX'
+  | 'sk'
+  | 'it'
+  | 'tr'
+  | 'dk'
+  | 'ua'
+  | 'es-CO'
+  | 'fr-FR'
+  | 'es-ES'
+  | 'ca';
 
 type Urls = {
   [locale in Locale]: {
@@ -46,6 +60,16 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
+  'en-US': {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
   'es-MX': {
     submitReport: '/',
     profile: '/estadosalud',
@@ -59,7 +83,7 @@ const localeAwareUrls: Urls = {
   sk: {
     submitReport: '/',
     profile: '/zdravotny-stav',
-    privacyPolicy: '/ochrana-udajov',
+    privacyPolicy: '/ochrana-sukromia',
     map: '/mapa',
     contributors: '/prispievatelia',
     api: '/api',
@@ -85,6 +109,46 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/istatistikler'
+  },
+  dk: {
+    submitReport: '/',
+    profile: '/helbredstilstand',
+    privacyPolicy: '/privat-politik',
+    map: '/kort',
+    contributors: '/frivillige',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistikker'
+  },
+  ua: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  'es-CO': {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
+  'fr-FR': {
+    submitReport: '/',
+    profile: '/profil',
+    privacyPolicy: '/politique-de-confidentialite',
+    map: '/carte',
+    contributors: '/contributeurs',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistiques'
   },
   ca: {
     submitReport: '/',
