@@ -189,13 +189,15 @@
 
     <fieldset>
     <legend><%= __("Biological gender") %></legend>
-    <p>
+    <p class="mb-2">
       <input required type="radio" id="gender-female" name="gender" value="female" <%= sex === 'FEMALE' ? 'checked' : '' %>>
-      <label class="mr-4" for="gender-female"><%= __("Female") %></label>
-
+      <label for="gender-female"><%= __("Female") %></label>
+    </p>
+    <p class="mb-2">
       <input required type="radio" id="gender-male" name="gender" value="male" <%= sex === 'MALE' ? 'checked' : '' %>>
-      <label class="mr-4" for="gender-male"><%= __("Male") %></label>
-
+      <label for="gender-male"><%= __("Male") %></label>
+    </p>
+    <p class="mb-2">
       <input required type="radio" id="gender-other" name="gender" value="other" <%= sex === 'OTHER' ? 'checked' : '' %>>
       <label for="gender-other"><%= __("Other") %></label>
     </p>
