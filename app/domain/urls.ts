@@ -12,7 +12,8 @@ export type Locale =
   | 'dk'
   | 'ua'
   | 'es-CO'
-  | 'fr-FR';
+  | 'fr-FR'
+  | 'es-ES';
 
 type Urls = {
   [locale in Locale]: {
