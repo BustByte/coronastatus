@@ -143,6 +143,7 @@ export interface Config {
   COUNTRY: string;
   MAP_CENTER: string;
   MAP_ZOOM: number;
+  MAP_MAX_ZOOM: number;
   TWITTER: string;
   ZIP_LENGTH: number;
   ZIP_PLACEHOLDER: string;

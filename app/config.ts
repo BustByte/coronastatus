@@ -13,6 +13,7 @@ const fallbackConfig: Config = {
   COUNTRY: 'Norway',
   MAP_CENTER: '10.7522, 63.9139',
   MAP_ZOOM: 4,
+  MAP_MAX_ZOOM: 13,
   TWITTER: 'coronastatusNO',
   ZIP_LENGTH: 4,
   ZIP_PLACEHOLDER: '1234',
