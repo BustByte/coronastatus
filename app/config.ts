@@ -23,7 +23,7 @@ const fallbackConfig: Config = {
   ZIP_PLACEHOLDER: process.env.ZIP_PLACEHOLDER || '1234',
   REDIRECT_TO_GOVERNMENT: process.env.REDIRECT_TO_GOVERNMENT === 'true' ||  false,
   PASSCODE_LENGTH: parseInt(process.env.PASSCODE_LENGTH || '3'),
-  DB_PATH: process.env.BASE_DB_PATHURL || './covid_db'
+  DB_PATH: process.env.DB_PATH || './covid_db'
 };
 
 export default {
