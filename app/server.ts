@@ -82,6 +82,10 @@ app.set('views', [
   path.join(__dirname, 'views', 'errors')
 ]);
 
+if (process.env.NODE_ENV === 'production') {
+  app.enable('trust proxy');
+}
+
 app.use((req, res, next) => {
   if (req.header('x-forwarded-proto') !== 'https' && !isDevelopmentEnv) {
     res.redirect(`https://${req.header('host')}${req.url}`);
