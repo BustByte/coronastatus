@@ -81,7 +81,7 @@
   "Negative": "Négatif",
   "Have you been tested for COVID-19?": "Avez-vous été testé pour COVID-19?",
   "What was the result?": "Quel a été le résultat?",
-  "Waiting for result": "En attente du résultatt",
+  "Waiting for result": "En attente du résultats",
   "Symptoms you have experienced": "Symptômes rencontrés",
   "Select only the symptoms you have experienced": "Sélectionnez uniquement les symptômes que vous avez rencontrés",
   "Dry cough": "Toux sèche",
@@ -172,7 +172,7 @@
   "What is your current body temperature? (Celcius)": "Quelle est votre température? (Celcius)",
   "This field is optional": "Ce champ est facultatif",
   "Close": "Fermé",
-  "Contribute now": "Contribuez maintenant",
-  "Help us uncover and predict the corona spread in your area": "Aidez nous à <span>estimer</span> et <span>prédire</span> la propagation corona dans votre région",
+  "Contribute now": "Participer",
+  "Help us uncover and predict the corona spread in your area": "Aidez-nous à <span>estimer</span> et <span>prédire</span> la propagation du corona virus dans votre région",
   "Numbers": "Chiffres"
 }
