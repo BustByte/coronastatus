@@ -133,7 +133,7 @@ router.post('/', createReportRateLimit, async (req, res) => {
 
   const covidReport: CovidReport = {
     age: req.body['age'],
-    postalCode: req.body['postal-code'],
+    postalCode: req.body['postal-code'].toUpperCase(),
     hasBeenTested: req.body['been-tested'] === 'yes',
     testResult: extractTestResult(req),
     sex: req.body['gender'] === 'male' ? Sex.MALE : Sex.FEMALE,
