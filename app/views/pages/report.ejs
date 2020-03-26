@@ -369,9 +369,17 @@
       <input required type="radio" id="isolation-due-to-travel" name="isolation-status" value="isolation-due-to-travel" <%= isolationStatus === 'ISOLATION_DUE_TO_TRAVEL' ? 'checked' : '' %>>
       <label for="isolation-due-to-travel"><%= __("In isolation due to a recent international travel") %></label>
     </p>
-    <p>
+    <p class="mb-2">
       <input required type="radio" id="isolation-due-to-contact" name="isolation-status" value="isolation-due-to-contact" <%= isolationStatus === 'ISOLATION_DUE_TO_CONTACT' ? 'checked' : '' %>>
       <label for="isolation-due-to-contact"><%= __("In isolation due to contact with an individual who has been exposed to the coronavirus.") %></label>
+    </p>
+    <p class="mb-2">
+      <input required type="radio" id="isolation-due-to-government" name="isolation-status" value="isolation-due-to-government" <%= isolationStatus === 'ISOLATION_DUE_TO_GOVERNMENT_ORDERS' ? 'checked' : '' %>>
+      <label for="isolation-due-to-government"><%= __("In isolation due to orders from the government") %></label>
+    </p>
+    <p>
+      <input required type="radio" id="isolation-due-to-covid-19" name="isolation-status" value="isolation-due-to-covid-19" <%= isolationStatus === 'ISOLATION_DUE_TO_COVID_19' ? 'checked' : '' %>>
+      <label for="isolation-due-to-covid-19"><%= __("In isolation due to COVID-19 infection") %></label>
     </p>
     </fieldset>
 
