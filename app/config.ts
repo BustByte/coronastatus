@@ -23,6 +23,7 @@ const fallbackConfig: Config = {
   TWITTER: process.env.TWITTER || 'coronastatusNO',
   ZIP_LENGTH: parseInt(process.env.ZIP_LENGTH || '4', 10),
   ZIP_PLACEHOLDER: process.env.ZIP_PLACEHOLDER || '1234',
+  ZIP_GUIDE: process.env.ZIP_GUIDE === 'true' || false,
   REDIRECT_TO_GOVERNMENT:
     process.env.REDIRECT_TO_GOVERNMENT === 'true' || false,
   PASSCODE_LENGTH: parseInt(process.env.PASSCODE_LENGTH || '3', 10),

@@ -64,6 +64,7 @@ app.use((req, res, next) => {
   res.locals.htmlLang = config.LANGUAGE;
   res.locals.country = config.COUNTRY;
   res.locals.baseUrl = config.BASE_URL;
+  res.locals.zipGuide = config.ZIP_GUIDE;
   res.locals.mapCenter = config.MAP_CENTER;
   res.locals.mapZoom = config.MAP_ZOOM;
   res.locals.twitter = config.TWITTER;
