@@ -1,6 +1,15 @@
 import config from '../config';
 
-export type Locale = 'no' | 'nl' | 'en' | 'es-MX' | 'sk' | 'it' | 'tr' | 'dk';
+export type Locale =
+  | 'no'
+  | 'nl'
+  | 'en'
+  | 'es-MX'
+  | 'sk'
+  | 'it'
+  | 'tr'
+  | 'dk'
+  | 'es-CO';
 
 type Urls = {
   [locale in Locale]: {
@@ -95,6 +104,16 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistikker'
+  },
+  'es-CO': {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
   }
 };
 
