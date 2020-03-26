@@ -17,7 +17,7 @@ import { ensureAllLocalesAreValidJSON } from './util/locale-validation';
 
 const app = express();
 const port = process.env.PORT || 7272;
-const isDevelopmentEnv = process.env.NODE_ENV === 'dev';
+const isDevelopmentEnv = process.env.NODE_ENV !== 'production';
 
 i18n.configure({
   locales: [config.LANGUAGE],
@@ -79,6 +79,14 @@ app.set('views', [
   path.join(__dirname, 'views'),
   path.join(__dirname, 'views', 'errors')
 ]);
+
+app.use((req, res, next) => {
+  if (req.header('x-forwarded-proto') !== 'https' && !isDevelopmentEnv) {
+    res.redirect(`https://${req.header('host')}${req.url}`)
+  } else {
+    next();
+  }
+});
 
 app.use(urls.submitReport, reportRoutes);
 app.use(urls.map, mapRoutes);
