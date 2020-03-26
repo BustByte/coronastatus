@@ -21,7 +21,8 @@ export type Symptoms = {
 
 export enum Sex {
   MALE = 'MALE',
-  FEMALE = 'FEMALE'
+  FEMALE = 'FEMALE',
+  OTHER = 'OTHER'
 }
 
 export enum TestResult {
@@ -143,6 +144,7 @@ export interface Config {
   COUNTRY: string;
   MAP_CENTER: string;
   MAP_ZOOM: number;
+  MAP_MAX_ZOOM: number;
   TWITTER: string;
   ZIP_LENGTH: number;
   ZIP_PLACEHOLDER: string;

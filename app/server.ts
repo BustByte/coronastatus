@@ -67,6 +67,7 @@ app.use((req, res, next) => {
   res.locals.zipGuide = config.ZIP_GUIDE;
   res.locals.mapCenter = config.MAP_CENTER;
   res.locals.mapZoom = config.MAP_ZOOM;
+  res.locals.mapMaxZoom = config.MAP_MAX_ZOOM;
   res.locals.twitter = config.TWITTER;
   res.locals.urls = urls;
   res.locals.zipLength = config.ZIP_LENGTH;
