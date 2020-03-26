@@ -13,18 +13,18 @@
   "That way you can update your report if your health condition changes.": "På så sätt kan du uppdatera din rapport om ditt hälsotillstånd förändras.",
   "I've noted down the link.": "Jag har kopierat länken.",
   "Proceed": "Fortsätt",
-  "The link has been copied": "Länken har blivit kopierad.",
+  "The link has been copied": "Länken har kopierats.",
   "Copy": "Kopiera",
   "Could not copy the link, please copy it yourself": "Kunde inte kopiera länken, var god kopiera den själv",
   "Contributors": "Medarbetare",
   "This website is made with help from volunteers. In no particular order:": "Den här webbsidan skapas med hjälp av frivilliga. Utan inbördes ordning:",
   "...and others": "...med flera",
-  "The code for the website can be found": "Koden för webbsidan kunde inte hittas",
+  "The code for the website can be found": "Koden för webbsidan hittas",
   "here": "här",
   "About the service": "Om tjänsten",
   "In connection with the outbreak of COVID-19, many people have been tested for the virus, but due to lack of resources, the overwhelming majority have not been tested. It is therefore assumed that there are large missing numbers here in connection with the outbreak.":
   "I samband med utbrottet av COVID-19 har många människor testats för viruset, men på grund av resursbrist så har en överväldigande majoritet inte blivit testade. Det kan därför antas att det finns ett stort mörkertal vad gäller antalet drabbade.",
-  "Using self-report, you can get a better picture of how many people have symptoms without exposing health workers to potential contamination hazards and without using up valuable infection control equipment that is already in short supply. We at Bustbyte, well helped by other volunteers, have created this tool in response to": "Genom att självrapportera kan vi få en bättre bild av hur många som har symptom utan att utsätta vårdarbetare för någon smittorisk och utan att använda värdefull utrustning för infektionskontroll, vilket redan är en bristvara. Vi på Bustbyte, med stor hjälp av frivilliga, har skapat det här verktyget som ett svar på",
+  "Using self-report, you can get a better picture of how many people have symptoms without exposing health workers to potential contamination hazards and without using up valuable infection control equipment that is already in short supply. We at Bustbyte, well helped by other volunteers, have created this tool in response to": "Genom självrapportering kan vi få en bättre bild av hur många som har symptom utan att utsätta vårdpersonal för någon smittorisk och utan att använda värdefull utrustning för infektionskontroll, vilket redan är en bristvara. Vi på Bustbyte, med stor hjälp av frivilliga, har skapat det här verktyget som ett svar på",
   "this article": "denna artikel",
   "as an attempt to chart these numbers.": "som ett försök att kartlägga den informationen.",
   "This is not an official tool of the authorities, and for more information about the outbreak we refer to health authorities which always have updated information.":
@@ -40,7 +40,7 @@
   "Myndigheterna har nu lanserat sitt eget självrapporterings-system, var god använd det istället.",
   "www.nhs.uk": "folkhälsomyndigheten.se",
   "Go to the National health service website": "Gå till Folkhälsomyndigheten",
-  "Report status by zip code": "Rapportera status via postnummer",
+  "Report status by zip code": "Rapportera hälsostatus via postnummer",
   "The markers correspond to coordinates of zip codes, they have nothing to do with individuals.":
   "De markerade positionerna motsvarar koordinater för postnummer och har inget att göra med enskilda individer.",
   "Healthy": "Frisk",
@@ -56,7 +56,7 @@
   "Den här sidan är för närvarande inte på något sätt kopplad till myndigheterna.",
   "Read how the data you enter is processed here!": "Läs mer om hur din data hanteras här!",
   "Use the link you noted down last time to update your health condition":
-  "Använd linken du kopierade vid ditt förra besök för att uppdatera ditt hälsotillstånd.",
+  "Använd länken du kopierade vid ditt förra besök för att uppdatera ditt hälsotillstånd.",
   "Unreported cases": "Stort mörkertal",
   "The spread of COVID-19 in our country is unknown. Help us create a better overview.":
   "Spridningen av COVID-19 i landet är okänd. Hjälp oss att skapa en bättre översikt.",
@@ -114,7 +114,7 @@
   "Your health information is stored anonymously, and can not be used to identify you.":
   "All information sparas helt anonymt och kan inte kopplas till dig.",
   "Our privacy policy can be found here": "Vår sekretesspolicy finns här",
-  "I agree to my data being stored in accordance with the privacy statement": 
+  "I agree to my data being stored in accordance with the privacy statement":
   "Jag godkänner att min data sparas enligt sekretesspolicyn",
   "Submit report": "Skicka in rapport",
   "Statistics": "Statistik",
@@ -127,7 +127,7 @@
   "people have reported that they have been tested for COVID-19.":
   "personer har rapporterat att de testats för COVID-19.",
   "Close contacts": "Närkontakter",
-  "people have reported that they have been in close contact with a person who was tested positive for COVID-19.": 
+  "people have reported that they have been in close contact with a person who was tested positive for COVID-19.":
   "personer har rapporterat att de har varit i nära kontakt med någon som testats positivt för COVID-19.",
   "Key figures": "Nyckeltal",
   "Of those who reported that they have been in close contact with someone that tested positive for COVID-19, have:":
@@ -176,7 +176,7 @@
   "clear this form": "rensa formuläret",
   "https://who.int": "https://who.int",
   "To WHO.int": "Till WHO.int",
-  "Are you from": "Är du från",
+  "Are you from": "Bor du i",
   "Sweden": "Sverige",
   "Norway": "Norge",
   "The Netherlands": "Nederländerna",
@@ -188,12 +188,12 @@
   "at": "klockan",
   "Nausea or vomiting": "Illamående eller kräkningar",
   "Have you been diagnosed with any of the following conditions?":
-  "Har du blivit diagnostiserad med något av följande symptom?",
+  "Har du blivit diagnostiserad med något av följande sjukdomstillstånd?",
   "Diabetes mellitus, Hypertension, Ischemic heart disease, Asthma, Chronic lung disease, Chronic kidney disease":
   "Diabetes, högt blodtryck, hjärt- och kärlsjukdom, astma, kronisk lungsjukdom, kronisk njursjukdom",
   "I am currently:": "Jag befinner mig för närvarande",
   "Not in isolation": "Inte i karantän",
-  "In isolation due to a recent international travel": "I karantän pga nylig utomlandsresa",
+  "In isolation due to a recent international travel": "I karantän pga nylig utlandsresa",
   "In isolation due to contact with an individual who has been exposed to the coronavirus.":
   "I karantän på grund av en kontakt som blivit utsatt för coronaviruset",
   "Cigarette smoking habits:": "Rökvanor",
