@@ -2,6 +2,7 @@
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 import { Pool } from 'pg';
+import { DatabaseType } from '../domain/types';
 
 interface TableName {
   name: string;
@@ -15,7 +16,7 @@ interface TableName {
  */
 export class PostgresDatabase {
   db: Pool;
-  type: 'pg' | 'sqlite';
+  type: DatabaseType;
 
   constructor(parameters: Object) {
     this.db = new Pool(parameters);
