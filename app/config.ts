@@ -1,4 +1,9 @@
-import config from '../config.json';
+let config = {}
+try {  
+  config = require('../config.json');
+} catch (err) {
+  console.log('No config file found....fallback to env/defaults')
+}
 import { Config } from './domain/types';
 
 /**
