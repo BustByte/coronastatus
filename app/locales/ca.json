@@ -72,7 +72,6 @@
   "Biological gender": "Gender",
   "Female": "Female",
   "Male": "Male",
-  "OTHER": "Other",
   "Zip code": "Postal code",
   "Testing and symptoms": "Testing and symptoms",
   "Have you been in close contact with someone who was tested positive for COVID-19?": "Have you been in close contact with someone who tested positive for COVID-19?",
@@ -182,5 +181,6 @@
   "In isolation due to orders from the government": "In isolation due to orders from the government",
   "In isolation due to COVID-19 infection": "In isolation due to COVID-19 infection",
   "Some questions and alternatives were not a part of the form from the beginning:": "Some questions and alternatives were not a part of the form from the beginning:",
-  "March 27": "March 27"
+  "March 27": "March 27",
+  "Other": "Other"
 }
