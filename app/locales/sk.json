@@ -154,9 +154,10 @@
   "United Kingdom": "Spojeného Kráľovstva",
   "https://who.int": "https://www.uvzsr.sk",
   "To WHO.int": "Prejsť na www.uvzsr.sk",
-  "March 16": "16 marca",
-  "March 17": "17 marca",
-  "March 23": "23 marca",
+  "March 16": "16. marca",
+  "March 17": "17. marca",
+  "March 23": "23. marca",
+  "March 27": "27. marca",
   "at": "v",
   "Nausea or vomiting": "Nevoľnosť alebo zvracanie",
   "Have you been diagnosed with any of the following conditions?": "Máte niektorú z nasledujúcich diagnóz?",
@@ -165,6 +166,8 @@
   "Not in isolation": "Mimo karantény",
   "In isolation due to a recent international travel": "V karanténe vzhľadom na návrat zo zahraničia",
   "In isolation due to contact with an individual who has been exposed to the coronavirus.": "V karanténe kvôli kontaktu s infikovaným na koronavírus",
+  "In isolation due to orders from the government": "V karanténe na príkaz vlády",
+  "In isolation due to COVID-19 infection": "V karanténe kvôli infikovaniu COVID-19 vírusom",
   "Cigarette smoking habits:": "Vzťah k fajčeniu:",
   "I currently smoke": "Fajčím",
   "I used to smoke": "Fajčil som",
@@ -177,8 +180,5 @@
   "Numbers": "čísla",
   "#washyourhands": "#umývaj<wbr/>si<wbr/>ruky",
   "#stayindoors": "#zostaň<wbr/>doma",
-  "In isolation due to orders from the government": "In isolation due to orders from the government",
-  "In isolation due to COVID-19 infection": "In isolation due to COVID-19 infection",
-  "Some questions and alternatives were not a part from the beginning:": "Some questions and alternatives were not a part from the beginning:",
-  "March 27": "27 marca"
+  "Some questions and alternatives were not a part from the beginning:": "Niektoré otázky a možnosti neboli predtým súčasťou formulára:"
 }
