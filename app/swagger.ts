@@ -2,7 +2,7 @@ import {
   getAggregated,
   getAggregatedPostalCode
 } from './openAPI/aggregated.swagger';
-import { BASE_URL } from '../config.json';
+import config from './config';
 import { urls } from './domain/urls';
 import { getReports, getReportsCsv } from './openAPI/reports.swagger';
 
@@ -26,7 +26,7 @@ export const swaggerDocument = {
   },
   servers: [
     {
-      url: `https://${BASE_URL}${urls.api}`,
+      url: `https://${config.BASE_URL}${urls.api}`,
       description: 'Production environment'
     },
     {

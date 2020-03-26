@@ -8,7 +8,7 @@
 
 ![](https://github.com/BustByte/coronastatus/workflows/test/badge.svg)
 
-> Report your health status to get a better overview of COVID-19 in your country (currently in 🇳🇴🇳🇱🇸🇰)
+> Report your health status to get a better overview of COVID-19 in your country
 
 ## What is this?
 
@@ -25,6 +25,12 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇵🇭 Philippines: coming soon
 - 🇸🇪 Sweden: coming soon
 - 🇹🇷 Turkey: coming soon (work group Telegram chat: https://t.me/turkeycoronastatus)
+- 🇨🇦 Canada: coming soon
+- 🇫🇷 France: coming soon
+- 🇧🇪 Belgium: coming soon
+- 🇩🇰 Denmark: https://coronastatus.dk
+- 🇨🇴 Colombia: https://coronastatus.co
+- 🇦🇺 Australia: coming soon
 - ... want one for your country? Join our community: https://t.me/onzecorona
 
 ## Why?
@@ -52,14 +58,15 @@ Click on "Issues" in the menu above to see what we need help with.
 
 Adding a new language should be pretty straightforward. If you need help, you can always ask in the Telegram group chat or contact us by email. The following is needed in order to set up a new language:
 
-- Add language-specific fields to the config
+- Set up a new config file: `cp config.example.json config.json`. `LANGUAGE` should be one of the locales from [here](https://github.com/ladjs/i18n-locales).
 - In `app/locales` you have to add (follow filename convention of the files that are already there):
   - A word list that is used for generating unique profile links. If the word list contains between 1000 and 10000 words, you should set `PASSCODE_LENGTH: 4` in the config. If it contains more than 10000 words, `PASSCODE_LENGTH: 3` should be sufficient.
-  - Translations for all the sentences in `en.json`. The keys are the same in all the `xx.json`-files, and the values are the translations. We recommend translating everything in the file first, and then testing the site in order to verify that the translations look ok in context.
-  - List of municipalities (we can help with this).
-  - List of postal code coordinates (we have a script for this).
-- Configure URL paths in `app/domain/urls`
-- Write a privacy statement in `app/views/privacy-statement`
+  - Translations for all the sentences in `en.json`. The keys are the same in all the `{LANGUAGE}.json`-files, and the values are the translations. We recommend translating everything in the file first, and then testing the site in order to verify that the translations look ok in context.
+  - List of municipalities (we can help with this [Check Here](app/locales/README.md)).
+  - List of postal code coordinates (we have a script for this [Check Here](app/locales/README.md)).
+- Configure URL paths in `app/domain/urls.ts`
+- Write a privacy statement in `app/views/privacy-statement/{LANGUAGE}-lang-privacy-statement.ejs`
+- Add a iamge that will used when sharing the url in social media in `/static/{LANGUAGE}/social-media.png`. @amritnagi or @adriaanvanrossum can create one if you provide them with text.
 - You also need a domain (preferably `coronastatus.tld` if it is available), and a server to run the app on. We can assist you with setting this up.
 
 ## Start developing
