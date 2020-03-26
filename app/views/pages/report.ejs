@@ -168,7 +168,7 @@
     <% } else { %>
       <p class="text-center text-base lg:text-xl font-medium m-4 mt-0 self-center">
         <%= __("Are you from") %> <%= __(locals.country) %>?
-        <%= __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information!") %></p>
+        <%- __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information!") %></p>
     <% } %>
 
     <div class="flex flex-row items-center mt-8">
@@ -249,7 +249,7 @@
 
     <fieldset>
     <legend class="mb-0"><%= __('Symptoms you have experienced') %></legend>
-    <p class="mb-4"><%= __('Select only the symptoms you have experienced') %></p>
+    <p class="mb-4"><%- __('Select only the symptoms you have experienced') %></p>
 
     <label class="checkbox" for="symptom-cough">
       <input type="checkbox" id="symptom-cough" name="symptom-cough" <%= symptomDryCough ? 'checked' : '' %>>
