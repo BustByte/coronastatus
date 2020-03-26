@@ -9,8 +9,8 @@ interface TableName {
 }
 
 /**
- * A wrapper class around the sqlite3 module, providing promisified
- * querying methods
+ * A wrapper class around the pg module, providing
+ * querying methods with async/await
  *
  * @class PostgresDatabase
  */
@@ -18,7 +18,7 @@ export class PostgresDatabase {
   db: Pool;
   type: DatabaseType;
 
-  constructor(parameters: Record<string, string>) {
+  constructor(parameters: { [connectionString: string]: string }) {
     this.db = new Pool(parameters);
     this.type = 'pg';
   }
@@ -131,9 +131,9 @@ export class PostgresDatabase {
 }
 
 let instance: PostgresDatabase | null = null;
-export const getInstance = (
-  parameters: Record<string, string>
-): PostgresDatabase => {
+export const getInstance = (parameters: {
+  [connectionString: string]: string;
+}): PostgresDatabase => {
   if (instance === null) {
     instance = new PostgresDatabase(parameters);
   }
