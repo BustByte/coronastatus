@@ -503,6 +503,9 @@
   }
 
   changeTestResultDisplay(document.getElementById("been-tested-yes").checked);
+
+  var hasPasscodeCookie = document.cookie.includes('passcode');
+  document.getElementById('accept-remember').checked = hasPasscodeCookie;
 </script>
 
 <script>

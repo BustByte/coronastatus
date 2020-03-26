@@ -178,7 +178,11 @@ router.post('/', createReportRateLimit, async (req, res) => {
   const acceptRemember = req.body['accept-remember'] === 'on';
 
   // Set cookie with passcode
-  if (acceptRemember) res.cookie('passcode', passcode, cookieOptions);
+  if (acceptRemember) {
+    res.cookie('passcode', passcode, cookieOptions);
+  } else {
+    res.clearCookie('passcode');
+  }
 
   reportRepo.addNewCovidReport(passcode, covidReport);
   if (req.body['passcode']) {
