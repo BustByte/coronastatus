@@ -1,6 +1,6 @@
-import { LANGUAGE } from '../../config.json';
+import config from '../config';
 
-export type Locale = 'no' | 'nl' | 'en' | 'sk' | 'it' | 'se';
+export type Locale = 'no' | 'nl' | 'en' | 'se' | 'es-MX' | 'sk' | 'it' | 'tr';
 
 type Urls = {
   [locale in Locale]: {
@@ -56,6 +56,16 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistik'
   },
+  'es-MX': {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
   sk: {
     submitReport: '/',
     profile: '/zdravotny-stav',
@@ -75,7 +85,17 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistiche'
+  },
+  tr: {
+    submitReport: '/',
+    profile: '/profil',
+    privacyPolicy: '/gizlilik-bildirimi',
+    map: '/harita',
+    contributors: '/katkida-bulunanlar',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/istatistikler'
   }
 };
 
-export const urls = localeAwareUrls[LANGUAGE as Locale];
+export const urls = localeAwareUrls[config.LANGUAGE as Locale];

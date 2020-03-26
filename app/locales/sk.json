@@ -23,12 +23,12 @@
   "here": "tu",
   "About the service": "O službe",
   "In connection with the outbreak of COVID-19, many people have been tested for the virus, but due to lack of resources, the overwhelming majority have not been tested. It is therefore assumed that there are large missing numbers here in connection with the outbreak.": "V súvislosti s prepuknutím pandémie COVID-19 bolo na vírus testovaných veľa ľudí, ale z dôvodu nedostatku zdrojov sa drvivá väčšina netestovala. Preto sa predpokladá, že v súvislosti s ohniskom nákazy existuje veľké množstvo chýbajúcich údajov.",
-  "Using self-report, you can get a better picture of how many people have symptoms without exposing health workers to potential contamination hazards and without using up valuable infection control equipment that is already in short supply. We at Bustbyte, well helped by other volunteers, have created this tool in response to ": "Zaslaním vlastného reportu môžeme všetci získať lepšiu predstavu o tom, koľko ľudí má príznaky bez toho, aby boli zdravotnícki pracovníci vystavení potenciálnym nebezpečenstvám kontaminácie a bez spotrebovania cenného vybavenia na kontrolu infekcie, ktoré je nedostatkové. My v Bustbyte s pomocou iných dobrovoľníkov, sme vytvorili tento nástroj ako reakciu na tento článok",
+  "Using self-report, you can get a better picture of how many people have symptoms without exposing health workers to potential contamination hazards and without using up valuable infection control equipment that is already in short supply. We at Bustbyte, well helped by other volunteers, have created this tool in response to ": "Zaslaním vlastného reportu môžeme všetci získať lepšiu predstavu o tom, koľko ľudí má príznaky bez toho, aby boli zdravotnícki pracovníci vystavení potenciálnym nebezpečenstvám kontaminácie a bez spotrebovania cenného vybavenia na kontrolu infekcie, ktoré je nedostatkové. My v BustByte s pomocou iných dobrovoľníkov, sme vytvorili tento nástroj ako reakciu na tento článok",
   "this article": "tento článok",
   "as an attempt to chart these numbers.": "ako pokus vykresliť tieto čísla.",
   "This is not an official tool of the authorities, and for more information about the outbreak we refer to health authorities which always have updated information.": "Toto nie je oficiálny web slovenských štátnych orgánov. Pre viac informácií o ohnisku nákazy Vám odporúčame navštíviť štátom spravované stránky, ktoré poskytujú aktualizované informácie.",
   "Developed by": "Vytvorené spol.",
-  "BustByte AS": "BustByte AS",
+  "BustByte AS": "BustByte",
   "and": "a",
   "volunteers": "dobrovoľníkmi",
   "Privacy Policy": "Ochrana osobných údajov",
@@ -140,5 +140,7 @@
   "Close": "Zavrieť",
   "Contribute now": "Prispejte teraz",
   "Help us uncover and predict the corona spread in your area": "Pomôžte nám <span>odhaliť</span> a <span>predpovedať</span> šírenie korónov vo vašej oblasti",
-  "Numbers": "čísla"
+  "Numbers": "čísla",
+  "#washyourhands": "#wash<wbr/>your<wbr/>hands",
+  "#stayindoors": "#stay<wbr/>indoors"
 }
