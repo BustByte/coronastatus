@@ -13,6 +13,7 @@ import { getInstance } from './repository/SqlLiteDatabase';
 import { swaggerDocument } from './swagger';
 import { urls } from './domain/urls';
 import config from './config';
+import { ensureAllLocalesAreValidJSON } from './util/locale-validation';
 
 const app = express();
 const port = process.env.PORT || 7272;
@@ -135,6 +136,7 @@ async function initializeDatabase(): Promise<void> {
 }
 
 initializeDatabase().then(() => {
+  ensureAllLocalesAreValidJSON();
   app.listen(port);
   console.log(`API up and running on port ${port}`);
 });
