@@ -16,13 +16,15 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇨🇴 Colombia: https://coronastatus.co
 - 🇮🇹 Italy: https://coronastatus.it
 - 🇫🇷 France: https://coronastatus.fr
+- 🇲🇽 Mexico: https://coronastatus.mx
+- 🇺🇸 United States of America (USA): https://coronastatus.us
 - 🇸🇪 Sweden: coming soon
-- 🇲🇽 Mexico: coming soon
 - 🇮🇳 India: coming soon
 - 🇵🇭 Philippines: coming soon
 - 🇹🇷 Turkey: coming soon (work group Telegram chat: https://t.me/turkeycoronastatus)
 - 🇨🇦 Canada: coming soon
 - 🇧🇪 Belgium: coming soon
+- 🇺🇦 Ukraine: coming soon
 - 🇦🇺 Australia: coming soon
 - ... want one for your country? Join our community: https://t.me/onzecorona
 

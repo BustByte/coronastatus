@@ -94,6 +94,16 @@ const createReportRateLimit = rateLimit({
   keyGenerator: req => determineRemoteAddress(req)
 });
 
+const toSex = (inputValue: string): Sex => {
+  if (inputValue === 'male') {
+    return Sex.MALE;
+  }
+  if (inputValue === 'female') {
+    return Sex.FEMALE;
+  }
+  return Sex.OTHER;
+};
+
 const toSmokingHabit = (inputValue: string): SmokingHabit | undefined => {
   if (inputValue === 'currently-smoking') {
     return SmokingHabit.CURRENTLY;
@@ -133,10 +143,10 @@ router.post('/', createReportRateLimit, async (req, res) => {
 
   const covidReport: CovidReport = {
     age: req.body['age'],
-    postalCode: req.body['postal-code'],
+    postalCode: req.body['postal-code'].toUpperCase(),
     hasBeenTested: req.body['been-tested'] === 'yes',
     testResult: extractTestResult(req),
-    sex: req.body['gender'] === 'male' ? Sex.MALE : Sex.FEMALE,
+    sex: toSex(req.body['gender']),
     symptoms: {
       [Symptom.DRY_COUGH]: req.body['symptom-cough'] === 'on',
       [Symptom.EXHAUSTION]: req.body['symptom-fatigue'] === 'on',
