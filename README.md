@@ -23,11 +23,18 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇪🇸 Spain: https://coronastatus.es
 - 🇨🇦 Canada: https://coronastatus.ca
 - 🇦🇺 Australia: https://coronastatusau.org
+- 🇸🇬 Singapore: https://coronastatus.sg
+- 🇲🇾 Malaysia: https://coronastatusmy.org
+- 🇦🇷 Argentina: https://coronavirus.com.ar
+- 🇲🇹 Malta: https://coronastatusmt.com
 - 🇸🇪 Sweden: coming soon
 - 🇮🇳 India: coming soon
 - 🇵🇭 Philippines: coming soon
 - 🇹🇷 Turkey: coming soon (work group Telegram chat: https://t.me/turkeycoronastatus)
 - 🇧🇪 Belgium: coming soon
+- 🇮🇸 Iceland: coming soon
+- 🇨🇭 Switzerland: coming soon
+- 🇩🇪 Germany: coming soon
 - ... want one for your country? Join our community: https://t.me/onzecorona
 
 ## Why?

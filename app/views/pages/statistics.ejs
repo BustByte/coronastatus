@@ -282,12 +282,14 @@ function numberWithSpaces(x) {
           data: totalReportStats.numberOfReportsWithSymptomsStat,
           backgroundColor: 'rgba(255, 99, 132, 0.2)',
           borderColor: 'salmon',
+          cubicInterpolationMode: 'monotone'
         },
         {
           label: '<%= __(`Reports`) %>',
           data: totalReportStats.numberOfReportsStat,
           backgroundColor: 'rgba(0, 200, 255, 0.2)',
-          borderColor: 'lightblue'
+          borderColor: 'lightblue',
+          cubicInterpolationMode: 'monotone'
         }
       ]
     },
@@ -339,12 +341,14 @@ function numberWithSpaces(x) {
           data: infectedAndContactStats.numberOfInfectedStat,
           backgroundColor: 'rgba(255, 99, 132, 0.2)',
           borderColor: 'salmon',
+          cubicInterpolationMode: 'monotone'
         },
         {
           label: `<%- __("Close contact with someone who has tested positive") %>`,
           data: infectedAndContactStats.numberOfInContactStat,
           backgroundColor: 'rgba(0, 200, 255, 0.2)',
-          borderColor: 'lightblue'
+          borderColor: 'lightblue',
+          cubicInterpolationMode: 'monotone'
         }
       ]
     },

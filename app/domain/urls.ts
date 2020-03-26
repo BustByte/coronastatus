@@ -1,12 +1,13 @@
 import config from '../config';
 
 export type Locale =
-   'en-NG'
+  | 'en-NG'
   | 'no'
   | 'nl'
   | 'en' 
   | 'en-US'
   | 'en-AU'
+  | 'en-MT'
   | 'es-MX'
   | 'sk'
   | 'it'
@@ -14,11 +15,13 @@ export type Locale =
   | 'dk'
   | 'ua'
   | 'es-CO'
+  | 'es-AR'
   | 'fr-FR'
   | 'es-ES'
   | 'ca'
-    
-  ;
+  | 'en-SG'
+  | 'ms-MY'
+  | 'se';
 
 type Urls = {
   [locale in Locale]: {
@@ -74,7 +77,27 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
+  'es-AR': {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
   'en-AU': {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  'en-MT': {
     submitReport: '/',
     profile: '/healthcondition',
     privacyPolicy: '/privacy-statement',
@@ -184,6 +207,36 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
+  'en-SG': {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  'ms-MY': {
+    submitReport: '/',
+    profile: '/keadaankesihatan',
+    privacyPolicy: '/kenyataan-privasi',
+    map: '/peta',
+    contributors: '/penyumbang',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistik'
+  },
+  se: {
+    submitReport: '/',
+    profile: '/halsotillstand',
+    privacyPolicy: '/integritetspolicy',
+    map: '/karta',
+    contributors: '/medverkare',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistik'
+  },
   'en-NG': {
     submitReport: '/',
     profile: '/healthcondition',
@@ -193,8 +246,7 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics'
-  }
-  
+  },
 };
 
 export const urls = localeAwareUrls[config.LANGUAGE as Locale];
