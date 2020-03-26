@@ -1,6 +1,16 @@
-import { LANGUAGE } from '../../config.json';
+import config from '../config';
 
-export type Locale = 'no' | 'nl' | 'en' | 'sk' | 'it';
+export type Locale =
+  | 'no'
+  | 'nl'
+  | 'en'
+  | 'es-MX'
+  | 'sk'
+  | 'it'
+  | 'tr'
+  | 'dk'
+  | 'es-CO'
+  | 'fr-FR';
 
 type Urls = {
   [locale in Locale]: {
@@ -46,10 +56,20 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
+  'es-MX': {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
   sk: {
     submitReport: '/',
     profile: '/zdravotny-stav',
-    privacyPolicy: '/ochrana-udajov',
+    privacyPolicy: '/ochrana-sukromia',
     map: '/mapa',
     contributors: '/prispievatelia',
     api: '/api',
@@ -65,7 +85,47 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistiche'
+  },
+  tr: {
+    submitReport: '/',
+    profile: '/profil',
+    privacyPolicy: '/gizlilik-bildirimi',
+    map: '/harita',
+    contributors: '/katkida-bulunanlar',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/istatistikler'
+  },
+  dk: {
+    submitReport: '/',
+    profile: '/helbredstilstand',
+    privacyPolicy: '/privat-politik',
+    map: '/kort',
+    contributors: '/frivillige',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistikker'
+  },
+  'es-CO': {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
+  'fr-FR': {
+    submitReport: '/',
+    profile: '/profil',
+    privacyPolicy: '/politique-de-confidentialite',
+    map: '/carte',
+    contributors: '/contributeurs',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistiques'
   }
 };
 
-export const urls = localeAwareUrls[LANGUAGE as Locale];
+export const urls = localeAwareUrls[config.LANGUAGE as Locale];

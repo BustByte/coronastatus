@@ -309,7 +309,7 @@ function numberWithSpaces(x) {
           'lightblue',
         ],
       }],
-      labels: ['<%= __(`In close contact with symptoms`) %>', '<%= __(`In close contact without symptoms`) %>']
+      labels: [`<%- __(`In close contact with symptoms`) %>`, `<%- __(`In close contact without symptoms`) %>`]
     },
     options: {}
   });
@@ -329,7 +329,7 @@ function numberWithSpaces(x) {
           borderColor: 'salmon',
         },
         {
-          label: '<%= __("Close contact with someone who has tested positive") %>',
+          label: `<%- __("Close contact with someone who has tested positive") %>`,
           data: infectedAndContactStats.numberOfInContactStat,
           backgroundColor: 'rgba(0, 200, 255, 0.2)',
           borderColor: 'lightblue'
