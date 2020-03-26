@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<%
+// If url contains corona, make the rest it white
+const name =  baseUrl.replace('corona', '<span style="color: #CAEAE9;" >corona</span>')
+%>
+  <head>
+    <title>social images generator</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Mada:400,400i,700"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="/static/tailwind.min.css?v=<%= locals.cacheKey %>"
+      type="text/css"
+      media="all"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="/static/app.css?v=<%= locals.cacheKey %>"
+      type="text/css"
+      media="all"
+    />
+
+    <style>
+      html {
+        box-sizing: border-box;
+        /* overwriting font stack to get IBM Plex Sans as consistent fallback */
+        font-family: font-family: 'Helvetica Neue', 'IBM Plex Sans', system-ui, -apple-system, BlinkMacSystemFont,
+          'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+          'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+      }
+      *, *::after, *::before {
+        box-sizing: inherit;
+        margin: 0;
+        padding: 0;
+      }
+
+      .twitter-card {
+        position: relative;
+        width: 2048px;
+        height: 1024px;
+        background: url(/static/images/twitter-card-bg.png) no-repeat 0 0;
+        padding-right: 566px;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        color: #CAEAE9;
+      }
+      .twitter-card .title {
+        line-height: 1;
+        font-size: 144px;
+        font-weight: 600;
+      }
+      .twitter-card h1 {
+        line-height: 1;
+        width: 850px;
+        font-size: 72px;
+        font-weight: normal;
+        text-align: right;
+        padding: 0;
+        margin: 70px 0 0;
+      }
+
+      .twitter-card .cta-button {
+        font-size: 44px;
+        margin-top: 80px;
+        font-weight: 500;
+        padding-right: 100px;
+        padding-left: 80px;
+      }
+      .twitter-card .cta-button svg {
+        width: 100px;
+        height: 100px;
+      }
+
+      .banner {
+        position: relative;
+        width: 1456px;
+        height: 180px;
+        background: url(/static/images/banner-bg.png) no-repeat 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .banner .title {
+        font-size: 90px;
+        line-height: 1;
+        font-weight: 500;
+      }
+      .banner h1 {
+        text-align: center;
+        margin: 0 auto;
+        padding: 0;
+        font-size: 26px;
+        line-height: 32px;
+        max-width: 50rem;
+      }
+      .banner .cta-button {
+        position: absolute;
+        right: 27px;
+        top: 62px;
+        font-size: 26px;
+        font-weight: 500;
+        padding-right: 36px;
+        padding-left: 30px;
+      }
+      .banner .cta-button svg {
+        width: 48px;
+        height: 48px;
+      }
+
+      .twitter-header {
+        width: 1500px;
+        height: 500px;
+        background: url(/static/images/twitter-header-bg.png) no-repeat 0 0;
+        padding-top:48px;
+        padding-right:77px;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-end;
+        justify-content:flex-start;
+        text-align:right;
+      }
+      .twitter-header .title {
+        font-size:96px;
+        line-height: 1;
+        font-weight: 500;
+      }
+      .twitter-header h1 {
+        font-size: 36px;
+        max-width: 52rem;
+        font-weight: 500;
+      }
+      .twitter-header .cta-button {
+        font-size: 44px;
+        margin-top: 25px;
+        font-weight: 500;
+        padding-right: 80px;
+        padding-left: 70px;
+      }
+      .twitter-header .cta-button svg {
+        width: 100px;
+        height: 100px;
+      }
+      </style>
+  </head>
+
+  <body>
+    <div class="twitter-card">
+      <div class="title" style="color: #F2CC20;">
+        <%- name %>
+      </div>
+
+      <h1 class="text-cvs-green-light">
+        <%- __("Help us uncover and predict the corona spread in your area").replace(/<span>/g, '<span class="text-cvs-gold">') %>
+      </h1>
+
+        <a
+          id="home-cta-button"
+          href="#contribute"
+          class="cta-button w-auto custom-nav-link py-4 e text-white rounded-full"
+        >
+          <svg
+            class="inline-block h-6 w-6 mr-2 mb-1"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M34 40H44V36C43.9999 34.7531 43.6113 33.5371 42.8883 32.5213C42.1652 31.5054 41.1436 30.74 39.9655 30.3315C38.7874 29.923 37.5112 29.8918 36.3145 30.242C35.1178 30.5923 34.0599 31.3067 33.288 32.286L34 40ZM34 40H14H34ZM34 40V36C34 34.688 33.748 33.434 33.288 32.286L34 40ZM14 40H4V36C4.00009 34.7531 4.38867 33.5371 5.11172 32.5213C5.83477 31.5054 6.85637 30.74 8.0345 30.3315C9.21263 29.923 10.4888 29.8918 11.6855 30.242C12.8822 30.5923 13.9401 31.3067 14.712 32.286L14 40ZM14 40V36C14 34.688 14.252 33.434 14.712 32.286L14 40ZM14.712 32.286C15.4547 30.4299 16.7365 28.8389 18.392 27.7182C20.0475 26.5976 22.0008 25.9986 24 25.9986C25.9992 25.9986 27.9525 26.5976 29.608 27.7182C31.2635 28.8389 32.5453 30.4299 33.288 32.286H14.712ZM30 14C30 15.5913 29.3679 17.1174 28.2426 18.2426C27.1174 19.3679 25.5913 20 24 20C22.4087 20 20.8826 19.3679 19.7574 18.2426C18.6321 17.1174 18 15.5913 18 14C18 12.4087 18.6321 10.8826 19.7574 9.75736C20.8826 8.63214 22.4087 8 24 8C25.5913 8 27.1174 8.63214 28.2426 9.75736C29.3679 10.8826 30 12.4087 30 14V14ZM42 20C42 21.0609 41.5786 22.0783 40.8284 22.8284C40.0783 23.5786 39.0609 24 38 24C36.9391 24 35.9217 23.5786 35.1716 22.8284C34.4214 22.0783 34 21.0609 34 20C34 18.9391 34.4214 17.9217 35.1716 17.1716C35.9217 16.4214 36.9391 16 38 16C39.0609 16 40.0783 16.4214 40.8284 17.1716C41.5786 17.9217 42 18.9391 42 20ZM14 20C14 21.0609 13.5786 22.0783 12.8284 22.8284C12.0783 23.5786 11.0609 24 10 24C8.93913 24 7.92172 23.5786 7.17157 22.8284C6.42143 22.0783 6 21.0609 6 20C6 18.9391 6.42143 17.9217 7.17157 17.1716C7.92172 16.4214 8.93913 16 10 16C11.0609 16 12.0783 16.4214 12.8284 17.1716C13.5786 17.9217 14 18.9391 14 20Z"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+          <%= __("Contribute now") %></a
+        >
+    </div>
+
+
+    <div class="banner">
+      <div class="title" style="color: #F2CC20;">
+        <%- name %>
+      </div>
+
+      <h1 class="text-cvs-green-light">
+        <%- __("Help us uncover and predict the corona spread in your area").replace(/<span>/g, '<span class="text-cvs-gold">') %>
+      </h1>
+
+        <a
+          id="home-cta-button"
+          href="#contribute"
+          class="cta-button w-auto custom-nav-link py-4 e text-white rounded-full"
+        >
+          <svg
+            class="inline-block h-6 w-6 mr-2 mb-1"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M34 40H44V36C43.9999 34.7531 43.6113 33.5371 42.8883 32.5213C42.1652 31.5054 41.1436 30.74 39.9655 30.3315C38.7874 29.923 37.5112 29.8918 36.3145 30.242C35.1178 30.5923 34.0599 31.3067 33.288 32.286L34 40ZM34 40H14H34ZM34 40V36C34 34.688 33.748 33.434 33.288 32.286L34 40ZM14 40H4V36C4.00009 34.7531 4.38867 33.5371 5.11172 32.5213C5.83477 31.5054 6.85637 30.74 8.0345 30.3315C9.21263 29.923 10.4888 29.8918 11.6855 30.242C12.8822 30.5923 13.9401 31.3067 14.712 32.286L14 40ZM14 40V36C14 34.688 14.252 33.434 14.712 32.286L14 40ZM14.712 32.286C15.4547 30.4299 16.7365 28.8389 18.392 27.7182C20.0475 26.5976 22.0008 25.9986 24 25.9986C25.9992 25.9986 27.9525 26.5976 29.608 27.7182C31.2635 28.8389 32.5453 30.4299 33.288 32.286H14.712ZM30 14C30 15.5913 29.3679 17.1174 28.2426 18.2426C27.1174 19.3679 25.5913 20 24 20C22.4087 20 20.8826 19.3679 19.7574 18.2426C18.6321 17.1174 18 15.5913 18 14C18 12.4087 18.6321 10.8826 19.7574 9.75736C20.8826 8.63214 22.4087 8 24 8C25.5913 8 27.1174 8.63214 28.2426 9.75736C29.3679 10.8826 30 12.4087 30 14V14ZM42 20C42 21.0609 41.5786 22.0783 40.8284 22.8284C40.0783 23.5786 39.0609 24 38 24C36.9391 24 35.9217 23.5786 35.1716 22.8284C34.4214 22.0783 34 21.0609 34 20C34 18.9391 34.4214 17.9217 35.1716 17.1716C35.9217 16.4214 36.9391 16 38 16C39.0609 16 40.0783 16.4214 40.8284 17.1716C41.5786 17.9217 42 18.9391 42 20ZM14 20C14 21.0609 13.5786 22.0783 12.8284 22.8284C12.0783 23.5786 11.0609 24 10 24C8.93913 24 7.92172 23.5786 7.17157 22.8284C6.42143 22.0783 6 21.0609 6 20C6 18.9391 6.42143 17.9217 7.17157 17.1716C7.92172 16.4214 8.93913 16 10 16C11.0609 16 12.0783 16.4214 12.8284 17.1716C13.5786 17.9217 14 18.9391 14 20Z"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+          <%= __("Contribute now") %></a
+        >
+    </div>
+
+    <div class="twitter-header">
+      <div class="title" style="color: #F2CC20;">
+        <%- name %>
+      </div>
+
+      <h1 class="text-cvs-green-light">
+        <%- __("Help us uncover and predict the corona spread in your area").replace(/<span>/g, '<span class="text-cvs-gold">') %>
+      </h1>
+
+        <a
+          id="home-cta-button"
+          href="#contribute"
+          class="cta-button w-auto custom-nav-link py-4 e text-white rounded-full"
+        >
+          <svg
+            class="inline-block h-6 w-6 mr-2 mb-1"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M34 40H44V36C43.9999 34.7531 43.6113 33.5371 42.8883 32.5213C42.1652 31.5054 41.1436 30.74 39.9655 30.3315C38.7874 29.923 37.5112 29.8918 36.3145 30.242C35.1178 30.5923 34.0599 31.3067 33.288 32.286L34 40ZM34 40H14H34ZM34 40V36C34 34.688 33.748 33.434 33.288 32.286L34 40ZM14 40H4V36C4.00009 34.7531 4.38867 33.5371 5.11172 32.5213C5.83477 31.5054 6.85637 30.74 8.0345 30.3315C9.21263 29.923 10.4888 29.8918 11.6855 30.242C12.8822 30.5923 13.9401 31.3067 14.712 32.286L14 40ZM14 40V36C14 34.688 14.252 33.434 14.712 32.286L14 40ZM14.712 32.286C15.4547 30.4299 16.7365 28.8389 18.392 27.7182C20.0475 26.5976 22.0008 25.9986 24 25.9986C25.9992 25.9986 27.9525 26.5976 29.608 27.7182C31.2635 28.8389 32.5453 30.4299 33.288 32.286H14.712ZM30 14C30 15.5913 29.3679 17.1174 28.2426 18.2426C27.1174 19.3679 25.5913 20 24 20C22.4087 20 20.8826 19.3679 19.7574 18.2426C18.6321 17.1174 18 15.5913 18 14C18 12.4087 18.6321 10.8826 19.7574 9.75736C20.8826 8.63214 22.4087 8 24 8C25.5913 8 27.1174 8.63214 28.2426 9.75736C29.3679 10.8826 30 12.4087 30 14V14ZM42 20C42 21.0609 41.5786 22.0783 40.8284 22.8284C40.0783 23.5786 39.0609 24 38 24C36.9391 24 35.9217 23.5786 35.1716 22.8284C34.4214 22.0783 34 21.0609 34 20C34 18.9391 34.4214 17.9217 35.1716 17.1716C35.9217 16.4214 36.9391 16 38 16C39.0609 16 40.0783 16.4214 40.8284 17.1716C41.5786 17.9217 42 18.9391 42 20ZM14 20C14 21.0609 13.5786 22.0783 12.8284 22.8284C12.0783 23.5786 11.0609 24 10 24C8.93913 24 7.92172 23.5786 7.17157 22.8284C6.42143 22.0783 6 21.0609 6 20C6 18.9391 6.42143 17.9217 7.17157 17.1716C7.92172 16.4214 8.93913 16 10 16C11.0609 16 12.0783 16.4214 12.8284 17.1716C13.5786 17.9217 14 18.9391 14 20Z"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+          <%= __("Contribute now") %></a
+        >
+    </div>
+  </body>
+
+</html>
