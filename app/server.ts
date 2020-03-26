@@ -82,7 +82,7 @@ app.set('views', [
 
 app.use((req, res, next) => {
   if (req.header('x-forwarded-proto') !== 'https' && !isDevelopmentEnv) {
-    res.redirect(`https://${req.header('host')}${req.url}`)
+    res.redirect(`https://${req.header('host')}${req.url}`);
   } else {
     next();
   }
