@@ -14,7 +14,7 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇸🇰 Slovakia: https://coronastatus.sk
 - 🇩🇰 Denmark: https://coronastatus.dk
 - 🇨🇴 Colombia: https://coronastatus.co
-- 🇮🇹 Italy: https://coronastatus.it / https://contacoronavirus.it
+- 🇮🇹 Italy: https://coronastatus.it
 - 🇫🇷 France: https://coronastatus.fr
 - 🇸🇪 Sweden: coming soon
 - 🇲🇽 Mexico: coming soon
