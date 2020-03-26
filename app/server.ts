@@ -128,7 +128,7 @@ async function initializeDatabase(): Promise<void> {
   const numberOfTables = (await db.listTables()).length;
   if (numberOfTables === 0) {
     await db.applyMigrationScripts(
-      path.join(__dirname, 'migrations', 'schema_pg')
+      path.join(__dirname, 'migrations', `schema_${db.type}`)
     );
     console.info('Database was clean, applying migration scripts');
   } else {
