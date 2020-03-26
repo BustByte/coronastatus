@@ -18,7 +18,7 @@ export class PostgresDatabase {
   db: Pool;
   type: DatabaseType;
 
-  constructor(parameters: Object) {
+  constructor(parameters: Record<string, string>) {
     this.db = new Pool(parameters);
     this.type = 'pg';
   }
@@ -30,7 +30,7 @@ export class PostgresDatabase {
    * @memberof PostgresDatabase
    */
   async listTables(): Promise<TableName[]> {
-    return await this.getAll<TableName>(
+    return this.getAll<TableName>(
       "SELECT table_name FROM information_schema.tables WHERE table_schema='public' order by table_name"
     );
   }
@@ -116,7 +116,7 @@ export class PostgresDatabase {
    * @memberof PostgresDatabase
    */
   async closeConnection(): Promise<void> {
-    return await this.db.end();
+    return this.db.end();
   }
 
   async dropTables(): Promise<void> {
@@ -131,7 +131,9 @@ export class PostgresDatabase {
 }
 
 let instance: PostgresDatabase | null = null;
-export const getInstance = (parameters: Object): PostgresDatabase => {
+export const getInstance = (
+  parameters: Record<string, string>
+): PostgresDatabase => {
   if (instance === null) {
     instance = new PostgresDatabase(parameters);
   }

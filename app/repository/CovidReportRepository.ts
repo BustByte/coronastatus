@@ -76,7 +76,9 @@ export class CovidReportRepository {
 
   async countNumberOfReports(): Promise<number | undefined> {
     return this.db
-      .getFirst<{ count: number }>(queries[this.db.type].COUNT_NUMBER_OF_REPORTS)
+      .getFirst<{ count: number }>(
+        queries[this.db.type].COUNT_NUMBER_OF_REPORTS
+      )
       .then(row => row?.count);
   }
 
