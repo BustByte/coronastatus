@@ -13,6 +13,7 @@ export type Locale =
   | 'dk'
   | 'ua'
   | 'es-CO'
+  | 'es-AR'
   | 'fr-FR'
   | 'es-ES'
   | 'ca'
@@ -71,6 +72,16 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics'
+  },
+  'es-AR': {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
   },
   'en-AU': {
     submitReport: '/',
