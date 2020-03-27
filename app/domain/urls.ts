@@ -180,7 +180,7 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics'
-  },
+  }
 };
 
 export const urls = localeAwareUrls[config.LANGUAGE as Locale];
