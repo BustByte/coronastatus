@@ -1,7 +1,8 @@
-<% const { show = true, menu = true, home = false, fullscreen = false } = locals; %>
+<% const { show = true, menu = true, home = false, fullscreen = false, lastCommit = false } = locals; %>
 
 <!DOCTYPE html>
 <html lang="<%= locals.htmlLang %>">
+<!-- <% if (lastCommit) { %>Current commit: https://github.com/BustByte/coronastatus/commits/<%= lastCommit %><% } else { %>Get our code here: https://github.com/BustByte/coronastatus<% } %>  -->
 <head>
 <%- include('partials/head') -%>
 </head>

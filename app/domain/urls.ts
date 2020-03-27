@@ -1,6 +1,26 @@
 import config from '../config';
 
-export type Locale = 'no' | 'nl' | 'en' | 'sk' | 'it' | 'tr';
+export type Locale =
+  | 'no'
+  | 'nl'
+  | 'en'
+  | 'en-US'
+  | 'en-AU'
+  | 'en-MT'
+  | 'es-MX'
+  | 'sk'
+  | 'it'
+  | 'tr'
+  | 'dk'
+  | 'ua'
+  | 'es-CO'
+  | 'es-AR'
+  | 'fr-FR'
+  | 'es-ES'
+  | 'ca'
+  | 'en-SG'
+  | 'ms-MY'
+  | 'se';
 
 type Urls = {
   [locale in Locale]: {
@@ -46,10 +66,60 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
+  'en-US': {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  'es-AR': {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
+  'en-AU': {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  'en-MT': {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  'es-MX': {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
   sk: {
     submitReport: '/',
     profile: '/zdravotny-stav',
-    privacyPolicy: '/ochrana-udajov',
+    privacyPolicy: '/ochrana-sukromia',
     map: '/mapa',
     contributors: '/prispievatelia',
     api: '/api',
@@ -75,6 +145,96 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/istatistikler'
+  },
+  dk: {
+    submitReport: '/',
+    profile: '/helbredstilstand',
+    privacyPolicy: '/privat-politik',
+    map: '/kort',
+    contributors: '/frivillige',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistikker'
+  },
+  ua: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  'es-CO': {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
+  'fr-FR': {
+    submitReport: '/',
+    profile: '/profil',
+    privacyPolicy: '/politique-de-confidentialite',
+    map: '/carte',
+    contributors: '/contributeurs',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistiques'
+  },
+  'es-ES': {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
+  ca: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  'en-SG': {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  'ms-MY': {
+    submitReport: '/',
+    profile: '/keadaankesihatan',
+    privacyPolicy: '/kenyataan-privasi',
+    map: '/peta',
+    contributors: '/penyumbang',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistik'
+  },
+  se: {
+    submitReport: '/',
+    profile: '/halsotillstand',
+    privacyPolicy: '/integritetspolicy',
+    map: '/karta',
+    contributors: '/medverkare',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistik'
   }
 };
 

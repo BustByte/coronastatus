@@ -13,6 +13,7 @@
     "build:css": "postcss tailwind.config.css -o static/tailwind.min.css"
   },
   "dependencies": {
+    "@types/pg": "^7.14.3",
     "autoprefixer": "^9.7.4",
     "body-parser": "^1.19.0",
     "connect-sqlite3": "^0.9.11",
@@ -25,6 +26,7 @@
     "express-rate-limit": "^5.1.1",
     "i18n": "^0.8.6",
     "node-fetch": "^2.6.0",
+    "pg": "^7.18.2",
     "postcss-cli": "^7.1.0",
     "sqlite3": "^4.1.1",
     "swagger-ui-express": "^4.1.3",
