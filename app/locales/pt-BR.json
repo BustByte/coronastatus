@@ -1,5 +1,5 @@
 {
-  "Postal code": "CEP",
+  "Postal code": "CEP sem traço",
   "Important": "Importante",
   "Page not found": "Página não encontrada",
   "We can't find the page or service you're looking for": "Não conseguimos encontrar a página ou serviço que você está procurando.",
@@ -72,7 +72,7 @@
   "Biological gender": "Sexo biológico / sexo",
   "Female": "Feminino",
   "Male": "Masculino",
-  "Zip code": "CEP",
+  "Zip code": "CEP sem traços",
   "Testing and symptoms": "Teste e sintomas",
   "Have you been in close contact with someone who was tested positive for COVID-19?": "Você já esteve em contato próximo com alguém que testou positivo para COVID-19?",
   "Yes": "Sim",
