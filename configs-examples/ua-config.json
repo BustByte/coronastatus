@@ -1,0 +1,15 @@
+{
+  "BASE_URL": "coronastatus.org.ua",
+  "LANGUAGE": "ua",
+  "COUNTRY": "Ukraine",
+  "MAP_CENTER": "50.4546600, 30.5238000",
+  "MAP_ZOOM": 5,
+  "MAP_MAX_ZOOM": 13,
+  "TWITTER": "coronastatusUA",
+  "ZIP_LENGTH": 5,
+  "ZIP_PLACEHOLDER": "01001",
+  "ZIP_GUIDE": true,
+  "REDIRECT_TO_GOVERNMENT": false,
+  "PASSCODE_LENGTH": 4,
+  "DB_PATH": "./covid_db"
+}

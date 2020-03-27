@@ -38,6 +38,8 @@
   "www.nhs.uk": "nhs.uk",
   "Go to the National health service website": "Go to the National health service website",
   "Report status by zip code": "Report status by zip code",
+  "What is my Zip code?": "What is my Zip code?",
+  "https://www.whatismyzip.com": "https://www.whatismyzip.com",
   "The markers correspond to coordinates of zip codes, they have nothing to do with individuals.": "The markers correspond to coordinates of zip codes, they have nothing to do with individuals.",
   "Healthy": "Healthy",
   "Has symptoms": "Have symptoms",
@@ -170,12 +172,17 @@
   "I currently smoke": "I currently smoke",
   "I used to smoke": "I used to smoke",
   "I have never smoked": "I have never smoked",
-  "What is your current body temperature? (Celcius)": "What is your current body temperature in Celcius?",
+  "What is your current body temperature? (Celcius)": "What is your current body temperature in Celsius?",
   "This field is optional": "This field is optional",
   "Close": "Close",
   "Contribute now": "Contribute now",
   "Help us uncover and predict the corona spread in your area": "Help us <span>uncover</span> and <span>predict</span> the corona spread in your area",
   "Numbers": "Numbers",
   "#washyourhands": "#wash<wbr/>your<wbr/>hands",
-  "#stayindoors": "#stay<wbr/>indoors"
+  "#stayindoors": "#stay<wbr/>home",
+  "In isolation due to orders from the government": "In isolation due to orders from the government",
+  "In isolation due to COVID-19 infection": "In isolation due to COVID-19 infection",
+  "Some questions and alternatives were not a part of the form from the beginning:": "Some questions and alternatives were not a part of the form from the beginning:",
+  "March 27": "March 27",
+  "Other": "Other"
 }

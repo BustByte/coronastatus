@@ -94,6 +94,16 @@ const createReportRateLimit = rateLimit({
   keyGenerator: req => determineRemoteAddress(req)
 });
 
+const toSex = (inputValue: string): Sex => {
+  if (inputValue === 'male') {
+    return Sex.MALE;
+  }
+  if (inputValue === 'female') {
+    return Sex.FEMALE;
+  }
+  return Sex.OTHER;
+};
+
 const toSmokingHabit = (inputValue: string): SmokingHabit | undefined => {
   if (inputValue === 'currently-smoking') {
     return SmokingHabit.CURRENTLY;
@@ -117,6 +127,12 @@ const toIsolationStatus = (inputValue: string): IsolationStatus | undefined => {
   if (inputValue === 'isolation-due-to-contact') {
     return IsolationStatus.ISOLATION_DUE_TO_CONTACT;
   }
+  if (inputValue === 'isolation-due-to-covid-19') {
+    return IsolationStatus.ISOLATION_DUE_TO_COVID_19;
+  }
+  if (inputValue === 'isolation-due-to-government') {
+    return IsolationStatus.ISOLATION_DUE_TO_GOVERNMENT_ORDERS;
+  }
   return undefined;
 };
 
@@ -133,10 +149,10 @@ router.post('/', createReportRateLimit, async (req, res) => {
 
   const covidReport: CovidReport = {
     age: req.body['age'],
-    postalCode: req.body['postal-code'],
+    postalCode: req.body['postal-code'].toUpperCase(),
     hasBeenTested: req.body['been-tested'] === 'yes',
     testResult: extractTestResult(req),
-    sex: req.body['gender'] === 'male' ? Sex.MALE : Sex.FEMALE,
+    sex: toSex(req.body['gender']),
     symptoms: {
       [Symptom.DRY_COUGH]: req.body['symptom-cough'] === 'on',
       [Symptom.EXHAUSTION]: req.body['symptom-fatigue'] === 'on',
@@ -168,7 +184,11 @@ router.post('/', createReportRateLimit, async (req, res) => {
   const acceptRemember = req.body['accept-remember'] === 'on';
 
   // Set cookie with passcode
-  if (acceptRemember) res.cookie('passcode', passcode, cookieOptions);
+  if (acceptRemember) {
+    res.cookie('passcode', passcode, cookieOptions);
+  } else {
+    res.clearCookie('passcode');
+  }
 
   reportRepo.addNewCovidReport(passcode, covidReport);
   if (req.body['passcode']) {

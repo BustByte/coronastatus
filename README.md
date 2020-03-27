@@ -1,11 +1,5 @@
 # Coronastatus
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
 ![](https://github.com/BustByte/coronastatus/workflows/test/badge.svg)
 
 > Report your health status to get a better overview of COVID-19 in your country
@@ -19,18 +13,27 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇳🇴 Norway: https://coronastatus.no
 - 🇳🇱 The Netherlands: https://coronastatus.nl
 - 🇸🇰 Slovakia: https://coronastatus.sk
-- 🇲🇽 Mexico: coming soon
-- 🇮🇹 Italy: coming soon
+- 🇩🇰 Denmark: https://coronastatus.dk
+- 🇨🇴 Colombia: https://coronastatus.co
+- 🇮🇹 Italy: https://coronastatus.it
+- 🇫🇷 France: https://coronastatus.fr
+- 🇲🇽 Mexico: https://coronastatus.mx
+- 🇺🇸 United States of America (USA): https://coronastatus.us
+- 🇺🇦 Ukraine: https://coronastatus.org.ua
+- 🇪🇸 Spain: https://coronastatus.es
+- 🇨🇦 Canada: https://coronastatus.ca
+- 🇦🇺 Australia: https://coronastatusau.org
+- 🇸🇬 Singapore: https://coronastatus.sg
+- 🇲🇾 Malaysia: https://coronastatusmy.org
+- 🇦🇷 Argentina: https://coronavirus.com.ar
+- 🇸🇪 Sweden: coming soon
 - 🇮🇳 India: coming soon
 - 🇵🇭 Philippines: coming soon
-- 🇸🇪 Sweden: coming soon
 - 🇹🇷 Turkey: coming soon (work group Telegram chat: https://t.me/turkeycoronastatus)
-- 🇨🇦 Canada: coming soon
-- 🇫🇷 France: coming soon
 - 🇧🇪 Belgium: coming soon
-- 🇩🇰 Denmark: https://coronastatus.dk
-- 🇨🇴 Colombia: coming soon
-- 🇦🇺 Australia: coming soon
+- 🇮🇸 Iceland: coming soon
+- 🇨🇭 Switzerland: coming soon
+- 🇩🇪 Germany: coming soon
 - ... want one for your country? Join our community: https://t.me/onzecorona
 
 ## Why?
@@ -66,7 +69,7 @@ Adding a new language should be pretty straightforward. If you need help, you ca
   - List of postal code coordinates (we have a script for this [Check Here](app/locales/README.md)).
 - Configure URL paths in `app/domain/urls.ts`
 - Write a privacy statement in `app/views/privacy-statement/{LANGUAGE}-lang-privacy-statement.ejs`
-- Add a iamge that will used when sharing the url in social media in `/static/{LANGUAGE}/social-media.png`. @amritnagi or @adriaanvanrossum can create one if you provide them with text.
+- Add an image that will be used when sharing the url on social media in `/static/{LANGUAGE}/social-media.png`. @amritnagi or @adriaanvanrossum can create one if you provide them with text.
 - You also need a domain (preferably `coronastatus.tld` if it is available), and a server to run the app on. We can assist you with setting this up.
 
 ## Start developing
@@ -147,20 +150,4 @@ Download & install:
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://www.juniq.net"><img src="https://avatars3.githubusercontent.com/u/4834459?v=4" width="100px;" alt=""/><br /><sub><b>Stano Bo</b></sub></a><br /><a href="#translation-sbocinec" title="Translation">🌍</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+We're working on updating this section to include everyone who has devoted time and attention to this project. Stay put!

@@ -2,6 +2,7 @@
 metaDescription = __(`Make your voluntary contribution to the health care system
 and register your health condition now. Together we can create an overview.`);
 const baseUrl = locals.baseUrl; const imageSubfolder = locals.imageSubfolder;
+const ogUrl = `https://${baseUrl}`;
 const shareImageUrl =
 `https://${baseUrl}/static/${imageSubfolder}/social-media.png`; %>
 
@@ -58,6 +59,14 @@ const shareImageUrl =
 <meta
   property="og:site_name"
   content="<%= (typeof title === 'string') ? title : '' %>"
+/>
+<meta
+  property="og:type"
+  content="website"
+/>
+<meta
+  property="og:url"
+  content="<%= (typeof ogUrl === 'string') ? ogUrl : '' %>"
 />
 
 <!-- Twitter -->

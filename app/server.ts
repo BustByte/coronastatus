@@ -9,7 +9,7 @@ import mapRoutes from './routes/map-routes';
 import apiRoutes from './routes/api-routes';
 import statisticsRoutes from './routes/statistics-routes';
 import variousRoutes from './routes/various-routes';
-import { getInstance } from './repository/SqlLiteDatabase';
+import { getInstance } from './repository/Database';
 import { swaggerDocument } from './swagger';
 import { urls } from './domain/urls';
 import config from './config';
@@ -64,8 +64,10 @@ app.use((req, res, next) => {
   res.locals.htmlLang = config.LANGUAGE;
   res.locals.country = config.COUNTRY;
   res.locals.baseUrl = config.BASE_URL;
+  res.locals.zipGuide = config.ZIP_GUIDE;
   res.locals.mapCenter = config.MAP_CENTER;
   res.locals.mapZoom = config.MAP_ZOOM;
+  res.locals.mapMaxZoom = config.MAP_MAX_ZOOM;
   res.locals.twitter = config.TWITTER;
   res.locals.urls = urls;
   res.locals.zipLength = config.ZIP_LENGTH;
@@ -124,10 +126,11 @@ app.use(
 
 async function initializeDatabase(): Promise<void> {
   const db = getInstance(config.DB_PATH);
+
   const numberOfTables = (await db.listTables()).length;
   if (numberOfTables === 0) {
     await db.applyMigrationScripts(
-      path.join(__dirname, 'migrations', 'schema')
+      path.join(__dirname, 'migrations', `schema_${db.type}`)
     );
     console.info('Database was clean, applying migration scripts');
   } else {
