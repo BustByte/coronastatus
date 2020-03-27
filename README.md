@@ -20,6 +20,7 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇺🇸 United States of America (USA): https://coronastatus.us
 - 🇺🇦 Ukraine: https://coronastatus.org.ua
 - 🇪🇸 Spain: https://coronastatus.es
+- 🇧🇷 Brazil: https://coronastatus.com.br
 - 🇸🇪 Sweden: coming soon
 - 🇮🇳 India: coming soon
 - 🇵🇭 Philippines: coming soon
