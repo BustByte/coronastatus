@@ -20,15 +20,16 @@ const cookieOptions = {
 };
 
 function determineRemoteAddress(req: Request): string {
-  console.log('ip', req.ip)
-  console.log('remote', req.connection.remoteAddress)
+  // going to test here a little bit
+  console.log('ip', req.ip);
+  console.log('remote', req.connection.remoteAddress);
   const ipWithPort =
     (req.headers['x-real-ip'] as string) || req.connection.remoteAddress;
   if (ipWithPort) {
     const [ipWithoutPort] = ipWithPort.split(':');
     return ipWithoutPort;
   }
-  console.log(req.ip)
+  console.log(req.ip);
   return req.ip;
 }
 
