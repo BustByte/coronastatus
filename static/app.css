@@ -77,6 +77,7 @@ legend {
 }
 p > label {
   margin: 0;
+  font-weight:normal;
 }
 legend {
   display:block;
@@ -210,6 +211,7 @@ legend {
   -ms-user-select: none;
   user-select: none;
   word-wrap: anywhere;
+  font-weight: normal;
 }
 /* Hide the browser's default checkbox */
 .checkbox input[type='checkbox'] {

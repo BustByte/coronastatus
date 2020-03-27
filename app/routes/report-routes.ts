@@ -127,6 +127,12 @@ const toIsolationStatus = (inputValue: string): IsolationStatus | undefined => {
   if (inputValue === 'isolation-due-to-contact') {
     return IsolationStatus.ISOLATION_DUE_TO_CONTACT;
   }
+  if (inputValue === 'isolation-due-to-covid-19') {
+    return IsolationStatus.ISOLATION_DUE_TO_COVID_19;
+  }
+  if (inputValue === 'isolation-due-to-government') {
+    return IsolationStatus.ISOLATION_DUE_TO_GOVERNMENT_ORDERS;
+  }
   return undefined;
 };
 
@@ -178,7 +184,11 @@ router.post('/', createReportRateLimit, async (req, res) => {
   const acceptRemember = req.body['accept-remember'] === 'on';
 
   // Set cookie with passcode
-  if (acceptRemember) res.cookie('passcode', passcode, cookieOptions);
+  if (acceptRemember) {
+    res.cookie('passcode', passcode, cookieOptions);
+  } else {
+    res.clearCookie('passcode');
+  }
 
   reportRepo.addNewCovidReport(passcode, covidReport);
   if (req.body['passcode']) {
