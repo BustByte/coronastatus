@@ -22,12 +22,12 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇺🇦 Ukraine: https://coronastatus.org.ua
 - 🇪🇸 Spain: https://coronastatus.es
 - 🇨🇦 Canada: https://coronastatus.ca
+- 🇦🇺 Australia: https://coronastatusau.org
 - 🇸🇪 Sweden: coming soon
 - 🇮🇳 India: coming soon
 - 🇵🇭 Philippines: coming soon
 - 🇹🇷 Turkey: coming soon (work group Telegram chat: https://t.me/turkeycoronastatus)
 - 🇧🇪 Belgium: coming soon
-- 🇦🇺 Australia: coming soon
 - ... want one for your country? Join our community: https://t.me/onzecorona
 
 ## Why?
