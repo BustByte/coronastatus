@@ -14,7 +14,7 @@ export type Locale =
   | 'es-CO'
   | 'fr-FR'
   | 'es-ES'
-  | 'br'
+  | 'pt-BR'
   | 'ca';
 
 type Urls = {
@@ -171,7 +171,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
-  br: {
+  'pt-BR': {
     submitReport: '/',
     profile: '/condicaosaude',
     privacyPolicy: '/declaracao-privacidade',
