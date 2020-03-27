@@ -1,6 +1,18 @@
 const puppeteer = require('puppeteer');
 const { LANGUAGE, LOCALE } = require('../config.json');
 
+if (!LOCALE) {
+  if (!LANGUAGE) {
+    console.warn(
+      "WARNING: no LOCALE or LANGUAGE found in config.json. falling back to 'en'."
+    );
+  } else {
+    console.warn(
+      `WARNING: no LOCALE found in config.json. falling back to LANGUAGE (${LANGUAGE}).`
+    );
+  }
+}
+
 const currentLanguage = LOCALE || LANGUAGE || 'en';
 
 (async () => {
@@ -9,8 +21,10 @@ const currentLanguage = LOCALE || LANGUAGE || 'en';
 
   await page.setViewport({ width: 3000, height: 3000 });
 
-  await page.goto('http://localhost:7272/social-images').catch(e => {
-    console.log("ERROR: Run the server first, eg with `yarn dev` or 'npm run dev'.");
+  await page.goto('http://localhost:7272/social-images').catch(() => {
+    console.error(
+      "ERROR: Run the server first, eg with `yarn dev` or 'npm run dev'."
+    );
     process.exit(1);
   });
 
