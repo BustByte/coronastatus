@@ -24,6 +24,8 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇨🇦 Canada: https://coronastatus.ca
 - 🇦🇺 Australia: https://coronastatusau.org
 - 🇸🇬 Singapore: https://coronastatus.sg
+- 🇲🇾 Malaysia: https://coronastatusmy.org
+- 🇦🇷 Argentina: https://coronavirus.com.ar
 - 🇸🇪 Sweden: coming soon
 - 🇮🇳 India: coming soon
 - 🇵🇭 Philippines: coming soon
@@ -31,6 +33,7 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇧🇪 Belgium: coming soon
 - 🇮🇸 Iceland: coming soon
 - 🇨🇭 Switzerland: coming soon
+- 🇩🇪 Germany: coming soon
 - ... want one for your country? Join our community: https://t.me/onzecorona
 
 ## Why?
