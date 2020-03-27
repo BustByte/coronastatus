@@ -92,7 +92,7 @@ const extractTestResult = (req: Request): TestResult | undefined => {
 };
 
 const createReportRateLimit = rateLimit({
-  max: 20, // allowed requests per window
+  max: 5, // allowed requests per window
   windowMs: 24 * 60 * 60 * 1000, // 24 hour window,
   keyGenerator: req => determineRemoteAddress(req)
 });
