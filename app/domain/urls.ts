@@ -6,6 +6,7 @@ export type Locale =
   | 'en'
   | 'en-US'
   | 'en-AU'
+  | 'en-MT'
   | 'es-MX'
   | 'sk'
   | 'it'
@@ -73,6 +74,16 @@ const localeAwareUrls: Urls = {
     statistics: '/statistics'
   },
   'en-AU': {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  'en-MT': {
     submitReport: '/',
     profile: '/healthcondition',
     privacyPolicy: '/privacy-statement',
