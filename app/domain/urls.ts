@@ -13,11 +13,13 @@ export type Locale =
   | 'dk'
   | 'ua'
   | 'es-CO'
+  | 'es-AR'
   | 'fr-FR'
   | 'es-ES'
   | 'ca'
   | 'en-SG'
-  | 'ms-MY';
+  | 'ms-MY'
+  | 'se';
 
 type Urls = {
   [locale in Locale]: {
@@ -72,6 +74,16 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics'
+  },
+  'es-AR': {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
   },
   'en-AU': {
     submitReport: '/',
@@ -199,6 +211,16 @@ const localeAwareUrls: Urls = {
     privacyPolicy: '/kenyataan-privasi',
     map: '/peta',
     contributors: '/penyumbang',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistik'
+  },
+  se: {
+    submitReport: '/',
+    profile: '/halsotillstand',
+    privacyPolicy: '/integritetspolicy',
+    map: '/karta',
+    contributors: '/medverkare',
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistik'
