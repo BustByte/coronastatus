@@ -130,7 +130,7 @@ const toIsolationStatus = (inputValue: string): IsolationStatus | undefined => {
   return undefined;
 };
 
-router.post('/', createReportRateLimit, async (req, res) => {
+router.post('/', async (req, res) => {
   const acceptPrivacyPolicy = req.body['accept-privacy-policy'] === 'on';
   if (!acceptPrivacyPolicy) {
     const reports = await reportRepo.getLatestCovidReports();
