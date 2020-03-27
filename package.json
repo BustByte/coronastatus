@@ -10,7 +10,8 @@
     "lintfix": "eslint --ext .ts app/ --fix",
     "serve": "NODE_ENV=production ts-node app/server.ts",
     "dev:css": "./node_modules/.bin/tailwind build tailwind.config.css -c tailwind.config.js -o static/tailwind.min.css",
-    "build:css": "postcss tailwind.config.css -o static/tailwind.min.css"
+    "build:css": "postcss tailwind.config.css -o static/tailwind.min.css",
+    "build:images": "node scripts/generate-images.js"
   },
   "dependencies": {
     "@types/pg": "^7.14.3",
@@ -35,6 +36,7 @@
     "typescript": "^3.8.3"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.2.0",
     "@types/body-parser": "^1.19.0",
     "@types/cookie-parser": "^1.4.2",
     "@types/cors": "^2.8.6",
@@ -48,6 +50,7 @@
     "@typescript-eslint/eslint-plugin": "^2.23.0",
     "@typescript-eslint/parser": "^2.23.0",
     "babel-eslint": "^10.0.3",
+    "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.9.0",
@@ -58,10 +61,9 @@
     "jest": "^25.1.0",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
-    "ts-jest": "^25.2.1",
-    "@fullhuman/postcss-purgecss": "^1.2.0",
-    "cssnano": "^4.1.10",
-    "tailwindcss": "^1.0.3"
+    "puppeteer": "^2.1.1",
+    "tailwindcss": "^1.0.3",
+    "ts-jest": "^25.2.1"
   },
   "eslintConfig": {
     "settings": {
