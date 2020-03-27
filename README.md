@@ -24,6 +24,7 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇨🇦 Canada: https://coronastatus.ca
 - 🇦🇺 Australia: https://coronastatusau.org
 - 🇸🇬 Singapore: https://coronastatus.sg
+- 🇲🇾 Malaysia: https://coronastatusmy.org
 - 🇸🇪 Sweden: coming soon
 - 🇮🇳 India: coming soon
 - 🇵🇭 Philippines: coming soon
