@@ -169,12 +169,17 @@
   "I currently smoke": "Ik rook",
   "I used to smoke": "Ik heb gerookt",
   "I have never smoked": "Ik heb nooit gerookt",
-  "What is your current body temperature? (Celcius)": "Wat is uw huidige lichaamstemperatuur? (Celcius)",
+  "What is your current body temperature? (Celcius)": "Wat is uw huidige lichaamstemperatuur? (Celsius)",
   "This field is optional": "Dit veld is optioneel",
   "Close": "Sluit",
   "Contribute now": "Draag nu bij",
   "Help us uncover and predict the corona spread in your area": "Help ons de verspreiding van het coronavirus te <span>ontdekken</span> en <span>voorspellen</span> in uw omgeving",
   "Numbers": "Cijfers",
   "#washyourhands": "#wash<wbr/>your<wbr/>hands",
-  "#stayindoors": "#stay<wbr/>indoors"
+  "#stayindoors": "#stay<wbr/>home",
+  "In isolation due to orders from the government": "Geïsoleerd vanwege verplichting door de overheid",
+  "In isolation due to COVID-19 infection": "Geïsoleerd vanwege coronabesmetting",
+  "Some questions and alternatives were not a part of the form from the beginning:": "Sommige vragen en antwoorden zijn later toegevoegd aan het formulier:",
+  "March 27": "27 maart",
+  "Other": "Anders / zeg ik liever niet"
 }

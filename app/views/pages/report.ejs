@@ -168,7 +168,7 @@
     <% } else { %>
       <p class="text-center text-base lg:text-xl font-medium m-4 mt-0 self-center">
         <%= __("Are you from") %> <%= __(locals.country) %>?
-        <%= __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information!") %></p>
+        <%- __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information!") %></p>
     <% } %>
 
     <div class="flex flex-row items-center mt-8">
@@ -189,17 +189,26 @@
 
     <fieldset>
     <legend><%= __("Biological gender") %></legend>
-    <p>
+    <p class="mb-2">
       <input required type="radio" id="gender-female" name="gender" value="female" <%= sex === 'FEMALE' ? 'checked' : '' %>>
-      <label class="mr-4" for="gender-female"><%= __("Female") %></label>
-
+      <label for="gender-female"><%= __("Female") %></label>
+    </p>
+    <p class="mb-2">
       <input required type="radio" id="gender-male" name="gender" value="male" <%= sex === 'MALE' ? 'checked' : '' %>>
       <label for="gender-male"><%= __("Male") %></label>
     </p>
+    <p class="mb-2">
+      <input required type="radio" id="gender-other" name="gender" value="other" <%= sex === 'OTHER' ? 'checked' : '' %>>
+      <label for="gender-other"><%= __("Other") %></label>
+    </p>
     </fieldset>
 
-    <label for="postal-code"><%= __('Zip code') %></label>
-    <input class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="[0-9]{<%= locals.zipLength %>}" maxlength="<%= locals.zipLength %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
+    <label for="postal-code"><%= __('Zip code') %>
+      <% if (locals.zipGuide) { %>
+        <span>- </span><a class="text-cvs-red font-bold hover:underline" href="<%= __(`https://www.whatismyzip.com`) %>" target="_blank"><%= __('What is my Zip code?') %></a>
+      <% } %>
+    </label>
+    <input class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="[A-Za-z0-9]{<%= locals.zipLength %>}" maxlength="<%= locals.zipLength %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
 
     <div class="flex flex-row items-center mt-8">
       <img src="/static/images/mask.svg" alt="" class="h-16 w-16">
@@ -249,7 +258,7 @@
 
     <fieldset>
     <legend class="mb-0"><%= __('Symptoms you have experienced') %></legend>
-    <p class="mb-4"><%= __('Select only the symptoms you have experienced') %></p>
+    <p class="mb-4"><%- __('Select only the symptoms you have experienced') %></p>
 
     <label class="checkbox" for="symptom-cough">
       <input type="checkbox" id="symptom-cough" name="symptom-cough" <%= symptomDryCough ? 'checked' : '' %>>
@@ -362,9 +371,17 @@
       <input required type="radio" id="isolation-due-to-travel" name="isolation-status" value="isolation-due-to-travel" <%= isolationStatus === 'ISOLATION_DUE_TO_TRAVEL' ? 'checked' : '' %>>
       <label for="isolation-due-to-travel"><%= __("In isolation due to a recent international travel") %></label>
     </p>
-    <p>
+    <p class="mb-2">
       <input required type="radio" id="isolation-due-to-contact" name="isolation-status" value="isolation-due-to-contact" <%= isolationStatus === 'ISOLATION_DUE_TO_CONTACT' ? 'checked' : '' %>>
       <label for="isolation-due-to-contact"><%= __("In isolation due to contact with an individual who has been exposed to the coronavirus.") %></label>
+    </p>
+    <p class="mb-2">
+      <input required type="radio" id="isolation-due-to-government" name="isolation-status" value="isolation-due-to-government" <%= isolationStatus === 'ISOLATION_DUE_TO_GOVERNMENT_ORDERS' ? 'checked' : '' %>>
+      <label for="isolation-due-to-government"><%= __("In isolation due to orders from the government") %></label>
+    </p>
+    <p>
+      <input required type="radio" id="isolation-due-to-covid-19" name="isolation-status" value="isolation-due-to-covid-19" <%= isolationStatus === 'ISOLATION_DUE_TO_COVID_19' ? 'checked' : '' %>>
+      <label for="isolation-due-to-covid-19"><%= __("In isolation due to COVID-19 infection") %></label>
     </p>
     </fieldset>
 
@@ -451,7 +468,7 @@
             equipment that is already in short supply. We at Bustbyte, well helped
             by other volunteers, have created this tool in response to`) %>
     <a class="text-cvs-red font-bold hover:underline"
-      href="https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona -may-paa-space-naa-petter-bae-brandtzaeg "><%= __('this article') %></a>
+      href="https://medium.com/@tomaspueyo/coronavirus-act-today-or-people-will-die-f4d3d9cd99ca "><%= __('this article') %></a>
     <%= __('as an attempt to chart these numbers.')%>
     </p>
     <p class="section-about-paragraph p-4 text-base lg:text-xl font-medium">
@@ -496,6 +513,9 @@
   }
 
   changeTestResultDisplay(document.getElementById("been-tested-yes").checked);
+
+  var hasPasscodeCookie = document.cookie.includes('passcode');
+  document.getElementById('accept-remember').checked = hasPasscodeCookie;
 </script>
 
 <script>
