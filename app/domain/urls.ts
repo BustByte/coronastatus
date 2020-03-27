@@ -17,7 +17,8 @@ export type Locale =
   | 'fr-FR'
   | 'es-ES'
   | 'ca'
-  | 'en-SG';
+  | 'en-SG'
+  | 'se';
 
 type Urls = {
   [locale in Locale]: {
@@ -202,6 +203,16 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics'
+  },
+  se: {
+    submitReport: '/',
+    profile: '/halsotillstand',
+    privacyPolicy: '/integritetspolicy',
+    map: '/karta',
+    contributors: '/medverkare',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistik'
   }
 };
 
