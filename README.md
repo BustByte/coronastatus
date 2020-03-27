@@ -1,4 +1,5 @@
 # Coronastatus
+
 ![](https://github.com/BustByte/coronastatus/workflows/test/badge.svg)
 
 > Report your health status to get a better overview of COVID-19 in your country
@@ -20,13 +21,18 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇺🇸 United States of America (USA): https://coronastatus.us
 - 🇺🇦 Ukraine: https://coronastatus.org.ua
 - 🇪🇸 Spain: https://coronastatus.es
+- 🇨🇦 Canada: https://coronastatus.ca
 - 🇦🇺 Australia: https://coronastatusau.org
+- 🇸🇬 Singapore: https://coronastatus.sg
+- 🇦🇷 Argentina: https://coronavirus.com.ar
 - 🇸🇪 Sweden: coming soon
 - 🇮🇳 India: coming soon
 - 🇵🇭 Philippines: coming soon
 - 🇹🇷 Turkey: coming soon (work group Telegram chat: https://t.me/turkeycoronastatus)
-- 🇨🇦 Canada: coming soon
 - 🇧🇪 Belgium: coming soon
+- 🇮🇸 Iceland: coming soon
+- 🇨🇭 Switzerland: coming soon
+- 🇩🇪 Germany: coming soon
 - ... want one for your country? Join our community: https://t.me/onzecorona
 
 ## Why?
@@ -142,4 +148,5 @@ Download & install:
 `docker-compose exec app yarn lint`
 
 ## Contributors ✨
+
 We're working on updating this section to include everyone who has devoted time and attention to this project. Stay put!
