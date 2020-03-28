@@ -2,7 +2,6 @@ version: "3.7"
 services:
   app:
     build: .
-    init: true
     image: node:lts-buster-slim
     environment:
       - NODE_ENV=production

@@ -30,7 +30,7 @@ This deployment is very simple:
 4. Create a configuration file from the example provided in this repo: `cp config.example.json config.json`
 5. Review the `docker-compose.yml` file in this deployment directory
 6. Create the `certs` directory and copy the Cloudflare TLS certificate/key there: `certs/tls.crt`, `certs/tls.key`
-6. Install the node_modules: `docker-compose run app yarn install`
-7. Start the project: `docker-compose up -d`. Containers will be automatically re/started on boot/container crash.
-8. Display the logs to see everything is running properly: `docker-compose logs -f`
-9. Enjoy :-)
+7. Install node modules: `docker-compose run --rm app yarn`
+8. Start the project: `docker-compose up -d`. Containers will be automatically re/started on boot/container crash.
+9. Display the logs to see everything is running properly: `docker-compose logs -f`
+10. Enjoy :-)
