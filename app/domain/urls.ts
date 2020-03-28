@@ -1,10 +1,12 @@
 import config from '../config';
 
 export type Locale =
+   'en-NG'
   | 'no'
   | 'nl'
-  | 'en'
+  | 'en' 
   | 'en-US'
+  | 'en-AU'
   | 'es-MX'
   | 'sk'
   | 'it'
@@ -14,7 +16,9 @@ export type Locale =
   | 'es-CO'
   | 'fr-FR'
   | 'es-ES'
-  | 'ca';
+  | 'ca'
+    
+  ;
 
 type Urls = {
   [locale in Locale]: {
@@ -61,6 +65,16 @@ const localeAwareUrls: Urls = {
     statistics: '/statistics'
   },
   'en-US': {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  'en-AU': {
     submitReport: '/',
     profile: '/healthcondition',
     privacyPolicy: '/privacy-statement',
@@ -169,7 +183,18 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics'
+  },
+  'en-NG': {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
   }
+  
 };
 
 export const urls = localeAwareUrls[config.LANGUAGE as Locale];
