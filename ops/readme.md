@@ -22,7 +22,6 @@ This document describes how we operate the sites which are running Coronastatus.
 | [coronastatus.sk](https://coronastatus.sk)         | Slovakia        | Stano Bocinec                          | Stano Bocinec          |
 | [coronastatus.org.ua](https://coronastatus.org.ua) | Ukraine         | Taras Matsyk                           | Eirik Fosse / BustByte |
 | [coronastatus.ca](https://coronastatus.ca)         | Canada          | Ebrahim Poorazizi                      | EbrEbrahim Poorazizi   |
-| [coronastatus.ca](https://coronastatus.ca)         | Canada          | Ebrahim Poorazizi                      | EbrEbrahim Poorazizi   |
 | [coronastatus.sg](https://coronastatus.sg)         | Singapore       | Jin Jie Kong                           | Jin Jie Kong           |
 | [coronastatus.com.ar](https://coronastatus.com.ar) | Argentina       | Walter Gammarota                       | Walter Gammarota       |
 | [coronastatus.cl](https://coronastatus.cl)         | Chile           | Ruben Torres                           | Ruben Torres           |
