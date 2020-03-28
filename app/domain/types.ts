@@ -142,7 +142,8 @@ export interface AggregatedCovidReportWithPostalCodeData {
 
 export interface Config {
   BASE_URL: string;
-  LANGUAGE: string;
+  LOCALE: string;
+  COUNTRY_CODE: string;
   COUNTRY: string;
   MAP_CENTER: string;
   MAP_ZOOM: number;

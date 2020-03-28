@@ -1,7 +1,8 @@
 {
-  "BASE_URL": "coronastatus.no",
-  "LANGUAGE": "no",
-  "COUNTRY": "Norway",
+  "BASE_URL": "coronastatus.us",
+  "LOCALE": "en-US",
+  "COUNTRY_CODE": "us",
+  "COUNTRY": "United States",
   "MAP_CENTER": "10.7522, 63.9139",
   "MAP_ZOOM": 4,
   "MAP_MAX_ZOOM": 13,
@@ -10,6 +11,6 @@
   "ZIP_PLACEHOLDER": "1234",
   "ZIP_GUIDE": false,
   "REDIRECT_TO_GOVERNMENT": false,
-  "PASSCODE_LENGTH": 3,
+  "PASSCODE_LENGTH": 4,
   "DB_PATH": "./covid_db"
 }
