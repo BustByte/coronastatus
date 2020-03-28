@@ -178,7 +178,7 @@
 
 
     <label class="text-h4" for="Age"><%= __("Your age") %></label>
-    <select required name="age" id="Age">
+    <select class="appearance-none rounded focus:outline-none focus:shadow-outline" required name="age" id="Age">
       <option value="" disabled selected><%= __("Choose your age") %></option>
       <% for(var i=0; i<100; i+=10) {
         const ageSpan = `${i} - ${i + 9}`;
@@ -208,7 +208,7 @@
         <span>- </span><a class="text-cvs-red font-bold hover:underline" href="<%= __(`https://www.whatismyzip.com`) %>" target="_blank"><%= __('What is my Zip code?') %></a>
       <% } %>
     </label>
-    <input class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="[A-Za-z0-9]{<%= locals.zipLength %>}" maxlength="<%= locals.zipLength %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
+    <input class="appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="[A-Za-z0-9]{<%= locals.zipLength %>}" maxlength="<%= locals.zipLength %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
 
     <div class="flex flex-row items-center mt-8">
       <img src="/static/images/mask.svg" alt="" class="h-16 w-16">
@@ -405,7 +405,7 @@
     <p class="mb-4"><%= __('This field is optional') %></p>
     <input
       type="number"
-      class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      class="appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       step="0.1"
       placeholder="37.0"
       min="35"
