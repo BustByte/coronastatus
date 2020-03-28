@@ -239,8 +239,8 @@ legend {
 }
 /* When the checkbox is checked, add a blue background */
 .checkbox input:checked ~ .checkmark {
-  background-color: black;
-  border-color: black;
+  background-color: #A44342;
+  border-color: #A44342;
 }
 .checkbox.grey input:checked ~ .checkmark {
   background-color: #9aa7b4;
@@ -304,7 +304,7 @@ legend {
   content: '';
   width: 15px;
   height: 15px;
-  background: black;
+  background: #A44342;
   position: absolute;
   top: 5px;
   left: 5px;
@@ -382,7 +382,6 @@ textarea {
   background-color: #ffffff;
   border-color: rgba(99, 116, 133, 0.25);
 }
-select:focus,
 textarea:focus {
   border-color: #000000;
   box-shadow: 0 0 0 1px #000000;
