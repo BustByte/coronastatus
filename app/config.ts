@@ -16,7 +16,8 @@ try {
  * */
 const fallbackConfig: Config = {
   BASE_URL: process.env.BASE_URL || 'coronastatus.no',
-  LANGUAGE: process.env.LANGUAGE || 'no',
+  LOCALE: process.env.LOCALE || 'no',
+  COUNTRY_CODE: process.env.COUNTRY_CODE || 'no',
   COUNTRY: process.env.COUNTRY || 'Norway',
   MAP_CENTER: process.env.MAP_CENTER || '10.7522, 63.9139',
   MAP_ZOOM: parseInt(process.env.MAP_ZOOM || '4', 10),
