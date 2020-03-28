@@ -10,13 +10,12 @@ This document describes how we operate the sites which are running Coronastatus.
 | [coronastatus.dk](https://coronastatus.dk)         | Denmark         | Alexander Nygaard                      | Alexander Nygaard      |
 | [coronastatus.es](https://coronastatus.es)         | Spain           | Adriaan Van Rossum / Simple Analytics  | Eirik Fosse / BustByte |
 | [coronastatus.it](https://coronastatus.it)         | Italy           | Adriaan Van Rossum / Simple Analaytics | Eirik Fosse / BustByte |
-| [coronastatus.mx](https://coronastatus.mx)         | Mexico          |                                        | Eirik Fosse / BustByte |
+| [coronastatus.mx](https://coronastatus.mx)         | Mexico          | Alex Almada                            | Eirik Fosse / BustByte |
 | [coronastatus.fr](https://coronastatus.fr)         | France          | Adriaan Van Rossum / Simple Analytics  | Eirik Fosse / BustByte |
 | [coronastatus.us](https://coronastatus.us)         | USA             | Tom Maney                              | Eirik Fosse / BustByte |
-| [coronastatus.co](https://coronastatus.co)         | Colombia        |                                        | Eirik Fosse / BustByte |
-| [coronastatus.com.br](https://coronastatus.com.br) | Brazil          |                                        | Eirik Fosse / BustByte |
+| [coronastatus.co](https://coronastatus.co)         | Colombia        | Julian Betancourt                      | Eirik Fosse / BustByte |
+| [coronastatus.com.br](https://coronastatus.com.br) | Brazil          | Sérgio Prates                          | Eirik Fosse / BustByte |
 | [coronastatusau.org](https://coronastatusau.org)   | Australia       | Mauricio Wolff                         | Eirik Fosse / BustByte |
-| [coronastatus.ng](https://coronastatus.ng)         | Nigeria         |                                        | Eirik Fosse / BustByte |
 | [corona-status.in](https://corona-status.in)       | India           | Vandan Panwala                         | Eirik Fosse / BustByte |
 | [coronastatusmt.com](https://coronastatusmt.com)   | Malta           | Thomas K. Running                      | Eirik Fosse / BustByte |
 | [coronastatus.sk](https://coronastatus.sk)         | Slovakia        | Stano Bocinec                          | Stano Bocinec          |
