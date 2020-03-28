@@ -108,7 +108,10 @@
   (function removeQueryParams() {
     window.addEventListener('load', function(event) {
       if (window.history && window.history.replaceState) {
-        window.history.replaceState({}, document.title, window.location.pathname);
+        var path = typeof obfuscatePath === 'boolean' && obfuscatePath
+          ? '/'
+          : window.location.pathname;
+        window.history.replaceState({}, document.title, path);
       }
     });
   })();

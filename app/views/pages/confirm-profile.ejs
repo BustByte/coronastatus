@@ -64,7 +64,7 @@
     <% if (!hasCookie) { %>
     <p class="mt-4">
       <label class="checkbox" for="accept">
-        <input type="checkbox" id="accept" name="accept" />
+        <input required type="checkbox" id="accept" name="accept" />
         <span><%= __(`I've noted down the link.`)%></span>
         <span class="checkmark"></span>
       </label>
@@ -82,6 +82,11 @@
   integrity="sha384-8CYhPwYlLELodlcQV713V9ZikA3DlCVaXFDpjHfP8Z36gpddf/Vrt47XmKDsCttu"
   crossorigin="anonymous"
 ></script>
+
+<script>
+  // Obfuscate path so people will not share their personal URL
+  var obfuscatePath = true;
+</script>
 
 <script>
   var clipboard = new ClipboardJS('#profile-url-id');
