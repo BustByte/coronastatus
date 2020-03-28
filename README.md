@@ -74,6 +74,7 @@ Adding a new language should be pretty straightforward. If you need help, you ca
 - Write a privacy statement in `app/views/privacy-statement/{COUNTRY_CODE}-privacy-statement.ejs`
 - Add an iamge that will used when sharing the url in social media in `/static/{COUNTRY_CODE}/social-media.png`. @amritnagi or @adriaanvanrossum can create one if you provide them with text.
 - You also need a domain (preferably `coronastatus.tld` if it is available), and a server to run the app on. We can assist you with setting this up.
+- We can host the site for you if you want that. Just send a message to us in telegram. This makes it easier to maintain and deploy new changes to all the sites. We will give you access to the server as well. If you insist on hosting it yourself, please add your name to the README [here](ops)
 
 ## Start developing
 
