@@ -6,6 +6,7 @@ export type Locale =
   | 'en'
   | 'en-US'
   | 'en-AU'
+  | 'en-MT'
   | 'es-MX'
   | 'sk'
   | 'it'
@@ -17,7 +18,9 @@ export type Locale =
   | 'fr-FR'
   | 'es-ES'
   | 'ca'
-  | 'en-SG';
+  | 'en-SG'
+  | 'ms-MY'
+  | 'se';
 
 type Urls = {
   [locale in Locale]: {
@@ -84,6 +87,16 @@ const localeAwareUrls: Urls = {
     statistics: '/estadisticas'
   },
   'en-AU': {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  'en-MT': {
     submitReport: '/',
     profile: '/healthcondition',
     privacyPolicy: '/privacy-statement',
@@ -202,6 +215,26 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics'
+  },
+  'ms-MY': {
+    submitReport: '/',
+    profile: '/keadaankesihatan',
+    privacyPolicy: '/kenyataan-privasi',
+    map: '/peta',
+    contributors: '/penyumbang',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistik'
+  },
+  se: {
+    submitReport: '/',
+    profile: '/halsotillstand',
+    privacyPolicy: '/integritetspolicy',
+    map: '/karta',
+    contributors: '/medverkare',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistik'
   }
 };
 
