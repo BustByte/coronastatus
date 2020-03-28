@@ -7,6 +7,7 @@ const shareImageUrl =
 `https://${baseUrl}/static/${imageSubfolder}/social-media.png`; %>
 
 <meta charset="utf-8" />
+<meta name="referrer" content="origin" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title><%= locals.baseUrl %></title>
 <meta
@@ -60,10 +61,7 @@ const shareImageUrl =
   property="og:site_name"
   content="<%= (typeof title === 'string') ? title : '' %>"
 />
-<meta
-  property="og:type"
-  content="website"
-/>
+<meta property="og:type" content="website" />
 <meta
   property="og:url"
   content="<%= (typeof ogUrl === 'string') ? ogUrl : '' %>"

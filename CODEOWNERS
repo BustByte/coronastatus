@@ -1,7 +1,7 @@
 * @fossecode
 /static/no/ @fossecode
 /static/nl/ @Kilian
-/app/locales/ @Kilian
+/app/locales/nl.json @Kilian
 /app/locales/no.json @michaelmcmillan
 /app/locales/sk*.json @sbocinec
 *.md @michaelmcmillan
