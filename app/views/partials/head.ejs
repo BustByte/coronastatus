@@ -1,13 +1,109 @@
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coronastatus</title>
-  <% if (locals.metaDescription) { %>
-    <meta name="description" content="<%= metaDescription %>">
-  <% } %>
+<% const title = __(`Join us in the most important crowdsource!`); const
+metaDescription = __(`Make your voluntary contribution to the health care system
+and register your health condition now. Together we can create an overview.`);
+const baseUrl = locals.baseUrl; const imageSubfolder = locals.imageSubfolder;
+const ogUrl = `https://${baseUrl}`;
+const shareImageUrl =
+`https://${baseUrl}/static/${imageSubfolder}/social-media.png`; %>
 
-  <link href="https://fonts.googleapis.com/css?family=Mada:400,400i,700" rel="stylesheet">
-  <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
-  <link rel='stylesheet' href='/static/main.css' type='text/css' media='all' />
-  <link rel='stylesheet' href='/static/custom.css' type='text/css' media='all' />
-</head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title><%= locals.baseUrl %></title>
+<meta
+  name="description"
+  content="<%= (typeof metaDescription === 'string') ? metaDescription : '' %>"
+/>
+
+<!-- Icons -->
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="/static/icons/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/static/icons/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="/static/icons/favicon-16x16.png"
+/>
+<link rel="manifest" href="/static/icons/site.webmanifest" />
+<link
+  rel="mask-icon"
+  href="/static/icons/safari-pinned-tab.svg"
+  color="#5bbad5"
+/>
+<link rel="shortcut icon" href="/static/icons/favicon.ico" />
+<meta name="msapplication-TileColor" content="#00aba9" />
+<meta name="msapplication-config" content="/static/icons/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" />
+
+<!-- Open Graph -->
+<meta
+  property="og:title"
+  content="<%= (typeof title === 'string') ? title : '' %>"
+/>
+<meta
+  property="og:description"
+  content="<%= (typeof metaDescription === 'string') ? metaDescription : '' %>"
+/>
+<meta
+  property="og:image"
+  content="<%= (typeof shareImageUrl === 'string') ? shareImageUrl : '' %>"
+/>
+<meta
+  property="og:site_name"
+  content="<%= (typeof title === 'string') ? title : '' %>"
+/>
+<meta
+  property="og:type"
+  content="website"
+/>
+<meta
+  property="og:url"
+  content="<%= (typeof ogUrl === 'string') ? ogUrl : '' %>"
+/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta
+  name="twitter:title"
+  content="<%= (typeof title === 'string') ? title : '' %>"
+/>
+<meta
+  name="twitter:description"
+  content="<%= (typeof metaDescription === 'string') ? metaDescription : '' %>"
+/>
+<meta
+  name="twitter:image"
+  content="<%= (typeof shareImageUrl === 'string') ? shareImageUrl : '' %>"
+/>
+<!-- End Twitter -->
+
+<link
+  href="https://fonts.googleapis.com/css?family=Mada:400,400i,700"
+  rel="stylesheet"
+/>
+<link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon" />
+<link
+  rel="stylesheet"
+  href="/static/tailwind.min.css?v=<%= locals.cacheKey %>"
+  type="text/css"
+  media="all"
+/>
+<link
+  rel="stylesheet"
+  href="/static/app.css?v=<%= locals.cacheKey %>"
+  type="text/css"
+  media="all"
+/>
+
+<script>
+  NodeList.prototype.forEach = Array.prototype.forEach;
+  HTMLCollection.prototype.forEach = Array.prototype.forEach;
+</script>

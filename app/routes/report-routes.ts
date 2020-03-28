@@ -1,35 +1,77 @@
 import express, { Request } from 'express';
-import { Symptom, CovidReport, Sex, TestResult } from '../domain/types';
+import rateLimit from 'express-rate-limit';
+import {
+  Symptom,
+  CovidReport,
+  Sex,
+  TestResult,
+  SmokingHabit,
+  IsolationStatus
+} from '../domain/types';
 import { CovidReportRepository } from '../repository/CovidReportRepository';
-import { getPasscodeCreator } from '../util/PasscodeCreator';
+import { getPasscodeCreator } from '../util/passcode-creator';
+import { aggregateCovidReports } from '../util/report-aggregator';
+import { urls } from '../domain/urls';
+
+const cookieOptions = {
+  maxAge: 31557600000, // maxAge is set to 1 year in ms
+  httpOnly: false, // httpOnly means the cookie is only accessible by the web server
+  signed: false // signed indicates if the cookie should be signed
+};
+
+function determineRemoteAddress(req: Request): string {
+  const ipWithPort =
+    (req.headers['x-real-ip'] as string) || req.connection.remoteAddress;
+  if (ipWithPort) {
+    const [ipWithoutPort] = ipWithPort.split(':');
+    return ipWithoutPort;
+  }
+  return req.ip;
+}
 
 const router = express.Router();
 const reportRepo = new CovidReportRepository();
 const passcodeCreator = getPasscodeCreator();
 
-router.get('/', (req, res) => {
-  res.locals.metaDescription =
-    'Her kan du legge inn informasjon om din helsetilstand, slik at vi kan få en bedre oversikt over totalbildet i Norge.';
-  return res.render('pages/report');
+router.get('/', async (req, res) => {
+  if (req.cookies.passcode) {
+    return res.redirect(`${res.locals.urls.profile}/${req.cookies.passcode}`);
+  }
+  const reports = await reportRepo.getLatestCovidReports();
+  const aggregated = aggregateCovidReports(reports);
+  return res.render('pages/report', {
+    aggregated,
+    cleared: req.query?.cleared === 'true' || false
+  });
 });
 
-router.get('/numberOfReports', async (req, res) => {
-  const numberOfReports = await reportRepo.countNumberOfReports();
-  return res.json({ numberOfReports });
-});
+router.get(`${urls.profile}/:passcode`, async (req, res) => {
+  const success = req.query?.success === 'true';
+  const clear = req.query?.clear === 'true';
 
-router.get('/profil/:passcode', async (req, res) => {
   const { passcode } = req.params;
   if (!passcode) {
-    return res.redirect('/');
+    return res.redirect(res.locals.urls.submitReport);
   }
+
+  // When somebody wants to clear the cookie and register as a new user
+  if (clear) {
+    res.cookie('passcode', '', { ...cookieOptions, maxAge: -1000000 });
+    return res.redirect('/?cleared=true');
+  }
+
   const profile = await reportRepo.getCovidReportByPasscode(passcode);
   if (profile) {
-    res.locals.metaDescription =
-      'Her kan du legge inn informasjon om din helsetilstand, slik at vi kan få en bedre oversikt over totalbildet i Norge.';
-    return res.render('pages/report', { profile });
+    const reports = await reportRepo.getLatestCovidReports();
+    const aggregated = aggregateCovidReports(reports);
+    return res.render('pages/report', {
+      profile,
+      passcode,
+      success,
+      aggregated
+    });
   }
-  return res.redirect('/');
+  return res.redirect(res.locals.urls.submitReport);
 });
 
 const extractTestResult = (req: Request): TestResult | undefined => {
@@ -46,17 +88,71 @@ const extractTestResult = (req: Request): TestResult | undefined => {
   return undefined;
 };
 
-router.post('/', async (req, res) => {
+const createReportRateLimit = rateLimit({
+  max: 20, // allowed requests per window
+  windowMs: 24 * 60 * 60 * 1000, // 24 hour window,
+  keyGenerator: req => determineRemoteAddress(req)
+});
+
+const toSex = (inputValue: string): Sex => {
+  if (inputValue === 'male') {
+    return Sex.MALE;
+  }
+  if (inputValue === 'female') {
+    return Sex.FEMALE;
+  }
+  return Sex.OTHER;
+};
+
+const toSmokingHabit = (inputValue: string): SmokingHabit | undefined => {
+  if (inputValue === 'currently-smoking') {
+    return SmokingHabit.CURRENTLY;
+  }
+  if (inputValue === 'used-to-smoke') {
+    return SmokingHabit.USED_TO;
+  }
+  if (inputValue === 'never-smoked') {
+    return SmokingHabit.NEVER;
+  }
+  return undefined;
+};
+
+const toIsolationStatus = (inputValue: string): IsolationStatus | undefined => {
+  if (inputValue === 'not-in-isolation') {
+    return IsolationStatus.NOT_IN_ISOLATION;
+  }
+  if (inputValue === 'isolation-due-to-travel') {
+    return IsolationStatus.ISOLATION_DUE_TO_TRAVEL;
+  }
+  if (inputValue === 'isolation-due-to-contact') {
+    return IsolationStatus.ISOLATION_DUE_TO_CONTACT;
+  }
+  if (inputValue === 'isolation-due-to-covid-19') {
+    return IsolationStatus.ISOLATION_DUE_TO_COVID_19;
+  }
+  if (inputValue === 'isolation-due-to-government') {
+    return IsolationStatus.ISOLATION_DUE_TO_GOVERNMENT_ORDERS;
+  }
+  return undefined;
+};
+
+router.post('/', createReportRateLimit, async (req, res) => {
   const acceptPrivacyPolicy = req.body['accept-privacy-policy'] === 'on';
   if (!acceptPrivacyPolicy) {
-    return res.render('pages/report', { didNotAcceptPrivacyPolicy: true });
+    const reports = await reportRepo.getLatestCovidReports();
+    const aggregated = aggregateCovidReports(reports);
+    return res.render('pages/report', {
+      didNotAcceptPrivacyPolicy: true,
+      aggregated
+    });
   }
+
   const covidReport: CovidReport = {
-    yearOfBirth: req.body['birth-year'],
-    postalCode: req.body['postal-code'],
+    age: req.body['age'],
+    postalCode: req.body['postal-code'].toUpperCase(),
     hasBeenTested: req.body['been-tested'] === 'yes',
     testResult: extractTestResult(req),
-    sex: req.body['gender'] === 'male' ? Sex.MALE : Sex.FEMALE,
+    sex: toSex(req.body['gender']),
     symptoms: {
       [Symptom.DRY_COUGH]: req.body['symptom-cough'] === 'on',
       [Symptom.EXHAUSTION]: req.body['symptom-fatigue'] === 'on',
@@ -65,27 +161,45 @@ router.post('/', async (req, res) => {
       [Symptom.MUSCLE_ACHING]: req.body['symptom-muscle-pain'] === 'on',
       [Symptom.DIARRHEA]: req.body['symptom-diarrhea'] === 'on',
       [Symptom.HEADACHE]: req.body['symptom-headache'] === 'on',
-      [Symptom.SORE_THROAT]: req.body['symptom-sore-throat'] === 'on'
+      [Symptom.SORE_THROAT]: req.body['symptom-sore-throat'] === 'on',
+      [Symptom.NO_TASTE]: req.body['symptom-no-taste'] === 'on',
+      [Symptom.NO_SMELL]: req.body['symptom-no-smell'] === 'on',
+      [Symptom.SLIME_COUGH]: req.body['symptom-slime-cough'] === 'on',
+      [Symptom.RUNNY_NOSE]: req.body['symptom-runny-nose'] === 'on',
+      [Symptom.NAUSEA_OR_VOMITING]:
+        req.body['symptom-nausea-or-vomiting'] === 'on'
     },
-    hasBeenAbroadLastTwoWeeks: req.body['been-abroad'] === 'yes',
     symptomStart: req.body['symptom-start'],
+    hasBeenInContactWithInfected: req.body['been-in-contact-with'] === 'yes',
+    bodyTemperature: req.body['body-temperature'],
+    smokingHabit: toSmokingHabit(req.body['smoking-habits']),
+    isolationStatus: toIsolationStatus(req.body['isolation-status']),
+    diagnosedWithOtherConditions:
+      req.body['diagnosed-other-conditions'] === 'yes',
     submissionTimestamp: new Date().getTime()
   };
-  const passcode = passcodeCreator.createPasscode();
+
+  const passcode = req.body['passcode'] || passcodeCreator.createPasscode();
+
+  const acceptRemember = req.body['accept-remember'] === 'on';
+
+  // Set cookie with passcode
+  if (acceptRemember) {
+    res.cookie('passcode', passcode, cookieOptions);
+  } else {
+    res.clearCookie('passcode');
+  }
+
   reportRepo.addNewCovidReport(passcode, covidReport);
-  return res.redirect(`/profil/${passcode}?success=true`);
-});
-
-router.get('/elements', (req, res) => {
-  return res.render('pages/elements');
-});
-
-router.get('/personvern', (req, res) => {
-  return res.render('pages/privacy-policy');
-});
-
-router.get('/frivillige', (req, res) => {
-  return res.render('pages/frivillige');
+  if (req.body['passcode']) {
+    return res.redirect(
+      `${res.locals.urls.profile}/${passcode}?success=true#contribute`
+    );
+  }
+  return res.render('pages/confirm-profile', {
+    passcode,
+    hasCookie: acceptRemember
+  });
 });
 
 export default router;

@@ -1,0 +1,5098 @@
+{
+  "Badín": {
+    "population": "0",
+    "postalCodes": ["97632"]
+  },
+  "Banská Bystrica": {
+    "population": "0",
+    "postalCodes": ["97405", "97401", "97411", "97404", "97409"]
+  },
+  "Bánovce nad Bebravou": {
+    "population": "0",
+    "postalCodes": ["95701", "95704", "95703"]
+  },
+  "Tajov": {
+    "population": "0",
+    "postalCodes": ["97634"]
+  },
+  "Banská Štiavnica": {
+    "population": "0",
+    "postalCodes": ["96901"]
+  },
+  "Banská Belá": {
+    "population": "0",
+    "postalCodes": ["96615"]
+  },
+  "Bardejov": {
+    "population": "0",
+    "postalCodes": ["08501"]
+  },
+  "Bardejovské Kúpele": {
+    "population": "0",
+    "postalCodes": ["08631"]
+  },
+  "Bojnice": {
+    "population": "0",
+    "postalCodes": ["97201"]
+  },
+  "Prievidza": {
+    "population": "0",
+    "postalCodes": ["97101"]
+  },
+  "Bratislava": {
+    "population": "0",
+    "postalCodes": ["84107", "81107", "81108", "81109", "82106", "85104", "84105", "84101", "85110", "83102", "83106", "82103", "82105", "82109", "83107", "82107", "85102", "83101", "82104", "81106", "85101", "81105", "85107", "84106", "82102", "82101", "83153", "84110", "82108", "83006", "83104", "84103", "81104", "84104", "81102", "81103", "81101", "85106", "84102", "84108", "85105", "83103", "83152", "83154", "83151", "85103", "84009", "84002", "83000", "85009", "83155", "83005", "83007", "85000", "84008"]
+  },
+  "Brezno": {
+    "population": "0",
+    "postalCodes": ["97703", "97701"]
+  },
+  "Michalová": {
+    "population": "0",
+    "postalCodes": ["97657"]
+  },
+  "Čadca": {
+    "population": "0",
+    "postalCodes": ["02201", "02204"]
+  },
+  "Dunajská Streda": {
+    "population": "0",
+    "postalCodes": ["92901"]
+  },
+  "Jahodná pri Dunajskej Strede": {
+    "population": "0",
+    "postalCodes": ["93021"]
+  },
+  "Galanta": {
+    "population": "0",
+    "postalCodes": ["92401"]
+  },
+  "Matúškovo": {
+    "population": "0",
+    "postalCodes": ["92501"]
+  },
+  "Halič": {
+    "population": "0",
+    "postalCodes": ["98511"]
+  },
+  "Lučenec": {
+    "population": "0",
+    "postalCodes": ["98401", "98403"]
+  },
+  "Hlohovec": {
+    "population": "0",
+    "postalCodes": ["92001", "92003"]
+  },
+  "Hurbanovo": {
+    "population": "0",
+    "postalCodes": ["94701", "94703"]
+  },
+  "Bajč": {
+    "population": "0",
+    "postalCodes": ["94654"]
+  },
+  "Kokava nad Rimavicou": {
+    "population": "0",
+    "postalCodes": ["98505"]
+  },
+  "Utekáč": {
+    "population": "0",
+    "postalCodes": ["98506"]
+  },
+  "Šoltýska": {
+    "population": "0",
+    "postalCodes": ["98507"]
+  },
+  "Komárno": {
+    "population": "0",
+    "postalCodes": ["94504", "94501", "94505"]
+  },
+  "Košice": {
+    "population": "0",
+    "postalCodes": ["04018", "04017", "04022", "04014", "04011", "04001", "04013", "04012", "04023", "04015", "04016"]
+  },
+  "Kysucké Nové Mesto": {
+    "population": "0",
+    "postalCodes": ["02401", "02404", "02333"]
+  },
+  "Levice": {
+    "population": "0",
+    "postalCodes": ["93401", "93405"]
+  },
+  "Lieskovec": {
+    "population": "0",
+    "postalCodes": ["96221"]
+  },
+  "Zvolen": {
+    "population": "0",
+    "postalCodes": ["96001"]
+  },
+  "Liptovský Mikuláš": {
+    "population": "0",
+    "postalCodes": ["03101", "03104", "03105"]
+  },
+  "Martin": {
+    "population": "0",
+    "postalCodes": ["03601"]
+  },
+  "Vrútky": {
+    "population": "0",
+    "postalCodes": ["03861"]
+  },
+  "Myjava": {
+    "population": "0",
+    "postalCodes": ["90701", "90703"]
+  },
+  "Nitra": {
+    "population": "0",
+    "postalCodes": ["94905", "94901", "94911", "94907"]
+  },
+  "Lužianky": {
+    "population": "0",
+    "postalCodes": ["95141"]
+  },
+  "Očová": {
+    "population": "0",
+    "postalCodes": ["96223"]
+  },
+  "Detva-sídlisko": {
+    "population": "0",
+    "postalCodes": ["96212"]
+  },
+  "Okoč": {
+    "population": "0",
+    "postalCodes": ["93028"]
+  },
+  "Dolný Štál": {
+    "population": "0",
+    "postalCodes": ["93010"]
+  },
+  "Orechová Potôň": {
+    "population": "0",
+    "postalCodes": ["93002"]
+  },
+  "Blahová": {
+    "population": "0",
+    "postalCodes": ["93052"]
+  },
+  "Partizánske": {
+    "population": "0",
+    "postalCodes": ["95801", "95803", "95804", "95806"]
+  },
+  "Chynorany": {
+    "population": "0",
+    "postalCodes": ["95633"]
+  },
+  "Pezinok": {
+    "population": "0",
+    "postalCodes": ["90201", "90203"]
+  },
+  "Lopej": {
+    "population": "0",
+    "postalCodes": ["97698"]
+  },
+  "Podbrezová": {
+    "population": "0",
+    "postalCodes": ["97681"]
+  },
+  "Poprad": {
+    "population": "0",
+    "postalCodes": ["05801"]
+  },
+  "Matejovce": {
+    "population": "0",
+    "postalCodes": ["05951"]
+  },
+  "Považská Bystrica": {
+    "population": "0",
+    "postalCodes": ["01701", "01707", "01706", "01704", "01705"]
+  },
+  "Predajná": {
+    "population": "0",
+    "postalCodes": ["97663"]
+  },
+  "Jasenie": {
+    "population": "0",
+    "postalCodes": ["97675"]
+  },
+  "Prešov": {
+    "population": "0",
+    "postalCodes": ["08001", "08006", "08005"]
+  },
+  "Ružomberok": {
+    "population": "0",
+    "postalCodes": ["03406", "03401", "03403"]
+  },
+  "Senica": {
+    "population": "0",
+    "postalCodes": ["90501"]
+  },
+  "Hlboké": {
+    "population": "0",
+    "postalCodes": ["90631"]
+  },
+  "Spišská Nová Ves": {
+    "population": "0",
+    "postalCodes": ["05201", "05205"]
+  },
+  "Novoveská Huta": {
+    "population": "0",
+    "postalCodes": ["05331"]
+  },
+  "Šaľa": {
+    "population": "0",
+    "postalCodes": ["92701", "92705"]
+  },
+  "Žihárec": {
+    "population": "0",
+    "postalCodes": ["92583"]
+  },
+  "Štrba": {
+    "population": "0",
+    "postalCodes": ["05938"]
+  },
+  "Tatranská Štrba": {
+    "population": "0",
+    "postalCodes": ["05941"]
+  },
+  "Hozelec": {
+    "population": "0",
+    "postalCodes": ["05911"]
+  },
+  "Hôrka pri Poprade": {
+    "population": "0",
+    "postalCodes": ["05912"]
+  },
+  "Topoľčany": {
+    "population": "0",
+    "postalCodes": ["95501", "95503"]
+  },
+  "Trenčín": {
+    "population": "0",
+    "postalCodes": ["91101", "91105", "91108", "91106"]
+  },
+  "Trenčianska Turná": {
+    "population": "0",
+    "postalCodes": ["91321"]
+  },
+  "Trnava": {
+    "population": "0",
+    "postalCodes": ["91701", "91708", "91702", "91705"]
+  },
+  "Biely Kostol": {
+    "population": "0",
+    "postalCodes": ["91934"]
+  },
+  "Ružindol": {
+    "population": "0",
+    "postalCodes": ["91961"]
+  },
+  "Valaská": {
+    "population": "0",
+    "postalCodes": ["97646"]
+  },
+  "Vígľaš": {
+    "population": "0",
+    "postalCodes": ["96202"]
+  },
+  "Vranov nad Topľou": {
+    "population": "0",
+    "postalCodes": ["09301", "09303", "09302"]
+  },
+  "Zavar": {
+    "population": "0",
+    "postalCodes": ["91926"]
+  },
+  "Zlaté Moravce": {
+    "population": "0",
+    "postalCodes": ["95301", "95305"]
+  },
+  "Žilina": {
+    "population": "0",
+    "postalCodes": ["01001", "01004", "01003", "01009", "01008", "01015", "01014", "01007"]
+  },
+  "Žitavany": {
+    "population": "0",
+    "postalCodes": ["95197"]
+  },
+  "Ábelová": {
+    "population": "0",
+    "postalCodes": ["98513"]
+  },
+  "Lenartovce": {
+    "population": "0",
+    "postalCodes": ["98044"]
+  },
+  "Abrahám": {
+    "population": "0",
+    "postalCodes": ["92545"]
+  },
+  "Raslavice": {
+    "population": "0",
+    "postalCodes": ["08641"]
+  },
+  "Vrbov": {
+    "population": "0",
+    "postalCodes": ["05972"]
+  },
+  "Slovenské Pravno": {
+    "population": "0",
+    "postalCodes": ["03822"]
+  },
+  "Kokošovce": {
+    "population": "0",
+    "postalCodes": ["08252"]
+  },
+  "Melčice-Lieskové": {
+    "population": "0",
+    "postalCodes": ["91305"]
+  },
+  "Vyšný Hrušov": {
+    "population": "0",
+    "postalCodes": ["06732"]
+  },
+  "Sečovce": {
+    "population": "0",
+    "postalCodes": ["07801"]
+  },
+  "Alekšince": {
+    "population": "0",
+    "postalCodes": ["95122"]
+  },
+  "Dunajská Lužná": {
+    "population": "0",
+    "postalCodes": ["90042"]
+  },
+  "Kráľovičove Kračany": {
+    "population": "0",
+    "postalCodes": ["93003"]
+  },
+  "Nesvady": {
+    "population": "0",
+    "postalCodes": ["94651"]
+  },
+  "Zbehy": {
+    "population": "0",
+    "postalCodes": ["95142"]
+  },
+  "Andovce": {
+    "population": "0",
+    "postalCodes": ["94123"]
+  },
+  "Šarišské Čierne": {
+    "population": "0",
+    "postalCodes": ["08637"]
+  },
+  "Ľubotín": {
+    "population": "0",
+    "postalCodes": ["06543", "06541"]
+  },
+  "Gbelce": {
+    "population": "0",
+    "postalCodes": ["94342"]
+  },
+  "Šalgovce": {
+    "population": "0",
+    "postalCodes": ["95606"]
+  },
+  "Dlhá Ves": {
+    "population": "0",
+    "postalCodes": ["04955"]
+  },
+  "Tekovské Lužany": {
+    "population": "0",
+    "postalCodes": ["93541"]
+  },
+  "Letanovce": {
+    "population": "0",
+    "postalCodes": ["05313"]
+  },
+  "Báb": {
+    "population": "0",
+    "postalCodes": ["95134"]
+  },
+  "Hanušovce nad Topľou": {
+    "population": "0",
+    "postalCodes": ["09431"]
+  },
+  "Hruštín": {
+    "population": "0",
+    "postalCodes": ["02952"]
+  },
+  "Terňa": {
+    "population": "0",
+    "postalCodes": ["08267"]
+  },
+  "Dobrá Niva": {
+    "population": "0",
+    "postalCodes": ["96261"]
+  },
+  "Klasov": {
+    "population": "0",
+    "postalCodes": ["95153"]
+  },
+  "Lukovištia": {
+    "population": "0",
+    "postalCodes": ["98026"]
+  },
+  "Kolárovice": {
+    "population": "0",
+    "postalCodes": ["01354"]
+  },
+  "Kostolné": {
+    "population": "0",
+    "postalCodes": ["91613"]
+  },
+  "Beňuš": {
+    "population": "0",
+    "postalCodes": ["97664"]
+  },
+  "Rohovce": {
+    "population": "0",
+    "postalCodes": ["93030"]
+  },
+  "Mojmírovce": {
+    "population": "0",
+    "postalCodes": ["95115"]
+  },
+  "Leles": {
+    "population": "0",
+    "postalCodes": ["07684"]
+  },
+  "Bačkov": {
+    "population": "0",
+    "postalCodes": ["07661"]
+  },
+  "Bidovce": {
+    "population": "0",
+    "postalCodes": ["04445"]
+  },
+  "Hontianske Tesáre": {
+    "population": "0",
+    "postalCodes": ["96268"]
+  },
+  "Podhorany pri Nitre": {
+    "population": "0",
+    "postalCodes": ["95146"]
+  },
+  "Báhoň": {
+    "population": "0",
+    "postalCodes": ["90084"]
+  },
+  "Lekárovce": {
+    "population": "0",
+    "postalCodes": ["07254"]
+  },
+  "Bajerov": {
+    "population": "0",
+    "postalCodes": ["08241"]
+  },
+  "Šarišské Dravce": {
+    "population": "0",
+    "postalCodes": ["08273"]
+  },
+  "Tekovský Hrádok": {
+    "population": "0",
+    "postalCodes": ["93551"]
+  },
+  "Kamenica nad Hronom": {
+    "population": "0",
+    "postalCodes": ["94365"]
+  },
+  "Baka": {
+    "population": "0",
+    "postalCodes": ["93004"]
+  },
+  "Rimavská Sobota": {
+    "population": "0",
+    "postalCodes": ["97901"]
+  },
+  "Selce pri Banskej Bystrici": {
+    "population": "0",
+    "postalCodes": ["97611"]
+  },
+  "Spišské Podhradie": {
+    "population": "0",
+    "postalCodes": ["05304"]
+  },
+  "Balog nad Ipľom": {
+    "population": "0",
+    "postalCodes": ["99111"]
+  },
+  "Čiližská Radvaň": {
+    "population": "0",
+    "postalCodes": ["93008"]
+  },
+  "Kameničná pri Komárne": {
+    "population": "0",
+    "postalCodes": ["94601"]
+  },
+  "Stropkov": {
+    "population": "0",
+    "postalCodes": ["09101"]
+  },
+  "Medzev": {
+    "population": "0",
+    "postalCodes": ["04425"]
+  },
+  "Piešťany": {
+    "population": "0",
+    "postalCodes": ["92101"]
+  },
+  "Diviaky nad Nitricou": {
+    "population": "0",
+    "postalCodes": ["97225"]
+  },
+  "Bánov pri Nových Zámkoch": {
+    "population": "0",
+    "postalCodes": ["94101"]
+  },
+  "Horná Ves": {
+    "population": "0",
+    "postalCodes": ["97248"]
+  },
+  "Hodruša-Hámre": {
+    "population": "0",
+    "postalCodes": ["96663"]
+  },
+  "Vechec": {
+    "population": "0",
+    "postalCodes": ["09412"]
+  },
+  "Borša": {
+    "population": "0",
+    "postalCodes": ["07632"]
+  },
+  "Figa": {
+    "population": "0",
+    "postalCodes": ["98251"]
+  },
+  "Bardejovské kúpele": {
+    "population": "0",
+    "postalCodes": ["08631"]
+  },
+  "Bardoňovo": {
+    "population": "0",
+    "postalCodes": ["94149"]
+  },
+  "Kremnica": {
+    "population": "0",
+    "postalCodes": ["96701"]
+  },
+  "Hertník": {
+    "population": "0",
+    "postalCodes": ["08642"]
+  },
+  "Baškovce pri Humennom": {
+    "population": "0",
+    "postalCodes": ["06723"]
+  },
+  "Sobrance": {
+    "population": "0",
+    "postalCodes": ["07301"]
+  },
+  "Ostrov pri Piešťanoch": {
+    "population": "0",
+    "postalCodes": ["92201"]
+  },
+  "Bošany": {
+    "population": "0",
+    "postalCodes": ["95618"]
+  },
+  "Batizovce": {
+    "population": "0",
+    "postalCodes": ["05935"]
+  },
+  "Bátka": {
+    "population": "0",
+    "postalCodes": ["98021"]
+  },
+  "Nenince": {
+    "population": "0",
+    "postalCodes": ["99126"]
+  },
+  "Bátorove Kosihy": {
+    "population": "0",
+    "postalCodes": ["94634"]
+  },
+  "Bátovce": {
+    "population": "0",
+    "postalCodes": ["93503"]
+  },
+  "Beckov": {
+    "population": "0",
+    "postalCodes": ["91638"]
+  },
+  "Kočovce": {
+    "population": "0",
+    "postalCodes": ["91631"]
+  },
+  "Beharovce": {
+    "population": "0",
+    "postalCodes": ["05305"]
+  },
+  "Tornaľa": {
+    "population": "0",
+    "postalCodes": ["98201"]
+  },
+  "Veľké Ripňany": {
+    "population": "0",
+    "postalCodes": ["95607"]
+  },
+  "Becherov": {
+    "population": "0",
+    "postalCodes": ["08635"]
+  },
+  "Holice na Ostrove": {
+    "population": "0",
+    "postalCodes": ["93034"]
+  },
+  "Belá pri Varíne": {
+    "population": "0",
+    "postalCodes": ["01305"]
+  },
+  "Ľubá": {
+    "population": "0",
+    "postalCodes": ["94353"]
+  },
+  "Belá pri Martine": {
+    "population": "0",
+    "postalCodes": ["03811"]
+  },
+  "Belá nad Cirochou": {
+    "population": "0",
+    "postalCodes": ["06781"]
+  },
+  "Beladice": {
+    "population": "0",
+    "postalCodes": ["95175"]
+  },
+  "Horná Mariková": {
+    "population": "0",
+    "postalCodes": ["01803"]
+  },
+  "Svidník": {
+    "population": "0",
+    "postalCodes": ["08901"]
+  },
+  "Podhájska": {
+    "population": "0",
+    "postalCodes": ["94148"]
+  },
+  "Rimavské Janovce": {
+    "population": "0",
+    "postalCodes": ["98001"]
+  },
+  "Fiľakovo": {
+    "population": "0",
+    "postalCodes": ["98601"]
+  },
+  "Preseľany": {
+    "population": "0",
+    "postalCodes": ["95612"]
+  },
+  "Hažlín": {
+    "population": "0",
+    "postalCodes": ["08614"]
+  },
+  "Beluša": {
+    "population": "0",
+    "postalCodes": ["01861"]
+  },
+  "Seňa": {
+    "population": "0",
+    "postalCodes": ["04458"]
+  },
+  "Liptovský Ondrej": {
+    "population": "0",
+    "postalCodes": ["03204"]
+  },
+  "Okrúhle": {
+    "population": "0",
+    "postalCodes": ["09042"]
+  },
+  "Mútne": {
+    "population": "0",
+    "postalCodes": ["02963"]
+  },
+  "Podhoroď": {
+    "population": "0",
+    "postalCodes": ["07264"]
+  },
+  "Rozhanovce": {
+    "population": "0",
+    "postalCodes": ["04442"]
+  },
+  "Príbovce": {
+    "population": "0",
+    "postalCodes": ["03842"]
+  },
+  "Horná Potôň": {
+    "population": "0",
+    "postalCodes": ["93036"]
+  },
+  "Slovenská Kajňa": {
+    "population": "0",
+    "postalCodes": ["09402"]
+  },
+  "Bytča": {
+    "population": "0",
+    "postalCodes": ["01401"]
+  },
+  "Dolný Kubín": {
+    "population": "0",
+    "postalCodes": ["02601"]
+  },
+  "Valaliky": {
+    "population": "0",
+    "postalCodes": ["04413"]
+  },
+  "Bernolákovo": {
+    "population": "0",
+    "postalCodes": ["90027"]
+  },
+  "Hendrichovce": {
+    "population": "0",
+    "postalCodes": ["08235"]
+  },
+  "Dolná Mariková": {
+    "population": "0",
+    "postalCodes": ["01802"]
+  },
+  "Beša": {
+    "population": "0",
+    "postalCodes": ["93536"]
+  },
+  "Vojany": {
+    "population": "0",
+    "postalCodes": ["07672"]
+  },
+  "Bešeňov": {
+    "population": "0",
+    "postalCodes": ["94141"]
+  },
+  "Liptovská Teplá": {
+    "population": "0",
+    "postalCodes": ["03483"]
+  },
+  "Hrabušice": {
+    "population": "0",
+    "postalCodes": ["05315"]
+  },
+  "Michalovce": {
+    "population": "0",
+    "postalCodes": ["07101"]
+  },
+  "Betliar": {
+    "population": "0",
+    "postalCodes": ["04921"]
+  },
+  "Púchov": {
+    "population": "0",
+    "postalCodes": ["02001"]
+  },
+  "Bežovce": {
+    "population": "0",
+    "postalCodes": ["07253"]
+  },
+  "Biel": {
+    "population": "0",
+    "postalCodes": ["07641"]
+  },
+  "Zázrivá": {
+    "population": "0",
+    "postalCodes": ["02705"]
+  },
+  "Čavoj": {
+    "population": "0",
+    "postalCodes": ["97229"]
+  },
+  "Lom nad Rimavicou": {
+    "population": "0",
+    "postalCodes": ["97653"]
+  },
+  "Mlynky": {
+    "population": "0",
+    "postalCodes": ["05376"]
+  },
+  "Ipeľský Sokolec": {
+    "population": "0",
+    "postalCodes": ["93574", "93575"]
+  },
+  "Bijacovce": {
+    "population": "0",
+    "postalCodes": ["05306"]
+  },
+  "Borský Mikuláš": {
+    "population": "0",
+    "postalCodes": ["90877"]
+  },
+  "Bíňa": {
+    "population": "0",
+    "postalCodes": ["94356"]
+  },
+  "Hnilčík": {
+    "population": "0",
+    "postalCodes": ["05332"]
+  },
+  "Bíňovce": {
+    "population": "0",
+    "postalCodes": ["91907"]
+  },
+  "Blatná na Ostrove": {
+    "population": "0",
+    "postalCodes": ["93032"]
+  },
+  "Blatné Remety": {
+    "population": "0",
+    "postalCodes": ["07244"]
+  },
+  "Blatné pri Senci": {
+    "population": "0",
+    "postalCodes": ["90082"]
+  },
+  "Veľké Revištia": {
+    "population": "0",
+    "postalCodes": ["07243"]
+  },
+  "Blatnica pri Martine": {
+    "population": "0",
+    "postalCodes": ["03815"]
+  },
+  "Bohdanovce pri Košiciach": {
+    "population": "0",
+    "postalCodes": ["04416"]
+  },
+  "Krásno nad Kysucou": {
+    "population": "0",
+    "postalCodes": ["02302"]
+  },
+  "Zákopčie": {
+    "population": "0",
+    "postalCodes": ["02311"]
+  },
+  "Jazernica": {
+    "population": "0",
+    "postalCodes": ["03844"]
+  },
+  "Bojná": {
+    "population": "0",
+    "postalCodes": ["95601"]
+  },
+  "Blhovce": {
+    "population": "0",
+    "postalCodes": ["98032"]
+  },
+  "Bobot": {
+    "population": "0",
+    "postalCodes": ["91325"]
+  },
+  "Bobrov": {
+    "population": "0",
+    "postalCodes": ["02942"]
+  },
+  "Bobrovec": {
+    "population": "0",
+    "postalCodes": ["03221"]
+  },
+  "Liptovská Sielnica": {
+    "population": "0",
+    "postalCodes": ["03223"]
+  },
+  "Haniska pri Košiciach": {
+    "population": "0",
+    "postalCodes": ["04457"]
+  },
+  "Vojka nad Dunajom": {
+    "population": "0",
+    "postalCodes": ["93031"]
+  },
+  "Prečín": {
+    "population": "0",
+    "postalCodes": ["01815"]
+  },
+  "Horné Obdokovce": {
+    "population": "0",
+    "postalCodes": ["95608"]
+  },
+  "Malý Čepčín": {
+    "population": "0",
+    "postalCodes": ["03845"]
+  },
+  "Uzovce": {
+    "population": "0",
+    "postalCodes": ["08266"]
+  },
+  "Trenčianske Stankovce": {
+    "population": "0",
+    "postalCodes": ["91311"]
+  },
+  "Krajná Poľana": {
+    "population": "0",
+    "postalCodes": ["09005"]
+  },
+  "Bodza": {
+    "population": "0",
+    "postalCodes": ["94616"]
+  },
+  "Zemianska Olča": {
+    "population": "0",
+    "postalCodes": ["94614"]
+  },
+  "Kružlov": {
+    "population": "0",
+    "postalCodes": ["08604"]
+  },
+  "Bohdanovce nad Trnavou": {
+    "population": "0",
+    "postalCodes": ["91909"]
+  },
+  "Pruské": {
+    "population": "0",
+    "postalCodes": ["01852"]
+  },
+  "Pukanec": {
+    "population": "0",
+    "postalCodes": ["93505", "93504", "93506"]
+  },
+  "Jaslovské Bohunice": {
+    "population": "0",
+    "postalCodes": ["91930"]
+  },
+  "Gemerská Hôrka": {
+    "population": "0",
+    "postalCodes": ["04912"]
+  },
+  "Bojničky": {
+    "population": "0",
+    "postalCodes": ["92055"]
+  },
+  "Iža": {
+    "population": "0",
+    "postalCodes": ["94639"]
+  },
+  "Boľ": {
+    "population": "0",
+    "postalCodes": ["07653"]
+  },
+  "Reca": {
+    "population": "0",
+    "postalCodes": ["92526"]
+  },
+  "Boleráz": {
+    "population": "0",
+    "postalCodes": ["91908"]
+  },
+  "Bolešov": {
+    "population": "0",
+    "postalCodes": ["01853"]
+  },
+  "Kecerovce": {
+    "population": "0",
+    "postalCodes": ["04447"]
+  },
+  "Rybany": {
+    "population": "0",
+    "postalCodes": ["95636"]
+  },
+  "Borinka pri Bratislave": {
+    "population": "0",
+    "postalCodes": ["90032"]
+  },
+  "Medzilaborce": {
+    "population": "0",
+    "postalCodes": ["06801"]
+  },
+  "Borovce": {
+    "population": "0",
+    "postalCodes": ["92209"]
+  },
+  "Borský Svätý Jur": {
+    "population": "0",
+    "postalCodes": ["90879"]
+  },
+  "Santovka": {
+    "population": "0",
+    "postalCodes": ["93587"]
+  },
+  "Bošáca": {
+    "population": "0",
+    "postalCodes": ["91307"]
+  },
+  "Motešice": {
+    "population": "0",
+    "postalCodes": ["91326"]
+  },
+  "Čierna nad Tisou": {
+    "population": "0",
+    "postalCodes": ["07643"]
+  },
+  "Dubovec": {
+    "population": "0",
+    "postalCodes": ["98041"]
+  },
+  "Parchovany": {
+    "population": "0",
+    "postalCodes": ["07662"]
+  },
+  "Drnava": {
+    "population": "0",
+    "postalCodes": ["04942"]
+  },
+  "Bracovce": {
+    "population": "0",
+    "postalCodes": ["07205"]
+  },
+  "Rovné": {
+    "population": "0",
+    "postalCodes": ["98267"]
+  },
+  "Branč": {
+    "population": "0",
+    "postalCodes": ["95113"]
+  },
+  "Dvory nad Žitavou": {
+    "population": "0",
+    "postalCodes": ["94131"]
+  },
+  "Hriňová": {
+    "population": "0",
+    "postalCodes": ["96205"]
+  },
+  "Markuška": {
+    "population": "0",
+    "postalCodes": ["04934"]
+  },
+  "Cejkov": {
+    "population": "0",
+    "postalCodes": ["07605"]
+  },
+  "Nová Baňa": {
+    "population": "0",
+    "postalCodes": ["96801"]
+  },
+  "Humenné": {
+    "population": "0",
+    "postalCodes": ["06601"]
+  },
+  "Mýtna": {
+    "population": "0",
+    "postalCodes": ["98553"]
+  },
+  "Šarišské Bohdanovce": {
+    "population": "0",
+    "postalCodes": ["08205"]
+  },
+  "Radvaň nad Laborcom": {
+    "population": "0",
+    "postalCodes": ["06701"]
+  },
+  "Brestovany": {
+    "population": "0",
+    "postalCodes": ["91927"]
+  },
+  "Moravské Lieskové": {
+    "population": "0",
+    "postalCodes": ["91642"]
+  },
+  "Vrbovce": {
+    "population": "0",
+    "postalCodes": ["90606"]
+  },
+  "Sokolce na Ostrove": {
+    "population": "0",
+    "postalCodes": ["94617"]
+  },
+  "Lemešany": {
+    "population": "0",
+    "postalCodes": ["08203"]
+  },
+  "Gemerská Panica": {
+    "population": "0",
+    "postalCodes": ["98046"]
+  },
+  "Breza": {
+    "population": "0",
+    "postalCodes": ["02953"]
+  },
+  "Kuzmice": {
+    "population": "0",
+    "postalCodes": ["07612"]
+  },
+  "Breznička": {
+    "population": "0",
+    "postalCodes": ["98502"]
+  },
+  "Giraltovce": {
+    "population": "0",
+    "postalCodes": ["08701"]
+  },
+  "Brezová pod Bradlom": {
+    "population": "0",
+    "postalCodes": ["90613"]
+  },
+  "Ubľa": {
+    "population": "0",
+    "postalCodes": ["06773"]
+  },
+  "Brezovica nad Torysou": {
+    "population": "0",
+    "postalCodes": ["08274"]
+  },
+  "Trstená": {
+    "population": "0",
+    "postalCodes": ["02801"]
+  },
+  "Hrabovec": {
+    "population": "0",
+    "postalCodes": ["08611"]
+  },
+  "Žemberovce": {
+    "population": "0",
+    "postalCodes": ["93502"]
+  },
+  "Pružina": {
+    "population": "0",
+    "postalCodes": ["01822"]
+  },
+  "Oravská Lesná": {
+    "population": "0",
+    "postalCodes": ["02957"]
+  },
+  "Brodské": {
+    "population": "0",
+    "postalCodes": ["90885"]
+  },
+  "Brodzany": {
+    "population": "0",
+    "postalCodes": ["95842"]
+  },
+  "Potvorice": {
+    "population": "0",
+    "postalCodes": ["91625"]
+  },
+  "Kolbovce": {
+    "population": "0",
+    "postalCodes": ["09031"]
+  },
+  "Senné": {
+    "population": "0",
+    "postalCodes": ["99101"]
+  },
+  "Ratková": {
+    "population": "0",
+    "postalCodes": ["98265"]
+  },
+  "Brusno": {
+    "population": "0",
+    "postalCodes": ["97662"]
+  },
+  "Brutovce": {
+    "population": "0",
+    "postalCodes": ["05373"]
+  },
+  "Bruty": {
+    "population": "0",
+    "postalCodes": ["94355"]
+  },
+  "Brvnište": {
+    "population": "0",
+    "postalCodes": ["01812"]
+  },
+  "Brzotín": {
+    "population": "0",
+    "postalCodes": ["04951"]
+  },
+  "Koprivnica": {
+    "population": "0",
+    "postalCodes": ["08643"]
+  },
+  "Búč": {
+    "population": "0",
+    "postalCodes": ["94635"]
+  },
+  "Bučany": {
+    "population": "0",
+    "postalCodes": ["91928"]
+  },
+  "Šamorín": {
+    "population": "0",
+    "postalCodes": ["93101"]
+  },
+  "Radoľa": {
+    "population": "0",
+    "postalCodes": ["02336"]
+  },
+  "Budča": {
+    "population": "0",
+    "postalCodes": ["96233"]
+  },
+  "Tŕnie": {
+    "population": "0",
+    "postalCodes": ["96234"]
+  },
+  "Teplý Vrch": {
+    "population": "0",
+    "postalCodes": ["98023"]
+  },
+  "Budimír": {
+    "population": "0",
+    "postalCodes": ["04443"]
+  },
+  "Tuhár": {
+    "population": "0",
+    "postalCodes": ["98512"]
+  },
+  "Ruská": {
+    "population": "0",
+    "postalCodes": ["07677"]
+  },
+  "Dubové pri Turčianskych Tepliciach": {
+    "population": "0",
+    "postalCodes": ["03823"]
+  },
+  "Budmerice": {
+    "population": "0",
+    "postalCodes": ["90086"]
+  },
+  "Moldava nad Bodvou": {
+    "population": "0",
+    "postalCodes": ["04501", "04405"]
+  },
+  "Lipany nad Torysou": {
+    "population": "0",
+    "postalCodes": ["08271"]
+  },
+  "Buková pri Trnave": {
+    "population": "0",
+    "postalCodes": ["91910"]
+  },
+  "Kotešová": {
+    "population": "0",
+    "postalCodes": ["01361"]
+  },
+  "Bukovce": {
+    "population": "0",
+    "postalCodes": ["09022"]
+  },
+  "Bukovec pri Myjave": {
+    "population": "0",
+    "postalCodes": ["90614"]
+  },
+  "Malá Ida": {
+    "population": "0",
+    "postalCodes": ["04420"]
+  },
+  "Dolná Strehová": {
+    "population": "0",
+    "postalCodes": ["99102"]
+  },
+  "Hliník nad Hronom": {
+    "population": "0",
+    "postalCodes": ["96601"]
+  },
+  "Spišský Štvrtok": {
+    "population": "0",
+    "postalCodes": ["05314"]
+  },
+  "Podkriváň": {
+    "population": "0",
+    "postalCodes": ["98551"]
+  },
+  "Chminianska Nová Ves": {
+    "population": "0",
+    "postalCodes": ["08233"]
+  },
+  "Bušince": {
+    "population": "0",
+    "postalCodes": ["99122"]
+  },
+  "Bušovce": {
+    "population": "0",
+    "postalCodes": ["05993"]
+  },
+  "Zlaté Klasy": {
+    "population": "0",
+    "postalCodes": ["93039"]
+  },
+  "Buzica": {
+    "population": "0",
+    "postalCodes": ["04473"]
+  },
+  "Šávoľ": {
+    "population": "0",
+    "postalCodes": ["98541"]
+  },
+  "Sady nad Torysou": {
+    "population": "0",
+    "postalCodes": ["04441"]
+  },
+  "Havaj": {
+    "population": "0",
+    "postalCodes": ["09023", "09024"]
+  },
+  "Bystrany pri Spišskej Novej Vsi": {
+    "population": "0",
+    "postalCodes": ["05362"]
+  },
+  "Bystré nad Topľou": {
+    "population": "0",
+    "postalCodes": ["09434"]
+  },
+  "Bystričany": {
+    "population": "0",
+    "postalCodes": ["97245"]
+  },
+  "Bystrička": {
+    "population": "0",
+    "postalCodes": ["03804"]
+  },
+  "Radvaň nad Dunajom": {
+    "population": "0",
+    "postalCodes": ["94638"]
+  },
+  "Kazimír": {
+    "population": "0",
+    "postalCodes": ["07613"]
+  },
+  "Vyhne": {
+    "population": "0",
+    "postalCodes": ["96602"]
+  },
+  "Bzenov": {
+    "population": "0",
+    "postalCodes": ["08242"]
+  },
+  "Bzince pod Javorinou": {
+    "population": "0",
+    "postalCodes": ["91611"]
+  },
+  "Bzovík": {
+    "population": "0",
+    "postalCodes": ["96241"]
+  },
+  "Sása": {
+    "population": "0",
+    "postalCodes": ["96262"]
+  },
+  "Turany nad Ondavou": {
+    "population": "0",
+    "postalCodes": ["09033", "09034"]
+  },
+  "Cabaj-Čápor": {
+    "population": "0",
+    "postalCodes": ["95117"]
+  },
+  "Sečovská Polianka": {
+    "population": "0",
+    "postalCodes": ["09414"]
+  },
+  "Rimavská Seč": {
+    "population": "0",
+    "postalCodes": ["98042"]
+  },
+  "Cernina": {
+    "population": "0",
+    "postalCodes": ["09016"]
+  },
+  "Cerová": {
+    "population": "0",
+    "postalCodes": ["90633"]
+  },
+  "Nové Sady pri Nitre": {
+    "population": "0",
+    "postalCodes": ["95124", "95125", "95126"]
+  },
+  "Cerovo pri Krupine": {
+    "population": "0",
+    "postalCodes": ["96252"]
+  },
+  "Čečejovce": {
+    "population": "0",
+    "postalCodes": ["04471"]
+  },
+  "Cífer": {
+    "population": "0",
+    "postalCodes": ["91943"]
+  },
+  "Gaboltov": {
+    "population": "0",
+    "postalCodes": ["08602"]
+  },
+  "Zlatníky pri Bánovciach nad Bebravou": {
+    "population": "0",
+    "postalCodes": ["95637"]
+  },
+  "Cinobaňa": {
+    "population": "0",
+    "postalCodes": ["98522"]
+  },
+  "Kopčany": {
+    "population": "0",
+    "postalCodes": ["90848"]
+  },
+  "Výrava": {
+    "population": "0",
+    "postalCodes": ["06716"]
+  },
+  "Čabiny": {
+    "population": "0",
+    "postalCodes": ["06702"]
+  },
+  "Čabradský Vrbovok": {
+    "population": "0",
+    "postalCodes": ["96251"]
+  },
+  "Čachtice": {
+    "population": "0",
+    "postalCodes": ["91621"]
+  },
+  "Hronovce": {
+    "population": "0",
+    "postalCodes": ["93561"]
+  },
+  "Čajkov": {
+    "population": "0",
+    "postalCodes": ["93524"]
+  },
+  "Čaka": {
+    "population": "0",
+    "postalCodes": ["93568"]
+  },
+  "Jelšovce": {
+    "population": "0",
+    "postalCodes": ["95143"]
+  },
+  "Radzovce": {
+    "population": "0",
+    "postalCodes": ["98558"]
+  },
+  "Štvrtok na Ostrove": {
+    "population": "0",
+    "postalCodes": ["93040"]
+  },
+  "Soľ": {
+    "population": "0",
+    "postalCodes": ["09435"]
+  },
+  "Čalovec": {
+    "population": "0",
+    "postalCodes": ["94602"]
+  },
+  "Čaňa": {
+    "population": "0",
+    "postalCodes": ["04414"]
+  },
+  "Čáry": {
+    "population": "0",
+    "postalCodes": ["90843"]
+  },
+  "Častá": {
+    "population": "0",
+    "postalCodes": ["90089"]
+  },
+  "Kolárovo": {
+    "population": "0",
+    "postalCodes": ["94603"]
+  },
+  "Rohov": {
+    "population": "0",
+    "postalCodes": ["90604"]
+  },
+  "Častkovce": {
+    "population": "0",
+    "postalCodes": ["91627"]
+  },
+  "Čata": {
+    "population": "0",
+    "postalCodes": ["93563"]
+  },
+  "Čataj": {
+    "population": "0",
+    "postalCodes": ["90083"]
+  },
+  "Čebovce": {
+    "population": "0",
+    "postalCodes": ["99125"]
+  },
+  "Čečehov": {
+    "population": "0",
+    "postalCodes": ["07211"]
+  },
+  "Látky": {
+    "population": "0",
+    "postalCodes": ["98545"]
+  },
+  "Semerovo": {
+    "population": "0",
+    "postalCodes": ["94132"]
+  },
+  "Čechynce": {
+    "population": "0",
+    "postalCodes": ["95107"]
+  },
+  "Čeľadice": {
+    "population": "0",
+    "postalCodes": ["95103"]
+  },
+  "Nitrianska Streda": {
+    "population": "0",
+    "postalCodes": ["95616"]
+  },
+  "Domaniža": {
+    "population": "0",
+    "postalCodes": ["01816"]
+  },
+  "Čelovce": {
+    "population": "0",
+    "postalCodes": ["99141"]
+  },
+  "Pušovce": {
+    "population": "0",
+    "postalCodes": ["08214"]
+  },
+  "Nižný Žipov": {
+    "population": "0",
+    "postalCodes": ["07617"]
+  },
+  "Mužla": {
+    "population": "0",
+    "postalCodes": ["94352"]
+  },
+  "Čereňany": {
+    "population": "0",
+    "postalCodes": ["97246"]
+  },
+  "Čerhov": {
+    "population": "0",
+    "postalCodes": ["07681"]
+  },
+  "Černík": {
+    "population": "0",
+    "postalCodes": ["94105"]
+  },
+  "Stará Turá": {
+    "population": "0",
+    "postalCodes": ["91601"]
+  },
+  "Habura": {
+    "population": "0",
+    "postalCodes": ["06752"]
+  },
+  "Šumiac": {
+    "population": "0",
+    "postalCodes": ["97671"]
+  },
+  "Sabinov": {
+    "population": "0",
+    "postalCodes": ["08301"]
+  },
+  "Sirk": {
+    "population": "0",
+    "postalCodes": ["04964"]
+  },
+  "Tuhrina": {
+    "population": "0",
+    "postalCodes": ["08207"]
+  },
+  "Pečovská Nová Ves": {
+    "population": "0",
+    "postalCodes": ["08256"]
+  },
+  "Leopoldov": {
+    "population": "0",
+    "postalCodes": ["92042", "92041"]
+  },
+  "Malé Vozokany": {
+    "population": "0",
+    "postalCodes": ["95182"]
+  },
+  "Červený Kameň": {
+    "population": "0",
+    "postalCodes": ["01856"]
+  },
+  "Červený Kláštor": {
+    "population": "0",
+    "postalCodes": ["05906"]
+  },
+  "České Brezovo": {
+    "population": "0",
+    "postalCodes": ["98503"]
+  },
+  "Čičarovce": {
+    "population": "0",
+    "postalCodes": ["07671"]
+  },
+  "Rajecká Lesná": {
+    "population": "0",
+    "postalCodes": ["01315"]
+  },
+  "Číčov": {
+    "population": "0",
+    "postalCodes": ["94619"]
+  },
+  "Nálepkovo": {
+    "population": "0",
+    "postalCodes": ["05333"]
+  },
+  "Slatina nad Bebravou": {
+    "population": "0",
+    "postalCodes": ["95653"]
+  },
+  "Slavošovce": {
+    "population": "0",
+    "postalCodes": ["04936"]
+  },
+  "Čierna Voda": {
+    "population": "0",
+    "postalCodes": ["92506"]
+  },
+  "Čierne pri Čadci": {
+    "population": "0",
+    "postalCodes": ["02313"]
+  },
+  "Makov na Slovensku": {
+    "population": "0",
+    "postalCodes": ["02356"]
+  },
+  "Štiavnik": {
+    "population": "0",
+    "postalCodes": ["01355", "01356"]
+  },
+  "Veľké Kapušany": {
+    "population": "0",
+    "postalCodes": ["07901"]
+  },
+  "Čierny Balog": {
+    "population": "0",
+    "postalCodes": ["97652"]
+  },
+  "Čierny Brod": {
+    "population": "0",
+    "postalCodes": ["92508"]
+  },
+  "Hodejov": {
+    "population": "0",
+    "postalCodes": ["98031"]
+  },
+  "Kráľova Lehota": {
+    "population": "0",
+    "postalCodes": ["03233"]
+  },
+  "Čifáre": {
+    "population": "0",
+    "postalCodes": ["95161"]
+  },
+  "Palárikovo": {
+    "population": "0",
+    "postalCodes": ["94111"]
+  },
+  "Liesek": {
+    "population": "0",
+    "postalCodes": ["02712"]
+  },
+  "Čirč": {
+    "population": "0",
+    "postalCodes": ["06542"]
+  },
+  "Číž": {
+    "population": "0",
+    "postalCodes": ["98043"]
+  },
+  "Turčianske Teplice": {
+    "population": "0",
+    "postalCodes": ["03901"]
+  },
+  "Rožňava": {
+    "population": "0",
+    "postalCodes": ["04801"]
+  },
+  "Pčoliné": {
+    "population": "0",
+    "postalCodes": ["06735"]
+  },
+  "Dačov Lom": {
+    "population": "0",
+    "postalCodes": ["99135"]
+  },
+  "Jarovnice": {
+    "population": "0",
+    "postalCodes": ["08263"]
+  },
+  "Odorín": {
+    "population": "0",
+    "postalCodes": ["05322"]
+  },
+  "Holčíkovce": {
+    "population": "0",
+    "postalCodes": ["09405"]
+  },
+  "Koškovce": {
+    "population": "0",
+    "postalCodes": ["06712"]
+  },
+  "Dedinka": {
+    "population": "0",
+    "postalCodes": ["94150"]
+  },
+  "Nová Dedinka": {
+    "population": "0",
+    "postalCodes": ["90029"]
+  },
+  "Dedinky": {
+    "population": "0",
+    "postalCodes": ["04973"]
+  },
+  "Dechtice": {
+    "population": "0",
+    "postalCodes": ["91953"]
+  },
+  "Hnilec": {
+    "population": "0",
+    "postalCodes": ["05375"]
+  },
+  "Demandice": {
+    "population": "0",
+    "postalCodes": ["93585"]
+  },
+  "Tulčík": {
+    "population": "0",
+    "postalCodes": ["08213"]
+  },
+  "Lysá pod Makytou": {
+    "population": "0",
+    "postalCodes": ["02054"]
+  },
+  "Hontianske Nemce": {
+    "population": "0",
+    "postalCodes": ["96265"]
+  },
+  "Dražkovce pri Martine": {
+    "population": "0",
+    "postalCodes": ["03802"]
+  },
+  "Diakovce": {
+    "population": "0",
+    "postalCodes": ["92581"]
+  },
+  "Diviacka Nová Ves": {
+    "population": "0",
+    "postalCodes": ["97224"]
+  },
+  "Divín": {
+    "population": "0",
+    "postalCodes": ["98552"]
+  },
+  "Divina": {
+    "population": "0",
+    "postalCodes": ["01331"]
+  },
+  "Suchá nad Parnou": {
+    "population": "0",
+    "postalCodes": ["91901"]
+  },
+  "Turzovka": {
+    "population": "0",
+    "postalCodes": ["02354"]
+  },
+  "Dlhá nad Oravou": {
+    "population": "0",
+    "postalCodes": ["02755"]
+  },
+  "Sačurov": {
+    "population": "0",
+    "postalCodes": ["09413"]
+  },
+  "Dlhé nad Cirochou": {
+    "population": "0",
+    "postalCodes": ["06782"]
+  },
+  "Dlhé Pole": {
+    "population": "0",
+    "postalCodes": ["01332"]
+  },
+  "Levoča": {
+    "population": "0",
+    "postalCodes": ["05401"]
+  },
+  "Kružlová": {
+    "population": "0",
+    "postalCodes": ["09002", "09001"]
+  },
+  "Nitrianske Rudno": {
+    "population": "0",
+    "postalCodes": ["97226"]
+  },
+  "Mýtne Ludany": {
+    "population": "0",
+    "postalCodes": ["93556"]
+  },
+  "Trenčianska Teplá": {
+    "population": "0",
+    "postalCodes": ["91401"]
+  },
+  "Dobrá Voda pri Trnave": {
+    "population": "0",
+    "postalCodes": ["91954"]
+  },
+  "Spišské Vlachy": {
+    "population": "0",
+    "postalCodes": ["05361"]
+  },
+  "Merník": {
+    "population": "0",
+    "postalCodes": ["09423"]
+  },
+  "Liešťany": {
+    "population": "0",
+    "postalCodes": ["97227"]
+  },
+  "Málinec": {
+    "population": "0",
+    "postalCodes": ["98526"]
+  },
+  "Dobšinská Ľadová Jaskyňa": {
+    "population": "0",
+    "postalCodes": ["04971"]
+  },
+  "Dobšiná": {
+    "population": "0",
+    "postalCodes": ["04925"]
+  },
+  "Dohňany": {
+    "population": "0",
+    "postalCodes": ["02051"]
+  },
+  "Dojč": {
+    "population": "0",
+    "postalCodes": ["90602"]
+  },
+  "Doľany pri Častej": {
+    "population": "0",
+    "postalCodes": ["90088"]
+  },
+  "Spišský Hrhov": {
+    "population": "0",
+    "postalCodes": ["05302"]
+  },
+  "Vinica": {
+    "population": "0",
+    "postalCodes": ["99128"]
+  },
+  "Pliešovce": {
+    "population": "0",
+    "postalCodes": ["96263"]
+  },
+  "Lúky": {
+    "population": "0",
+    "postalCodes": ["02053"]
+  },
+  "Lednické Rovne": {
+    "population": "0",
+    "postalCodes": ["02061"]
+  },
+  "Dolná Krupá": {
+    "population": "0",
+    "postalCodes": ["91965"]
+  },
+  "Oravský Podzámok": {
+    "population": "0",
+    "postalCodes": ["02741"]
+  },
+  "Omšenie": {
+    "population": "0",
+    "postalCodes": ["91443"]
+  },
+  "Dolná Seč": {
+    "population": "0",
+    "postalCodes": ["93531"]
+  },
+  "Dolná Streda": {
+    "population": "0",
+    "postalCodes": ["92563"]
+  },
+  "Dolná Súča": {
+    "population": "0",
+    "postalCodes": ["91332"]
+  },
+  "Dolná Tižina": {
+    "population": "0",
+    "postalCodes": ["01304"]
+  },
+  "Lovča": {
+    "population": "0",
+    "postalCodes": ["96621"]
+  },
+  "Horná Súča": {
+    "population": "0",
+    "postalCodes": ["91333"]
+  },
+  "Dolné Dubové": {
+    "population": "0",
+    "postalCodes": ["91952"]
+  },
+  "Hodruša - Hámre": {
+    "population": "0",
+    "postalCodes": ["96661"]
+  },
+  "Krušovce": {
+    "population": "0",
+    "postalCodes": ["95631"]
+  },
+  "Košariská": {
+    "population": "0",
+    "postalCodes": ["90615"]
+  },
+  "Horné Lefantovce": {
+    "population": "0",
+    "postalCodes": ["95145"]
+  },
+  "Zemianske Kostoľany": {
+    "population": "0",
+    "postalCodes": ["97243"]
+  },
+  "Pohranice": {
+    "population": "0",
+    "postalCodes": ["95102"]
+  },
+  "Dolné Orešany": {
+    "population": "0",
+    "postalCodes": ["91902"]
+  },
+  "Dolné Trhovište": {
+    "population": "0",
+    "postalCodes": ["92061"]
+  },
+  "Dolné Plachtince": {
+    "population": "0",
+    "postalCodes": ["99124"]
+  },
+  "Rykynčice": {
+    "population": "0",
+    "postalCodes": ["96255"]
+  },
+  "Dolné Saliby": {
+    "population": "0",
+    "postalCodes": ["92502"]
+  },
+  "Sľažany": {
+    "population": "0",
+    "postalCodes": ["95171"]
+  },
+  "Dolné Srnie": {
+    "population": "0",
+    "postalCodes": ["91641"]
+  },
+  "Pôtor": {
+    "population": "0",
+    "postalCodes": ["99103"]
+  },
+  "Horné Turovce": {
+    "population": "0",
+    "postalCodes": ["93581"]
+  },
+  "Dolné Vestenice": {
+    "population": "0",
+    "postalCodes": ["97223"]
+  },
+  "Veľké Dravce": {
+    "population": "0",
+    "postalCodes": ["98542"]
+  },
+  "Siladice": {
+    "population": "0",
+    "postalCodes": ["92052"]
+  },
+  "Dolný Bar": {
+    "population": "0",
+    "postalCodes": ["93014"]
+  },
+  "Veľký Ďur": {
+    "population": "0",
+    "postalCodes": ["93534"]
+  },
+  "Harmanec": {
+    "population": "0",
+    "postalCodes": ["97603"]
+  },
+  "Dolný Hričov": {
+    "population": "0",
+    "postalCodes": ["01341"]
+  },
+  "Kráľov Brod": {
+    "population": "0",
+    "postalCodes": ["92541"]
+  },
+  "Tvrdošovce": {
+    "population": "0",
+    "postalCodes": ["94110"]
+  },
+  "Staré Hory": {
+    "population": "0",
+    "postalCodes": ["97602"]
+  },
+  "Dolný Lieskov": {
+    "population": "0",
+    "postalCodes": ["01821"]
+  },
+  "Dolný Lopašov": {
+    "population": "0",
+    "postalCodes": ["92204"]
+  },
+  "Dolný Ohaj": {
+    "population": "0",
+    "postalCodes": ["94143"]
+  },
+  "Dolný Pial": {
+    "population": "0",
+    "postalCodes": ["93537"]
+  },
+  "Dolný Smokovec": {
+    "population": "0",
+    "postalCodes": ["05981"]
+  },
+  "Tvrdošín": {
+    "population": "0",
+    "postalCodes": ["02744"]
+  },
+  "Horný Tisovník": {
+    "population": "0",
+    "postalCodes": ["96275"]
+  },
+  "Turček": {
+    "population": "0",
+    "postalCodes": ["03848"]
+  },
+  "Horný Vadičov": {
+    "population": "0",
+    "postalCodes": ["02345"]
+  },
+  "Vinodol": {
+    "population": "0",
+    "postalCodes": ["95106"]
+  },
+  "Tomášov": {
+    "population": "0",
+    "postalCodes": ["90044"]
+  },
+  "Donovaly": {
+    "population": "0",
+    "postalCodes": ["97639"]
+  },
+  "Liptovský Hrádok": {
+    "population": "0",
+    "postalCodes": ["03301"]
+  },
+  "Drahňov": {
+    "population": "0",
+    "postalCodes": ["07674"]
+  },
+  "Drahovce": {
+    "population": "0",
+    "postalCodes": ["92241"]
+  },
+  "Drienov": {
+    "population": "0",
+    "postalCodes": ["08204"]
+  },
+  "Drienovec": {
+    "population": "0",
+    "postalCodes": ["04401"]
+  },
+  "Kendice": {
+    "population": "0",
+    "postalCodes": ["08201"]
+  },
+  "Drietoma": {
+    "population": "0",
+    "postalCodes": ["91303"]
+  },
+  "Šimonovce": {
+    "population": "0",
+    "postalCodes": ["98003"]
+  },
+  "Družstevná pri Hornáde": {
+    "population": "0",
+    "postalCodes": ["04431"]
+  },
+  "Gemerská Ves": {
+    "population": "0",
+    "postalCodes": ["98262"]
+  },
+  "Marhaň": {
+    "population": "0",
+    "postalCodes": ["08645"]
+  },
+  "Kurima": {
+    "population": "0",
+    "postalCodes": ["08612"]
+  },
+  "Lazy pod Makytou": {
+    "population": "0",
+    "postalCodes": ["02055"]
+  },
+  "Dubnica nad Váhom": {
+    "population": "0",
+    "postalCodes": ["01841"]
+  },
+  "Dubník pri Nových Zámkoch": {
+    "population": "0",
+    "postalCodes": ["94135"]
+  },
+  "Gemerský Jablonec": {
+    "population": "0",
+    "postalCodes": ["98035"]
+  },
+  "Trenčianske Jastrabie": {
+    "population": "0",
+    "postalCodes": ["91323", "91322"]
+  },
+  "Dubová pri Modre": {
+    "population": "0",
+    "postalCodes": ["90090"]
+  },
+  "Vyšný Orlík": {
+    "population": "0",
+    "postalCodes": ["09011"]
+  },
+  "Nemecká nad Hronom": {
+    "population": "0",
+    "postalCodes": ["97697"]
+  },
+  "Veselé pri Piešťanoch": {
+    "population": "0",
+    "postalCodes": ["92208"]
+  },
+  "Dubovce pri Skalici": {
+    "population": "0",
+    "postalCodes": ["90862"]
+  },
+  "Dúbrava pri Liptovskom Mikuláši": {
+    "population": "0",
+    "postalCodes": ["03212"]
+  },
+  "Žehňa": {
+    "population": "0",
+    "postalCodes": ["08206"]
+  },
+  "Poniky": {
+    "population": "0",
+    "postalCodes": ["97633"]
+  },
+  "Budkovce": {
+    "population": "0",
+    "postalCodes": ["07215"]
+  },
+  "Moravany nad Váhom": {
+    "population": "0",
+    "postalCodes": ["92221"]
+  },
+  "Dudince": {
+    "population": "0",
+    "postalCodes": ["96271"]
+  },
+  "Kuková": {
+    "population": "0",
+    "postalCodes": ["08644"]
+  },
+  "Dulovce": {
+    "population": "0",
+    "postalCodes": ["94656"]
+  },
+  "Rajec nad Rajčiankou": {
+    "population": "0",
+    "postalCodes": ["01501"]
+  },
+  "Ruskov": {
+    "population": "0",
+    "postalCodes": ["04419"]
+  },
+  "Kamenné Kosihy": {
+    "population": "0",
+    "postalCodes": ["99127"]
+  },
+  "Ludanice": {
+    "population": "0",
+    "postalCodes": ["95611"]
+  },
+  "Veľké Chlievany": {
+    "population": "0",
+    "postalCodes": ["95655"]
+  },
+  "Dvorníky nad Váhom": {
+    "population": "0",
+    "postalCodes": ["92056"]
+  },
+  "Turňa nad Bodvou": {
+    "population": "0",
+    "postalCodes": ["04402"]
+  },
+  "Nitrica": {
+    "population": "0",
+    "postalCodes": ["97222"]
+  },
+  "Vráble": {
+    "population": "0",
+    "postalCodes": ["95201"]
+  },
+  "Trebišov": {
+    "population": "0",
+    "postalCodes": ["07501", "07601"]
+  },
+  "Nový Život": {
+    "population": "0",
+    "postalCodes": ["93038"]
+  },
+  "Farná pri Hrone": {
+    "population": "0",
+    "postalCodes": ["93566"]
+  },
+  "Hnojné": {
+    "population": "0",
+    "postalCodes": ["07233"]
+  },
+  "Ľubeľa": {
+    "population": "0",
+    "postalCodes": ["03214", "03213"]
+  },
+  "Ratkovské Bystré": {
+    "population": "0",
+    "postalCodes": ["98266"]
+  },
+  "Fintice": {
+    "population": "0",
+    "postalCodes": ["08216"]
+  },
+  "Hniezdne": {
+    "population": "0",
+    "postalCodes": ["06501"]
+  },
+  "Široké": {
+    "population": "0",
+    "postalCodes": ["08237"]
+  },
+  "Kapušany pri Prešove": {
+    "population": "0",
+    "postalCodes": ["08212"]
+  },
+  "Gabčíkovo": {
+    "population": "0",
+    "postalCodes": ["93005"]
+  },
+  "Gajary": {
+    "population": "0",
+    "postalCodes": ["90061"]
+  },
+  "Svätý Kríž": {
+    "population": "0",
+    "postalCodes": ["03211"]
+  },
+  "Valaská Belá": {
+    "population": "0",
+    "postalCodes": ["97228"]
+  },
+  "Gbeľany pri Žiline": {
+    "population": "0",
+    "postalCodes": ["01302"]
+  },
+  "Gbely": {
+    "population": "0",
+    "postalCodes": ["90845"]
+  },
+  "Geča": {
+    "population": "0",
+    "postalCodes": ["04410"]
+  },
+  "Gelnica": {
+    "population": "0",
+    "postalCodes": ["05601"]
+  },
+  "Gemerská Poloma": {
+    "population": "0",
+    "postalCodes": ["04922"]
+  },
+  "Hostice": {
+    "population": "0",
+    "postalCodes": ["98004"]
+  },
+  "Nižná Kaloša": {
+    "population": "0",
+    "postalCodes": ["98252"]
+  },
+  "Jelšava": {
+    "population": "0",
+    "postalCodes": ["04916"]
+  },
+  "Hucín": {
+    "population": "0",
+    "postalCodes": ["04913"]
+  },
+  "Gerlachov": {
+    "population": "0",
+    "postalCodes": ["05942"]
+  },
+  "Košarovce": {
+    "population": "0",
+    "postalCodes": ["09406"]
+  },
+  "Štítnik": {
+    "population": "0",
+    "postalCodes": ["04932"]
+  },
+  "Vlachovo": {
+    "population": "0",
+    "postalCodes": ["04924"]
+  },
+  "Golianovo": {
+    "population": "0",
+    "postalCodes": ["95108"]
+  },
+  "Veľká Ida": {
+    "population": "0",
+    "postalCodes": ["04455"]
+  },
+  "Nová Dedina pri Leviciach": {
+    "population": "0",
+    "postalCodes": ["93525"]
+  },
+  "Močenok": {
+    "population": "0",
+    "postalCodes": ["95131"]
+  },
+  "Jesenské": {
+    "population": "0",
+    "postalCodes": ["98002"]
+  },
+  "Tomášovce": {
+    "population": "0",
+    "postalCodes": ["98556"]
+  },
+  "Ohradzany": {
+    "population": "0",
+    "postalCodes": ["06722"]
+  },
+  "Zuberec": {
+    "population": "0",
+    "postalCodes": ["02732"]
+  },
+  "Hnúšťa": {
+    "population": "0",
+    "postalCodes": ["98101"]
+  },
+  "Spišské Hanušovce": {
+    "population": "0",
+    "postalCodes": ["05904"]
+  },
+  "Poltár": {
+    "population": "0",
+    "postalCodes": ["98701"]
+  },
+  "Hajná Nová Ves": {
+    "population": "0",
+    "postalCodes": ["95603"]
+  },
+  "Hajnáčka": {
+    "population": "0",
+    "postalCodes": ["98033"]
+  },
+  "Sliač": {
+    "population": "0",
+    "postalCodes": ["96231"]
+  },
+  "Hájske": {
+    "population": "0",
+    "postalCodes": ["95133"]
+  },
+  "Plavnica": {
+    "population": "0",
+    "postalCodes": ["06545"]
+  },
+  "Veľká Lesná": {
+    "population": "0",
+    "postalCodes": ["06534"]
+  },
+  "Polomka": {
+    "population": "0",
+    "postalCodes": ["97666"]
+  },
+  "Hamuliakovo": {
+    "population": "0",
+    "postalCodes": ["90043"]
+  },
+  "Handlová": {
+    "population": "0",
+    "postalCodes": ["97251"]
+  },
+  "Hankovce pri Giraltovciach": {
+    "population": "0",
+    "postalCodes": ["08646"]
+  },
+  "Harichovce": {
+    "population": "0",
+    "postalCodes": ["05301"]
+  },
+  "Modra": {
+    "population": "0",
+    "postalCodes": ["90001"]
+  },
+  "Nová Bystrica pri Čadci": {
+    "population": "0",
+    "postalCodes": ["02305"]
+  },
+  "Hatalov": {
+    "population": "0",
+    "postalCodes": ["07216"]
+  },
+  "Spišská Stará Ves": {
+    "population": "0",
+    "postalCodes": ["06101"]
+  },
+  "Zalužice": {
+    "population": "0",
+    "postalCodes": ["07234"]
+  },
+  "Kamenica nad Cirochou": {
+    "population": "0",
+    "postalCodes": ["06783"]
+  },
+  "Helcmanovce": {
+    "population": "0",
+    "postalCodes": ["05563"]
+  },
+  "Heľpa": {
+    "population": "0",
+    "postalCodes": ["97668"]
+  },
+  "Nižná Slaná": {
+    "population": "0",
+    "postalCodes": ["04923"]
+  },
+  "Kľušov": {
+    "population": "0",
+    "postalCodes": ["08622"]
+  },
+  "Lučatín": {
+    "population": "0",
+    "postalCodes": ["97661"]
+  },
+  "Spišský Hrušov": {
+    "population": "0",
+    "postalCodes": ["05363"]
+  },
+  "Suchá Hora": {
+    "population": "0",
+    "postalCodes": ["02713"]
+  },
+  "Klokočov pri Čadci": {
+    "population": "0",
+    "postalCodes": ["02322"]
+  },
+  "Šemša": {
+    "population": "0",
+    "postalCodes": ["04421"]
+  },
+  "Hrašné": {
+    "population": "0",
+    "postalCodes": ["91614"]
+  },
+  "Horné Semerovce": {
+    "population": "0",
+    "postalCodes": ["93584"]
+  },
+  "Holíč": {
+    "population": "0",
+    "postalCodes": ["90851"]
+  },
+  "Holiša": {
+    "population": "0",
+    "postalCodes": ["98557"]
+  },
+  "Holumnica": {
+    "population": "0",
+    "postalCodes": ["05994"]
+  },
+  "Hontianska Vrbica": {
+    "population": "0",
+    "postalCodes": ["93555"]
+  },
+  "Hontianske Trsťany": {
+    "population": "0",
+    "postalCodes": ["93586"]
+  },
+  "Sobotište": {
+    "population": "0",
+    "postalCodes": ["90605"]
+  },
+  "Horná Kráľová": {
+    "population": "0",
+    "postalCodes": ["95132"]
+  },
+  "Horná Poruba": {
+    "population": "0",
+    "postalCodes": ["01835"]
+  },
+  "Horná Streda": {
+    "population": "0",
+    "postalCodes": ["91624"]
+  },
+  "Horná Štubňa": {
+    "population": "0",
+    "postalCodes": ["03846"]
+  },
+  "Terchová": {
+    "population": "0",
+    "postalCodes": ["01306"]
+  },
+  "Zlatná na Ostrove": {
+    "population": "0",
+    "postalCodes": ["94612"]
+  },
+  "Horná Ždaňa": {
+    "population": "0",
+    "postalCodes": ["96604"]
+  },
+  "Svinná": {
+    "population": "0",
+    "postalCodes": ["91324"]
+  },
+  "Nováky": {
+    "population": "0",
+    "postalCodes": ["97271"]
+  },
+  "Senohrad": {
+    "population": "0",
+    "postalCodes": ["96243"]
+  },
+  "Trhová Hradská": {
+    "population": "0",
+    "postalCodes": ["93013"]
+  },
+  "Uhrovec": {
+    "population": "0",
+    "postalCodes": ["95641"]
+  },
+  "Horné Orešany": {
+    "population": "0",
+    "postalCodes": ["91903"]
+  },
+  "Horné Otrokovce": {
+    "population": "0",
+    "postalCodes": ["92062"]
+  },
+  "Horné Srnie": {
+    "population": "0",
+    "postalCodes": ["91442"]
+  },
+  "Horné Trhovište": {
+    "population": "0",
+    "postalCodes": ["92066"]
+  },
+  "Horný Bar": {
+    "population": "0",
+    "postalCodes": ["93033"]
+  },
+  "Sereď": {
+    "population": "0",
+    "postalCodes": ["92601"]
+  },
+  "Horný Hričov": {
+    "population": "0",
+    "postalCodes": ["01342"]
+  },
+  "Trnovec nad Váhom": {
+    "population": "0",
+    "postalCodes": ["92571"]
+  },
+  "Starý Smokovec": {
+    "population": "0",
+    "postalCodes": ["06201", "05983"]
+  },
+  "Horovce pri Púchove": {
+    "population": "0",
+    "postalCodes": ["02062"]
+  },
+  "Tušická Nová Ves": {
+    "population": "0",
+    "postalCodes": ["07202"]
+  },
+  "Hostie": {
+    "population": "0",
+    "postalCodes": ["95194"]
+  },
+  "Hosťovce": {
+    "population": "0",
+    "postalCodes": ["95191"]
+  },
+  "Hôrka nad Váhom": {
+    "population": "0",
+    "postalCodes": ["91632"]
+  },
+  "Horné Hámre": {
+    "population": "0",
+    "postalCodes": ["96678", "96671"]
+  },
+  "Kalinovo": {
+    "population": "0",
+    "postalCodes": ["98501"]
+  },
+  "Malcov": {
+    "population": "0",
+    "postalCodes": ["08606"]
+  },
+  "Ľubica": {
+    "population": "0",
+    "postalCodes": ["05971"]
+  },
+  "Hradište pri Partizánskom": {
+    "population": "0",
+    "postalCodes": ["95854"]
+  },
+  "Hradište pod Vrátnom": {
+    "population": "0",
+    "postalCodes": ["90612"]
+  },
+  "Malčice": {
+    "population": "0",
+    "postalCodes": ["07206"]
+  },
+  "Hrádok nad Váhom": {
+    "population": "0",
+    "postalCodes": ["91633"]
+  },
+  "Krajné": {
+    "population": "0",
+    "postalCodes": ["91616"]
+  },
+  "Hrachovo": {
+    "population": "0",
+    "postalCodes": ["98052", "98051"]
+  },
+  "Hraň": {
+    "population": "0",
+    "postalCodes": ["07603"]
+  },
+  "Mníšek nad Popradom": {
+    "population": "0",
+    "postalCodes": ["06522"]
+  },
+  "Hranovnica": {
+    "population": "0",
+    "postalCodes": ["05916"]
+  },
+  "Veľaty": {
+    "population": "0",
+    "postalCodes": ["07615"]
+  },
+  "Hrhov": {
+    "population": "0",
+    "postalCodes": ["04944"]
+  },
+  "Vojčice": {
+    "population": "0",
+    "postalCodes": ["07622"]
+  },
+  "Kluknava": {
+    "population": "0",
+    "postalCodes": ["05351"]
+  },
+  "Šahy": {
+    "population": "0",
+    "postalCodes": ["93601"]
+  },
+  "Hrnčiarovce nad Parnou": {
+    "population": "0",
+    "postalCodes": ["91935"]
+  },
+  "Lubina": {
+    "population": "0",
+    "postalCodes": ["91612"]
+  },
+  "Hrnčiarska Ves": {
+    "population": "0",
+    "postalCodes": ["98013"]
+  },
+  "Hrnčiarske Zalužany": {
+    "population": "0",
+    "postalCodes": ["98012"]
+  },
+  "Hrochoť": {
+    "population": "0",
+    "postalCodes": ["97637"]
+  },
+  "Hronec": {
+    "population": "0",
+    "postalCodes": ["97645"]
+  },
+  "Vlkanová": {
+    "population": "0",
+    "postalCodes": ["97631"]
+  },
+  "Trnavá Hora": {
+    "population": "0",
+    "postalCodes": ["96611"]
+  },
+  "Hronské Kosihy": {
+    "population": "0",
+    "postalCodes": ["93527"]
+  },
+  "Hronský Beňadik": {
+    "population": "0",
+    "postalCodes": ["96653"]
+  },
+  "Kráľová pri Senci": {
+    "population": "0",
+    "postalCodes": ["90050"]
+  },
+  "Olešná pri Čadci": {
+    "population": "0",
+    "postalCodes": ["02352"]
+  },
+  "Senec": {
+    "population": "0",
+    "postalCodes": ["90301"]
+  },
+  "Hrušov": {
+    "population": "0",
+    "postalCodes": ["99142"]
+  },
+  "Jablonov nad Turňou": {
+    "population": "0",
+    "postalCodes": ["04943"]
+  },
+  "Rad": {
+    "population": "0",
+    "postalCodes": ["07637"]
+  },
+  "Koniarovce": {
+    "population": "0",
+    "postalCodes": ["95613"]
+  },
+  "Hrušovo": {
+    "population": "0",
+    "postalCodes": ["98025"]
+  },
+  "Ľubochňa": {
+    "population": "0",
+    "postalCodes": ["03491"]
+  },
+  "Včelince": {
+    "population": "0",
+    "postalCodes": ["98050"]
+  },
+  "Topoľovka": {
+    "population": "0",
+    "postalCodes": ["06745"]
+  },
+  "Hul": {
+    "population": "0",
+    "postalCodes": ["94144"]
+  },
+  "Huncovce": {
+    "population": "0",
+    "postalCodes": ["05992"]
+  },
+  "Ladomirová": {
+    "population": "0",
+    "postalCodes": ["09003"]
+  },
+  "Krčava": {
+    "population": "0",
+    "postalCodes": ["07251"]
+  },
+  "Nižná Polianka": {
+    "population": "0",
+    "postalCodes": ["08636"]
+  },
+  "Kvetoslavov": {
+    "population": "0",
+    "postalCodes": ["93041"]
+  },
+  "Hybe": {
+    "population": "0",
+    "postalCodes": ["03231"]
+  },
+  "Nižný Klátov": {
+    "population": "0",
+    "postalCodes": ["04412"]
+  },
+  "Chlmec": {
+    "population": "0",
+    "postalCodes": ["06741"]
+  },
+  "Stará Ľubovňa": {
+    "population": "0",
+    "postalCodes": ["06401"]
+  },
+  "Chmeľov": {
+    "population": "0",
+    "postalCodes": ["08215"]
+  },
+  "Zborov": {
+    "population": "0",
+    "postalCodes": ["08633"]
+  },
+  "Tesárske Mlyňany": {
+    "population": "0",
+    "postalCodes": ["95176"]
+  },
+  "Chocholná-Velčice": {
+    "population": "0",
+    "postalCodes": ["91304"]
+  },
+  "Choňkovce": {
+    "population": "0",
+    "postalCodes": ["07263"]
+  },
+  "Chorvátsky Grob": {
+    "population": "0",
+    "postalCodes": ["90025"]
+  },
+  "Chotča": {
+    "population": "0",
+    "postalCodes": ["09021"]
+  },
+  "Chotín": {
+    "population": "0",
+    "postalCodes": ["94631"]
+  },
+  "Lesenice": {
+    "population": "0",
+    "postalCodes": ["99108"]
+  },
+  "Kráľovce pri Košiciach": {
+    "population": "0",
+    "postalCodes": ["04444"]
+  },
+  "Chrenovec": {
+    "population": "0",
+    "postalCodes": ["97232"]
+  },
+  "Chropov": {
+    "population": "0",
+    "postalCodes": ["90864"]
+  },
+  "Závada": {
+    "population": "0",
+    "postalCodes": ["99121"]
+  },
+  "Chtelnica": {
+    "population": "0",
+    "postalCodes": ["92205"]
+  },
+  "Šišov": {
+    "population": "0",
+    "postalCodes": ["95638"]
+  },
+  "Nitrianske Pravno": {
+    "population": "0",
+    "postalCodes": ["97213"]
+  },
+  "Perín-Chym": {
+    "population": "0",
+    "postalCodes": ["04474"]
+  },
+  "Lubeník": {
+    "population": "0",
+    "postalCodes": ["04918"]
+  },
+  "Ilava": {
+    "population": "0",
+    "postalCodes": ["01901"]
+  },
+  "Slovenské Ďarmoty": {
+    "population": "0",
+    "postalCodes": ["99107"]
+  },
+  "Smižany": {
+    "population": "0",
+    "postalCodes": ["05311"]
+  },
+  "Imeľ": {
+    "population": "0",
+    "postalCodes": ["94652"]
+  },
+  "Tehla": {
+    "population": "0",
+    "postalCodes": ["93535"]
+  },
+  "Veľká Ves nad Ipľom": {
+    "population": "0",
+    "postalCodes": ["99110"]
+  },
+  "Plášťovce": {
+    "population": "0",
+    "postalCodes": ["93582"]
+  },
+  "Istebné nad Oravou": {
+    "population": "0",
+    "postalCodes": ["02753"]
+  },
+  "Ivanka pri Dunaji": {
+    "population": "0",
+    "postalCodes": ["90028"]
+  },
+  "Ivanka pri Nitre": {
+    "population": "0",
+    "postalCodes": ["95112"]
+  },
+  "Veľký Meder": {
+    "population": "0",
+    "postalCodes": ["93201"]
+  },
+  "Rokytov pri Humennom": {
+    "population": "0",
+    "postalCodes": ["06713"]
+  },
+  "Jablonica": {
+    "population": "0",
+    "postalCodes": ["90632"]
+  },
+  "Jablonka": {
+    "population": "0",
+    "postalCodes": ["90621"]
+  },
+  "Jablonov pri Levoči": {
+    "population": "0",
+    "postalCodes": ["05303"]
+  },
+  "Jablonové": {
+    "population": "0",
+    "postalCodes": ["90054"]
+  },
+  "Súľov": {
+    "population": "0",
+    "postalCodes": ["01352"]
+  },
+  "Jacovce": {
+    "population": "0",
+    "postalCodes": ["95621"]
+  },
+  "Jaklovce": {
+    "population": "0",
+    "postalCodes": ["05561"]
+  },
+  "Jakubany": {
+    "population": "0",
+    "postalCodes": ["06512"]
+  },
+  "Jakubov": {
+    "population": "0",
+    "postalCodes": ["90063"]
+  },
+  "Stakčín": {
+    "population": "0",
+    "postalCodes": ["06761"]
+  },
+  "Ráztočno": {
+    "population": "0",
+    "postalCodes": ["97231"]
+  },
+  "Sokolovce": {
+    "population": "0",
+    "postalCodes": ["92231"]
+  },
+  "Lukačovce pri Humennom": {
+    "population": "0",
+    "postalCodes": ["06724"]
+  },
+  "Janova Lehota": {
+    "population": "0",
+    "postalCodes": ["96624"]
+  },
+  "Klátova Nová Ves": {
+    "population": "0",
+    "postalCodes": ["95844"]
+  },
+  "Jánovce pri Poprade": {
+    "population": "0",
+    "postalCodes": ["05913"]
+  },
+  "Veľké Úľany": {
+    "population": "0",
+    "postalCodes": ["92522"]
+  },
+  "Jarabina": {
+    "population": "0",
+    "postalCodes": ["06531"]
+  },
+  "Jarok": {
+    "population": "0",
+    "postalCodes": ["95148"]
+  },
+  "Želiezovce": {
+    "population": "0",
+    "postalCodes": ["93701"]
+  },
+  "Jasenica": {
+    "population": "0",
+    "postalCodes": ["01817"]
+  },
+  "Kľače": {
+    "population": "0",
+    "postalCodes": ["01319"]
+  },
+  "Jasov": {
+    "population": "0",
+    "postalCodes": ["04423"]
+  },
+  "Jasová pri Nových Zámkoch": {
+    "population": "0",
+    "postalCodes": ["94134"]
+  },
+  "Slatinské Lazy": {
+    "population": "0",
+    "postalCodes": ["96225"]
+  },
+  "Javorina": {
+    "population": "0",
+    "postalCodes": ["05956"]
+  },
+  "Jedľové Kostoľany": {
+    "population": "0",
+    "postalCodes": ["95196"]
+  },
+  "Vysoká nad Kysucou": {
+    "population": "0",
+    "postalCodes": ["02355"]
+  },
+  "Jelenec": {
+    "population": "0",
+    "postalCodes": ["95173"]
+  },
+  "Jelka": {
+    "population": "0",
+    "postalCodes": ["92523"]
+  },
+  "Veľká nad Ipľom": {
+    "population": "0",
+    "postalCodes": ["98532"]
+  },
+  "Jenkovce": {
+    "population": "0",
+    "postalCodes": ["07252"]
+  },
+  "Veľký Klíž": {
+    "population": "0",
+    "postalCodes": ["95845"]
+  },
+  "Krásnohorská Dlhá Lúka": {
+    "population": "0",
+    "postalCodes": ["04945"]
+  },
+  "Jovsa": {
+    "population": "0",
+    "postalCodes": ["07232"]
+  },
+  "Jur nad Hronom": {
+    "population": "0",
+    "postalCodes": ["93557"]
+  },
+  "Kajal": {
+    "population": "0",
+    "postalCodes": ["92592"]
+  },
+  "Lúčky pri Ružomberku": {
+    "population": "0",
+    "postalCodes": ["03482"]
+  },
+  "Krompachy": {
+    "population": "0",
+    "postalCodes": ["05342"]
+  },
+  "Kalná nad Hronom": {
+    "population": "0",
+    "postalCodes": ["93532"]
+  },
+  "Klenová": {
+    "population": "0",
+    "postalCodes": ["06772"]
+  },
+  "Kálnica pri Novom Meste nad Váhom": {
+    "population": "0",
+    "postalCodes": ["91637"]
+  },
+  "Rapovce": {
+    "population": "0",
+    "postalCodes": ["98531"]
+  },
+  "Kalša": {
+    "population": "0",
+    "postalCodes": ["04418"]
+  },
+  "Vinné": {
+    "population": "0",
+    "postalCodes": ["07236", "07231"]
+  },
+  "Kameňany": {
+    "population": "0",
+    "postalCodes": ["04962"]
+  },
+  "Kamenec pod Vtáčnikom": {
+    "population": "0",
+    "postalCodes": ["97244"]
+  },
+  "Slávnica": {
+    "population": "0",
+    "postalCodes": ["01854"]
+  },
+  "Kamenín": {
+    "population": "0",
+    "postalCodes": ["94357"]
+  },
+  "Kamenná Poruba": {
+    "population": "0",
+    "postalCodes": ["01314"]
+  },
+  "Kamenný Most": {
+    "population": "0",
+    "postalCodes": ["94358"]
+  },
+  "Modrý Kameň": {
+    "population": "0",
+    "postalCodes": ["99201"]
+  },
+  "Kamienka": {
+    "population": "0",
+    "postalCodes": ["06532"]
+  },
+  "Veľký Šariš": {
+    "population": "0",
+    "postalCodes": ["08221"]
+  },
+  "Kanianka": {
+    "population": "0",
+    "postalCodes": ["97217"]
+  },
+  "Slovenské Nové Mesto": {
+    "population": "0",
+    "postalCodes": ["07633"]
+  },
+  "Novosad": {
+    "population": "0",
+    "postalCodes": ["07602"]
+  },
+  "Kátlovce": {
+    "population": "0",
+    "postalCodes": ["91955"]
+  },
+  "Vrádište": {
+    "population": "0",
+    "postalCodes": ["90849"]
+  },
+  "Štrkovec": {
+    "population": "0",
+    "postalCodes": ["98045"]
+  },
+  "Keť": {
+    "population": "0",
+    "postalCodes": ["93564"]
+  },
+  "Kežmarok": {
+    "population": "0",
+    "postalCodes": ["06001"]
+  },
+  "Tatranská Lomnica": {
+    "population": "0",
+    "postalCodes": ["05960"]
+  },
+  "Želovce": {
+    "population": "0",
+    "postalCodes": ["99106"]
+  },
+  "Kľačany pri Trnave": {
+    "population": "0",
+    "postalCodes": ["92064"]
+  },
+  "Urmince": {
+    "population": "0",
+    "postalCodes": ["95602"]
+  },
+  "Kľačno": {
+    "population": "0",
+    "postalCodes": ["97215"]
+  },
+  "Nižný Hrabovec": {
+    "population": "0",
+    "postalCodes": ["09421"]
+  },
+  "Ostrý Grúň": {
+    "population": "0",
+    "postalCodes": ["96677"]
+  },
+  "Kláštor pod Znievom": {
+    "population": "0",
+    "postalCodes": ["03843"]
+  },
+  "Klenov pri Prešove": {
+    "population": "0",
+    "postalCodes": ["08244"]
+  },
+  "Klenovec": {
+    "population": "0",
+    "postalCodes": ["98055"]
+  },
+  "Klin": {
+    "population": "0",
+    "postalCodes": ["02941"]
+  },
+  "Streda nad Bodrogom": {
+    "population": "0",
+    "postalCodes": ["07631"]
+  },
+  "Stará Bystrica": {
+    "population": "0",
+    "postalCodes": ["02304"]
+  },
+  "Nemšová": {
+    "population": "0",
+    "postalCodes": ["91441"]
+  },
+  "Medveďov": {
+    "population": "0",
+    "postalCodes": ["93007"]
+  },
+  "Kmeťovo": {
+    "population": "0",
+    "postalCodes": ["94162"]
+  },
+  "Ochtiná": {
+    "population": "0",
+    "postalCodes": ["04935"]
+  },
+  "Opatovce nad Nitrou": {
+    "population": "0",
+    "postalCodes": ["97202"]
+  },
+  "Veľké Držkovce": {
+    "population": "0",
+    "postalCodes": ["95654"]
+  },
+  "Svinia": {
+    "population": "0",
+    "postalCodes": ["08232"]
+  },
+  "Kojšov": {
+    "population": "0",
+    "postalCodes": ["05552"]
+  },
+  "Nová Ľubovňa": {
+    "population": "0",
+    "postalCodes": ["06511"]
+  },
+  "Veľké Uherce": {
+    "population": "0",
+    "postalCodes": ["95841"]
+  },
+  "Veľká Čalomija": {
+    "population": "0",
+    "postalCodes": ["99109"]
+  },
+  "Kolbasov": {
+    "population": "0",
+    "postalCodes": ["06766"]
+  },
+  "Porúbka pri Sobranciach": {
+    "population": "0",
+    "postalCodes": ["07261"]
+  },
+  "Kolíňany": {
+    "population": "0",
+    "postalCodes": ["95178"]
+  },
+  "Veľké Trakany": {
+    "population": "0",
+    "postalCodes": ["07642"]
+  },
+  "Michal na Ostrove": {
+    "population": "0",
+    "postalCodes": ["93035"]
+  },
+  "Kolta": {
+    "population": "0",
+    "postalCodes": ["94133"]
+  },
+  "Komjatice": {
+    "population": "0",
+    "postalCodes": ["94106"]
+  },
+  "Valaská Dubová": {
+    "population": "0",
+    "postalCodes": ["03496"]
+  },
+  "Komoča": {
+    "population": "0",
+    "postalCodes": ["94121"]
+  },
+  "Rajecké Teplice": {
+    "population": "0",
+    "postalCodes": ["01313"]
+  },
+  "Sučany": {
+    "population": "0",
+    "postalCodes": ["03852", "03851"]
+  },
+  "Košecké Podhradie": {
+    "population": "0",
+    "postalCodes": ["01831"]
+  },
+  "Korňa": {
+    "population": "0",
+    "postalCodes": ["02321"]
+  },
+  "Koromľa": {
+    "population": "0",
+    "postalCodes": ["07262"]
+  },
+  "Kriváň": {
+    "population": "0",
+    "postalCodes": ["96204"]
+  },
+  "Liptovská Osada": {
+    "population": "0",
+    "postalCodes": ["03473"]
+  },
+  "Ladice": {
+    "population": "0",
+    "postalCodes": ["95177"]
+  },
+  "Kostolište": {
+    "population": "0",
+    "postalCodes": ["90062"]
+  },
+  "Šurany": {
+    "population": "0",
+    "postalCodes": ["94201"]
+  },
+  "Koš": {
+    "population": "0",
+    "postalCodes": ["97241"]
+  },
+  "Košeca": {
+    "population": "0",
+    "postalCodes": ["01864"]
+  },
+  "Zliechov": {
+    "population": "0",
+    "postalCodes": ["01832"]
+  },
+  "Košická Belá": {
+    "population": "0",
+    "postalCodes": ["04465"]
+  },
+  "Košťany nad Turcom": {
+    "population": "0",
+    "postalCodes": ["03841"]
+  },
+  "Kováčová pri Zvolene": {
+    "population": "0",
+    "postalCodes": ["96237"]
+  },
+  "Smrdáky": {
+    "population": "0",
+    "postalCodes": ["90603"]
+  },
+  "Radošovce": {
+    "population": "0",
+    "postalCodes": ["90863"]
+  },
+  "Kovarce": {
+    "population": "0",
+    "postalCodes": ["95615"]
+  },
+  "Kozárovce": {
+    "population": "0",
+    "postalCodes": ["93522"]
+  },
+  "Krakovany na Slovensku": {
+    "population": "0",
+    "postalCodes": ["92202"]
+  },
+  "Kráľová nad Váhom": {
+    "population": "0",
+    "postalCodes": ["92591"]
+  },
+  "Kraľovany": {
+    "population": "0",
+    "postalCodes": ["02751"]
+  },
+  "Kráľovský Chlmec": {
+    "population": "0",
+    "postalCodes": ["07701"]
+  },
+  "Varín": {
+    "population": "0",
+    "postalCodes": ["01303"]
+  },
+  "Krásno pri Topoľčanoch": {
+    "population": "0",
+    "postalCodes": ["95843"]
+  },
+  "Krásnohorské Podhradie": {
+    "population": "0",
+    "postalCodes": ["04941"]
+  },
+  "Pozdišovce": {
+    "population": "0",
+    "postalCodes": ["07201"]
+  },
+  "Marcelová": {
+    "population": "0",
+    "postalCodes": ["94632"]
+  },
+  "Spišské Bystré": {
+    "population": "0",
+    "postalCodes": ["05918"]
+  },
+  "Kravany nad Dunajom": {
+    "population": "0",
+    "postalCodes": ["94636"]
+  },
+  "Porostov": {
+    "population": "0",
+    "postalCodes": ["07255"]
+  },
+  "Oľka": {
+    "population": "0",
+    "postalCodes": ["06704"]
+  },
+  "Strážske": {
+    "population": "0",
+    "postalCodes": ["07222"]
+  },
+  "Považany": {
+    "population": "0",
+    "postalCodes": ["91626"]
+  },
+  "Spišská Belá": {
+    "population": "0",
+    "postalCodes": ["05901"]
+  },
+  "Križovany nad Dudváhom": {
+    "population": "0",
+    "postalCodes": ["91924"]
+  },
+  "Uhorské": {
+    "population": "0",
+    "postalCodes": ["98525", "98524"]
+  },
+  "Krnča": {
+    "population": "0",
+    "postalCodes": ["95619"]
+  },
+  "Krpeľany": {
+    "population": "0",
+    "postalCodes": ["03854"]
+  },
+  "Miňovce": {
+    "population": "0",
+    "postalCodes": ["09032"]
+  },
+  "Krupina": {
+    "population": "0",
+    "postalCodes": ["96301"]
+  },
+  "Krušetnica": {
+    "population": "0",
+    "postalCodes": ["02954"]
+  },
+  "Oborín": {
+    "population": "0",
+    "postalCodes": ["07675"]
+  },
+  "Kuchyňa": {
+    "population": "0",
+    "postalCodes": ["90052"]
+  },
+  "Kuklov": {
+    "population": "0",
+    "postalCodes": ["90878"]
+  },
+  "Kúty": {
+    "population": "0",
+    "postalCodes": ["90801"]
+  },
+  "Rimavské Brezovo": {
+    "population": "0",
+    "postalCodes": ["98054"]
+  },
+  "Šarišské Jastrabie": {
+    "population": "0",
+    "postalCodes": ["06548"]
+  },
+  "Kysak": {
+    "population": "0",
+    "postalCodes": ["04481"]
+  },
+  "Kysucký Lieskovec": {
+    "population": "0",
+    "postalCodes": ["02334"]
+  },
+  "Láb": {
+    "population": "0",
+    "postalCodes": ["90067"]
+  },
+  "Litava na Slovensku": {
+    "population": "0",
+    "postalCodes": ["96244"]
+  },
+  "Lipovce pri Prešove": {
+    "population": "0",
+    "postalCodes": ["08236"]
+  },
+  "Ladce": {
+    "population": "0",
+    "postalCodes": ["01863"]
+  },
+  "Ladmovce": {
+    "population": "0",
+    "postalCodes": ["07634"]
+  },
+  "Žiar nad Hronom": {
+    "population": "0",
+    "postalCodes": ["96501"]
+  },
+  "Lakšárska Nová Ves": {
+    "population": "0",
+    "postalCodes": ["90876"]
+  },
+  "Lastomír": {
+    "population": "0",
+    "postalCodes": ["07237"]
+  },
+  "Michaľany pri Trebišove": {
+    "population": "0",
+    "postalCodes": ["07614"]
+  },
+  "Lazany pri Prievidzi": {
+    "population": "0",
+    "postalCodes": ["97211"]
+  },
+  "Lednica": {
+    "population": "0",
+    "postalCodes": ["02063"]
+  },
+  "Malý Lipník": {
+    "population": "0",
+    "postalCodes": ["06546"]
+  },
+  "Lehota pri Nitre": {
+    "population": "0",
+    "postalCodes": ["95136"]
+  },
+  "Rimavská Baňa": {
+    "population": "0",
+    "postalCodes": ["98053"]
+  },
+  "Lehota pod Vtáčnikom": {
+    "population": "0",
+    "postalCodes": ["97242"]
+  },
+  "Lendak": {
+    "population": "0",
+    "postalCodes": ["05907"]
+  },
+  "Veľký Lipník": {
+    "population": "0",
+    "postalCodes": ["06533"]
+  },
+  "Petrova Ves": {
+    "population": "0",
+    "postalCodes": ["90844"]
+  },
+  "Licince": {
+    "population": "0",
+    "postalCodes": ["04914"]
+  },
+  "Markušovce": {
+    "population": "0",
+    "postalCodes": ["05321"]
+  },
+  "Lietava": {
+    "population": "0",
+    "postalCodes": ["01318"]
+  },
+  "Lietavská Lúčka": {
+    "population": "0",
+    "postalCodes": ["01311"]
+  },
+  "Likavka": {
+    "population": "0",
+    "postalCodes": ["03495"]
+  },
+  "Limbach": {
+    "population": "0",
+    "postalCodes": ["90091"]
+  },
+  "Tlmače": {
+    "population": "0",
+    "postalCodes": ["93521"]
+  },
+  "Lipová pri Nových Zámkoch": {
+    "population": "0",
+    "postalCodes": ["94102"]
+  },
+  "Liptovská Kokava": {
+    "population": "0",
+    "postalCodes": ["03244"]
+  },
+  "Liptovská Lúžna": {
+    "population": "0",
+    "postalCodes": ["03472"]
+  },
+  "Liptovská Teplička": {
+    "population": "0",
+    "postalCodes": ["05940"]
+  },
+  "Liptovské Revúce": {
+    "population": "0",
+    "postalCodes": ["03474"]
+  },
+  "Liptovské Sliače": {
+    "population": "0",
+    "postalCodes": ["03484"]
+  },
+  "Liptovský Ján": {
+    "population": "0",
+    "postalCodes": ["03203"]
+  },
+  "Lisková": {
+    "population": "0",
+    "postalCodes": ["03481"]
+  },
+  "Nadlice": {
+    "population": "0",
+    "postalCodes": ["95632"]
+  },
+  "Lukov pri Bardejove": {
+    "population": "0",
+    "postalCodes": ["08605"]
+  },
+  "Lok": {
+    "population": "0",
+    "postalCodes": ["93538"]
+  },
+  "Lokca": {
+    "population": "0",
+    "postalCodes": ["02951"]
+  },
+  "Podolínec": {
+    "population": "0",
+    "postalCodes": ["06503"]
+  },
+  "Smolenice": {
+    "population": "0",
+    "postalCodes": ["91904"]
+  },
+  "Lovce": {
+    "population": "0",
+    "postalCodes": ["95192"]
+  },
+  "Lovčica - Trubín": {
+    "population": "0",
+    "postalCodes": ["96623"]
+  },
+  "Lovinobaňa": {
+    "population": "0",
+    "postalCodes": ["98554"]
+  },
+  "Lozorno": {
+    "population": "0",
+    "postalCodes": ["90055"]
+  },
+  "Oslany": {
+    "population": "0",
+    "postalCodes": ["97247"]
+  },
+  "Ľubietová": {
+    "population": "0",
+    "postalCodes": ["97655"]
+  },
+  "Ľubiša": {
+    "population": "0",
+    "postalCodes": ["06711"]
+  },
+  "Lučivná": {
+    "population": "0",
+    "postalCodes": ["05931"]
+  },
+  "Svit": {
+    "population": "0",
+    "postalCodes": ["05921"]
+  },
+  "Rakovec nad Ondavou": {
+    "population": "0",
+    "postalCodes": ["07203"]
+  },
+  "Lúčnica nad Žitavou": {
+    "population": "0",
+    "postalCodes": ["95188"]
+  },
+  "Výčapy - Opatovce": {
+    "population": "0",
+    "postalCodes": ["95144"]
+  },
+  "Ludrová": {
+    "population": "0",
+    "postalCodes": ["03471"]
+  },
+  "Lukáčovce pri Nitre": {
+    "population": "0",
+    "postalCodes": ["95123"]
+  },
+  "Lukavica pri Bardejove": {
+    "population": "0",
+    "postalCodes": ["08621"]
+  },
+  "Žarnovica": {
+    "population": "0",
+    "postalCodes": ["96681"]
+  },
+  "Lutila": {
+    "population": "0",
+    "postalCodes": ["96622"]
+  },
+  "Ľutina": {
+    "population": "0",
+    "postalCodes": ["08257"]
+  },
+  "Madunice": {
+    "population": "0",
+    "postalCodes": ["92242"]
+  },
+  "Partizánska Ľupča": {
+    "population": "0",
+    "postalCodes": ["03215"]
+  },
+  "Topoľčianky": {
+    "population": "0",
+    "postalCodes": ["95193"]
+  },
+  "Majcichov": {
+    "population": "0",
+    "postalCodes": ["91922"]
+  },
+  "Sedliská": {
+    "population": "0",
+    "postalCodes": ["09409"]
+  },
+  "Veľká Franková": {
+    "population": "0",
+    "postalCodes": ["05978"]
+  },
+  "Malá Lehota pri Novej Bani": {
+    "population": "0",
+    "postalCodes": ["96642"]
+  },
+  "Sládkovičovo": {
+    "population": "0",
+    "postalCodes": ["92521"]
+  },
+  "Maňa": {
+    "population": "0",
+    "postalCodes": ["94145"]
+  },
+  "Veľká Tŕňa": {
+    "population": "0",
+    "postalCodes": ["07682"]
+  },
+  "Malacky": {
+    "population": "0",
+    "postalCodes": ["90101"]
+  },
+  "Málaš": {
+    "population": "0",
+    "postalCodes": ["93567"]
+  },
+  "Malé Chyndice": {
+    "population": "0",
+    "postalCodes": ["95154"]
+  },
+  "Salka": {
+    "population": "0",
+    "postalCodes": ["94361"]
+  },
+  "Malé Leváre": {
+    "population": "0",
+    "postalCodes": ["90874"]
+  },
+  "Ostratice": {
+    "population": "0",
+    "postalCodes": ["95634"]
+  },
+  "Zemplínske Kopčany": {
+    "population": "0",
+    "postalCodes": ["07217"]
+  },
+  "Veľký Krtíš": {
+    "population": "0",
+    "postalCodes": ["99001"]
+  },
+  "Malinovo": {
+    "population": "0",
+    "postalCodes": ["90045"]
+  },
+  "Malužiná": {
+    "population": "0",
+    "postalCodes": ["03234"]
+  },
+  "Veľký Biel": {
+    "population": "0",
+    "postalCodes": ["90024"]
+  },
+  "Veľký Horeš": {
+    "population": "0",
+    "postalCodes": ["07652"]
+  },
+  "Veľký Kamenec": {
+    "population": "0",
+    "postalCodes": ["07636"]
+  },
+  "Nová Dubnica": {
+    "population": "0",
+    "postalCodes": ["01851"]
+  },
+  "Veľký Lapáš": {
+    "population": "0",
+    "postalCodes": ["95104"]
+  },
+  "Malženice": {
+    "population": "0",
+    "postalCodes": ["91929"]
+  },
+  "Margecany": {
+    "population": "0",
+    "postalCodes": ["05501"]
+  },
+  "Marianka": {
+    "population": "0",
+    "postalCodes": ["90033"]
+  },
+  "Predmier": {
+    "population": "0",
+    "postalCodes": ["01351"]
+  },
+  "Nový Tekov": {
+    "population": "0",
+    "postalCodes": ["93533"]
+  },
+  "Medzibrod": {
+    "population": "0",
+    "postalCodes": ["97696"]
+  },
+  "Mengusovce": {
+    "population": "0",
+    "postalCodes": ["05936"]
+  },
+  "Mestečko": {
+    "population": "0",
+    "postalCodes": ["02052"]
+  },
+  "Mestisko": {
+    "population": "0",
+    "postalCodes": ["09041"]
+  },
+  "Mikušovce": {
+    "population": "0",
+    "postalCodes": ["01857"]
+  },
+  "Mlynčeky": {
+    "population": "0",
+    "postalCodes": ["05976"]
+  },
+  "Veľký Slavkov": {
+    "population": "0",
+    "postalCodes": ["05991"]
+  },
+  "Mníšek nad Hnilcom": {
+    "population": "0",
+    "postalCodes": ["05564"]
+  },
+  "Moča": {
+    "population": "0",
+    "postalCodes": ["94637"]
+  },
+  "Petrovany": {
+    "population": "0",
+    "postalCodes": ["08253"]
+  },
+  "Podhorie": {
+    "population": "0",
+    "postalCodes": ["96982"]
+  },
+  "Modrany pri Hurbanove": {
+    "population": "0",
+    "postalCodes": ["94633"]
+  },
+  "Modrová": {
+    "population": "0",
+    "postalCodes": ["91635"]
+  },
+  "Mochovce": {
+    "population": "0",
+    "postalCodes": ["93539"]
+  },
+  "Mojtín": {
+    "population": "0",
+    "postalCodes": ["02072"]
+  },
+  "Mojzesovo": {
+    "population": "0",
+    "postalCodes": ["94104"]
+  },
+  "Revúca": {
+    "population": "0",
+    "postalCodes": ["05001"]
+  },
+  "Rokytov": {
+    "population": "0",
+    "postalCodes": ["08601"]
+  },
+  "Skalica": {
+    "population": "0",
+    "postalCodes": ["90865", "90901"]
+  },
+  "Moravský Svätý Ján": {
+    "population": "0",
+    "postalCodes": ["90871"]
+  },
+  "Most pri Bratislave": {
+    "population": "0",
+    "postalCodes": ["90046"]
+  },
+  "Mostová": {
+    "population": "0",
+    "postalCodes": ["92507"]
+  },
+  "Mošovce": {
+    "population": "0",
+    "postalCodes": ["03821"]
+  },
+  "Slovenská Ľupča": {
+    "population": "0",
+    "postalCodes": ["97613"]
+  },
+  "Muráň": {
+    "population": "0",
+    "postalCodes": ["04901"]
+  },
+  "Mýto pod Ďumbierom": {
+    "population": "0",
+    "postalCodes": ["97644"]
+  },
+  "Somotor": {
+    "population": "0",
+    "postalCodes": ["07635"]
+  },
+  "Nacina Ves": {
+    "population": "0",
+    "postalCodes": ["07221"]
+  },
+  "Námestovo": {
+    "population": "0",
+    "postalCodes": ["02901"]
+  },
+  "Nána": {
+    "population": "0",
+    "postalCodes": ["94360"]
+  },
+  "Rákoš": {
+    "population": "0",
+    "postalCodes": ["04961"]
+  },
+  "Sap": {
+    "population": "0",
+    "postalCodes": ["93006"]
+  },
+  "Necpaly": {
+    "population": "0",
+    "postalCodes": ["03812"]
+  },
+  "Nedašovce pri Topoľčanoch": {
+    "population": "0",
+    "postalCodes": ["95635"]
+  },
+  "Neded": {
+    "population": "0",
+    "postalCodes": ["92585"]
+  },
+  "Nedožery": {
+    "population": "0",
+    "postalCodes": ["97212"]
+  },
+  "Papín": {
+    "population": "0",
+    "postalCodes": ["06733"]
+  },
+  "Vrakúň": {
+    "population": "0",
+    "postalCodes": ["93025"]
+  },
+  "Nemčiňany": {
+    "population": "0",
+    "postalCodes": ["95181"]
+  },
+  "Prašice": {
+    "population": "0",
+    "postalCodes": ["95622"]
+  },
+  "Nesluša": {
+    "population": "0",
+    "postalCodes": ["02341"]
+  },
+  "Neverice": {
+    "population": "0",
+    "postalCodes": ["95172"]
+  },
+  "Nevidzany": {
+    "population": "0",
+    "postalCodes": ["95162"]
+  },
+  "Strečno": {
+    "population": "0",
+    "postalCodes": ["01324"]
+  },
+  "Nimnica": {
+    "population": "0",
+    "postalCodes": ["02071"]
+  },
+  "Nitrianske Hrnčiarovce": {
+    "population": "0",
+    "postalCodes": ["95101"]
+  },
+  "Radošina": {
+    "population": "0",
+    "postalCodes": ["95605"]
+  },
+  "Nitrianske Sučany": {
+    "population": "0",
+    "postalCodes": ["97221"]
+  },
+  "Nižná nad Oravou": {
+    "population": "0",
+    "postalCodes": ["02743"]
+  },
+  "Nižná pri Piešťanoch": {
+    "population": "0",
+    "postalCodes": ["92206"]
+  },
+  "Nižná Jablonka": {
+    "population": "0",
+    "postalCodes": ["06734"]
+  },
+  "Nižná Myšľa": {
+    "population": "0",
+    "postalCodes": ["04415"]
+  },
+  "Nižná Sitnica": {
+    "population": "0",
+    "postalCodes": ["09407"]
+  },
+  "Šuňava": {
+    "population": "0",
+    "postalCodes": ["05939"]
+  },
+  "Vyšné Repaše": {
+    "population": "0",
+    "postalCodes": ["05371"]
+  },
+  "Vyšné Ružbachy": {
+    "population": "0",
+    "postalCodes": ["06502"]
+  },
+  "Nižný Hrušov": {
+    "population": "0",
+    "postalCodes": ["09422"]
+  },
+  "Nižný Slavkov": {
+    "population": "0",
+    "postalCodes": ["08275"]
+  },
+  "Nová Bašta": {
+    "population": "0",
+    "postalCodes": ["98034"]
+  },
+  "Nová Bošáca": {
+    "population": "0",
+    "postalCodes": ["91308"]
+  },
+  "Nová Kelča": {
+    "population": "0",
+    "postalCodes": ["09404"]
+  },
+  "Nová Lesná": {
+    "population": "0",
+    "postalCodes": ["05986"]
+  },
+  "Pohorelá": {
+    "population": "0",
+    "postalCodes": ["97669"]
+  },
+  "Zboj": {
+    "population": "0",
+    "postalCodes": ["06768"]
+  },
+  "Sklabiná": {
+    "population": "0",
+    "postalCodes": ["99105"]
+  },
+  "Nová Ves nad Žitavou": {
+    "population": "0",
+    "postalCodes": ["95151"]
+  },
+  "Nové Mesto nad Váhom": {
+    "population": "0",
+    "postalCodes": ["91501"]
+  },
+  "Nové Zámky": {
+    "population": "0",
+    "postalCodes": ["94002"]
+  },
+  "Novoť": {
+    "population": "0",
+    "postalCodes": ["02955"]
+  },
+  "Vyškovce nad Ipľom": {
+    "population": "0",
+    "postalCodes": ["93577"]
+  },
+  "Slanec": {
+    "population": "0",
+    "postalCodes": ["04417"]
+  },
+  "Obid": {
+    "population": "0",
+    "postalCodes": ["94304"]
+  },
+  "Obyce": {
+    "population": "0",
+    "postalCodes": ["95195"]
+  },
+  "Podolie": {
+    "population": "0",
+    "postalCodes": ["91622"]
+  },
+  "Ohrady": {
+    "population": "0",
+    "postalCodes": ["93012"]
+  },
+  "Ochodnica": {
+    "population": "0",
+    "postalCodes": ["02335"]
+  },
+  "Veľké Kosihy": {
+    "population": "0",
+    "postalCodes": ["94621"]
+  },
+  "Okoličná na Ostrove": {
+    "population": "0",
+    "postalCodes": ["94613"]
+  },
+  "Volkovce": {
+    "population": "0",
+    "postalCodes": ["95187"]
+  },
+  "Torysa": {
+    "population": "0",
+    "postalCodes": ["08276"]
+  },
+  "Tovarné": {
+    "population": "0",
+    "postalCodes": ["09401"]
+  },
+  "Opoj": {
+    "population": "0",
+    "postalCodes": ["91932"]
+  },
+  "Oponice": {
+    "population": "0",
+    "postalCodes": ["95614"]
+  },
+  "Oravská Jasenica": {
+    "population": "0",
+    "postalCodes": ["02964"]
+  },
+  "Oravská Polhora": {
+    "population": "0",
+    "postalCodes": ["02947"]
+  },
+  "Veličná": {
+    "population": "0",
+    "postalCodes": ["02754"]
+  },
+  "Oravské Veselé": {
+    "population": "0",
+    "postalCodes": ["02962"]
+  },
+  "Podbiel": {
+    "population": "0",
+    "postalCodes": ["02742"]
+  },
+  "Staré": {
+    "population": "0",
+    "postalCodes": ["07223"]
+  },
+  "Tekovská Breznica": {
+    "population": "0",
+    "postalCodes": ["96652"]
+  },
+  "Pavlovce nad Uhom": {
+    "population": "0",
+    "postalCodes": ["07214"]
+  },
+  "Šarišské Michaľany": {
+    "population": "0",
+    "postalCodes": ["08222"]
+  },
+  "Osturňa": {
+    "population": "0",
+    "postalCodes": ["05979"]
+  },
+  "Oščadnica": {
+    "population": "0",
+    "postalCodes": ["02301"]
+  },
+  "Snežnica": {
+    "population": "0",
+    "postalCodes": ["02332"]
+  },
+  "Víťaz": {
+    "population": "0",
+    "postalCodes": ["08238"]
+  },
+  "Palín": {
+    "population": "0",
+    "postalCodes": ["07213"]
+  },
+  "Veľký Cetín": {
+    "population": "0",
+    "postalCodes": ["95105"]
+  },
+  "Papradno": {
+    "population": "0",
+    "postalCodes": ["01813"]
+  },
+  "Plaveč nad Popradom": {
+    "population": "0",
+    "postalCodes": ["06544"]
+  },
+  "Pastuchov": {
+    "population": "0",
+    "postalCodes": ["92063"]
+  },
+  "Pata": {
+    "population": "0",
+    "postalCodes": ["92553"]
+  },
+  "Voderady pri Trnave": {
+    "population": "0",
+    "postalCodes": ["91942"]
+  },
+  "Sikenička": {
+    "population": "0",
+    "postalCodes": ["94359"]
+  },
+  "Veľké Kostoľany": {
+    "population": "0",
+    "postalCodes": ["92207"]
+  },
+  "Pernek pri Malackách": {
+    "population": "0",
+    "postalCodes": ["90053"]
+  },
+  "Vyšný Žipov": {
+    "population": "0",
+    "postalCodes": ["09433"]
+  },
+  "Petrovice pri Bytči": {
+    "population": "0",
+    "postalCodes": ["01353"]
+  },
+  "Snina": {
+    "population": "0",
+    "postalCodes": ["06901"]
+  },
+  "Plavé Vozokany": {
+    "population": "0",
+    "postalCodes": ["93569"]
+  },
+  "Plavecké Podhradie": {
+    "population": "0",
+    "postalCodes": ["90636"]
+  },
+  "Plavecký Mikuláš": {
+    "population": "0",
+    "postalCodes": ["90635"]
+  },
+  "Plavecký Štvrtok": {
+    "population": "0",
+    "postalCodes": ["90068"]
+  },
+  "Plešivec": {
+    "population": "0",
+    "postalCodes": ["04911"]
+  },
+  "Plevník - Drienové": {
+    "population": "0",
+    "postalCodes": ["01826"]
+  },
+  "Pobedim": {
+    "population": "0",
+    "postalCodes": ["91623"]
+  },
+  "Pribylina": {
+    "population": "0",
+    "postalCodes": ["03242"]
+  },
+  "Prietrž": {
+    "population": "0",
+    "postalCodes": ["90611"]
+  },
+  "Podlužany pri Bánovciach nad Bebravou": {
+    "population": "0",
+    "postalCodes": ["95652"]
+  },
+  "Podvysoká": {
+    "population": "0",
+    "postalCodes": ["02357"]
+  },
+  "Pohronská Polhora": {
+    "population": "0",
+    "postalCodes": ["97656"]
+  },
+  "Pohronský Ruskov": {
+    "population": "0",
+    "postalCodes": ["93562"]
+  },
+  "Pravenec": {
+    "population": "0",
+    "postalCodes": ["97216"]
+  },
+  "Poproč": {
+    "population": "0",
+    "postalCodes": ["04424"]
+  },
+  "Popudinské Močidľany": {
+    "population": "0",
+    "postalCodes": ["90861"]
+  },
+  "Rudňany": {
+    "population": "0",
+    "postalCodes": ["05323"]
+  },
+  "Poriadie": {
+    "population": "0",
+    "postalCodes": ["90622"]
+  },
+  "Pozba": {
+    "population": "0",
+    "postalCodes": ["94151"]
+  },
+  "Prakovce": {
+    "population": "0",
+    "postalCodes": ["05562"]
+  },
+  "Prašník": {
+    "population": "0",
+    "postalCodes": ["92211"]
+  },
+  "Prenčov": {
+    "population": "0",
+    "postalCodes": ["96973"]
+  },
+  "Pribeník": {
+    "population": "0",
+    "postalCodes": ["07651"]
+  },
+  "Pribeta": {
+    "population": "0",
+    "postalCodes": ["94655"]
+  },
+  "Prievaly": {
+    "population": "0",
+    "postalCodes": ["90634"]
+  },
+  "Ruská Poruba": {
+    "population": "0",
+    "postalCodes": ["09408"]
+  },
+  "Udiča": {
+    "population": "0",
+    "postalCodes": ["01801"]
+  },
+  "Zemianske Sady": {
+    "population": "0",
+    "postalCodes": ["92554"]
+  },
+  "Pusté Úľany": {
+    "population": "0",
+    "postalCodes": ["92528"]
+  },
+  "Rabča": {
+    "population": "0",
+    "postalCodes": ["02944"]
+  },
+  "Rabčice": {
+    "population": "0",
+    "postalCodes": ["02945"]
+  },
+  "Radava pri Nových Zámkoch": {
+    "population": "0",
+    "postalCodes": ["94147"]
+  },
+  "Radimov": {
+    "population": "0",
+    "postalCodes": ["90847"]
+  },
+  "Raková": {
+    "population": "0",
+    "postalCodes": ["02351"]
+  },
+  "Rožňavské Bystré": {
+    "population": "0",
+    "postalCodes": ["04931"]
+  },
+  "Trstín": {
+    "population": "0",
+    "postalCodes": ["91905"]
+  },
+  "Ražňany": {
+    "population": "0",
+    "postalCodes": ["08261"]
+  },
+  "Rejdová": {
+    "population": "0",
+    "postalCodes": ["04926"]
+  },
+  "Remetské Hámre": {
+    "population": "0",
+    "postalCodes": ["07241"]
+  },
+  "Sklené Teplice": {
+    "population": "0",
+    "postalCodes": ["96603"]
+  },
+  "Tisovec": {
+    "population": "0",
+    "postalCodes": ["98061"]
+  },
+  "Rišňovce": {
+    "population": "0",
+    "postalCodes": ["95121"]
+  },
+  "Rohožník na Záhorí": {
+    "population": "0",
+    "postalCodes": ["90638"]
+  },
+  "Stankovany": {
+    "population": "0",
+    "postalCodes": ["03492"]
+  },
+  "Rosina": {
+    "population": "0",
+    "postalCodes": ["01322"]
+  },
+  "Rovinka": {
+    "population": "0",
+    "postalCodes": ["90041"]
+  },
+  "Rúbaň": {
+    "population": "0",
+    "postalCodes": ["94136"]
+  },
+  "Rudina": {
+    "population": "0",
+    "postalCodes": ["02331"]
+  },
+  "Rudník pri Myjave": {
+    "population": "0",
+    "postalCodes": ["90623"]
+  },
+  "Rudno nad Hronom": {
+    "population": "0",
+    "postalCodes": ["96651"]
+  },
+  "Rumanová": {
+    "population": "0",
+    "postalCodes": ["95137"]
+  },
+  "Topoľa": {
+    "population": "0",
+    "postalCodes": ["06765"]
+  },
+  "Rybník nad Hronom": {
+    "population": "0",
+    "postalCodes": ["93523"]
+  },
+  "Sasinkovo": {
+    "population": "0",
+    "postalCodes": ["92065"]
+  },
+  "Sebedražie": {
+    "population": "0",
+    "postalCodes": ["97205"]
+  },
+  "Sebechleby pri Krupine": {
+    "population": "0",
+    "postalCodes": ["96266"]
+  },
+  "Sedlice pri Prešove": {
+    "population": "0",
+    "postalCodes": ["08243"]
+  },
+  "Sekule": {
+    "population": "0",
+    "postalCodes": ["90880"]
+  },
+  "Selec": {
+    "population": "0",
+    "postalCodes": ["91336"]
+  },
+  "Selice": {
+    "population": "0",
+    "postalCodes": ["92572"]
+  },
+  "Sihelné": {
+    "population": "0",
+    "postalCodes": ["02946"]
+  },
+  "Silica": {
+    "population": "0",
+    "postalCodes": ["04952"]
+  },
+  "Skačany": {
+    "population": "0",
+    "postalCodes": ["95853"]
+  },
+  "Skalka nad Váhom": {
+    "population": "0",
+    "postalCodes": ["91331"]
+  },
+  "Skalité": {
+    "population": "0",
+    "postalCodes": ["02314"]
+  },
+  "Ždaňa": {
+    "population": "0",
+    "postalCodes": ["04411"]
+  },
+  "Sklabiňa pri Martine": {
+    "population": "0",
+    "postalCodes": ["03803"]
+  },
+  "Sklené": {
+    "population": "0",
+    "postalCodes": ["03847"]
+  },
+  "Skýcov": {
+    "population": "0",
+    "postalCodes": ["95185"]
+  },
+  "Zvolenská Slatina": {
+    "population": "0",
+    "postalCodes": ["96201"]
+  },
+  "Slepčany": {
+    "population": "0",
+    "postalCodes": ["95152"]
+  },
+  "Slovenská Ves": {
+    "population": "0",
+    "postalCodes": ["05902"]
+  },
+  "Slovenský Grob": {
+    "population": "0",
+    "postalCodes": ["90026"]
+  },
+  "Slovinky": {
+    "population": "0",
+    "postalCodes": ["05340"]
+  },
+  "Smolinské": {
+    "population": "0",
+    "postalCodes": ["90842"]
+  },
+  "Smolnícka Huta": {
+    "population": "0",
+    "postalCodes": ["05565"]
+  },
+  "Smolník": {
+    "population": "0",
+    "postalCodes": ["05566"]
+  },
+  "Smrečany": {
+    "population": "0",
+    "postalCodes": ["03205"]
+  },
+  "Soblahov": {
+    "population": "0",
+    "postalCodes": ["91338"]
+  },
+  "Solčany": {
+    "population": "0",
+    "postalCodes": ["95617"]
+  },
+  "Sološnica": {
+    "population": "0",
+    "postalCodes": ["90637"]
+  },
+  "Spišská Teplica": {
+    "population": "0",
+    "postalCodes": ["05934"]
+  },
+  "Spišský Štiavnik": {
+    "population": "0",
+    "postalCodes": ["05914"]
+  },
+  "Úpor": {
+    "population": "0",
+    "postalCodes": ["07616"]
+  },
+  "Veľká Lomnica": {
+    "population": "0",
+    "postalCodes": ["05952"]
+  },
+  "Švedlár": {
+    "population": "0",
+    "postalCodes": ["05334"]
+  },
+  "Starý Tekov": {
+    "population": "0",
+    "postalCodes": ["93526"]
+  },
+  "Stráňavy": {
+    "population": "0",
+    "postalCodes": ["01325"]
+  },
+  "Strekov pri Nových Zámkoch": {
+    "population": "0",
+    "postalCodes": ["94137"]
+  },
+  "Studienka na Záhorí": {
+    "population": "0",
+    "postalCodes": ["90875"]
+  },
+  "Stupava": {
+    "population": "0",
+    "postalCodes": ["90031"]
+  },
+  "Suchohrad": {
+    "population": "0",
+    "postalCodes": ["90064"]
+  },
+  "Svätoplukovo": {
+    "population": "0",
+    "postalCodes": ["95116"]
+  },
+  "Svätuše": {
+    "population": "0",
+    "postalCodes": ["07683"]
+  },
+  "Svätý Anton": {
+    "population": "0",
+    "postalCodes": ["96972"]
+  },
+  "Svätý Jur": {
+    "population": "0",
+    "postalCodes": ["90021"]
+  },
+  "Svätý Peter": {
+    "population": "0",
+    "postalCodes": ["94657"]
+  },
+  "Svodín": {
+    "population": "0",
+    "postalCodes": ["94354"]
+  },
+  "Svrčinovec": {
+    "population": "0",
+    "postalCodes": ["02312"]
+  },
+  "Šajdíkove Humence": {
+    "population": "0",
+    "postalCodes": ["90607"]
+  },
+  "Šalov": {
+    "population": "0",
+    "postalCodes": ["93571"]
+  },
+  "Šarovce": {
+    "population": "0",
+    "postalCodes": ["93552"]
+  },
+  "Šaštín - Stráže": {
+    "population": "0",
+    "postalCodes": ["90841"]
+  },
+  "Šenkvice": {
+    "population": "0",
+    "postalCodes": ["90081"]
+  },
+  "Šintava": {
+    "population": "0",
+    "postalCodes": ["92551"]
+  },
+  "Vrbové": {
+    "population": "0",
+    "postalCodes": ["92203"]
+  },
+  "Šoporňa": {
+    "population": "0",
+    "postalCodes": ["92552"]
+  },
+  "Špačince": {
+    "population": "0",
+    "postalCodes": ["91951"]
+  },
+  "Štefanov": {
+    "population": "0",
+    "postalCodes": ["90645"]
+  },
+  "Štiavnické Bane": {
+    "population": "0",
+    "postalCodes": ["96981"]
+  },
+  "Štós": {
+    "population": "0",
+    "postalCodes": ["04426"]
+  },
+  "Štôla": {
+    "population": "0",
+    "postalCodes": ["05937"]
+  },
+  "Štrbské Pleso": {
+    "population": "0",
+    "postalCodes": ["05985"]
+  },
+  "Štúrovo": {
+    "population": "0",
+    "postalCodes": ["94301"]
+  },
+  "Šúrovce": {
+    "population": "0",
+    "postalCodes": ["91925"]
+  },
+  "Tatranská Kotlina": {
+    "population": "0",
+    "postalCodes": ["05954"]
+  },
+  "Tekovské Nemce": {
+    "population": "0",
+    "postalCodes": ["96654"]
+  },
+  "Telgárt": {
+    "population": "0",
+    "postalCodes": ["97673"]
+  },
+  "Teplička nad Váhom": {
+    "population": "0",
+    "postalCodes": ["01301"]
+  },
+  "Tešedíkovo": {
+    "population": "0",
+    "postalCodes": ["92582"]
+  },
+  "Tomášikovo": {
+    "population": "0",
+    "postalCodes": ["92504"]
+  },
+  "Topoľníky": {
+    "population": "0",
+    "postalCodes": ["93011"]
+  },
+  "Toporec": {
+    "population": "0",
+    "postalCodes": ["05995"]
+  },
+  "Tôň": {
+    "population": "0",
+    "postalCodes": ["94615"]
+  },
+  "Trakovice": {
+    "population": "0",
+    "postalCodes": ["91933"]
+  },
+  "Trávnica": {
+    "population": "0",
+    "postalCodes": ["94146"]
+  },
+  "Trebatice": {
+    "population": "0",
+    "postalCodes": ["92210"]
+  },
+  "Trenčianske Teplice": {
+    "population": "0",
+    "postalCodes": ["91451"]
+  },
+  "Trhovište": {
+    "population": "0",
+    "postalCodes": ["07204"]
+  },
+  "Trstice": {
+    "population": "0",
+    "postalCodes": ["92542"]
+  },
+  "Tuchyňa": {
+    "population": "0",
+    "postalCodes": ["01855"]
+  },
+  "Turany nad Váhom": {
+    "population": "0",
+    "postalCodes": ["03853"]
+  },
+  "Turie": {
+    "population": "0",
+    "postalCodes": ["01312"]
+  },
+  "Tužina": {
+    "population": "0",
+    "postalCodes": ["97214"]
+  },
+  "Úbrež": {
+    "population": "0",
+    "postalCodes": ["07242"]
+  },
+  "Udavské": {
+    "population": "0",
+    "postalCodes": ["06731"]
+  },
+  "Úľany nad Žitavou": {
+    "population": "0",
+    "postalCodes": ["94103"]
+  },
+  "Ulič": {
+    "population": "0",
+    "postalCodes": ["06767"]
+  },
+  "Unín pri Skalici": {
+    "population": "0",
+    "postalCodes": ["90846"]
+  },
+  "Veľký Blh": {
+    "population": "0",
+    "postalCodes": ["98022"]
+  },
+  "Váhovce": {
+    "population": "0",
+    "postalCodes": ["92562"]
+  },
+  "Valča": {
+    "population": "0",
+    "postalCodes": ["03835"]
+  },
+  "Važec": {
+    "population": "0",
+    "postalCodes": ["03261"]
+  },
+  "Veľká Lehota pri Novej Bani": {
+    "population": "0",
+    "postalCodes": ["96641"]
+  },
+  "Veľká Mača": {
+    "population": "0",
+    "postalCodes": ["92532"]
+  },
+  "Veľká Paka": {
+    "population": "0",
+    "postalCodes": ["93051"]
+  },
+  "Veľké Blahovo": {
+    "population": "0",
+    "postalCodes": ["93001"]
+  },
+  "Veľké Leváre": {
+    "population": "0",
+    "postalCodes": ["90873"]
+  },
+  "Veľké Lovce": {
+    "population": "0",
+    "postalCodes": ["94142"]
+  },
+  "Veľké Ludince": {
+    "population": "0",
+    "postalCodes": ["93565"]
+  },
+  "Veľké Pole": {
+    "population": "0",
+    "postalCodes": ["96674"]
+  },
+  "Veľké Rovné": {
+    "population": "0",
+    "postalCodes": ["01362"]
+  },
+  "Veľké Zálužie": {
+    "population": "0",
+    "postalCodes": ["95135"]
+  },
+  "Veľké Zlievce": {
+    "population": "0",
+    "postalCodes": ["99123"]
+  },
+  "Veľký Folkmar": {
+    "population": "0",
+    "postalCodes": ["05551"]
+  },
+  "Veľký Kýr": {
+    "population": "0",
+    "postalCodes": ["94107"]
+  },
+  "Vernár": {
+    "population": "0",
+    "postalCodes": ["05917"]
+  },
+  "Vidiná": {
+    "population": "0",
+    "postalCodes": ["98559"]
+  },
+  "Vikartovce": {
+    "population": "0",
+    "postalCodes": ["05919"]
+  },
+  "Viničné pri Pezinku": {
+    "population": "0",
+    "postalCodes": ["90023"]
+  },
+  "Vinohrady nad Váhom": {
+    "population": "0",
+    "postalCodes": ["92555"]
+  },
+  "Višňové pri Žiline": {
+    "population": "0",
+    "postalCodes": ["01323"]
+  },
+  "Vištuk": {
+    "population": "0",
+    "postalCodes": ["90085"]
+  },
+  "Vlčany": {
+    "population": "0",
+    "postalCodes": ["92584"]
+  },
+  "Vlčkovce": {
+    "population": "0",
+    "postalCodes": ["91923"]
+  },
+  "Vozokany pri Galante": {
+    "population": "0",
+    "postalCodes": ["92505"]
+  },
+  "Vrícko": {
+    "population": "0",
+    "postalCodes": ["03831"]
+  },
+  "Vydrany": {
+    "population": "0",
+    "postalCodes": ["93016"]
+  },
+  "Východná": {
+    "population": "0",
+    "postalCodes": ["03232"]
+  },
+  "Vysoká pri Morave": {
+    "population": "0",
+    "postalCodes": ["90066"]
+  },
+  "Vyšné Hágy": {
+    "population": "0",
+    "postalCodes": ["05984"]
+  },
+  "Perín - Chym": {
+    "population": "0",
+    "postalCodes": ["04474"]
+  },
+  "Záhorská Ves": {
+    "population": "0",
+    "postalCodes": ["90065"]
+  },
+  "Zákamenné": {
+    "population": "0",
+    "postalCodes": ["02956"]
+  },
+  "Zámutov": {
+    "population": "0",
+    "postalCodes": ["09415"]
+  },
+  "Závadka nad Hronom": {
+    "population": "0",
+    "postalCodes": ["97667"]
+  },
+  "Závažná Poruba": {
+    "population": "0",
+    "postalCodes": ["03202"]
+  },
+  "Závod": {
+    "population": "0",
+    "postalCodes": ["90872"]
+  },
+  "Zborov nad Bystricou": {
+    "population": "0",
+    "postalCodes": ["02303"]
+  },
+  "Zeleneč pri Trnave": {
+    "population": "0",
+    "postalCodes": ["91921"]
+  },
+  "Zemné": {
+    "population": "0",
+    "postalCodes": ["94122"]
+  },
+  "Zemplínska Teplica": {
+    "population": "0",
+    "postalCodes": ["07664"]
+  },
+  "Zemplínske Hámre": {
+    "population": "0",
+    "postalCodes": ["06777"]
+  },
+  "Zlatá Idka": {
+    "population": "0",
+    "postalCodes": ["04461"]
+  },
+  "Zohor": {
+    "population": "0",
+    "postalCodes": ["90051"]
+  },
+  "Zubák": {
+    "population": "0",
+    "postalCodes": ["02064"]
+  },
+  "Zubrohlava": {
+    "population": "0",
+    "postalCodes": ["02943"]
+  },
+  "Žabokreky": {
+    "population": "0",
+    "postalCodes": ["03840"]
+  },
+  "Žabokreky nad Nitrou": {
+    "population": "0",
+    "postalCodes": ["95852"]
+  },
+  "Žakarovce": {
+    "population": "0",
+    "postalCodes": ["05571"]
+  },
+  "Žakovce": {
+    "population": "0",
+    "postalCodes": ["05973"]
+  },
+  "Žalobín": {
+    "population": "0",
+    "postalCodes": ["09403"]
+  },
+  "Žaškov": {
+    "population": "0",
+    "postalCodes": ["02721"]
+  },
+  "Ždiar": {
+    "population": "0",
+    "postalCodes": ["05955"]
+  },
+  "Košice - železiarne": {
+    "population": "0",
+    "postalCodes": ["04454"]
+  },
+  "Žirany": {
+    "population": "0",
+    "postalCodes": ["95174"]
+  }
+}

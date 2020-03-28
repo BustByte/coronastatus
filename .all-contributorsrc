@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "sbocinec",
+      "name": "Stano Bo",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4834459?v=4",
+      "profile": "https://www.juniq.net",
+      "contributions": [
+        "translation"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "coronastatus",
+  "projectOwner": "BustByte",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
