@@ -27,6 +27,7 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇲🇾 Malaysia: https://coronastatusmy.org
 - 🇦🇷 Argentina: https://coronavirus.com.ar
 - 🇲🇹 Malta: https://coronastatusmt.com
+- 🇨🇱 Chile: https://coronastatus.cl
 - 🇸🇪 Sweden: coming soon
 - 🇮🇳 India: coming soon
 - 🇵🇭 Philippines: coming soon
