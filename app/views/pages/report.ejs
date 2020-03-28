@@ -105,7 +105,7 @@
   </div>
 </section>
 
-<% if(locals.didNotAcceptPrivacyPolicy) {%>
+<% if (locals.didNotAcceptPrivacyPolicy) {%>
   <div class="" role="alert">
     <%= __("You must approve the privacy statement to report your data.") %>
   </div>
@@ -527,6 +527,11 @@
       });
     });
   })()
+</script>
+
+<script>
+  // Obfuscate path so people will not share their personal URL
+  var obfuscatePath = true;
 </script>
 
 <%- include('partials/footer', { home: true }) -%>
