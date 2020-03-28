@@ -394,7 +394,6 @@ select option {
   background: #ffffff;
 }
 
-input[type='submit'],
 input[type='reset'],
 input[type='button'],
 button,
@@ -428,6 +427,7 @@ input[type='submit']:focus {
   color: #fff;
   background: #d36767;
   border-color: #000;
+  cursor: pointer;
 }
 
 .contributor-list::before {
