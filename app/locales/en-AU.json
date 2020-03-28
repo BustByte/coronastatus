@@ -176,5 +176,17 @@
   "Help us uncover and predict the corona spread in your area": "Help us <span>uncover</span> and <span>predict</span> the corona spread in your area",
   "Numbers": "Numbers",
   "#washyourhands": "#wash<wbr/>your<wbr/>hands",
-  "#stayindoors": "#stay<wbr/>indoors"
+  "#stayindoors": "#stay<wbr/>indoors",
+  "In isolation due to orders from the government": "In isolation due to orders from the government",
+  "In isolation due to COVID-19 infection": "In isolation due to COVID-19 infection",
+  "Some questions and alternatives were not a part of the form from the beginning:": "Some questions and alternatives were not a part of the form from the beginning:",
+  "March 27": "March 27",
+  "Other": "Other",
+  "CALL TO ALL US CITIZENS: This is how we defeat the corona virus: together we make the invisible virus visible.": "CALL TO ALL US CITIZENS: This is how we defeat the corona virus: together we make the invisible virus visible.",
+  "Contribute and share {{ hostname }} on": "Contribute and share {{ hostname }} on",
+  "Fill out this form - it takes 1 minute - and help the United States gain control over COVID-19.": "Fill out this form - it takes 1 minute - and help the United States gain control over COVID-19.",
+  "One more thing": "One more thing",
+  "To defeat the corona virus we need to make the invisible virus visible.": "To defeat the corona virus we need to make the invisible virus visible.",
+  "{{ amount }} people already shared their health status.": "{{ amount }} people already shared their health status.",
+  "Let your friends fill out this form too and help the United States gain control over COVID-19.": "Let your friends fill out this form too and help the United States gain control over COVID-19."
 }
