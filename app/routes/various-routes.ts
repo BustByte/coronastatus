@@ -14,15 +14,12 @@ router.get(`${urls.contributors}`, (req, res) => {
   return res.render('pages/contributors');
 });
 
-<<<<<<< HEAD
-=======
 if (process.env.NODE_ENV !== 'production') {
   router.get('/social-images', (req, res) => {
     return res.render('pages/social-images');
   });
 }
 
->>>>>>> 8175ac9010bd2f1ff2559cd7fe8dc984167443a7
 router.get('/robots.txt', (req, res) => {
   res.type('text/plain');
   return res.render('pages/robots');
