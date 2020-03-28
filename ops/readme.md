@@ -26,4 +26,7 @@ This document describes how we operate the sites which are running Coronastatus.
 | [coronastatus.sg](https://coronastatus.sg)         | Singapore       | Jin Jie Kong                           | Jin Jie Kong           |
 | [coronastatus.com.ar](https://coronastatus.com.ar) | Argentina       | Walter Gammarota                       | Walter Gammarota       |
 | [coronastatus.cl](https://coronastatus.cl)         | Chile           | Ruben Torres                           | Ruben Torres           |
-| [corona-status.ch](http://corona-status.ch)        | Switzerland     | Luke Seelenbinder                      | Luke Seelenbinder      |
+| [corona-status.ch](https://corona-status.ch)       | Switzerland     | Luke Seelenbinder                      | Luke Seelenbinder      |
+| [coronastatus.ng](https://coronastatus.ng)         | Nigeria         | Deji Adesoga                           | Eirik Fosse / BustByte |
+
+
