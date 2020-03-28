@@ -142,13 +142,17 @@ Download & install:
 
 `cp config.example.json config.json`
 
-4. Build docker image and start the development environment:
+4. Install node modules:
 
-`docker-compose up --build -d`
+`docker-compose run --rm app yarn`
 
-5. Open your browser and navigate to http://localhost:7272/
+5. Start the development container & display the container logs:
 
-6. Before you create a pull request run the linter. Warnings are ok, but errors should be fixed.
+`docker-compose up -d; docker-compose logs -f`
+
+6. Open your browser and navigate to http://localhost:7272/
+
+7. Before you create a pull request run the linter. Warnings are ok, but errors should be fixed.
 
 `docker-compose exec app yarn lint`
 
