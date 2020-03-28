@@ -146,7 +146,7 @@
   "If you use this computer with multiple users, please use this link to update your status.": "Si utiliza este equipo con varios usuarios, por favor utilice este enlace para actualizar su estado.",
   "Write it down somewhere or save it on your computer.": "Anótela en algún lugar o guardelo en su computador.",
   "The link has been copied.": "El enlace se ha copiado.",
-  "clear this form": "borrar esta forma",
+  "clear this form": "borra este formulario",
   "https://who.int": "https://www.gob.cl/coronavirus/",
   "To WHO.int": "Ir a www.gob.cl/coronavirus",
   "Are you from": "Es de",
@@ -173,8 +173,8 @@
   "What is your current body temperature? (Celcius)": "¿Cuál es tu temperatura corporal actual? (Celcius)",
   "This field is optional": "Este campo es opcional",
   "Close": "Cerrar",
-  "Contribute now": "Contribuya ahora",
-  "Help us uncover and predict the corona spread in your area": "Ayúdenos a descubrir y predecir la transmisión del virus en su área",
+  "Contribute now": "Contribuye ahora",
+  "Help us uncover and predict the corona spread in your area": "Ayúdanos a descubrir y predecir la transmisión del virus en tu comuna",
   "Numbers": "Números",
   "#washyourhands": "#lavatelasmanos",
   "#stayindoors": "#quedateencasa",
@@ -189,5 +189,7 @@
   "One more thing": "One more thing",
   "To defeat the corona virus we need to make the invisible virus visible.": "Para vencer al virus corona necesitamos hacer visible el virus invisible.",
   "{{ amount }} people already shared their health status.": "{{ amount }} personas ya compartieron su estado de salud.",
-  "Let your friends fill out this form too and help the United States gain control over COVID-19.": "Deje que sus amigos llenen este formulario también y ayude a España a obtener el control sobre COVID-19."
+  "Let your friends fill out this form too and help the United States gain control over COVID-19.": "Deje que sus amigos llenen este formulario también y ayude a España a obtener el control sobre COVID-19.",
+  "What is my Zip code?": "¿Cómo saber mi código postal?",
+  "https://www.whatismyzip.com": "https://www.correos.cl/web/guest/codigo-postal"
 }
