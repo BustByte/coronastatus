@@ -181,11 +181,11 @@
   "Some questions and alternatives were not a part of the form from the beginning:": "Alcune domamdne non erano parte del questionario dall'inizio:",
   "March 27": "27 Marzo",
   "Other": "Altro",
-  "CALL TO ALL US CITIZENS: This is how we defeat the corona virus: together we make the invisible virus visible.": "CALL TO ALL US CITIZENS: This is how we defeat the corona virus: together we make the invisible virus visible.",
-  "Contribute and share {{ hostname }} on": "Contribute and share {{ hostname }} on",
-  "Fill out this form - it takes 1 minute - and help the United States gain control over COVID-19.": "Fill out this form - it takes 1 minute - and help the United States gain control over COVID-19.",
-  "One more thing": "One more thing",
-  "To defeat the corona virus we need to make the invisible virus visible.": "To defeat the corona virus we need to make the invisible virus visible.",
-  "{{ amount }} people already shared their health status.": "{{ amount }} people already shared their health status.",
-  "Let your friends fill out this form too and help the United States gain control over COVID-19.": "Let your friends fill out this form too and help the United States gain control over COVID-19."
+  "CALL TO ALL US CITIZENS: This is how we defeat the corona virus: together we make the invisible virus visible.": "CHIAMATA A TUTTI I CITTADINI ITALIANI: Ecco come sconfiggiamo il virus corona: insieme rendiamo visibile il virus invisibile.",
+  "Contribute and share {{ hostname }} on": "Contribuisci e condividi {{hostname}} su",
+  "Fill out this form - it takes 1 minute - and help the United States gain control over COVID-19.": "Compila questo modulo - richiede 1 minuto - e aiuta l'Italia a ottenere il controllo su COVID-19.",
+  "One more thing": "Un'altra cosa",
+  "To defeat the corona virus we need to make the invisible virus visible.": "Per sconfiggere il virus corona dobbiamo rendere visibile il virus invisibile.",
+  "{{ amount }} people already shared their health status.": "{{ amount }} persone hanno già condiviso il loro stato di salute.",
+  "Let your friends fill out this form too and help the United States gain control over COVID-19.": "Lascia che anche i tuoi amici compilino questo modulo e aiutano l'Italia a ottenere il controllo di COVID-19."
 }
