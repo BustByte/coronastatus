@@ -1,0 +1,20 @@
+[Unit]
+Description=Node coronastatus.TLD app
+After=network.target
+StartLimitIntervalSec=1
+StartLimitBurst=86400
+
+[Service]
+Type=simple
+User=app
+Environment='NODE_ENV=production' 'PORT=5000'
+ExecStart=/usr/bin/yarn start
+ExecReload=/bin/kill -HUP $MAINPID
+WorkingDirectory=/srv/coronastatus.TLD/
+StandardError=syslog
+StandardOutput=syslog
+SyslogIdentifier=node-prod
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
