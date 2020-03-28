@@ -26,7 +26,7 @@
       />
     </a>
     <div
-      class="flex flex-row justify-between flex-wrap items-center self-stretch my-8 text-base lg:text-xl text-center"
+      class="flex flex-row justify-between flex-wrap items-center self-stretch mt-8 text-base lg:text-xl text-center"
     >
       <% if (locals.twitter) { %>
       <a
@@ -54,6 +54,16 @@
         ><%= __('Privacy Policy')%></a
       >
     </div>
+
+    <div
+      class="flex items-center justify-center self-stretch mt-4 mb-8 text-sm lg:text-base text-center"
+    >
+      <img src="/static/images/analytics.svg" alt="Provided by Simple Analytics" class="mr-2" />
+        <a target="_blank" class="font-bold text-cvs-green-dark hover:text-cvs-red hover:underline" href="https://simpleanalytics.com/<%= baseUrl %><% if (!shouldAddAnalytics) { %>?ref=<%= baseUrl %><% } %>"
+        ><%= __('View Website Statistics')%></a
+      >
+    </div>
+
   </div>
 </footer>
 <% } %>
