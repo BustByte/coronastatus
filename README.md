@@ -28,8 +28,8 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇦🇷 Argentina: https://coronastatus.com.ar
 - 🇲🇹 Malta: https://coronastatusmt.com
 - 🇨🇱 Chile: https://coronastatus.cl
+- 🇮🇳 India: https://corona-status.in
 - 🇸🇪 Sweden: coming soon
-- 🇮🇳 India: coming soon
 - 🇵🇭 Philippines: coming soon
 - 🇹🇷 Turkey: coming soon (work group Telegram chat: https://t.me/turkeycoronastatus)
 - 🇧🇪 Belgium: coming soon
