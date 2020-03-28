@@ -2035,9 +2035,9 @@ wreck
 wrestle
 wrist
 write
-wrong
+wrong 
 yard
-year
+year 
 yellow
 you
 young

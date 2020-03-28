@@ -1,10 +1,10 @@
 import config from '../config';
 
 export type Locale =
-   'en-NG'
+  | 'en-NG'
   | 'no'
   | 'nl'
-  | 'en' 
+  | 'en'
   | 'en-US'
   | 'en-AU'
   | 'es-MX'
@@ -16,9 +16,7 @@ export type Locale =
   | 'es-CO'
   | 'fr-FR'
   | 'es-ES'
-  | 'ca'
-    
-  ;
+  | 'ca';
 
 type Urls = {
   [locale in Locale]: {
@@ -194,7 +192,6 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   }
-  
 };
 
 export const urls = localeAwareUrls[config.LANGUAGE as Locale];
