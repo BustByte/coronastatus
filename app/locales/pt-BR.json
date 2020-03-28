@@ -92,7 +92,7 @@
   "Muscle pain": "Dor muscular",
   "Diarrhea": "Diarréia",
   "Headache": "Dor de cabeça",
-  "Sore throat": "Sore throat",
+  "Sore throat": "Dor de garganta",
   "Loss of sense of smell": "Perda do sentido do olfato",
   "Loss of sense of taste": "Perda do paladar",
   "Stuffy or runny nose": "Nariz entupido ou escorrendo",
@@ -162,7 +162,7 @@
   "Have you been diagnosed with any of the following conditions?": "Você foi diagnosticado com alguma das seguintes condições?",
   "Diabetes mellitus, Hypertension, Ischemic heart disease, Asthma, Chronic lung disease, Chronic kidney disease": "Diabetes mellitus, Hipertensão, cardiopatia isquêmica, asma, doença pulmonar crônica, doença renal crônica",
   "I am currently:": "Eu estou atualmente",
-  "Not in isolation": "Não isolado",
+  "Not in isolation": "Não estou em isolamento",
   "In isolation due to a recent international travel": "Isolado devido a uma recente viagem internacional",
   "In isolation due to contact with an individual who has been exposed to the coronavirus.": "Isolado devido ao contato com um indivíduo que foi exposto ao coronavírus",
   "Cigarette smoking habits:": "Hábitos de fumar",
@@ -173,5 +173,13 @@
   "This field is optional": "Este campo é opcional",
   "Close": "Fechar",
   "Contribute now": "Contribuir agora",
-  "Help us uncover and predict the corona spread in your area": "Ajude-nos a <span>descobrir</span> e <span>prever</span> o contágio de corona na sua área"
+  "Help us uncover and predict the corona spread in your area": "Ajude-nos a <span>descobrir</span> e <span>prever</span> o contágio de corona na sua área",
+  "Numbers": "Números",
+  "#washyourhands": "#lave<wbr/>suas<wbr/>mãos",
+  "#stayindoors": "#fiqueem<wbr/>casa",
+  "In isolation due to orders from the government": "Em isolamento por ordens do governo",
+  "In isolation due to COVID-19 infection": "Em isolamento por motivos de infecção por COVID-19",
+  "Some questions and alternatives were not a part of the form from the beginning:": "Algumas perguntas e alternativas não faziam parte do formulário desde o início:",
+  "March 27": "Março 27",
+  "Other": "Outro"
 }
