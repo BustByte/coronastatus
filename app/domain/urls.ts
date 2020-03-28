@@ -21,7 +21,8 @@ export type Locale =
   | 'en-SG'
   | 'ms-MY'
   | 'se'
-  | 'es-CL';
+  | 'es-CL'
+  | 'bd';
 
 type Urls = {
   [locale in Locale]: {
@@ -246,6 +247,16 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estadisticas'
+  },
+  bd: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
   }
 };
 
