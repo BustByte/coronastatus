@@ -23,7 +23,8 @@ export type CountryCode =
   | 'se'
   | 'cl'
   | 'bd'
-  | 'ng';
+  | 'ng'
+  | 'in';
 
 type Urls = {
   [countryCode in CountryCode]: {
@@ -260,6 +261,16 @@ const localeAwareUrls: Urls = {
     statistics: '/statistics'
   },
   ng: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  in: {
     submitReport: '/',
     profile: '/healthcondition',
     privacyPolicy: '/privacy-statement',
