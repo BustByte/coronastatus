@@ -246,7 +246,7 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estadisticas'
-  },
+  }
 };
 
 export const urls = localeAwareUrls[config.LANGUAGE as Locale];
