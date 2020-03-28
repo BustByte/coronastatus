@@ -2,7 +2,11 @@ from csv import DictReader
 from json import dump as write_as_json
 
 # Set the country code you want to create JSON files for
+<<<<<<< HEAD:app/locales/geonames-converter.py
 COUNTRY_CODE = 'in'
+=======
+COUNTRY_CODE = 'bd'
+>>>>>>> 054fece832c945a692cc21ea63edd13fa532434d:app/countrySpecific/geonames-converter.py
 
 # Parse CSV for a given country from Geonames.org 
 rows = []

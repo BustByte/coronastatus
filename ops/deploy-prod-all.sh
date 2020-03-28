@@ -11,7 +11,12 @@ declare -a HOSTS=(
     'coronastatus.mx'
     'coronastatus.us'
     'coronastatus.org.ua'
-    'coronastatusua.org'
+    'coronastatusau.org'
+    'coronastatusmt.com'
+    'coronastatus.it'
+
+#   Ready, but nameservers not yet pointed to DigitalOcean
+#   'coronastatus.ng'
 
 #   Adriaan told med to wait with deploying NL.
 #   'coronastatus.nl'
@@ -22,7 +27,6 @@ declare -a HOSTS=(
 #    These sites are not hosted with us.
 #   'coronastatus.sk'
 #   'coronastatus.dk'
-#   'coronastatus.it'
 );
 
 # Deploy procedure over ssh.
