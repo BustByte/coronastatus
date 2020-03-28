@@ -138,7 +138,7 @@ const toDateStat = (report: CovidReport, reportIndex: number): DateStat => ({
 
 const getCurrentDateStat = (stats: DateStat[]): DateStat => ({
   x: new Date(),
-  y: stats[stats.length - 1].y
+  y: stats.length > 0 ? stats[stats.length - 1].y : 0
 });
 
 export function calculateTotalReportsStats(
