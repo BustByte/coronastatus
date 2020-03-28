@@ -34,11 +34,6 @@ const reportRepo = new CovidReportRepository();
 const passcodeCreator = getPasscodeCreator();
 
 router.get('/', async (req, res) => {
-  // return res.render('pages/confirm-profile', {
-  //   passcode: 'adsfasdf',
-  //   hasCookie: true
-  // });
-
   if (req.cookies.passcode) {
     return res.redirect(`${res.locals.urls.profile}/${req.cookies.passcode}`);
   }
