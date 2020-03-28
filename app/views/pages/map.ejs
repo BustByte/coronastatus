@@ -1,6 +1,10 @@
 <%- include('partials/header', { show: false, fullscreen: true}) -%>
 
-<script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
+<script
+  src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"
+  integrity="sha384-gUVjgBN2k0xDStRTBb1n9XCongQ8l5gP+wxXs1TkpusVUVFtlRFLvP88bu5wsBUp"
+  crossorigin="anonymous"
+></script>
 
 <link
   href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css"
@@ -33,7 +37,11 @@
   </div>
 </div>
 
-<script src="https://d3js.org/d3.v4.js"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.min.js"
+  integrity="sha384-gWG9VgK097eQTR3sCV4vOFl+vCZUZpKoV6cidldSSoI/ThCG5Yvl0EBknaGZsd5L"
+  crossorigin="anonymous"
+></script>
 <script>
   var map = new mapboxgl.Map({
     container: 'map',
@@ -85,9 +93,7 @@
           colors.healthy,
           '#000000'
         ],
-        // We do not show these single points at all. They are only here
-        // because the markers wouldn't render without.
-        'circle-radius': 0
+        'circle-radius': 12
       }
     });
   });
