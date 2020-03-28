@@ -71,7 +71,7 @@ Adding a new language should be pretty straightforward. If you need help, you ca
   - List of municipalities (we can help with this [Check Here](app/countrySpecific/README.md)).
   - List of postal code coordinates (we have a script for this [Check Here](app/countrySpecific/README.md)).
 - Configure URL paths in `app/domain/urls.ts` (set up for the `COUNTRY_CODE` you added)
-- Write a privacy statement in `app/views/privacy-statement/{COUNTRY_CODE}-lang-privacy-statement.ejs`
+- Write a privacy statement in `app/views/privacy-statement/{COUNTRY_CODE}-privacy-statement.ejs`
 - Add an iamge that will used when sharing the url in social media in `/static/{COUNTRY_CODE}/social-media.png`. @amritnagi or @adriaanvanrossum can create one if you provide them with text.
 - You also need a domain (preferably `coronastatus.tld` if it is available), and a server to run the app on. We can assist you with setting this up.
 
