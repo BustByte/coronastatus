@@ -1,6 +1,7 @@
 import config from '../config';
 
 export type Locale =
+  | 'en-NG'
   | 'no'
   | 'nl'
   | 'en'
@@ -235,7 +236,17 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistik'
-  }
+  },
+  'en-NG': {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
 };
 
 export const urls = localeAwareUrls[config.LANGUAGE as Locale];
