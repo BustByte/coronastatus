@@ -1,14 +1,12 @@
 version: "3.7"
 services:
   app:
-    build: .
     image: node:lts-buster-slim
-    environment:
-      - NODE_ENV=production
+    command: yarn serve
     depends_on:
       - proxy
-    volumes:
-      - ./:/app
+    environment:
+      - NODE_ENV=production
     labels:
       - "traefik.enable=true"
       - "traefik.app.backend.port=7272"
@@ -18,10 +16,12 @@ services:
     networks:
       - cs
     restart: unless-stopped
-    command: yarn serve
+    volumes:
+      - ./:/app
+      - node_modules:/app/node_modules
     working_dir: /app
   proxy:
-    image: traefik:v1.7.20
+    image: traefik:v1.7.23
     command:
       - "--docker"
       - "--docker.watch=true"
@@ -42,3 +42,6 @@ services:
 networks:
   cs:
     driver: bridge
+volumes:
+  node_modules:
+    driver: local
