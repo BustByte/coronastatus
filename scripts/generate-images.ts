@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const { LANGUAGE, LOCALE } = require('../app/config.ts');
+const { LOCALE, LANGUAGE } = require('../app/config.ts').default;
 
 if (!LOCALE) {
   if (!LANGUAGE) {
