@@ -7,6 +7,7 @@ This document describes how we operate the sites which are running Coronastatus.
 |----------------------------------------------------|-----------------|----------------------------------------|------------------------|
 | [coronastatus.nl](https://coronastatus.nl)         | The Netherlands | Adriaan Van Rossum / Simple Analytics  | Eirik Fosse / BustByte |
 | [coronastatus.no](https://coronastatus.no)         | Norway          | Eirik Fosse / BustByte                 | Eirik Fosse / BustByte |
+| [coronastatus.dk](https://coronastatus.dk)         | Denmark         | Alexander Nygaard                      | Alexander Nygaard      |
 | [coronastatus.es](https://coronastatus.es)         | Spain           | Adriaan Van Rossum / Simple Analytics  | Eirik Fosse / BustByte |
 | [coronastatus.it](https://coronastatus.it)         | Italy           | Adriaan Van Rossum / Simple Analaytics | Eirik Fosse / BustByte |
 | [coronastatus.mx](https://coronastatus.mx)         | Mexico          |                                        | Eirik Fosse / BustByte |
