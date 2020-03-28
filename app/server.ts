@@ -74,6 +74,7 @@ app.use((req, res, next) => {
   res.locals.zipLength = config.ZIP_LENGTH;
   res.locals.zipPlaceHolder = config.ZIP_PLACEHOLDER;
   res.locals.redirectToGovernment = config.REDIRECT_TO_GOVERNMENT;
+  res.locals.thousandSeparator = config.THOUSAND_SEPARATOR;
   next();
 });
 

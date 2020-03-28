@@ -34,6 +34,11 @@ const reportRepo = new CovidReportRepository();
 const passcodeCreator = getPasscodeCreator();
 
 router.get('/', async (req, res) => {
+  // return res.render('pages/confirm-profile', {
+  //   passcode: 'adsfasdf',
+  //   hasCookie: true
+  // });
+
   if (req.cookies.passcode) {
     return res.redirect(`${res.locals.urls.profile}/${req.cookies.passcode}`);
   }
@@ -43,6 +48,12 @@ router.get('/', async (req, res) => {
     aggregated,
     cleared: req.query?.cleared === 'true' || false
   });
+});
+
+router.get('/thank-you', async (req, res) => {
+  const reports = await reportRepo.getLatestCovidReports();
+  const aggregated = aggregateCovidReports(reports);
+  return res.render('pages/thank-you', { aggregated });
 });
 
 router.get(`${urls.profile}/:passcode`, async (req, res) => {
