@@ -20,7 +20,8 @@ export type Locale =
   | 'ca'
   | 'en-SG'
   | 'ms-MY'
-  | 'se';
+  | 'se'
+  | 'es-CL';
 
 type Urls = {
   [locale in Locale]: {
@@ -235,7 +236,17 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistik'
-  }
+  },
+  'es-CL': {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
 };
 
 export const urls = localeAwareUrls[config.LANGUAGE as Locale];
