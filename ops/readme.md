@@ -18,4 +18,4 @@ This document describes how we operate the sites which are running Coronastatus.
 | [coronastatus.ng](https://coronastatus.ng)         | Nigeria         |                                        | Eirik Fosse / BustByte |
 | [corona-status.in](https://corona-status.in)       | India           | Vandan Panwala                         | Eirik Fosse / BustByte |
 | [coronastatusmt.com](https://coronastatusmt.com)   | Malta           | TK Running                             | Eirik Fosse / BustByte |
-| [coronastatus.sk](https://coronastatus.sk)         | Malta           | TK Running                             | Eirik Fosse / BustByte |
+| [coronastatus.sk](https://coronastatus.sk)         | Slovakia        | Stano                                  | Stano                  |
