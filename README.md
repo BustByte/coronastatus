@@ -78,6 +78,7 @@ Adding a new language should be pretty straightforward. If you need help, you ca
   - List of postal code coordinates (we have a script for this [Check Here](app/countrySpecific/README.md)).
 - Configure URL paths in `app/domain/urls.ts` (set up for the `COUNTRY_CODE` you added)
 - Write a privacy statement in `app/views/privacy-statement/{COUNTRY_CODE}-privacy-statement.ejs`.
+- Add a mapping from the locale you added to a corresponding flag in `app/domain/flags.ts`. The code (two letters) of the flag can be found [here](https://flagicons.lipis.dev/).
 - You also need a domain (preferably `coronastatus.tld` if it is available), and a server to run the app on. We can assist you with setting this up.
 - Generate images for social media etc. using [this guide](https://github.com/BustByte/coronastatus#generating-social-images)
 - We can host the site for you if you want that. Just send a message to us in telegram. This makes it easier to maintain and deploy new changes to all the sites. We will give you access to the server as well. If you insist on hosting it yourself, please add your name to the README [here](ops)
@@ -110,9 +111,9 @@ Download & install:
 
 `yarn`
 
-4. Create a configuration file from the example provided in this repo
+4. Create a configuration file from the example provided in this repo. Check if an example config exist for your country in [config-examples/](config-examples), otherwise you can use `config.example.json`:
 
-`cp config.example.json config.json`
+`cp config.example.json config.json` or `cp config-examples/no-config.json config.json`
 
 5. Start the development webserver
 

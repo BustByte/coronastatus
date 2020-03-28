@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-ignore */
 import { Config } from './domain/types';
+import { CountryCode } from './domain/urls';
+import { Locale } from './domain/flags';
 
 let config = {};
 try {
@@ -17,8 +19,9 @@ try {
  * */
 const fallbackConfig: Config = {
   BASE_URL: process.env.BASE_URL || 'coronastatus.no',
-  LOCALE: process.env.LOCALE || 'en-US',
-  COUNTRY_CODE: process.env.COUNTRY_CODE || 'no',
+  LOCALE: (process.env.LOCALE as Locale) || 'en-US',
+  COUNTRY_CODE: (process.env.COUNTRY_CODE as CountryCode) || 'no',
+  SUPPORTED_LOCALES: [(process.env.LOCALE as Locale) || 'en-US'],
   COUNTRY: process.env.COUNTRY || 'Norway',
   MAP_CENTER: process.env.MAP_CENTER || '10.7522, 63.9139',
   MAP_ZOOM: parseInt(process.env.MAP_ZOOM || '4', 10),

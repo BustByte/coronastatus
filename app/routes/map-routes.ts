@@ -64,6 +64,7 @@ router.get('/geojson', async (req, res) => {
 
 router.get('/', (req, res) => {
   res.locals.useWhiteLogo = true;
+  res.locals.showLocaleSelector = false;
   return res.render('pages/map');
 });
 

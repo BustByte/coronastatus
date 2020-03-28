@@ -38,7 +38,10 @@
 <section class="custom-section custom-hero p-4">
   <div class="custom-section-content mx-auto">
     <header class="py-2 flex justify-between items-center flex-wrap">
-      <%- include('partials/logo') -%>
+      <div class="flex items-center">
+        <%- include('partials/logo') -%>
+        <%- include('partials/locale-selector') -%>
+      </div>
       <%- include('partials/menu', { home: true }) -%>
     </header>
     <div class="my-8 flex flex-row flex-wrap justify-between">

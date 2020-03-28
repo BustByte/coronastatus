@@ -1,0 +1,44 @@
+<%
+  const { supportedLocales, currentLocale, localeToFlag, currentPath } = locals;
+  const currentLocaleFlag = localeToFlag(currentLocale);
+%>
+
+<% if (currentLocaleFlag && supportedLocales && supportedLocales.length > 1) { %>
+<div class="locale-selector inline-block relative text-xl">
+  <div class="flex items-center pt-2 pl-5" role="button" tabindex="0" id="flag-locale-button">
+    <span class="flag-icon flag-icon-<%= currentLocaleFlag %>"></span>
+    <svg class="fill-current h-4 w-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+  </div>
+  <ul class="locale-selector-menu absolute hidden pt-1 pl-4" id="flag-locale-dropdown">
+    <% supportedLocales.forEach((locale, i) => { %>
+      <li class="">
+        <a
+          class="<%= i === 0 ? 'rounded-t' : '' %> <%= i === (supportedLocales.length - 1) ? 'rounded-b' : '' %> bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+          href="/lang/<%= locale %>?redirectTo=<%= currentPath %>"
+        >
+          <span class="flag-icon flag-icon-<%= localeToFlag(locale) %>"></span>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+<% } %>
+
+<script>
+  var flagButton = document.getElementById('flag-locale-button');
+  var flagDropdown = document.getElementById('flag-locale-dropdown');
+  
+  flagButton.addEventListener('click', function(){
+    flagDropdown.style.display = 'block';
+  })
+
+  document.addEventListener('click', function(event) {
+    if (!(flagButton).contains(event.target) || (flagDropdown.contains(event.target)) && isVisible(flagDropdown)) {
+      flagDropdown.style.display = 'none';
+    }
+  });
+
+  function isVisible(element) {
+    return !!element && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length);
+  }
+</script>
