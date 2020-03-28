@@ -1,0 +1,13 @@
+{
+  "BASE_URL": "coronastatus.sk",
+  "LANGUAGE": "sk",
+  "COUNTRY":"Slovakia",
+  "DB_PATH": "./covid_db",
+  "MAP_CENTER": "19.2688, 48.7269",
+  "MAP_ZOOM": 7,
+  "PASSCODE_LENGTH": 4,
+  "REDIRECT_TO_GOVERNMENT": false,
+  "TWITTER": "kontakt@coronastatus.sk",
+  "ZIP_LENGTH": 5,
+  "ZIP_PLACEHOLDER": "12345"
+}

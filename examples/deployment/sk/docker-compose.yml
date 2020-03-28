@@ -1,0 +1,45 @@
+version: "3.7"
+services:
+  app:
+    build: .
+    init: true
+    image: node:lts-buster-slim
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - proxy
+    volumes:
+      - ./:/app
+    labels:
+      - "traefik.enable=true"
+      - "traefik.app.backend.port=7272"
+      - "traefik.app.frontend.rule=Host:coronastatus.sk,www.coronastatus.sk"
+    ports:
+      - "127.0.0.1:7272:7272"
+    networks:
+      - cs
+    restart: unless-stopped
+    command: yarn serve
+    working_dir: /app
+  proxy:
+    image: traefik:v1.7.20
+    command:
+      - "--docker"
+      - "--docker.watch=true"
+      - "--docker.exposedByDefault=false"
+      - "--entryPoints=Name:http Address::80 Redirect.EntryPoint:https"
+      - "--entryPoints=Name:https Address::443 TLS:/tls.crt,/tls.key"
+      - "--defaultEntryPoints=http,https"
+    networks:
+      - cs
+    ports:
+      - 80:80
+      - 443:443
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./certs/tls.crt:/tls.crt
+      - ./certs/tls.key:/tls.key
+networks:
+  cs:
+    driver: bridge
