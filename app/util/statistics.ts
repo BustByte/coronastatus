@@ -136,6 +136,11 @@ const toDateStat = (report: CovidReport, reportIndex: number): DateStat => ({
   y: reportIndex
 });
 
+const getCurrentDateStat = (stats: DateStat[]): DateStat => ({
+  x: new Date(),
+  y: stats[stats.length - 1].y
+});
+
 export function calculateTotalReportsStats(
   reports: CovidReport[],
   numberOfPoints = 100
@@ -155,6 +160,11 @@ export function calculateTotalReportsStats(
     .filter(report => hasSymptoms(report.symptoms))
     .map(toDateStat)
     .filter((_, i) => i % numberBetweenEachSample === 0);
+
+  numberOfReportsStat.push(getCurrentDateStat(numberOfReportsStat));
+  numberOfReportsWithSymptomsStat.push(
+    getCurrentDateStat(numberOfReportsWithSymptomsStat)
+  );
 
   return {
     numberOfReportsStat,
@@ -256,6 +266,9 @@ export function getInfectedAndContactStats(
   const numberOfInContactStat = reportsSortedByTimestamp
     .filter(report => report.hasBeenInContactWithInfected)
     .map(toDateStat);
+
+  numberOfInfectedStat.push(getCurrentDateStat(numberOfInfectedStat));
+  numberOfInContactStat.push(getCurrentDateStat(numberOfInContactStat));
 
   return {
     numberOfInfectedStat,
