@@ -205,5 +205,15 @@
   "Close": "Stäng",
   "Contribute now": "Bidra nu",
   "Help us uncover and predict the corona spread in your area":
-  "Hjälp oss <span>kartlägga</span> och <span>förutse</span> spridningen av corona i ditt område"
+  "Hjälp oss <span>kartlägga</span> och <span>förutse</span> spridningen av corona i ditt område",
+  "March 27": "27 mars",
+  "In isolation due to orders from the government": "Isolerad på myndigheters begäran",
+  "https://www.whatismyzip.com": "https://www.whatismyzip.com",
+  "Some questions and alternatives were not a part of the form from the beginning:": "Några frågor och alternativ fanns inte med i formuläret från början:",
+  "Numbers": "I siffror",
+  "What is my Zip code?": "Vad har jag för postnummer?",
+  "#stayindoors": "#stannahemma",
+  "In isolation due to COVID-19 infection": "Isolerad på grund av COVID-19-infektion",
+  "#washyourhands": "#tvättahänderna",
+  "Other": "Annat"
 }

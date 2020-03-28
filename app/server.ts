@@ -60,6 +60,7 @@ app.use((req, res, next) => {
   // eslint-disable-next-line prefer-destructuring
   res.locals.activePage = `/${req.path.split('/')[1]}`;
   res.locals.cacheKey = cacheKey;
+  res.locals.lastCommit = process.env.CACHE_KEY || null;
   res.locals.imageSubfolder = config.LANGUAGE;
   res.locals.htmlLang = config.LANGUAGE;
   res.locals.country = config.COUNTRY;
