@@ -1,8 +1,5 @@
 import config from '../config';
 
-<<<<<<< HEAD
-export type Locale = 'no' | 'nl' | 'en' | 'sk' | 'it' | 'tr' | 'en-us';
-=======
 export type Locale =
   | 'no'
   | 'nl'
@@ -23,8 +20,8 @@ export type Locale =
   | 'ca'
   | 'en-SG'
   | 'ms-MY'
-  | 'se';
->>>>>>> 32755bd8bc1786e89733a32e61f0111fb727659f
+  | 'se'
+  | 'bd';
 
 type Urls = {
   [locale in Locale]: {
@@ -70,11 +67,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
-<<<<<<< HEAD
-  'en-us': {
-=======
   'en-US': {
->>>>>>> 32755bd8bc1786e89733a32e61f0111fb727659f
     submitReport: '/',
     profile: '/healthcondition',
     privacyPolicy: '/privacy-statement',
@@ -84,8 +77,6 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
-<<<<<<< HEAD
-=======
   'es-AR': {
     submitReport: '/',
     profile: '/estadosalud',
@@ -126,7 +117,6 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/estadisticas'
   },
->>>>>>> 32755bd8bc1786e89733a32e61f0111fb727659f
   sk: {
     submitReport: '/',
     profile: '/zdravotny-stav',
@@ -246,6 +236,16 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistik'
+  },
+  bd: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
   }
 };
 
