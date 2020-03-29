@@ -41,3 +41,4 @@
     3. Deploy the latest version by running `/srv/scripts/deploy-prod.sh`
     4. Try to start the server outside of systemd to check that it boots: `yarn start`
     5. Confirm that the site works correctly by visiting `https://coronastatus.[tld]
+10. Add the domain to the `ops/deploy-prod-all.sh` script. 
