@@ -14,7 +14,6 @@
     "build:images": "ts-node scripts/generate-images.ts"
   },
   "dependencies": {
-    "@types/pg": "^7.14.3",
     "autoprefixer": "^9.7.4",
     "body-parser": "^1.19.0",
     "connect-sqlite3": "^0.9.11",
@@ -45,6 +44,8 @@
     "@types/i18n": "^0.8.6",
     "@types/jest": "^25.1.4",
     "@types/node-fetch": "^2.5.5",
+    "@types/pg": "^7.14.3",
+    "@types/puppeteer": "^2.0.1",
     "@types/sqlite3": "^3.1.6",
     "@types/swagger-ui-express": "^4.1.2",
     "@typescript-eslint/eslint-plugin": "^2.23.0",

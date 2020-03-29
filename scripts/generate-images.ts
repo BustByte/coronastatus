@@ -1,19 +1,19 @@
-const puppeteer = require('puppeteer');
-const { LOCALE, LANGUAGE } = require('../app/config.ts').default;
+// eslint-disable-next-line import/no-extraneous-dependencies
+import puppeteer from 'puppeteer';
+
+const { LOCALE } = require('../app/config.ts').default;
 
 if (!LOCALE) {
-  if (!LANGUAGE) {
-    console.warn(
-      "WARNING: no LOCALE or LANGUAGE found in config.json. falling back to 'en'."
-    );
-  } else {
-    console.warn(
-      `WARNING: no LOCALE found in config.json. falling back to LANGUAGE (${LANGUAGE}).`
-    );
-  }
+  console.warn(
+    "WARNING: no LOCALE found in config.json. falling back to 'en'."
+  );
 }
 
-const currentLanguage = LOCALE || LANGUAGE || 'en';
+const currentLanguage = LOCALE || 'en';
+
+const ogImagePath = `static/${currentLanguage}/social-media.png`;
+const twitterHeaderPath = `static/${currentLanguage}/twitter-header.png`;
+const bannerPath = `static/${currentLanguage}/banner.png`;
 
 (async () => {
   const browser = await puppeteer.launch();
@@ -29,17 +29,22 @@ const currentLanguage = LOCALE || LANGUAGE || 'en';
   });
 
   const ogImage = await page.$('.twitter-card');
-  await ogImage.screenshot({
-    path: `static/${currentLanguage}/social-media.png`
-  });
+  if (ogImage) {
+    await ogImage.screenshot({ path: ogImagePath });
+    console.log(`Saved social media share image to ${ogImagePath}`);
+  }
 
   const twitterHeader = await page.$('.twitter-header');
-  await twitterHeader.screenshot({
-    path: `static/${currentLanguage}/twitter-header.png`
-  });
+  if (twitterHeader) {
+    await twitterHeader.screenshot({ path: twitterHeaderPath });
+    console.log(`Saved twitter header image to ${twitterHeaderPath}`);
+  }
 
   const banner = await page.$('.banner');
-  await banner.screenshot({ path: `static/${currentLanguage}/banner.png` });
+  if (banner) {
+    await banner.screenshot({ path: bannerPath });
+    console.log(`Saved banner image to ${bannerPath}`);
+  }
 
   await browser.close();
 })();
