@@ -1,0 +1,17 @@
+{
+  "BASE_URL": "coronastatusmt.com",
+  "LOCALE": "en-MT",
+  "SUPPORTED_LOCALES": ["en-MT"],
+  "COUNTRY_CODE": "mt",
+  "COUNTRY": "Malta",
+  "MAP_CENTER": "14.3582, 35.9401",
+  "MAP_ZOOM": 10,
+  "MAP_MAX_ZOOM": 14,
+  "TWITTER": "coronastatusMT",
+  "ZIP_PATTERN": "[A-Za-z]{2,3}",
+  "ZIP_PLACEHOLDER": "Example: VLT (no numbers)",
+  "ZIP_GUIDE": true,
+  "REDIRECT_TO_GOVERNMENT": false,
+  "PASSCODE_LENGTH": 3,
+  "DB_PATH": "./covid_db"
+}
