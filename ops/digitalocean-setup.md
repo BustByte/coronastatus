@@ -31,7 +31,7 @@
     7. Reload nginx by running `sudo service nginx reload`
     8. Run certbot `sudo certbot --nginx`, select all, and enable redirect from http to https.
     9. If step above fails the DNS records are probably incorrect. Double check with domain owner.
-8. Change the systemd script to point to correct directory
+8. Change the systemd script to point to correct directory (we don't rename the systemd job for easier deployments).
     1. Edit `/etc/systemd/system/coronastatusnl.servce` and change the name to `coronastatus.[tld] app`
     2. Edit `/etc/systemd/system/coronastatusnl.servce` and change workspacce directory to `/srv/coronastatus.[tld]`
     3. Reload systemd by running `sudo systemctl daemon-reload`
