@@ -1,6 +1,15 @@
 const { spawnSync } = require('child_process');
 
 /**
+ * This script finds all the english translation keys across
+ * all commits (including branches and pull requests) for each
+ * locale.json in app/locales. Afterwards it looks at each locale
+ * separately to see if it's missing any one the english keys.
+ * Usage: node ops/lost-in-translation.js
+ * Important: You need to run it from the root directory.
+ */
+
+/**
  * Calls git cli with arguments and returns stdout.
  */
 function git(...args) {
@@ -49,7 +58,7 @@ function retrieveJSONForFileAtCommitHash(filePath, commitHash) {
 allLocales = new Set(['no', 'se']);
 allEnglishTranslationKeys = new Set([]);
 for (const locale of allLocales) {
-  const filePath = `../app/locales/${locale}.json`;
+  const filePath = `app/locales/${locale}.json`;
   for (const commitHash of findCommitHashesForFile(filePath)) {
     const translation = retrieveJSONForFileAtCommitHash(filePath, commitHash);
     for (const translationKey of Object.keys(translation)) {
@@ -71,7 +80,7 @@ for (const locale of allLocales) {
  */
 const translationKeysByLocale = {};
 for (const locale of allLocales) {
-  const filePath = `../app/locales/${locale}.json`;
+  const filePath = `app/locales/${locale}.json`;
   for (const commitHash of findCommitHashesForFile(filePath)) {
     const translation = retrieveJSONForFileAtCommitHash(filePath, commitHash);
     if (translationKeysByLocale[locale] === undefined) {
