@@ -34,7 +34,6 @@ def retrieve_json_for_file_at_commit_hash(file_path, commit_hash):
 
 if __name__ == '__main__':
     all_locales = ('no', 'se', 'en-IN')
-    locale_to_check_for = 'no'
     
     # Step 1: Find all the (english) translation keys across all branches and PRs.
     #
