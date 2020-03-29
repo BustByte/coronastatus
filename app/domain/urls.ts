@@ -301,7 +301,6 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estatistica'
-
   }
 };
 
