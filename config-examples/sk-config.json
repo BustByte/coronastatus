@@ -10,6 +10,7 @@
   "PASSCODE_LENGTH": 4,
   "REDIRECT_TO_GOVERNMENT": false,
   "SUPPORTED_LOCALES": ["sk"],
+  "THOUSAND_SEPARATOR": " ",
   "TWITTER": "coronastatusSK",
   "ZIP_GUIDE": false,
   "ZIP_LENGTH": 5,

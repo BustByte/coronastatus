@@ -63,7 +63,6 @@
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "puppeteer": "^2.1.1",
-    "tailwindcss": "^1.0.3",
     "ts-jest": "^25.2.1"
   },
   "eslintConfig": {
