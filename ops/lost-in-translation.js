@@ -66,6 +66,7 @@ async function addUniqueRowsToGoogleSheet(sheet, rowsToAdd) {
   const uniqueRowsToAdd = rowsToAdd.filter(rowToAdd =>
     !alreadyAddedRows.find(alreadyAddedRow => alreadyAddedRow.key === rowToAdd.key));
   await sheet.addRows(uniqueRowsToAdd);
+  return uniqueRowsToAdd;
 }
 
 /**
@@ -129,15 +130,25 @@ for (const locale of allLocales) {
   const doc = new GoogleSpreadsheet('1ILFfc1DX4ujMnLnf9UqhwQGM9Ke3s1cAWciy8VqMHZw');
   await doc.useServiceAccountAuth(require('./coronastatus-translation-486cef09736e-credentials.json'));
   await doc.loadInfo();
-  const sheet = doc.sheetsByIndex[0];
 
-  const rows = [];
-  const locale = 'no';
-  for (const englishTranslationKey of allEnglishTranslationKeys) {
-    if (!translationKeysByLocale[locale].has(englishTranslationKey)) {
-      const row = { 'key': englishTranslationKey, translation: '' };
-      rows.push(row);
+  const allLocales = retrieveAllLocales('app/locales/');
+  for (let sheetIndex = 0; sheetIndex < doc.sheetCount; sheetIndex++) {
+    const sheet = doc.sheetsByIndex[sheetIndex];
+    for (const locale of allLocales) {
+      if (sheet.title !== locale) {
+        continue;
+      }
+
+      const rows = [];
+      for (const englishTranslationKey of allEnglishTranslationKeys) {
+        if (!translationKeysByLocale[locale].has(englishTranslationKey)) {
+          const row = { 'key': englishTranslationKey, translation: '' };
+          rows.push(row);
+        }
+      }
+      const addedRows = await addUniqueRowsToGoogleSheet(sheet, rows);
+      console.log(`Added ${addedRows.length} of ${rows.length} missing translations to the ${locale} sheet.`);
     }
   }
-  await addUniqueRowsToGoogleSheet(sheet, rows);
+
 })();
