@@ -7,10 +7,11 @@
   "MAP_ZOOM": 4,
   "MAP_MAX_ZOOM": 13,
   "TWITTER": "coronastatusNO",
-  "ZIP_LENGTH": 4,
+  "ZIP_PATTERN": "[A-Za-z0-9]{4}",
   "ZIP_PLACEHOLDER": "1234",
   "ZIP_GUIDE": false,
   "REDIRECT_TO_GOVERNMENT": false,
   "PASSCODE_LENGTH": 4,
-  "DB_PATH": "./covid_db"
+  "DB_PATH": "./covid_db",
+  "THOUSAND_SEPARATOR": " "
 }

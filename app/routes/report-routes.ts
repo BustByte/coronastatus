@@ -45,6 +45,12 @@ router.get('/', async (req, res) => {
   });
 });
 
+router.get('/thank-you', async (req, res) => {
+  const reports = await reportRepo.getLatestCovidReports();
+  const aggregated = aggregateCovidReports(reports);
+  return res.render('pages/thank-you', { aggregated });
+});
+
 router.get(`${urls.profile}/:passcode`, async (req, res) => {
   const success = req.query?.success === 'true';
   const clear = req.query?.clear === 'true';

@@ -150,12 +150,13 @@ export interface Config {
   MAP_ZOOM: number;
   MAP_MAX_ZOOM: number;
   TWITTER: string;
-  ZIP_LENGTH: number;
+  ZIP_PATTERN: string;
   ZIP_PLACEHOLDER: string;
   ZIP_GUIDE: boolean;
   REDIRECT_TO_GOVERNMENT: boolean;
   PASSCODE_LENGTH: number;
   DB_PATH: string;
+  THOUSAND_SEPARATOR: string;
 }
 
 export type DatabaseType = 'pg' | 'sqlite';
