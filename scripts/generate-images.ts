@@ -1,19 +1,19 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import puppeteer from 'puppeteer';
 
-const { LOCALE } = require('../app/config.ts').default;
+const { COUNTRY_CODE } = require('../app/config.ts').default;
 
-if (!LOCALE) {
+if (!COUNTRY_CODE) {
   console.warn(
-    "WARNING: no LOCALE found in config.json. falling back to 'en'."
+    "WARNING: no COUNTRY_CODE found in config.json. falling back to 'en'."
   );
 }
 
-const currentLanguage = LOCALE || 'en';
+const countryCode = COUNTRY_CODE || 'en';
 
-const ogImagePath = `static/${currentLanguage}/social-media.png`;
-const twitterHeaderPath = `static/${currentLanguage}/twitter-header.png`;
-const bannerPath = `static/${currentLanguage}/banner.png`;
+const ogImagePath = `static/${countryCode}/social-media.png`;
+const twitterHeaderPath = `static/${countryCode}/twitter-header.png`;
+const bannerPath = `static/${countryCode}/banner.png`;
 
 (async () => {
   const browser = await puppeteer.launch();
