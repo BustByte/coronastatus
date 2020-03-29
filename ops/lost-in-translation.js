@@ -136,14 +136,18 @@ for (const locale of allLocales) {
     const sheet = doc.sheetsByIndex[sheetIndex];
     for (const locale of allLocales) {
       if (sheet.title !== locale) {
-        try {
-          await doc.addSheet({ title: locale, headerValues: ['key', 'translation'] });
-        } catch (error) {
-          // We don't do anything if the sheet for this locale exists.
-        }
         continue;
       }
 
+      try {
+        // Create a sheet if it doesn't already exist.
+        await doc.addSheet({ title: locale, headerValues: ['key', 'translation'] });
+        await new Promise(resolve => setTimeout(resolve, 10*1000));
+      } catch (error) {
+        // We don't do anything if the sheet for this locale exists.
+      }
+
+      // Add the missing rows by looking at the key column.
       const rows = [];
       for (const englishTranslationKey of allEnglishTranslationKeys) {
         if (!translationKeysByLocale[locale].has(englishTranslationKey)) {
@@ -151,13 +155,15 @@ for (const locale of allLocales) {
           rows.push(row);
         }
       }
+
+      // Print out how many rows we added.
       const addedRows = await addUniqueRowsToGoogleSheet(sheet, rows);
       console.log(`Added ${addedRows.length} of ${rows.length} missing translations to the ${locale} sheet.`);
-    }
 
-    // Avoid getting rate limited by Google's API by waiting 100 seconds between each sheet.
-    console.log('Waiting a 100 seconds before processing the next sheet.');
-    await new Promise(resolve => setTimeout(resolve, 100*1000));
+      // Avoid getting rate limited by Google's API (max writes per 100 seconds).
+      console.log('Waiting before processing the next sheet.');
+      await new Promise(resolve => setTimeout(resolve, 20*1000));
+    }
   }
 
 })();
