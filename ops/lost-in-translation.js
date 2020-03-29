@@ -8,8 +8,11 @@ const { GoogleSpreadsheet } = require('google-spreadsheet');
  * all commits (including branches and pull requests) for each
  * locale.json in app/locales. Afterwards it looks at each locale
  * separately to see if it's missing any one the english keys.
- * Usage: node ops/lost-in-translation.js
+ *
  * Important: You need to run it from the root directory.
+ *
+ * Usage:
+ *   node ops/lost-in-translation.js
  */
 
 /**
