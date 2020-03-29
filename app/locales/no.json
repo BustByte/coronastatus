@@ -177,5 +177,10 @@
   "Help us uncover and predict the corona spread in your area": "Hjelp oss å <span>avdekke</span> og <span>forutsi</span> koronautbredelsen i ditt område",
   "Numbers": "Tall",
   "#washyourhands": "#wash<wbr/>your<wbr/>hands",
-  "#stayindoors": "#stay<wbr/>indoors"
+  "#stayindoors": "#stay<wbr/>home",
+  "In isolation due to orders from the government": "I karantene pålagt av myndighetene",
+  "In isolation due to COVID-19 infection": "I karantene på grunn av COVID-19-infeksjon",
+  "Some questions and alternatives were not a part of the form from the beginning:": "Noen spørsmål og svaralternativer har kommet til etter hvert:",
+  "March 27": "27. mars",
+  "Other": "Annet / ønsker ikke å oppgi"
 }

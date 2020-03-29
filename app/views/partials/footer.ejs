@@ -57,17 +57,16 @@
         ><%= __('Privacy Policy')%></a
       >
     </div>
-
+ 
 
     <div
-    class="flex items-center justify-center self-stretch mt-4 mb-8 text-xs lg:text-base text-center"
-  >
-  <img src="/static/images/analytics.svg" alt="Provided by Simple Analtics" class="mr-2" />
-    <a target="_blank" class="font-bold text-gray-700 text-sm hover:text-purple-800 hover:underline" href="https://simpleanalytics.com/<%= baseUrl %>"
-    ><%= __('View Website Statistics')%></a
-  >
-</div>
-      
+      class="flex items-center justify-center self-stretch mt-4 mb-8 text-xs lg:text-base text-center"
+    >
+      <img src="/static/images/analytics.svg" alt="Provided by Simple Analytics" class="mr-2" />
+        <a target="_blank" class="font-bold text-gray-700 text-sm hover:text-purple-800 hover:underline" href="https://simpleanalytics.com/<%= baseUrl %><% if (!shouldAddAnalytics) { %>?ref=<%= baseUrl %><% } %>"
+        ><%= __('View Website Statistics')%></a
+      >
+    </div>
 
   </div>
 </footer>
