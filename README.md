@@ -81,6 +81,7 @@ Adding a new language should be pretty straightforward. If you need help, you ca
 - You also need a domain (preferably `coronastatus.tld` if it is available), and a server to run the app on. We can assist you with setting this up.
 - Generate images for social media etc. using [this guide](https://github.com/BustByte/coronastatus#generating-social-images)
 - We can host the site for you if you want that. Just send a message to us in telegram. This makes it easier to maintain and deploy new changes to all the sites. We will give you access to the server as well. If you insist on hosting it yourself, please add your name to the README [here](ops)
+- You should also check in the config file for your country in `config-examples/{CONTRY_CODE}-config.json`.
 
 ## Start developing
 
