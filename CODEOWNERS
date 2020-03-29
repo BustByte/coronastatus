@@ -6,7 +6,6 @@
 /app/repository/ @Snikanes
 /app/views/ @fossecode
 /app/views/privacy-statements/sk-privacy-statement.ejs @sbocinec
-/examples/ops/main/ @michaelmcmillan
-/examples/ops/sk/ @sbocinec
+/ops/sk/ @sbocinec
 /static/no/ @fossecode
 /static/nl/ @Kilian
