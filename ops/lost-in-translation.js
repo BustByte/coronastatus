@@ -1,3 +1,5 @@
+const { parse } = require('path');
+const { readdirSync } = require('fs');
 const { spawnSync } = require('child_process');
 
 /**
@@ -47,6 +49,15 @@ function normalizeTranslationKey(translationKey) {
 }
 
 /**
+ * Find all the locales (ie. en-IN, no, se) in the provided directory.
+ */
+function retrieveAllLocales(directoryPath) {
+  const filenames = readdirSync(directoryPath);
+  const locales = filenames.map(filename => parse(filename).name);
+  return locales;
+}
+
+/**
  * Step 1: Find all the (english) translation keys across all branches and PRs.
  *
  * If a Dutch developer has made a feature in a branch, we expect that him/her added a key
@@ -62,8 +73,8 @@ function normalizeTranslationKey(translationKey) {
  * since the start of the project across all branches and PRs. We throw them into a set that
  * we use in the next step.
  */
-allLocales = new Set(['no', 'se']);
-allEnglishTranslationKeys = new Set([]);
+const allLocales = retrieveAllLocales('app/locales/');
+const allEnglishTranslationKeys = new Set([]);
 for (const locale of allLocales) {
   const filePath = `app/locales/${locale}.json`;
   for (const commitHash of findCommitHashesForFile(filePath)) {
