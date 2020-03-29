@@ -1,6 +1,6 @@
 {
   "BASE_URL": "coronastatus.us",
-  "LOCALE": "pt-BR",
+  "LOCALE": "en-US",
   "COUNTRY_CODE": "us",
   "COUNTRY": "United States",
   "MAP_CENTER": "10.7522, 63.9139",
