@@ -1,0 +1,17 @@
+<%
+const urls = locals.urls;
+const isOnProfile = locals.activePage === urls.submitReport || locals.activePage === urls.profile;
+const isOnMap = locals.activePage === urls.map;
+const isOnPrivacyPolicy = locals.activePage === urls.privacyPolicy;
+const isOnStats = locals.activePage === urls.statistics;
+%>
+
+<div class="hamburger-menu">
+  <ul class="inner">
+    <li><a href="<%= urls.submitReport %>" class="<%= isOnProfile ? 'active' : '' %>"><%= __("Your state of health") %></a></li>
+    <li><a href="<%= urls.map %>" class="<%= isOnMap ? 'active' : '' %>"><%= __("Map") %></a></li>
+    <li><a href="<%= urls.statistics %>" class="<%= isOnStats ? 'active' : '' %>"><%= __("Statistics") %></a></li>
+    <li><a href="<%= urls.privacyPolicy %>" class="<%= isOnPrivacyPolicy ? 'active' : '' %>"><%= __("Privacy") %></a></li>
+    <li><a href="<%= urls.apiDocs %>" target="_blank"><%= __("API") %></a></li>
+  </ul>
+</div>

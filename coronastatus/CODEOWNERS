@@ -1,0 +1,9 @@
+* @fossecode
+/static/no/ @fossecode
+/static/nl/ @Kilian
+/app/locales/ @Kilian
+/app/locales/no.json @michaelmcmillan
+/app/locales/sk*.json @sbocinec
+*.md @michaelmcmillan
+/app/repository/ @Snikanes
+/app/views/ @fossecode

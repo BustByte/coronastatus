@@ -1,0 +1,35 @@
+<%- include('partials/header', { show: true }) -%>
+
+<section>
+  <h1><%= __('Contributors') %></h1>
+  <p class="with-top-margin">
+    <%= __(`This website is made with help from volunteers. In no particular
+    order:`) %>
+  </p>
+  <ul class="my-3">
+    <li class="contributor-list">Kristoffer Sundmyhr</li>
+    <li class="contributor-list">Jan Magne Andersen</li>
+    <li class="contributor-list">Arild Øren Wanvik</li>
+    <li class="contributor-list">Marius Kalvø</li>
+    <li class="contributor-list">Rina Andriana</li>
+    <li class="contributor-list">William Benjamin Rode</li>
+    <li class="contributor-list">Kai H T Mortensen-Langhaug</li>
+    <li class="contributor-list">Kåre Digernes</li>
+    <li class="contributor-list">Raphaëlle Bertrand-Lalo</li>
+    <li class="contributor-list">Francesco Zerbinati</li>
+    <li class="contributor-list">Elena Ghidoni</li>
+    <li class="contributor-list">
+      <a class="text-cvs-red hover:underline"
+        target="_blank"
+        href="https://github.com/BustByte/coronastatus.no/graphs/contributors"
+        ><%= __("...and others") %></a
+      >
+    </li>
+  </ul>
+  <p>
+    <%= __("The code for the website can be found") %>
+    <a href="https://github.com/BustByte/coronastatus.no" class="text-cvs-red hover:underline"><%= __("here") %></a>.
+  </p>
+</section>
+
+<%- include('partials/footer', { show: true }) -%>

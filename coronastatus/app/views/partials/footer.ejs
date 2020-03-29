@@ -1,0 +1,128 @@
+<% const shouldAddAnalytics = !locals.profile; %>
+<% const { show = true, home = false } = locals; %>
+
+<!-- spacer -->
+
+<% if (show && !home) { %>
+</section> <!-- main-container -->
+<% } %>
+
+<!-- spacer -->
+
+<% if (typeof show === 'undefined' || typeof show === 'boolean' && show == true) { %>
+<footer class="custom-section custom-section-footer p-8 pt-32">
+  <div
+    class="custom-section-content mx-auto custom-section-footer-content flex flex-col items-center"
+  >
+    <a
+      href="https://github.com/BustByte/coronastatus"
+      target="_blank"
+      class="footer-logo-link m-6"
+    >
+      <img
+        src="/static/images/github.svg"
+        alt=""
+        class="footer-logo-link__img mt-12 h-12 w-12 lg:h-16 lg:w-16"
+      />
+    </a>
+    <div
+      class="flex flex-row justify-between flex-wrap items-center self-stretch my-8 text-base lg:text-xl text-center"
+    >
+      <% if (locals.twitter) { %>
+      <a
+        class="text-cvs-green-dark font-medium whitespace-no-wrap"
+        href="https://twitter.com/intent/user?screen_name=<%= locals.twitter %>"
+        target="_blank"
+        >@<%= locals.twitter %></a
+      >
+      <% } %>
+      <span
+        class="text-cvs-green-dark font-medium text-left md:text-center md:whitespace-no-wrap"
+      >
+        <%= __('Developed by')%>
+        <a target="_blank" class="font-bold hover:text-cvs-red hover:underline" href="https://bustbyte.no"
+          ><%= __('BustByte AS')%></a
+        >
+        <%= __('and') %>
+        <a class="font-bold hover:text-cvs-red hover:underline" href="<%= urls.contributors %>">
+          <%= __('volunteers')%>
+        </a>
+      </span>
+      <a
+        class="text-cvs-green-dark hover:text-cvs-red font-bold hover:underline whitespace-no-wrap"
+        href="<%= urls.privacyPolicy %>"
+        ><%= __('Privacy Policy')%></a
+      >
+    </div>
+  </div>
+</footer>
+<% } %>
+
+</div> <!-- container -->
+
+<!-- spacer -->
+
+<% if (shouldAddAnalytics) { %>
+<!-- Simple Analytics -->
+<script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
+<noscript
+  ><img src="https://api.simpleanalytics.io/hello.gif" alt=""
+/></noscript>
+<% } %>
+
+<script src="/static/hamburger-menu.js?v=<%= locals.cacheKey %>"></script>
+
+<script>
+  function readCookie(name) {
+    var nameEQ = name + '=';
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) === ' ') {
+        c = c.substring(1, c.length);
+      }
+      if (c.indexOf(nameEQ) === 0) {
+        return c.substring(nameEQ.length, c.length);
+      }
+    }
+    return null;
+  }
+</script>
+
+<script>
+  // Remove query params from url after page load so #hashtags keep working
+  (function removeQueryParams() {
+    window.addEventListener('load', function(event) {
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    });
+  })();
+</script>
+
+<script>
+  // Show button "Your state of health" when people did fill in the form
+  // and show button "Contribute now" when they didn't
+  (function updateMainCTA() {
+    window.addEventListener('load', function(event) {
+      var button = document.getElementById('nav-cta-button') ||
+        document.getElementById('home-cta-button');
+
+      if (!button) return;
+
+      var submitted =
+        window.localStorage.getItem('hasSubmittedProfile') === 'true' ||
+        window.localStorage.getItem('isUsingPasscodeLink') === 'true' ||
+        readCookie('passcode');
+
+      if (submitted) {
+        button.textContent = '<%= __(`Your state of health`) %>';
+      }
+
+      button.classList.remove('opacity-0');
+    });
+  })();
+</script>
+
+</body>
+</html>

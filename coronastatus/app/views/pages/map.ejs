@@ -1,0 +1,240 @@
+<%- include('partials/header', { show: false, fullscreen: true}) -%>
+
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
+
+<link
+  href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css"
+  rel="stylesheet"
+/>
+
+<div id="map"></div>
+
+<div class="map-overlay top">
+  <div class="map-overlay-info">
+    <h4><%= __(`Report status by zip code`) %></h4>
+    <p>
+      <%= __(`The markers correspond to coordinates of zip codes, they have
+      nothing to do with individuals.`) %>
+    </p>
+    <p>
+      <label id="month"></label>
+    </p>
+  </div>
+
+  <div class="map-overlay-labels">
+    <div id="legend" class="legend">
+      <div><%= __(`Healthy`) %></div>
+      <div class="healthy"></div>
+      <div><%= __(`Has symptoms`) %></div>
+      <div class="symptoms"></div>
+      <div><%= __(`Tested positive`) %></div>
+      <div class="positive"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://d3js.org/d3.v4.js"></script>
+<script>
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json',
+    center: [<%= locals.mapCenter %>],
+    zoom: <%= locals.mapZoom %>,
+    maxZoom: <%= locals.mapMaxZoom %>,
+    customAttribution: 'Postal Codes <a href="https://geonames.org/" target="_blank">&copy;GeoNames</a>',
+    hash: true
+  });
+
+  var positive = ['==', ['get', 'state'], 'POSITIVE'];
+  var symptoms = ['==', ['get', 'state'], 'SYMPTOMS'];
+  var healthy = ['==', ['get', 'state'], 'HEALTHY'];
+
+  var colors = {
+    positive: '#ff0000',
+    symptoms: '#fda429',
+    healthy: '#91cf60'
+  };
+
+  map.on('load', function() {
+    map.addSource('reports', {
+      type: 'geojson',
+      data: '<%= urls.map %>/geojson',
+      cluster: true,
+      clusterMaxZoom: 100, // Max zoom to cluster points on
+      clusterRadius: 80,
+      clusterProperties: {
+        positive: ['+', ['case', positive, 1, 0]],
+        symptoms: ['+', ['case', symptoms, 1, 0]],
+        healthy: ['+', ['case', healthy, 1, 0]]
+      }
+    });
+
+    map.addLayer({
+      id: 'report_individual',
+      type: 'circle',
+      source: 'reports',
+      filter: ['!=', ['get', 'cluster'], true],
+      paint: {
+        'circle-color': [
+          'case',
+          positive,
+          colors.positive,
+          symptoms,
+          colors.symptoms,
+          healthy,
+          colors.healthy,
+          '#000000'
+        ],
+        // We do not show these single points at all. They are only here
+        // because the markers wouldn't render without.
+        'circle-radius': 0
+      }
+    });
+  });
+
+  var markers = {};
+  var markersOnScreen = {};
+  var point_counts = [];
+  var totals;
+
+  function getPointCount(features) {
+    features.forEach(function(f) {
+      if (f.properties.cluster) {
+        point_counts.push(f.properties.point_count);
+      }
+    });
+    return point_counts;
+  }
+
+  function updateMarkers() {
+    var newMarkers = {};
+    var features = map.querySourceFeatures('reports');
+    totals = getPointCount(features);
+    features.forEach(function(feature) {
+      var coordinates = feature.geometry.coordinates;
+      var props = feature.properties;
+      if (!props.cluster) {
+        return;
+      }
+      var id = props.cluster_id;
+      var marker = markers[id];
+      if (!marker) {
+        var el = createDonutChart(props, totals);
+        marker = markers[id] = new mapboxgl.Marker({
+          element: el
+        }).setLngLat(coordinates);
+      }
+
+      newMarkers[id] = marker;
+
+      if (!markersOnScreen[id]) {
+        marker.addTo(map);
+      }
+    });
+
+    for (id in markersOnScreen) {
+      if (!newMarkers[id]) {
+        markersOnScreen[id].remove();
+      }
+    }
+    markersOnScreen = newMarkers;
+  }
+
+  function createDonutChart(props, totals) {
+    var div = document.createElement('div');
+
+    var data = [
+      { type: 'positive', count: props.positive },
+      { type: 'symptoms', count: props.symptoms },
+      { type: 'healthy', count: props.healthy }
+    ];
+
+    var thickness = 10;
+
+    // this sets the scale for our circle radius
+    // and this is why we need the totals. We need to
+    // set a mininum and a maximum to define the domain and the range.
+    var scale = d3
+      .scaleLinear()
+      .domain([d3.max(totals), d3.min(totals)])
+      .range([2500, 800]); //d3.max(totals)])
+
+    var radius = Math.sqrt(scale(props.point_count)) + 5;
+    var circleRadius = radius - thickness;
+
+    var svg = d3
+      .select(div)
+      .append('svg')
+      .attr('class', 'pie')
+      .attr('width', radius * 2)
+      .attr('height', radius * 2);
+
+    var g = svg
+      .append('g')
+      .attr('transform', `translate(${radius}, ${radius})`);
+
+    var arc = d3
+      .arc()
+      .innerRadius(radius - thickness)
+      .outerRadius(radius);
+
+    var pie = d3
+      .pie()
+      .value(function(d) {
+        return d.count;
+      })
+      .sort(null);
+
+    var path = g
+      .selectAll('path')
+      .data(
+        pie(
+          data.sort(function(x, y) {
+            return d3.ascending(y.count, x.count);
+          })
+        )
+      )
+      .enter()
+      .append('path')
+      .attr('d', arc)
+      .attr('fill', function(d) {
+        return colors[d.data.type];
+      });
+
+    var circle = g
+      .append('circle')
+      .attr('r', circleRadius)
+      .attr('fill', 'rgba(0, 0, 0, 0.7)')
+      .attr('class', 'center-circle');
+
+    var text = g
+      .append('text')
+      .attr('class', 'total')
+      .text(props.point_count_abbreviated)
+      .attr('text-anchor', 'middle')
+      .attr('dy', 5)
+      .attr('fill', 'white');
+
+    return div;
+  }
+
+  map.on('data', function(e) {
+    if (e.sourceId !== 'reports' || !e.isSourceLoaded) return;
+
+    map.on('move', updateMarkers);
+    map.on('moveend', updateMarkers);
+    updateMarkers();
+  });
+
+  map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+
+  navigator.geolocation.getCurrentPosition(function(geolocation) {
+    map.flyTo({
+      zoom: 11,
+      center: [geolocation.coords.longitude, geolocation.coords.latitude],
+      essential: true
+    });
+  });
+</script>
+
+<%- include('partials/footer', { show: false }) -%>
