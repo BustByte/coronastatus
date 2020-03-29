@@ -135,7 +135,7 @@ for (const locale of allLocales) {
   const locale = 'no';
   for (const englishTranslationKey of allEnglishTranslationKeys) {
     if (!translationKeysByLocale[locale].has(englishTranslationKey)) {
-      const row = { 'key': englishTranslationKey, translation: '...' };
+      const row = { 'key': englishTranslationKey, translation: '' };
       rows.push(row);
     }
   }
