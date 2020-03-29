@@ -1,10 +1,30 @@
 <% const { baseUrl } = locals; %>
 
-<p class="mt-4 mb-8">
+<p class="mt-4 mb-8 flex items-center justify-center">
+  <span class="hidden sm:block">
+    <a
+      class="px-8 py-6 mx-2 text-white rounded-full font-bold shadow-lg"
+      style="background: #4968ad;"
+      target="_blank"
+      href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F<%= baseUrl %>%2F&amp;src=sdkpreparse"
+      ><%= __('Share on') %> Facebook <strong>1,7k</strong></a
+    >
+    <a
+      class="px-8 py-6 mx-2 text-white rounded-full font-bold shadow-lg"
+      style="background: #4aa0eb;"
+      target="_blank"
+      href="https://twitter.com/intent/tweet?text=We can beat the Coronavirus together! <%= baseUrl %>"
+      data-show-count="false"
+      >Tweet</a
+    >
+  </span>
+
   <a
-    class="custom-facebook-button"
-    target="_blank"
-    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F<%= baseUrl %>%2F&amp;src=sdkpreparse"
-    ><%= __('Share on') %> Facebook <strong>1,7k</strong></a
+    class="sm:hidden px-8 py-6 mx-2 bg-purple-600 font-bold text-white rounded-full shadow-lg cursor-pointer"
+    data-show-count="false"
+    onclick="return navigator.share({title: 'Coronastatus.ng',
+    text: 'We can beat the Coronavirus together!',
+    url: 'https://<%= baseUrl %>.com/',})"
+    >Share this site!</a
   >
 </p>

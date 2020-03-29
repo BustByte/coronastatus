@@ -48,25 +48,25 @@
       <%- include('partials/cta') -%>
 
       <%- include('partials/app-feature-block', {
-        image: '/static/images/hospital.svg',
+        image: '/static/images/peep-68.png',
         title: __('Unreported cases'),
         description: __('The spread of COVID-19 in our country is unknown. Help us create a better overview.')
       }) -%>
 
       <%- include('partials/app-feature-block', {
-        image: '/static/images/doctor.svg',
+        image: '/static/images/bust-mask-10.png',
         title: __('Contribute anonymously'),
         description: __('Report your health condition anonymously')
       }) -%>
 
       <%- include('partials/app-feature-block', {
-        image: '/static/images/research.svg',
+        image: '/static/images/peep-46.png',
         title: __('Insight for everyone'),
         description: __('The data is open to everyone. Look at maps and graphs, or download the data and create your own visualizations.')
       }) -%>
 
       <%- include('partials/app-feature-block', {
-        image: '/static/images/mobile.svg',
+        image: '/static/images/peep-90.png',
         title: __('Everything is open'),
         description: __('The website is open source and built by volunteers. Feel free to join.')
       }) -%>
@@ -79,25 +79,25 @@
     <h2 class="sr-only"><%= __('Numbers') %></h2>
     <ul class="my-8 flex flex-row flex-wrap justify-between">
       <%- include('partials/app-stats-block', {
-        image: '/static/images/napkin.svg',
+        image: '/static/images/peep-39.png',
         title: __('Total reports'),
         number: numberWithSpaces(aggregated.numberOfReports)
       }) -%>
 
       <%- include('partials/app-stats-block', {
-        image: '/static/images/temperature-check.svg',
+        image: '/static/images/bust-mask-1.png',
         title: __('Infected / Have been tested'),
         number: `${numberWithSpaces(aggregated.numberOfConfirmedInfected)}/${numberWithSpaces(aggregated.numberOfTested)}`
       }) -%>
 
       <%- include('partials/app-stats-block', {
-        image: '/static/images/transfer.svg',
+        image: '/static/images/bust-mask-14.png',
         title: __(`In close contact with someone who's infected`),
         number: numberWithSpaces(aggregated.numberOfContacts)
       }) -%>
 
       <%- include('partials/app-stats-block', {
-        image: '/static/images/symptoms.svg',
+        image: '/static/images/peep-21.png',
         title: __('Has symptoms'),
         number: numberWithSpaces(aggregated.numberOfPeopleShowingSymptoms)
       }) -%>
@@ -114,8 +114,8 @@
 <%- include('partials/share') -%>
 </section>
 <section class="custom-section-content mx-auto p-4 pb-24 w-full">
-  <form id="contribute" method="post" action="/" class="custom-form p-6 py-6 lg:p-24 lg:py-12 my-4 rounded-lg flex flex-col items-start">
-    <h3 class="text-2xl md:text-3xl lg:text-5xl text-center font-bold text-cvs-red m-2 self-center">
+  <form id="contribute" method="post" action="/" class="bg-purple-100 custom-form p-6 py-6 lg:p-24 lg:py-12 my-4 rounded-lg flex flex-col items-start">
+    <h3 class="text-2xl md:text-3xl lg:text-5xl text-center font-bold text-purple-800 m-2 self-center">
       <%= profile ? __("Your state of health") : __("Report your health condition") %>
     </h3>
     <% if (locals.redirectToGovernment) {%>
@@ -127,7 +127,7 @@
           ${__(`The government has now launched their own self-report system, please use that instead.`)}
           <br/>
           <a
-            class="hover:text-cvs-red font-bold hover:underline whitespace-no-wrap"
+            class="hover:text-purple-800 font-bold hover:underline whitespace-no-wrap"
             target="_blank"
             style="cursor: pointer;"
             href="${__('www.nhs.uk')}"
@@ -144,7 +144,7 @@
           ${__(`If you want to register another person on this computer, save or write down your personal link`)}
           <strong>${baseUrl}${urls.profile}/${passcode}</strong>
           ${__("and")}
-          <a href="${urls.profile}/${passcode}?clear=true" class="font-bold hover:text-cvs-red hover:underline"> ${ __(`clear this form`)}.</a>`,
+          <a href="${urls.profile}/${passcode}?clear=true" class="font-bold hover:text-purple-800 hover:underline"> ${ __(`clear this form`)}.</a>`,
       }) -%>
     <% } else if (locals.cleared) {%>
       <!-- If you change the color make sure it's in postcss.config.js -->
@@ -163,7 +163,7 @@
           ${__(`If you want to register another person on this computer, save or write down your personal link`)}
           <strong>${baseUrl}${urls.profile}/${passcode}</strong>
           ${__("and")}
-          <a href="${urls.profile}/${passcode}?clear=true" class="font-bold hover:text-cvs-red hover:underline"> ${ __(`clear this form`)}.</a>`,
+          <a href="${urls.profile}/${passcode}?clear=true" class="font-bold hover:text-purple-800 hover:underline"> ${ __(`clear this form`)}.</a>`,
       }) -%>
     <% } else { %>
       <p class="text-center text-base lg:text-xl font-medium m-4 mt-0 self-center">
@@ -173,7 +173,7 @@
 
     <div class="flex flex-row items-center mt-8">
       <img src="/static/images/map.svg" alt="" class="h-16 w-16">
-      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Geography and demography") %></h3>
+      <h3 class="text-purple-900 text-xl font-bold m-4"><%= __("Geography and demography") %></h3>
     </div>
 
 
@@ -203,14 +203,14 @@
 
     <label for="postal-code"><%= __('Zip code') %>
       <% if (locals.zipGuide) { %>
-        <span>- </span><a class="text-cvs-red font-bold hover:underline" href="<%= __(`https://www.whatismyzip.com`) %>" target="_blank"><%= __('What is my Zip code?') %></a>
+        <span>- </span><a class="text-purple-800 font-bold hover:underline" href="<%= __(`https://www.whatismyzip.com`) %>" target="_blank"><%= __('What is my Zip code?') %></a>
       <% } %>
     </label>
     <input class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="[A-Za-z0-9]{<%= locals.zipLength %>}" maxlength="<%= locals.zipLength %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
 
     <div class="flex flex-row items-center mt-8">
-      <img src="/static/images/mask.svg" alt="" class="h-16 w-16">
-      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Testing and symptoms") %></h3>
+      <img src="/static/images/mask02.png" alt="" class="h-16">
+      <h3 class="text-purple-900 text-xl font-bold m-4"><%= __("Testing and symptoms") %></h3>
     </div>
 
     <fieldset>
@@ -406,10 +406,10 @@
     >
 
 
-    <h3 class="text-cvs-red text-xl font-bold m-4 ml-0 mt-8 mb-0"><%= __("How will my data be used?") %></h3>
+    <h3 class="text-purple-800 text-xl font-bold m-4 ml-0 mt-8 mb-0"><%= __("How will my data be used?") %></h3>
 
     <p class="mt-0 mb-4"><%= __('Your health information is stored anonymously, and can not be used to identify you.')%><br />
-      <a target="_blank" class="text-cvs-red hover:underline"href="<%= urls.privacyPolicy %>"><%= __('Our privacy policy can be found here')%></a>.
+      <a target="_blank" class="text-purple-800 hover:underline"href="<%= urls.privacyPolicy %>"><%= __('Our privacy policy can be found here')%></a>.
     </p>
 
     <p>
@@ -431,7 +431,7 @@
     <ul class="mt-4">
       <li>
         <input type="hidden" name="passcode" value="<%= passcode %>" />
-        <input class="inverse" type="submit" value="<%= __('Submit report') %>">
+        <input class="bg-purple-600 text-white rounded-full mt-4 border-none px-8 py-6 " type="submit" value="<%= __('Submit report') %>">
       </li>
     </ul>
   </form>
@@ -442,7 +442,7 @@
     <div class="section-about-header flex flex-row items-center mb-8">
       <img class="section-about-header__img h-24 w-24"
         src="/static/images/recovery-path.svg" alt="">
-      <h2 class="section-about-header__title ml-4 text-cvs-red text-2xl md:text-3xl lg:text-4xl font-bold"><%= __('About the service') %></h2>
+      <h2 class="section-about-header__title ml-4 text-purple-800 text-2xl md:text-3xl lg:text-4xl font-bold"><%= __('About the service') %></h2>
     </div>
     <p class="section-about-paragraph p-4 text-base lg:text-xl font-medium">
       <%= __(`In connection with the outbreak of COVID-19, many people have
@@ -457,7 +457,7 @@
             contamination hazards and without using up valuable infection control
             equipment that is already in short supply. We at Bustbyte, well helped
             by other volunteers, have created this tool in response to`) %>
-    <a class="text-cvs-red font-bold hover:underline"
+    <a class="text-purple-800 font-bold hover:underline"
       href="https://medium.com/@tomaspueyo/coronavirus-act-today-or-people-will-die-f4d3d9cd99ca "><%= __('this article') %></a>
     <%= __('as an attempt to chart these numbers.')%>
     </p>
@@ -465,16 +465,16 @@
       <%= __(`This is not an official tool of the authorities, and for more
             information about the outbreak we refer to health authorities which
             always have updated information.`) %>
-      <a class="text-cvs-red font-bold hover:underline" href="<%= __(`https://who.int`) %>"><%= __(`To WHO.int`) %></a>
+      <a class="text-purple-800 font-bold hover:underline" href="<%= __(`https://who.int`) %>"><%= __(`To WHO.int`) %></a>
     </p>
-    <div class="hashtag-item-container flex flex-row justify-around" style="margin: 4rem 0 -14rem 0;">
+    <div class="relative z-10 hashtag-item-container flex flex-row justify-around" style="margin: 4rem 0 -14rem 0;">
       <div class="hashtag-item text-center flex flex-col items-center w-1/2">
-        <div class="hashtag-item__title text-cvs-red font-medium text-lg md:text-3xl uppercase m-2"><%- __('#washyourhands') %></div>
+        <div class="hashtag-item__title text-purple-800 font-medium text-lg md:text-3xl uppercase m-2"><%- __('#washyourhands') %></div>
         <img src="/static/images/washing-hands.svg" alt=""
           class="hashtag-item__img h-48 w-48 lg:h-64 lg:w-64 m-2">
       </div>
       <div class="hashtag-item text-center flex flex-col items-center w-1/2">
-        <div class="hashtag-item__title text-cvs-red font-medium text-lg md:text-3xl uppercase m-2"><%- __('#stayindoors') %></div>
+        <div class="hashtag-item__title text-purple-800 font-medium text-lg md:text-3xl uppercase m-2"><%- __('#stayindoors') %></div>
         <img src="/static/images/stay-home.svg" alt=""
           class="hashtag-item__img h-48 w-48 lg:h-64 lg:w-64 m-2">
       </div>

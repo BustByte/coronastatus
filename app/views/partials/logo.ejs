@@ -2,14 +2,14 @@
 let parts = [];
 
 // If url contains corona, make the rest it white
-const name =  baseUrl.replace('corona', '<span style="color: #CAEAE9;" >corona</span>')
+const name =  baseUrl.replace('corona', '<span class="font-bold">corona</span>')
 %>
 
 <a class="flex flex-row" href="/">
-  <img src="/static/images/logo.svg" alt="icon" class="w-20 h-20 hidden sm:block" />
-  <div class="flex flex-row items-center" style="color: #F2CC20;">
+  <img src="/static/images/corona-logo.svg" alt="icon" class="w-10 h-10 md:w-16 md:h-16 mr-4" />
+  <div class="flex flex-row items-center">
     <div
-      class="flex flex-row flex-no-wrap text-2xl sm:text-3xl font-bold whitespace-no-wrap"
+      class="flex flex-row flex-no-wrap text-2xl sm:text-3xl font-normal whitespace-no-wrap"
     >
       <%- name %>
     </div>

@@ -37,12 +37,12 @@
 <script>
   var map = new mapboxgl.Map({
     container: 'map',
-    style: 'https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json',
+    style: 'https://tiles.stadiamaps.com/styles/alidade_smooth.json',
     center: [<%= locals.mapCenter %>],
     zoom: <%= locals.mapZoom %>,
     maxZoom: <%= locals.mapMaxZoom %>,
     customAttribution: 'Postal Codes <a href="https://geonames.org/" target="_blank">&copy;GeoNames</a>',
-    hash: true
+    hash: true,
   });
 
   var positive = ['==', ['get', 'state'], 'POSITIVE'];
@@ -50,9 +50,9 @@
   var healthy = ['==', ['get', 'state'], 'HEALTHY'];
 
   var colors = {
-    positive: '#ff0000',
-    symptoms: '#fda429',
-    healthy: '#91cf60'
+    positive: '#e53e3e',
+    symptoms: '#ed8936',
+    healthy: '#cbd5e0'
   };
 
   map.on('load', function() {
