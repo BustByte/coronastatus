@@ -74,7 +74,12 @@ app.use((req, res, next) => {
   res.locals.zipPattern = config.ZIP_PATTERN;
   res.locals.zipPlaceHolder = config.ZIP_PLACEHOLDER;
   res.locals.redirectToGovernment = config.REDIRECT_TO_GOVERNMENT;
-  res.locals.thousandSeparator = config.THOUSAND_SEPARATOR;
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+  // @ts-ignore
+  res.locals.formatNumber = x =>
+    x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, config.THOUSAND_SEPARATOR);
+
   next();
 });
 
