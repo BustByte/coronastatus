@@ -2,9 +2,8 @@
 metaDescription = __(`Make your voluntary contribution to the health care system
 and register your health condition now. Together we can create an overview.`);
 const baseUrl = locals.baseUrl; const imageSubfolder = locals.imageSubfolder;
-const ogUrl = `https://${baseUrl}`;
-const shareImageUrl =
-`https://${baseUrl}/static/${imageSubfolder}/social-media.png`; %>
+const ogUrl = `https://${baseUrl}`; const shareImageUrl =
+`https://${baseUrl}/static/en-NG/social-media.png`; %>
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +17,7 @@ const shareImageUrl =
 <link
   rel="apple-touch-icon"
   sizes="180x180"
-  href="/static/icons/apple-touch-icon.png"
+  href="/static/icons/apple-icon-180x180.png"
 />
 <link
   rel="icon"
@@ -33,11 +32,6 @@ const shareImageUrl =
   href="/static/icons/favicon-16x16.png"
 />
 <link rel="manifest" href="/static/icons/site.webmanifest" />
-<link
-  rel="mask-icon"
-  href="/static/icons/safari-pinned-tab.svg"
-  color="#5bbad5"
-/>
 <link rel="shortcut icon" href="/static/icons/favicon.ico" />
 <meta name="msapplication-TileColor" content="#00aba9" />
 <meta name="msapplication-config" content="/static/icons/browserconfig.xml" />
@@ -60,10 +54,7 @@ const shareImageUrl =
   property="og:site_name"
   content="<%= (typeof title === 'string') ? title : '' %>"
 />
-<meta
-  property="og:type"
-  content="website"
-/>
+<meta property="og:type" content="website" />
 <meta
   property="og:url"
   content="<%= (typeof ogUrl === 'string') ? ogUrl : '' %>"

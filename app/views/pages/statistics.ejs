@@ -1,13 +1,9 @@
-<%
-const totalPeopleInContactWithInfected = locals.inContactWithInfectedStats.total;
-const totalInfectedPeopleWithSymptoms = locals.infectedStats.symptomStats.total;
-const totalPeopleWithSymptoms = locals.allSymptomsStats.symptomStats.total;
-const totalTested = locals.totalTested;
-  
-function numberWithSpaces(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-}
-%>
+<% const totalPeopleInContactWithInfected =
+locals.inContactWithInfectedStats.total; const totalInfectedPeopleWithSymptoms =
+locals.infectedStats.symptomStats.total; const totalPeopleWithSymptoms =
+locals.allSymptomsStats.symptomStats.total; const totalTested =
+locals.totalTested; function numberWithSpaces(x) { return
+x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); } %>
 
 <!-- prettier spacer -->
 
@@ -23,14 +19,16 @@ function numberWithSpaces(x) {
     <p class="mb-2">
       <a
         href="/api/reports/reports.csv"
-        class="text-cvs-red font-bold hover:underline"
+        class="text-purple-800 font-bold hover:underline"
         ><%= __(`Download the dataset as CSV`) %></a
       >
     </p>
   </div>
 </div>
 
-<h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
+<h2
+  class="mt-8 mb-4 text-3xl font-bold text-purple-800 border-b border-gray-300"
+>
   <%= __(`COVID-19 infected`) %>
 </h2>
 <p>
@@ -47,15 +45,16 @@ function numberWithSpaces(x) {
   <div>
     <h3><%= __(`Test results`) %></h3>
     <p>
-      <%= __(`In total`) %> <%=
-      numberWithSpaces(totalTested) %> <%= __(`people have
-      reported that they have been tested for COVID-19.`) %>
+      <%= __(`In total`) %> <%= numberWithSpaces(totalTested) %> <%= __(`people
+      have reported that they have been tested for COVID-19.`) %>
     </p>
     <canvas id="testResultStats"></canvas>
   </div>
 </div>
 
-<h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
+<h2
+  class="mt-8 mb-4 text-3xl font-bold text-purple-800 border-b border-gray-300"
+>
   <%= __(`Close contacts`) %>
 </h2>
 <p>
@@ -78,7 +77,7 @@ function numberWithSpaces(x) {
 
     <div class="grid grid-cols-2 gap-4 mt-4">
       <div>
-        <p class="text-3xl font-bold text-cvs-red">
+        <p class="text-3xl font-bold text-purple-800">
           <%=
           locals.inContactWithInfectedStats.percentageWithTwoMostCommonSymptoms
           %> %
@@ -89,7 +88,7 @@ function numberWithSpaces(x) {
         </p>
       </div>
       <div>
-        <p class="text-3xl font-bold text-cvs-red">
+        <p class="text-3xl font-bold text-purple-800">
           <%=
           locals.inContactWithInfectedStats.percentageWithThreeMostCommonSymptoms
           %> %
@@ -103,7 +102,9 @@ function numberWithSpaces(x) {
   </div>
 </div>
 
-<h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
+<h2
+  class="mt-8 mb-4 text-3xl font-bold text-purple-800 border-b border-gray-300"
+>
   <%= __(`All submissions`) %>
 </h2>
 <p>
@@ -121,7 +122,7 @@ function numberWithSpaces(x) {
     <div><%= __(`Everyone who has submitted a report, also has:`) %></div>
     <div class="grid grid-cols-2 gap-4 mt-4">
       <div>
-        <p class="text-3xl font-bold text-cvs-red">
+        <p class="text-3xl font-bold text-purple-800">
           <%= locals.allSymptomsStats.percentageWithTwoMostCommonSymptoms %> %
         </p>
         <p>
@@ -130,7 +131,7 @@ function numberWithSpaces(x) {
         </p>
       </div>
       <div>
-        <p class="text-3xl font-bold text-cvs-red">
+        <p class="text-3xl font-bold text-purple-800">
           <%= locals.allSymptomsStats.percentageWithThreeMostCommonSymptoms %> %
         </p>
         <p>
@@ -142,17 +143,23 @@ function numberWithSpaces(x) {
   </div>
 </div>
 
-<h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
+<h2
+  class="mt-8 mb-4 text-3xl font-bold text-purple-800 border-b border-gray-300"
+>
   <%= __(`Total number of reports`) %>
 </h2>
 <canvas id="totalReportsChart"></canvas>
 
-<h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
+<h2
+  class="mt-8 mb-4 text-3xl font-bold text-purple-800 border-b border-gray-300"
+>
   <%= __(`Positive test results and close contact`) %>
 </h2>
 <canvas id="infectedAndContactStats"></canvas>
 
-<h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
+<h2
+  class="mt-8 mb-4 text-3xl font-bold text-purple-800 border-b border-gray-300"
+>
   <%= __(`Clarifications data basis`) %>
 </h2>
 <p><%= __(`Some questions and alternatives were not a part of the form from the beginning:`) %></p>
