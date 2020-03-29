@@ -1,10 +1,59 @@
-<% const { baseUrl } = locals; %>
+<% const { baseUrl, htmlLang, twitter, amount = __(`A lot of`) } = locals; %>
+<!--  -->
+<% const twitterUrl = htmlLang === 'nl' ? 'onzecorona.nl' : baseUrl %>
+<!--  -->
+<% const encode = encodeURIComponent; const message = encode(__(`CALL TO ALL US
+CITIZENS: This is how we defeat the corona virus: together we make the invisible
+virus visible.`) + " " + __(`{{ amount }} people already shared their health
+status.`, { amount }) + " " + __(`Fill out this form - it takes 1 minute - and
+help the United States gain control over COVID-19.`)) %>
 
 <p class="mt-4 mb-8">
   <a
-    class="custom-facebook-button"
+    class="inline-block m-2 p-3 text-white rounded bg-cvs-facebook hover:bg-cvs-facebook-dark hover:translate-y-px transform"
     target="_blank"
-    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F<%= baseUrl %>%2F&amp;src=sdkpreparse"
-    ><%= __('Share on') %> Facebook <strong></strong></a
+    rel="noreferrer"
+    referrerpolicy="no-referrer"
+    href="https://www.facebook.com/sharer/sharer.php?u=<%= encode(`https://${baseUrl}/?ref=facebook`) %>&amp;src=sdkpreparse"
+    ><img
+      src="/static/images/social/facebook.svg"
+      class="inline-block -mt-1 mr-0 sm:mr-2"
+    /><span class="hidden sm:inline">Facebook</span></a
+  >
+
+  <a
+    class="inline-block m-2 p-3 text-white rounded bg-cvs-twitter hover:bg-cvs-twitter-dark hover:translate-y-px transform"
+    target="_blank"
+    rel="noreferrer"
+    referrerpolicy="no-referrer"
+    href="http://twitter.com/share?url=<%= encode(`https://${twitterUrl}/?ref=twitter`) %>&amp;text=<%= message %><% if (twitter) { %> @<%= twitter %><% } %><%= encode('\n\n') %>"
+    ><img
+      src="/static/images/social/twitter.svg"
+      class="inline-block -mt-1 mr-0 sm:mr-3"
+    /><span class="hidden sm:inline">Twitter</span></a
+  >
+
+  <a
+    class="inline-block m-2 p-3 text-white rounded bg-cvs-whatsapp hover:bg-cvs-whatsapp-dark hover:translate-y-px transform"
+    target="_blank"
+    rel="noreferrer"
+    referrerpolicy="no-referrer"
+    href="https://api.whatsapp.com/send?text=<%= message %><%= encode(`\n\nhttps://${baseUrl}/?ref=whatsapp`) %>"
+    ><img
+      src="/static/images/social/whatsapp.svg"
+      class="inline-block -mt-1 mr-0 sm:mr-3"
+    /><span class="hidden sm:inline">WhatsApp</span></a
+  >
+
+  <a
+    class="inline-block m-2 p-3 text-white rounded bg-cvs-linkedin hover:bg-cvs-linkedin-dark hover:translate-y-px transform"
+    target="_blank"
+    rel="noreferrer"
+    referrerpolicy="no-referrer"
+    href="<%= `https://www.linkedin.com/sharing/share-offsite/?url=${encode(`https://${baseUrl}/?ref=linkedin`)}` %>"
+    ><img
+      src="/static/images/social/linkedin.svg"
+      class="inline-block -mt-1 mr-0 sm:mr-3"
+    /><span class="hidden sm:inline">LinkedIn</span></a
   >
 </p>
