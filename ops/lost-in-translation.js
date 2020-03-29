@@ -154,6 +154,10 @@ for (const locale of allLocales) {
       const addedRows = await addUniqueRowsToGoogleSheet(sheet, rows);
       console.log(`Added ${addedRows.length} of ${rows.length} missing translations to the ${locale} sheet.`);
     }
+
+    // Avoid getting rate limited by Google's API by waiting 100 seconds between each sheet.
+    console.log('Waiting a 100 seconds before processing the next sheet.');
+    await new Promise(resolve => setTimeout(resolve, 100*1000));
   }
 
 })();
