@@ -27,4 +27,5 @@ This document describes how we operate the sites which are running Coronastatus.
 | [corona-status.ch](https://corona-status.ch)       |  🇨🇭  |  Switzerland     | Luke Seelenbinder                       | Luke Seelenbinder      |
 | [coronastatus.ng](https://coronastatus.ng)         |  🇳🇬  |  Nigeria         | Deji Adesoga                            | Eirik Fosse / BustByte |
 | [coronastatusmy.org](https://coronastatusmy.org)   |  🇲🇾  |  Malaysia        | Kong Jin Jie                            | Kong Jin Jie           |
+| [coronastatustr.org](https://coronastatustr.com)   |  🇹🇷  |  Turkey          | Berkay Oğulcan Tutal                    | Eirik Fosse / BustByte |
 
