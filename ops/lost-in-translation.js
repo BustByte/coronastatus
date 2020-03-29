@@ -136,6 +136,11 @@ for (const locale of allLocales) {
     const sheet = doc.sheetsByIndex[sheetIndex];
     for (const locale of allLocales) {
       if (sheet.title !== locale) {
+        try {
+          await doc.addSheet({ title: locale, headerValues: ['key', 'translation'] });
+        } catch (error) {
+          // We don't do anything if the sheet for this locale exists.
+        }
         continue;
       }
 
