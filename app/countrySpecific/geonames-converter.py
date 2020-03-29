@@ -2,7 +2,7 @@ from csv import DictReader
 from json import dump as write_as_json
 
 # Set the country code you want to create JSON files for
-COUNTRY_CODE = 'en-us'
+COUNTRY_CODE = 'bd'
 
 # Parse CSV for a given country from Geonames.org
 rows = []

@@ -34,9 +34,6 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇵🇭 Philippines: coming soon
 - 🇹🇷 Turkey: coming soon (work group Telegram chat: https://t.me/turkeycoronastatus)
 - 🇧🇪 Belgium: coming soon
-- 🇩🇰 Denmark: https://coronastatus.dk
-- 🇨🇴 Colombia: coming soon
-- 🇺🇸 United States: https://coronastatus.us
 - 🇮🇸 Iceland: coming soon
 - 🇨🇭 Switzerland: coming soon
 - 🇩🇪 Germany: coming soon
