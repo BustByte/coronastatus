@@ -5,10 +5,9 @@ body {
 }
 
 html {
-  background-color: #e7f4f7;
-  font-family: 'Helvetica Neue', system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -47,7 +46,7 @@ canvas {
 
 h1 {
   font-size: 3rem;
-  color: #d36767;
+  color: #514095;
   margin: 1rem 0;
   font-weight: 700;
   line-height: 120%;
@@ -55,14 +54,14 @@ h1 {
 
 h2 {
   font-size: 1.875rem;
-  color: #d36767;
+  color: #514095;
   margin: 0.5rem 0;
   font-weight: 600;
 }
 
 h3 {
   font-size: 1.5rem;
-  color: #d36767;
+  color: #514095;
   margin: 0.5rem 0;
   font-weight: 500;
 }
@@ -70,17 +69,17 @@ h3 {
 h4,
 label,
 legend {
-  display:block;
+  display: block;
   margin: 1.5rem 0 1rem;
   font-size: 16px;
   font-weight: bold;
 }
 p > label {
   margin: 0;
-  font-weight:normal;
+  font-weight: normal;
 }
 legend {
-  display:block;
+  display: block;
   padding-top: 1.5rem;
 }
 
@@ -101,7 +100,7 @@ legend {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #333333;
+  background-color: white;
 }
 .map-overlay {
   font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -114,7 +113,8 @@ legend {
 }
 .map-overlay .map-overlay-labels {
   background-color: #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
   min-width: 140px;
   border-radius: 3px;
   padding: 10px;
@@ -122,7 +122,8 @@ legend {
 }
 .map-overlay .map-overlay-info {
   background-color: #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
   min-width: 140px;
   border-radius: 3px;
   padding: 10px;
@@ -144,17 +145,22 @@ legend {
 .map-overlay .legend .healthy {
   height: 10px;
   width: 100%;
-  background: #91cf60;
+  background: #cbd5e0;
+  border-radius: 20px;
+  margin-bottom: 8px;
 }
 .map-overlay .legend .positive {
   height: 10px;
   width: 100%;
-  background: #ff0000;
+  background: #e53e3e;
+  border-radius: 20px;
 }
 .map-overlay .legend .symptoms {
   height: 10px;
   width: 100%;
-  background: #fda429;
+  background: #ed8936;
+  border-radius: 20px;
+  margin-bottom: 8px;
 }
 
 .custom-section {
@@ -164,22 +170,25 @@ legend {
   max-width: 68rem;
 }
 .custom-hero {
-  background: #5d7979 linear-gradient(118.81deg, #5d7979 22.4%, #56beab 105.76%);
+  background: #faf5ff;
 }
 .custom-nav-link {
-  background: #d36767 linear-gradient(131.3deg, #aa494a 22.4%, #d17c0c 105.76%);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.06);
+  background: #805ad5;
+  color: white;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
   -webkit-transition: 0.3s ease-in-out box-shadow;
   transition: 0.3s ease-in-out box-shadow;
 }
+.custom-nav-link#home-cta-button {
+  background: white;
+  color: black;
+}
 .custom-nav-link:hover,
 .custom-nav-link:focus {
-  background: #d36767;
-  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.06);
-}
-.custom-form {
-  background-color: #cde2e2;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+  background: #2f855a;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 .custom-facebook-button {
   background-color: #1877f2;
@@ -406,22 +415,16 @@ button,
   appearance: none;
   -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  border-radius: 10px;
-  border: 2px solid;
+  border-radius: 1000px;
   cursor: pointer;
   display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 900;
-  height: 3rem;
-  letter-spacing: 0.1rem;
+  font-weight: 600;
+  padding: 0.7rem 2rem;
   line-height: 2.75rem;
-  padding: 0 1.5rem;
   position: relative;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   white-space: nowrap;
-  border-color: #000;
 }
 
 input[type='submit']:hover,

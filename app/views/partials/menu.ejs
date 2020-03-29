@@ -18,7 +18,7 @@ locals.activePage === urls.profile; %>
 <div class="block lg:hidden">
   <button
     id="nav-toggle"
-    class="flex items-center text-cvs-green-light hover:text-cvs-gold"
+    class="flex items-center text-black hover:text-purple-700 border-none"
   >
     <svg
       class="fill-current h-6 w-6"
@@ -39,33 +39,33 @@ locals.activePage === urls.profile; %>
     class="list-reset lg:flex justify-end flex-1 items-center text-right lg:text-left"
   >
     <% if (!home) { %>
-    <li class="mr-3 rounded">
+    <li class="mx-2 rounded-full">
       <a
         id="nav-cta-button"
         href="<%= urls.submitReport %>#contribute"
-        class="opacity-0 custom-nav-link text-center whitespace-no-wrap block text-xl py-4 lg:text-base text-white font-medium lg:py-4 px-4 rounded-full <%= isOnProfile ? 'active' : '' %>"
+        class="opacity-0 custom-nav-link text-center whitespace-no-wrap block text-xl py-4 lg:text-base text-black font-medium lg:py-2 px-4 rounded-full <%= isOnProfile ? 'active' : '' %>"
         ><%= __("Contribute now") %></a
       >
     </li>
     <% } %>
-    <li class="mr-3 rounded hover:bg-cvs-red">
+    <li class="mx-2 rounded-full hover:bg-purple-200">
       <a
         href="<%= urls.map %>"
-        class="whitespace-no-wrap block text-white text-xl py-4 lg:text-base font-medium lg:py-4 px-4 <%= isOnMap ? 'active' : '' %>"
+        class="whitespace-no-wrap block text-black text-xl py-2 lg:text-base font-medium lg:py-2 px-4 <%= isOnMap ? 'active' : '' %>"
         ><%= __("Map") %></a
       >
     </li>
-    <li class="mr-3 rounded hover:bg-cvs-red">
+    <li class="mx-2 rounded-full hover:bg-purple-200">
       <a
         href="<%= urls.statistics %>"
-        class="whitespace-no-wrap block text-white text-xl py-4 lg:text-base font-medium lg:py-4 px-4 <%= isOnStats ? 'active' : '' %>"
+        class="whitespace-no-wrap block text-black text-xl py-2 lg:text-base font-medium lg:py-2 px-4 <%= isOnStats ? 'active' : '' %>"
         ><%= __("Statistics") %></a
       >
     </li>
-    <li class="mr-3 rounded hover:bg-cvs-red">
+    <li class="mx-2 rounded-full hover:bg-purple-200">
       <a
         href="<%= urls.apiDocs %>"
-        class="whitespace-no-wrap block text-white text-xl py-4 lg:text-base font-medium lg:py-4 px-4"
+        class="whitespace-no-wrap block text-black text-xl py-2 lg:text-base font-medium lg:py-2 px-4"
         target="_blank"
         ><%= __("API") %></a
       >
