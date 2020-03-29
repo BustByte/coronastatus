@@ -374,9 +374,13 @@
       <input required type="radio" id="isolation-due-to-government" name="isolation-status" value="isolation-due-to-government" <%= isolationStatus === 'ISOLATION_DUE_TO_GOVERNMENT_ORDERS' ? 'checked' : '' %>>
       <label for="isolation-due-to-government"><%= __("In isolation due to orders from the government") %></label>
     </p>
-    <p>
+    <p class="mb-2">
       <input required type="radio" id="isolation-due-to-covid-19" name="isolation-status" value="isolation-due-to-covid-19" <%= isolationStatus === 'ISOLATION_DUE_TO_COVID_19' ? 'checked' : '' %>>
       <label for="isolation-due-to-covid-19"><%= __("In isolation due to COVID-19 infection") %></label>
+    </p>
+    <p>
+      <input required type="radio" id="voluntary-isolation" name="isolation-status" value="voluntary-isolation" <%= isolationStatus === 'VOLUNTARY_ISOLATION' ? 'checked' : '' %>>
+      <label for="voluntary-isolation"><%= __("In voluntary isolation to avoid potentially spreading or catching COVID-19") %></label>
     </p>
     </fieldset>
 
