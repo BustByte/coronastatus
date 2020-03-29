@@ -2,7 +2,7 @@
 locals.inContactWithInfectedStats.total; const totalInfectedPeopleWithSymptoms =
 locals.infectedStats.symptomStats.total; const totalPeopleWithSymptoms =
 locals.allSymptomsStats.symptomStats.total; const totalTested =
-locals.totalTested; const { formatNumber } = locals; %>
+locals.totalTested; const { formatNumber, aggregated } = locals; %>
 
 <!-- prettier spacer -->
 
@@ -24,6 +24,16 @@ locals.totalTested; const { formatNumber } = locals; %>
     </p>
   </div>
 </div>
+
+<section class="w-full my-8">
+  <p class="text-cvs-red text-lg md:text-xl lg:text-2xl font-bold">
+    <%= __(`Contribute and share {{ hostname }} on`, { hostname: baseUrl }) %>
+  </p>
+  <div class="-ml-2 -mt-2">
+    <%- include('partials/share', { amount:
+    formatNumber(aggregated.numberOfReports) }) -%>
+  </div>
+</section>
 
 <h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
   <%= __(`COVID-19 infected`) %>
