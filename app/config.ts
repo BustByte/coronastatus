@@ -24,7 +24,7 @@ const fallbackConfig: Config = {
   MAP_ZOOM: parseInt(process.env.MAP_ZOOM || '4', 10),
   MAP_MAX_ZOOM: parseInt(process.env.MAP_MAX_ZOOM || '13', 10),
   TWITTER: process.env.TWITTER || 'coronastatusNO',
-  ZIP_PATTERN: process.env.ZIP_PATTERN || '[A-Za-z0-9]{4}',
+  ZIP_PATTERN: process.env.ZIP_PATTERN || '[A-Za-z0-9-]{2,10}', // Fallback to very general pattern in case it is missing in the config
   ZIP_PLACEHOLDER: process.env.ZIP_PLACEHOLDER || '1234',
   ZIP_GUIDE: process.env.ZIP_GUIDE === 'true' || false,
   REDIRECT_TO_GOVERNMENT:
