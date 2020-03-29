@@ -1,3 +1,6 @@
+import { CountryCode } from './urls';
+import { Locale } from './flags';
+
 export interface CovidReport {
   yearOfBirth?: string; // Deprecated
   sex: Sex;
@@ -143,8 +146,9 @@ export interface AggregatedCovidReportWithPostalCodeData {
 
 export interface Config {
   BASE_URL: string;
-  LOCALE: string;
-  COUNTRY_CODE: string;
+  LOCALE: Locale;
+  COUNTRY_CODE: CountryCode;
+  SUPPORTED_LOCALES: Locale[];
   COUNTRY: string;
   MAP_CENTER: string;
   MAP_ZOOM: number;
