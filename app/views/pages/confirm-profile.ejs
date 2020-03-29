@@ -38,7 +38,7 @@
       type="text"
       readonly
       value="<%= baseUrl %><%= urls.profile %>/<%= passcode %>"
-      class="mb-4 h-12 flex-grow w-auto flex-shrink mr-4 bg-gray-200 appearance-none border-2 border-cvs-red rounded py-2 px-4 leading-tight focus:outline-none"
+      class="mb-4 h-12 flex-grow w-auto flex-shrink mr-4 bg-gray-200 appearance-none border-2 border-black rounded py-2 px-4 leading-tight focus:outline-none"
     />
     <button
       id="profile-url-id"
@@ -58,9 +58,7 @@
   `profile-copy-status-fail`, message: __(`Could not copy the link, please copy
   it yourself`) }) -%>
 
-  <form method="get" action="<%= urls.profile %>/<%= passcode %>#contribute">
-    <input type="hidden" name="success" value="true" />
-
+  <form method="get" action="/thank-you">
     <% if (!hasCookie) { %>
     <p class="mt-4">
       <label class="checkbox" for="accept">

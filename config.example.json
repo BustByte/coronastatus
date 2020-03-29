@@ -12,5 +12,6 @@
   "ZIP_GUIDE": false,
   "REDIRECT_TO_GOVERNMENT": false,
   "PASSCODE_LENGTH": 4,
-  "DB_PATH": "./covid_db"
+  "DB_PATH": "./covid_db",
+  "THOUSAND_SEPARATOR": " "
 }
