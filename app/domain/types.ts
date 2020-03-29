@@ -161,6 +161,7 @@ export interface Config {
   PASSCODE_LENGTH: number;
   DB_PATH: string;
   THOUSAND_SEPARATOR: string;
+  RATE_LIMIT: number;
 }
 
 export type DatabaseType = 'pg' | 'sqlite';

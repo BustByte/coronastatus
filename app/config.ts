@@ -34,7 +34,8 @@ const fallbackConfig: Config = {
     process.env.REDIRECT_TO_GOVERNMENT === 'true' || false,
   PASSCODE_LENGTH: parseInt(process.env.PASSCODE_LENGTH || '3', 10),
   DB_PATH: process.env.DB_PATH || './covid_db',
-  THOUSAND_SEPARATOR: process.env.THOUSAND_SEPARATOR || ' '
+  THOUSAND_SEPARATOR: process.env.THOUSAND_SEPARATOR || ' ',
+  RATE_LIMIT: parseInt(process.env.RATE_LIMIT || '20', 10)
 };
 
 // @ts-ignore
