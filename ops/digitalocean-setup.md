@@ -37,6 +37,7 @@
     3. Reload systemd by running `sudo systemctl daemon-reload`
 9. Update the config for the site
     1. Edit `/srv/coronastatus.[tld]/config.json` with the correct config values
-    2. Deploy the latest version by running `/srv/scripts/deploy-prod.sh`
-    3. Try to start the server outside of systemd to check that it boots: `yarn start`
-    4. Confirm that the site works correctly by visiting `https://coronastatus.[tld]
+    2. Delete or move the `/srv/coronastatus.[tld]/covid_db*` files to somewhere else.
+    3. Deploy the latest version by running `/srv/scripts/deploy-prod.sh`
+    4. Try to start the server outside of systemd to check that it boots: `yarn start`
+    5. Confirm that the site works correctly by visiting `https://coronastatus.[tld]
