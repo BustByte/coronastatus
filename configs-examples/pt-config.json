@@ -8,7 +8,7 @@
   "PASSCODE_LENGTH": 3,
   "MAP_ZOOM": 4,
   "TWITTER": "coronastatusPT",
-  "ZIP_LENGTH": 8,
+  "ZIP_PATTERN": "[0-9]{4}-[0-9]{3}",
   "ZIP_PLACEHOLDER": "0000-000",
   "REDIRECT_TO_GOVERNMENT": false,
   "DB_PATH": "./covid_db"
