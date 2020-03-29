@@ -35,7 +35,7 @@
   "Privacy": "Privacidad",
   "Thank you for your contribution!": "Gracias por su contribución!",
   "The government has now launched their own self-report system, please use that instead.": "El gobierno ha puesto en marcha su propio sistema de auto-informe, por favor, utilice esa plataforma en vez de esta",
-  "www.nhs.uk": "https://www.minsalud.gov.co/portada-covid-19.html",
+  "www.nhs.uk": "https://www.argentina.gob.ar/salud/coronavirus-COVID-19",
   "Go to the National health service website": "Ir al sitio web del Ministerio de Salud",
   "Report status by zip code": "Reporte de estado por código postal",
   "What is my Zip code?": "Cuál es mi código postal?",
@@ -148,11 +148,7 @@
   "If you use this computer with multiple users, please use this link to update your status.": "Si utiliza este equipo con varios usuarios, por favor utilice este enlace para actualizar su estado.",
   "Write it down somewhere or save it on your computer.": "Anótela en algún lugar o guardelo en su computador.",
   "The link has been copied.": "El enlace se ha copiado.",
-<<<<<<< HEAD
   "clear this form": "borrar este formulario",
-=======
-  "clear this form": "borrar esta forma",
->>>>>>> upstream/master
   "https://who.int": "https://who.int/es",
   "To WHO.int": "Ir a who.int/es",
   "Are you from": "Es de",

@@ -1,8 +1,9 @@
 {
   "BASE_URL": "coronastatus.org.ua",
-  "LANGUAGE": "ua",
+  "LOCALE": "uk-UA",
+  "COUNTRY_CODE": "ua",
   "COUNTRY": "Ukraine",
-  "MAP_CENTER": "50.4546600, 30.5238000",
+  "MAP_CENTER": "48.379433, 31.165581",
   "MAP_ZOOM": 5,
   "MAP_MAX_ZOOM": 13,
   "TWITTER": "coronastatusUA",
