@@ -147,6 +147,7 @@
   "Symptom": "Symptóm",
   "Symptoms": "Symptómy",
   "Symptoms you have experienced": "Vaše symptómy",
+  "Sweden": "Švédska",
   "Test results": "Výsledky testov",
   "Tested negative": "Negatívne testovaný",
   "Tested positive": "Pozitívne testovaný",
@@ -196,5 +197,6 @@
   "Your personal health information is cleared from this computer.": "Informácie o vašom zdravotnom stave boli z tohto zariadenia zmazané.",
   "Your state of health": "Váš zdravotný stav",
   "Zip code": "PSČ",
-  "Zip code information ": "PSČ informácie "
+  "Zip code information ": "PSČ informácie ",
+  "https://www.whatismyzip.com": "https://www.whatismyzip.com"
 }

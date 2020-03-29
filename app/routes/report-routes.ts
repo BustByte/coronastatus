@@ -98,7 +98,10 @@ const extractTestResult = (req: Request): TestResult | undefined => {
 const createReportRateLimit = rateLimit({
   max: config.RATE_LIMIT, // allowed requests per window
   windowMs: 24 * 60 * 60 * 1000, // 24 hour window,
-  keyGenerator: req => determineRemoteAddress(req)
+  keyGenerator: req => determineRemoteAddress(req),
+  onLimitReached(req, res) {
+    return res.redirect(`${res.locals.urls.limit}`);
+  }
 });
 
 const toSex = (inputValue: string): Sex => {

@@ -22,6 +22,10 @@ router.get(`${urls.contributors}`, (req, res) => {
   return res.render('pages/contributors');
 });
 
+router.get(`${urls.limit}`, (req, res) => {
+  return res.render('pages/limit');
+});
+
 if (process.env.NODE_ENV !== 'production') {
   router.get('/social-images', (req, res) => {
     return res.render('pages/social-images');

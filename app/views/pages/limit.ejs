@@ -1,0 +1,19 @@
+<%- include('partials/header', { show: true }) -%>
+
+<section>
+  <h1><%= __("Rate limit exceeded") %></h1>
+  <p class="with-top-margin">
+    <%= __(`Number of report submissions from your IP address exceeded 
+    allowed limit. Report was not saved.`) %>
+  </p>
+  <p class="with-top-margin">
+    <%= __(`Please, try again later.`) %>
+  </p>
+  <h2>
+    <%= __('Contact us via') %>
+    <a href="mailto:kontakt@bustbyte.no">kontakt@bustbyte.no</a>
+    <%= __("if you can't get it to work.") %>
+  </h2>
+</section>
+
+<%- include('partials/footer', { show: true }) -%>
