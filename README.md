@@ -35,9 +35,9 @@ We need people who can help translate the site, develop new features, project le
 - 🇨🇱 Chile: https://coronastatus.cl
 - 🇮🇳 India: https://corona-status.in
 - 🇵🇹 Portugal: https://coronastatus.pt
+- 🇹🇷 Turkey: https://coronastatustr.com
 - 🇸🇪 Sweden: coming soon
 - 🇵🇭 Philippines: coming soon
-- 🇹🇷 Turkey: coming soon (work group Telegram chat: https://t.me/turkeycoronastatus)
 - 🇧🇪 Belgium: coming soon
 - 🇮🇸 Iceland: coming soon
 - 🇨🇭 Switzerland: coming soon
