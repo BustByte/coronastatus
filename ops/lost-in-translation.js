@@ -73,6 +73,18 @@ async function addUniqueRowsToGoogleSheet(sheet, rowsToAdd) {
 }
 
 /**
+ * Retrieve all the sheets in a Google Spreadsheet document.
+ */
+async function retrieveSheetsInDocument(doc) {
+  const sheets = [];
+  for (let sheetIndex = 0; sheetIndex < doc.sheetCount; sheetIndex++) {
+    const sheet = await doc.sheetsByIndex[sheetIndex];
+    sheets.push(sheet);
+  }
+  return sheets;
+}
+
+/**
  * Step 1: Find all the (english) translation keys across all branches and PRs.
  *
  * If a Dutch developer has made a feature in a branch, we expect that him/her added a key
@@ -134,39 +146,34 @@ for (const locale of allLocales) {
   await doc.useServiceAccountAuth(require('./coronastatus-translation-486cef09736e-credentials.json'));
   await doc.loadInfo();
 
+  const sheets = await retrieveSheetsInDocument(doc);
   const allLocales = retrieveAllLocales('app/locales/');
-  for (let sheetIndex = 0; sheetIndex < doc.sheetCount; sheetIndex++) {
-    const sheet = doc.sheetsByIndex[sheetIndex];
-    for (const locale of allLocales) {
-      if (sheet.title !== locale) {
-        continue;
-      }
 
-      try {
-        // Create a sheet if it doesn't already exist.
-        await doc.addSheet({ title: locale, headerValues: ['key', 'translation'] });
-        await new Promise(resolve => setTimeout(resolve, 10*1000));
-      } catch (error) {
-        // We don't do anything if the sheet for this locale exists.
-      }
+  for (const locale of allLocales) {
 
-      // Add the missing rows by looking at the key column.
-      const rows = [];
-      for (const englishTranslationKey of allEnglishTranslationKeys) {
-        if (!translationKeysByLocale[locale].has(englishTranslationKey)) {
-          const row = { 'key': englishTranslationKey, translation: '' };
-          rows.push(row);
-        }
-      }
-
-      // Print out how many rows we added.
-      const addedRows = await addUniqueRowsToGoogleSheet(sheet, rows);
-      console.log(`Added ${addedRows.length} of ${rows.length} missing translations to the ${locale} sheet.`);
-
-      // Avoid getting rate limited by Google's API (max writes per 100 seconds).
-      console.log('Waiting before processing the next sheet.');
-      await new Promise(resolve => setTimeout(resolve, 20*1000));
+    // Create sheet for this locale if it doesn't already exist.
+    let matchingSheet = sheets.find(sheet => sheet.title === locale);
+    if (!matchingSheet) {
+      matchingSheet = await doc.addSheet({ title: locale, headerValues: ['key', 'translation'] });
     }
+
+    // Find rows that don't already exist by looking at the key column.
+    const rows = [];
+    for (const englishTranslationKey of allEnglishTranslationKeys) {
+      if (!translationKeysByLocale[locale].has(englishTranslationKey)) {
+        const row = { 'key': englishTranslationKey, translation: '' };
+        rows.push(row);
+      }
+    }
+
+    // Add and print out how many rows we added.
+    const addedRows = await addUniqueRowsToGoogleSheet(matchingSheet, rows);
+    console.log(`Added ${addedRows.length} of ${rows.length} missing translations to the ${locale} sheet.`);
+
+    // Avoid getting rate limited by Google's API (max writes per 100 seconds).
+    console.log('Waiting before processing the next sheet.');
+    await new Promise(resolve => setTimeout(resolve, 20*1000));
+
   }
 
 })();
