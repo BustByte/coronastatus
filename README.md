@@ -8,7 +8,11 @@
 
 We don't know how many people have COVID-19. So we made a website where people can self-report symptoms. We plot the submissions on a map and show graphs with trends.
 
-### Countries where Coronastatus launches
+## How can I help?
+
+We need people who can help translate the site, develop new features, project leads for new and existing countries, and much more. Join our group chat: https://t.me/onzecorona
+
+### In what countries have you launched Coronastatus?
 
 - 🇳🇴 Norway: https://coronastatus.no
 - 🇳🇱 The Netherlands: https://coronastatus.nl
