@@ -15,7 +15,7 @@ const ogImagePath = `static/${countryCode}/social-media.png`;
 const twitterHeaderPath = `static/${countryCode}/twitter-header.png`;
 const bannerPath = `static/${countryCode}/banner.png`;
 
-(async () => {
+(async (): Promise<void> => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 

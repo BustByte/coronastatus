@@ -1,4 +1,4 @@
-<% const { show = true, menu = true, home = false, fullscreen = false, lastCommit = false } = locals; %>
+<% const { show = true, menu = true, home = false, fullscreen = false, lastCommit = false, showLocaleSelector = true } = locals; %>
 
 <!DOCTYPE html>
 <html lang="<%= locals.htmlLang %>">
@@ -50,7 +50,12 @@
     <section class="custom-section custom-hero p-4 w-full <% if (fullscreen) { %>custom-fullscreen<% } %>">
       <div class="custom-section-content <% if (fullscreen) { %>mx-4<% } else { %>mx-auto<% } %>">
         <header class="py-2 flex justify-between items-center flex-wrap">
-          <%- include('partials/logo') -%>
+          <div class="flex items-center">
+            <%- include('partials/logo') -%>
+            <% if (showLocaleSelector) { %>
+              <%- include('partials/locale-selector') -%>
+            <% } %>
+          </div>
           <%- include('partials/menu') -%>
         </header>
       </div>

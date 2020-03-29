@@ -434,3 +434,7 @@ input[type='submit']:focus {
 .contributor-list {
   align-self: center;
 }
+
+.locale-selector-menu a {
+  cursor: pointer;
+}

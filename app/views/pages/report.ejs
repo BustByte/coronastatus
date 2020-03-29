@@ -38,7 +38,10 @@
 <section class="custom-section custom-hero p-4">
   <div class="custom-section-content mx-auto">
     <header class="py-2 flex justify-between items-center flex-wrap">
-      <%- include('partials/logo') -%>
+      <div class="flex items-center">
+        <%- include('partials/logo') -%>
+        <%- include('partials/locale-selector') -%>
+      </div>
       <%- include('partials/menu', { home: true }) -%>
     </header>
     <div class="my-8 flex flex-row flex-wrap justify-between">
@@ -374,9 +377,13 @@
       <input required type="radio" id="isolation-due-to-government" name="isolation-status" value="isolation-due-to-government" <%= isolationStatus === 'ISOLATION_DUE_TO_GOVERNMENT_ORDERS' ? 'checked' : '' %>>
       <label for="isolation-due-to-government"><%= __("In isolation due to orders from the government") %></label>
     </p>
-    <p>
+    <p class="mb-2">
       <input required type="radio" id="isolation-due-to-covid-19" name="isolation-status" value="isolation-due-to-covid-19" <%= isolationStatus === 'ISOLATION_DUE_TO_COVID_19' ? 'checked' : '' %>>
       <label for="isolation-due-to-covid-19"><%= __("In isolation due to COVID-19 infection") %></label>
+    </p>
+    <p>
+      <input required type="radio" id="voluntary-isolation" name="isolation-status" value="voluntary-isolation" <%= isolationStatus === 'VOLUNTARY_ISOLATION' ? 'checked' : '' %>>
+      <label for="voluntary-isolation"><%= __("In voluntary isolation to avoid potentially spreading or catching COVID-19") %></label>
     </p>
     </fieldset>
 
