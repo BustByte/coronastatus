@@ -1,13 +1,9 @@
-<%
-const totalPeopleInContactWithInfected = locals.inContactWithInfectedStats.total;
-const totalInfectedPeopleWithSymptoms = locals.infectedStats.symptomStats.total;
-const totalPeopleWithSymptoms = locals.allSymptomsStats.symptomStats.total;
-const totalTested = locals.totalTested;
-  
-function numberWithSpaces(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-}
-%>
+<% const totalPeopleInContactWithInfected =
+locals.inContactWithInfectedStats.total; const totalInfectedPeopleWithSymptoms =
+locals.infectedStats.symptomStats.total; const totalPeopleWithSymptoms =
+locals.allSymptomsStats.symptomStats.total; const totalTested =
+locals.totalTested; function numberWithSpaces(x) { return
+x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); } %>
 
 <!-- prettier spacer -->
 
@@ -47,9 +43,8 @@ function numberWithSpaces(x) {
   <div>
     <h3><%= __(`Test results`) %></h3>
     <p>
-      <%= __(`In total`) %> <%=
-      numberWithSpaces(totalTested) %> <%= __(`people have
-      reported that they have been tested for COVID-19.`) %>
+      <%= __(`In total`) %> <%= numberWithSpaces(totalTested) %> <%= __(`people
+      have reported that they have been tested for COVID-19.`) %>
     </p>
     <canvas id="testResultStats"></canvas>
   </div>
@@ -155,7 +150,10 @@ function numberWithSpaces(x) {
 <h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
   <%= __(`Clarifications data basis`) %>
 </h2>
-<p><%= __(`Some questions and alternatives were not a part of the form from the beginning:`) %></p>
+<p>
+  <%= __(`Some questions and alternatives were not a part of the form from the
+  beginning:`) %>
+</p>
 <div style="max-width: 650px" class="table-auto mt-4">
   <table>
     <thead>
@@ -168,61 +166,81 @@ function numberWithSpaces(x) {
     </thead>
     <tbody>
       <tr>
-        <td class="border px-4 py-2"><%= __(`In close contact with someone who's infected`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`In close contact with someone who's infected`) %>
+        </td>
         <td class="border px-4 py-2">
           <%= __(`March 16`) %>
         </td>
       </tr>
       <tr>
-        <td class="border px-4 py-2"><%= __(`Symptom`) %>: <%= __(`Headache`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`Symptom`) %>: <%= __(`Headache`) %>
+        </td>
         <td class="border px-4 py-2">
           <%= __(`March 16`) %>
         </td>
       </tr>
       <tr>
-        <td class="border px-4 py-2"><%= __(`Symptom`) %>: <%= __(`Sore throat`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`Symptom`) %>: <%= __(`Sore throat`) %>
+        </td>
         <td class="border px-4 py-2">
           <%= __(`March 16`) %>
         </td>
       </tr>
       <tr>
-        <td class="border px-4 py-2"><%= __(`Symptom`) %>: <%= __(`Loss of sense of taste`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`Symptom`) %>: <%= __(`Loss of sense of taste`) %>
+        </td>
         <td class="border px-4 py-2">
           <%= __(`March 17`) %>
         </td>
       </tr>
       <tr>
-        <td class="border px-4 py-2"><%= __(`Symptom`) %>: <%= __(`Loss of sense of smell`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`Symptom`) %>: <%= __(`Loss of sense of smell`) %>
+        </td>
         <td class="border px-4 py-2">
           <%= __(`March 17`) %>
         </td>
       </tr>
       <tr>
-        <td class="border px-4 py-2"><%= __(`Symptom`) %>: <%= __(`Mucus cough`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`Symptom`) %>: <%= __(`Mucus cough`) %>
+        </td>
         <td class="border px-4 py-2">
           <%= __(`March 17`) %>
         </td>
       </tr>
       <tr>
-        <td class="border px-4 py-2"><%= __(`Symptom`) %>: <%= __(`Stuffy or runny nose`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`Symptom`) %>: <%= __(`Stuffy or runny nose`) %>
+        </td>
         <td class="border px-4 py-2">
           <%= __(`March 17`) %>
         </td>
       </tr>
       <tr>
-        <td class="border px-4 py-2"><%= __(`Symptom`) %>: <%= __(`Nausea or vomiting`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`Symptom`) %>: <%= __(`Nausea or vomiting`) %>
+        </td>
         <td class="border px-4 py-2">
           <%= __(`March 23`) %>
         </td>
       </tr>
       <tr>
-        <td class="border px-4 py-2"><%= __("In isolation due to orders from the government") %></td>
+        <td class="border px-4 py-2">
+          <%= __("In isolation due to orders from the government") %>
+        </td>
         <td class="border px-4 py-2">
           <%= __(`March 27`) %>
         </td>
       </tr>
       <tr>
-        <td class="border px-4 py-2"><%= __("In isolation due to COVID-19 infection") %></td>
+        <td class="border px-4 py-2">
+          <%= __("In isolation due to COVID-19 infection") %>
+        </td>
         <td class="border px-4 py-2">
           <%= __(`March 27`) %>
         </td>
@@ -231,8 +249,16 @@ function numberWithSpaces(x) {
   </table>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+  integrity="sha384-fYxN7HsDOBRo1wT/NSZ0LkoNlcXvpDpFy6WzB42LxuKAX7sBwgo7vuins+E1HCaw"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"
+  integrity="sha384-QzN1ywg2QLsf72ZkgRHgjkB/cfI4Dqjg6RJYQUqH6Wm8qp/MvmEYn+2NBsLnhLkr"
+  crossorigin="anonymous"
+></script>
 <script>
   /* Infected symptom count */
   var ctx = document.getElementById('infectedSymptomsChart').getContext('2d');

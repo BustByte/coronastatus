@@ -1,30 +1,34 @@
 import config from '../config';
 
-export type Locale =
+export type CountryCode =
   | 'no'
   | 'nl'
   | 'en'
-  | 'en-US'
-  | 'en-AU'
-  | 'en-MT'
-  | 'es-MX'
+  | 'us'
+  | 'au'
+  | 'mt'
+  | 'mx'
   | 'sk'
   | 'it'
   | 'tr'
   | 'dk'
   | 'ua'
-  | 'es-CO'
-  | 'es-AR'
-  | 'fr-FR'
-  | 'es-ES'
+  | 'co'
+  | 'ar'
+  | 'fr'
+  | 'es'
   | 'ca'
-  | 'en-SG'
-  | 'ms-MY'
+  | 'sg'
+  | 'my'
   | 'se'
-  | 'pt-PT';
+  | 'cl'
+  | 'bd'
+  | 'ng'
+  | 'in'
+  | 'pt';
 
 type Urls = {
-  [locale in Locale]: {
+  [countryCode in CountryCode]: {
     submitReport: string;
     profile: string;
     privacyPolicy: string;
@@ -67,7 +71,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
-  'en-US': {
+  us: {
     submitReport: '/',
     profile: '/healthcondition',
     privacyPolicy: '/privacy-statement',
@@ -77,7 +81,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
-  'es-AR': {
+  ar: {
     submitReport: '/',
     profile: '/estadosalud',
     privacyPolicy: '/aviso-privacidad',
@@ -87,7 +91,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/estadisticas'
   },
-  'en-AU': {
+  au: {
     submitReport: '/',
     profile: '/healthcondition',
     privacyPolicy: '/privacy-statement',
@@ -97,7 +101,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
-  'en-MT': {
+  mt: {
     submitReport: '/',
     profile: '/healthcondition',
     privacyPolicy: '/privacy-statement',
@@ -107,7 +111,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
-  'es-MX': {
+  mx: {
     submitReport: '/',
     profile: '/estadosalud',
     privacyPolicy: '/aviso-privacidad',
@@ -167,7 +171,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
-  'es-CO': {
+  co: {
     submitReport: '/',
     profile: '/estadosalud',
     privacyPolicy: '/aviso-privacidad',
@@ -177,7 +181,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/estadisticas'
   },
-  'fr-FR': {
+  fr: {
     submitReport: '/',
     profile: '/profil',
     privacyPolicy: '/politique-de-confidentialite',
@@ -187,7 +191,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistiques'
   },
-  'es-ES': {
+  es: {
     submitReport: '/',
     profile: '/estadosalud',
     privacyPolicy: '/aviso-privacidad',
@@ -207,7 +211,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
-  'en-SG': {
+  sg: {
     submitReport: '/',
     profile: '/healthcondition',
     privacyPolicy: '/privacy-statement',
@@ -217,7 +221,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
-  'ms-MY': {
+  my: {
     submitReport: '/',
     profile: '/keadaankesihatan',
     privacyPolicy: '/kenyataan-privasi',
@@ -237,7 +241,47 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistik'
   },
-  'pt-PT': {
+  cl: {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
+  bd: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  ng: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  in: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  pt: {
     submitReport: '/',
     profile: '/estadosaude',
     privacyPolicy: '/politica-privacidade',
@@ -249,4 +293,4 @@ const localeAwareUrls: Urls = {
   }
 };
 
-export const urls = localeAwareUrls[config.LANGUAGE as Locale];
+export const urls = localeAwareUrls[config.COUNTRY_CODE as CountryCode];
