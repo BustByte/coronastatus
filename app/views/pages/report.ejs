@@ -3,7 +3,7 @@
     profile,
     passcode,
     baseUrl,
-    thousandSeparator = ' ',
+    formatNumber,
     urls
   } = locals;
   const age = profile && locals.profile.age;
@@ -31,10 +31,6 @@
   const symptomSlimeCough = symptoms && symptoms['SLIME_COUGH'];
   const symptomRunnyNose = symptoms && symptoms['RUNNY_NOSE'];
   const symptomNauseaOrVomiting = symptoms && symptoms['NAUSEA_OR_VOMITING'];
-
-  function numberWithSpaces(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, thousandSeparator);
-  }
 %>
 
 <%- include('partials/header', { home: true, menu: false }) -%>
@@ -82,25 +78,25 @@
       <%- include('partials/app-stats-block', {
         image: '/static/images/napkin.svg',
         title: __('Total reports'),
-        number: numberWithSpaces(aggregated.numberOfReports)
+        number: formatNumber(aggregated.numberOfReports)
       }) -%>
 
       <%- include('partials/app-stats-block', {
         image: '/static/images/temperature-check.svg',
         title: __('Infected / Have been tested'),
-        number: `${numberWithSpaces(aggregated.numberOfConfirmedInfected)}/${numberWithSpaces(aggregated.numberOfTested)}`
+        number: `${formatNumber(aggregated.numberOfConfirmedInfected)}/${formatNumber(aggregated.numberOfTested)}`
       }) -%>
 
       <%- include('partials/app-stats-block', {
         image: '/static/images/transfer.svg',
         title: __(`In close contact with someone who's infected`),
-        number: numberWithSpaces(aggregated.numberOfContacts)
+        number: formatNumber(aggregated.numberOfContacts)
       }) -%>
 
       <%- include('partials/app-stats-block', {
         image: '/static/images/symptoms.svg',
         title: __('Has symptoms'),
-        number: numberWithSpaces(aggregated.numberOfPeopleShowingSymptoms)
+        number: formatNumber(aggregated.numberOfPeopleShowingSymptoms)
       }) -%>
     </ul>
   </div>
@@ -448,7 +444,7 @@
 
 <section class="w-full self-center text-center m-8">
   <p class="pb-2 text-cvs-red text-lg md:text-xl lg:text-2xl font-bold"><%= __(`Contribute and share {{ hostname }} on`, { hostname: baseUrl }) %></p>
-  <%- include('partials/share', { amount: numberWithSpaces(aggregated.numberOfReports) }) -%>
+  <%- include('partials/share', { amount: formatNumber(aggregated.numberOfReports) }) -%>
 </section>
 
 <section class="custom-section custom-section-about px-6 lg:px-0 py-12 lg:py-24 bg-white">
