@@ -155,18 +155,12 @@ function numberWithSpaces(x) {
 <h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
   <%= __(`Clarifications data basis`) %>
 </h2>
-<p>
-  <%= __(`Questions about close contact were added on 16 March at. 10:30 p.m..
-  Some symptoms were not part of the form from the beginning:`) %>
-</p>
-
-<div style="max-width: 500px" class="table-auto mt-4">
+<p><%= __(`Some questions and alternatives were not a part of the form from the beginning:`) %></p>
+<div style="max-width: 650px" class="table-auto mt-4">
   <table>
     <thead>
       <tr>
-        <th class="border px-4 py-2 text-left font-semibold">
-          <%= __(`Symptom`) %>
-        </th>
+        <th class="border px-4 py-2 text-left font-semibold"></th>
         <th class="border px-4 py-2 text-left font-semibold">
           <%= __(`Added to form`) %>
         </th>
@@ -174,45 +168,63 @@ function numberWithSpaces(x) {
     </thead>
     <tbody>
       <tr>
-        <td class="border px-4 py-2"><%= __(`Headache`) %></td>
+        <td class="border px-4 py-2"><%= __(`In close contact with someone who's infected`) %></td>
         <td class="border px-4 py-2">
-          <%= __(`March 16`) %> <%= __(`at`) %> 00:23
+          <%= __(`March 16`) %>
         </td>
       </tr>
       <tr>
-        <td class="border px-4 py-2"><%= __(`Sore throat`) %></td>
+        <td class="border px-4 py-2"><%= __(`Symptom`) %>: <%= __(`Headache`) %></td>
         <td class="border px-4 py-2">
-          <%= __(`March 16`) %> <%= __(`at`) %> 00:23
+          <%= __(`March 16`) %>
         </td>
       </tr>
       <tr>
-        <td class="border px-4 py-2"><%= __(`Loss of sense of taste`) %></td>
+        <td class="border px-4 py-2"><%= __(`Symptom`) %>: <%= __(`Sore throat`) %></td>
         <td class="border px-4 py-2">
-          <%= __(`March 17`) %> <%= __(`at`) %> 10:26
+          <%= __(`March 16`) %>
         </td>
       </tr>
       <tr>
-        <td class="border px-4 py-2"><%= __(`Loss of sense of smell`) %></td>
+        <td class="border px-4 py-2"><%= __(`Symptom`) %>: <%= __(`Loss of sense of taste`) %></td>
         <td class="border px-4 py-2">
-          <%= __(`March 17`) %> <%= __(`at`) %> 10:26
+          <%= __(`March 17`) %>
         </td>
       </tr>
       <tr>
-        <td class="border px-4 py-2"><%= __(`Mucus cough`) %></td>
+        <td class="border px-4 py-2"><%= __(`Symptom`) %>: <%= __(`Loss of sense of smell`) %></td>
         <td class="border px-4 py-2">
-          <%= __(`March 17`) %> <%= __(`at`) %> 16:28
+          <%= __(`March 17`) %>
         </td>
       </tr>
       <tr>
-        <td class="border px-4 py-2"><%= __(`Stuffy or runny nose`) %></td>
+        <td class="border px-4 py-2"><%= __(`Symptom`) %>: <%= __(`Mucus cough`) %></td>
         <td class="border px-4 py-2">
-          <%= __(`March 17`) %> <%= __(`at`) %> 16:28
+          <%= __(`March 17`) %>
         </td>
       </tr>
       <tr>
-        <td class="border px-4 py-2"><%= __(`Nausea or vomiting`) %></td>
+        <td class="border px-4 py-2"><%= __(`Symptom`) %>: <%= __(`Stuffy or runny nose`) %></td>
         <td class="border px-4 py-2">
-          <%= __(`March 23`) %> <%= __(`at`) %> 20:00
+          <%= __(`March 17`) %>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2"><%= __(`Symptom`) %>: <%= __(`Nausea or vomiting`) %></td>
+        <td class="border px-4 py-2">
+          <%= __(`March 23`) %>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2"><%= __("In isolation due to orders from the government") %></td>
+        <td class="border px-4 py-2">
+          <%= __(`March 27`) %>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2"><%= __("In isolation due to COVID-19 infection") %></td>
+        <td class="border px-4 py-2">
+          <%= __(`March 27`) %>
         </td>
       </tr>
     </tbody>
@@ -270,12 +282,14 @@ function numberWithSpaces(x) {
           data: totalReportStats.numberOfReportsWithSymptomsStat,
           backgroundColor: 'rgba(255, 99, 132, 0.2)',
           borderColor: 'salmon',
+          cubicInterpolationMode: 'monotone'
         },
         {
           label: '<%= __(`Reports`) %>',
           data: totalReportStats.numberOfReportsStat,
           backgroundColor: 'rgba(0, 200, 255, 0.2)',
-          borderColor: 'lightblue'
+          borderColor: 'lightblue',
+          cubicInterpolationMode: 'monotone'
         }
       ]
     },
@@ -309,7 +323,7 @@ function numberWithSpaces(x) {
           'lightblue',
         ],
       }],
-      labels: ['<%= __(`In close contact with symptoms`) %>', '<%= __(`In close contact without symptoms`) %>']
+      labels: [`<%- __(`In close contact with symptoms`) %>`, `<%- __(`In close contact without symptoms`) %>`]
     },
     options: {}
   });
@@ -327,12 +341,14 @@ function numberWithSpaces(x) {
           data: infectedAndContactStats.numberOfInfectedStat,
           backgroundColor: 'rgba(255, 99, 132, 0.2)',
           borderColor: 'salmon',
+          cubicInterpolationMode: 'monotone'
         },
         {
-          label: '<%= __("Close contact with someone who has tested positive") %>',
+          label: `<%- __("Close contact with someone who has tested positive") %>`,
           data: infectedAndContactStats.numberOfInContactStat,
           backgroundColor: 'rgba(0, 200, 255, 0.2)',
-          borderColor: 'lightblue'
+          borderColor: 'lightblue',
+          cubicInterpolationMode: 'monotone'
         }
       ]
     },

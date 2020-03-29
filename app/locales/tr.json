@@ -49,7 +49,7 @@
   "NB!": "Önemli!",
   "This page is currently not affiliated with the authorities in any way.": "Bu sayfa hiçbir şekilde yetkili birimlere bağlı değildir.",
   "Read how the data you enter is processed here!": "Girdiğiniz verilerin nasıl işlendiğini öğrenin!",
-  "This page is not affiliated with the authorities.":"Bu sayfa yetkililere bağlı değil.",
+  "This page is not affiliated with the authorities.":"Bu sayfa yetkili birimlere bağlı değildir.",
   "Learn more!":"Daha fazla bilgi edin!",
   "Use the link you noted down last time to update your health condition": "Daha önceden not aldığınız bağlantıyı kullanarak sağlık durumunuzu güncelleyin.",
   "Unreported cases": "Bildirilmemiş vakalar",
@@ -177,5 +177,12 @@
   "Close": "Kapat",
   "Contribute now": "Şimdi destek ol",
   "Help us uncover and predict the corona spread in your area": "Bölgendeki corona yayılımını analiz edebilmemiz için bize destek ol",
-  "Numbers": "Sayılar"
+  "Numbers": "Sayılar",
+  "#washyourhands": "#elini<wbr/>yika",
+  "#stayindoors": "#evde<wbr/>kal",
+  "In isolation due to orders from the government": "Hükümet tarafından alınan kararlar dolayısıyla karantinada",
+  "In isolation due to COVID-19 infection": "COVID-19 enfeksiyonu yüzünden karantinada",
+  "Some questions and alternatives were not a part of the form from the beginning:": "Bazı sorular ve alternatifler en başından beri yoktu:",
+  "March 27": "27 Mart",
+  "Other": "Diğer"
 }

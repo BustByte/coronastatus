@@ -21,7 +21,8 @@ export type Symptoms = {
 
 export enum Sex {
   MALE = 'MALE',
-  FEMALE = 'FEMALE'
+  FEMALE = 'FEMALE',
+  OTHER = 'OTHER'
 }
 
 export enum TestResult {
@@ -39,7 +40,9 @@ export enum SmokingHabit {
 export enum IsolationStatus {
   NOT_IN_ISOLATION = 'NOT_IN_ISOLATION',
   ISOLATION_DUE_TO_TRAVEL = 'ISOLATION_DUE_TO_TRAVEL',
-  ISOLATION_DUE_TO_CONTACT = 'ISOLATION_DUE_TO_CONTACT'
+  ISOLATION_DUE_TO_CONTACT = 'ISOLATION_DUE_TO_CONTACT',
+  ISOLATION_DUE_TO_COVID_19 = 'ISOLATION_DUE_TO_COVID_19',
+  ISOLATION_DUE_TO_GOVERNMENT_ORDERS = 'ISOLATION_DUE_TO_GOVERNMENT_ORDERS'
 }
 
 export enum Symptom {
@@ -143,10 +146,14 @@ export interface Config {
   COUNTRY: string;
   MAP_CENTER: string;
   MAP_ZOOM: number;
+  MAP_MAX_ZOOM: number;
   TWITTER: string;
   ZIP_LENGTH: number;
   ZIP_PLACEHOLDER: string;
+  ZIP_GUIDE: boolean;
   REDIRECT_TO_GOVERNMENT: boolean;
   PASSCODE_LENGTH: number;
   DB_PATH: string;
 }
+
+export type DatabaseType = 'pg' | 'sqlite';
