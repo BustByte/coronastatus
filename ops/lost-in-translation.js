@@ -1,6 +1,7 @@
 const { parse } = require('path');
 const { readdirSync } = require('fs');
 const { spawnSync } = require('child_process');
+const { GoogleSpreadsheet } = require('google-spreadsheet');
 
 /**
  * This script finds all the english translation keys across
@@ -58,6 +59,16 @@ function retrieveAllLocales(directoryPath) {
 }
 
 /**
+ * Add rows to a Google Spreadsheet that are not already added.
+ */
+async function addUniqueRowsToGoogleSheet(sheet, rowsToAdd) {
+  const alreadyAddedRows = await sheet.getRows({ limit: 1000 });
+  const uniqueRowsToAdd = rowsToAdd.filter(rowToAdd =>
+    !alreadyAddedRows.find(alreadyAddedRow => alreadyAddedRow.key === rowToAdd.key));
+  await sheet.addRows(uniqueRowsToAdd);
+}
+
+/**
  * Step 1: Find all the (english) translation keys across all branches and PRs.
  *
  * If a Dutch developer has made a feature in a branch, we expect that him/her added a key
@@ -110,13 +121,23 @@ for (const locale of allLocales) {
 }
 
 /**
- * Step 3: Print out the missing keys for each locale.
+ * Step 3: Add rows of missing translations to Google Spreadsheet.
+ * 
+ * https://docs.google.com/spreadsheets/d/1ILFfc1DX4ujMnLnf9UqhwQGM9Ke3s1cAWciy8VqMHZw
  */
-for (const locale of allLocales) {
-  console.log('---');
+(async () => {
+  const doc = new GoogleSpreadsheet('1ILFfc1DX4ujMnLnf9UqhwQGM9Ke3s1cAWciy8VqMHZw');
+  await doc.useServiceAccountAuth(require('./coronastatus-translation-486cef09736e-credentials.json'));
+  await doc.loadInfo();
+  const sheet = doc.sheetsByIndex[0];
+
+  const rows = [];
+  const locale = 'no';
   for (const englishTranslationKey of allEnglishTranslationKeys) {
     if (!translationKeysByLocale[locale].has(englishTranslationKey)) {
-      console.log(locale, 'missing translation for:', englishTranslationKey);
+      const row = { 'key': englishTranslationKey, translation: '...' };
+      rows.push(row);
     }
   }
-}
+  await addUniqueRowsToGoogleSheet(sheet, rows);
+})();

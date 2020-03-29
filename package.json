@@ -24,6 +24,7 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-rate-limit": "^5.1.1",
+    "google-spreadsheet": "^3.0.10",
     "i18n": "^0.8.6",
     "node-fetch": "^2.6.0",
     "pg": "^7.18.2",
