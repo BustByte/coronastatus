@@ -40,6 +40,13 @@ function retrieveJSONForFileAtCommitHash(filePath, commitHash) {
 }
 
 /**
+ * Normalizes translation key like we do in app/server.ts.
+ */
+function normalizeTranslationKey(translationKey) {
+  return translationKey.replace(/[\s\n\t]+/g, ' ').trim();
+}
+
+/**
  * Step 1: Find all the (english) translation keys across all branches and PRs.
  *
  * If a Dutch developer has made a feature in a branch, we expect that him/her added a key
@@ -62,7 +69,7 @@ for (const locale of allLocales) {
   for (const commitHash of findCommitHashesForFile(filePath)) {
     const translation = retrieveJSONForFileAtCommitHash(filePath, commitHash);
     for (const translationKey of Object.keys(translation)) {
-      allEnglishTranslationKeys.add(translationKey);
+      allEnglishTranslationKeys.add(normalizeTranslationKey(translationKey));
     }
   }
 }
@@ -83,10 +90,11 @@ for (const locale of allLocales) {
   const filePath = `app/locales/${locale}.json`;
   for (const commitHash of findCommitHashesForFile(filePath)) {
     const translation = retrieveJSONForFileAtCommitHash(filePath, commitHash);
+    const translationKeys = Object.keys(translation).map(key => normalizeTranslationKey(key));
     if (translationKeysByLocale[locale] === undefined) {
       translationKeysByLocale[locale] = new Set([]);
     }
-    translationKeysByLocale[locale] = new Set([...translationKeysByLocale[locale], ...Object.keys(translation)]);
+    translationKeysByLocale[locale] = new Set([...translationKeysByLocale[locale], ...translationKeys]);
   }
 }
 
@@ -94,6 +102,7 @@ for (const locale of allLocales) {
  * Step 3: Print out the missing keys for each locale.
  */
 for (const locale of allLocales) {
+  console.log('---');
   for (const englishTranslationKey of allEnglishTranslationKeys) {
     if (!translationKeysByLocale[locale].has(englishTranslationKey)) {
       console.log(locale, 'missing translation for:', englishTranslationKey);
