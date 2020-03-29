@@ -30,6 +30,7 @@ We don't know how many people have COVID-19. So we made a website where people c
 - 🇲🇹 Malta: https://coronastatusmt.com
 - 🇨🇱 Chile: https://coronastatus.cl
 - 🇮🇳 India: https://corona-status.in
+– 🇵🇹 Portugal: https://coronastatus.pt
 - 🇸🇪 Sweden: coming soon
 - 🇵🇭 Philippines: coming soon
 - 🇹🇷 Turkey: coming soon (work group Telegram chat: https://t.me/turkeycoronastatus)
