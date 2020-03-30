@@ -319,6 +319,14 @@ legend {
   transform: scale(1);
 }
 
+/* Radio and checkboxes focus */
+[type='radio']:focus+label:before {
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+.checkbox input[type='checkbox']:focus ~ span.checkmark {
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
 /* Select styling */
 select,
 textarea {
