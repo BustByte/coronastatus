@@ -26,7 +26,7 @@ const fallbackConfig: Config = {
   MAP_CENTER: process.env.MAP_CENTER || '10.7522, 63.9139',
   MAP_ZOOM: parseInt(process.env.MAP_ZOOM || '4', 10),
   MAP_MAX_ZOOM: parseInt(process.env.MAP_MAX_ZOOM || '13', 10),
-  EMAIL: process.env.EMAIL,
+  EMAIL: process.env.EMAIL || 'kontakt@bustbyte.no',
   TWITTER: process.env.TWITTER || 'coronastatusNO',
   ZIP_PATTERN: process.env.ZIP_PATTERN || '[A-Za-z0-9-]{2,10}', // Fallback to very general pattern in case it is missing in the config
   ZIP_PLACEHOLDER: process.env.ZIP_PLACEHOLDER || '1234',
