@@ -503,6 +503,10 @@
 <script src="/static/form.js?v=<%= locals.cacheKey %>"></script>
 
 <script>
+  flatpickr(document.querySelectorAll('[type=date]'));
+</script>
+
+<script>
   function hasSubmittedAlertOnClick() {
       document.getElementById('has-submitted-alert').style.display = 'none';
       window.localStorage.setItem("hasCrossedOutInfo", "true");
