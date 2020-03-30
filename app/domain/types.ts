@@ -153,6 +153,7 @@ export interface Config {
   MAP_CENTER: string;
   MAP_ZOOM: number;
   MAP_MAX_ZOOM: number;
+  EMAIL?: string | undefined; // email is optional
   TWITTER: string;
   ZIP_PATTERN: string;
   ZIP_PLACEHOLDER: string;

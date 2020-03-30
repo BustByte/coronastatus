@@ -9,11 +9,7 @@
   <p class="with-top-margin">
     <%= __(`Please, try again later.`) %>
   </p>
-  <h2>
-    <%= __('Contact us via') %>
-    <a href="mailto:kontakt@bustbyte.no">kontakt@bustbyte.no</a>
-    <%= __("if you can't get it to work.") %>
-  </h2>
+  <%- include('partials/contact') -%>
 </section>
 
 <%- include('partials/footer', { show: true }) -%>

@@ -74,6 +74,7 @@ app.use((req, res, next) => {
   res.locals.mapCenter = config.MAP_CENTER;
   res.locals.mapZoom = config.MAP_ZOOM;
   res.locals.mapMaxZoom = config.MAP_MAX_ZOOM;
+  res.locals.email = config.EMAIL;
   res.locals.twitter = config.TWITTER;
   res.locals.urls = urls;
   res.locals.zipPattern = config.ZIP_PATTERN;
@@ -82,6 +83,8 @@ app.use((req, res, next) => {
   res.locals.localeToFlag = localeToFlag;
   res.locals.currentLocale = req.getLocale();
   res.locals.formatNumber = createNumberFormatter(config.THOUSAND_SEPARATOR);
+  res.locals.rateLimitCount = config.RATE_LIMIT_COUNT;
+  res.locals.rateLimitWindow = config.RATE_LIMIT_WINDOW;
 
   next();
 });

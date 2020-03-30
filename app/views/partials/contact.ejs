@@ -1,0 +1,22 @@
+<h2><%= __('Contact details') %></h2>
+<ul>
+  <% if (locals.twitter) { %>
+  <li>Twitter: 
+    <a
+      class="text-cvs-green-dark font-medium whitespace-no-wrap"
+      href="https://twitter.com/intent/user?screen_name=<%= locals.twitter %>"
+      target="_blank"
+      >@<%= locals.twitter %></a
+    >
+  </li>
+  <% } %>
+  <% if (locals.email) { %>
+  <li>Email: 
+    <a 
+      href="mailto:<%= locals.email %>"
+      target="_blank"
+      ><%= locals.email %></a
+    >
+  </li>
+  <% } %>
+</ul>
