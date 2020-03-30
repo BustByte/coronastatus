@@ -49,6 +49,8 @@
   "NB!": "NB!",
   "This page is currently not affiliated with the authorities in any way.": "Denne siden er p.t. ikke tilknyttet FHI eller norske myndigheter på noen måte.",
   "Read how the data you enter is processed here!": "Les hvordan dataen du oppgir blir behandlet her!",
+  "This page is not affiliated with the authorities.":"Denne siden er ikke tilknyttet myndighetene.",
+  "Learn more!":"Les mer!",
   "Use the link you noted down last time to update your health condition": "Bruk lenken du noterte deg sist for å endre din helsetilstand.",
   "Unreported cases": "Store mørketall",
   "The spread of COVID-19 in our country is unknown. Help us create a better overview.": "Spredningen av COVID-19 i landet vårt er ukjent. Hjelp oss med å skape en bedre oversikt.",
@@ -182,5 +184,14 @@
   "In isolation due to COVID-19 infection": "I karantene på grunn av COVID-19-infeksjon",
   "Some questions and alternatives were not a part of the form from the beginning:": "Noen spørsmål og svaralternativer har kommet til etter hvert:",
   "March 27": "27. mars",
-  "Other": "Annet / ønsker ikke å oppgi"
+  "March 28": "28. mars",
+  "In voluntary isolation to avoid potentially spreading or catching COVID-19": "I frivillig isolasjon for å potensielt unngå å spre eller bli smittet av COVID-19",
+  "Other": "Annet / ønsker ikke å oppgi",
+  "CALL TO ALL US CITIZENS: This is how we defeat the corona virus: together we make the invisible virus visible.": "BLI MED PÅ NORGES STØRSTE DUGNAD: Sammen synliggjør vi det usynlige viruset.",
+  "Contribute and share {{ hostname }} on": "Bidra ved å dele {{ hostname }} på",
+  "Fill out this form - it takes 1 minute - and help the United States gain control over COVID-19.": "Bruk 1 minutt på å fylle ut skjemaet og bidra til å kartlegge mørketallene for COVID-19 i Norge.",
+  "One more thing": "En ting til",
+  "To defeat the corona virus we need to make the invisible virus visible.": "For å beseire koronaviruset trenger vi å synliggjøre det usynlige viruset.",
+  "{{ amount }} people already shared their health status.": "{{ amount }} personer har allerede delt helsetilstanden sin.",
+  "Let your friends fill out this form too and help the United States gain control over COVID-19.": "Bidra til å kartlegge mørketallene for COVID-19 i Norge ved å invitere vennene dine til å fylle ut dette skjemaet."
 }

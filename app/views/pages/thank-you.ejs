@@ -1,0 +1,27 @@
+<% const amount = locals.formatNumber(aggregated.numberOfReports) %>
+<!--  -->
+<%- include('partials/header') -%>
+
+<section
+  class="max-w-2xl sm:mt-20 mx-auto sm:bg-cvs-green sm:rounded-lg py-4 sm:p-10 mx-3"
+>
+  <h1 class="mt-0 text-3xl sm:text-4xl">
+    <%= __(`One more thing`) %>
+  </h1>
+  <p class="pb-4 mt-8 sm:mt-0">
+    <%= __(`To defeat the corona virus we need to make the invisible virus
+    visible.`) + " " + __(`{{ amount }} people already shared their health
+    status.`, { amount }) + " " + __(`Let your friends fill out this form too
+    and help the United States gain control over COVID-19.`) %>
+  </p>
+
+  <p class="pb-2 mt-6">
+    <%= __(`Contribute and share {{ hostname }} on`, { hostname: baseUrl }) %>
+  </p>
+
+  <div class="-ml-2 -mt-4 -mb-8">
+    <%- include('partials/share', { amount }) -%>
+  </div>
+</section>
+
+<%- include('partials/footer') -%>

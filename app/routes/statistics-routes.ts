@@ -9,6 +9,7 @@ import {
   getAllSymptomsStats,
   getTotalTested
 } from '../util/statistics';
+import { aggregateCovidReports } from '../util/report-aggregator';
 
 const router = express.Router();
 const reportRepo = new CovidReportRepository();
@@ -20,6 +21,7 @@ router.get('/data', async (req, res) => {
 
 router.get('/', async (req, res) => {
   const allReports = await reportRepo.getLatestCovidReports();
+  const aggregated = aggregateCovidReports(allReports);
   const infectedStats = getInfectedStats(allReports);
   const inContactWithInfectedStats = getInContactWithInfectedStats(
     allReports,
@@ -36,6 +38,7 @@ router.get('/', async (req, res) => {
 
   return res.render('pages/statistics', {
     infectedStats,
+    aggregated,
     allSymptomsStats,
     totalReportStats,
     inContactWithInfectedStats,

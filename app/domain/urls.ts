@@ -1,29 +1,36 @@
 import config from '../config';
 
-export type Locale =
-  | 'no'
-  | 'nl'
-  | 'en'
-  | 'en-US'
-  | 'en-AU'
-  | 'en-MT'
-  | 'es-MX'
-  | 'sk'
-  | 'it'
-  | 'tr'
-  | 'dk'
-  | 'ua'
-  | 'es-CO'
-  | 'es-AR'
-  | 'fr-FR'
-  | 'es-ES'
+// Please keep the countries sorted
+export type CountryCode =
+  | 'ar'
+  | 'au'
+  | 'bd'
+  | 'br'
   | 'ca'
-  | 'en-SG'
-  | 'ms-MY'
-  | 'se';
+  | 'cl'
+  | 'co'
+  | 'dk'
+  | 'en'
+  | 'es'
+  | 'fr'
+  | 'in'
+  | 'it'
+  | 'mt'
+  | 'mx'
+  | 'my'
+  | 'ng'
+  | 'nl'
+  | 'no'
+  | 'pt'
+  | 'se'
+  | 'sg'
+  | 'sk'
+  | 'tr'
+  | 'ua'
+  | 'us';
 
 type Urls = {
-  [locale in Locale]: {
+  [countryCode in CountryCode]: {
     submitReport: string;
     profile: string;
     privacyPolicy: string;
@@ -36,47 +43,7 @@ type Urls = {
 };
 
 const localeAwareUrls: Urls = {
-  no: {
-    submitReport: '/',
-    profile: '/helsetilstand',
-    privacyPolicy: '/personvern',
-    map: '/kart',
-    contributors: '/frivillige',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistikk'
-  },
-  nl: {
-    submitReport: '/',
-    profile: '/melding',
-    privacyPolicy: '/privacy-policy',
-    map: '/kaart',
-    contributors: '/bijdragers',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistieken'
-  },
-  en: {
-    submitReport: '/',
-    profile: '/healthcondition',
-    privacyPolicy: '/privacy-statement',
-    map: '/map',
-    contributors: '/contributors',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistics'
-  },
-  'en-US': {
-    submitReport: '/',
-    profile: '/healthcondition',
-    privacyPolicy: '/privacy-statement',
-    map: '/map',
-    contributors: '/contributors',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistics'
-  },
-  'es-AR': {
+  ar: {
     submitReport: '/',
     profile: '/estadosalud',
     privacyPolicy: '/aviso-privacidad',
@@ -86,7 +53,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/estadisticas'
   },
-  'en-AU': {
+  au: {
     submitReport: '/',
     profile: '/healthcondition',
     privacyPolicy: '/privacy-statement',
@@ -96,7 +63,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
-  'en-MT': {
+  bd: {
     submitReport: '/',
     profile: '/healthcondition',
     privacyPolicy: '/privacy-statement',
@@ -106,95 +73,15 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
-  'es-MX': {
+  br: {
     submitReport: '/',
-    profile: '/estadosalud',
-    privacyPolicy: '/aviso-privacidad',
+    profile: '/condicaosaude',
+    privacyPolicy: '/declaracao-privacidade',
     map: '/mapa',
-    contributors: '/colaboradores',
+    contributors: '/contribuidores',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/estadisticas'
-  },
-  sk: {
-    submitReport: '/',
-    profile: '/zdravotny-stav',
-    privacyPolicy: '/ochrana-sukromia',
-    map: '/mapa',
-    contributors: '/prispievatelia',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistiky'
-  },
-  it: {
-    submitReport: '/',
-    profile: '/profilo',
-    privacyPolicy: '/privacy',
-    map: '/mappa',
-    contributors: '/contributori',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistiche'
-  },
-  tr: {
-    submitReport: '/',
-    profile: '/profil',
-    privacyPolicy: '/gizlilik-bildirimi',
-    map: '/harita',
-    contributors: '/katkida-bulunanlar',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/istatistikler'
-  },
-  dk: {
-    submitReport: '/',
-    profile: '/helbredstilstand',
-    privacyPolicy: '/privat-politik',
-    map: '/kort',
-    contributors: '/frivillige',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistikker'
-  },
-  ua: {
-    submitReport: '/',
-    profile: '/healthcondition',
-    privacyPolicy: '/privacy-statement',
-    map: '/map',
-    contributors: '/contributors',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistics'
-  },
-  'es-CO': {
-    submitReport: '/',
-    profile: '/estadosalud',
-    privacyPolicy: '/aviso-privacidad',
-    map: '/mapa',
-    contributors: '/colaboradores',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/estadisticas'
-  },
-  'fr-FR': {
-    submitReport: '/',
-    profile: '/profil',
-    privacyPolicy: '/politique-de-confidentialite',
-    map: '/carte',
-    contributors: '/contributeurs',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistiques'
-  },
-  'es-ES': {
-    submitReport: '/',
-    profile: '/estadosalud',
-    privacyPolicy: '/aviso-privacidad',
-    map: '/mapa',
-    contributors: '/colaboradores',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/estadisticas'
+    statistics: '/estatisticas'
   },
   ca: {
     submitReport: '/',
@@ -206,7 +93,37 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
-  'en-SG': {
+  cl: {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
+  co: {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
+  dk: {
+    submitReport: '/',
+    profile: '/helbredstilstand',
+    privacyPolicy: '/privat-politik',
+    map: '/kort',
+    contributors: '/frivillige',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistikker'
+  },
+  en: {
     submitReport: '/',
     profile: '/healthcondition',
     privacyPolicy: '/privacy-statement',
@@ -216,7 +133,67 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics'
   },
-  'ms-MY': {
+  es: {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
+  fr: {
+    submitReport: '/',
+    profile: '/profil',
+    privacyPolicy: '/politique-de-confidentialite',
+    map: '/carte',
+    contributors: '/contributeurs',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistiques'
+  },
+  in: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  it: {
+    submitReport: '/',
+    profile: '/profilo',
+    privacyPolicy: '/privacy',
+    map: '/mappa',
+    contributors: '/contributori',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistiche'
+  },
+  mt: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  mx: {
+    submitReport: '/',
+    profile: '/estadosalud',
+    privacyPolicy: '/aviso-privacidad',
+    map: '/mapa',
+    contributors: '/colaboradores',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estadisticas'
+  },
+  my: {
     submitReport: '/',
     profile: '/keadaankesihatan',
     privacyPolicy: '/kenyataan-privasi',
@@ -225,6 +202,46 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistik'
+  },
+  ng: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  nl: {
+    submitReport: '/',
+    profile: '/melding',
+    privacyPolicy: '/privacy-policy',
+    map: '/kaart',
+    contributors: '/bijdragers',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistieken'
+  },
+  no: {
+    submitReport: '/',
+    profile: '/helsetilstand',
+    privacyPolicy: '/personvern',
+    map: '/kart',
+    contributors: '/frivillige',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistikk'
+  },
+  pt: {
+    submitReport: '/',
+    profile: '/estadosaude',
+    privacyPolicy: '/politica-privacidade',
+    map: '/mapa',
+    contributors: '/voluntarios',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estatistica'
   },
   se: {
     submitReport: '/',
@@ -235,7 +252,57 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistik'
+  },
+  sg: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  sk: {
+    submitReport: '/',
+    profile: '/zdravotny-stav',
+    privacyPolicy: '/ochrana-sukromia',
+    map: '/mapa',
+    contributors: '/prispievatelia',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistiky'
+  },
+  tr: {
+    submitReport: '/',
+    profile: '/profil',
+    privacyPolicy: '/gizlilik-bildirimi',
+    map: '/harita',
+    contributors: '/katkida-bulunanlar',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/istatistikler'
+  },
+  ua: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
+  },
+  us: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
   }
 };
 
-export const urls = localeAwareUrls[config.LANGUAGE as Locale];
+export const urls = localeAwareUrls[config.COUNTRY_CODE as CountryCode];

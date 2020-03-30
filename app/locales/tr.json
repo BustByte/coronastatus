@@ -49,6 +49,8 @@
   "NB!": "Önemli!",
   "This page is currently not affiliated with the authorities in any way.": "Bu sayfa hiçbir şekilde yetkili birimlere bağlı değildir.",
   "Read how the data you enter is processed here!": "Girdiğiniz verilerin nasıl işlendiğini öğrenin!",
+  "This page is not affiliated with the authorities.":"Bu sayfa yetkili birimlere bağlı değildir.",
+  "Learn more!":"Daha fazla bilgi edin!",
   "Use the link you noted down last time to update your health condition": "Daha önceden not aldığınız bağlantıyı kullanarak sağlık durumunuzu güncelleyin.",
   "Unreported cases": "Bildirilmemiş vakalar",
   "The spread of COVID-19 in our country is unknown. Help us create a better overview.": "COVID-19'un ülkemizde yayılımı bilinmemektedir. Daha iyi bir genel bakış oluşturmamıza yardımcı olun.",
@@ -182,5 +184,14 @@
   "In isolation due to COVID-19 infection": "COVID-19 enfeksiyonu yüzünden karantinada",
   "Some questions and alternatives were not a part of the form from the beginning:": "Bazı sorular ve alternatifler en başından beri yoktu:",
   "March 27": "27 Mart",
-  "Other": "Diğer"
+  "March 28": "28 Mart",
+  "In voluntary isolation to avoid potentially spreading or catching COVID-19": "COVID-19'a yakalanmamak veya potansiyel yayılmasına engel olmak için gönüllü izolasyonda",
+  "Other": "Diğer",
+  "CALL TO ALL US CITIZENS: This is how we defeat the corona virus: together we make the invisible virus visible.": "TÜM TÜRKİYE CUMHURİYETİ VATANDAŞLARINA ÇAĞRI: Korona virüsünü bu şekilde yeniyoruz: birlikte görünmez virüsü görünür kılıyoruz.",
+  "Contribute and share {{ hostname }} on": "{{ hostname }} adresine katkıda bulunun ve paylaşın",
+  "Fill out this form - it takes 1 minute - and help the United States gain control over COVID-19.": "Sadece 1 dakika sürecek olan bu formu doldurun ve Türkiye'nin COVID-19 üzerinde kontrol sahibi olmasına yardımcı olun.",
+  "One more thing": "Bir şey daha",
+  "To defeat the corona virus we need to make the invisible virus visible.": "Korona virüsünü yenmek için onu görünür hale getirmeliyiz.",
+  "{{ amount }} people already shared their health status.": "{{ amount }} kişi sağlık durumunu paylaştı.",
+  "Let your friends fill out this form too and help the United States gain control over COVID-19.": "Arkadaşlarınızın da bu formu doldurmasına ve Türkiye'nin COVID-19 üzerinde kontrol sahibi olmasına yardımcı olun."
 }
