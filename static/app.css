@@ -445,3 +445,8 @@ input[type='submit']:focus {
 .locale-selector-menu a {
   cursor: pointer;
 }
+
+/* Fix Flatpickr */
+.flatpickr-calendar select {
+  display: inline;
+}

@@ -499,7 +499,21 @@
   </div>
 </section>
 
+<script
+  src="https://cdn.coronastatus.eu/libraries/flatpickr-4.6.3.js"
+  integrity="sha384-UiZzAA+k9B6Xr4SykueV26lljeUk/hTx/fFNONRwB3Dt3dLDOXg8lQlbf/j8rB7B"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
 <script src="/static/form.js?v=<%= locals.cacheKey %>"></script>
+
+<script>
+  flatpickr(document.querySelectorAll('[type=date]'), {
+    altInput: true,
+    altFormat: '<%= __(`F j, Y`) %>',
+    dateFormat: 'Y-m-d'
+  });
+</script>
 
 <script>
   function hasSubmittedAlertOnClick() {
