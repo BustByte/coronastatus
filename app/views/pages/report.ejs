@@ -37,23 +37,7 @@
 
 <style>
   .breadcrumb {
-    float: left;
     cursor: pointer;
-  }
-  .paginate-header {
-    display: flex; flex-direction: row;
-    align-items: stretch;
-    justify-content: center;
-    width: 100%;
-  }
-  .breadcrumb-container {
-    list-style-type: none;
-    display: flex;
-    align-items: baseline;
-  }
-
-  #back-btn {
-    flex-grow: 1;
   }
 </style>
 
@@ -191,36 +175,7 @@
         <%- __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information!") %></p>
     <% } %>
 
-    <div class="paginate-header">
-      <ul class="mt-4 mx-4" id="back-btn" >
-        <li>
-          <input class="inverse" type="button" onclick="previousPage()" value="<%= __('Back') %>">
-        </li>
-      </ul> 
-      <ul class="mx-4 self-center text-center text-2xl breadcrumb-container">
-        <li class="breadcrumb" id="breadcrumb-1" onclick="goToPage(1)">
-          1&nbsp;
-        </li >
-        
-        <li class="breadcrumb" id="breadcrumb-2" onclick="goToPage(2)">
-          2&nbsp;
-        </li>
-        
-        <li class="breadcrumb" id="breadcrumb-3" onclick="goToPage(3)">
-          3&nbsp;
-        </li>
-
-        <li class="breadcrumb" id="breadcrumb-4" onclick="goToPage(4)">
-          4&nbsp;
-       </li>
-       
-       <li class="breadcrumb" id="breadcrumb-5" onclick="goToPage(5)">
-         5
-       </li>
-      </ul> 
-
-    </div>
-
+   
     <div class="max-w-4xl mx-auto my-4 border-b-2 pb-4">	
       <div class="flex pb-3">
 
@@ -235,14 +190,14 @@
         </div>
     
     
-        <div class="w-8 sm:w-12 md:w-24 align-center items-center align-middle content-center flex">
+        <div class="w-8 sm:w-12 md:w-24 align-center items-center align-middle content-center flex" >
           <div class="w-full bg-gray-500 rounded items-center align-middle align-center flex-1">
-             <div class="bg-cvs-green-dark text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 100%"></div>
+             <div id="progress-bar-1" class="bg-cvs-green-dark text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 100%"></div>
           </div>
         </div>
       
         
-        <div class="flex-1">
+        <div class="flex-1 breadcrumb" id="breadcrumb-2" onclick="goToPage(2)">
           <div class="w-10 h-10 bg-cvs-green-dark mx-auto rounded-full text-lg text-white flex items-center">
             <svg class="mx-auto h-8 w-8 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -252,11 +207,11 @@
       
         <div class="w-8 sm:w-12 md:w-24 align-center items-center align-middle content-center flex">
           <div class="w-full bg-gray-500 rounded items-center align-middle align-center flex-1">
-             <div class="bg-cvs-green-dark text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 30%"></div>
+             <div id="progress-bar-2" class="bg-cvs-green-dark text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 30%"></div>
           </div>
         </div>
       
-        <div class="flex-1">
+        <div class="flex-1 breadcrumb" id="breadcrumb-3" onclick="goToPage(3)">
           <div class="w-10 h-10 bg-cvs-green-light border-2 border-cvs-green-dark mx-auto rounded-full text-lg flex items-center">
             <span class="text-gray-800 text-center w-full">3</span>
           </div>
@@ -265,12 +220,12 @@
       
         <div class="w-8 sm:w-12 md:w-24 align-center items-center align-middle content-center flex">
           <div class="w-full bg-gray-500 rounded items-center align-middle align-center flex-1">
-             <div class="bg-cvs-green-dark text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 0%"></div>
+             <div id="progress-bar-3" class="bg-cvs-green-dark text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 0%"></div>
           </div>
         </div>
     
     
-        <div class="flex-1">
+        <div class="flex-1 breadcrumb" id="breadcrumb-4" onclick="goToPage(4)">
           <div class="w-10 h-10 bg-cvs-green-light border-2 border-cvs-green-dark mx-auto rounded-full text-lg flex items-center">
             <span class="text-gray-800 text-center w-full">4</span>
           </div>
@@ -278,11 +233,11 @@
 
         <div class="w-8 sm:w-12 md:w-24 align-center items-center align-middle content-center flex">
           <div class="w-full bg-gray-500 rounded items-center align-middle align-center flex-1">
-             <div class="bg-cvs-green-dark text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 0%"></div>
+             <div id="progress-bar-4" class="bg-cvs-green-dark text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 0%"></div>
           </div>
         </div>
       
-        <div class="flex-1">
+        <div class="flex-1 breadcrumb" id="breadcrumb-5" onclick="goToPage(5)">
           <div class="w-10 h-10 bg-cvs-green-light border-2 border-cvs-green-dark mx-auto rounded-full text-lg flex items-center">
             <span class="text-gray-800 text-center w-full">5</span>
           </div>
@@ -295,23 +250,23 @@
       </div>
       
       <div class="flex text-xs content-center text-center">
-        <div class="w-1/5">
+        <div class="w-1/5 breadcrumb" onclick="goToPage(1)" >
           Demography and geography
         </div>
         
-        <div class="w-1/5">
+        <div class="w-1/5 breadcrumb" onclick="goToPage(2)">
           Testing & Isolation
         </div>
         
-        <div class="w-1/5">
+        <div class="w-1/5 breadcrumb" onclick="goToPage(3)">
           Symptoms
         </div>
         
-        <div class="w-1/5">
+        <div class="w-1/5 breadcrumb" onclick="goToPage(4)">
           Health
         </div>	
 
-        <div class="w-1/5">
+        <div class="w-1/5 breadcrumb" onclick="goToPage(5)">
           Submit & Share
         </div>		
 
@@ -440,6 +395,7 @@
       </fieldset>
       <ul class="mt-4">
         <li>
+          <input class="inverse" type="button" onclick="previousPage()" value="<%= __('Back') %>">
           <input class="inverse" type="button" onclick="nextPage(validateTestingAndIsolation)" value="<%= __('Next') %>">
         </li>
       </ul>
@@ -544,6 +500,7 @@
     </div>
     <ul class="mt-4">
       <li>
+        <input class="inverse" type="button" onclick="previousPage()" value="<%= __('Back') %>">
         <input class="inverse" type="button" onclick="nextPage(validateSymptoms)" value="<%= __('Next') %>">
       </li>
     </ul> 
@@ -625,6 +582,7 @@
     >
     <ul class="mt-4">
       <li>
+        <input class="inverse" type="button" onclick="previousPage()" value="<%= __('Back') %>">
         <input class="inverse" type="button" onclick="nextPage(validateHealth)" value="<%= __('Next') %>">
       </li>
     </ul> 
@@ -660,7 +618,8 @@
     <ul class="mt-4">
       <li>
         <input type="hidden" name="passcode" value="<%= passcode %>" />
-        <input class="inverse custom-nav-link rounded-full text-base text-white mt-2 font-medium px-5 py-3" type="submit" value="<%= __('Submit report') %>">
+        <input class="inverse" type="button" onclick="previousPage()" value="<%= __('Back') %>">
+        <input class="inverse" type="submit" value="<%= __('Submit report') %>">
       </li>
     </ul>
   </div>
@@ -780,6 +739,10 @@
  const numPages = 5;
  var currentPage = 1;
 
+ /*increase page number by 1 and rerender the form. 
+ An optional validation function can be used to validate the contents of a page 
+ before you can move to the next page
+ */
  function nextPage(validationFunction) {
    if (validationFunction) {
       if (validationFunction()) {
@@ -793,43 +756,91 @@
    }
  }
 
+ //decrease page number by 1 and rerender the form
  function previousPage() {
    currentPage = currentPage - 1;
    updatePaginate();
  }
 
+ //updates page number to a specific page (page) and then rerenders the paginated form
  function goToPage(page) {
   currentPage = page;
   updatePaginate();
  }
 
- function renderBackButton() {
-   const back = document.getElementById("back-btn");
-   if (currentPage != 1) {
-    back.style.display = "block";
-   } else {
-    back.style.display = "none";
-   }
+ //Creates inner html for a breadcrumb which is incomplete and displays a number (i)
+ function incompleteBreadcrumb(breadcrumb, i) {
+  var breadcontent = document.createElement("div");
+      breadcontent.classList.add("w-10");
+      breadcontent.classList.add("h-10");
+      breadcontent.classList.add("bg-cvs-green-light");
+      breadcontent.classList.add("border-2");
+      breadcontent.classList.add("border-cvs-green-dark");
+      breadcontent.classList.add("mx-auto");
+      breadcontent.classList.add("rounded-full");
+      breadcontent.classList.add("text-lg");
+      breadcontent.classList.add("flex");
+      breadcontent.classList.add("items-center");
+      
+      var span = document.createElement("span");
+      span.classList.add("text-gray-800");
+      span.classList.add("text-center");
+      span.classList.add("w-full");
+      span.innerText = `${i}`;
+      
+      breadcontent.appendChild(span);
+      breadcrumb.appendChild(breadcontent);
+      breadcrumb.onclick = () => {};
+ }
+
+ //Creates inner html for a breadcrumb which is marked complete with a check mark
+ function completeBreadcrumb(breadcrumb, i) {
+  var breadcontent = document.createElement("div");
+      breadcontent.classList.add("w-10");
+      breadcontent.classList.add("h-10");
+      breadcontent.classList.add("bg-cvs-green-dark");
+      breadcontent.classList.add("mx-auto");
+      breadcontent.classList.add("rounded-full");
+      breadcontent.classList.add("text-lg");
+      breadcontent.classList.add("text-white");
+      breadcontent.classList.add("flex");
+      breadcontent.classList.add("items-center");
+      breadcontent.innerHTML = `<svg class="mx-auto h-8 w-8 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/> </svg>`;
+      breadcrumb.appendChild(breadcontent);
+      breadcrumb.onclick = () => goToPage(i);
+ }
+
+ /*Applies updates to a progress bar given it's id number (i). 
+ If it can't find a progress bar with the id it does nothing*/
+ function updateProgressBar(i, percent) {
+  var bar = document.getElementById(`progress-bar-${i}`);
+  if (bar) {
+    bar.style.width = percent;
+  }
  }
 
  function updatePaginate() {
   for (var i = 1; i <= numPages; i++) {
     var page = document.getElementById(`page-${i}`);
     var breadcrumb = document.getElementById(`breadcrumb-${i}`);
-    if (i === currentPage) {
-      page.style.display = "block";
-      breadcrumb.style.color = "white";
-      breadcrumb.classList.add("text-4xl");
+    breadcrumb.textContent = '';
 
-    } else {
+    if (i === currentPage) {
+      incompleteBreadcrumb(breadcrumb, i);
+      updateProgressBar(i, "50%")
+      page.style.display = "block";
+    } else if (i < currentPage) {
+      completeBreadcrumb(breadcrumb, i);
+      updateProgressBar(i, "100%")
       page.style.display = "none";
-      breadcrumb.style.color = "black";
-      breadcrumb.classList.remove("text-4xl");
+    } else {
+      incompleteBreadcrumb(breadcrumb, i);
+      updateProgressBar(i, "0%")
+      page.style.display = "none";
     }
   }
-  renderBackButton();
  }
- updatePaginate();
+ updatePaginate();//initalize the pagination
 
 
 </script>
