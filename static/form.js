@@ -9,6 +9,8 @@ function changeTestResultDisplay(show) {
   }
 }
 
+flatpickr(document.querySelectorAll('[type=date]'));
+
 var symptomCheckboxes = document.querySelectorAll(
   'input[type=checkbox][name^=symptom-]'
 );
