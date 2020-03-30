@@ -96,8 +96,8 @@ const extractTestResult = (req: Request): TestResult | undefined => {
 };
 
 const createReportRateLimit = rateLimit({
-  max: config.RATE_LIMIT, // allowed requests per window
-  windowMs: 24 * 60 * 60 * 1000, // 24 hour window,
+  max: config.RATE_LIMIT_COUNT, // allowed requests per window
+  windowMs: config.RATE_LIMIT_WINDOW, // window length in miliseconds
   keyGenerator: req => determineRemoteAddress(req),
   onLimitReached(req, res) {
     return res.redirect(`${res.locals.urls.limit}`);

@@ -35,7 +35,8 @@ const fallbackConfig: Config = {
   PASSCODE_LENGTH: parseInt(process.env.PASSCODE_LENGTH || '3', 10),
   DB_PATH: process.env.DB_PATH || './covid_db',
   THOUSAND_SEPARATOR: process.env.THOUSAND_SEPARATOR || ' ',
-  RATE_LIMIT: parseInt(process.env.RATE_LIMIT || '20', 10)
+  RATE_LIMIT_COUNT: parseInt(process.env.RATE_LIMIT_COUNT || '20', 10),
+  RATE_LIMIT_WINDOW: parseInt(process.env.RATE_LIMIT_WINDOW || '86400000', 10)
 };
 
 // @ts-ignore
