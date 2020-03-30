@@ -15,6 +15,7 @@ export type CountryCode =
   | 'fr'
   | 'in'
   | 'it'
+  | 'lt'
   | 'mt'
   | 'mx'
   | 'my'
@@ -172,6 +173,16 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistiche'
+  },
+  lt: {
+    submitReport: '/',
+    profile: '/sveikatos-bukle',
+    privacyPolicy: '/privatumo-politika',
+    map: '/zemelapis',
+    contributors: '/autoriai',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistika'
   },
   mt: {
     submitReport: '/',
