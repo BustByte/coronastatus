@@ -75,6 +75,6 @@ Follow the steps below to deploy a production-ready NodeJS application on an Ubu
 
 `sudo service nginx restart`
 
-9. Enbale HTTPS
+9. Enable HTTPS
 
 `sudo certbot --nginx`
