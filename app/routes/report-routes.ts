@@ -100,7 +100,7 @@ const createReportRateLimit = rateLimit({
   windowMs: config.RATE_LIMIT_WINDOW, // window length in miliseconds
   keyGenerator: req => determineRemoteAddress(req),
   onLimitReached(req, res) {
-    return res.redirect(`${res.locals.urls.limit}`);
+    return res.redirect(res.locals.urls.limit);
   }
 });
 
