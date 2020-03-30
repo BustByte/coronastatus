@@ -508,7 +508,11 @@
 <script src="/static/form.js?v=<%= locals.cacheKey %>"></script>
 
 <script>
-  flatpickr(document.querySelectorAll('[type=date]'));
+  flatpickr(document.querySelectorAll('[type=date]'), {
+    altInput: true,
+    altFormat: '<%= __(`F j, Y`) %>',
+    dateFormat: 'Y-m-d'
+  });
 </script>
 
 <script>
