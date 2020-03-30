@@ -788,8 +788,8 @@
       }
    } else {
      /* no validation function given */
-   currentPage = currentPage + 1;
-   updatePaginate();
+    currentPage = currentPage + 1;
+    updatePaginate();
    }
  }
 
@@ -836,9 +836,10 @@
 
 <script>
   /* Page validation functions. 
-  If validation fails and messages to be displayed should be dispatched in the validation function. */
+  If validation fails and messages to be displayed should be dispatched in the validation function.
+  These aren't done */
   const validateDemographicsAndGeography = () => {
-    return true;
+      return true;
   }
 
   const validateTestingAndIsolation = () => {
@@ -850,10 +851,6 @@
   }
 
   const validateHealth = () => {
-    return true;
-  }
-
-  const validatePrivacyAndSubmit = () => {
     return true;
   }
 </script>
