@@ -35,6 +35,28 @@
 
 <%- include('partials/header', { home: true, menu: false }) -%>
 
+<style>
+  .breadcrumb {
+    float: left;
+    cursor: pointer;
+  }
+  .paginate-header {
+    display: flex; flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+  }
+  .breadcrumb-container {
+    list-style-type: none;
+    display: flex;
+    align-items: baseline;
+  }
+
+  #back-btn {
+    flex-grow: 1;
+  }
+</style>
+
 <section class="custom-section custom-hero p-4">
   <div class="custom-section-content mx-auto">
     <header class="py-2 flex justify-between items-center flex-wrap">
@@ -169,6 +191,37 @@
         <%- __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information!") %></p>
     <% } %>
 
+    <div class="paginate-header">
+      <ul class="mt-4 mx-4" id="back-btn" >
+        <li>
+          <input class="inverse" type="button" onclick="previousPage()" value="<%= __('Back') %>">
+        </li>
+      </ul> 
+      <ul class="mx-4 self-center text-center text-2xl breadcrumb-container">
+        <li class="breadcrumb" id="breadcrumb-1" onclick="goToPage(1)">
+          1&nbsp;
+        </li >
+        
+        <li class="breadcrumb" id="breadcrumb-2" onclick="goToPage(2)">
+          2&nbsp;
+        </li>
+        
+        <li class="breadcrumb" id="breadcrumb-3" onclick="goToPage(3)">
+          3&nbsp;
+        </li>
+
+        <li class="breadcrumb" id="breadcrumb-4" onclick="goToPage(4)">
+          4&nbsp;
+       </li>
+       
+       <li class="breadcrumb" id="breadcrumb-5" onclick="goToPage(5)">
+         5
+       </li>
+      </ul> 
+    </div>
+
+  <div id="page-1">
+
     <div class="flex flex-row items-center mt-8">
       <img src="/static/images/map.svg" alt="" class="h-16 w-16">
       <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Geography and demography") %></h3>
@@ -206,11 +259,18 @@
         <span>- </span><a class="text-cvs-red font-bold hover:underline" href="<%= __(`https://www.whatismyzip.com`) %>" target="_blank"><%= __('What is my Zip code?') %></a>
       <% } %>
     </label>
-    <input class="appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="<%= locals.zipPattern %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
+    <input class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="<%= locals.zipPattern %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
+    <ul class="mt-4">
+      <li>
+        <input class="inverse" type="button" onclick="nextPage(validateDemographicsAndGeography)" value="<%= __('Next') %>">
+      </li>
+    </ul>
+  </div>
 
+  <div id="page-2">
     <div class="flex flex-row items-center mt-8">
       <img src="/static/images/mask.svg" alt="" class="h-16 w-16">
-      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Testing and symptoms") %></h3>
+      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Testing and isolation") %></h3>
     </div>
 
     <fieldset>
@@ -254,6 +314,42 @@
       </fieldset>
     </div>
 
+
+    <fieldset>
+      <legend><%= __('I am currently:')%></legend>
+      <p class="mb-2">
+        <input required type="radio" id="not-in-isolation" name="isolation-status" value="not-in-isolation" <%= isolationStatus === 'NOT_IN_ISOLATION' ? 'checked' : '' %>>
+        <label for="not-in-isolation"><%= __("Not in isolation") %></label>
+      </p>
+      <p class="mb-2">
+        <input required type="radio" id="isolation-due-to-travel" name="isolation-status" value="isolation-due-to-travel" <%= isolationStatus === 'ISOLATION_DUE_TO_TRAVEL' ? 'checked' : '' %>>
+        <label for="isolation-due-to-travel"><%= __("In isolation due to a recent international travel") %></label>
+      </p>
+      <p class="mb-2">
+        <input required type="radio" id="isolation-due-to-contact" name="isolation-status" value="isolation-due-to-contact" <%= isolationStatus === 'ISOLATION_DUE_TO_CONTACT' ? 'checked' : '' %>>
+        <label for="isolation-due-to-contact"><%= __("In isolation due to contact with an individual who has been exposed to the coronavirus.") %></label>
+      </p>
+      <p class="mb-2">
+        <input required type="radio" id="isolation-due-to-government" name="isolation-status" value="isolation-due-to-government" <%= isolationStatus === 'ISOLATION_DUE_TO_GOVERNMENT_ORDERS' ? 'checked' : '' %>>
+        <label for="isolation-due-to-government"><%= __("In isolation due to orders from the government") %></label>
+      </p>
+      <p>
+        <input required type="radio" id="isolation-due-to-covid-19" name="isolation-status" value="isolation-due-to-covid-19" <%= isolationStatus === 'ISOLATION_DUE_TO_COVID_19' ? 'checked' : '' %>>
+        <label for="isolation-due-to-covid-19"><%= __("In isolation due to COVID-19 infection") %></label>
+      </p>
+      </fieldset>
+      <ul class="mt-4">
+        <li>
+          <input class="inverse" type="button" onclick="nextPage(validateTestingAndIsolation)" value="<%= __('Next') %>">
+        </li>
+      </ul>
+  </div>
+
+  <div id="page-3">
+    <div class="flex flex-row items-center mt-8">
+      <img src="/static/images/symptoms.svg" alt="" class="h-16 w-16">
+      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Symptoms") %></h3>
+    </div>
     <fieldset>
     <legend class="mb-0"><%= __('Symptoms you have experienced') %></legend>
     <p class="mb-4"><%- __('Select only the symptoms you have experienced') %></p>
@@ -346,7 +442,18 @@
         id="symptom-start"
         value="<%= symptomStart %>">
     </div>
+    <ul class="mt-4">
+      <li>
+        <input class="inverse" type="button" onclick="nextPage(validateSymptoms)" value="<%= __('Next') %>">
+      </li>
+    </ul> 
+  </div>
 
+  <div id="page-4">
+    <div class="flex flex-row items-center mt-8">
+      <img src="/static/images/doctor.svg" alt="" class="h-16 w-16">
+      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Health") %></h3>
+    </div>
     <fieldset>
     <legend class="mb-0"><%= __('Have you been diagnosed with any of the following conditions?')%></legend>
     <p class="mb-4"><%= __('Diabetes mellitus, Hypertension, Ischemic heart disease, Asthma, Chronic lung disease, Chronic kidney disease') %></p>
@@ -416,8 +523,18 @@
       id="body-temperature"
       value="<%= bodyTemperature %>"
     >
+    <ul class="mt-4">
+      <li>
+        <input class="inverse" type="button" onclick="nextPage(validateHealth)" value="<%= __('Next') %>">
+      </li>
+    </ul> 
+  </div>
 
-
+  <div id="page-5">
+    <div class="flex flex-row items-center mt-8">
+      <img src="/static/images/napkin.svg" alt="" class="h-16 w-16">
+      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Privacy and submit") %></h3>
+    </div>
     <h3 class="text-cvs-red text-xl font-bold m-4 ml-0 mt-8 mb-0"><%= __("How will my data be used?") %></h3>
 
     <p class="mt-0 mb-4"><%= __('Your health information is stored anonymously, and can not be used to identify you.')%><br />
@@ -446,6 +563,7 @@
         <input class="inverse custom-nav-link rounded-full text-base text-white mt-2 font-medium px-5 py-3" type="submit" value="<%= __('Submit report') %>">
       </li>
     </ul>
+  </div>
   </form>
 </section>
 
@@ -553,6 +671,91 @@
 <script>
   // Obfuscate path so people will not share their personal URL
   var obfuscatePath = true;
+</script>
+
+<script>
+  /* Pagination
+
+  */
+ const numPages = 5;
+ var currentPage = 1;
+
+ function nextPage(validationFunction) {
+   if (validationFunction) {
+      if (validationFunction()) {
+        currentPage = currentPage + 1;
+        updatePaginate();
+      }
+   } else {
+     /* no validation function given */
+   currentPage = currentPage + 1;
+   updatePaginate();
+   }
+ }
+
+ function previousPage() {
+   currentPage = currentPage - 1;
+   updatePaginate();
+ }
+
+ function goToPage(page) {
+  currentPage = page;
+  updatePaginate();
+ }
+
+ function renderBackButton() {
+   const back = document.getElementById("back-btn");
+   if (currentPage != 1) {
+    back.style.display = "block";
+   } else {
+    back.style.display = "none";
+   }
+ }
+
+ function updatePaginate() {
+  for (var i = 1; i <= numPages; i++) {
+    var page = document.getElementById(`page-${i}`);
+    var breadcrumb = document.getElementById(`breadcrumb-${i}`);
+    if (i === currentPage) {
+      page.style.display = "block";
+      breadcrumb.style.color = "white";
+      breadcrumb.classList.add("text-4xl");
+
+    } else {
+      page.style.display = "none";
+      breadcrumb.style.color = "black";
+      breadcrumb.classList.remove("text-4xl");
+    }
+  }
+  renderBackButton();
+ }
+ updatePaginate();
+
+
+</script>
+
+<script>
+  /* Page validation functions. 
+  If validation fails and messages to be displayed should be dispatched in the validation function. */
+  const validateDemographicsAndGeography = () => {
+    return true;
+  }
+
+  const validateTestingAndIsolation = () => {
+    return true;
+  }
+
+  const validateSymptoms = () => {
+    return true;
+  }
+
+  const validateHealth = () => {
+    return true;
+  }
+
+  const validatePrivacyAndSubmit = () => {
+    return true;
+  }
 </script>
 
 <%- include('partials/footer', { home: true }) -%>
