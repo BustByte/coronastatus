@@ -733,6 +733,34 @@
 </script>
 
 <script>
+  /* Page validation functions. 
+  If validation fails and messages to be displayed should be dispatched in the validation function.
+  These aren't done */
+  const validateDemographicsAndGeography = () => {
+      return true;
+  }
+
+  const validateTestingAndIsolation = () => {
+    return true;
+  }
+
+  const validateSymptoms = () => {
+    return true;
+  }
+
+  const validateHealth = () => {
+    return true;
+  }
+
+  const validationFunctions = [
+    validateDemographicsAndGeography,
+    validateTestingAndIsolation,
+    validateSymptoms,
+    validateHealth
+  ];
+</script>
+
+<script>
   /* Pagination
 
   */
@@ -790,7 +818,11 @@
       
       breadcontent.appendChild(span);
       breadcrumb.appendChild(breadcontent);
-      breadcrumb.onclick = () => {};
+      if (validationFunctions[i] && validationFunctions[i]()) {
+        breadcrumb.onclick = () => goToPage(i);
+      } else {
+        breadcrumb.onclick = () => {};
+      }
  }
 
  //Creates inner html for a breadcrumb which is marked complete with a check mark
@@ -845,26 +877,7 @@
 
 </script>
 
-<script>
-  /* Page validation functions. 
-  If validation fails and messages to be displayed should be dispatched in the validation function.
-  These aren't done */
-  const validateDemographicsAndGeography = () => {
-      return true;
-  }
 
-  const validateTestingAndIsolation = () => {
-    return true;
-  }
-
-  const validateSymptoms = () => {
-    return true;
-  }
-
-  const validateHealth = () => {
-    return true;
-  }
-</script>
 
 <%- include('partials/footer', { home: true }) -%>
 
