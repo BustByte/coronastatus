@@ -176,7 +176,7 @@
 
 
     <label class="text-h4" for="Age"><%= __("Your age") %></label>
-    <select required name="age" id="Age">
+    <select class="appearance-none rounded focus:outline-none focus:shadow-outline" required name="age" id="Age">
       <option value="" disabled selected><%= __("Choose your age") %></option>
       <% for(var i=0; i<100; i+=10) {
         const ageSpan = `${i} - ${i + 9}`;
