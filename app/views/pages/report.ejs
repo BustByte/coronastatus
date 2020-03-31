@@ -821,16 +821,12 @@
     return [true,undefined];
   }
 
-  const validateSumbitAndShare = () => {
-    return [true,undefined];
-  }
-
   const validationFunctions = [
     validateDemographicsAndGeography,
     validateTestingAndIsolation,
     validateSymptoms,
     validateHealth,
-    validateSumbitAndShare
+    () => [true,undefined]
   ];
 
   function radioSet(collection) {
