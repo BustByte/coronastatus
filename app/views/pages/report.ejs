@@ -52,6 +52,24 @@
     padding-left: 5%;
     padding-right: 5%;
   }
+  
+  /*Toast open/load animation*/
+	.alert-toast {
+		-webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      z-index: 20000;
+	}
+	/*Toast close animation*/
+	.alert-toast input:checked ~ * {
+		-webkit-animation: fade-out-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: fade-out-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        z-index: 10000;
+	}
+	/* -------------------------------------------------------------
+	 * Animations generated using Animista * w: http://animista.net, 
+	 * ---------------------------------------------------------- */
+	@-webkit-keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@-webkit-keyframes slide-out-top{0%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}100%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}}@keyframes slide-out-top{0%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}100%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}}@-webkit-keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@-webkit-keyframes slide-out-bottom{0%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}100%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}}@keyframes slide-out-bottom{0%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}100%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}}@-webkit-keyframes slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@-webkit-keyframes fade-out-right{0%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}100%{-webkit-transform:translateX(50px);transform:translateX(50px);opacity:0}}@keyframes fade-out-right{0%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}100%{-webkit-transform:translateX(50px);transform:translateX(50px);opacity:0}}
+
 </style>
 
 <section class="custom-section custom-hero p-4">
@@ -857,7 +875,7 @@
         updatePaginate();
       } else {
         //show validation errors to the user here
-        valid[1] ? alert(valid[1]): false;
+        valid[1] ? toastAlert(valid[1]): false;
       }
    } else {
      /* no validation function given */
@@ -865,6 +883,46 @@
     updatePaginate();
    }
  }
+ 
+ //creates an alert for the user displaying given msg 
+ function toastAlert(msg) {
+   var toast = document.createElement("div");
+   toast.classList.add("alert-toast");
+   toast.classList.add("fixed");
+   toast.classList.add("bottom-0")
+   toast.classList.add("right-0");
+   toast.classList.add("m-8");
+   toast.classList.add("w-5/6");
+   toast.classList.add("md:w-full");
+   toast.classList.add("max-w-sm");
+   var input = document.createElement("input");
+   input.classList.add("hidden");
+   input.type = "checkbox";
+   input.id = "footertoast";
+   toast.appendChild(input);
+   var label = document.createElement("label");
+   label.for = "footertoast";
+   label.title = `<%= __("Close") %>`;
+   label.classList.add("close");
+   label.classList.add("cursor-pointer");
+   label.classList.add("flex");
+   label.classList.add("items-start");
+   label.classList.add("justify-between");
+   label.classList.add("w-full");
+   label.classList.add("p-2");
+   label.classList.add("bg-cvs-red");
+   label.classList.add("h-24");
+   label.classList.add("rounded");
+   label.classList.add("shadow-lg");
+   label.classList.add("text-white");
+   label.innerHTML = msg + `<svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path></svg>`;
+   toast.appendChild(label);
+   toast.onclick = () => {
+    document.getElementById("footertoast").checked = "checked";
+   }
+   document.getElementsByTagName('body')[0].appendChild(toast);
+ }
+
 
  //decrease page number by 1 and rerender the form
  function previousPage() {
