@@ -20,6 +20,7 @@ export type Locale =
   | 'en-MY'
   | 'nl'
   | 'no'
+  | 'ne'
   | 'pt-BR'
   | 'pt-PT'
   | 'se'
@@ -52,6 +53,7 @@ const localeToFlagMap: LocaleToFlagMap = {
   'en-MY': 'gb',
   nl: 'nl',
   no: 'no',
+  ne: 'np',
   'pt-BR': 'br',
   'pt-PT': 'pt',
   se: 'se',
