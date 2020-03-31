@@ -314,7 +314,7 @@
     </div>
 
 
-    <label class="text-h4" for="Age"><%= __("Your age") %></label>
+    <label class="text-h4" for="Age"><%= __("Your age") %> <span class="text-cvs-green-dark">*</span></label>
     <select class="appearance-none rounded focus:outline-none focus:shadow-outline" required name="age" id="Age">
       <option value="" disabled selected><%= __("Choose your age") %></option>
       <% for(var i=0; i<100; i+=10) {
@@ -325,7 +325,7 @@
     </select>
 
     <fieldset>
-    <legend><%= __("Biological gender") %></legend>
+    <legend><%= __("Biological gender") %> <span class="text-cvs-green-dark">*</span></legend>
     <p class="mb-2">
       <input required type="radio" id="gender-female" name="gender" value="female" <%= sex === 'FEMALE' ? 'checked' : '' %>>
       <label for="gender-female"><%= __("Female") %></label>
@@ -344,6 +344,7 @@
       <% if (locals.zipGuide) { %>
         <span>- </span><a class="text-cvs-red font-bold hover:underline" href="<%= __(`https://www.whatismyzip.com`) %>" target="_blank"><%= __('What is my Zip code?') %></a>
       <% } %>
+      <span class="text-cvs-green-dark">*</span>
     </label>
     <input class="appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="<%= locals.zipPattern %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
     <ul class="mt-8 nav-btn-container">
@@ -360,7 +361,7 @@
     </div>
 
     <fieldset>
-    <legend><%= __("Have you been in close contact with someone who was tested positive for COVID-19?") %></legend>
+    <legend><%= __("Have you been in close contact with someone who was tested positive for COVID-19?") %> <span class="text-cvs-green-dark">*</span></legend>
 
     <p>
       <input required type="radio" id="been-in-contact-with-yes" name="been-in-contact-with" value="yes" <%= hasBeenInContactWithInfected ? 'checked' : '' %>>
@@ -373,7 +374,7 @@
 
 
     <fieldset>
-    <legend><%= __('Have you been tested for COVID-19?')%></legend>
+    <legend><%= __('Have you been tested for COVID-19?')%> <span class="text-cvs-green-dark">*</span></legend>
     <p>
         <input required type="radio" id="been-tested-yes" name="been-tested" value="yes" onclick="changeTestResultDisplay(true)" <%= hasBeenTested ? 'checked' : '' %>>
         <label class="mr-4" for="been-tested-yes"><%= __('Yes')%></label>
@@ -385,7 +386,7 @@
 
     <div id="test-result-question" style="display: none;">
       <fieldset>
-      <legend><%= __('What was the result?')%></legend>
+      <legend><%= __('What was the result?')%> <span class="text-cvs-green-dark">*</span></legend>
 
       <p>
         <input type="radio" id="test-response-positive" name="test-response" value="positive" <%= testResult === 'POSITIVE' ? 'checked' : '' %>>
@@ -402,7 +403,7 @@
 
 
     <fieldset>
-      <legend><%= __('I am currently:')%></legend>
+      <legend><%= __('I am currently:')%> <span class="text-cvs-green-dark">*</span></legend>
       <p class="mb-2">
         <input required type="radio" id="not-in-isolation" name="isolation-status" value="not-in-isolation" <%= isolationStatus === 'NOT_IN_ISOLATION' ? 'checked' : '' %>>
         <label for="not-in-isolation"><%= __("Not in isolation") %></label>
@@ -521,7 +522,7 @@
     </fieldset>
 
     <div id="symptom-start-question" style="display: none;">
-      <label for="symptom-start"><%= __('When did the symptoms start?')%></label>
+      <label for="symptom-start"><%= __('When did the symptoms start?')%> <span class="text-cvs-green-dark">*</span></label>
       <input
         class="appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         type="date"
@@ -543,7 +544,7 @@
       <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Health") %></h3>
     </div>
     <fieldset>
-    <legend class="mb-0"><%= __('Have you been diagnosed with any of the following conditions?')%></legend>
+    <legend class="mb-0"><%= __('Have you been diagnosed with any of the following conditions?')%> <span class="text-cvs-green-dark">*</span></legend>
     <p class="mb-4"><%= __('Diabetes mellitus, Hypertension, Ischemic heart disease, Asthma, Chronic lung disease, Chronic kidney disease') %></p>
     <p>
         <input required type="radio" id="diagnosed-other-conditions-yes" name="diagnosed-other-conditions" value="yes" <%= diagnosedWithOtherConditions ? 'checked' : '' %>>
@@ -556,7 +557,7 @@
 
 
     <fieldset>
-    <legend><%= __('Cigarette smoking habits:') %></legend>
+    <legend><%= __('Cigarette smoking habits:') %> <span class="text-cvs-green-dark">*</span></legend>
     <p class="mb-2">
       <input required type="radio" id="currently-smoking" name="smoking-habits" value="currently-smoking" <%= smokingHabit === 'CURRENTLY' ? 'checked' : '' %>>
       <label for="currently-smoking"><%= __("I currently smoke") %></label>
