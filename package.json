@@ -81,7 +81,8 @@
       "prettier"
     ],
     "env": {
-      "es6": true
+      "es6": true,
+      "jest": true
     },
     "rules": {
       "import/extensions": 0,
