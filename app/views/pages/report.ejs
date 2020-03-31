@@ -782,7 +782,7 @@
 
       //validate zip/postal code
       const isInt = parseInt(document.getElementById("postal-code").value);
-      const correctLength = document.getElementById("postal-code").value.length === <%= locals.zipLength %>;
+      const correctLength = document.getElementById("postal-code").value.length === parseInt("<%= locals.zipLength %>");
       if (!isInt || !correctLength) {
         return [false,"<%= __('Please enter a valid postal code for your country') %>"];
       }
