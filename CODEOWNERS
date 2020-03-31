@@ -1,9 +1,11 @@
 * @fossecode
-/static/no/ @fossecode
-/static/nl/ @Kilian
+/app/countrySpecific/sk-* @sbocinec
 /app/locales/nl.json @Kilian
 /app/locales/no.json @michaelmcmillan
 /app/locales/sk*.json @sbocinec
-*.md @michaelmcmillan
 /app/repository/ @Snikanes
 /app/views/ @fossecode
+/app/views/privacy-statements/sk-privacy-statement.ejs @sbocinec
+/ops/sk/ @sbocinec
+/static/no/ @fossecode
+/static/nl/ @Kilian

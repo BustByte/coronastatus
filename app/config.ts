@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/ban-ts-ignore */
 import { Config } from './domain/types';
+import { CountryCode } from './domain/urls';
+import { Locale } from './domain/flags';
 
 let config = {};
 try {
@@ -16,21 +19,29 @@ try {
  * */
 const fallbackConfig: Config = {
   BASE_URL: process.env.BASE_URL || 'coronastatus.no',
-  LOCALE: process.env.LOCALE || 'en-US',
-  COUNTRY_CODE: process.env.COUNTRY_CODE || 'no',
+  LOCALE: (process.env.LOCALE as Locale) || 'en-US',
+  COUNTRY_CODE: (process.env.COUNTRY_CODE as CountryCode) || 'no',
+  SUPPORTED_LOCALES: [(process.env.LOCALE as Locale) || 'en-US'],
   COUNTRY: process.env.COUNTRY || 'Norway',
   MAP_CENTER: process.env.MAP_CENTER || '10.7522, 63.9139',
   MAP_ZOOM: parseInt(process.env.MAP_ZOOM || '4', 10),
   MAP_MAX_ZOOM: parseInt(process.env.MAP_MAX_ZOOM || '13', 10),
   TWITTER: process.env.TWITTER || 'coronastatusNO',
-  ZIP_LENGTH: parseInt(process.env.ZIP_LENGTH || '4', 10),
+  ZIP_PATTERN: process.env.ZIP_PATTERN || '[A-Za-z0-9-]{2,10}', // Fallback to very general pattern in case it is missing in the config
   ZIP_PLACEHOLDER: process.env.ZIP_PLACEHOLDER || '1234',
   ZIP_GUIDE: process.env.ZIP_GUIDE === 'true' || false,
   REDIRECT_TO_GOVERNMENT:
     process.env.REDIRECT_TO_GOVERNMENT === 'true' || false,
   PASSCODE_LENGTH: parseInt(process.env.PASSCODE_LENGTH || '3', 10),
-  DB_PATH: process.env.DB_PATH || './covid_db'
+  DB_PATH: process.env.DB_PATH || './covid_db',
+  THOUSAND_SEPARATOR: process.env.THOUSAND_SEPARATOR || ' '
 };
+
+// @ts-ignore
+if (!config.ZIP_PATTERN && config.ZIP_LENGTH) {
+  // @ts-ignore
+  fallbackConfig.ZIP_PATTERN = `[A-Za-z0-9]{${config.ZIP_LENGTH}}`;
+}
 
 export default {
   ...fallbackConfig,

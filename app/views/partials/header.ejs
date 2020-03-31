@@ -1,4 +1,4 @@
-<% const { show = true, menu = true, home = false, fullscreen = false, lastCommit = false } = locals; %>
+<% const { show = true, menu = true, home = false, fullscreen = false, lastCommit = false, showLocaleSelector = true } = locals; %>
 
 <!DOCTYPE html>
 <html lang="<%= locals.htmlLang %>">
@@ -25,6 +25,23 @@
         onclick: 'hasSubmittedAlertOnClick()'
       }) -%>
     </div>
+    <div class="lg:hidden">
+      <%- include('partials/banner', {
+        start: __('NB!'),
+        message: __('This page is not affiliated with the authorities.'),
+        link: urls.privacyPolicy,
+        linkText: __('Learn more!'),
+        color: '#efbc2e'
+      }) -%>
+      <%- include('partials/banner', {
+        start: __('Important'),
+        message: __('Use the link you noted down last time to update your health condition'),
+        color: '#62C4C3',
+        style: 'display: none;',
+        id: 'has-submitted-alert',
+        onclick: 'hasSubmittedAlertOnClick()'
+      }) -%>
+    </div>
   </div>
 
   <div class="main-container flex flex-col flex-grow">
@@ -33,7 +50,12 @@
     <section class="custom-section custom-hero p-4 w-full <% if (fullscreen) { %>custom-fullscreen<% } %>">
       <div class="custom-section-content <% if (fullscreen) { %>mx-4<% } else { %>mx-auto<% } %>">
         <header class="py-2 flex justify-between items-center flex-wrap">
-          <%- include('partials/logo') -%>
+          <div class="flex items-center">
+            <%- include('partials/logo') -%>
+            <% if (showLocaleSelector) { %>
+              <%- include('partials/locale-selector') -%>
+            <% } %>
+          </div>
           <%- include('partials/menu') -%>
         </header>
       </div>

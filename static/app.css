@@ -32,7 +32,7 @@ input[type='date'],
 input[type='number'],
 select {
   max-width: 100%;
-  width: 300px;
+  width: 200px;
 }
 input[type='text'].w-auto,
 input[type='date'].w-auto,
@@ -70,17 +70,17 @@ h3 {
 h4,
 label,
 legend {
-  display:block;
+  display: block;
   margin: 1.5rem 0 1rem;
   font-size: 16px;
   font-weight: bold;
 }
 p > label {
   margin: 0;
-  font-weight:normal;
+  font-weight: normal;
 }
 legend {
-  display:block;
+  display: block;
   padding-top: 1.5rem;
 }
 
@@ -181,13 +181,6 @@ legend {
   background-color: #cde2e2;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
 }
-.custom-facebook-button {
-  background-color: #1877f2;
-  padding: 1rem 1rem;
-  color: white;
-  text-decoration: none;
-  border-radius: 3px;
-}
 .custom-fullscreen {
   background: transparent;
   position: absolute;
@@ -239,8 +232,8 @@ legend {
 }
 /* When the checkbox is checked, add a blue background */
 .checkbox input:checked ~ .checkmark {
-  background-color: black;
-  border-color: black;
+  background-color: #A44342;
+  border-color: #A44342;
 }
 .checkbox.grey input:checked ~ .checkmark {
   background-color: #9aa7b4;
@@ -304,7 +297,7 @@ legend {
   content: '';
   width: 15px;
   height: 15px;
-  background: black;
+  background: #A44342;
   position: absolute;
   top: 5px;
   left: 5px;
@@ -324,6 +317,14 @@ legend {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
+}
+
+/* Radio and checkboxes focus */
+[type='radio']:focus+label:before {
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+.checkbox input[type='checkbox']:focus ~ span.checkmark {
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
 }
 
 /* Select styling */
@@ -382,7 +383,6 @@ textarea {
   background-color: #ffffff;
   border-color: rgba(99, 116, 133, 0.25);
 }
-select:focus,
 textarea:focus {
   border-color: #000000;
   box-shadow: 0 0 0 1px #000000;
@@ -395,7 +395,6 @@ select option {
   background: #ffffff;
 }
 
-input[type='submit'],
 input[type='reset'],
 input[type='button'],
 button,
@@ -429,6 +428,7 @@ input[type='submit']:focus {
   color: #fff;
   background: #d36767;
   border-color: #000;
+  cursor: pointer;
 }
 
 .contributor-list::before {
@@ -440,4 +440,13 @@ input[type='submit']:focus {
 }
 .contributor-list {
   align-self: center;
+}
+
+.locale-selector-menu a {
+  cursor: pointer;
+}
+
+/* Fix Flatpickr */
+.flatpickr-calendar select {
+  display: inline;
 }

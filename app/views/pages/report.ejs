@@ -3,6 +3,7 @@
     profile,
     passcode,
     baseUrl,
+    formatNumber,
     urls
   } = locals;
   const age = profile && locals.profile.age;
@@ -30,10 +31,6 @@
   const symptomSlimeCough = symptoms && symptoms['SLIME_COUGH'];
   const symptomRunnyNose = symptoms && symptoms['RUNNY_NOSE'];
   const symptomNauseaOrVomiting = symptoms && symptoms['NAUSEA_OR_VOMITING'];
-
-  function numberWithSpaces(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-}
 %>
 
 <%- include('partials/header', { home: true, menu: false }) -%>
@@ -41,7 +38,10 @@
 <section class="custom-section custom-hero p-4">
   <div class="custom-section-content mx-auto">
     <header class="py-2 flex justify-between items-center flex-wrap">
-      <%- include('partials/logo') -%>
+      <div class="flex items-center">
+        <%- include('partials/logo') -%>
+        <%- include('partials/locale-selector') -%>
+      </div>
       <%- include('partials/menu', { home: true }) -%>
     </header>
     <div class="my-8 flex flex-row flex-wrap justify-between">
@@ -77,29 +77,29 @@
 <section class="custom-section p-4">
   <div class="custom-section-content mx-auto">
     <h2 class="sr-only"><%= __('Numbers') %></h2>
-    <ul class="my-8 flex flex-row flex-wrap justify-between">
+    <ul class="my-8 flex flex-row flex-wrap justify-between appearance-none rounded focus:outline-none focus:shadow-outline">
       <%- include('partials/app-stats-block', {
         image: '/static/images/napkin.svg',
         title: __('Total reports'),
-        number: numberWithSpaces(aggregated.numberOfReports)
+        number: formatNumber(aggregated.numberOfReports)
       }) -%>
 
       <%- include('partials/app-stats-block', {
         image: '/static/images/temperature-check.svg',
         title: __('Infected / Have been tested'),
-        number: `${numberWithSpaces(aggregated.numberOfConfirmedInfected)}/${numberWithSpaces(aggregated.numberOfTested)}`
+        number: `${formatNumber(aggregated.numberOfConfirmedInfected)}/${formatNumber(aggregated.numberOfTested)}`
       }) -%>
 
       <%- include('partials/app-stats-block', {
         image: '/static/images/transfer.svg',
         title: __(`In close contact with someone who's infected`),
-        number: numberWithSpaces(aggregated.numberOfContacts)
+        number: formatNumber(aggregated.numberOfContacts)
       }) -%>
 
       <%- include('partials/app-stats-block', {
         image: '/static/images/symptoms.svg',
         title: __('Has symptoms'),
-        number: numberWithSpaces(aggregated.numberOfPeopleShowingSymptoms)
+        number: formatNumber(aggregated.numberOfPeopleShowingSymptoms)
       }) -%>
     </ul>
   </div>
@@ -110,10 +110,8 @@
     <%= __("You must approve the privacy statement to report your data.") %>
   </div>
 <% } %>
-<section class="w-full self-center text-center m-8">
-<%- include('partials/share') -%>
-</section>
-<section class="custom-section-content mx-auto p-4 pb-24 w-full">
+
+<section class="custom-section-content mx-auto p-4 pb-8 w-full">
   <form id="contribute" method="post" action="/" class="custom-form p-6 py-6 lg:p-24 lg:py-12 my-4 rounded-lg flex flex-col items-start">
     <h3 class="text-2xl md:text-3xl lg:text-5xl text-center font-bold text-cvs-red m-2 self-center">
       <%= profile ? __("Your state of health") : __("Report your health condition") %>
@@ -178,7 +176,7 @@
 
 
     <label class="text-h4" for="Age"><%= __("Your age") %></label>
-    <select required name="age" id="Age">
+    <select class="appearance-none rounded focus:outline-none focus:shadow-outline" required name="age" id="Age">
       <option value="" disabled selected><%= __("Choose your age") %></option>
       <% for(var i=0; i<100; i+=10) {
         const ageSpan = `${i} - ${i + 9}`;
@@ -208,7 +206,7 @@
         <span>- </span><a class="text-cvs-red font-bold hover:underline" href="<%= __(`https://www.whatismyzip.com`) %>" target="_blank"><%= __('What is my Zip code?') %></a>
       <% } %>
     </label>
-    <input class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="[A-Za-z0-9\-]{<%= locals.zipLength %>}" maxlength="<%= locals.zipLength %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
+    <input class="appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="<%= locals.zipPattern %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
 
     <div class="flex flex-row items-center mt-8">
       <img src="/static/images/mask.svg" alt="" class="h-16 w-16">
@@ -379,9 +377,13 @@
       <input required type="radio" id="isolation-due-to-government" name="isolation-status" value="isolation-due-to-government" <%= isolationStatus === 'ISOLATION_DUE_TO_GOVERNMENT_ORDERS' ? 'checked' : '' %>>
       <label for="isolation-due-to-government"><%= __("In isolation due to orders from the government") %></label>
     </p>
-    <p>
+    <p class="mb-2">
       <input required type="radio" id="isolation-due-to-covid-19" name="isolation-status" value="isolation-due-to-covid-19" <%= isolationStatus === 'ISOLATION_DUE_TO_COVID_19' ? 'checked' : '' %>>
       <label for="isolation-due-to-covid-19"><%= __("In isolation due to COVID-19 infection") %></label>
+    </p>
+    <p>
+      <input required type="radio" id="voluntary-isolation" name="isolation-status" value="voluntary-isolation" <%= isolationStatus === 'VOLUNTARY_ISOLATION' ? 'checked' : '' %>>
+      <label for="voluntary-isolation"><%= __("In voluntary isolation to avoid potentially spreading or catching COVID-19") %></label>
     </p>
     </fieldset>
 
@@ -405,7 +407,7 @@
     <p class="mb-4"><%= __('This field is optional') %></p>
     <input
       type="number"
-      class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      class="appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       step="0.1"
       placeholder="37.0"
       min="35"
@@ -441,10 +443,15 @@
     <ul class="mt-4">
       <li>
         <input type="hidden" name="passcode" value="<%= passcode %>" />
-        <input class="inverse" type="submit" value="<%= __('Submit report') %>">
+        <input class="inverse custom-nav-link rounded-full text-base text-white mt-2 font-medium px-5 py-3" type="submit" value="<%= __('Submit report') %>">
       </li>
     </ul>
   </form>
+</section>
+
+<section class="w-full self-center text-center m-8">
+  <p class="pb-2 text-cvs-red text-lg md:text-xl lg:text-2xl font-bold"><%= __(`Contribute and share {{ hostname }} on`, { hostname: baseUrl }) %></p>
+  <%- include('partials/share', { amount: formatNumber(aggregated.numberOfReports) }) -%>
 </section>
 
 <section class="custom-section custom-section-about px-6 lg:px-0 py-12 lg:py-24 bg-white">
@@ -492,7 +499,21 @@
   </div>
 </section>
 
+<script
+  src="https://cdn.coronastatus.eu/libraries/flatpickr-4.6.3.js"
+  integrity="sha384-UiZzAA+k9B6Xr4SykueV26lljeUk/hTx/fFNONRwB3Dt3dLDOXg8lQlbf/j8rB7B"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
 <script src="/static/form.js?v=<%= locals.cacheKey %>"></script>
+
+<script>
+  flatpickr(document.querySelectorAll('[type=date]'), {
+    altInput: true,
+    altFormat: '<%= __(`F j, Y`) %>',
+    dateFormat: 'Y-m-d'
+  });
+</script>
 
 <script>
   function hasSubmittedAlertOnClick() {

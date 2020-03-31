@@ -14,9 +14,11 @@ declare -a HOSTS=(
     'coronastatusau.org'
     'coronastatusmt.com'
     'coronastatus.it'
-
-#   Ready, but nameservers not yet pointed to DigitalOcean
-#   'coronastatus.ng'
+    'coronastatus.pt'
+    'coronastatus.ng'
+    'coronastatustr.com'
+    'coronastatus.lg'
+    'coronastatusnp.com'
 
 #   Adriaan told med to wait with deploying NL.
 #   'coronastatus.nl'

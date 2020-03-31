@@ -2,8 +2,7 @@
 locals.inContactWithInfectedStats.total; const totalInfectedPeopleWithSymptoms =
 locals.infectedStats.symptomStats.total; const totalPeopleWithSymptoms =
 locals.allSymptomsStats.symptomStats.total; const totalTested =
-locals.totalTested; function numberWithSpaces(x) { return
-x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); } %>
+locals.totalTested; const { formatNumber, aggregated } = locals; %>
 
 <!-- prettier spacer -->
 
@@ -26,12 +25,22 @@ x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); } %>
   </div>
 </div>
 
+<section class="w-full my-8">
+  <p class="text-cvs-red text-lg md:text-xl lg:text-2xl font-bold">
+    <%= __(`Contribute and share {{ hostname }} on`, { hostname: baseUrl }) %>
+  </p>
+  <div class="-ml-2 -mt-2">
+    <%- include('partials/share', { amount:
+    formatNumber(aggregated.numberOfReports) }) -%>
+  </div>
+</section>
+
 <h2 class="mt-8 mb-4 text-3xl font-bold text-cvs-red border-b border-cvs-red">
   <%= __(`COVID-19 infected`) %>
 </h2>
 <p>
-  <%= __(`In total`) %> <%= numberWithSpaces(totalInfectedPeopleWithSymptoms) %>
-  <%= __(`people have reported that they have tested positive for COVID-19 and
+  <%= __(`In total`) %> <%= formatNumber(totalInfectedPeopleWithSymptoms) %> <%=
+  __(`people have reported that they have tested positive for COVID-19 and
   experience symptoms.`) %>
 </p>
 
@@ -43,8 +52,8 @@ x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); } %>
   <div>
     <h3><%= __(`Test results`) %></h3>
     <p>
-      <%= __(`In total`) %> <%= numberWithSpaces(totalTested) %> <%= __(`people
-      have reported that they have been tested for COVID-19.`) %>
+      <%= __(`In total`) %> <%= formatNumber(totalTested) %> <%= __(`people have
+      reported that they have been tested for COVID-19.`) %>
     </p>
     <canvas id="testResultStats"></canvas>
   </div>
@@ -54,8 +63,8 @@ x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); } %>
   <%= __(`Close contacts`) %>
 </h2>
 <p>
-  <%= __(`In total`) %> <%= numberWithSpaces(totalPeopleInContactWithInfected)
-  %> <%= __(`people have reported that they have been in close contact with a
+  <%= __(`In total`) %> <%= formatNumber(totalPeopleInContactWithInfected) %>
+  <%= __(`people have reported that they have been in close contact with a
   person who was tested positive for COVID-19.`) %>
 </p>
 
@@ -102,7 +111,7 @@ x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); } %>
   <%= __(`All submissions`) %>
 </h2>
 <p>
-  <%= __("In total") %> <%= numberWithSpaces(totalPeopleWithSymptoms) %> <%=
+  <%= __("In total") %> <%= formatNumber(totalPeopleWithSymptoms) %> <%=
   __(`people have reported that they experience symptoms.`) %>
 </p>
 
@@ -243,6 +252,15 @@ x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "); } %>
         </td>
         <td class="border px-4 py-2">
           <%= __(`March 27`) %>
+        </td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">
+          <%= __(`In voluntary isolation to avoid potentially spreading or
+          catching COVID-19`) %>
+        </td>
+        <td class="border px-4 py-2">
+          <%= __(`March 28`) %>
         </td>
       </tr>
     </tbody>

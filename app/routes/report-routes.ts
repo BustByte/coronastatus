@@ -45,6 +45,12 @@ router.get('/', async (req, res) => {
   });
 });
 
+router.get('/thank-you', async (req, res) => {
+  const reports = await reportRepo.getLatestCovidReports();
+  const aggregated = aggregateCovidReports(reports);
+  return res.render('pages/thank-you', { aggregated });
+});
+
 router.get(`${urls.profile}/:passcode`, async (req, res) => {
   const success = req.query?.success === 'true';
   const clear = req.query?.clear === 'true';
@@ -129,6 +135,9 @@ const toIsolationStatus = (inputValue: string): IsolationStatus | undefined => {
   }
   if (inputValue === 'isolation-due-to-covid-19') {
     return IsolationStatus.ISOLATION_DUE_TO_COVID_19;
+  }
+  if (inputValue === 'voluntary-isolation') {
+    return IsolationStatus.VOLUNTARY_ISOLATION;
   }
   if (inputValue === 'isolation-due-to-government') {
     return IsolationStatus.ISOLATION_DUE_TO_GOVERNMENT_ORDERS;

@@ -1,3 +1,6 @@
+import { CountryCode } from './urls';
+import { Locale } from './flags';
+
 export interface CovidReport {
   yearOfBirth?: string; // Deprecated
   sex: Sex;
@@ -42,6 +45,7 @@ export enum IsolationStatus {
   ISOLATION_DUE_TO_TRAVEL = 'ISOLATION_DUE_TO_TRAVEL',
   ISOLATION_DUE_TO_CONTACT = 'ISOLATION_DUE_TO_CONTACT',
   ISOLATION_DUE_TO_COVID_19 = 'ISOLATION_DUE_TO_COVID_19',
+  VOLUNTARY_ISOLATION = 'VOLUNTARY_ISOLATION',
   ISOLATION_DUE_TO_GOVERNMENT_ORDERS = 'ISOLATION_DUE_TO_GOVERNMENT_ORDERS'
 }
 
@@ -142,19 +146,21 @@ export interface AggregatedCovidReportWithPostalCodeData {
 
 export interface Config {
   BASE_URL: string;
-  LOCALE: string;
-  COUNTRY_CODE: string;
+  LOCALE: Locale;
+  COUNTRY_CODE: CountryCode;
+  SUPPORTED_LOCALES: Locale[];
   COUNTRY: string;
   MAP_CENTER: string;
   MAP_ZOOM: number;
   MAP_MAX_ZOOM: number;
   TWITTER: string;
-  ZIP_LENGTH: number;
+  ZIP_PATTERN: string;
   ZIP_PLACEHOLDER: string;
   ZIP_GUIDE: boolean;
   REDIRECT_TO_GOVERNMENT: boolean;
   PASSCODE_LENGTH: number;
   DB_PATH: string;
+  THOUSAND_SEPARATOR: string;
 }
 
 export type DatabaseType = 'pg' | 'sqlite';
