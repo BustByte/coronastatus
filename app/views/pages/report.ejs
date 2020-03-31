@@ -281,23 +281,23 @@
       </div>
       
       <div class="flex text-xs content-center text-center">
-        <div class="w-1/5 breadcrumb" onclick="goToPage(1)" >
+        <div class="w-1/5 breadcrumb">
           <%= __('Demography and geography') %>
         </div>
         
-        <div class="w-1/5 breadcrumb" onclick="goToPage(2)">
+        <div class="w-1/5 breadcrumb">
           <%= __('Testing & Isolation') %>
         </div>
         
-        <div class="w-1/5 breadcrumb" onclick="goToPage(3)">
+        <div class="w-1/5 breadcrumb">
           <%= __('Symptoms') %>
         </div>
         
-        <div class="w-1/5 breadcrumb" onclick="goToPage(4)">
+        <div class="w-1/5 breadcrumb">
           <%= __('Health') %>
         </div>	
 
-        <div class="w-1/5 breadcrumb" onclick="goToPage(5)">
+        <div class="w-1/5 breadcrumb">
           <%= __('Submit & Share') %>
         </div>		
 
@@ -345,7 +345,7 @@
         <span>- </span><a class="text-cvs-red font-bold hover:underline" href="<%= __(`https://www.whatismyzip.com`) %>" target="_blank"><%= __('What is my Zip code?') %></a>
       <% } %>
     </label>
-    <input class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="<%= locals.zipPattern %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
+    <input class="appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="<%= locals.zipPattern %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
     <ul class="mt-4 nav-btn-container">
       <li>
         <input class="inverse next-btn" type="button" onclick="nextPage(validateDemographicsAndGeography)" value="<%= __('Next') %>">
@@ -523,7 +523,7 @@
     <div id="symptom-start-question" style="display: none;">
       <label for="symptom-start"><%= __('When did the symptoms start?')%></label>
       <input
-        class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        class="appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         type="date"
         name="symptom-start"
         id="symptom-start"
@@ -782,7 +782,7 @@
 
       //validate zip/postal code
       const isInt = parseInt(document.getElementById("postal-code").value);
-      const correctLength = document.getElementById("postal-code").value.length === parseInt("<%= locals.zipLength %>");
+      const correctLength = document.getElementById("postal-code").value.length === "<%= locals.zipPlaceHolder %>".length;
       if (!isInt || !correctLength) {
         return [false,"<%= __('Please enter a valid postal code for your country') %>"];
       }
@@ -815,7 +815,7 @@
   const validateSymptoms = () => {
     var hasSymptom = radioSet(document.getElementsByClassName("symptom"));
     if (hasSymptom) {
-      const validDate = Date.parse(document.getElementById("symptom-start"));
+      const validDate = Date.parse(document.getElementById("symptom-start").value);
       if (!validDate) {
         return [false,"<%= __('Please add a start date for your symptoms') %>"];
       }
@@ -895,6 +895,7 @@
    toast.classList.add("w-5/6");
    toast.classList.add("md:w-full");
    toast.classList.add("max-w-sm");
+   toast.id = toast;
    var input = document.createElement("input");
    input.classList.add("hidden");
    input.type = "checkbox";
@@ -919,6 +920,10 @@
    toast.appendChild(label);
    toast.onclick = () => {
     document.getElementById("footertoast").checked = "checked";
+    setTimeout(() => {
+      const toast = document.getElementById("toast");
+      toast.parentElement.removeChild(toast);
+    }, 1000)
    }
    document.getElementsByTagName('body')[0].appendChild(toast);
  }
