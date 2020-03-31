@@ -1,6 +1,6 @@
 {
   "BASE_URL": "coronastatus.lt",
-  "COUNTRY": "Lithuania",
+  "COUNTRY": "Lietuvos",
   "COUNTRY_CODE": "lt",
   "DB_PATH": "./covid_db",
   "LOCALE": "lt",
