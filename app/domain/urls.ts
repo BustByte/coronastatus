@@ -21,6 +21,7 @@ export type CountryCode =
   | 'ng'
   | 'nl'
   | 'no'
+  | 'np'
   | 'pt'
   | 'se'
   | 'sg'
@@ -232,6 +233,16 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistikk'
+  },
+  np: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics'
   },
   pt: {
     submitReport: '/',
