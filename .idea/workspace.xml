@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="892e6e36-d2a8-4990-8fab-0073c444ace8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config-examples/cz-config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/coronastatus.cz.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/privacy-statements/cz-privacy-statement.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/privacy-statements/cz-privacy-statement.ejs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +32,7 @@
   <component name="ProjectId" id="1ZwIxKx4bMEHK0pojm9hHCFCblu" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/views/privacy-statements" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config-examples" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -35,6 +46,7 @@
       <recent name="$PROJECT_DIR$/app/countrySpecific" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config-examples" />
       <recent name="$PROJECT_DIR$/app/views/privacy-statements" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -61,12 +73,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585743975024</updated>
-      <workItem from="1585743977358" duration="8471000" />
+      <workItem from="1585743977358" duration="9918000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.ejs" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
