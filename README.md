@@ -25,7 +25,7 @@ We need people who can help translate the site, develop new features, project le
 - 🇺🇸 United States of America (USA): https://coronastatus.us
 - 🇺🇦 Ukraine: https://coronastatus.org.ua
 - 🇪🇸 Spain: https://coronastatus.es
-- 🇧🇷 Brazil: https://coronastatus.com.br
+- 🇧🇷 Brazil: https://coronastatus.net.br
 - 🇨🇦 Canada: https://coronastatus.ca
 - 🇦🇺 Australia: https://coronastatusau.org
 - 🇸🇬 Singapore: https://coronastatus.sg
@@ -37,12 +37,15 @@ We need people who can help translate the site, develop new features, project le
 - 🇵🇹 Portugal: https://coronastatus.pt
 - 🇹🇷 Turkey: https://coronastatustr.com
 - 🇱🇹 Lithuania: https://coronastatus.lt
+- 🇳🇵 Nepal: https://coronastatusnp.com
+- 🇨🇿 Czech Republic: https://corona-status.cz
 - 🇸🇪 Sweden: coming soon
 - 🇵🇭 Philippines: coming soon
 - 🇧🇪 Belgium: coming soon
 - 🇮🇸 Iceland: coming soon
 - 🇨🇭 Switzerland: coming soon
 - 🇩🇪 Germany: coming soon
+- 🇨🇿 Czech Republic: coming soon
 - ... want one for your country? Join our community: https://t.me/onzecorona
 
 ## Why?

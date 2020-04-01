@@ -3,6 +3,7 @@ export type Locale =
   | 'bd'
   | 'ca'
   | 'dk'
+  | 'cs-CZ'
   | 'en-AU'
   | 'en-IN'
   | 'en-MT'
@@ -17,10 +18,13 @@ export type Locale =
   | 'es-MX'
   | 'fr-FR'
   | 'it'
+  | 'ms-MY'
+  | 'zh-MY'
   | 'en-MY'
   | 'lt'
   | 'nl'
   | 'no'
+  | 'ne'
   | 'pt-BR'
   | 'pt-PT'
   | 'se'
@@ -35,6 +39,7 @@ type LocaleToFlagMap = {
 const localeToFlagMap: LocaleToFlagMap = {
   bd: 'bd',
   ca: 'ca',
+  'cs-CZ': 'cz',
   dk: 'dk',
   'en-AU': 'au',
   'en-IN': 'gb',
@@ -50,10 +55,13 @@ const localeToFlagMap: LocaleToFlagMap = {
   'es-MX': 'mx',
   'fr-FR': 'fr',
   it: 'it',
+  'ms-MY': 'my',
+  'zh-MY': 'cn',
   'en-MY': 'gb',
   lt: 'lt',
   nl: 'nl',
   no: 'no',
+  ne: 'np',
   'pt-BR': 'br',
   'pt-PT': 'pt',
   se: 'se',
