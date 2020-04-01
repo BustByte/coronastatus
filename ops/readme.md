@@ -29,4 +29,4 @@ This document describes how we operate the sites which are running Coronastatus.
 | [coronastatusmy.org](https://coronastatusmy.org)   |  🇲🇾  |  Malaysia        | Kong Jin Jie                            | Kong Jin Jie           |
 | [coronastatustr.org](https://coronastatustr.com)   |  🇹🇷  |  Turkey          | Berkay Oğulcan Tutal                    | Eirik Fosse / BustByte |
 | [coronastatus.lt](https://coronastatus.lt)         |  🇱🇹  |  Lithuania       | Mantas Bandonis                         |   Mantas Bandonis |
-
+| [coronastatusnp.com](https://coronastatusnp.com)   |  🇳🇵  |  Nepal           | Deepak Shah                             |   Eirik Fosse / BustByte |
