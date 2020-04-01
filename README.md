@@ -25,7 +25,7 @@ We need people who can help translate the site, develop new features, project le
 - 🇺🇸 United States of America (USA): https://coronastatus.us
 - 🇺🇦 Ukraine: https://coronastatus.org.ua
 - 🇪🇸 Spain: https://coronastatus.es
-- 🇧🇷 Brazil: https://coronastatus.com.br
+- 🇧🇷 Brazil: https://coronastatus.net.br
 - 🇨🇦 Canada: https://coronastatus.ca
 - 🇦🇺 Australia: https://coronastatusau.org
 - 🇸🇬 Singapore: https://coronastatus.sg
