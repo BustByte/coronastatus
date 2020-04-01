@@ -787,13 +787,6 @@
   }
 
   const validateSymptoms = () => {
-    var hasSymptom = radioSet(document.getElementsByClassName("symptom"));
-    if (hasSymptom) {
-      const validDate = Date.parse(document.getElementById("symptom-start").value);
-      if (!validDate) {
-        return [false,"<%= __('Please add a start date for your symptoms') %>"];
-      }
-    }
     return [true, undefined];
   }
 
