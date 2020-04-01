@@ -147,7 +147,7 @@
   "Write it down somewhere or save it on your computer.": "请在某处写下或保存进您的电脑",
   "The link has been copied.": "这链接已被复制",
   "clear this form": "清除这表格",
-  "To WHO.int": "To WHO.int",
+  "To WHO.int": "转到 WHO.int",
   "Are you from": "请问您是从？",
   "Norway": "挪威",
   "The Netherlands": "荷兰",
@@ -191,5 +191,6 @@
   "{{ amount }} people already shared their health status.": "{{ amount }} 人已分享他们的健康状况",
   "Let your friends fill out this form too and help the United States gain control over COVID-19.": "请您的朋友也填上这表格并帮助马来西亚对抗COVID-19",
   "NB!": "重要！",
-  "View Website Statistics": "查看网站统计"
+  "View Website Statistics": "查看网站统计",
+  "www.nhs.uk": "www.moh.gov.my"
 }
