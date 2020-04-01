@@ -14,7 +14,7 @@ This document describes how we operate the sites which are running Coronastatus.
 | [coronastatus.fr](https://coronastatus.fr)         |  🇫🇷  |  France          | Adriaan Van Rossum / Simple Analytics   | Eirik Fosse / BustByte |
 | [coronastatus.us](https://coronastatus.us)         |  🇺🇸  |  USA             | Tom Maney                               | Eirik Fosse / BustByte |
 | [coronastatus.co](https://coronastatus.co)         |  🇨🇴  |  Colombia        | Julian Betancourt                       | Eirik Fosse / BustByte |
-| [coronastatus.com.br](https://coronastatus.com.br) |  🇧🇷  |  Brazil          | Sérgio Prates                           | Eirik Fosse / BustByte |
+| [coronastatus.com.br](https://coronastatus.net.br) |  🇧🇷  |  Brazil          | Sérgio Prates                           | Eirik Fosse / BustByte |
 | [coronastatusau.org](https://coronastatusau.org)   |  🇦🇺  |  Australia       | Mauricio Wolff                          | Eirik Fosse / BustByte |
 | [corona-status.in](https://corona-status.in)       |  🇮🇳  |  India           | Vandan Panwala                          | Eirik Fosse / BustByte |
 | [coronastatusmt.com](https://coronastatusmt.com)   |  🇲🇹  |  Malta           | Thomas K. Running                       | Eirik Fosse / BustByte |
