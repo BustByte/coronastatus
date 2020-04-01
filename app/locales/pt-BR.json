@@ -191,5 +191,6 @@
   "this article": "este artigo",
   "volunteers": "voluntários",
   "www.nhs.uk": "saude.gov.br",
-  "{{ amount }} people already shared their health status.": "{{ amount }} pessoas já informaram seu estado de saúde."
+  "{{ amount }} people already shared their health status.": "{{ amount }} pessoas já informaram seu estado de saúde.",
+  "In voluntary isolation to avoid potentially spreading or catching COVID-19": "Em isolamento voluntário, para evitar a propagação ou risco de contágio do COVID-19"
 }
