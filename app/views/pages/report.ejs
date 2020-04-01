@@ -741,7 +741,7 @@
   /* Page validation functions. 
   If validation fails and messages to be displayed should be dispatched in the validation function.
   These aren't done */
-  const validateDemographicsAndGeography = () => {
+  var validateDemographicsAndGeography = function() {
       //validate age
       var hasAge = document.getElementById("Age").value != "";
       if (!hasAge) {
@@ -755,7 +755,7 @@
       }
 
       //validate zip/postal code
-      const correctLength = document.getElementById("postal-code").value.length === "<%= locals.zipPlaceHolder %>".length;
+      var correctLength = document.getElementById("postal-code").value.length === "<%= locals.zipPlaceHolder %>".length;
       if (!correctLength) {
         return [false,"<%= __('Please enter a valid postal code for your country') %>"];
       }
@@ -763,7 +763,7 @@
       return [true,undefined];
   }
 
-  const validateTestingAndIsolation = () => {
+  var validateTestingAndIsolation = function() {
     //validate in close contact
     var hasContact = isRadioButtonSet(document.getElementsByName("been-in-contact-with"));
     if (!hasContact) {
@@ -785,19 +785,19 @@
     return [true, undefined];
   }
 
-  const validateSymptoms = () => {
+  var validateSymptoms = function() {
     return [true, undefined];
   }
 
-  const validateHealth = () => {
+  var validateHealth = function() {
     //health condition
-    const hasHealthConditon = isRadioButtonSet(document.getElementsByName("diagnosed-other-conditions"));
+    var hasHealthConditon = isRadioButtonSet(document.getElementsByName("diagnosed-other-conditions"));
     if (!hasHealthConditon) {
       return [false,"<%= __('Please select if you have a  preexisting health condition') %>"];
     }
 
     //smoking
-    const hasSmoking = isRadioButtonSet(document.getElementsByName("smoking-habits"));
+    var hasSmoking = isRadioButtonSet(document.getElementsByName("smoking-habits"));
     if (!hasSmoking) {
       return [false,"<%= __('Please select your smoking habits') %>"];
     }
@@ -805,7 +805,7 @@
     return [true,undefined];
   }
 
-  const validationFunctions = [
+  var validationFunctions = [
     validateDemographicsAndGeography,
     validateTestingAndIsolation,
     validateSymptoms,
@@ -827,7 +827,7 @@
 
 <script>
   /* Pagination */
- const numPages = 5;
+ var numPages = 5;
  var currentPage = 1;
 
  /*increase page number by 1 and rerender the form. 
@@ -870,7 +870,7 @@
    toast.appendChild(input);
    var label = document.createElement("label");
    label.for = "footertoast";
-   label.title = `<%= __("Close") %>`;
+   label.title = '<%= __("Close") %>';
    label.classList.add("close");
    label.classList.add("cursor-pointer");
    label.classList.add("flex");
@@ -883,12 +883,12 @@
    label.classList.add("rounded");
    label.classList.add("shadow-lg");
    label.classList.add("text-white");
-   label.innerHTML = msg + `<svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path></svg>`;
+   label.innerHTML = msg + '<svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path></svg>';
    toast.appendChild(label);
-   toast.onclick = () => {
+   toast.onclick = function() {
     document.getElementById("footertoast").checked = "checked";
-    setTimeout(() => {
-      const toast = document.getElementById("toast");
+    setTimeout(function() {
+      var toast = document.getElementById("toast");
       toast.parentElement.removeChild(toast);
     }, 1000)
    }
@@ -925,21 +925,21 @@
       span.classList.add("text-gray-800");
       span.classList.add("text-center");
       span.classList.add("w-full");
-      span.innerText = `${i}`;
+      span.innerText = i;
 
       if (current) {
         breadcontent.classList.add("border-cvs-green-dark");
       } 
 
-      breadcrumb.onclick = () => goToPage(i);
+      breadcrumb.onclick = function(){goToPage(i)};
       if (validationFunctions[i-1] && !validationFunctions[i-1]()[0]) {
-        breadcrumb.onclick = () => {};
+        breadcrumb.onclick = function(){};
       } else if (i-2>-1 && !validationFunctions[i-2]()[0]) {
         //pages that are valid and the previous page is invalid 
         //(for pages that don't have required fields)
-        breadcrumb.onclick = () => {};
+        breadcrumb.onclick = function(){};
       } else if (i-3>-1 && !validationFunctions[i-3]()[0]) {
-        breadcrumb.onclick = () => {};
+        breadcrumb.onclick = function(){};
       }
 
       breadcontent.appendChild(span);
@@ -958,15 +958,15 @@
       breadcontent.classList.add("text-white");
       breadcontent.classList.add("flex");
       breadcontent.classList.add("items-center");
-      breadcontent.innerHTML = `<svg class="mx-auto h-8 w-8 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/> </svg>`;
+      breadcontent.innerHTML = '<svg class="mx-auto h-8 w-8 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/> </svg>';
       breadcrumb.appendChild(breadcontent);
-      breadcrumb.onclick = () => goToPage(i);
+      breadcrumb.onclick = function() {goToPage(i)};
  }
 
  /*Applies updates to a progress bar given it's id number (i). 
  If it can't find a progress bar with the id it does nothing*/
  function updateProgressBar(i, percent) {
-  var bar = document.getElementById(`progress-bar-${i}`);
+  var bar = document.getElementById('progress-bar-'+i);
   if (bar) {
     bar.style.width = percent;
   }
@@ -974,8 +974,8 @@
 
  function updatePaginate() {
   for (var i = 1; i <= numPages; i++) {
-    var page = document.getElementById(`page-${i}`);
-    var breadcrumb = document.getElementById(`breadcrumb-${i}`);
+    var page = document.getElementById('page-'+i);
+    var breadcrumb = document.getElementById('breadcrumb-'+i);
     breadcrumb.textContent = '';
 
     if (i === currentPage) {
