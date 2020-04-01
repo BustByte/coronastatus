@@ -38,6 +38,9 @@
 <style>
   .breadcrumb {
     cursor: pointer;
+    border:none;
+    margin:0px; 
+    padding:0px;
   }
 
   .page-container {
@@ -212,13 +215,14 @@
 
         <div class="w-auto sm:w-8 md:w-12"></div>
     
-        <div class="flex-1 breadcrumb" id="breadcrumb-1" onclick="goToPage(1)">
+        <button class="flex-1 breadcrumb" id="breadcrumb-1" onclick="goToPage(1)">
+          <span class="sr-only"><%= __('Go to step 1')%> <%= __('Demography & geography') %></span>
           <div class="w-10 h-10 bg-cvs-green-dark mx-auto rounded-full text-lg text-white flex items-center">
             <svg class="mx-auto h-8 w-8 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
           </div>
-        </div>
+        </button>
     
     
         <div class="w-8 sm:w-12 md:w-24 align-center items-center align-middle content-center flex" >
@@ -228,13 +232,14 @@
         </div>
       
         
-        <div class="flex-1 breadcrumb" id="breadcrumb-2" onclick="goToPage(2)">
+        <button class="flex-1 breadcrumb" id="breadcrumb-2" onclick="goToPage(2)">
+          <span class="sr-only"><%= __('Go to step 2')%> <%= __('Testing & Isolation') %></span>
           <div class="w-10 h-10 bg-cvs-green-dark mx-auto rounded-full text-lg text-white flex items-center">
             <svg class="mx-auto h-8 w-8 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
           </div>
-        </div>
+        </button>
       
         <div class="w-8 sm:w-12 md:w-24 align-center items-center align-middle content-center flex">
           <div class="w-full bg-gray-500 rounded items-center align-middle align-center flex-1">
@@ -242,11 +247,12 @@
           </div>
         </div>
       
-        <div class="flex-1 breadcrumb" id="breadcrumb-3" onclick="goToPage(3)">
+        <button class="flex-1 breadcrumb" id="breadcrumb-3" onclick="goToPage(3)">
+          <span class="sr-only"><%= __('Go to step 3')%> <%= __('Symptoms') %></span>
           <div class="w-10 h-10 bg-cvs-green-light border-2 border-cvs-green-dark mx-auto rounded-full text-lg flex items-center">
             <span class="text-gray-800 text-center w-full">3</span>
           </div>
-        </div>
+        </button>
       
       
         <div class="w-8 sm:w-12 md:w-24 align-center items-center align-middle content-center flex">
@@ -256,11 +262,12 @@
         </div>
     
     
-        <div class="flex-1 breadcrumb" id="breadcrumb-4" onclick="goToPage(4)">
+        <button class="flex-1 breadcrumb" id="breadcrumb-4" onclick="goToPage(4)">
+          <span class="sr-only"><%= __('Go to step 4')%> <%= __('Health') %></span>
           <div class="w-10 h-10 bg-cvs-green-light border-2 border-cvs-green-dark mx-auto rounded-full text-lg flex items-center">
             <span class="text-gray-800 text-center w-full">4</span>
           </div>
-        </div>
+        </button>
 
         <div class="w-8 sm:w-12 md:w-24 align-center items-center align-middle content-center flex">
           <div class="w-full bg-gray-500 rounded items-center align-middle align-center flex-1">
@@ -268,11 +275,12 @@
           </div>
         </div>
       
-        <div class="flex-1 breadcrumb" id="breadcrumb-5" onclick="goToPage(5)">
+        <button class="flex-1 breadcrumb" id="breadcrumb-5" onclick="goToPage(5)">
+          <span class="sr-only"><%= __('Go to step 5')%> <%= __('Submit & Share') %></span>
           <div class="w-10 h-10 bg-cvs-green-light border-2 border-cvs-green-dark mx-auto rounded-full text-lg flex items-center">
             <span class="text-gray-800 text-center w-full">5</span>
           </div>
-        </div>
+        </button>
       
         <div class="w-auto sm:w-8 md:w-12"></div>
 
@@ -282,7 +290,7 @@
       
       <div class="flex text-sm content-center text-center">
         <div class="w-1/5">
-          <%= __('Demography and geography') %>
+          <%= __('Demography & geography') %>
         </div>
         
         <div class="w-1/5">
