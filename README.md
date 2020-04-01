@@ -44,6 +44,7 @@ We need people who can help translate the site, develop new features, project le
 - 🇮🇸 Iceland: coming soon
 - 🇨🇭 Switzerland: coming soon
 - 🇩🇪 Germany: coming soon
+- 🇨🇿 Czech Republic: coming soon
 - ... want one for your country? Join our community: https://t.me/onzecorona
 
 ## Why?
