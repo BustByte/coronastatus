@@ -749,7 +749,7 @@
       }
 
       //validate sex
-      var hasGender = radioSet(document.getElementsByName("gender"));
+      var hasGender = isRadioButtonSet(document.getElementsByName("gender"));
       if (!hasGender) {
         return [false,"<%= __('Please select a Biological gender/Sex') %>"];
       }
@@ -765,19 +765,19 @@
 
   const validateTestingAndIsolation = () => {
     //validate in close contact
-    var hasContact = radioSet(document.getElementsByName("been-in-contact-with"));
+    var hasContact = isRadioButtonSet(document.getElementsByName("been-in-contact-with"));
     if (!hasContact) {
       return [false,"<%= __('Please select whether you have been in close contact with someone who tested positive for COVID-19') %>"];
     }
 
     //validate tested
-    var hasTested = radioSet(document.getElementsByName("been-tested"));
+    var hasTested = isRadioButtonSet(document.getElementsByName("been-tested"));
     if (!hasTested) {
       return [false,"<%= __('Please select whether you have been tested for COVID-19') %>"];
     }
 
     //validate isolation
-    var hasIsolation = radioSet(document.getElementsByName("isolation-status"));
+    var hasIsolation = isRadioButtonSet(document.getElementsByName("isolation-status"));
     if (!hasIsolation) {
       return [false,"<%= __('Please select your isolation status') %>"];
     }
@@ -791,13 +791,13 @@
 
   const validateHealth = () => {
     //health condition
-    const hasHealthConditon = radioSet(document.getElementsByName("diagnosed-other-conditions"));
+    const hasHealthConditon = isRadioButtonSet(document.getElementsByName("diagnosed-other-conditions"));
     if (!hasHealthConditon) {
       return [false,"<%= __('Please select if you have a  preexisting health condition') %>"];
     }
 
     //smoking
-    const hasSmoking = radioSet(document.getElementsByName("smoking-habits"));
+    const hasSmoking = isRadioButtonSet(document.getElementsByName("smoking-habits"));
     if (!hasSmoking) {
       return [false,"<%= __('Please select your smoking habits') %>"];
     }
@@ -812,7 +812,8 @@
     validateHealth
   ];
 
-  function radioSet(collection) {
+//accepts a collection of html elements and returns true if any of the elements is checked
+  function isRadioButtonSet(collection) {
     var re = false;
     for (var i = 0; i < collection.length; i++) {
       if (collection[i].checked) {
