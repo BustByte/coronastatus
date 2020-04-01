@@ -1,14 +1,16 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable global-require, import/no-dynamic-require, import/no-extraneous-dependencies */
 import fs from 'fs';
 import * as path from 'path';
 
-const localeDir = path.join(__dirname, '..', 'app', 'locales')
+type Translations = { [key: string]: string };
+
+const localeDir = path.join(__dirname, '..', 'app', 'locales');
 const localeFiles = fs
   .readdirSync(localeDir)
   .filter(fileName => fileName.includes('.json'))
   .map(fileName => ({
     fileName,
-    content: require(path.join(localeDir, fileName))
+    content: require(path.join(localeDir, fileName)) as Translations
   }));
 
 if (!localeFiles || !localeFiles.length) {
@@ -18,19 +20,23 @@ if (!localeFiles || !localeFiles.length) {
 
 localeFiles.forEach(localeFile => {
   console.log(`Sorting ${localeFile.fileName}`);
-  const unsorted = localeFile.content;
-  var sorted:any = {};
-  Object.keys(unsorted).sort((a,b) =>
-    a.localeCompare(b, 'en', { sensitivity: 'base'}))
-    .forEach(function(key) {
-      sorted[key] = unsorted[key]
+  const unsorted: Translations = localeFile.content;
+  const sorted: Translations = {};
+  Object.keys(unsorted)
+    .sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }))
+    .forEach(key => {
+      sorted[key] = unsorted[key];
+    });
+
+  fs.writeFile(
+    path.join(localeDir, localeFile.fileName),
+    JSON.stringify(sorted, null, 2),
+    err => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log(`File ${localeFile.fileName} sorted!`);
+      }
     }
   );
-    
-  fs.writeFile(path.join(localeDir, localeFile.fileName), JSON.stringify(sorted, null, 2), function(err) {
-    if (err) {
-      return console.error(err);
-    }
-    console.log(`File ${localeFile.fileName} sorted!`);
-  });
 });
