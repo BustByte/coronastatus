@@ -10,7 +10,7 @@
   "Before proceeding please note down the following link": "Antes de prosseguir, anote o seguinte link",
   "Below is your personal health information.": "Abaixo estão suas informações pessoais de saúde.",
   "Biological gender": "Sexo biológico / sexo",
-  "BustByte AS": "BustByte como",
+  "BustByte AS": "BustByte",
   "CALL TO ALL US CITIZENS: This is how we defeat the corona virus: together we make the invisible virus visible.": "Chamada de atenção a todos os cidadãos portugueses: É assim que vencemos o coronavírus: juntos tornamos visível, o vírus invisível.",
   "COVID-19 infected": "Infectado com COVID-19",
   "Choose your age": "Escolha sua idade",
@@ -19,7 +19,7 @@
   "Close": "Fechar",
   "Close contact with someone who has tested positive": "Contato próximo com alguém que testou positivo",
   "Close contacts": "Contatos próximos",
-  "Contribute and share {{ hostname }} on": "Contribui e partilha {{hostname}} no",
+  "Contribute and share {{ hostname }} on": "Contribua e compartilhe {{hostname}} no",
   "Contribute anonymously": "Contribua anonimamente",
   "Contribute now": "Contribuir agora",
   "Contributors": "Contribuidores",
@@ -35,7 +35,7 @@
   "Fatigue and exhaustion": "Fadiga e exaustão",
   "Female": "Feminino",
   "Fever": "Febre",
-  "Fill out this form - it takes 1 minute - and help the United States gain control over COVID-19.": "Fill out this form - it takes 1 minute - and help the United Kingdom gain control over COVID-19.",
+  "Fill out this form - it takes 1 minute - and help the United States gain control over COVID-19.": "Preencha esse formulário - leva 1 minuto - e ajude-nos a disponibilizar informações sobre a COVID-19",
   "Geography and demography": "Demografia e geografia",
   "Go to the National health service website": "Ir para o site do Ministério da Saúde",
   "Has symptoms": "Tem sintomas",
@@ -171,7 +171,7 @@
   "Your health information is stored anonymously, and can not be used to identify you.": "Você é completamente anônimo. Os dados que você envia não podem ser usados para identificá-lo.",
   "Your personal health information is cleared from this computer.": "Suas informações pessoais de saúde são apagadas deste computador.",
   "Your state of health": "Seu estado de saúde",
-  "Zip code": "CEP sem traços",
+  "Zip code": "CEP",
   "Zip code information": "Informações do CEP",
   "and": "e",
   "as an attempt to chart these numbers.": "como uma tentativa de expressar esses números.",
@@ -191,5 +191,5 @@
   "this article": "este artigo",
   "volunteers": "voluntários",
   "www.nhs.uk": "saude.gov.br",
-  "{{ amount }} people already shared their health status.": "{{ amount }} pessoas já partilharam o seu estado de saúde."
+  "{{ amount }} people already shared their health status.": "{{ amount }} pessoas já informaram seu estado de saúde."
 }
