@@ -9,7 +9,7 @@
   "MAP_ZOOM": 7,
   "PASSCODE_LENGTH": 3,
   "REDIRECT_TO_GOVERNMENT": false,
-  "SUPPORTED_LOCALES": ["cz"],
+  "SUPPORTED_LOCALES": ["cs-CZ"],
   "THOUSAND_SEPARATOR": " ",
   "TWITTER": "coronastatusCZ",
   "ZIP_GUIDE": false,
