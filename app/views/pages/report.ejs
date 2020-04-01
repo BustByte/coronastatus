@@ -639,6 +639,13 @@
   </form>
 </section>
 
+<div class="alert-toast fixed bottom-0 right-0 m-8 w-5/6 md:w-full max-w-sm hidden" id="toast">
+  <input class="hidden" type="checkbox" id="footertoast">
+  <label for="footertoast" title='<%= __("Close") %>' class="close cursor-pointer flex items-start justify-between w-full p-2 bg-cvs-red  h-24 rounded shadow-lg text-white">
+  <span id="toastmessage"></span>
+  <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path></svg>
+ </div>
+
 <section class="w-full self-center text-center m-8">
   <p class="pb-2 text-cvs-red text-lg md:text-xl lg:text-2xl font-bold"><%= __(`Contribute and share {{ hostname }} on`, { hostname: baseUrl }) %></p>
   <%- include('partials/share', { amount: formatNumber(aggregated.numberOfReports) }) -%>
@@ -858,49 +865,24 @@
     updatePaginate();
    }
  }
+
+ 
  
  //creates an alert for the user displaying given msg 
  function toastAlert(msg) {
-   var toast = document.createElement("div");
-   toast.classList.add("alert-toast");
-   toast.classList.add("fixed");
-   toast.classList.add("bottom-0")
-   toast.classList.add("right-0");
-   toast.classList.add("m-8");
-   toast.classList.add("w-5/6");
-   toast.classList.add("md:w-full");
-   toast.classList.add("max-w-sm");
-   toast.id = "toast";
-   var input = document.createElement("input");
-   input.classList.add("hidden");
-   input.type = "checkbox";
-   input.id = "footertoast";
-   toast.appendChild(input);
-   var label = document.createElement("label");
-   label.for = "footertoast";
-   label.title = '<%= __("Close") %>';
-   label.classList.add("close");
-   label.classList.add("cursor-pointer");
-   label.classList.add("flex");
-   label.classList.add("items-start");
-   label.classList.add("justify-between");
-   label.classList.add("w-full");
-   label.classList.add("p-2");
-   label.classList.add("bg-cvs-red");
-   label.classList.add("h-24");
-   label.classList.add("rounded");
-   label.classList.add("shadow-lg");
-   label.classList.add("text-white");
-   label.innerHTML = msg + '<svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path></svg>';
-   toast.appendChild(label);
+   var toastMessage = document.getElementById("toastmessage");
+   toastMessage.innerText = msg;
+
+   document.getElementById("footertoast").checked = false;
+
+   var toast = document.getElementById("toast");
+   toast.classList.remove("hidden");
    toast.onclick = function() {
     document.getElementById("footertoast").checked = "checked";
     setTimeout(function() {
-      var toast = document.getElementById("toast");
-      toast.parentElement.removeChild(toast);
-    }, 1000)
+      document.getElementById("toast").classList.add("hidden");
+    }, 1000);
    }
-   document.getElementsByTagName('body')[0].appendChild(toast);
  }
 
 
