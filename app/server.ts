@@ -18,7 +18,7 @@ import { ensureAllLocalesAreValidJSON } from './util/locale-validation';
 import { createNumberFormatter } from './util/number-formatter';
 
 const app = express();
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3000;
 const isDevelopmentEnv = process.env.NODE_ENV === 'dev';
 
 i18n.configure({
