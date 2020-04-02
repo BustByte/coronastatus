@@ -83,8 +83,6 @@ app.use((req, res, next) => {
   res.locals.localeToFlag = localeToFlag;
   res.locals.currentLocale = req.getLocale();
   res.locals.formatNumber = createNumberFormatter(config.THOUSAND_SEPARATOR);
-  res.locals.rateLimitCount = config.RATE_LIMIT_COUNT;
-  res.locals.rateLimitWindow = config.RATE_LIMIT_WINDOW;
 
   next();
 });
