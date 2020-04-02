@@ -310,9 +310,9 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
     limit: '/limit'
-  }
+  },
   pt: {
     submitReport: '/',
     profile: '/estadosaude',
@@ -389,7 +389,7 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics',
     limit: '/limit'
-  },
+  }
 };
 
 export const urls = localeAwareUrls[config.COUNTRY_CODE as CountryCode];
