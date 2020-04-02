@@ -1,6 +1,7 @@
 {
   "...and others": "...and others",
   "{{ amount }} people already shared their health status.": "{{ amount }} people already shared their health status.",
+  "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}": "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}",
   "#stayindoors": "#stay<wbr/>home",
   "#washyourhands": "#wash<wbr/>your<wbr/>hands",
   "About the service": "About the service",
@@ -180,7 +181,6 @@
   "What was the result?": "What was the result?",
   "When did the symptoms start?": "When did the symptoms start?",
   "Write it down somewhere or save it on your computer.": "Write it down somewhere or save it on your computer.",
-  "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}": "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}",
   "Yes": "Yes",
   "You can now use this computer for another user.": "You can now use this computer for another user.",
   "You must approve the privacy statement to report your data.": "You must approve the privacy statement to report your data.",

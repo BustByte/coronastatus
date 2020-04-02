@@ -1,6 +1,7 @@
 {
   "...and others": "...e altri",
   "{{ amount }} people already shared their health status.": "{{ amount }} persone hanno già condiviso il loro stato di salute.",
+  "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}": "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}",
   "#stayindoors": "#io<wbr/>resto<wbr/>a</wbr>casa",
   "#washyourhands": "#lava<wbr/>le<wbr/>mani",
   "About the service": "In merito al servizio",
@@ -180,7 +181,6 @@
   "What was the result?": "Che risultato hai ricevuto?",
   "When did the symptoms start?": "Quando sono iniziati i sintomi?",
   "Write it down somewhere or save it on your computer.": "Annotalo da qualche parte o salvalo sul tuo computer.",
-  "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}": "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}",
   "Yes": "Sì",
   "You can now use this computer for another user.": "Ora puoi usare questo computer per salvare i dati di un'altra persona",
   "You must approve the privacy statement to report your data.": "Devi approvare le condizioni di privacy per inserire i tuoi dati.",

@@ -1,6 +1,7 @@
 {
   "...and others": "...og flere",
   "{{ amount }} people already shared their health status.": "{{ amount }} personer har allerede delt helsetilstanden sin.",
+  "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}": "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}",
   "#stayindoors": "#stay<wbr/>home",
   "#washyourhands": "#wash<wbr/>your<wbr/>hands",
   "About the service": "Om tjenesten",
@@ -182,7 +183,6 @@
   "What was the result?": "Hva var svaret på testen?",
   "When did the symptoms start?": "Når startet symptomene?",
   "Write it down somewhere or save it on your computer.": "Noter ned lenken et sted, eller lagre den på datamaskinen din.",
-  "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}": "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}",
   "Yes": "Ja",
   "You can now use this computer for another user.": "Du kan nå bruke denne datamaskinen til å rapportere inn helsetilstanden til en annen person.",
   "You must approve the privacy statement to report your data.": "Du må godkjenne personvernerklæringen for å rapportere dine data.",

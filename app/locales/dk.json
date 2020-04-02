@@ -1,6 +1,7 @@
 {
   "...and others": "...og andre",
   "{{ amount }} people already shared their health status.": "{{ amount }} personer delte allerede deres sundhedsstatus.",
+  "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}": "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}",
   "About the service": "Om tjenesten",
   "Added to form": "Tilføjet til formularen",
   "All submissions": "Alle indsendelser",
@@ -177,7 +178,6 @@
   "What was the result?": "Hvad var resultatet?",
   "When did the symptoms start?": "Hvornår startede symptomerne?",
   "Write it down somewhere or save it on your computer.": "Skriv det ned et sted, eller gem det på din computer.",
-  "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}": "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}",
   "Yes": "Ja",
   "You can now use this computer for another user.": "Du kan nu bruge denne computer til en anden bruger.",
   "You must approve the privacy statement to report your data.": "Du skal godkende fortrolighedserklæringen for at rapportere dine data.",
