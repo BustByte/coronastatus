@@ -44,6 +44,7 @@ type Urls = {
     api: string;
     apiDocs: string;
     statistics: string;
+    limit: string;
   };
 };
 
@@ -56,7 +57,8 @@ const localeAwareUrls: Urls = {
     contributors: '/colaboradores',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/estadisticas'
+    statistics: '/estadisticas',
+    limit: '/limit'
   },
   au: {
     submitReport: '/',
@@ -66,7 +68,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    limit: '/limit'
   },
   bd: {
     submitReport: '/',
@@ -76,7 +79,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    limit: '/limit'
   },
   br: {
     submitReport: '/',
@@ -86,7 +90,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contribuidores',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/estatisticas'
+    statistics: '/estatisticas',
+    limit: '/limit'
   },
   ca: {
     submitReport: '/',
@@ -96,7 +101,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    limit: '/limit'
   },
   cl: {
     submitReport: '/',
@@ -106,7 +112,8 @@ const localeAwareUrls: Urls = {
     contributors: '/colaboradores',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/estadisticas'
+    statistics: '/estadisticas',
+    limit: '/limit'
   },
   co: {
     submitReport: '/',
@@ -116,7 +123,8 @@ const localeAwareUrls: Urls = {
     contributors: '/colaboradores',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/estadisticas'
+    statistics: '/estadisticas',
+    limit: '/limit'
   },
   cz: {
     submitReport: '/',
@@ -126,7 +134,8 @@ const localeAwareUrls: Urls = {
     contributors: '/prispevatele',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistiky'
+    statistics: '/statistiky',
+    limit: '/limit'
   },
   dk: {
     submitReport: '/',
@@ -136,7 +145,8 @@ const localeAwareUrls: Urls = {
     contributors: '/frivillige',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistikker'
+    statistics: '/statistikker',
+    limit: '/limit'
   },
   en: {
     submitReport: '/',
@@ -146,7 +156,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    limit: '/limit'
   },
   es: {
     submitReport: '/',
@@ -156,7 +167,8 @@ const localeAwareUrls: Urls = {
     contributors: '/colaboradores',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/estadisticas'
+    statistics: '/estadisticas',
+    limit: '/limit'
   },
   fr: {
     submitReport: '/',
@@ -166,7 +178,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributeurs',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistiques'
+    statistics: '/statistiques',
+    limit: '/limit'
   },
   id: {
     submitReport: '/',
@@ -176,7 +189,8 @@ const localeAwareUrls: Urls = {
     contributors: '/kontributor',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistik'
+    statistics: '/statistik',
+    limit: '/limit'
   },
   in: {
     submitReport: '/',
@@ -186,7 +200,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    limit: '/limit'
   },
   it: {
     submitReport: '/',
@@ -196,7 +211,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributori',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistiche'
+    statistics: '/statistiche',
+    limit: '/limit'
   },
   lt: {
     submitReport: '/',
@@ -206,7 +222,8 @@ const localeAwareUrls: Urls = {
     contributors: '/autoriai',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistika'
+    statistics: '/statistika',
+    limit: '/limit'
   },
   mt: {
     submitReport: '/',
@@ -216,7 +233,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    limit: '/limit'
   },
   mx: {
     submitReport: '/',
@@ -226,7 +244,8 @@ const localeAwareUrls: Urls = {
     contributors: '/colaboradores',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/estadisticas'
+    statistics: '/estadisticas',
+    limit: '/limit'
   },
   my: {
     submitReport: '/',
@@ -236,7 +255,8 @@ const localeAwareUrls: Urls = {
     contributors: '/penyumbang',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistik'
+    statistics: '/statistik',
+    limit: '/limit'
   },
   ng: {
     submitReport: '/',
@@ -246,7 +266,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    limit: '/limit'
   },
   nl: {
     submitReport: '/',
@@ -256,7 +277,8 @@ const localeAwareUrls: Urls = {
     contributors: '/bijdragers',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistieken'
+    statistics: '/statistieken',
+    limit: '/limit'
   },
   no: {
     submitReport: '/',
@@ -266,7 +288,8 @@ const localeAwareUrls: Urls = {
     contributors: '/frivillige',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistikk'
+    statistics: '/statistikk',
+    limit: '/limit'
   },
   np: {
     submitReport: '/',
@@ -276,77 +299,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
-  },
-  pt: {
-    submitReport: '/',
-    profile: '/estadosaude',
-    privacyPolicy: '/politica-privacidade',
-    map: '/mapa',
-    contributors: '/voluntarios',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/estatistica'
-  },
-  se: {
-    submitReport: '/',
-    profile: '/halsotillstand',
-    privacyPolicy: '/integritetspolicy',
-    map: '/karta',
-    contributors: '/medverkare',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistik'
-  },
-  sg: {
-    submitReport: '/',
-    profile: '/healthcondition',
-    privacyPolicy: '/privacy-statement',
-    map: '/map',
-    contributors: '/contributors',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistics'
-  },
-  sk: {
-    submitReport: '/',
-    profile: '/zdravotny-stav',
-    privacyPolicy: '/ochrana-sukromia',
-    map: '/mapa',
-    contributors: '/prispievatelia',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistiky'
-  },
-  tr: {
-    submitReport: '/',
-    profile: '/profil',
-    privacyPolicy: '/gizlilik-bildirimi',
-    map: '/harita',
-    contributors: '/katkida-bulunanlar',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/istatistikler'
-  },
-  ua: {
-    submitReport: '/',
-    profile: '/healthcondition',
-    privacyPolicy: '/privacy-statement',
-    map: '/map',
-    contributors: '/contributors',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistics'
-  },
-  us: {
-    submitReport: '/',
-    profile: '/healthcondition',
-    privacyPolicy: '/privacy-statement',
-    map: '/map',
-    contributors: '/contributors',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    limit: '/limit'
   },
   ph: {
     submitReport: '/',
@@ -356,7 +310,85 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    limit: '/limit'
+  },
+  pt: {
+    submitReport: '/',
+    profile: '/estadosaude',
+    privacyPolicy: '/politica-privacidade',
+    map: '/mapa',
+    contributors: '/voluntarios',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/estatistica',
+    limit: '/limit'
+  },
+  se: {
+    submitReport: '/',
+    profile: '/halsotillstand',
+    privacyPolicy: '/integritetspolicy',
+    map: '/karta',
+    contributors: '/medverkare',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistik',
+    limit: '/limit'
+  },
+  sg: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics',
+    limit: '/limit'
+  },
+  sk: {
+    submitReport: '/',
+    profile: '/zdravotny-stav',
+    privacyPolicy: '/ochrana-sukromia',
+    map: '/mapa',
+    contributors: '/prispievatelia',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistiky',
+    limit: '/limit'
+  },
+  tr: {
+    submitReport: '/',
+    profile: '/profil',
+    privacyPolicy: '/gizlilik-bildirimi',
+    map: '/harita',
+    contributors: '/katkida-bulunanlar',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/istatistikler',
+    limit: '/limit'
+  },
+  ua: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics',
+    limit: '/limit'
+  },
+  us: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics',
+    limit: '/limit'
   }
 };
 
