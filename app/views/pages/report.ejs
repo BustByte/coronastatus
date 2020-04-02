@@ -446,7 +446,19 @@
       <img src="/static/images/symptoms.svg" alt="" class="h-16 w-16">
       <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Symptoms") %></h3>
     </div>
+
     <fieldset>
+      <legend class="mb-0"><%= __('Have you experienced any symptoms?')%> </legend>
+      <p>
+          <input required type="radio" id="has-symptoms-yes" name="has-symptoms" value="yes" onclick="showHideSymptomsCheckboxes()" <%= symptoms ? 'checked' : '' %>>
+          <label class="mr-4" for="has-symptoms-yes"><%= __('Yes')%></label>
+  
+          <input required type="radio" id="has-symptoms-no" name="has-symptoms" value="no" onclick="showHideSymptomsCheckboxes()" <%= !symptoms && smokingHabit ? 'checked' : '' %>>
+          <label for="has-symptoms-no"><%= __('No')%></label>
+      </p>
+      </fieldset>
+
+    <fieldset id="symptoms-checkboxes" style="display:none;">
     <legend class="mb-0"><%= __('Symptoms you have experienced') %></legend>
     <p class="mb-4"><%- __('Select only the symptoms you have experienced') %></p>
 
@@ -710,6 +722,28 @@
     altFormat: '<%= __(`F j, Y`) %>',
     dateFormat: 'Y-m-d'
   });
+  //accepts a collection of html elements and returns true if any of the elements is checked
+  function isRadioButtonSet(collection) {
+    var re = false;
+    for (var i = 0; i < collection.length; i++) {
+      if (collection[i].checked) {
+        re = true;
+        break;
+      }
+    };
+    return re;
+  }
+
+  //returns the radio button that is set or false if none are
+  function radioSet(collection) {
+    for (var i = 0; i < collection.length; i++) {
+      if (collection[i].checked) {
+        return collection[i];
+        break;
+      }
+    };
+    return false;
+  }
 </script>
 
 <script>
@@ -729,6 +763,21 @@
   if (symptoms != null && symptoms.length > 0) {
     document.getElementById('symptom-start-question').style.display = 'block';
   }
+
+  function showHideSymptomsCheckboxes() {
+    var hasSymptoms = document.getElementsByName("has-symptoms");
+    if (isRadioButtonSet(hasSymptoms)) {
+      if (radioSet(hasSymptoms).value === "yes") {
+        document.getElementById('symptoms-checkboxes').style.display = 'block';
+      } else {
+        document.getElementById('symptoms-checkboxes').style.display = 'none';
+      }
+    } else {
+      document.getElementById('symptoms-checkboxes').style.display = 'none';
+    }
+  }
+  showHideSymptomsCheckboxes();
+  
 
   changeTestResultDisplay(document.getElementById("been-tested-yes").checked);
 
@@ -801,6 +850,10 @@
   }
 
   var validateSymptoms = function() {
+    var hasSymptoms = document.getElementsByName("has-symptoms");
+    if (!isRadioButtonSet(hasSymptoms)) {
+      return [false, "<%= __('Please select if you have experienced symptoms') %>"];
+    }
     return [true, undefined];
   }
 
@@ -827,17 +880,7 @@
     validateHealth
   ];
 
-//accepts a collection of html elements and returns true if any of the elements is checked
-  function isRadioButtonSet(collection) {
-    var re = false;
-    for (var i = 0; i < collection.length; i++) {
-      if (collection[i].checked) {
-        re = true;
-        break;
-      }
-    };
-    return re;
-  }
+
 </script>
 
 <script>
