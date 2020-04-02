@@ -32,7 +32,8 @@ export type CountryCode =
   | 'sk'
   | 'tr'
   | 'ua'
-  | 'us';
+  | 'us'
+  | 'ph';
 
 type Urls = {
   [countryCode in CountryCode]: {
@@ -350,7 +351,7 @@ const localeAwareUrls: Urls = {
   },
   ph: {
     submitReport: '/',
-    profile: '/healthcondition',
+    profile: '/submission',
     privacyPolicy: '/privacy-statement',
     map: '/map',
     contributors: '/contributors',
