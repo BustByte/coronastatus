@@ -31,3 +31,5 @@ This document describes how we operate the sites which are running Coronastatus.
 | [coronastatus.lt](https://coronastatus.lt)         |  🇱🇹  |  Lithuania       | Mantas Bandonis                         | Mantas Bandonis        |
 | [coronastatusnp.com](https://coronastatusnp.com)   |  🇳🇵  |  Nepal           | Deepak Shah                             | Eirik Fosse / BustByte |
 | [corona-status.cz](https://corona-status.cz)       |  🇨🇿  |  Czech Republic  | František Vybíral                       | Eirik Fosse / BustByte |
+| [coronastatus.id](https://coronastatus.id)         |  🇮🇩  |  Indonesia       | Frederic Ronaldi                        | Eirik Fosse / BustByte |
+
