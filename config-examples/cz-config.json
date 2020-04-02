@@ -1,6 +1,5 @@
 {
   "BASE_URL": "corona-status.cz",
-  "COUNTRY": "Česká Republika",
   "COUNTRY_CODE": "cz",
   "DB_PATH": "./covid_db",
   "LOCALE": "cs-CZ",
@@ -11,7 +10,6 @@
   "REDIRECT_TO_GOVERNMENT": false,
   "SUPPORTED_LOCALES": ["cs-CZ"],
   "THOUSAND_SEPARATOR": " ",
-  "TWITTER": "coronastatusCZ",
   "ZIP_GUIDE": false,
   "ZIP_PATTERN": "[0-9]{3} [0-9]{2}",
   "ZIP_PLACEHOLDER": "12345"

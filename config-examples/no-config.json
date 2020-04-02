@@ -1,6 +1,5 @@
 {
   "BASE_URL": "coronastatus.no",
-  "COUNTRY": "Norway",
   "COUNTRY_CODE": "no",
   "DB_PATH": "./covid_db",
   "LOCALE": "no",
@@ -11,7 +10,6 @@
   "REDIRECT_TO_GOVERNMENT": true,
   "SUPPORTED_LOCALES": ["no", "en"],
   "THOUSAND_SEPARATOR": " ",
-  "TWITTER": "coronastatusNO",
   "ZIP_GUIDE": false,
   "ZIP_PATTERN": "[0-9]{4}",
   "ZIP_PLACEHOLDER": "1234"
