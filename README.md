@@ -25,7 +25,7 @@ We need people who can help translate the site, develop new features, project le
 - 🇺🇸 United States of America (USA): https://coronastatus.us
 - 🇺🇦 Ukraine: https://coronastatus.org.ua
 - 🇪🇸 Spain: https://coronastatus.es
-- 🇧🇷 Brazil: https://coronastatus.com.br
+- 🇧🇷 Brazil: https://coronastatus.net.br
 - 🇨🇦 Canada: https://coronastatus.ca
 - 🇦🇺 Australia: https://coronastatusau.org
 - 🇸🇬 Singapore: https://coronastatus.sg
@@ -38,12 +38,14 @@ We need people who can help translate the site, develop new features, project le
 - 🇹🇷 Turkey: https://coronastatustr.com
 - 🇱🇹 Lithuania: https://coronastatus.lt
 - 🇳🇵 Nepal: https://coronastatusnp.com
+- 🇨🇿 Czech Republic: https://corona-status.cz
 - 🇸🇪 Sweden: coming soon
 - 🇵🇭 Philippines: coming soon
 - 🇧🇪 Belgium: coming soon
 - 🇮🇸 Iceland: coming soon
 - 🇨🇭 Switzerland: coming soon
 - 🇩🇪 Germany: coming soon
+- 🇨🇿 Czech Republic: coming soon
 - ... want one for your country? Join our community: https://t.me/onzecorona
 
 ## Why?
@@ -74,6 +76,7 @@ Adding a new language should be pretty straightforward. If you need help, you ca
 - Set up a new config file: `cp config.example.json config.json`. `LOCALE` should be one of the locales from [here](https://github.com/ladjs/i18n-locales). `CONTRY_CODE` should be the Alpha-2-code listed here: https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
 - In `app/locales` you have to add
   - Translations for all the sentences in `en.json`. The keys are the same in all the `{LOCALE}.json`-files, and the values are the translations. We recommend translating everything in the file first, and then testing the site in order to verify that the translations look ok in context.
+  - sort the locales alphabetically by keys. You can use a helper script to sort it: `yarn sort:locales`
 - In `app/countrySpecific` you have to add (follow filename convention of the files that are already there):
   - A word list that is used for generating unique profile links. If the word list contains between 1000 and 10000 words, you should set `PASSCODE_LENGTH: 4` in the config. If it contains more than 10000 words, `PASSCODE_LENGTH: 3` should be sufficient.
   - List of municipalities (we can help with this [Check Here](app/countrySpecific/README.md)).
