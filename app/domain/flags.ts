@@ -63,7 +63,7 @@ const localeToFlagMap: LocaleToFlagMap = {
   nl: 'nl',
   no: 'no',
   ne: 'np',
-  'en-NE': 'np',
+  'en-NE': 'us',
   'pt-BR': 'br',
   'pt-PT': 'pt',
   se: 'se',
