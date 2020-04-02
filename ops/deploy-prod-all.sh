@@ -22,6 +22,7 @@ declare -a HOSTS=(
     'coronastatus.net.br'
     'corona-status.cz'
     'coronastatus.id'
+    'coronastatus.ph'
 
 #   Adriaan told med to wait with deploying NL.
 #   'coronastatus.nl'

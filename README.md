@@ -40,6 +40,7 @@ We need people who can help translate the site, develop new features, project le
 - 🇳🇵 Nepal: https://coronastatusnp.com
 - 🇨🇿 Czech Republic: https://corona-status.cz
 - 🇮🇩 Indonesia: https://coronastatus.id
+- 🇵🇭 Philippines: https://coronastatus.ph
 - 🇸🇪 Sweden: coming soon
 - 🇵🇭 Philippines: coming soon
 - 🇧🇪 Belgium: coming soon
