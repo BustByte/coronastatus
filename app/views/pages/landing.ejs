@@ -1,0 +1,196 @@
+<%
+  const {
+    profile,
+    passcode,
+    baseUrl,
+    formatNumber,
+    urls
+  } = locals;
+  const shouldAddAnalytics = !locals.profile;
+%>
+<% const { show = true, menu = true, home = false, fullscreen = false, lastCommit = false, showLocaleSelector = true } = locals; %>
+
+<!DOCTYPE html>
+<html lang="<%= locale %>">
+<!-- <% if (lastCommit) { %>Current commit: https://github.com/BustByte/coronastatus/commits/<%= lastCommit %><% } else { %>Get our code here: https://github.com/BustByte/coronastatus<% } %>  -->
+<head>
+<%- include('partials/head') -%>
+<style>
+  body {
+    background-color: #364547;
+  }
+
+  .background-slate {
+    background-image: none;
+    background-color: #364547;
+  }
+
+</style>
+</head>
+<body class="flex flex-col">
+  
+
+  <div class="main-container flex flex-col flex-grow">
+
+  <% if (menu) { %>
+    <section class="background-slate custom-section custom-hero p-4 w-full <% if (fullscreen) { %>custom-fullscreen<% } %>">
+      <div class="custom-section-content <% if (fullscreen) { %>mx-4<% } else { %>mx-auto<% } %>">
+        <header class="py-2 flex justify-between items-center flex-wrap">
+          <div class="flex items-center">
+            <%- include('partials/logo') -%>
+            <% if (showLocaleSelector) { %>
+              <%- include('partials/locale-selector') -%>
+            <% } %>
+          </div>
+        </header>
+      </div>
+    </section>
+  <% } %>
+
+
+  <%- include('partials/cta') -%>
+
+
+
+
+
+  <section class="custom-section custom-hero p-4 background-slate">
+    <div class="custom-section-content mx-auto">
+
+      <div class="my-8 flex flex-row flex-wrap justify-between">
+        
+  
+        <%- include('partials/app-feature-block', {
+          image: '/static/images/hospital.svg',
+          title: __('Unreported cases'),
+          description: __('The spread of COVID-19 in our country is unknown. Help us create a better overview.')
+        }) -%>
+  
+        <%- include('partials/app-feature-block', {
+          image: '/static/images/doctor.svg',
+          title: __('Contribute anonymously'),
+          description: __('Report your health condition anonymously')
+        }) -%>
+  
+        <%- include('partials/app-feature-block', {
+          image: '/static/images/research.svg',
+          title: __('Insight for everyone'),
+          description: __('The data is open to everyone. Look at maps and graphs, or download the data and create your own visualizations.')
+        }) -%>
+  
+        <%- include('partials/app-feature-block', {
+          image: '/static/images/mobile.svg',
+          title: __('Everything is open'),
+          description: __('The website is open source and built by volunteers. Feel free to join.')
+        }) -%>
+      </div>
+    </div> 
+    <ul class="mt-4 text-center">
+      <li>
+    <button class="inverse custom-nav-link rounded-full text-base text-white mt-2 font-medium px-5 " >
+      <%- __("About corona<span>status</span>").replace(/<span>/g, '<span class="text-cvs-gold">') %>
+
+      </button>
+
+      </li>
+      </ul>
+
+  </section>
+
+
+
+<script>
+  function hasSubmittedAlertOnClick() {
+      document.getElementById('has-submitted-alert').style.display = 'none';
+      window.localStorage.setItem("hasCrossedOutInfo", "true");
+  }
+
+  if ((window.localStorage.getItem("hasSubmittedProfile") === "true"
+      || window.localStorage.getItem("isUsingPasscodeLink") === "true")
+      && window.localStorage.getItem("hasCrossedOutInfo") !== "true"
+      && window.location.pathname.indexOf("helsetilstand") === -1) {
+      document.getElementById('has-submitted-alert').style.display = 'flex';
+  }
+
+  var symptoms = document.querySelectorAll('input[name^="symptom-"]:checked');
+  if (symptoms != null && symptoms.length > 0) {
+    document.getElementById('symptom-start-question').style.display = 'block';
+  }
+
+  changeTestResultDisplay(document.getElementById("been-tested-yes").checked);
+
+  var hasPasscodeCookie = document.cookie.includes('passcode');
+  document.getElementById('accept-remember').checked = hasPasscodeCookie;
+</script>
+
+<script>
+  (function scrollCallToAction() {
+    document.querySelectorAll('[href="#contribute"]').forEach(function(element) {
+      element.addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("contribute").scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  })()
+</script>
+
+<script>
+  // Obfuscate path so people will not share their personal URL
+  var obfuscatePath = true;
+</script>
+<footer class="custom-section custom-section-footer p-8 pt-32">
+  <div
+    class="custom-section-content mx-auto custom-section-footer-content flex flex-col items-center"
+  >
+    <a
+      href="https://github.com/BustByte/coronastatus"
+      target="_blank"
+      class="footer-logo-link m-6"
+    >
+      <img
+        src="/static/images/github.svg"
+        alt=""
+        class="footer-logo-link__img mt-12 h-12 w-12 lg:h-16 lg:w-16"
+      />
+    </a>
+    <div
+      class="flex flex-row justify-between flex-wrap items-center self-stretch mt-8 text-base lg:text-xl text-center"
+    >
+      <% if (locals.twitter) { %>
+      <a
+        class="text-white font-medium whitespace-no-wrap"
+        href="https://twitter.com/intent/user?screen_name=<%= locals.twitter %>"
+        target="_blank"
+        >@<%= locals.twitter %></a
+      >
+      <% } %>
+      <span
+        class="text-white font-medium text-left md:text-center md:whitespace-no-wrap"
+      >
+        <%= __('Developed by')%>
+        <a target="_blank" class="font-bold hover:text-cvs-red hover:underline" href="https://bustbyte.no"
+          ><%= __('BustByte AS')%></a
+        >
+        <%= __('and') %>
+        <a class="font-bold hover:text-cvs-red hover:underline" href="<%= urls.contributors %>">
+          <%= __('volunteers')%>
+        </a>
+      </span>
+      <a
+        class="text-white hover:text-cvs-red font-bold hover:underline whitespace-no-wrap"
+        href="<%= urls.privacyPolicy %>"
+        ><%= __('Privacy Policy')%></a
+      >
+    </div>
+
+    <div
+      class="flex items-center justify-center self-stretch mt-4 mb-8 text-sm lg:text-base text-center"
+    >
+      <img src="/static/images/analytics.svg" alt="Provided by Simple Analytics" class="mr-2" />
+        <a target="_blank" class="font-bold text-white hover:text-cvs-red hover:underline" href="https://simpleanalytics.com/<%= baseUrl %><% if (!shouldAddAnalytics) { %>?ref=<%= baseUrl %><% } %>"
+        ><%= __('View Website Statistics')%></a
+      >
+    </div>
+
+  </div>
+</footer>

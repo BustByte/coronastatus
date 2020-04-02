@@ -22,6 +22,10 @@ router.get(`${urls.contributors}`, (req, res) => {
   return res.render('pages/contributors');
 });
 
+router.get(`${urls.landing}`, (req, res) => {
+  return res.render('pages/landing');
+})
+
 if (process.env.NODE_ENV !== 'production') {
   router.get('/social-images', (req, res) => {
     return res.render('pages/social-images');

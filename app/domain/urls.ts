@@ -42,6 +42,7 @@ type Urls = {
     api: string;
     apiDocs: string;
     statistics: string;
+    landing: string;
   };
 };
 
@@ -54,7 +55,8 @@ const localeAwareUrls: Urls = {
     contributors: '/colaboradores',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/estadisticas'
+    statistics: '/estadisticas',
+    landing: "/landing"
   },
   au: {
     submitReport: '/',
@@ -64,7 +66,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    landing: "/landing"
   },
   bd: {
     submitReport: '/',
@@ -74,7 +77,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    landing: "/landing"
   },
   br: {
     submitReport: '/',
@@ -84,7 +88,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contribuidores',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/estatisticas'
+    statistics: '/estatisticas',
+    landing: "/landing"
   },
   ca: {
     submitReport: '/',
@@ -94,7 +99,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    landing: "/landing"
   },
   cl: {
     submitReport: '/',
@@ -104,7 +110,8 @@ const localeAwareUrls: Urls = {
     contributors: '/colaboradores',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/estadisticas'
+    statistics: '/estadisticas',
+    landing: "/landing"
   },
   co: {
     submitReport: '/',
@@ -114,7 +121,8 @@ const localeAwareUrls: Urls = {
     contributors: '/colaboradores',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/estadisticas'
+    statistics: '/estadisticas',
+    landing: "/landing"
   },
   cz: {
     submitReport: '/',
@@ -124,7 +132,8 @@ const localeAwareUrls: Urls = {
     contributors: '/prispevatele',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistiky'
+    statistics: '/statistiky',
+    landing: "/landing"
   },
   dk: {
     submitReport: '/',
@@ -134,7 +143,8 @@ const localeAwareUrls: Urls = {
     contributors: '/frivillige',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistikker'
+    statistics: '/statistikker',
+    landing: "/landing"
   },
   en: {
     submitReport: '/',
@@ -144,7 +154,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    landing: "/landing"
   },
   es: {
     submitReport: '/',
@@ -154,7 +165,8 @@ const localeAwareUrls: Urls = {
     contributors: '/colaboradores',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/estadisticas'
+    statistics: '/estadisticas',
+    landing: "/landing"
   },
   fr: {
     submitReport: '/',
@@ -164,7 +176,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributeurs',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistiques'
+    statistics: '/statistiques',
+    landing: "/landing"
   },
   in: {
     submitReport: '/',
@@ -174,7 +187,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    landing: "/landing"
   },
   it: {
     submitReport: '/',
@@ -184,7 +198,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributori',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistiche'
+    statistics: '/statistiche',
+    landing: "/landing"
   },
   lt: {
     submitReport: '/',
@@ -194,7 +209,8 @@ const localeAwareUrls: Urls = {
     contributors: '/autoriai',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistika'
+    statistics: '/statistika',
+    landing: "/landing"
   },
   mt: {
     submitReport: '/',
@@ -204,7 +220,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    landing: "/landing"
   },
   mx: {
     submitReport: '/',
@@ -214,7 +231,8 @@ const localeAwareUrls: Urls = {
     contributors: '/colaboradores',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/estadisticas'
+    statistics: '/estadisticas',
+    landing: "/landing"
   },
   my: {
     submitReport: '/',
@@ -224,7 +242,8 @@ const localeAwareUrls: Urls = {
     contributors: '/penyumbang',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistik'
+    statistics: '/statistik',
+    landing: "/landing"
   },
   ng: {
     submitReport: '/',
@@ -234,7 +253,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    landing: "/landing"
   },
   nl: {
     submitReport: '/',
@@ -244,7 +264,8 @@ const localeAwareUrls: Urls = {
     contributors: '/bijdragers',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistieken'
+    statistics: '/statistieken',
+    landing: "/landing"
   },
   no: {
     submitReport: '/',
@@ -254,7 +275,8 @@ const localeAwareUrls: Urls = {
     contributors: '/frivillige',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistikk'
+    statistics: '/statistikk',
+    landing: "/landing"
   },
   np: {
     submitReport: '/',
@@ -264,7 +286,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    landing: "/landing"
   },
   pt: {
     submitReport: '/',
@@ -274,7 +297,8 @@ const localeAwareUrls: Urls = {
     contributors: '/voluntarios',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/estatistica'
+    statistics: '/estatistica',
+    landing: "/landing"
   },
   se: {
     submitReport: '/',
@@ -284,7 +308,8 @@ const localeAwareUrls: Urls = {
     contributors: '/medverkare',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistik'
+    statistics: '/statistik',
+    landing: "/landing"
   },
   sg: {
     submitReport: '/',
@@ -294,7 +319,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    landing: "/landing"
   },
   sk: {
     submitReport: '/',
@@ -304,7 +330,8 @@ const localeAwareUrls: Urls = {
     contributors: '/prispievatelia',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistiky'
+    statistics: '/statistiky',
+    landing: "/landing"
   },
   tr: {
     submitReport: '/',
@@ -314,7 +341,8 @@ const localeAwareUrls: Urls = {
     contributors: '/katkida-bulunanlar',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/istatistikler'
+    statistics: '/istatistikler',
+    landing: "/landing"
   },
   ua: {
     submitReport: '/',
@@ -324,7 +352,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    landing: "/landing"
   },
   us: {
     submitReport: '/',
@@ -334,7 +363,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributors',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistics'
+    statistics: '/statistics',
+    landing: "/landing"
   }
 };
 
