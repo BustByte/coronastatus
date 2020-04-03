@@ -48,6 +48,7 @@ We need people who can help translate the site, develop new features, project le
 - 🇨🇭 Switzerland: coming soon
 - 🇩🇪 Germany: coming soon
 - 🇧🇩 Bangladesh: coming soon
+- 🇷🇴 Romania: coming soon
 - ... want one for your country? Join our community: https://t.me/onzecorona
 
 ## Why?

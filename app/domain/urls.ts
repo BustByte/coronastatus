@@ -27,6 +27,7 @@ export type CountryCode =
   | 'np'
   | 'ph'
   | 'pt'
+  | 'ro'
   | 'se'
   | 'sg'
   | 'sk'
@@ -323,6 +324,16 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/estatistica',
     limit: '/limit'
+  },
+  ro: {
+    submitReport: '/',
+    profile: '/staresanatate',
+    privacyPolicy: '/protectia-datelor',
+    map: '/harta',
+    contributors: '/contributori',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistici'
   },
   se: {
     submitReport: '/',

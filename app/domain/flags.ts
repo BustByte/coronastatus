@@ -29,6 +29,7 @@ export type Locale =
   | 'ne'
   | 'pt-BR'
   | 'pt-PT'
+  | 'ro-RO'
   | 'se'
   | 'sk'
   | 'tr'
@@ -68,6 +69,7 @@ const localeToFlagMap: LocaleToFlagMap = {
   'en-NE': 'us',
   'pt-BR': 'br',
   'pt-PT': 'pt',
+  'ro-RO': 'ro',
   se: 'se',
   sk: 'sk',
   tr: 'tr',
