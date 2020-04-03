@@ -136,7 +136,8 @@ const localeAwareUrls: Urls = {
     contributors: '/mitwirkende',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistiken'
+    statistics: '/statistiken',
+    limit: '/limit'
   },
   cz: {
     submitReport: '/',
@@ -344,7 +345,8 @@ const localeAwareUrls: Urls = {
     contributors: '/contributori',
     api: '/api',
     apiDocs: '/api-docs',
-    statistics: '/statistici'
+    statistics: '/statistici',
+    limit: '/limit'
   },
   se: {
     submitReport: '/',
