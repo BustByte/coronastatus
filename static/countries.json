@@ -1,0 +1,142 @@
+{
+    "ar": { 
+        "name": "Norway",
+        "center": [64.2959,8.7755],
+        "domain": "https://coronastatus.no/"
+    },
+    "nl": { 
+        "name": "The Netherlands",
+        "center": [52.1951,3.0367],
+        "domain": "https://coronastatus.nl/"
+    },
+    "sk": { 
+        "name": "Slovakia",
+        "center": [48.6543,17.4567],
+        "domain": "https://coronastatus.sk"
+    },
+    "dk": { 
+        "name": "Denmark",
+        "center": [56.21285,9.3001],
+        "domain": "https://coronastatus.dk/"
+    },
+    "co": { 
+        "name": "Colombia",
+        "center": [4.6098,-83.3857],
+        "domain": "https://coronastatus.co/"
+    },
+    "it": { 
+        "name": "Italy",
+        "center": [4.6098,83.3857],
+        "domain": "https://coronastatus.it/"
+    },
+    "fr": { 
+        "name": "France",
+        "center": [4.6098,-83.3857],
+        "domain": "https://coronastatus.fr"
+    },
+    "mx": { 
+        "name": "Mexico",
+        "center": [4.6098,-83.3857],
+        "domain": "https://coronastatus.mx"
+    },
+    "us": { 
+        "name": "United States of America (USA)",
+        "center": [4.6098,-83.3857],
+        "domain": "https://coronastatus.us"
+    },
+    "ua": { 
+        "name": "Ukraine",
+        "center": [48.2558,26.6914],
+        "domain": "https://coronastatus.es"
+    },
+    "es": { 
+        "name": "Spain",
+        "center": [40.1301,-8.2033],
+        "domain": "https://coronastatus.es"
+    },
+    "br": { 
+        "name": "Brazil",
+        "center": [-13.6602,-69.6791],
+        "domain": "https://coronastatus.net.br/"
+    },
+    "ca": { 
+        "name": "Canada",
+        "center": [-13.6602,69.6791],
+        "domain": "https://coronastatus.es"
+    },
+    "au": { 
+        "name": "Australia",
+        "center": [-24.9885,115.1955],
+        "domain": "https://coronastatusau.org/"
+    },
+    "sg": { 
+        "name": "Singapore",
+        "center": [1.3143,103.7041],
+        "domain": "https://coronastatus.sg/"
+    },
+    "ar": { 
+        "name": "Argentina",
+        "center": [-37.0560,-81.6327],
+        "domain": "https://coronastatus.com.ar"
+    },
+    "my": { 
+        "name": "Malaysia",
+        "center": [4.1389,105.1200],
+        "domain": "https://coronastatusmy.org"
+    },
+    "mt": { 
+        "name": "Malta",
+        "center": [35.9426,14.2382],
+        "domain": "https://coronastatusmt.com/"
+    },
+    "cl": { 
+        "name": "Chile",
+        "center": [35.4088,-106.2311],
+        "domain": "https://coronastatus.cl/"
+    },
+    "in": { 
+        "name": "India",
+        "center": [20.7707,73.7214],
+        "domain": "https://corona-status.in/"
+    },
+    "pt": { 
+        "name": "Portugal",
+        "center": [36.8983,-27.8261],
+        "domain": "https://coronastatus.pt/"
+    },
+    "tr": { 
+        "name": "Turkey",
+        "center": [39.0100,30.6870],
+        "domain": "https://coronastatustr.com/"
+    },
+    "lt": { 
+        "name": "Lithuania",
+        "center": [55.1561,21.6408],
+        "domain": "https://coronastatus.lt/"
+    },
+    "np": { 
+        "name": "Nepal",
+        "center": [28.3838,81.8862],
+        "domain": "https://coronastatusnp.com/"
+    },
+    "cz": { 
+        "name": "Czech Republic",
+        "center": [49.7856,13.2321],
+        "domain": "https://corona-status.cz/"
+    },
+    "id": { 
+        "name": "Indonesia",
+        "center": [-2.2760,99.4600],
+        "domain": "https://coronastatus.id/"
+    },
+    "ph": { 
+        "name": "Philippines",
+        "center": [11.5780,113.5793],
+        "domain": "https://coronastatus.ph/"
+    },
+    "ng": { 
+        "name": "Nigeria",
+        "center": [9.0173,4.1796],
+        "domain": "https://coronastatus.ng/"
+    }
+}
