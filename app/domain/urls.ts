@@ -9,6 +9,7 @@ export type CountryCode =
   | 'ca'
   | 'cl'
   | 'co'
+  | 'de'
   | 'cz'
   | 'dk'
   | 'en'
@@ -126,6 +127,16 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/estadisticas',
     limit: '/limit'
+  },
+  de: {
+    submitReport: '/',
+    profile: '/gesundheitszustand',
+    privacyPolicy: '/datenschutzerklaerung',
+    map: '/karte',
+    contributors: '/mitwirkende',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistiken'
   },
   cz: {
     submitReport: '/',

@@ -2,6 +2,7 @@
 export type Locale =
   | 'bd'
   | 'ca'
+  | 'de'
   | 'dk'
   | 'cs-CZ'
   | 'en-AU'
@@ -42,6 +43,7 @@ type LocaleToFlagMap = {
 const localeToFlagMap: LocaleToFlagMap = {
   bd: 'bd',
   ca: 'ca',
+  de: 'de',
   'cs-CZ': 'cz',
   dk: 'dk',
   'en-AU': 'au',
