@@ -153,6 +153,7 @@ export interface Config {
   MAP_CENTER: string;
   MAP_ZOOM: number;
   MAP_MAX_ZOOM: number;
+  EMAIL: string;
   TWITTER: string;
   ZIP_PATTERN: string;
   ZIP_PLACEHOLDER: string;
@@ -161,6 +162,8 @@ export interface Config {
   PASSCODE_LENGTH: number;
   DB_PATH: string;
   THOUSAND_SEPARATOR: string;
+  RATE_LIMIT_COUNT: number;
+  RATE_LIMIT_WINDOW: number;
 }
 
 export type DatabaseType = 'pg' | 'sqlite';
