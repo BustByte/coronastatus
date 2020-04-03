@@ -11,6 +11,7 @@ export type Locale =
   | 'en-SG'
   | 'en-US'
   | 'en-NE'
+  | 'en-PH'
   | 'en'
   | 'es-AR'
   | 'es-CL'
@@ -72,8 +73,7 @@ const localeToFlagMap: LocaleToFlagMap = {
   sk: 'sk',
   tr: 'tr',
   'uk-UA': 'ua',
-  'en-PH': 'ph',
-  'tl-PH': 'ph'
+  'en-PH': 'ph'
 };
 
 export const localeToFlag = (locale: Locale): string => localeToFlagMap[locale];
