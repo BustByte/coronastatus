@@ -29,7 +29,7 @@ help {{ COUNTRY_NAME }} gain control over COVID-19.`, { COUNTRY_NAME })) %>
     target="_blank"
     rel="noreferrer"
     referrerpolicy="no-referrer"
-    href="http://twitter.com/share?url=<%= encode(`https://${twitterUrl}/?ref=twitter`) %>&amp;text=<%= message %><% if (TWITTER_NAME) { %> @<%= TWITTER_NAME %><% } %><%= encode('\n\n') %>"
+    href="https://twitter.com/share?url=<%= encode(`https://${twitterUrl}/?ref=twitter`) %>&amp;text=<%= message %><% if (TWITTER_NAME) { %> @<%= TWITTER_NAME %><% } %><%= encode('\n\n') %>"
     ><img
       src="/static/images/social/twitter.svg"
       class="inline-block -mt-1 mr-0 sm:mr-3"
