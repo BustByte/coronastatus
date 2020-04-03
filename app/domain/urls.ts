@@ -9,6 +9,7 @@ export type CountryCode =
   | 'ca'
   | 'cl'
   | 'co'
+  | 'de'
   | 'cz'
   | 'dk'
   | 'en'
@@ -27,6 +28,7 @@ export type CountryCode =
   | 'np'
   | 'ph'
   | 'pt'
+  | 'ro'
   | 'se'
   | 'sg'
   | 'sk'
@@ -124,6 +126,17 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estadisticas',
+    limit: '/limit'
+  },
+  de: {
+    submitReport: '/',
+    profile: '/gesundheitszustand',
+    privacyPolicy: '/datenschutzerklaerung',
+    map: '/karte',
+    contributors: '/mitwirkende',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistiken',
     limit: '/limit'
   },
   cz: {
@@ -322,6 +335,17 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estatistica',
+    limit: '/limit'
+  },
+  ro: {
+    submitReport: '/',
+    profile: '/staresanatate',
+    privacyPolicy: '/protectia-datelor',
+    map: '/harta',
+    contributors: '/contributori',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistici',
     limit: '/limit'
   },
   se: {
