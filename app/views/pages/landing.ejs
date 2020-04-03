@@ -4,7 +4,8 @@
     passcode,
     baseUrl,
     formatNumber,
-    urls
+    urls,
+    countries
   } = locals;
   const shouldAddAnalytics = !locals.profile;
 %>
@@ -35,6 +36,22 @@
     left:0;
     right:0;
   }
+
+  .country-button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+
+  .group:hover .group-hover\:block {
+    display: block !important;
+  }
+
+  .flag {
+    width:5vw;
+    height:5vh;
+  }
 </style>
 <script
   src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"
@@ -48,7 +65,6 @@
 />
 </head>
 <body class="flex flex-col">
-  
 
   <div class="main-container flex flex-col flex-grow">
 
@@ -63,10 +79,15 @@
             <% } %>
           </div>
           <ul class="mt-4 text-center">
-            <li>
-              <button class="inverse custom-nav-link rounded-full text-base text-white mt-2 font-medium px-5 " >
-                <%= __("Contribute now! ") %>🌍
+            <li class="group">
+              <button class="group inverse custom-nav-link rounded-full text-base text-white mt-2 font-medium px-5 " >
+                <span class="firstlevel"><%= __("Contribute now! ") %>🌍</span>
               </button>
+
+              <ul id="country-links-container" class="absolute p-2 rounded-lg shadow-lg bg-white z-10 hidden group-hover:block">
+                <svg class="block fill-current text-white w-4 h-4 ml-3 -mt-3 z-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+              
+            </ul>
             </li>
           </ul>
         </header>
@@ -469,4 +490,48 @@
     });
   });
 
+  var countries = <%- JSON.stringify(locals.countries) %>;
+</script>
+
+
+<script>
+  function createCountryButtons () {
+    var container = document.getElementById("country-links-container");
+    Object.keys(countries).forEach(function(key){
+      console.log(`adding ${key}`)
+      var li = document.createElement("li");
+      li.classList.add("p-4");
+      li.classList.add("whitespace-no-wrap");
+      li.classList.add("m-2");
+      li.classList.add("md:text-base");
+      li.classList.add("text-sm");
+      li.classList.add("text-gray-600");
+      li.classList.add("hover:text-gray-800");
+      li.classList.add("hover:bg-gray-100");
+      li.id = key+"-item";
+
+
+      var a = document.createElement("a");
+      a.classList.add("px-2");
+      a.classList.add("py-1");
+      a.href = countries[key].domain;
+
+      var span = document.createElement("span");
+      span.innerText = countries[key].name;
+      a.appendChild(span);
+
+      /* var img = document.createElement("img");
+      img.classList.add("flag");
+      img.src="static/flags/1x1/"+key+".svg";
+      a.appendChild(img); */
+
+      li.style.backgroundImage = "url(static/flags/1x1/"+key+".svg)";
+      li.style.backgroundRepeat = "no-repeat";
+
+      li.append(a);
+      container.appendChild(li);
+    });
+  }
+  createCountryButtons();
+   
 </script>
