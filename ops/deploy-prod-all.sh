@@ -5,21 +5,22 @@ set -e
 
 # All the coronastatus sites that are hosted on DO.
 declare -a HOSTS=(
-    'coronastatus.es'
+    'coronastatus.us'
     'coronastatus.co'
     # 'coronastatus.fr'
     'coronastatus.mx'
-    'coronastatus.us'
-    'coronastatus.org.ua'
-    'coronastatusau.org'
-    'coronastatusmt.com'
-    'coronastatus.it'
-    'coronastatus.pt'
-    'coronastatus.ng'
-    'coronastatustr.com'
-    'coronastatus.lg'
-    'coronastatusnp.com'
     'coronastatus.net.br'
+    'coronastatus.org.ua'
+    'coronastatus.es'
+    'coronastatusau.org'
+    'coronastatus.ng'
+    'coronastatus.it'
+    'coronastatusmt.com'
+    'corona-status.in'
+    'coronastatus.pt'
+    'coronastatustr.com'
+    'coronastatus.lt'
+    'coronastatusnp.com'
     'corona-status.cz'
     'coronastatus.id'
     'coronastatus.ph'
@@ -34,6 +35,11 @@ declare -a HOSTS=(
 #    These sites are not hosted with us.
 #   'coronastatus.sk'
 #   'coronastatus.dk'
+#   'coronastatus.ca'
+#   'coronastatus.sg'
+#   'coronastatusmy.org'
+#   'coronastatus.cl'
+#   ''
 );
 
 # Deploy procedure over ssh.
