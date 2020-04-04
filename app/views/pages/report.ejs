@@ -77,7 +77,7 @@
 <section class="custom-section p-4">
   <div class="custom-section-content mx-auto">
     <h2 class="sr-only"><%= __('Numbers') %></h2>
-    <ul class="my-8 flex flex-row flex-wrap justify-between">
+    <ul class="my-8 flex flex-row flex-wrap justify-between appearance-none rounded focus:outline-none focus:shadow-outline">
       <%- include('partials/app-stats-block', {
         image: '/static/images/napkin.svg',
         title: __('Total reports'),
@@ -176,7 +176,7 @@
 
 
     <label class="text-h4" for="Age"><%= __("Your age") %></label>
-    <select required name="age" id="Age">
+    <select class="appearance-none rounded focus:outline-none focus:shadow-outline" required name="age" id="Age">
       <option value="" disabled selected><%= __("Choose your age") %></option>
       <% for(var i=0; i<100; i+=10) {
         const ageSpan = `${i} - ${i + 9}`;
@@ -206,7 +206,7 @@
         <span>- </span><a class="text-cvs-red font-bold hover:underline" href="<%= __(`https://www.whatismyzip.com`) %>" target="_blank"><%= __('What is my Zip code?') %></a>
       <% } %>
     </label>
-    <input class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="<%= locals.zipPattern %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
+    <input class="appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="<%= locals.zipPattern %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
 
     <div class="flex flex-row items-center mt-8">
       <img src="/static/images/mask.svg" alt="" class="h-16 w-16">
@@ -407,7 +407,7 @@
     <p class="mb-4"><%= __('This field is optional') %></p>
     <input
       type="number"
-      class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      class="appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       step="0.1"
       placeholder="37.0"
       min="35"
@@ -443,7 +443,7 @@
     <ul class="mt-4">
       <li>
         <input type="hidden" name="passcode" value="<%= passcode %>" />
-        <input class="inverse" type="submit" value="<%= __('Submit report') %>">
+        <input class="inverse custom-nav-link rounded-full text-base text-white mt-2 font-medium px-5 py-3" type="submit" value="<%= __('Submit report') %>">
       </li>
     </ul>
   </form>
@@ -499,7 +499,21 @@
   </div>
 </section>
 
+<script
+  src="https://cdn.coronastatus.eu/libraries/flatpickr-4.6.3.js"
+  integrity="sha384-UiZzAA+k9B6Xr4SykueV26lljeUk/hTx/fFNONRwB3Dt3dLDOXg8lQlbf/j8rB7B"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
 <script src="/static/form.js?v=<%= locals.cacheKey %>"></script>
+
+<script>
+  flatpickr(document.querySelectorAll('[type=date]'), {
+    altInput: true,
+    altFormat: '<%= __(`F j, Y`) %>',
+    dateFormat: 'Y-m-d'
+  });
+</script>
 
 <script>
   function hasSubmittedAlertOnClick() {

@@ -1,0 +1,18 @@
+{
+  "BASE_URL": "coronastatusnp.com",
+  "COUNTRY": "Nepal",
+  "COUNTRY_CODE": "np",
+  "DB_PATH": "./covid_db",
+  "LOCALE": "ne",
+  "MAP_CENTER": "85.2911132, 27.7090319",
+  "MAP_MAX_ZOOM": 13,
+  "MAP_ZOOM": 4,
+  "PASSCODE_LENGTH": 4,
+  "REDIRECT_TO_GOVERNMENT": false,
+  "SUPPORTED_LOCALES": ["ne", "en-US"],
+  "THOUSAND_SEPARATOR": " ",
+  "TWITTER": "coronastatusNO",
+  "ZIP_GUIDE": false,
+  "ZIP_PATTERN": "[A-Za-z0-9]{4}",
+  "ZIP_PLACEHOLDER": "1234"
+}

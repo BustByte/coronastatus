@@ -2,10 +2,6 @@
 
 <h1><%= __('Something went wrong!') %></h1>
 <p><%= __('Something must have gone wrong') %></p>
-<p>
-  <%= __('Send an e-mail to') %>
-  <a href="mailto:kontakt@bustbyte.no">kontakt@bustbyte.no</a>
-  <%= __("if you can't get it to work.") %>
-</p>
+<%- include('partials/contact') -%>
 
 <%- include('partials/footer') -%>
