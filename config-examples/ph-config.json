@@ -1,18 +1,16 @@
 {
   "BASE_URL": "coronastatus.ph",
-  "COUNTRY": "Philippines",
-  "COUNTRY_CODE": "us",
+  "COUNTRY_CODE": "ph",
   "DB_PATH": "./covid_db",
   "LOCALE": "en-US",
-  "MAP_CENTER": "14.5995, 120.9842",
+  "MAP_CENTER": "121.7740173, 12.8797207",
   "MAP_MAX_ZOOM": 13,
   "MAP_ZOOM": 4,
   "PASSCODE_LENGTH": 4,
   "REDIRECT_TO_GOVERNMENT": false,
   "SUPPORTED_LOCALES": ["en-US"],
   "THOUSAND_SEPARATOR": ",",
-  "TWITTER": "coronastatusPH",
-  "ZIP_GUIDE": false,
+  "ZIP_GUIDE": true,
   "ZIP_PATTERN": "[A-Za-z0-9]{4}",
   "ZIP_PLACEHOLDER": "1234"
 }

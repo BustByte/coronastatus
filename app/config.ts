@@ -19,25 +19,22 @@ try {
  * */
 const fallbackConfig: Config = {
   BASE_URL: process.env.BASE_URL || 'coronastatus.no',
-  LOCALE: (process.env.LOCALE as Locale) || 'en-US',
   COUNTRY_CODE: (process.env.COUNTRY_CODE as CountryCode) || 'no',
-  SUPPORTED_LOCALES: [(process.env.LOCALE as Locale) || 'en-US'],
-  COUNTRY: process.env.COUNTRY || 'Norway',
+  DB_PATH: process.env.DB_PATH || './covid_db',
+  LOCALE: (process.env.LOCALE as Locale) || 'en-US',
   MAP_CENTER: process.env.MAP_CENTER || '10.7522, 63.9139',
   MAP_ZOOM: parseInt(process.env.MAP_ZOOM || '4', 10),
   MAP_MAX_ZOOM: parseInt(process.env.MAP_MAX_ZOOM || '13', 10),
-  EMAIL: process.env.EMAIL || 'kontakt@bustbyte.no',
-  TWITTER: process.env.TWITTER || 'coronastatusNO',
-  ZIP_PATTERN: process.env.ZIP_PATTERN || '[A-Za-z0-9-]{2,10}', // Fallback to very general pattern in case it is missing in the config
-  ZIP_PLACEHOLDER: process.env.ZIP_PLACEHOLDER || '1234',
-  ZIP_GUIDE: process.env.ZIP_GUIDE === 'true' || false,
+  PASSCODE_LENGTH: parseInt(process.env.PASSCODE_LENGTH || '4', 10),
+  RATE_LIMIT_COUNT: parseInt(process.env.RATE_LIMIT_COUNT || '20', 10), // allowed number of reports from a single IP during a time window
+  RATE_LIMIT_WINDOW: parseInt(process.env.RATE_LIMIT_WINDOW || '86400000', 10), // rate limit window in miliseconds
   REDIRECT_TO_GOVERNMENT:
     process.env.REDIRECT_TO_GOVERNMENT === 'true' || false,
-  PASSCODE_LENGTH: parseInt(process.env.PASSCODE_LENGTH || '3', 10),
-  DB_PATH: process.env.DB_PATH || './covid_db',
+  SUPPORTED_LOCALES: [(process.env.LOCALE as Locale) || 'en-US'],
   THOUSAND_SEPARATOR: process.env.THOUSAND_SEPARATOR || ' ',
-  RATE_LIMIT_COUNT: parseInt(process.env.RATE_LIMIT_COUNT || '20', 10), // allowed number of reports from a single IP during a time window
-  RATE_LIMIT_WINDOW: parseInt(process.env.RATE_LIMIT_WINDOW || '86400000', 10) // rate limit window in miliseconds
+  ZIP_GUIDE: process.env.ZIP_GUIDE === 'true' || false,
+  ZIP_PATTERN: process.env.ZIP_PATTERN || '[A-Za-z0-9-]{2,10}', // Fallback to very general pattern in case it is missing in the config
+  ZIP_PLACEHOLDER: process.env.ZIP_PLACEHOLDER || '1234'
 };
 
 // @ts-ignore

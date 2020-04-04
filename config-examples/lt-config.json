@@ -1,6 +1,5 @@
 {
   "BASE_URL": "coronastatus.lt",
-  "COUNTRY": "Lietuvos",
   "COUNTRY_CODE": "lt",
   "DB_PATH": "./covid_db",
   "LOCALE": "lt",
@@ -11,7 +10,6 @@
   "REDIRECT_TO_GOVERNMENT": false,
   "SUPPORTED_LOCALES": ["lt"],
   "THOUSAND_SEPARATOR": " ",
-  "TWITTER": "coronastatusLT",
   "ZIP_GUIDE": false,
   "ZIP_PATTERN": "[0-9]{5}",
   "ZIP_PLACEHOLDER": "12345"

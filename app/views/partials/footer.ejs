@@ -1,5 +1,8 @@
-<% const shouldAddAnalytics = !locals.profile; %>
-<% const { show = true, home = false } = locals; %>
+<%
+  const shouldAddAnalytics = !locals.profile;
+  const { show = true, home = false, textVariables } = locals;
+  const { TWITTER_NAME } = textVariables;
+%>
 
 <!-- spacer -->
 
@@ -28,12 +31,12 @@
     <div
       class="flex flex-row justify-between flex-wrap items-center self-stretch mt-8 text-base lg:text-xl text-center"
     >
-      <% if (locals.twitter) { %>
+      <% if (TWITTER_NAME) { %>
       <a
         class="text-cvs-green-dark font-medium whitespace-no-wrap"
-        href="https://twitter.com/intent/user?screen_name=<%= locals.twitter %>"
+        href="https://twitter.com/<%= TWITTER_NAME %>"
         target="_blank"
-        >@<%= locals.twitter %></a
+        >@<%= TWITTER_NAME %></a
       >
       <% } %>
       <span
@@ -44,13 +47,13 @@
           ><%= __('BustByte AS')%></a
         >
         <%= __('and') %>
-        <a class="font-bold hover:text-cvs-red hover:underline" href="<%= urls.contributors %>">
+        <a class="font-bold hover:text-cvs-red hover:underline" href="<%- urls.contributors %>">
           <%= __('volunteers')%>
         </a>
       </span>
       <a
         class="text-cvs-green-dark hover:text-cvs-red font-bold hover:underline whitespace-no-wrap"
-        href="<%= urls.privacyPolicy %>"
+        href="<%- urls.privacyPolicy %>"
         ><%= __('Privacy Policy')%></a
       >
     </div>

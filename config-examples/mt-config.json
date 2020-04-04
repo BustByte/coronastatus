@@ -1,6 +1,5 @@
 {
   "BASE_URL": "coronastatusmt.com",
-  "COUNTRY": "Malta",
   "COUNTRY_CODE": "mt",
   "DB_PATH": "./covid_db",
   "LOCALE": "en-MT",
@@ -11,7 +10,6 @@
   "REDIRECT_TO_GOVERNMENT": false,
   "SUPPORTED_LOCALES": ["en-MT"],
   "THOUSAND_SEPARATOR": ",",
-  "TWITTER": "coronastatusMT",
   "ZIP_GUIDE": true,
   "ZIP_PATTERN": "[A-Za-z]{2,3}",
   "ZIP_PLACEHOLDER": "Example: VLT (no numbers)"

@@ -1,4 +1,8 @@
-<% const amount = locals.formatNumber(aggregated.numberOfReports) %>
+<%
+  const { textVariables, formatNumber } = locals;
+  const amount = formatNumber(aggregated.numberOfReports)
+  const { COUNTRY_NAME } = textVariables;
+%>
 <!--  -->
 <%- include('partials/header') -%>
 
@@ -12,7 +16,7 @@
     <%= __(`To defeat the corona virus we need to make the invisible virus
     visible.`) + " " + __(`{{ amount }} people already shared their health
     status.`, { amount }) + " " + __(`Let your friends fill out this form too
-    and help the United States gain control over COVID-19.`) %>
+    and help {{ COUNTRY_NAME }} gain control over COVID-19.`, { COUNTRY_NAME }) %>
   </p>
 
   <p class="pb-2 mt-6">
