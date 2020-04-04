@@ -92,14 +92,20 @@
       <div class="custom-section-content <% if (fullscreen) { %>mx-4<% } else { %>mx-auto<% } %>">
         <header class="py-2 flex justify-between items-center flex-wrap">
           <div class="flex items-center">
-            <%- include('partials/logo') -%>
-            <% if (showLocaleSelector) { %>
-              <%- include('partials/locale-selector') -%>
-            <% } %>
+            <a class="flex flex-row" href="/">
+              <img src="/static/images/logo.svg" alt="icon" class="w-20 h-20 hidden sm:block" />
+              <div class="flex flex-row items-center" style="color: #F2CC20;">
+                <div
+                  class="flex flex-row flex-no-wrap text-2xl text-white sm:text-3xl font-bold whitespace-no-wrap"
+                > 
+                 <%- __("corona<span>status</span>").replace(/<span>/g, '<span class="text-cvs-gold">') %>
+                </div>
+              </div>
+            </a>
           </div>
           <ul class="mt-4 text-center">
             <li class="group">
-              <button class="group inverse custom-nav-link rounded-full text-base text-white mt-2 font-medium px-5 " onclick="toggleCountryLinks()">
+              <button class="group inverse custom-nav-link rounded-full text-white mt-2 font-medium px-5 md:text-base" onclick="toggleCountryLinks()">
                 <span class="firstlevel"><%= __("Contribute now! ") %>🌍</span>
               </button>
 
@@ -314,7 +320,7 @@
     center: [<%= locals.mapCenter %>],
     zoom: 3,
     maxZoom: 4,
-    customAttribution: 'Postal Codes <a href="https://geonames.org/" target="_blank">&copy;GeoNames</a>',
+    customAttribution: 'Marker icon <a href="http://iconmonstr.com/" target="_blank">&copy;iconmonstr</a>',
     hash: true,
     scrollZoom      : false,
     boxZoom         : false,
