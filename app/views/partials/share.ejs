@@ -1,5 +1,5 @@
 <%
-  const { baseUrl, htmlLang, textVariables, amount = __(`A lot of`) } = locals;
+  const { baseUrl, htmlLang, textVariables, amount = __(`A lot of`), buttonClass = 'inline-block m-2 p-3' } = locals;
   const { TWITTER_NAME, COUNTRY_NAME } = textVariables;
 %>
 <!--  -->
@@ -13,7 +13,7 @@ help {{ COUNTRY_NAME }} gain control over COVID-19.`, { COUNTRY_NAME })) %>
 
 <p class="mt-4 mb-8">
   <a
-    class="inline-block m-2 p-3 text-white rounded bg-cvs-facebook hover:bg-cvs-facebook-dark hover:translate-y-px transform"
+    class="<%= buttonClass %> text-white rounded bg-cvs-facebook hover:bg-cvs-facebook-dark hover:translate-y-px transform"
     target="_blank"
     rel="noreferrer"
     referrerpolicy="no-referrer"
@@ -25,7 +25,7 @@ help {{ COUNTRY_NAME }} gain control over COVID-19.`, { COUNTRY_NAME })) %>
   >
 
   <a
-    class="inline-block m-2 p-3 text-white rounded bg-cvs-twitter hover:bg-cvs-twitter-dark hover:translate-y-px transform"
+    class="<%= buttonClass %> text-white rounded bg-cvs-twitter hover:bg-cvs-twitter-dark hover:translate-y-px transform"
     target="_blank"
     rel="noreferrer"
     referrerpolicy="no-referrer"
@@ -37,7 +37,7 @@ help {{ COUNTRY_NAME }} gain control over COVID-19.`, { COUNTRY_NAME })) %>
   >
 
   <a
-    class="inline-block m-2 p-3 text-white rounded bg-cvs-whatsapp hover:bg-cvs-whatsapp-dark hover:translate-y-px transform"
+    class="<%= buttonClass %> text-white rounded bg-cvs-whatsapp hover:bg-cvs-whatsapp-dark hover:translate-y-px transform"
     target="_blank"
     rel="noreferrer"
     referrerpolicy="no-referrer"
@@ -49,7 +49,7 @@ help {{ COUNTRY_NAME }} gain control over COVID-19.`, { COUNTRY_NAME })) %>
   >
 
   <a
-    class="inline-block m-2 p-3 text-white rounded bg-cvs-linkedin hover:bg-cvs-linkedin-dark hover:translate-y-px transform"
+    class="<%= buttonClass %> text-white rounded bg-cvs-linkedin hover:bg-cvs-linkedin-dark hover:translate-y-px transform"
     target="_blank"
     rel="noreferrer"
     referrerpolicy="no-referrer"

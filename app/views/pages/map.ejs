@@ -15,7 +15,7 @@
 
 <div class="map-overlay top">
   <div class="map-overlay-info">
-    <h4><%= __(`Report status by zip code`) %></h4>
+    <h4 class="mt-2"><%= __(`Report status by zip code`) %></h4>
     <p>
       <%= __(`The markers correspond to coordinates of zip codes, they have
       nothing to do with individuals.`) %>
@@ -23,6 +23,8 @@
     <p>
       <label id="month"></label>
     </p>
+    <h4 class="mb-0"><%= __(`Share on`) %></h4>
+    <%- include('partials/share', { buttonClass: 'mt-2 p-2 block' }) %>
   </div>
 
   <div class="map-overlay-labels">
