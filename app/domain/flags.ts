@@ -1,11 +1,11 @@
 // Please keep locales sorted
 export type Locale =
   | 'bd'
-  | 'ca'
   | 'de'
   | 'dk'
   | 'cs-CZ'
   | 'en-AU'
+  | 'en-CA'
   | 'en-IN'
   | 'en-MT'
   | 'en-NG'
@@ -42,11 +42,11 @@ type LocaleToFlagMap = {
 
 const localeToFlagMap: LocaleToFlagMap = {
   bd: 'bd',
-  ca: 'ca',
   de: 'de',
   'cs-CZ': 'cz',
   dk: 'dk',
   'en-AU': 'au',
+  'en-CA': 'ca',
   'en-IN': 'gb',
   'en-MT': 'gb',
   'en-NG': 'ng',
