@@ -39,7 +39,7 @@ declare -a HOSTS=(
 #   'coronastatus.sg'
 #   'coronastatusmy.org'
 #   'coronastatus.cl'
-#   ''
+#   'coronastatus.com.ar'
 );
 
 # Deploy procedure over ssh.
