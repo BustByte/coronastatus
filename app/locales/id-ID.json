@@ -1,6 +1,7 @@
 {
   "...and others": "...dan lainnya",
   "{{ amount }} people already shared their health status.": "{{ amount }} orang telah membagikan kondisi kesehatan mereka.",
+  "{{ COUNTRY_CODE }}": "{{ COUNTRY_CODE }}",
   "{{ FIND_ZIP_CODE_URL }}": "{{ FIND_ZIP_CODE_URL }}",
   "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}": "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}",
   "#stayindoors": "#tinggal<wbr/>dirumah",

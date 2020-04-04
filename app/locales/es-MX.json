@@ -1,6 +1,8 @@
 {
   "...and others": "...entre otros",
   "{{ amount }} people already shared their health status.": "{{ amount }} personas ya compartieron su estado de salud.",
+  "{{ COUNTRY_CODE }}": "{{ COUNTRY_CODE }}",
+  "{{ FIND_ZIP_CODE_URL }}": "{{ FIND_ZIP_CODE_URL }}",
   "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}": "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}",
   "About the service": "Acerca del servicio",
   "Added to form": "Agregado al formulario",

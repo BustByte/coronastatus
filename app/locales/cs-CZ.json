@@ -1,6 +1,8 @@
 {
   "...and others": "...a další",
   "{{ amount }} people already shared their health status.": "Zdravotní stav už sdílelo {{ amount }} lidí.",
+  "{{ COUNTRY_CODE }}": "{{ COUNTRY_CODE }}",
+  "{{ FIND_ZIP_CODE_URL }}": "{{ FIND_ZIP_CODE_URL }}",
   "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}": "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}",
   "#stayindoors": "#zůstaň<wbr/>doma",
   "#washyourhands": "#umývej<wbr/>si<wbr/>ruce",

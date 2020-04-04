@@ -1,6 +1,7 @@
 {
   "...and others": "...та іншими",
   "{{ amount }} people already shared their health status.": "{{ amount }} осіб заповнило анкети.",
+  "{{ COUNTRY_CODE }}": "{{ COUNTRY_CODE }}",
   "{{ FIND_ZIP_CODE_URL }}": "{{ FIND_ZIP_CODE_URL }}",
   "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}": "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}",
   "#stayindoors": "#залишайтесь<wbr/>вдома",

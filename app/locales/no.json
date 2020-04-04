@@ -1,6 +1,8 @@
 {
   "...and others": "...og flere",
   "{{ amount }} people already shared their health status.": "{{ amount }} personer har allerede delt helsetilstanden sin.",
+  "{{ COUNTRY_CODE }}": "{{ COUNTRY_CODE }}",
+  "{{ FIND_ZIP_CODE_URL }}": "{{ FIND_ZIP_CODE_URL }}",
   "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}": "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}",
   "#stayindoors": "#stay<wbr/>home",
   "#washyourhands": "#wash<wbr/>your<wbr/>hands",

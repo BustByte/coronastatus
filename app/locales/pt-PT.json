@@ -1,6 +1,7 @@
 {
   "...and others": "...e outros",
   "{{ amount }} people already shared their health status.": "{{ amount }} pessoas já partilharam o seu estado de saúde.",
+  "{{ COUNTRY_CODE }}": "{{ COUNTRY_CODE }}",
   "{{ FIND_ZIP_CODE_URL }}": "{{ FIND_ZIP_CODE_URL }}",
   "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}": "{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}",
   "#stayindoors": "#fica<wbr/>em<wbr/>casa",
