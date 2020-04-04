@@ -1,6 +1,5 @@
 {
   "BASE_URL": "coronastatus.pt",
-  "COUNTRY": "Portugal",
   "COUNTRY_CODE": "pt",
   "DB_PATH": "./covid_db",
   "LOCALE": "pt-PT",
@@ -11,7 +10,6 @@
   "REDIRECT_TO_GOVERNMENT": false,
   "SUPPORTED_LOCALES": ["pt-PT"],
   "THOUSAND_SEPARATOR": " ",
-  "TWITTER": "coronastatusPT",
   "ZIP_GUIDE": false,
   "ZIP_PATTERN": "[0-9]{4}-[0-9]{3}",
   "ZIP_PLACEHOLDER": "0000-000"

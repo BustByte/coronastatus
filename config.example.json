@@ -1,6 +1,5 @@
 {
   "BASE_URL": "coronastatus.us",
-  "COUNTRY": "United States",
   "COUNTRY_CODE": "us",
   "DB_PATH": "./covid_db",
   "LOCALE": "en-US",
@@ -13,7 +12,6 @@
   "REDIRECT_TO_GOVERNMENT": false,
   "SUPPORTED_LOCALES": ["en-US"],
   "THOUSAND_SEPARATOR": " ",
-  "TWITTER": "coronastatusNO",
   "ZIP_GUIDE": false,
   "ZIP_PATTERN": "[A-Za-z0-9]{4}",
   "ZIP_PLACEHOLDER": "1234"

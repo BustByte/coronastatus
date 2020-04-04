@@ -1,22 +1,25 @@
-<h2><%= __('Contact details') %></h2>
+<%
+  const { textVariables } = locals;
+  const { CONTACT_EMAIL, TWITTER_NAME } = textVariables;
+%>
 <ul>
-  <% if (locals.twitter) { %>
+  <% if (TWITTER_NAME) { %>
   <li>Twitter: 
     <a
       class="text-cvs-green-dark font-medium whitespace-no-wrap"
-      href="https://twitter.com/intent/user?screen_name=<%= locals.twitter %>"
+      href="https://twitter.com/<%= TWITTER_NAME %>"
       target="_blank"
-      >@<%= locals.twitter %></a
+      >@<%= TWITTER_NAME %></a
     >
   </li>
   <% } %>
-  <% if (locals.email) { %>
-  <li>E-mail: 
+  <% if (CONTACT_EMAIL) { %>
+  <li><%= __('E-mail') %>: 
     <a 
       class="text-cvs-green-dark font-medium whitespace-no-wrap"
-      href="mailto:<%= locals.email %>"
+      href="mailto:<%= CONTACT_EMAIL %>"
       target="_blank"
-      ><%= locals.email %></a
+      ><%= CONTACT_EMAIL %></a
     >
   </li>
   <% } %>

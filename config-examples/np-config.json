@@ -1,6 +1,5 @@
 {
   "BASE_URL": "coronastatusnp.com",
-  "COUNTRY": "Nepal",
   "COUNTRY_CODE": "np",
   "DB_PATH": "./covid_db",
   "LOCALE": "ne",
@@ -11,7 +10,6 @@
   "REDIRECT_TO_GOVERNMENT": false,
   "SUPPORTED_LOCALES": ["ne", "en-US"],
   "THOUSAND_SEPARATOR": " ",
-  "TWITTER": "coronastatusNO",
   "ZIP_GUIDE": false,
   "ZIP_PATTERN": "[A-Za-z0-9]{4}",
   "ZIP_PLACEHOLDER": "1234"

@@ -1,11 +1,9 @@
 {
   "BASE_URL": "coronastatus.net.br",
   "LOCALE": "pt-BR",
-  "COUNTRY": "Brasil",
   "COUNTRY_CODE": "br",
   "MAP_CENTER": "-47.05, -15.47",
   "MAP_ZOOM": 4,
-  "TWITTER": "coronastatusBR",
   "ZIP_LENGTH": 8,
   "ZIP_PLACEHOLDER": "00000-000",
   "REDIRECT_TO_GOVERNMENT": false,
