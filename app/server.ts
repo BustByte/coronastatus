@@ -16,7 +16,7 @@ import { localeToFlag } from './domain/flags';
 import config from './config';
 import { ensureAllLocalesAreValidJSON } from './util/locale-validation';
 import { createNumberFormatter } from './util/number-formatter';
-import { getCountrySpecificTextVariables } from './countrySpecific/text-variables';
+import { getCountrySpecificTextVariables } from './countrySpecific/country-specific-text-variables';
 
 const app = express();
 const port = process.env.PORT || 7272;
