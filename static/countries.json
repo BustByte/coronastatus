@@ -1,37 +1,37 @@
 {
     "no": { 
         "name": "Norway",
-        "center": [64.2959,8.7755],
+        "center": [60.0837, 10.4596],
         "domain": "https://coronastatus.no/"
     },
     "nl": { 
         "name": "The Netherlands",
-        "center": [52.1951,3.0367],
+        "center": [52.0770, 5.2725],
         "domain": "https://coronastatus.nl/"
     },
     "sk": { 
         "name": "Slovakia",
-        "center": [48.6543,17.4567],
+        "center": [48.5920, 18.7996],
         "domain": "https://coronastatus.sk"
     },
     "dk": { 
         "name": "Denmark",
-        "center": [56.21285,9.3001],
+        "center": [55.2697, 10.0582],
         "domain": "https://coronastatus.dk/"
     },
     "co": { 
         "name": "Colombia",
-        "center": [4.6098,-83.3857],
+        "center": [5.1571, -75.2997],
         "domain": "https://coronastatus.co/"
     },
     "it": { 
         "name": "Italy",
-        "center": [4.6098,83.3857],
+        "center": [42.2367, 12.1992],
         "domain": "https://coronastatus.it/"
     },
     "fr": { 
         "name": "France",
-        "center": [4.6098,-83.3857],
+        "center": [46.2378, 2.1338],
         "domain": "https://coronastatus.fr"
     },
     "mx": { 
