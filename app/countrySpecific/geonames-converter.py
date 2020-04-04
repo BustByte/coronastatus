@@ -2,7 +2,7 @@ from csv import DictReader
 from json import dump as write_as_json
 
 # Set the country code you want to create JSON files for
-COUNTRY_CODE = 'ro'
+COUNTRY_CODE = 'no'
 
 # Parse CSV for a given country from Geonames.org
 rows = []
@@ -25,7 +25,7 @@ with open('%s.txt' % COUNTRY_CODE.upper(), 'r') as f:
     for row in csv:
         rows.append(row)
 
-# Create a [country-code]-municipalities.json that maps municipalities to zip codes
+# Create a [country-code]/municipalities.json that maps municipalities to zip codes
 municipalities = {}
 for row in rows:
     municipality = row.get('admin name2').upper()
@@ -33,10 +33,10 @@ for row in rows:
         municipalities[municipality] = {'postalCodes': []}
     municipalities[municipality]['postalCodes'].append(row.get('postal code'))
 
-with open('%s-municipalities.json' % COUNTRY_CODE, 'w') as f:
+with open('%s/municipalities.json' % COUNTRY_CODE, 'w') as f:
     write_as_json(municipalities, f, indent=2, separators=(',', ': '))
 
-# Create a [country-code]-postalCodesCoordinates.json that maps post code to lat/lng
+# Create a [country-code]/postalCodesCoordinates.json that maps post code to lat/lng
 postal_code_coordinates = {}
 for row in rows:
     postal_code = row.get('postal code')
@@ -45,5 +45,5 @@ for row in rows:
     if not postal_code in postal_code_coordinates:
          postal_code_coordinates[postal_code] = {'lat': latitude, 'lon': longitude}
 
-with open('%s-postalCodeCoordinates.json' % COUNTRY_CODE, 'w') as f:
+with open('%s/postalCodeCoordinates.json' % COUNTRY_CODE, 'w') as f:
     write_as_json(postal_code_coordinates, f, indent=2, separators=(',', ': '))

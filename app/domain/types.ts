@@ -149,7 +149,7 @@ export interface Config {
   COUNTRY_CODE: CountryCode;
   DB_PATH: string;
   LOCALE: Locale;
-  MAP_CENTER: string;
+  MAP_CENTER: string; // NB! Lat/lng is opposite of what you find on Google Maps
   MAP_MAX_ZOOM: number;
   MAP_ZOOM: number;
   PASSCODE_LENGTH: number;

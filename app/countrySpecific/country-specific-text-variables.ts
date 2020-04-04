@@ -6,7 +6,7 @@ export const getCountrySpecificTextVariables = (
   countryCode: CountryCode
 ): CountrySpecificTexts => {
   try {
-    const { countrySpecificTexts } = require(`./${countryCode}-text-variables`);
+    const { countrySpecificTexts } = require(`./${countryCode}/text-variables`);
     return countrySpecificTexts;
   } catch (error) {
     console.error(error);

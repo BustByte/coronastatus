@@ -10,7 +10,7 @@ class PasscodeCreator {
   private separator: string;
 
   constructor(
-    filePath = `../countrySpecific/${config.COUNTRY_CODE}-word-list.txt`,
+    filePath = `../countrySpecific/${config.COUNTRY_CODE}/word-list.txt`,
     separator = '-'
   ) {
     this.availableWords = this.readAvailableWordsFromFile(filePath);
