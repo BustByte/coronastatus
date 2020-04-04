@@ -136,6 +136,7 @@
 
   <section class="custom-section custom-hero background-slate">
 
+    <div class="text-center" id="current-country"></div>
   
     <div id="map"></div>
 
@@ -145,7 +146,6 @@
 
 
   <section class="custom-section custom-hero p-4 background-slate">
-    <div class="text-center" id="current-country"></div>
 
     <ul class="mt-4 text-center">
       <li>
@@ -424,6 +424,7 @@
   }
 
   function createMarkerObject(key) {
+    console.log(key);
     geojson.push({
       type: 'Feature',
       geometry: {
@@ -432,7 +433,8 @@
       },
       properties: {
         title: countries[key].name,
-        domain: countries[key].domain
+        domain: countries[key].domain,
+        flag: 'static/flags/1x1/'+key+'.svg'
       }
     });
   }
@@ -488,8 +490,11 @@ function showPosition(position) {
 
 var currentCountry = document.getElementById("current-country");
 function playback(index) {
-  currentCountry.innerHTML = "<p class='text-white text-xl font-bold'>"+geojson[index].properties.title+"<br/><a href='"+geojson[index].properties.domain+"'>"+geojson[index].properties.domain.split("//")[1].replace("status","<span class='text-cvs-gold'>status</span>")+"</a></p>";
+  currentCountry.innerHTML = "<div class=\"flex flex-wrap items-center justify-center pb-6 text-white text-xl font-bold\"><div class='w-full sm:w-auto flex items-center justify-center'><img class=\"h-5 w-6 mr-4\" src='"+geojson[index].properties.flag+"'>"+geojson[index].properties.title+"</div><span class=\"px-4 hidden sm:block\">|</span><div class=\"w-full sm:w-auto text-base sm:text-xl\"><a href='"+geojson[index].properties.domain+"'>"+geojson[index].properties.domain.split("//")[1].replace("status","<span class='text-cvs-gold'>status</span>")+"</a></div></div>";
  
+  
+
+
 // Animate the map position based on camera properties
 map.flyTo({
       zoom: 4,
