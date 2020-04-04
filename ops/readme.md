@@ -33,3 +33,4 @@ This document describes how we operate the sites which are running Coronastatus.
 | [corona-status.cz](https://corona-status.cz)       |  🇨🇿  |  Czech Republic  | František Vybíral                       | Eirik Fosse / BustByte |
 | [coronastatus.id](https://coronastatus.id)         |  🇮🇩  |  Indonesia       | Frederic Ronaldi                        | Eirik Fosse / BustByte |
 | [coronastatus.ph](https://coronastatus.ph)         |  🇵🇭  |  Philippines     | Brian Tan Seng                          | Eirik Fosse / BustByte |
+| [coronastatus.ro](https://coronastatus.ro)         |  🇷🇴  |  Romania         | Alexandru Savin                         | Eirik Fosse / BustByte |

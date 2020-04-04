@@ -41,14 +41,14 @@ We need people who can help translate the site, develop new features, project le
 - 🇨🇿 Czech Republic: https://corona-status.cz
 - 🇮🇩 Indonesia: https://coronastatus.id
 - 🇵🇭 Philippines: https://coronastatus.ph
-- 🇳🇬 Nigeria: https://coronastatus.ng/
+- 🇳🇬 Nigeria: https://coronastatus.ng
+- 🇷🇴 Romania: https://coronastatus.ro
 - 🇸🇪 Sweden: coming soon
 - 🇧🇪 Belgium: coming soon
 - 🇮🇸 Iceland: coming soon
 - 🇨🇭 Switzerland: coming soon
 - 🇩🇪 Germany: coming soon
 - 🇧🇩 Bangladesh: coming soon
-- 🇷🇴 Romania: coming soon
 - ... want one for your country? Join our community: https://t.me/onzecorona
 
 ## Why?
