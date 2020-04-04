@@ -145,10 +145,11 @@
 
 
   <section class="custom-section custom-hero p-4 background-slate">
+    <div class="text-center" id="current-country"></div>
 
     <ul class="mt-4 text-center">
       <li>
-        <button class="inverse custom-nav-link rounded-full text-base text-white mt-2 font-medium px-5 " >
+      <button class="inverse custom-nav-link rounded-full text-base text-white mt-2 font-medium px-5" onclick="window.location = 'https://github.com/BustByte/coronastatus'">
           <%- __("How can I contribute?").replace(/<span>/g, '<span class="text-cvs-gold">') %>
         </button>
       </li>
@@ -318,9 +319,9 @@
     container: 'map',
     style: 'https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json',
     center: [<%= locals.mapCenter %>],
-    zoom: 3,
+    zoom: 2,
     maxZoom: 4,
-    customAttribution: 'Marker icon <a href="http://iconmonstr.com/" target="_blank">&copy;iconmonstr</a>',
+    customAttribution: 'Pin icon <a href="https://iconmonstr.com/pin-12-svg/" target="_blank">&copy;iconmonstr</a>',
     hash: true,
     scrollZoom      : false,
     boxZoom         : false,
@@ -373,19 +374,13 @@
   });
 
 
-  navigator.geolocation.getCurrentPosition(function(geolocation) {
-    map.flyTo({
-      zoom: 4,
-      center: [geolocation.coords.longitude, geolocation.coords.latitude],
-      essential: true
-    });
-  });
+  
 
   var countries = <%- JSON.stringify(locals.countries) %>;
-  var geojson = {
-  type: 'FeatureCollection',
-  features: []
-  };
+  var geojson = [];
+
+   
+
 </script>
 
 
@@ -429,7 +424,7 @@
   }
 
   function createMarkerObject(key) {
-    geojson.features.push({
+    geojson.push({
       type: 'Feature',
       geometry: {
         type: 'Point',
@@ -443,7 +438,7 @@
   }
 
   function plotMarker(marker) {
-    geojson.features.forEach(function(marker) {
+    geojson.forEach(function(marker) {
       var el = document.createElement('div');
       el.className = 'marker';
       new mapboxgl.Marker(el)
@@ -461,11 +456,57 @@
     Object.keys(countries).forEach(function(key){
       createCountryButton(key, container);
       createMarkerObject(key);
-      plotMarker(geojson.features[geojson.features.length - 1]);
+      plotMarker(geojson[geojson.length - 1]);
     });
+      
+  
+ 
+   
   }
   processCountriesJson();
-   
 
+
+  function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } 
+  //whether or not getting the location worked we start cycling countries after 5 seconds
+  window.setTimeout(function () {
+      playback(0);
+    },5000)
+}
+
+function showPosition(position) {
+    map.flyTo({
+      zoom: 4,
+      center: [position.coords.longitude, position.coords.latitude],
+      essential: true
+    });
+    
+    
+}
+
+var currentCountry = document.getElementById("current-country");
+function playback(index) {
+  currentCountry.innerHTML = "<p class='text-white text-xl font-bold'>"+geojson[index].properties.title+"<br/><a href='"+geojson[index].properties.domain+"'>"+geojson[index].properties.domain.split("//")[1].replace("status","<span class='text-cvs-gold'>status</span>")+"</a></p>";
+ 
+// Animate the map position based on camera properties
+map.flyTo({
+      zoom: 4,
+      center: [geojson[index].geometry.coordinates[0], geojson[index].geometry.coordinates[1]],
+      essential: true
+      });
+ 
+map.once('moveend', function() {
+// Duration the slide is on screen after interaction
+window.setTimeout(function() {
+// Increment index
+index = index + 1 === geojson.length ? 0 : index + 1;
+playback(index);
+}, 3500); 
+});
+}
+
+getLocation()
   
 </script>
