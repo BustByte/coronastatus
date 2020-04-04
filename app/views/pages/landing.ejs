@@ -99,7 +99,7 @@
           </div>
           <ul class="mt-4 text-center">
             <li class="group">
-              <button class="group inverse custom-nav-link rounded-full text-base text-white mt-2 font-medium px-5 " >
+              <button class="group inverse custom-nav-link rounded-full text-base text-white mt-2 font-medium px-5 " onclick="toggleCountryLinks()">
                 <span class="firstlevel"><%= __("Contribute now! ") %>🌍</span>
               </button>
 
@@ -321,47 +321,6 @@
     doubleClickZoom : false
   });
 
-
-  map.on('load', function() {
-    
-
-
-
-
-   /*  map.addSource('reports', {
-      type: 'geojson',
-      data: '<%= urls.map %>/geojson',
-      cluster: true,
-      clusterMaxZoom: 100, // Max zoom to cluster points on
-      clusterRadius: 80,
-      clusterProperties: {
-        positive: ['+', ['case', positive, 1, 0]],
-        symptoms: ['+', ['case', symptoms, 1, 0]],
-        healthy: ['+', ['case', healthy, 1, 0]]
-      }
-    });
-
-    map.addLayer({ 
-      id: 'report_individual',
-      type: 'circle',
-      source: 'reports',
-      filter: ['!=', ['get', 'cluster'], true],
-      paint: {
-        'circle-color': [
-          'case',
-          positive,
-          colors.positive,
-          symptoms,
-          colors.symptoms,
-          healthy,
-          colors.healthy,
-          '#000000'
-        ],
-        'circle-radius': 12
-      }
-    });*/
-  });
-
   var markers = {};
   var markersOnScreen = {};
 
@@ -425,6 +384,16 @@
 
 
 <script>
+  function toggleCountryLinks () {
+    /* This is a second way to access the list of country links because hover doesn't work on mobile */
+    var con = document.getElementById("country-links-container");
+    if (con.classList.contains("hidden")) {
+      con.classList.remove("hidden");
+    } else {
+      con.classList.add("hidden");
+    }
+  }
+
   function createCountryButton(key, container) {
     var li = document.createElement("li");
       li.classList.add("p-4");
@@ -491,4 +460,6 @@
   }
   processCountriesJson();
    
+
+  
 </script>
