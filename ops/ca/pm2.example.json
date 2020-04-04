@@ -1,0 +1,12 @@
+{
+    "apps": [
+      {
+        "name": "web",
+        "exec_mode": "cluster",
+        "instances": "1",
+        "watch": true,
+        "script": "./app/server.ts",
+        "interpreter": "ts-node"
+      }
+    ]
+  }
