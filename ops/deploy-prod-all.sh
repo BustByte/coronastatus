@@ -7,7 +7,7 @@ set -e
 declare -a HOSTS=(
     'coronastatus.es'
     'coronastatus.co'
-    'coronastatus.fr'
+    # 'coronastatus.fr'
     'coronastatus.mx'
     'coronastatus.us'
     'coronastatus.org.ua'
@@ -17,6 +17,13 @@ declare -a HOSTS=(
     'coronastatus.pt'
     'coronastatus.ng'
     'coronastatustr.com'
+    'coronastatus.lg'
+    'coronastatusnp.com'
+    'coronastatus.net.br'
+    'corona-status.cz'
+    'coronastatus.id'
+    'coronastatus.ph'
+    'coronastatus.ro'
 
 #   Adriaan told med to wait with deploying NL.
 #   'coronastatus.nl'

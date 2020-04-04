@@ -115,3 +115,7 @@ covid_db-wal
 config.json
 
 build/
+
+.vscode
+.idea
+
