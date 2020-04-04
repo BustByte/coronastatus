@@ -17,6 +17,7 @@ import config from './config';
 import { ensureAllLocalesAreValidJSON } from './util/locale-validation';
 import { createNumberFormatter } from './util/number-formatter';
 import countries from '../static/countries.json';
+import { getCountrySpecificTextVariables } from './countrySpecific/country-specific-text-variables';
 
 const app = express();
 const port = process.env.PORT || 7272;
@@ -60,7 +61,7 @@ const cacheKey = process.env.CACHE_KEY || `${Math.random()}`.replace('.', '');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use((req, res, next) => {
+app.use(async (req, res, next) => {
   // eslint-disable-next-line prefer-destructuring
   res.locals.activePage = `/${req.path.split('/')[1]}`;
   res.locals.currentPath = req.path;
@@ -69,13 +70,11 @@ app.use((req, res, next) => {
   res.locals.imageSubfolder = config.COUNTRY_CODE;
   res.locals.htmlLang = config.LOCALE;
   res.locals.supportedLocales = config.SUPPORTED_LOCALES;
-  res.locals.country = config.COUNTRY;
   res.locals.baseUrl = config.BASE_URL;
   res.locals.zipGuide = config.ZIP_GUIDE;
   res.locals.mapCenter = config.MAP_CENTER;
   res.locals.mapZoom = config.MAP_ZOOM;
   res.locals.mapMaxZoom = config.MAP_MAX_ZOOM;
-  res.locals.twitter = config.TWITTER;
   res.locals.urls = urls;
   res.locals.zipPattern = config.ZIP_PATTERN;
   res.locals.zipPlaceHolder = config.ZIP_PLACEHOLDER;
@@ -84,6 +83,10 @@ app.use((req, res, next) => {
   res.locals.currentLocale = req.getLocale();
   res.locals.formatNumber = createNumberFormatter(config.THOUSAND_SEPARATOR);
   res.locals.countries = countries;
+  res.locals.textVariables = getCountrySpecificTextVariables(
+    config.COUNTRY_CODE
+  );
+
   next();
 });
 

@@ -12,6 +12,7 @@ import { CovidReportRepository } from '../repository/CovidReportRepository';
 import { getPasscodeCreator } from '../util/passcode-creator';
 import { aggregateCovidReports } from '../util/report-aggregator';
 import { urls } from '../domain/urls';
+import config from '../config';
 
 const cookieOptions = {
   maxAge: 31557600000, // maxAge is set to 1 year in ms
@@ -95,9 +96,12 @@ const extractTestResult = (req: Request): TestResult | undefined => {
 };
 
 const createReportRateLimit = rateLimit({
-  max: 20, // allowed requests per window
-  windowMs: 24 * 60 * 60 * 1000, // 24 hour window,
-  keyGenerator: req => determineRemoteAddress(req)
+  max: config.RATE_LIMIT_COUNT, // allowed requests per window
+  windowMs: config.RATE_LIMIT_WINDOW, // window length in miliseconds
+  keyGenerator: req => determineRemoteAddress(req),
+  onLimitReached(req, res) {
+    return res.redirect(res.locals.urls.limit);
+  }
 });
 
 const toSex = (inputValue: string): Sex => {

@@ -20,7 +20,8 @@ This document describes how we operate the sites which are running Coronastatus.
 | [coronastatusmt.com](https://coronastatusmt.com)   |  🇲🇹  |  Malta           | Thomas K. Running                       | Eirik Fosse / BustByte |
 | [coronastatus.sk](https://coronastatus.sk)         |  🇸🇰  |  Slovakia        | Stano Bocinec                           | Stano Bocinec          |
 | [coronastatus.org.ua](https://coronastatus.org.ua) |  🇺🇦  |  Ukraine         | Taras Matsyk                            | Eirik Fosse / BustByte |
-| [coronastatus.ca](https://coronastatus.ca)         |  🇨🇦  |  Canada          | Ebrahim Poorazizi                       | EbrEbrahim Poorazizi   |
+| [coronastatus.ca](https://coronastatus.ca)         |  🇨🇦  |  Canada          | Abraham Poorazizi                       | Abraham Poorazizi
+|
 | [coronastatus.sg](https://coronastatus.sg)         |  🇸🇬  |  Singapore       | Kong Jin Jie                            | Kong Jin Jie           |
 | [coronastatus.com.ar](https://coronastatus.com.ar) |  🇦🇷  |  Argentina       | Walter Gammarota                        | Walter Gammarota       |
 | [coronastatus.cl](https://coronastatus.cl)         |  🇨🇱  |  Chile           | Ruben Torres                            | Ruben Torres           |
@@ -31,3 +32,6 @@ This document describes how we operate the sites which are running Coronastatus.
 | [coronastatus.lt](https://coronastatus.lt)         |  🇱🇹  |  Lithuania       | Mantas Bandonis                         | Mantas Bandonis        |
 | [coronastatusnp.com](https://coronastatusnp.com)   |  🇳🇵  |  Nepal           | Deepak Shah                             | Eirik Fosse / BustByte |
 | [corona-status.cz](https://corona-status.cz)       |  🇨🇿  |  Czech Republic  | František Vybíral                       | Eirik Fosse / BustByte |
+| [coronastatus.id](https://coronastatus.id)         |  🇮🇩  |  Indonesia       | Frederic Ronaldi                        | Eirik Fosse / BustByte |
+| [coronastatus.ph](https://coronastatus.ph)         |  🇵🇭  |  Philippines     | Brian Tan Seng                          | Eirik Fosse / BustByte |
+| [coronastatus.ro](https://coronastatus.ro)         |  🇷🇴  |  Romania         | Alexandru Savin                         | Eirik Fosse / BustByte |

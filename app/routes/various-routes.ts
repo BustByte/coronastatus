@@ -12,19 +12,22 @@ const cookieOptions = {
   signed: false // signed indicates if the cookie should be signed
 };
 
-router.get(`${urls.privacyPolicy}`, (req, res) => {
+router.get(urls.privacyPolicy, (req, res) => {
   return res.render(
     `privacy-statements/${config.COUNTRY_CODE}-privacy-statement`
   );
 });
 
-router.get(`${urls.contributors}`, (req, res) => {
+router.get(urls.contributors, (req, res) => {
   return res.render('pages/contributors');
 });
 
 router.get(`${urls.landing}`, (req, res) => {
   return res.render('pages/landing');
 })
+router.get(urls.limit, (req, res) => {
+  return res.render('pages/limit');
+});
 
 if (process.env.NODE_ENV !== 'production') {
   router.get('/social-images', (req, res) => {

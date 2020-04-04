@@ -9,11 +9,13 @@ export type CountryCode =
   | 'ca'
   | 'cl'
   | 'co'
+  | 'de'
   | 'cz'
   | 'dk'
   | 'en'
   | 'es'
   | 'fr'
+  | 'id'
   | 'in'
   | 'it'
   | 'lt'
@@ -24,7 +26,9 @@ export type CountryCode =
   | 'nl'
   | 'no'
   | 'np'
+  | 'ph'
   | 'pt'
+  | 'ro'
   | 'se'
   | 'sg'
   | 'sk'
@@ -43,6 +47,7 @@ type Urls = {
     apiDocs: string;
     statistics: string;
     landing: string;
+    limit: string;
   };
 };
 
@@ -56,7 +61,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estadisticas',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   au: {
     submitReport: '/',
@@ -67,7 +73,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   bd: {
     submitReport: '/',
@@ -78,7 +85,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   br: {
     submitReport: '/',
@@ -89,7 +97,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estatisticas',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   ca: {
     submitReport: '/',
@@ -100,7 +109,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   cl: {
     submitReport: '/',
@@ -111,7 +121,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estadisticas',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   co: {
     submitReport: '/',
@@ -122,7 +133,20 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estadisticas',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
+  },
+  de: {
+    submitReport: '/',
+    profile: '/gesundheitszustand',
+    privacyPolicy: '/datenschutzerklaerung',
+    map: '/karte',
+    contributors: '/mitwirkende',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistiken',
+    landing: '/landing',
+    limit: '/limit'
   },
   cz: {
     submitReport: '/',
@@ -133,7 +157,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistiky',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   dk: {
     submitReport: '/',
@@ -144,7 +169,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistikker',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   en: {
     submitReport: '/',
@@ -155,7 +181,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   es: {
     submitReport: '/',
@@ -166,7 +193,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estadisticas',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   fr: {
     submitReport: '/',
@@ -177,7 +205,20 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistiques',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
+  },
+  id: {
+    submitReport: '/',
+    profile: '/kondisikesehatan',
+    privacyPolicy: '/kebijakan-privasi',
+    map: '/peta',
+    contributors: '/kontributor',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistik',
+    landing: '/landing',
+    limit: '/limit'
   },
   in: {
     submitReport: '/',
@@ -188,7 +229,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   it: {
     submitReport: '/',
@@ -199,7 +241,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistiche',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   lt: {
     submitReport: '/',
@@ -210,7 +253,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistika',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   mt: {
     submitReport: '/',
@@ -221,7 +265,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   mx: {
     submitReport: '/',
@@ -232,7 +277,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estadisticas',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   my: {
     submitReport: '/',
@@ -243,7 +289,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistik',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   ng: {
     submitReport: '/',
@@ -254,7 +301,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   nl: {
     submitReport: '/',
@@ -265,7 +313,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistieken',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   no: {
     submitReport: '/',
@@ -276,7 +325,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistikk',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   np: {
     submitReport: '/',
@@ -287,7 +337,20 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
+  },
+  ph: {
+    submitReport: '/',
+    profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics',
+    landing: '/landing',
+    limit: '/limit'
   },
   pt: {
     submitReport: '/',
@@ -298,7 +361,19 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estatistica',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
+  },
+  ro: {
+    submitReport: '/',
+    profile: '/staresanatate',
+    privacyPolicy: '/protectia-datelor',
+    map: '/harta',
+    contributors: '/contributori',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistici',
+    limit: '/limit'
   },
   se: {
     submitReport: '/',
@@ -309,7 +384,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistik',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   sg: {
     submitReport: '/',
@@ -320,7 +396,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   sk: {
     submitReport: '/',
@@ -331,7 +408,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistiky',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   tr: {
     submitReport: '/',
@@ -342,7 +420,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/istatistikler',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   ua: {
     submitReport: '/',
@@ -353,7 +432,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   },
   us: {
     submitReport: '/',
@@ -364,7 +444,8 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
-    landing: "/landing"
+    landing: '/landing',
+    limit: '/limit'
   }
 };
 

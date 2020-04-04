@@ -1,0 +1,26 @@
+<%
+  const { textVariables } = locals;
+  const { CONTACT_EMAIL, TWITTER_NAME } = textVariables;
+%>
+<ul>
+  <% if (TWITTER_NAME) { %>
+  <li>Twitter: 
+    <a
+      class="text-cvs-green-dark font-medium whitespace-no-wrap"
+      href="https://twitter.com/<%= TWITTER_NAME %>"
+      target="_blank"
+      >@<%= TWITTER_NAME %></a
+    >
+  </li>
+  <% } %>
+  <% if (CONTACT_EMAIL) { %>
+  <li><%= __('E-mail') %>: 
+    <a 
+      class="text-cvs-green-dark font-medium whitespace-no-wrap"
+      href="mailto:<%= CONTACT_EMAIL %>"
+      target="_blank"
+      ><%= CONTACT_EMAIL %></a
+    >
+  </li>
+  <% } %>
+</ul>
