@@ -2,8 +2,8 @@
 import { PostalCode, Municipality, Coordinate } from '../domain/types';
 import config from '../config';
 
-const rawMunicipalities = require(`../countrySpecific/${config.COUNTRY_CODE}-municipalities.json`);
-const postalCodesWithCoordinates = require(`../countrySpecific/${config.COUNTRY_CODE}-postalCodeCoordinates.json`);
+const rawMunicipalities = require(`../countrySpecific/${config.COUNTRY_CODE}/municipalities.json`);
+const postalCodesWithCoordinates = require(`../countrySpecific/${config.COUNTRY_CODE}/postalCodeCoordinates.json`);
 
 interface MunicipalityFromFile {
   population: string;

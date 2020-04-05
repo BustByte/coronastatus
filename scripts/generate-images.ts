@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import puppeteer from 'puppeteer';
 
-const { COUNTRY_CODE } = require('../app/config.ts').default;
+const { COUNTRY_CODE, LOCALE } = require('../app/config.ts').default;
 
 if (!COUNTRY_CODE) {
   console.warn(
@@ -18,6 +18,9 @@ const bannerPath = `static/${countryCode}/banner.png`;
 (async (): Promise<void> => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
+  page.setExtraHTTPHeaders({
+    'Accept-Language': LOCALE
+  });
 
   await page.setViewport({ width: 3000, height: 3000 });
 
