@@ -74,6 +74,8 @@
     width:80%;
     margin-left: 10%;
   }
+
+ 
 </style>
 <script
   src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"
@@ -140,9 +142,14 @@
   <section class="custom-section custom-hero background-slate">
 
     <div class="text-center" id="current-country"></div>
-  
+    <div>
     <div id="map"></div>
-
+    <div class="flex items-center justify-center py-2 text-sm text-cvs-green font-bold">
+      <span class="mr-4 opacity-75 leading-none">Animation:</span>
+      <button id="animation-control" class="border-none px-4" onclick="toggleAnimation()">
+        <svg class="fill-current text-cvs-gold h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 4h3v12H5V4zm7 0h3v12h-3V4z"/></svg>
+      </button>
+    </div>
   </section>
 
 
@@ -501,6 +508,7 @@
   }
 
   var currentCountry = document.getElementById("current-country");
+  var play = true;
   function playback(index) {
     currentCountry.innerHTML = "<div class=\"flex flex-wrap items-center justify-center pb-6 text-white text-xl font-bold\"><div class='w-full sm:w-auto flex items-center justify-center'><img class=\"h-5 w-6 mr-4\" src='"
     +geojson[index].properties.flag
@@ -520,10 +528,23 @@
     map.once('moveend', function() {
     window.setTimeout(function() {
       index = index + 1 === geojson.length ? 0 : index + 1;
-      playback(index);
+      if (play) {
+        playback(index);
+      }
     }, 3500); 
     });
   }
   getLocation()
+
+  function toggleAnimation() {
+    if (play) {
+      play = false;
+      document.getElementById("animation-control").innerHTML = '<svg class="fill-current text-cvs-gold h-4 w-4 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M4 4l12 6-12 6z"/></svg>';
+    } else {
+      play = true;
+      document.getElementById("animation-control").innerHTML = '<svg class="fill-current text-cvs-gold h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 4h3v12H5V4zm7 0h3v12h-3V4z"/></svg>';
+      playback(Math.floor(Math.random() * geojson.length));
+    }
+  }
   
 </script>
