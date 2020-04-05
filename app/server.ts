@@ -11,7 +11,7 @@ import statisticsRoutes from './routes/statistics-routes';
 import variousRoutes, { localeCookieName } from './routes/various-routes';
 import { getInstance } from './repository/Database';
 import { swaggerDocument } from './swagger';
-import { urls } from './domain/urls';
+import { countryCodeToUrls } from './domain/urls';
 import { localeToFlag } from './domain/flags';
 import config from './config';
 import { ensureAllLocalesAreValidJSON } from './util/locale-validation';
@@ -48,6 +48,8 @@ app.use((req, res, next) => {
   res.__ = translate;
   next();
 });
+
+const urls = countryCodeToUrls(config.COUNTRY_CODE);
 
 app.use(
   urls.apiDocs,

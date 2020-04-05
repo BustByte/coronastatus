@@ -1,5 +1,3 @@
-import config from '../config';
-
 // Please keep the countries sorted
 export type CountryCode =
   | 'ar'
@@ -36,21 +34,23 @@ export type CountryCode =
   | 'ua'
   | 'us';
 
+interface CountrySpecificUrls {
+  submitReport: string;
+  profile: string;
+  privacyPolicy: string;
+  map: string;
+  contributors: string;
+  api: string;
+  apiDocs: string;
+  statistics: string;
+  limit: string;
+}
+
 type Urls = {
-  [countryCode in CountryCode]: {
-    submitReport: string;
-    profile: string;
-    privacyPolicy: string;
-    map: string;
-    contributors: string;
-    api: string;
-    apiDocs: string;
-    statistics: string;
-    limit: string;
-  };
+  [countryCode in CountryCode]: CountrySpecificUrls;
 };
 
-const localeAwareUrls: Urls = {
+export const countrySpecificUrls: Urls = {
   ar: {
     submitReport: '/',
     profile: '/estadosalud',
@@ -128,17 +128,6 @@ const localeAwareUrls: Urls = {
     statistics: '/estadisticas',
     limit: '/limit'
   },
-  de: {
-    submitReport: '/',
-    profile: '/gesundheitszustand',
-    privacyPolicy: '/datenschutzerklaerung',
-    map: '/karte',
-    contributors: '/mitwirkende',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistiken',
-    limit: '/limit'
-  },
   cz: {
     submitReport: '/',
     profile: '/zdravotni-stav',
@@ -148,6 +137,17 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistiky',
+    limit: '/limit'
+  },
+  de: {
+    submitReport: '/',
+    profile: '/gesundheitszustand',
+    privacyPolicy: '/datenschutzerklaerung',
+    map: '/karte',
+    contributors: '/mitwirkende',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistiken',
     limit: '/limit'
   },
   dk: {
@@ -315,6 +315,17 @@ const localeAwareUrls: Urls = {
     statistics: '/statistics',
     limit: '/limit'
   },
+  ph: {
+    submitReport: '/',
+    profile: '/submission',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics',
+    limit: '/limit'
+  },
   pt: {
     submitReport: '/',
     profile: '/estadosaude',
@@ -402,18 +413,9 @@ const localeAwareUrls: Urls = {
     apiDocs: '/api-docs',
     statistics: '/statistics',
     limit: '/limit'
-  },
-  ph: {
-    submitReport: '/',
-    profile: '/submission',
-    privacyPolicy: '/privacy-statement',
-    map: '/map',
-    contributors: '/contributors',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistics',
-    limit: '/limit'
   }
 };
 
-export const urls = localeAwareUrls[config.COUNTRY_CODE as CountryCode];
+export const countryCodeToUrls = (
+  countryCode: CountryCode
+): CountrySpecificUrls => countrySpecificUrls[countryCode];

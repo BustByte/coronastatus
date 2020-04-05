@@ -1,9 +1,8 @@
 /* eslint-disable global-require, import/no-dynamic-require */
-import fs from 'fs';
+import { readdirSync } from 'fs';
 
 describe('locales', () => {
-  const localeFiles = fs
-    .readdirSync(__dirname)
+  const localeFiles = readdirSync(__dirname)
     .filter(fileName => fileName.includes('.json'))
     .map(fileName => ({
       fileName,
