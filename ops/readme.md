@@ -1,6 +1,10 @@
 # Operations
 This document describes how we operate the sites which are running Coronastatus.
 
+## Setting up a new server
+The vast majority of the servers are hosted by BustByte on DigitalOcean. We have a sponsorship that covers all our hosting related costs.
+Please see [this](digitalocean-setup.md) on how to setup a new server in our cluster.
+
 ## Ownership
 
 | hostname                                           | flag | country          | domain owner                            | server owner           |
