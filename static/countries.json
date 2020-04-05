@@ -47,7 +47,7 @@
     "ua": { 
         "name": "Ukraine",
         "center": [48.2558,26.6914],
-        "domain": "https://coronastatus.es"
+        "domain": "https://coronastatus.ua"
     },
     "es": { 
         "name": "Spain",

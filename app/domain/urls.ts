@@ -373,6 +373,7 @@ const localeAwareUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistici',
+    landing: "/landing",
     limit: '/limit'
   },
   se: {
