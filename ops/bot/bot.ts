@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 import { promisify } from 'util';
 import { exec } from 'child_process';
 import Telegraf, { ContextMessageUpdate } from 'telegraf';
@@ -18,18 +19,18 @@ if (!token || !username) {
  * Used by isMessageFromAnAdmin to figure out if a message
  * was sent from a Telegram user we treat as an administrator.
  */
-const admins: { [id: number]: string; } = {
-  1077246646: 'Michael McMillan',
+const admins: { [id: number]: string } = {
+  1077246646: 'Michael McMillan'
 };
 
 /**
  * How each site is deployed. For the deploy command to work
  * the site you want to deploy has to have an entry below.
  */
-const deployCommands: { [hostname: string]: string; } = {
+const deployCommands: { [hostname: string]: string } = {
   'coronastatus.it': 'app@coronastatus.it /srv/scripts/deploy-prod.sh',
-  'coronastatus.ro': 'app@coronastatus.ro /srv/scripts/deploy-prod.sh' 
-}
+  'coronastatus.ro': 'app@coronastatus.ro /srv/scripts/deploy-prod.sh'
+};
 
 /**
  * Checks if the message was sent from somebody we trust.
@@ -68,10 +69,9 @@ async function ssh(args: string): Promise<string> {
   const { stdout, stderr } = await execPromise(command);
   if (stderr) {
     return 'Command failed.';
-  } else {
-    const [firstLine,] = stdout.split('\n');
-    return firstLine;
   }
+  const [firstLine] = stdout.split('\n');
+  return firstLine;
 }
 
 /**
@@ -104,7 +104,7 @@ async function deployCommand(ctx: ContextMessageUpdate): Promise<void> {
     return;
   }
 
-  let replyLines = [];
+  const replyLines = [];
   for (const hostname of parseHostnamesFromMessage(ctx)) {
     const message = await ssh(deployCommands[hostname]);
     replyLines.push(`${hostname} deployment: ${message}`);
