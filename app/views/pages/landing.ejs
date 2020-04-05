@@ -70,7 +70,10 @@
     text-align: center;
   }
 
-
+  .center-80 {
+    width:80%;
+    margin-left: 10%;
+  }
 </style>
 <script
   src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"
@@ -106,7 +109,7 @@
           <ul class="mt-4 text-center">
             <li class="group">
               <button class="group inverse custom-nav-link rounded-full text-white mt-2 font-medium px-5 md:text-base" onclick="toggleCountryLinks()">
-                <span class="firstlevel"><%= __("Contribute now! ") %>🌍</span>
+                <span class="firstlevel"><%= __("Contribute now!") %> 🌍</span>
               </button>
 
               <ul id="country-links-container" class="absolute p-2 rounded-lg shadow-lg bg-white z-10 hidden group-hover:block">
@@ -147,7 +150,7 @@
 
   <section class="custom-section custom-hero p-4 background-slate mt-8">
 
-    <h3 class="mt-4 text-center text-base text-white border-b-2 border-cvs-red mt-2 font-medium text-xl md:text-3xl px-5">
+    <h3 class="center-80 mt-4 text-center text-base text-white border-b-2 border-cvs-red mt-2 font-medium text-xl md:text-3xl px-5">
       <%- __("How can I <span>contribute</span>?").replace(/<span>/g, '<span class="text-cvs-gold">') %>
     </h3>
       
@@ -156,54 +159,73 @@
       <div class="text-center flex flex-col items-center w-full md:w-1/3 p-4 mt-8 md:mt-0">
         <h1 class="text-cvs-gold m-2 text-3xl md:text-5xl">1. Survey</h1>
         <p class="text-white">Select your *country and fill out the anonymous survey.</p>
+        <ul class="mt-8 text-center">
+          <li class="group">
+            <button class="inverse custom-nav-link rounded-full text-white m-2 font-medium px-5 md:text-base" onclick="jumpToCountryLinks()">
+              <%= __("Contribute now!") %> 🌍
+            </button>
+          </li>
+        </ul>
       </div>
       <div class="text-center flex flex-col items-center w-full md:w-1/3 p-4 mt-8 md:mt-0">
         <h1 class="text-cvs-gold m-2 text-3xl md:text-5xl">2. Share</h1>
         <p class="text-white">Share the link with your friends, family, and encourage them to fill it in.</p>
+        <%- include('partials/share', { amount: formatNumber(10000) }) -%>
       </div>
       <div class="text-center flex flex-col items-center w-full md:w-1/3 p-4 mt-8 md:mt-0">
         <h1 class="text-cvs-gold m-2 text-3xl md:text-5xl">3. Build</h1>
         <p class="text-white">Don't see your country on the map?<br><a class="text-cvs-gold hover:underline" href="https://github.com/BustByte/coronastatus#how-to-launch-the-site-in-your-country">Why not set it up?</a> We can help you do it.</p>
+        <a
+        href="https://github.com/BustByte/coronastatus"
+        target="_blank"
+        class="footer-logo-link mt-4"
+      >
+        <img
+          src="/static/images/github.svg"
+          alt=""
+          class="footer-logo-link__img mt-4 h-12 w-12 lg:h-16 lg:w-16"
+        />
+      </a>
       </div>
     </div>
 
   </section>
 
-    <section class="custom-section custom-hero p-4 background-slate mt-8">
+  <section class="custom-section custom-hero p-4 background-slate mt-8">
 
 
-      <h3 class="mt-4 text-center text-base text-white border-b-2 border-cvs-red mt-2 font-medium text-xl md:text-3xl px-5">
-        <%- __("About corona<span>status</span>").replace(/<span>/g, '<span class="text-cvs-gold">') %>
-      </h3>
+    <h3 class="center-80 mt-4 text-center text-base text-white border-b-2 border-cvs-red mt-2 font-medium text-xl md:text-3xl px-5">
+      <%- __("About corona<span>status</span>").replace(/<span>/g, '<span class="text-cvs-gold">') %>
+    </h3>
       
-      <div class="my-8 flex flex-row flex-wrap justify-between">
+    <div class="my-8 flex flex-row flex-wrap justify-between">
         
         
-        <%- include('partials/app-feature-block', {
-          image: '/static/images/hospital.svg',
-          title: __('Unreported cases'),
-          description: __('The spread of COVID-19 in our world is unknown. Help us create a better overview.')
-        }) -%>
+      <%- include('partials/app-feature-block', {
+        image: '/static/images/hospital.svg',
+        title: __('Unreported cases'),
+        description: __('The spread of COVID-19 in our world is unknown. Help us create a better overview.')
+      }) -%>
   
-        <%- include('partials/app-feature-block', {
-          image: '/static/images/doctor.svg',
-          title: __('Contribute anonymously'),
-          description: __('Report your health condition anonymously')
-        }) -%>
+      <%- include('partials/app-feature-block', {
+        image: '/static/images/doctor.svg',
+        title: __('Contribute anonymously'),
+        description: __('Report your health condition anonymously')
+      }) -%>
   
-        <%- include('partials/app-feature-block', {
-          image: '/static/images/research.svg',
-          title: __('Insight for everyone'),
-          description: __('The data is open to everyone. Look at maps and graphs, or download the data and create your own visualizations.')
-        }) -%>
+      <%- include('partials/app-feature-block', {
+        image: '/static/images/research.svg',
+        title: __('Insight for everyone'),
+        description: __('The data is open to everyone. Look at maps and graphs, or download the data and create your own visualizations.')
+      }) -%>
   
-        <%- include('partials/app-feature-block', {
-          image: '/static/images/mobile.svg',
-          title: __('Everything is open'),
-          description: __('The website is open source and built by volunteers. Feel free to join.')
-        }) -%>
-      </div>
-    </section> 
+      <%- include('partials/app-feature-block', {
+        image: '/static/images/mobile.svg',
+        title: __('Everything is open'),
+        description: __('The website is open source and built by volunteers. Feel free to join.')
+      }) -%>
+    </div>
+  </section> 
 
 
 
@@ -371,14 +393,8 @@
     updateMarkers();
   });
 
-
-  
-
   var countries = <%- JSON.stringify(locals.countries) %>;
   var geojson = [];
-
-   
-
 </script>
 
 
@@ -393,36 +409,42 @@
     }
   }
 
+  function jumpToCountryLinks() {
+    //used by the second Contribute now button under 1. Survey
+    window.scrollTo(0,0);
+    toggleCountryLinks();
+    document.getElementById("country-links-container").focus(); 
+  }
+
   function createCountryButton(key, container) {
     var li = document.createElement("li");
-      li.classList.add("p-4");
-      li.classList.add("whitespace-no-wrap");
-      li.classList.add("m-2");
-      li.classList.add("md:text-base");
-      li.classList.add("text-sm");
-      li.classList.add("text-gray-600");
-      li.classList.add("hover:text-gray-800");
-      li.classList.add("hover:bg-gray-100");
-      li.id = key+"-item";
+    li.classList.add("p-4");
+    li.classList.add("whitespace-no-wrap");
+    li.classList.add("m-2");
+    li.classList.add("md:text-base");
+    li.classList.add("text-sm");
+    li.classList.add("text-gray-600");
+    li.classList.add("hover:text-gray-800");
+    li.classList.add("hover:bg-gray-100");
+    li.id = key+"-item";
 
-      var a = document.createElement("a");
-      a.classList.add("px-2");
-      a.classList.add("py-1");
-      a.href = countries[key].domain;
+    var a = document.createElement("a");
+    a.classList.add("px-2");
+    a.classList.add("py-1");
+    a.href = countries[key].domain;
 
-      var span = document.createElement("span");
-      span.innerText = countries[key].name;
-      a.appendChild(span);
+    var span = document.createElement("span");
+    span.innerText = countries[key].name;
+    a.appendChild(span);
 
-      li.style.backgroundImage = "url(static/flags/1x1/"+key+".svg)";
-      li.style.backgroundRepeat = "no-repeat";
+    li.style.backgroundImage = "url(static/flags/1x1/"+key+".svg)";
+    li.style.backgroundRepeat = "no-repeat";
 
-      li.append(a);
-      container.appendChild(li);
+    li.append(a);
+    container.appendChild(li);
   }
 
   function createMarkerObject(key) {
-    console.log(key);
     geojson.push({
       type: 'Feature',
       geometry: {
@@ -443,11 +465,9 @@
       el.className = 'marker';
       new mapboxgl.Marker(el)
       .setLngLat(marker.geometry.coordinates)
-
-  .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-    .setHTML('<h3 class="p-5"><a href="' + marker.properties.domain + '">' + marker.properties.title + '</a></h3>'))
-    .addTo(map);
-    
+      .setPopup(new mapboxgl.Popup({ offset: 25 })
+      .setHTML('<h3 class="p-5"><a href="' + marker.properties.domain + '">' + marker.properties.title + '</a></h3>'))
+      .addTo(map);
     });
   }
   
@@ -458,58 +478,51 @@
       createMarkerObject(key);
       plotMarker(geojson[geojson.length - 1]);
     });
-      
-  
- 
-   
   }
   processCountriesJson();
 
-
   function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } 
-  //whether or not getting the location worked we start cycling countries after 5 seconds
-  window.setTimeout(function () {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } 
+    //whether or not getting the location worked we start cycling countries after 5 seconds
+    window.setTimeout(function () {
       playback(0);
     },5000)
-}
+  }
 
-function showPosition(position) {
-    map.flyTo({
-      zoom: 4,
-      center: [position.coords.longitude, position.coords.latitude],
-      essential: true
-    });
-    
-    
-}
-
-var currentCountry = document.getElementById("current-country");
-function playback(index) {
-  currentCountry.innerHTML = "<div class=\"flex flex-wrap items-center justify-center pb-6 text-white text-xl font-bold\"><div class='w-full sm:w-auto flex items-center justify-center'><img class=\"h-5 w-6 mr-4\" src='"+geojson[index].properties.flag+"'>"+geojson[index].properties.title+"</div><span class=\"px-4 hidden sm:block\">|</span><div class=\"w-full sm:w-auto text-base sm:text-xl\"><a href='"+geojson[index].properties.domain+"'>"+geojson[index].properties.domain.split("//")[1].replace("status","<span class='text-cvs-gold'>status</span>").replace("/","")+"</a></div></div>";
- 
-  
-
-
-// Animate the map position based on camera properties
-map.flyTo({
-      zoom: 4,
-      center: [geojson[index].geometry.coordinates[0], geojson[index].geometry.coordinates[1]],
-      essential: true
+  function showPosition(position) {
+      map.flyTo({
+        zoom: 4,
+        center: [position.coords.longitude, position.coords.latitude],
+        essential: true
       });
- 
-map.once('moveend', function() {
-// Duration the slide is on screen after interaction
-window.setTimeout(function() {
-// Increment index
-index = index + 1 === geojson.length ? 0 : index + 1;
-playback(index);
-}, 3500); 
-});
-}
+  }
 
-getLocation()
+  var currentCountry = document.getElementById("current-country");
+  function playback(index) {
+    currentCountry.innerHTML = "<div class=\"flex flex-wrap items-center justify-center pb-6 text-white text-xl font-bold\"><div class='w-full sm:w-auto flex items-center justify-center'><img class=\"h-5 w-6 mr-4\" src='"
+    +geojson[index].properties.flag
+    +"'>"
+    +geojson[index].properties.title
+    +"</div><span class=\"px-4 hidden sm:block\">|</span><div class=\"w-full sm:w-auto text-base sm:text-xl\"><a href='"
+    +geojson[index].properties.domain
+    +"'>"
+    +geojson[index].properties.domain.split("//")[1].replace("/","").replace("status","<span class='text-cvs-gold'>status</span>")
+    +"</a></div></div>";
+    
+    map.flyTo({
+          zoom: 4,
+          center: [geojson[index].geometry.coordinates[0], geojson[index].geometry.coordinates[1]],
+          essential: true
+          });
+    map.once('moveend', function() {
+    window.setTimeout(function() {
+      index = index + 1 === geojson.length ? 0 : index + 1;
+      playback(index);
+    }, 3500); 
+    });
+  }
+  getLocation()
   
 </script>
