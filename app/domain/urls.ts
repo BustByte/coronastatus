@@ -315,17 +315,6 @@ const localeAwareUrls: Urls = {
     statistics: '/statistics',
     limit: '/limit'
   },
-  ph: {
-    submitReport: '/',
-    profile: '/healthcondition',
-    privacyPolicy: '/privacy-statement',
-    map: '/map',
-    contributors: '/contributors',
-    api: '/api',
-    apiDocs: '/api-docs',
-    statistics: '/statistics',
-    limit: '/limit'
-  },
   pt: {
     submitReport: '/',
     profile: '/estadosaude',
@@ -406,6 +395,17 @@ const localeAwareUrls: Urls = {
   us: {
     submitReport: '/',
     profile: '/healthcondition',
+    privacyPolicy: '/privacy-statement',
+    map: '/map',
+    contributors: '/contributors',
+    api: '/api',
+    apiDocs: '/api-docs',
+    statistics: '/statistics',
+    limit: '/limit'
+  },
+  ph: {
+    submitReport: '/',
+    profile: '/submission',
     privacyPolicy: '/privacy-statement',
     map: '/map',
     contributors: '/contributors',
