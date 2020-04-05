@@ -61,6 +61,7 @@ The government is working on this, but they're too slow in getting something out
 | --------------------------------------------------------------------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Self-report system for monitoring COVID19 needs to be in place immediately! |   🇳🇴    | [Read here](https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona-maa-paa-plass-naa-petter-bae-brandtzaeg) |
 | Are you ill? Health services will soon let you self-report symtoms.         |   🇳🇴    | [Read here](https://www.bt.no/innenriks/i/QoAdAx/har-du-vaert-syk-snart-kan-du-hjelpe-helsemyndighetene-med-aa-registrer)                                  |
+| Developers take on COVID-19 with open-source projects, hackathons           |   🇺🇸    | [Read here](https://sdtimes.com/open-source/developers-take-on-covid-19-with-open-source-projects-hackathons/)                                             |
 
 ## Who's behind this?
 
