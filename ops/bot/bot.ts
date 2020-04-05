@@ -100,7 +100,7 @@ function parseHostnamesFromMessage(ctx: ContextMessageUpdate): Array<string> {
  * Usage: @coronastatusrobot deploy coronastatus.it
  */
 async function deployCommand(ctx: ContextMessageUpdate): Promise<void> {
-  if (!isBotMentioned(ctx) || !isMessageFromAnAdmin) {
+  if (!isBotMentioned(ctx) || !isMessageFromAnAdmin(ctx)) {
     return;
   }
 
