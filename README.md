@@ -76,9 +76,9 @@ Click on "Issues" in the menu above to see what we need help with.
 
 Adding a new language should be pretty straightforward. If you need help, you can always ask in the Telegram group chat or contact us by email. The following is needed in order to set up a new language:
 
-- Set up a new config file: `cp config.example.json config.json`. `CONTRY_CODE` should be the Alpha-2-code listed here: https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
+- Set up a new config file: `cp config.example.json config.json`. `COUNTRY_CODE` should be the Alpha-2-code listed here: https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
 - In `app/locales` you have to add
-  - Translations for all the sentences in `en.json`. The translations should be placed in `{LOCALE}.json` (`LOCALE` should be one of the locales from [here](https://github.com/ladjs/i18n-locales)). The keys are the same in all the `{LOCALE}.json`-files, and the values are the translations. We recommend translating everything in the file first, and then testing the site in order to verify that the translations look ok in context. Some texts conains `{{ SOME_VALUE }}`. The content in `{{ }}` will be replace with a country specific variable.
+  - Translations for all the sentences in `en.json`. The translations should be placed in `{LOCALE}.json` (`LOCALE` should be one of the locales from [here](https://github.com/ladjs/i18n-locales)). The keys are the same in all the `{LOCALE}.json`-files, and the values are the translations. We recommend translating everything in the file first, and then testing the site in order to verify that the translations look ok in context. Some texts conains `{{ SOME_VALUE }}`. The content in `{{ }}` will be replaced with a country specific variable.
   - sort the locales alphabetically by keys. You can use a helper script to sort it: `yarn sort:locales`
 - In `app/countrySpecific/{COUNTRY-CODE}/` you have to add (follow filename convention of the files that are already there):
   - `config.ts`. Copy from `app/countrySpecific/en/config.ts`, and change the values so that it fits your country (ask in Telegram if you wonder what the different values mean).
@@ -91,7 +91,7 @@ Adding a new language should be pretty straightforward. If you need help, you ca
 - Add a mapping from the locale you added to a corresponding flag in `app/domain/flags.ts`. The code (two letters) of the flag can be found [here](https://flagicons.lipis.dev/).
 - You also need a domain (preferably `coronastatus.tld` if it is available), and a server to run the app on. We can assist you with setting this up.
 - Generate images for social media etc. using [this guide](https://github.com/BustByte/coronastatus#generating-social-images)
-- We can host the site for you if you want that. Just send a message to us in telegram. This makes it easier to maintain and deploy new changes to all the sites. We will give you access to the server as well. If you insist on hosting it yourself, please add your name to the README [here](ops)
+- We can host the site for you if you want that. Just send a message to us in Telegram. This makes it easier to maintain and deploy new changes to all the sites. We will give you access to the server as well. If you insist on hosting it yourself, please add your name to the README [here](ops)
 
 ## Start developing
 
