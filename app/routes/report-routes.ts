@@ -11,8 +11,10 @@ import {
 import { CovidReportRepository } from '../repository/CovidReportRepository';
 import { getPasscodeCreator } from '../util/passcode-creator';
 import { aggregateCovidReports } from '../util/report-aggregator';
-import { urls } from '../domain/urls';
+import { countryCodeToUrls } from '../domain/urls';
 import config from '../config';
+
+const urls = countryCodeToUrls(config.COUNTRY_CODE);
 
 const cookieOptions = {
   maxAge: 31557600000, // maxAge is set to 1 year in ms

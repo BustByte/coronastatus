@@ -1,6 +1,8 @@
 import express from 'express';
-import { urls } from '../domain/urls';
+import { countryCodeToUrls } from '../domain/urls';
 import config from '../config';
+
+const urls = countryCodeToUrls(config.COUNTRY_CODE);
 
 export const localeCookieName = 'coronastatusLocale';
 
