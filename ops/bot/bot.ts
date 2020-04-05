@@ -87,6 +87,10 @@ function parseHostnamesFromMessage(ctx: ContextMessageUpdate): Array<string> {
     return [];
   }
   const words = ctx.message.text.split(' ');
+  if (words.includes('all')) {
+    const allHostnames = Object.keys(deployCommands);
+    return allHostnames;
+  }
   const hostnames = words.filter(hostname => hostname in deployCommands);
   return Array.from(new Set(hostnames));
 }
