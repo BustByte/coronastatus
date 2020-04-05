@@ -29,7 +29,24 @@ const admins: { [id: number]: string } = {
  */
 const deployCommands: { [hostname: string]: string } = {
   'coronastatus.it': 'app@coronastatus.it /srv/scripts/deploy-prod.sh',
-  'coronastatus.ro': 'app@coronastatus.ro /srv/scripts/deploy-prod.sh'
+  'coronastatus.nl': 'app@coronastatus.nl /srv/scripts/deploy-prod.sh',
+  'coronastatus.es': 'app@coronastatus.es /srv/scripts/deploy-prod.sh',
+  'coronastatus.mx': 'app@coronastatus.mx /srv/scripts/deploy-prod.sh',
+  'coronastatus.fr': 'app@coronastatus.fr /srv/scripts/deploy-prod.sh',
+  'coronastatus.us': 'app@coronastatus.us /srv/scripts/deploy-prod.sh',
+  'coronastatus.co': 'app@coronastatus.co /srv/scripts/deploy-prod.sh',
+  'coronastatus.com.br': 'app@coronastatus.com.br /srv/scripts/deploy-prod.sh',
+  'coronastatusau.org': 'app@coronastatusau.org /srv/scripts/deploy-prod.sh',
+  'corona-status.in': 'app@corona-status.in /srv/scripts/deploy-prod.sh',
+  'coronastatusmt.com': 'app@coronastatusmt.com /srv/scripts/deploy-prod.sh',
+  'coronastatus.org.ua': 'app@coronastatus.org.ua /srv/scripts/deploy-prod.sh',
+  'coronastatus.ng': 'app@coronastatus.ng /srv/scripts/deploy-prod.sh',
+  'coronastatustr.org': 'app@coronastatustr.org /srv/scripts/deploy-prod.sh',
+  'coronastatusnp.com': 'app@coronastatusnp.com /srv/scripts/deploy-prod.sh',
+  'corona-status.cz': 'app@corona-status.cz /srv/scripts/deploy-prod.sh',
+  'coronastatus.id': 'app@coronastatus.id /srv/scripts/deploy-prod.sh',
+  'coronastatus.ph': 'app@coronastatus.ph /srv/scripts/deploy-prod.sh',
+  'coronastatus.ro': 'app@coronastatus.ro /srv/scripts/deploy-prod.sh',
 };
 
 /**
@@ -65,12 +82,12 @@ function isBotMentioned(ctx: ContextMessageUpdate): boolean {
  */
 async function ssh(args: string): Promise<string> {
   const execPromise = promisify(exec);
-  const command = `ssh ${args}`;
-  const { stdout, stderr } = await execPromise(command);
-  if (stderr) {
+  const { stdout, stderr } = await execPromise(`ssh ${args}`);
+  const [firstLine, ...lines] = stdout.split('\n');
+  if (!lines.some((line: string) => line.includes('Done in'))) {
+    console.log({ 'message': 'ssh failed', args, stdout, stderr });
     return 'Command failed.';
   }
-  const [firstLine] = stdout.split('\n');
   return firstLine;
 }
 
