@@ -20,9 +20,6 @@ if (process.env.DB_PATH) {
 if (process.env.LOCALE) {
   configOverrides.LOCALE = process.env.LOCALE as Locale;
 }
-if (process.env.MAP_CENTER) {
-  configOverrides.MAP_CENTER = process.env.MAP_CENTER;
-}
 if (process.env.MAP_MAX_ZOOM) {
   configOverrides.MAP_ZOOM = parseInt(process.env.MAP_MAX_ZOOM, 10);
 }
