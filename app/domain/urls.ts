@@ -373,7 +373,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistici',
-    landing: "/landing",
+    landing: '/landing',
     limit: '/limit'
   },
   se: {

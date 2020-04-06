@@ -26,7 +26,8 @@ router.get(urls.contributors, (req, res) => {
 
 router.get(`${urls.landing}`, (req, res) => {
   return res.render('pages/landing');
-})
+});
+
 router.get(urls.limit, (req, res) => {
   return res.render('pages/limit');
 });
