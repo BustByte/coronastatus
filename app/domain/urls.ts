@@ -44,6 +44,7 @@ interface CountrySpecificUrls {
   apiDocs: string;
   statistics: string;
   limit: string;
+  landing: string;
 }
 
 type Urls = {
