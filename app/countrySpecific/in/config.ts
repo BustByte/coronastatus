@@ -5,7 +5,10 @@ export const countrySpecificConfig: Config = {
   COUNTRY_CODE: 'in',
   DB_PATH: './covid_db',
   LOCALE: 'en-IN',
-  MAP_CENTER: '73.706197, 20.7699369', // NB! Lat/lng is opposite of what you find on Google Maps
+  MAP_CENTER: {
+    lat: 20.77,
+    lon: 73.71
+  },
   MAP_MAX_ZOOM: 13,
   MAP_ZOOM: 4,
   PASSCODE_LENGTH: 4,
