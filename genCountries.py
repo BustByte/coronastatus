@@ -1,15 +1,26 @@
 import os
 
-def findVarsInFiles(filePath, object, matches):
+def findStringVarsInFiles(filePath, obj, matches):
         with open(filePath) as file:
             for line in file.readlines():
                 for match in matches:
-                    ifFoundSet(country, match, line) 
+                    ifFoundSet(obj, match, line) 
+                    
+def findFloatVarsInFiles(filePath, obj, matches):
+        with open(filePath) as file:
+            for line in file.readlines():
+                for match in matches:
+                    if match in line:
+                        print("found match", match)
+                        parts = line.split(":")
+                        parts = parts[1]
+                        value = parts.split(",")
+                        country[match] = value[0].rstrip()
     
-def ifFoundSet(object, match, line):
+def ifFoundSet(obj, match, line):
     if match in line:
         values = line.split("'")
-        object[match] = values[1]
+        obj[match] = values[1]
 
 
 def deleteIfExists(fileName):
@@ -33,11 +44,13 @@ for (_, dirnames, _) in os.walk(basePath):
         country = {}
         
         config = basePath+dir+"/config.ts" 
-        findVarsInFiles(config, country, ["BASE_URL", "COUNTRY_CODE", "MAP_CENTER"])
+        findStringVarsInFiles(config, country, ["BASE_URL", "COUNTRY_CODE"])
+        findFloatVarsInFiles(config, country, ["lat", "lon"])
         textVariables = basePath+dir+"/text-variables.ts"
-        findVarsInFiles(textVariables, country, ["COUNTRY_NAME"])
+        findStringVarsInFiles(textVariables, country, ["COUNTRY_NAME"])
         
         file = open(countriesFilePath, "a")
+        print(country)
         file.write(str(country).replace("'",'"')+",")
         file.close()
     

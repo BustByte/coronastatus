@@ -9,7 +9,7 @@
   } = locals;
   const shouldAddAnalytics = !locals.profile;
 %>
-<% const { show = true, menu = true, home = false, fullscreen = false, lastCommit = false, showLocaleSelector = true } = locals; %>
+<% const { show = true, menu = true, home = false, fullscreen = false, lastCommit = false, showLocaleSelector = true, tryStartOnUserLocation = false } = locals; %>
 
 <!DOCTYPE html>
 <html lang="<%= locale %>">
@@ -345,7 +345,6 @@
   var map = new mapboxgl.Map({
     container: 'map',
     style: '/static/landing-map-theme.json',
-    center: [<%= locals.mapCenter %>],
     zoom: 2,
     maxZoom: 4,
     customAttribution: 'Pin icon <a href="https://iconmonstr.com/pin-12-svg/" target="_blank">&copy;iconmonstr</a>',
@@ -401,7 +400,6 @@
   });
 
   var countries = <%- JSON.stringify(locals.countries) %>;
-  var geojson = [];
 </script>
 
 
@@ -454,21 +452,7 @@
 
   function createMarkerObject(i) {
     countries[i].flag = 'static/flags/1x1/'+countries[i].COUNTRY_CODE+'.svg'
-    center = countries[i].MAP_CENTER.split(",")
-    countries[i].MAP_CENTER = center;
-    //countries[i].center = center
-    /* geojson.push({
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [countries[key].center[1], countries[key].center[0]]
-      },
-      properties: {
-        title: countries[key].name,
-        domain: countries[key].domain,
-        flag: 'static/flags/1x1/'+key+'.svg'
-      }
-    }); */
+    countries[i].MAP_CENTER = [countries[i].lon, countries[i].lat];
   }
 
   function plotMarkers() {
@@ -494,9 +478,15 @@
   processCountriesJson();
 
   function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } 
+    <% if (locals.tryStartOnUserLocation) { %>
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((result) => {
+          if (result.coordinates) {
+            showPosition([result.coordinates.longitude, result.coordinates.latitude]);
+          }
+        });
+      } 
+    <% } %>
     //whether or not getting the location worked we start cycling countries after 5 seconds
     window.setTimeout(function () {
       playback(0);
@@ -506,7 +496,7 @@
   function showPosition(position) {
       map.flyTo({
         zoom: 4,
-        center: [position.coords.longitude, position.coords.latitude],
+        center: position,
         essential: true
       });
   }
@@ -523,12 +513,7 @@
     +"'>"
     +countries[index].BASE_URL.replace("status","<span class='text-cvs-gold'>status</span>")
     +"</a></div></div>";
-    
-    map.flyTo({
-          zoom: 4,
-          center: countries[index].MAP_CENTER,
-          essential: true
-          });
+    showPosition(countries[index].MAP_CENTER);
     map.once('moveend', function() {
     window.setTimeout(function() {
       index = index + 1 === countries.length ? 0 : index + 1;
