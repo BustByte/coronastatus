@@ -4,7 +4,9 @@ def findStringVarsInFiles(filePath, obj, matches):
         with open(filePath) as file:
             for line in file.readlines():
                 for match in matches:
-                    ifFoundSet(obj, match, line) 
+                    if match in line:
+                        values = line.split("'")
+                        obj[match] = values[1]
                     
 def findFloatVarsInFiles(filePath, obj, matches):
         with open(filePath) as file:
@@ -16,11 +18,6 @@ def findFloatVarsInFiles(filePath, obj, matches):
                         parts = parts[1]
                         value = parts.split(",")
                         country[match] = value[0].rstrip()
-    
-def ifFoundSet(obj, match, line):
-    if match in line:
-        values = line.split("'")
-        obj[match] = values[1]
 
 
 def deleteIfExists(fileName):
