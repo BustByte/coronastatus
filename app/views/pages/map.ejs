@@ -48,7 +48,7 @@
   var map = new mapboxgl.Map({
     container: 'map',
     style: 'https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json',
-    center: [<%= locals.mapCenter %>],
+    center: [<%= locals.mapCenter.lon %>, <%= locals.mapCenter.lat %>],
     zoom: <%= locals.mapZoom %>,
     maxZoom: <%= locals.mapMaxZoom %>,
     customAttribution: 'Postal Codes <a href="https://www.geonames.org/" target="_blank">&copy;GeoNames</a>',

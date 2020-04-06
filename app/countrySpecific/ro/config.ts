@@ -5,9 +5,12 @@ export const countrySpecificConfig: Config = {
   COUNTRY_CODE: 'ro',
   DB_PATH: './covid_db',
   LOCALE: 'ro-RO',
-  MAP_CENTER: '22.7775903,45.9199635', // NB! Lat/lng is opposite of what you find on Google Maps
+  MAP_CENTER: {
+    lat: 45.92,
+    lon: 22.78
+  },
   MAP_MAX_ZOOM: 13,
-  MAP_ZOOM: 6,
+  MAP_ZOOM: 5,
   PASSCODE_LENGTH: 3,
   RATE_LIMIT_COUNT: 20, // Maximum number of submissions per IP
   RATE_LIMIT_WINDOW: 86400000, // Time window in milliseconds for rate limiting
