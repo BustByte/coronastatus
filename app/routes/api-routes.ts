@@ -185,13 +185,26 @@ router.get('/reports', cors(), async (req, res) => {
   return res.json(result);
 });
 
-router.get("/countries", cors(), async (req, res) => {
-  var countries: { COUNTRY_CODE: string, BASE_URL: string, MAP_CENTER: string, COUNTRY_NAME: string }[] = [];
-  const basePath = path.join(path.basename(path.dirname(__dirname)), "/countrySpecific");
+router.get('/countries', cors(), async (req, res) => {
+  const countries: {
+    COUNTRY_CODE: string;
+    BASE_URL: string;
+    MAP_CENTER: string;
+    COUNTRY_NAME: string;
+  }[] = [];
+  const basePath = path.join(
+    path.basename(path.dirname(__dirname)),
+    '/countrySpecific'
+  );
   readdirSync(basePath, { withFileTypes: true })
     .filter(dirent => dirent.isDirectory())
     .forEach(directory => {
-      countries.push({ "COUNTRY_CODE": directory.name, BASE_URL: "", MAP_CENTER: "", COUNTRY_NAME: "" });
+      countries.push({
+        COUNTRY_CODE: directory.name,
+        BASE_URL: '',
+        MAP_CENTER: '',
+        COUNTRY_NAME: ''
+      });
     });
 
   if (countries.length === 0) {
@@ -199,14 +212,17 @@ router.get("/countries", cors(), async (req, res) => {
   }
 
   countries.map(country => {
-    const {countrySpecificConfig} = require(`../countrySpecific/${country.COUNTRY_CODE}/config.ts`);
+    const {
+      countrySpecificConfig
+    } = require(`../countrySpecific/${country.COUNTRY_CODE}/config.ts`);
     country.BASE_URL = countrySpecificConfig.BASE_URL;
     country.MAP_CENTER = countrySpecificConfig.MAP_CENTER;
 
-    const {countrySpecificTexts} = require(`../countrySpecific/${country.COUNTRY_CODE}/text-variables.ts`);
+    const {
+      countrySpecificTexts
+    } = require(`../countrySpecific/${country.COUNTRY_CODE}/text-variables.ts`);
     country.COUNTRY_NAME = countrySpecificTexts.COUNTRY_NAME;
     return country;
-
   });
   res.send(countries);
 });
