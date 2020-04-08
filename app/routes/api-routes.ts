@@ -212,9 +212,6 @@ router.get('/countries', cors(), async (req, res) => {
         COUNTRY_NAME: countrySpecificTexts.COUNTRY_NAME
       });
     });
-  if (countries.length === 0) {
-    res.send("'No country files found'");
-  }
   res.send(countries);
 });
 
