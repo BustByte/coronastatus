@@ -4,8 +4,7 @@
     passcode,
     baseUrl,
     formatNumber,
-    urls,
-    countries
+    urls
   } = locals;
   const shouldAddAnalytics = !locals.profile;
 %>
@@ -398,7 +397,7 @@
     updateMarkers();
   });
 
-  var countries = <%- JSON.stringify(locals.countries) %>;
+  
 </script>
 
 
@@ -408,7 +407,6 @@
     var con = document.getElementById("country-links-container");
     if (con.classList.contains("hidden")) {
       con.classList.remove("hidden");
-
     } else {
       con.classList.add("hidden");
     }
@@ -451,19 +449,20 @@
 
   function createMarkerObject(i) {
     countries[i].flag = 'static/flags/1x1/'+countries[i].COUNTRY_CODE+'.svg'
-    countries[i].MAP_CENTER = [countries[i].lon, countries[i].lat];
+    countries[i].MAP_CENTER = [countries[i].MAP_CENTER.lon, countries[i].MAP_CENTER.lat];
   }
 
   function plotMarkers() {
-    countries.forEach(function(country) {
+    console.log(countries);
+    for (var i = 0; i < countries.length; i++) {
       var el = document.createElement('div');
       el.className = 'marker';
       new mapboxgl.Marker(el)
-      .setLngLat(country.MAP_CENTER)
+      .setLngLat(countries[i].MAP_CENTER)
       .setPopup(new mapboxgl.Popup({ offset: 25 })
-      .setHTML('<h3 class="p-5"><a href="http://' + country.BASE_URL + '">' + country.COUNTRY_NAME + '</a></h3>'))
+      .setHTML('<h3 class="p-5"><a href="http://' + countries[i].BASE_URL + '">' + countries[i].COUNTRY_NAME + '</a></h3>'))
       .addTo(map);
-    });
+    };
   }
   
   function processCountriesJson () {
@@ -474,7 +473,6 @@
     };
     plotMarkers();
   }
-  processCountriesJson();
 
   function getLocation() {
     <% if (locals.tryStartOnUserLocation) { %>
@@ -522,7 +520,6 @@
     }, 3500); 
     });
   }
-  getLocation()
 
   function toggleAnimation() {
     if (play) {
@@ -534,5 +531,12 @@
       playback(Math.floor(Math.random() * countries.length));
     }
   }
-  
+  var countries = new XMLHttpRequest();
+  countries.addEventListener("load", () => {
+    countries = JSON.parse(countries.responseText);
+    processCountriesJson();
+    getLocation();
+  });
+  countries.open("GET", "api/countries");
+  countries.send();
 </script>

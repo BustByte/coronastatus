@@ -16,7 +16,6 @@ import { localeToFlag } from './domain/flags';
 import config from './config';
 import { ensureAllLocalesAreValidJSON } from './util/locale-validation';
 import { createNumberFormatter } from './util/number-formatter';
-import countries from '../static/countries.json';
 import { getCountrySpecificTextVariables } from './countrySpecific/country-specific-text-variables';
 
 const app = express();
@@ -84,7 +83,6 @@ app.use(async (req, res, next) => {
   res.locals.localeToFlag = localeToFlag;
   res.locals.currentLocale = req.getLocale();
   res.locals.formatNumber = createNumberFormatter(config.THOUSAND_SEPARATOR);
-  res.locals.countries = countries;
   res.locals.textVariables = getCountrySpecificTextVariables(
     config.COUNTRY_CODE
   );
