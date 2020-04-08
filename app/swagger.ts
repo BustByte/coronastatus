@@ -4,7 +4,11 @@ import {
 } from './openAPI/aggregated.swagger';
 import config from './config';
 import { countryCodeToUrls } from './domain/urls';
-import { getReports, getReportsCsv } from './openAPI/reports.swagger';
+import {
+  getReports,
+  getReportsCsv,
+  getCountries
+} from './openAPI/reports.swagger';
 
 const urls = countryCodeToUrls(config.COUNTRY_CODE);
 
@@ -53,6 +57,9 @@ export const swaggerDocument = {
     },
     '/reports/reports.csv': {
       get: getReportsCsv
+    },
+    '/countries': {
+      get: getCountries
     }
   }
 };
