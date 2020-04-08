@@ -434,13 +434,13 @@
     var a = document.createElement("a");
     a.classList.add("px-2");
     a.classList.add("py-1");
-    a.href = countries[i].BASE_URL;
+    a.href = countries[i].url;
 
     var span = document.createElement("span");
-    span.innerText = countries[i].COUNTRY_NAME;
+    span.innerText = countries[i].countryName;
     a.appendChild(span);
 
-    li.style.backgroundImage = "url(static/flags/1x1/"+countries[i].COUNTRY_CODE+".svg)";
+    li.style.backgroundImage = "url(static/flags/1x1/"+countries[i].countryCode+".svg)";
     li.style.backgroundRepeat = "no-repeat";
 
     li.append(a);
@@ -448,8 +448,8 @@
   }
 
   function createMarkerObject(i) {
-    countries[i].flag = 'static/flags/1x1/'+countries[i].COUNTRY_CODE+'.svg'
-    countries[i].MAP_CENTER = [countries[i].MAP_CENTER.lon, countries[i].MAP_CENTER.lat];
+    countries[i].flag = 'static/flags/1x1/'+countries[i].countryCode+'.svg'
+    countries[i].mapCenter = [countries[i].mapCenter.lon, countries[i].mapCenter.lat];
   }
 
   function plotMarkers() {
@@ -458,9 +458,9 @@
       var el = document.createElement('div');
       el.className = 'marker';
       new mapboxgl.Marker(el)
-      .setLngLat(countries[i].MAP_CENTER)
+      .setLngLat(countries[i].mapCenter)
       .setPopup(new mapboxgl.Popup({ offset: 25 })
-      .setHTML('<h3 class="p-5"><a href="http://' + countries[i].BASE_URL + '">' + countries[i].COUNTRY_NAME + '</a></h3>'))
+      .setHTML('<h3 class="p-5"><a href="http://' + countries[i].url + '">' + countries[i].countryName + '</a></h3>'))
       .addTo(map);
     };
   }
@@ -504,13 +504,13 @@
     currentCountry.innerHTML = "<div class=\"flex flex-wrap items-center justify-center pb-6 text-white text-xl font-bold\"><div class='w-full sm:w-auto flex items-center justify-center'><img class=\"h-5 w-6 mr-4\" src='"
     +countries[index].flag
     +"'>"
-    +countries[index].COUNTRY_NAME
+    +countries[index].countryName
     +"</div><span class=\"px-4 hidden sm:block\">|</span><div class=\"w-full sm:w-auto text-base sm:text-xl\"><a href='"
-    +countries[index].BASE_URL
+    +countries[index].url
     +"'>"
-    +countries[index].BASE_URL.replace("status","<span class='text-cvs-gold'>status</span>")
+    +countries[index].url.replace("status","<span class='text-cvs-gold'>status</span>")
     +"</a></div></div>";
-    showPosition(countries[index].MAP_CENTER);
+    showPosition(countries[index].mapCenter);
     map.once('moveend', function() {
     window.setTimeout(function() {
       index = index + 1 === countries.length ? 0 : index + 1;

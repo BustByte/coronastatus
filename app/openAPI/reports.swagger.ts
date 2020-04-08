@@ -48,3 +48,20 @@ export const getReportsCsv = {
     }
   }
 };
+
+export const getCountries = {
+  tags: ['Countries'],
+  description: 'Returns list of countries where coronastatus is available',
+  operationId: 'getCountries',
+  version: '0.0.1',
+  responses: {
+    '200': {
+      description: 'Countries',
+      content: {
+        'application/json': {
+          schema: {}
+        }
+      }
+    }
+  }
+};

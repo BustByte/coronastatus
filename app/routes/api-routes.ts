@@ -2,8 +2,6 @@
 import express from 'express';
 import cors from 'cors';
 import 'csv-express';
-import { readdirSync } from 'fs';
-import path from 'path';
 
 import { NotEnoughReportsError } from '../domain/errors';
 import { CacheWithLifetime } from '../repository/CacheWithLifetime';
@@ -21,9 +19,11 @@ import {
   SmokingHabit,
   IsolationStatus
 } from '../domain/types';
+import { CountryRepository } from '../repository/CountryRepository';
 
 const router = express.Router();
 const reportRepo = new CovidReportRepository();
+const countryRepo = new CountryRepository();
 
 router.get('/aggregated', cors(), async (req, res) => {
   const reports = await reportRepo.getLatestCovidReports();
@@ -186,33 +186,8 @@ router.get('/reports', cors(), async (req, res) => {
 });
 
 router.get('/countries', cors(), async (req, res) => {
-  const countries: {
-    COUNTRY_CODE: string;
-    BASE_URL: string;
-    MAP_CENTER: string;
-    COUNTRY_NAME: string;
-  }[] = [];
-  const basePath = path.join(
-    path.basename(path.dirname(__dirname)),
-    '/countrySpecific'
-  );
-  readdirSync(basePath, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .forEach(directory => {
-      const {
-        countrySpecificConfig
-      } = require(`../countrySpecific/${directory.name}/config.ts`);
-      const {
-        countrySpecificTexts
-      } = require(`../countrySpecific/${directory.name}/text-variables.ts`);
-      countries.push({
-        COUNTRY_CODE: directory.name,
-        BASE_URL: countrySpecificConfig.BASE_URL,
-        MAP_CENTER: countrySpecificConfig.MAP_CENTER,
-        COUNTRY_NAME: countrySpecificTexts.COUNTRY_NAME
-      });
-    });
-  res.send(countries);
+  const countries = countryRepo.getCountries();
+  res.json(countries);
 });
 
 router.get('*', (req, res) => {
