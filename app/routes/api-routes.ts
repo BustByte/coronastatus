@@ -199,31 +199,22 @@ router.get('/countries', cors(), async (req, res) => {
   readdirSync(basePath, { withFileTypes: true })
     .filter(dirent => dirent.isDirectory())
     .forEach(directory => {
+      const {
+        countrySpecificConfig
+      } = require(`../countrySpecific/${directory.name}/config.ts`);
+      const {
+        countrySpecificTexts
+      } = require(`../countrySpecific/${directory.name}/text-variables.ts`);
       countries.push({
         COUNTRY_CODE: directory.name,
-        BASE_URL: '',
-        MAP_CENTER: '',
-        COUNTRY_NAME: ''
+        BASE_URL: countrySpecificConfig.BASE_URL,
+        MAP_CENTER: countrySpecificConfig.MAP_CENTER,
+        COUNTRY_NAME: countrySpecificTexts.COUNTRY_NAME
       });
     });
-
   if (countries.length === 0) {
     res.send("'No country files found'");
   }
-
-  countries.map(country => {
-    const {
-      countrySpecificConfig
-    } = require(`../countrySpecific/${country.COUNTRY_CODE}/config.ts`);
-    country.BASE_URL = countrySpecificConfig.BASE_URL;
-    country.MAP_CENTER = countrySpecificConfig.MAP_CENTER;
-
-    const {
-      countrySpecificTexts
-    } = require(`../countrySpecific/${country.COUNTRY_CODE}/text-variables.ts`);
-    country.COUNTRY_NAME = countrySpecificTexts.COUNTRY_NAME;
-    return country;
-  });
   res.send(countries);
 });
 
