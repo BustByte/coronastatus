@@ -2,6 +2,8 @@
 import express from 'express';
 import cors from 'cors';
 import 'csv-express';
+import { readdirSync } from 'fs';
+import path from 'path';
 
 import { NotEnoughReportsError } from '../domain/errors';
 import { CacheWithLifetime } from '../repository/CacheWithLifetime';
@@ -181,6 +183,32 @@ router.get('/reports', cors(), async (req, res) => {
     .map(reportList => reportList.map(reportToExposedFormat))
     .filter(list => list.length > 0);
   return res.json(result);
+});
+
+router.get("/countries", cors(), async (req, res) => {
+  var countries: { COUNTRY_CODE: string, BASE_URL: string, MAP_CENTER: string, COUNTRY_NAME: string }[] = [];
+  const basePath = path.join(path.basename(path.dirname(__dirname)), "/countrySpecific");
+  readdirSync(basePath, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .forEach(directory => {
+      countries.push({ "COUNTRY_CODE": directory.name, BASE_URL: "", MAP_CENTER: "", COUNTRY_NAME: "" });
+    });
+
+  if (countries.length === 0) {
+    res.send("'No country files found'");
+  }
+
+  countries.map(country => {
+    const {countrySpecificConfig} = require(`../countrySpecific/${country.COUNTRY_CODE}/config.ts`);
+    country.BASE_URL = countrySpecificConfig.BASE_URL;
+    country.MAP_CENTER = countrySpecificConfig.MAP_CENTER;
+
+    const {countrySpecificTexts} = require(`../countrySpecific/${country.COUNTRY_CODE}/text-variables.ts`);
+    country.COUNTRY_NAME = countrySpecificTexts.COUNTRY_NAME;
+    return country;
+
+  });
+  res.send(countries);
 });
 
 router.get('*', (req, res) => {
