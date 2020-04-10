@@ -434,7 +434,7 @@
     var a = document.createElement("a");
     a.classList.add("px-2");
     a.classList.add("py-1");
-    a.href = countries[i].url;
+    a.href = "http://"+countries[i].url;
 
     var span = document.createElement("span");
     span.innerText = countries[i].countryName;
@@ -505,7 +505,7 @@
     +countries[index].flag
     +"'>"
     +countries[index].countryName
-    +"</div><span class=\"px-4 hidden sm:block\">|</span><div class=\"w-full sm:w-auto text-base sm:text-xl\"><a href='"
+    +"</div><span class=\"px-4 hidden sm:block\">|</span><div class=\"w-full sm:w-auto text-base sm:text-xl\"><a href='http://"
     +countries[index].url
     +"'>"
     +countries[index].url.replace("status","<span class='text-cvs-gold'>status</span>")
