@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ country-name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ country-name }}
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: {{ country-name }}
+    spec:
+      containers:
+      - name: {{ country-name }}
+        image: {{ container-tag }}
+        ports:
+        - containerPort: 7272
+        env:
+        - name: COUNTRY_CODE
+          value: "{{ country-code }}"
+        - name: DB_PATH
+          valueFrom:
+            # Each country has its own connection pool to its own database.
+            # kubectl create secret \
+            #   generic [country-name] \
+            #   --from-literal=postgres-pool-connection-string='[insert-connection-string]'
+            secretKeyRef:
+              name: {{ country-name }}
+              key: postgres-pool-connection-string
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ country-name }}
+spec:
+  ports:
+  - port: 80
+    targetPort: 7272
+  selector:
+    app: {{ country-name }}
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: {{ country-name }}
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    # We redirect to non-www if host is www.
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      if ($host = 'www.{{ domain }}') {
+        rewrite ^ https://{{ domain }}$request_uri permanent;
+      }
+spec:
+  rules:
+  - host: {{ domain }}
+    http:
+      paths:
+      - backend:
+          serviceName: {{ country-name }}
+          servicePort: 80
+  - host: www.{{ domain }}
+    http:
+      paths:
+      - backend:
+          serviceName: {{ country-name }}
+          servicePort: 80
+  tls:
+  - hosts:
+    - {{ domain }}
+    - www.{{ domain }}
+    secretName: {{ country-code }}-coronastatus-cert-tls
