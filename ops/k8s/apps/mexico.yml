@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mexico
+spec:
+  selector:
+    matchLabels:
+      app: mexico
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: mexico
+    spec:
+      containers:
+      - name: mexico
+        image: bustbyte/coronastatus
+        ports:
+        - containerPort: 7272
+        env:
+        - name: COUNTRY_CODE
+          value: "mx"
+        - name: DB_PATH
+          valueFrom:
+            # Each country has its own connection pool to its own database.
+            # kubectl create secret \
+            #   generic [country-name] \
+            #   --from-literal=postgres-pool-connection-string='[insert-connection-string]'
+            secretKeyRef:
+              name: mexico
+              key: postgres-pool-connection-string
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mexico
+spec:
+  ports:
+  - port: 80
+    targetPort: 7272
+  selector:
+    app: mexico
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: mexico
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    # We redirect to non-www if host is www.
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      if ($host = 'www.coronastatus.mx') {
+        rewrite ^ https://coronastatus.mx$request_uri permanent;
+      }
+spec:
+  rules:
+  - host: coronastatus.mx
+    http:
+      paths:
+      - backend:
+          serviceName: mexico
+          servicePort: 80
+  - host: www.coronastatus.mx
+    http:
+      paths:
+      - backend:
+          serviceName: mexico
+          servicePort: 80
+  tls:
+  - hosts:
+    - coronastatus.mx
+    - www.coronastatus.mx
+    secretName: mx-coronastatus-cert-tls

@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nepal
+spec:
+  selector:
+    matchLabels:
+      app: nepal
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nepal
+    spec:
+      containers:
+      - name: nepal
+        image: bustbyte/coronastatus
+        ports:
+        - containerPort: 7272
+        env:
+        - name: COUNTRY_CODE
+          value: "np"
+        - name: DB_PATH
+          valueFrom:
+            # Each country has its own connection pool to its own database.
+            # kubectl create secret \
+            #   generic [country-name] \
+            #   --from-literal=postgres-pool-connection-string='[insert-connection-string]'
+            secretKeyRef:
+              name: nepal
+              key: postgres-pool-connection-string
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nepal
+spec:
+  ports:
+  - port: 80
+    targetPort: 7272
+  selector:
+    app: nepal
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: nepal
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    # We redirect to non-www if host is www.
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      if ($host = 'www.coronastatusnp.com') {
+        rewrite ^ https://coronastatusnp.com$request_uri permanent;
+      }
+spec:
+  rules:
+  - host: coronastatusnp.com
+    http:
+      paths:
+      - backend:
+          serviceName: nepal
+          servicePort: 80
+  - host: www.coronastatusnp.com
+    http:
+      paths:
+      - backend:
+          serviceName: nepal
+          servicePort: 80
+  tls:
+  - hosts:
+    - coronastatusnp.com
+    - www.coronastatusnp.com
+    secretName: np-coronastatus-cert-tls

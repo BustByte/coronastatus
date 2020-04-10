@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nigeria
+spec:
+  selector:
+    matchLabels:
+      app: nigeria
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nigeria
+    spec:
+      containers:
+      - name: nigeria
+        image: bustbyte/coronastatus
+        ports:
+        - containerPort: 7272
+        env:
+        - name: COUNTRY_CODE
+          value: "ng"
+        - name: DB_PATH
+          valueFrom:
+            # Each country has its own connection pool to its own database.
+            # kubectl create secret \
+            #   generic [country-name] \
+            #   --from-literal=postgres-pool-connection-string='[insert-connection-string]'
+            secretKeyRef:
+              name: nigeria
+              key: postgres-pool-connection-string
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nigeria
+spec:
+  ports:
+  - port: 80
+    targetPort: 7272
+  selector:
+    app: nigeria
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: nigeria
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    # We redirect to non-www if host is www.
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      if ($host = 'www.coronastatus.ng') {
+        rewrite ^ https://coronastatus.ng$request_uri permanent;
+      }
+spec:
+  rules:
+  - host: coronastatus.ng
+    http:
+      paths:
+      - backend:
+          serviceName: nigeria
+          servicePort: 80
+  - host: www.coronastatus.ng
+    http:
+      paths:
+      - backend:
+          serviceName: nigeria
+          servicePort: 80
+  tls:
+  - hosts:
+    - coronastatus.ng
+    - www.coronastatus.ng
+    secretName: ng-coronastatus-cert-tls

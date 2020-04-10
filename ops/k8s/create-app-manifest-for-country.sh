@@ -15,7 +15,7 @@ create_manifest_for_country() {
   COUNTRY_NAME=$3;
 
   CONTAINER_TAG="bustbyte/coronastatus";
-  IN_PATH="apps/template.yml";
+  IN_PATH="template.yml";
   OUT_PATH="apps/${COUNTRY_NAME}.yml";
 
   sed \
@@ -30,7 +30,24 @@ create_manifest_for_country() {
 
 # This is where we add countries we want to host.
 # Each line here will produce a file in apps/*.yml.
-create_manifest_for_country "coronastatus.no" "no" "norway"
-create_manifest_for_country "coronastatus.co" "co" "colombia"
-create_manifest_for_country "coronastatus.us" "us" "usa"
-create_manifest_for_country "coronastatus.it" "it" "italy"
+create_manifest_for_country "coronastatus.no"     "no" "norway"
+create_manifest_for_country "coronastatus.co"     "co" "colombia"
+create_manifest_for_country "coronastatus.us"     "us" "usa"
+create_manifest_for_country "coronastatus.it"     "it" "italy"
+create_manifest_for_country "coronastatus.mx"     "mx" "mexico"
+create_manifest_for_country "coronastatus.es"     "es" "spain"
+create_manifest_for_country "coronastatus.net.br" "br" "brazil"
+create_manifest_for_country "coronastatus.ro"     "ro" "romania"
+create_manifest_for_country "coronastatus.ph"     "ph" "philippines"
+create_manifest_for_country "coronastatus.id"     "id" "indonesia"
+create_manifest_for_country "corona-status.cz"    "cz" "czech"
+create_manifest_for_country "coronastatusnp.com"  "np" "nepal"
+create_manifest_for_country "coronastatus.lt"     "lt" "lithuania"
+create_manifest_for_country "coronastatustr.com"  "tr" "turkey"
+create_manifest_for_country "coronastatus.pt"     "pt" "portugal"
+create_manifest_for_country "corona-status.in"    "in" "india"
+create_manifest_for_country "coronastatusmt.com"  "mt" "malta"
+create_manifest_for_country "coronastatus.ng"     "ng" "nigeria"
+create_manifest_for_country "coronastatusau.org"  "au" "australia"
+create_manifest_for_country "coronastatus.org.ua" "ua" "ukraine"
+

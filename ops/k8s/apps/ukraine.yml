@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ukraine
+spec:
+  selector:
+    matchLabels:
+      app: ukraine
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: ukraine
+    spec:
+      containers:
+      - name: ukraine
+        image: bustbyte/coronastatus
+        ports:
+        - containerPort: 7272
+        env:
+        - name: COUNTRY_CODE
+          value: "ua"
+        - name: DB_PATH
+          valueFrom:
+            # Each country has its own connection pool to its own database.
+            # kubectl create secret \
+            #   generic [country-name] \
+            #   --from-literal=postgres-pool-connection-string='[insert-connection-string]'
+            secretKeyRef:
+              name: ukraine
+              key: postgres-pool-connection-string
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ukraine
+spec:
+  ports:
+  - port: 80
+    targetPort: 7272
+  selector:
+    app: ukraine
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ukraine
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    # We redirect to non-www if host is www.
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      if ($host = 'www.coronastatus.org.ua') {
+        rewrite ^ https://coronastatus.org.ua$request_uri permanent;
+      }
+spec:
+  rules:
+  - host: coronastatus.org.ua
+    http:
+      paths:
+      - backend:
+          serviceName: ukraine
+          servicePort: 80
+  - host: www.coronastatus.org.ua
+    http:
+      paths:
+      - backend:
+          serviceName: ukraine
+          servicePort: 80
+  tls:
+  - hosts:
+    - coronastatus.org.ua
+    - www.coronastatus.org.ua
+    secretName: ua-coronastatus-cert-tls
