@@ -25,7 +25,6 @@ Please see [this](digitalocean-setup.md) on how to setup a new server in our clu
 | [coronastatus.sk](https://coronastatus.sk)         |  🇸🇰  |  Slovakia        | Stano Bocinec                           | Stano Bocinec          |
 | [coronastatus.org.ua](https://coronastatus.org.ua) |  🇺🇦  |  Ukraine         | Taras Matsyk                            | Eirik Fosse / BustByte |
 | [coronastatus.ca](https://coronastatus.ca)         |  🇨🇦  |  Canada          | Abraham Poorazizi                       | Abraham Poorazizi
-|
 | [coronastatus.sg](https://coronastatus.sg)         |  🇸🇬  |  Singapore       | Kong Jin Jie                            | Kong Jin Jie           |
 | [coronastatus.com.ar](https://coronastatus.com.ar) |  🇦🇷  |  Argentina       | Walter Gammarota                        | Walter Gammarota       |
 | [coronastatus.cl](https://coronastatus.cl)         |  🇨🇱  |  Chile           | Ruben Torres                            | Ruben Torres           |
