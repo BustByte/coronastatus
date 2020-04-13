@@ -146,21 +146,29 @@ export interface AggregatedCovidReportWithPostalCodeData {
 
 export interface Config {
   BASE_URL: string;
-  LOCALE: Locale;
   COUNTRY_CODE: CountryCode;
-  SUPPORTED_LOCALES: Locale[];
-  COUNTRY: string;
-  MAP_CENTER: string;
-  MAP_ZOOM: number;
+  DB_PATH: string;
+  LOCALE: Locale;
+  MAP_CENTER: Coordinate;
   MAP_MAX_ZOOM: number;
-  TWITTER: string;
+  MAP_ZOOM: number;
+  PASSCODE_LENGTH: number;
+  RATE_LIMIT_COUNT: number;
+  RATE_LIMIT_WINDOW: number;
+  REDIRECT_TO_GOVERNMENT: boolean;
+  SUPPORTED_LOCALES: Locale[];
+  THOUSAND_SEPARATOR: string;
+  ZIP_GUIDE: boolean;
   ZIP_PATTERN: string;
   ZIP_PLACEHOLDER: string;
-  ZIP_GUIDE: boolean;
-  REDIRECT_TO_GOVERNMENT: boolean;
-  PASSCODE_LENGTH: number;
-  DB_PATH: string;
-  THOUSAND_SEPARATOR: string;
+}
+
+export interface CountrySpecificTexts {
+  CONTACT_EMAIL: string;
+  COUNTRY_NAME: string;
+  FIND_ZIP_CODE_URL?: string;
+  LINK_TO_NATIONAL_HEALTH_SERVICES: string;
+  TWITTER_NAME?: string;
 }
 
 export type DatabaseType = 'pg' | 'sqlite';

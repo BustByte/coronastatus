@@ -1,67 +1,83 @@
 // Please keep locales sorted
 export type Locale =
   | 'bd'
-  | 'ca'
+  | 'cs-CZ'
+  | 'de-DE'
   | 'dk'
+  | 'en'
   | 'en-AU'
+  | 'en-CA'
   | 'en-IN'
   | 'en-MT'
+  | 'en-MY'
+  | 'en-NE'
   | 'en-NG'
+  | 'en-PH'
   | 'en-SG'
   | 'en-US'
-  | 'en'
   | 'es-AR'
   | 'es-CL'
   | 'es-CO'
   | 'es-ES'
   | 'es-MX'
   | 'fr-FR'
+  | 'id-ID'
   | 'it'
-  | 'en-MY'
   | 'lt'
+  | 'ms-MY'
+  | 'ne'
   | 'nl'
   | 'no'
-  | 'ne'
   | 'pt-BR'
   | 'pt-PT'
+  | 'ro-RO'
   | 'se'
   | 'sk'
   | 'tr'
-  | 'uk-UA';
+  | 'uk-UA'
+  | 'zh-MY';
 
 type LocaleToFlagMap = {
   [locale in Locale]: string;
 };
 
-const localeToFlagMap: LocaleToFlagMap = {
+export const localeToFlagMap: LocaleToFlagMap = {
   bd: 'bd',
-  ca: 'ca',
+  'cs-CZ': 'cz',
+  'de-DE': 'de',
   dk: 'dk',
+  en: 'gb',
   'en-AU': 'au',
+  'en-CA': 'ca',
   'en-IN': 'gb',
   'en-MT': 'gb',
+  'en-MY': 'gb',
+  'en-NE': 'us',
   'en-NG': 'ng',
+  'en-PH': 'ph',
   'en-SG': 'gb',
   'en-US': 'us',
-  en: 'gb',
   'es-AR': 'ar',
   'es-CL': 'cl',
   'es-CO': 'co',
   'es-ES': 'es',
   'es-MX': 'mx',
   'fr-FR': 'fr',
+  'id-ID': 'id',
   it: 'it',
-  'en-MY': 'gb',
   lt: 'lt',
+  'ms-MY': 'my',
+  ne: 'np',
   nl: 'nl',
   no: 'no',
-  ne: 'np',
   'pt-BR': 'br',
   'pt-PT': 'pt',
+  'ro-RO': 'ro',
   se: 'se',
   sk: 'sk',
   tr: 'tr',
-  'uk-UA': 'ua'
+  'uk-UA': 'ua',
+  'zh-MY': 'cn'
 };
 
 export const localeToFlag = (locale: Locale): string => localeToFlagMap[locale];

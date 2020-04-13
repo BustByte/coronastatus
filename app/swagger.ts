@@ -3,8 +3,10 @@ import {
   getAggregatedPostalCode
 } from './openAPI/aggregated.swagger';
 import config from './config';
-import { urls } from './domain/urls';
+import { countryCodeToUrls } from './domain/urls';
 import { getReports, getReportsCsv } from './openAPI/reports.swagger';
+
+const urls = countryCodeToUrls(config.COUNTRY_CODE);
 
 export const swaggerDocument = {
   openapi: '3.0.1',

@@ -42,7 +42,7 @@ locals.activePage === urls.profile; %>
     <li class="mr-3 rounded">
       <a
         id="nav-cta-button"
-        href="<%= urls.submitReport %>#contribute"
+        href="<%- urls.submitReport %>#contribute"
         class="opacity-0 custom-nav-link text-center whitespace-no-wrap block text-xl py-4 lg:text-base text-white font-medium lg:py-4 px-4 rounded-full <%= isOnProfile ? 'active' : '' %>"
         ><%= __("Contribute now") %></a
       >
@@ -50,21 +50,21 @@ locals.activePage === urls.profile; %>
     <% } %>
     <li class="mr-3 rounded hover:bg-cvs-red">
       <a
-        href="<%= urls.map %>"
+        href="<%- urls.map %>"
         class="whitespace-no-wrap block text-white text-xl py-4 lg:text-base font-medium lg:py-4 px-4 <%= isOnMap ? 'active' : '' %>"
         ><%= __("Map") %></a
       >
     </li>
     <li class="mr-3 rounded hover:bg-cvs-red">
       <a
-        href="<%= urls.statistics %>"
+        href="<%- urls.statistics %>"
         class="whitespace-no-wrap block text-white text-xl py-4 lg:text-base font-medium lg:py-4 px-4 <%= isOnStats ? 'active' : '' %>"
         ><%= __("Statistics") %></a
       >
     </li>
     <li class="mr-3 rounded hover:bg-cvs-red">
       <a
-        href="<%= urls.apiDocs %>"
+        href="<%- urls.apiDocs %>"
         class="whitespace-no-wrap block text-white text-xl py-4 lg:text-base font-medium lg:py-4 px-4"
         target="_blank"
         ><%= __("API") %></a

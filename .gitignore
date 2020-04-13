@@ -117,4 +117,5 @@ config.json
 build/
 
 .vscode
+.idea
 

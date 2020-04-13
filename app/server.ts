@@ -11,11 +11,12 @@ import statisticsRoutes from './routes/statistics-routes';
 import variousRoutes, { localeCookieName } from './routes/various-routes';
 import { getInstance } from './repository/Database';
 import { swaggerDocument } from './swagger';
-import { urls } from './domain/urls';
+import { countryCodeToUrls } from './domain/urls';
 import { localeToFlag } from './domain/flags';
 import config from './config';
 import { ensureAllLocalesAreValidJSON } from './util/locale-validation';
 import { createNumberFormatter } from './util/number-formatter';
+import { getCountrySpecificTextVariables } from './countrySpecific/country-specific-text-variables';
 
 const app = express();
 const port = process.env.PORT || 7272;
@@ -48,6 +49,8 @@ app.use((req, res, next) => {
   next();
 });
 
+const urls = countryCodeToUrls(config.COUNTRY_CODE);
+
 app.use(
   urls.apiDocs,
   swaggerUi.serve,
@@ -59,7 +62,7 @@ const cacheKey = process.env.CACHE_KEY || `${Math.random()}`.replace('.', '');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use((req, res, next) => {
+app.use(async (req, res, next) => {
   // eslint-disable-next-line prefer-destructuring
   res.locals.activePage = `/${req.path.split('/')[1]}`;
   res.locals.currentPath = req.path;
@@ -68,13 +71,11 @@ app.use((req, res, next) => {
   res.locals.imageSubfolder = config.COUNTRY_CODE;
   res.locals.htmlLang = config.LOCALE;
   res.locals.supportedLocales = config.SUPPORTED_LOCALES;
-  res.locals.country = config.COUNTRY;
   res.locals.baseUrl = config.BASE_URL;
   res.locals.zipGuide = config.ZIP_GUIDE;
   res.locals.mapCenter = config.MAP_CENTER;
   res.locals.mapZoom = config.MAP_ZOOM;
   res.locals.mapMaxZoom = config.MAP_MAX_ZOOM;
-  res.locals.twitter = config.TWITTER;
   res.locals.urls = urls;
   res.locals.zipPattern = config.ZIP_PATTERN;
   res.locals.zipPlaceHolder = config.ZIP_PLACEHOLDER;
@@ -82,6 +83,9 @@ app.use((req, res, next) => {
   res.locals.localeToFlag = localeToFlag;
   res.locals.currentLocale = req.getLocale();
   res.locals.formatNumber = createNumberFormatter(config.THOUSAND_SEPARATOR);
+  res.locals.textVariables = getCountrySpecificTextVariables(
+    config.COUNTRY_CODE
+  );
 
   next();
 });

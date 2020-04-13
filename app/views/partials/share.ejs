@@ -1,16 +1,19 @@
-<% const { baseUrl, htmlLang, twitter, amount = __(`A lot of`) } = locals; %>
+<%
+  const { baseUrl, htmlLang, textVariables, amount = __(`A lot of`), buttonClass = 'inline-block m-2 p-3' } = locals;
+  const { TWITTER_NAME, COUNTRY_NAME } = textVariables;
+%>
 <!--  -->
 <% const twitterUrl = htmlLang === 'nl' ? 'onzecorona.nl' : baseUrl %>
 <!--  -->
-<% const encode = encodeURIComponent; const message = encode(__(`CALL TO ALL US
+<% const encode = encodeURIComponent; const message = encode(__(`CALL TO ALL
 CITIZENS: This is how we defeat the corona virus: together we make the invisible
 virus visible.`) + " " + __(`{{ amount }} people already shared their health
 status.`, { amount }) + " " + __(`Fill out this form - it takes 1 minute - and
-help the United States gain control over COVID-19.`)) %>
+help {{ COUNTRY_NAME }} gain control over COVID-19.`, { COUNTRY_NAME })) %>
 
 <p class="mt-4 mb-8">
   <a
-    class="inline-block m-2 p-3 text-white rounded bg-cvs-facebook hover:bg-cvs-facebook-dark hover:translate-y-px transform"
+    class="<%= buttonClass %> text-white rounded bg-cvs-facebook hover:bg-cvs-facebook-dark hover:translate-y-px transform"
     target="_blank"
     rel="noreferrer"
     referrerpolicy="no-referrer"
@@ -22,11 +25,11 @@ help the United States gain control over COVID-19.`)) %>
   >
 
   <a
-    class="inline-block m-2 p-3 text-white rounded bg-cvs-twitter hover:bg-cvs-twitter-dark hover:translate-y-px transform"
+    class="<%= buttonClass %> text-white rounded bg-cvs-twitter hover:bg-cvs-twitter-dark hover:translate-y-px transform"
     target="_blank"
     rel="noreferrer"
     referrerpolicy="no-referrer"
-    href="http://twitter.com/share?url=<%= encode(`https://${twitterUrl}/?ref=twitter`) %>&amp;text=<%= message %><% if (twitter) { %> @<%= twitter %><% } %><%= encode('\n\n') %>"
+    href="https://twitter.com/share?url=<%= encode(`https://${twitterUrl}/?ref=twitter`) %>&amp;text=<%= message %><% if (TWITTER_NAME) { %> @<%= TWITTER_NAME %><% } %><%= encode('\n\n') %>"
     ><img
       src="/static/images/social/twitter.svg"
       class="inline-block -mt-1 mr-0 sm:mr-3"
@@ -34,7 +37,7 @@ help the United States gain control over COVID-19.`)) %>
   >
 
   <a
-    class="inline-block m-2 p-3 text-white rounded bg-cvs-whatsapp hover:bg-cvs-whatsapp-dark hover:translate-y-px transform"
+    class="<%= buttonClass %> text-white rounded bg-cvs-whatsapp hover:bg-cvs-whatsapp-dark hover:translate-y-px transform"
     target="_blank"
     rel="noreferrer"
     referrerpolicy="no-referrer"
@@ -46,11 +49,11 @@ help the United States gain control over COVID-19.`)) %>
   >
 
   <a
-    class="inline-block m-2 p-3 text-white rounded bg-cvs-linkedin hover:bg-cvs-linkedin-dark hover:translate-y-px transform"
+    class="<%= buttonClass %> text-white rounded bg-cvs-linkedin hover:bg-cvs-linkedin-dark hover:translate-y-px transform"
     target="_blank"
     rel="noreferrer"
     referrerpolicy="no-referrer"
-    href="<%= `https://www.linkedin.com/sharing/share-offsite/?url=${encode(`https://${baseUrl}/?ref=linkedin`)}` %>"
+    href="<%- `https://www.linkedin.com/sharing/share-offsite/?url=${encode(`https://${baseUrl}/?ref=linkedin`)}` %>"
     ><img
       src="/static/images/social/linkedin.svg"
       class="inline-block -mt-1 mr-0 sm:mr-3"

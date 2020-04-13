@@ -4,8 +4,10 @@
     passcode,
     baseUrl,
     formatNumber,
-    urls
+    urls,
+    textVariables
   } = locals;
+  const { FIND_ZIP_CODE_URL, LINK_TO_NATIONAL_HEALTH_SERVICES, COUNTRY_NAME } = textVariables;
   const age = profile && locals.profile.age;
   const postalCode = profile && locals.profile.postalCode;
   const sex = profile && locals.profile.sex;
@@ -161,16 +163,16 @@
       <%- include('partials/alert', {
         color: 'red',
         message:
-          `${__(`Thank you for your contribution!`)}
-          ${__(`The government has now launched their own self-report system, please use that instead.`)}
+          `${__('Thank you for your contribution!')}
+          ${__('The government has now launched their own self-report system, please use that instead.')}
           <br/>
           <a
             class="hover:text-cvs-red font-bold hover:underline whitespace-no-wrap"
             target="_blank"
             style="cursor: pointer;"
-            href="${__('www.nhs.uk')}"
+            href="${__('{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}', { LINK_TO_NATIONAL_HEALTH_SERVICES })}"
           >
-            ${__(`Go to the National health service website`)}
+            ${__('Go to the National health service website')}
           </a>`,
       }) -%>
     <% } else if (locals.success) {%>
@@ -205,7 +207,7 @@
       }) -%>
     <% } else { %>
       <p class="text-center text-base lg:text-xl font-medium m-4 mt-0 self-center">
-        <%= __("Are you from") %> <%= __(locals.country) %>?
+        <%= __("Are you from") %> <%= __(`{{ COUNTRY_NAME }}`, { COUNTRY_NAME }) %>?
         <%- __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information!") %></p>
     <% } %>
 
@@ -350,7 +352,7 @@
 
     <label for="postal-code"><%= __('Zip code') %>
       <% if (locals.zipGuide) { %>
-        <span>- </span><a class="text-cvs-red font-bold hover:underline" href="<%= __(`https://www.whatismyzip.com`) %>" target="_blank"><%= __('What is my Zip code?') %></a>
+        <span>- </span><a class="text-cvs-red font-bold hover:underline" href="<%- __(`{{ FIND_ZIP_CODE_URL }}`, { FIND_ZIP_CODE_URL }) %>" target="_blank"><%= __('What is my Zip code?') %></a>
       <% } %>
       
     </label>
@@ -621,7 +623,7 @@
     <h3 class="text-cvs-red text-xl font-bold m-4 ml-0 mt-8 mb-0"><%= __("How will my data be used?") %></h3>
 
     <p class="mt-0 mb-4"><%= __('Your health information is stored anonymously, and can not be used to identify you.')%><br />
-      <a target="_blank" class="text-cvs-red hover:underline"href="<%= urls.privacyPolicy %>"><%= __('Our privacy policy can be found here')%></a>.
+      <a target="_blank" class="text-cvs-red hover:underline"href="<%- urls.privacyPolicy %>"><%= __('Our privacy policy can be found here')%></a>.
     </p>
 
     <p>
@@ -691,7 +693,7 @@
       <%= __(`This is not an official tool of the authorities, and for more
             information about the outbreak we refer to health authorities which
             always have updated information.`) %>
-      <a class="text-cvs-red font-bold hover:underline" href="<%= __(`https://who.int`) %>"><%= __(`To WHO.int`) %></a>
+      <a class="text-cvs-red font-bold hover:underline" href="<%- __(`{{ LINK_TO_NATIONAL_HEALTH_SERVICES }}`, { LINK_TO_NATIONAL_HEALTH_SERVICES }) %>"><%= __(`Go to the National health service website`) %></a>
     </p>
     <div class="hashtag-item-container flex flex-row justify-around" style="margin: 4rem 0 -14rem 0;">
       <div class="hashtag-item text-center flex flex-col items-center w-1/2">
