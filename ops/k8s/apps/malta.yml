@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: malta
+spec:
+  selector:
+    matchLabels:
+      app: malta
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: malta
+    spec:
+      containers:
+      - name: malta
+        image: bustbyte/coronastatus
+        ports:
+        - containerPort: 7272
+        env:
+        - name: COUNTRY_CODE
+          value: "mt"
+        - name: DB_PATH
+          valueFrom:
+            # Each country has its own connection pool to its own database.
+            # kubectl create secret \
+            #   generic [country-name] \
+            #   --from-literal=postgres-pool-connection-string='[insert-connection-string]'
+            secretKeyRef:
+              name: malta
+              key: postgres-pool-connection-string
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: malta
+spec:
+  ports:
+  - port: 80
+    targetPort: 7272
+  selector:
+    app: malta
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: malta
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    # We redirect to non-www if host is www.
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      if ($host = 'www.coronastatusmt.com') {
+        rewrite ^ https://coronastatusmt.com$request_uri permanent;
+      }
+spec:
+  rules:
+  - host: coronastatusmt.com
+    http:
+      paths:
+      - backend:
+          serviceName: malta
+          servicePort: 80
+  - host: www.coronastatusmt.com
+    http:
+      paths:
+      - backend:
+          serviceName: malta
+          servicePort: 80
+  tls:
+  - hosts:
+    - coronastatusmt.com
+    - www.coronastatusmt.com
+    secretName: mt-coronastatus-cert-tls

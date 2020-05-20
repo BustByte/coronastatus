@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portugal
+spec:
+  selector:
+    matchLabels:
+      app: portugal
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: portugal
+    spec:
+      containers:
+      - name: portugal
+        image: bustbyte/coronastatus
+        ports:
+        - containerPort: 7272
+        env:
+        - name: COUNTRY_CODE
+          value: "pt"
+        - name: DB_PATH
+          valueFrom:
+            # Each country has its own connection pool to its own database.
+            # kubectl create secret \
+            #   generic [country-name] \
+            #   --from-literal=postgres-pool-connection-string='[insert-connection-string]'
+            secretKeyRef:
+              name: portugal
+              key: postgres-pool-connection-string
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: portugal
+spec:
+  ports:
+  - port: 80
+    targetPort: 7272
+  selector:
+    app: portugal
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: portugal
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    # We redirect to non-www if host is www.
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      if ($host = 'www.coronastatus.pt') {
+        rewrite ^ https://coronastatus.pt$request_uri permanent;
+      }
+spec:
+  rules:
+  - host: coronastatus.pt
+    http:
+      paths:
+      - backend:
+          serviceName: portugal
+          servicePort: 80
+  - host: www.coronastatus.pt
+    http:
+      paths:
+      - backend:
+          serviceName: portugal
+          servicePort: 80
+  tls:
+  - hosts:
+    - coronastatus.pt
+    - www.coronastatus.pt
+    secretName: pt-coronastatus-cert-tls
