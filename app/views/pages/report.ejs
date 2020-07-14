@@ -37,6 +37,46 @@
 
 <%- include('partials/header', { home: true, menu: false }) -%>
 
+<style>
+  .breadcrumb {
+    cursor: pointer;
+    border:none;
+    margin:0px; 
+    padding:0px;
+  }
+
+  .page-container {
+    width: 100%;
+  }
+
+  .next-btn {
+    float:right;
+  }
+
+  .nav-btn-container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  
+  /*Toast open/load animation*/
+	.alert-toast {
+		-webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      z-index: 20000;
+	}
+	/*Toast close animation*/
+	.alert-toast input:checked ~ * {
+		-webkit-animation: fade-out-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: fade-out-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        z-index: 10000;
+	}
+	/* -------------------------------------------------------------
+	 * Animations generated using Animista * w: http://animista.net, 
+	 * ---------------------------------------------------------- */
+	@-webkit-keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@-webkit-keyframes slide-out-top{0%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}100%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}}@keyframes slide-out-top{0%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}100%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}}@-webkit-keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@-webkit-keyframes slide-out-bottom{0%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}100%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}}@keyframes slide-out-bottom{0%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}100%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}}@-webkit-keyframes slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@-webkit-keyframes fade-out-right{0%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}100%{-webkit-transform:translateX(50px);transform:translateX(50px);opacity:0}}@keyframes fade-out-right{0%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}100%{-webkit-transform:translateX(50px);transform:translateX(50px);opacity:0}}
+
+</style>
+
 <section class="custom-section custom-hero p-4">
   <div class="custom-section-content mx-auto">
     <header class="py-2 flex justify-between items-center flex-wrap">
@@ -171,13 +211,120 @@
         <%- __("Join the most important crowdsource! Regardless if you're healthy or not, please submit the form below – that is also valuable information!") %></p>
     <% } %>
 
+   
+    <div class="max-w-4xl mx-auto my-4 border-b border-cvs-green-dark pb-8">	
+      <div class="flex pb-3">
+
+        <div class="w-auto sm:w-8 md:w-12"></div>
+    
+        <button class="flex-1 breadcrumb" id="breadcrumb-1" onclick="goToPage(1)">
+          <span class="sr-only"><%= __('Go to step')%> 1 <%= __('Demography and geography') %></span>
+          <div class="w-10 h-10 bg-cvs-green-dark mx-auto rounded-full text-lg text-white flex items-center">
+            <svg class="mx-auto h-8 w-8 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+        </button>
+    
+    
+        <div class="w-8 sm:w-12 md:w-24 align-center items-center align-middle content-center flex" >
+          <div class="w-full bg-gray-500 rounded items-center align-middle align-center flex-1">
+             <div id="progress-bar-1" class="bg-cvs-green-dark text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 50%"></div>
+          </div>
+        </div>
+      
+        
+        <button class="flex-1 breadcrumb" id="breadcrumb-2" onclick="goToPage(2)">
+          <span class="sr-only"><%= __('Go to step')%> 2 <%= __('Testing & Isolation') %></span>
+          <div class="w-10 h-10 bg-cvs-green-dark mx-auto rounded-full text-lg text-white flex items-center">
+            <svg class="mx-auto h-8 w-8 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+        </button>
+      
+        <div class="w-8 sm:w-12 md:w-24 align-center items-center align-middle content-center flex">
+          <div class="w-full bg-gray-500 rounded items-center align-middle align-center flex-1">
+             <div id="progress-bar-2" class="bg-cvs-green-dark text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 0%"></div>
+          </div>
+        </div>
+      
+        <button class="flex-1 breadcrumb" id="breadcrumb-3" onclick="goToPage(3)">
+          <span class="sr-only"><%= __('Go to step')%> 3 <%= __('Symptoms') %></span>
+          <div class="w-10 h-10 bg-cvs-green-light border-2 border-cvs-green-dark mx-auto rounded-full text-lg flex items-center">
+            <span class="text-gray-800 text-center w-full">3</span>
+          </div>
+        </button>
+      
+      
+        <div class="w-8 sm:w-12 md:w-24 align-center items-center align-middle content-center flex">
+          <div class="w-full bg-gray-500 rounded items-center align-middle align-center flex-1">
+             <div id="progress-bar-3" class="bg-cvs-green-dark text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 0%"></div>
+          </div>
+        </div>
+    
+    
+        <button class="flex-1 breadcrumb" id="breadcrumb-4" onclick="goToPage(4)">
+          <span class="sr-only"><%= __('Go to step')%> 4 <%= __('Health') %></span>
+          <div class="w-10 h-10 bg-cvs-green-light border-2 border-cvs-green-dark mx-auto rounded-full text-lg flex items-center">
+            <span class="text-gray-800 text-center w-full">4</span>
+          </div>
+        </button>
+
+        <div class="w-8 sm:w-12 md:w-24 align-center items-center align-middle content-center flex">
+          <div class="w-full bg-gray-500 rounded items-center align-middle align-center flex-1">
+             <div id="progress-bar-4" class="bg-cvs-green-dark text-xs leading-none py-1 text-center text-grey-darkest rounded " style="width: 0%"></div>
+          </div>
+        </div>
+      
+        <button class="flex-1 breadcrumb" id="breadcrumb-5" onclick="goToPage(5)">
+          <span class="sr-only"><%= __('Go to step')%> 5 <%= __('Submit & Share') %></span>
+          <div class="w-10 h-10 bg-cvs-green-light border-2 border-cvs-green-dark mx-auto rounded-full text-lg flex items-center">
+            <span class="text-gray-800 text-center w-full">5</span>
+          </div>
+        </button>
+      
+        <div class="w-auto sm:w-8 md:w-12"></div>
+
+
+
+      </div>
+      
+      <div class="flex text-sm content-center text-center">
+        <div class="w-1/5">
+          <%= __('Demography and geography') %>
+        </div>
+        
+        <div class="w-1/5">
+          <%= __('Testing & Isolation') %>
+        </div>
+        
+        <div class="w-1/5">
+          <%= __('Symptoms') %>
+        </div>
+        
+        <div class="w-1/5">
+          <%= __('Health') %>
+        </div>	
+
+        <div class="w-1/5">
+          <%= __('Submit & Share') %>
+        </div>		
+
+      </div>
+
+    </div>
+
+
+  <div id="page-1" class="page-container">
+
     <div class="flex flex-row items-center mt-8">
       <img src="/static/images/map.svg" alt="" class="h-16 w-16">
       <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Geography and demography") %></h3>
     </div>
 
 
-    <label class="text-h4" for="Age"><%= __("Your age") %></label>
+    <label class="text-h4" for="Age"><%= __("Your age") %> </label>
     <select class="appearance-none rounded focus:outline-none focus:shadow-outline" required name="age" id="Age">
       <option value="" disabled selected><%= __("Choose your age") %></option>
       <% for(var i=0; i<100; i+=10) {
@@ -188,7 +335,7 @@
     </select>
 
     <fieldset>
-    <legend><%= __("Biological gender") %></legend>
+    <legend><%= __("Biological gender") %> </legend>
     <p class="mb-2">
       <input required type="radio" id="gender-female" name="gender" value="female" <%= sex === 'FEMALE' ? 'checked' : '' %>>
       <label for="gender-female"><%= __("Female") %></label>
@@ -207,16 +354,24 @@
       <% if (locals.zipGuide) { %>
         <span>- </span><a class="text-cvs-red font-bold hover:underline" href="<%- __(`{{ FIND_ZIP_CODE_URL }}`, { FIND_ZIP_CODE_URL }) %>" target="_blank"><%= __('What is my Zip code?') %></a>
       <% } %>
+      
     </label>
     <input class="appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required type="text" pattern="<%= locals.zipPattern %>" name="postal-code" id="postal-code" placeholder="<%= locals.zipPlaceHolder %>" value="<%= postalCode %>">
+    <ul class="mt-8 nav-btn-container">
+      <li>
+        <input class="inverse next-btn" type="button" onclick="nextPage(validateDemographicsAndGeography)" value="<%= __('Next') %>">
+      </li>
+    </ul>
+  </div>
 
+  <div id="page-2" class="page-container">
     <div class="flex flex-row items-center mt-8">
       <img src="/static/images/mask.svg" alt="" class="h-16 w-16">
-      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Testing and symptoms") %></h3>
+      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Testing and isolation") %></h3>
     </div>
 
     <fieldset>
-    <legend><%= __("Have you been in close contact with someone who was tested positive for COVID-19?") %></legend>
+    <legend><%= __("Have you been in close contact with someone who was tested positive for COVID-19?") %> </legend>
 
     <p>
       <input required type="radio" id="been-in-contact-with-yes" name="been-in-contact-with" value="yes" <%= hasBeenInContactWithInfected ? 'checked' : '' %>>
@@ -229,7 +384,7 @@
 
 
     <fieldset>
-    <legend><%= __('Have you been tested for COVID-19?')%></legend>
+    <legend><%= __('Have you been tested for COVID-19?')%> </legend>
     <p>
         <input required type="radio" id="been-tested-yes" name="been-tested" value="yes" onclick="changeTestResultDisplay(true)" <%= hasBeenTested ? 'checked' : '' %>>
         <label class="mr-4" for="been-tested-yes"><%= __('Yes')%></label>
@@ -241,7 +396,7 @@
 
     <div id="test-result-question" style="display: none;">
       <fieldset>
-      <legend><%= __('What was the result?')%></legend>
+      <legend><%= __('What was the result?')%> </legend>
 
       <p>
         <input type="radio" id="test-response-positive" name="test-response" value="positive" <%= testResult === 'POSITIVE' ? 'checked' : '' %>>
@@ -256,101 +411,162 @@
       </fieldset>
     </div>
 
+
     <fieldset>
+      <legend><%= __('I am currently:')%> </legend>
+      <p class="mb-2">
+        <input required type="radio" id="not-in-isolation" name="isolation-status" value="not-in-isolation" <%= isolationStatus === 'NOT_IN_ISOLATION' ? 'checked' : '' %>>
+        <label for="not-in-isolation"><%= __("Not in isolation") %></label>
+      </p>
+      <p class="mb-2">
+        <input required type="radio" id="isolation-due-to-travel" name="isolation-status" value="isolation-due-to-travel" <%= isolationStatus === 'ISOLATION_DUE_TO_TRAVEL' ? 'checked' : '' %>>
+        <label for="isolation-due-to-travel"><%= __("In isolation due to a recent international travel") %></label>
+      </p>
+      <p class="mb-2">
+        <input required type="radio" id="isolation-due-to-contact" name="isolation-status" value="isolation-due-to-contact" <%= isolationStatus === 'ISOLATION_DUE_TO_CONTACT' ? 'checked' : '' %>>
+        <label for="isolation-due-to-contact"><%= __("In isolation due to contact with an individual who has been exposed to the coronavirus.") %></label>
+      </p>
+      <p class="mb-2">
+        <input required type="radio" id="isolation-due-to-government" name="isolation-status" value="isolation-due-to-government" <%= isolationStatus === 'ISOLATION_DUE_TO_GOVERNMENT_ORDERS' ? 'checked' : '' %>>
+        <label for="isolation-due-to-government"><%= __("In isolation due to orders from the government") %></label>
+      </p>
+      <p>
+        <input required type="radio" id="isolation-due-to-covid-19" name="isolation-status" value="isolation-due-to-covid-19" <%= isolationStatus === 'ISOLATION_DUE_TO_COVID_19' ? 'checked' : '' %>>
+        <label for="isolation-due-to-covid-19"><%= __("In isolation due to COVID-19 infection") %></label>
+      </p>
+      </fieldset>
+      <ul class="mt-8 nav-btn-container">
+        <li>
+          <input class="inverse next-btn" type="button" onclick="nextPage(validateTestingAndIsolation)" value="<%= __('Next') %>">
+          <input class="inverse" type="button" onclick="previousPage()" value="<%= __('Back') %>">
+        </li>
+      </ul>
+  </div>
+
+  <div id="page-3" class="page-container">
+    <div class="flex flex-row items-center mt-8">
+      <img src="/static/images/symptoms.svg" alt="" class="h-16 w-16">
+      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Symptoms") %></h3>
+    </div>
+
+    <fieldset>
+      <legend><%= __('Have you experienced any symptoms?')%> </legend>
+      <p>
+          <input required type="radio" id="has-symptoms-yes" name="has-symptoms" value="yes" onclick="showHideSymptomsCheckboxes()" <%= symptoms ? 'checked' : '' %>>
+          <label class="mr-4" for="has-symptoms-yes"><%= __('Yes')%></label>
+  
+          <input required type="radio" id="has-symptoms-no" name="has-symptoms" value="no" onclick="showHideSymptomsCheckboxes()" <%= !symptoms && smokingHabit ? 'checked' : '' %>>
+          <label for="has-symptoms-no"><%= __('No')%></label>
+      </p>
+      </fieldset>
+
+    <fieldset id="symptoms-checkboxes" style="display:none;">
     <legend class="mb-0"><%= __('Symptoms you have experienced') %></legend>
     <p class="mb-4"><%- __('Select only the symptoms you have experienced') %></p>
 
     <label class="checkbox" for="symptom-cough">
-      <input type="checkbox" id="symptom-cough" name="symptom-cough" <%= symptomDryCough ? 'checked' : '' %>>
+      <input type="checkbox" class="symptom" id="symptom-cough" name="symptom-cough" <%= symptomDryCough ? 'checked' : '' %>>
       <span><%= __('Dry cough') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-slime-cough">
-      <input type="checkbox" id="symptom-slime-cough" name="symptom-slime-cough" <%= symptomSlimeCough ? 'checked' : '' %>>
+      <input type="checkbox" class="symptom" id="symptom-slime-cough" name="symptom-slime-cough" <%= symptomSlimeCough ? 'checked' : '' %>>
       <span><%= __('Mucus cough') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-fatigue">
-      <input type="checkbox" id="symptom-fatigue" name="symptom-fatigue" <%= symptomFatigue ? 'checked' : '' %>>
+      <input type="checkbox" class="symptom" id="symptom-fatigue" name="symptom-fatigue" <%= symptomFatigue ? 'checked' : '' %>>
       <span><%= __('Fatigue and exhaustion') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-fever">
-      <input type="checkbox" id="symptom-fever" name="symptom-fever" <%= symptomFever ? 'checked' : '' %>>
+      <input type="checkbox" class="symptom" id="symptom-fever" name="symptom-fever" <%= symptomFever ? 'checked' : '' %>>
       <span><%= __('Fever') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-heavy-breath">
-      <input type="checkbox" id="symptom-heavy-breath" name="symptom-heavy-breath" <%= symptomHeavyBreathing ? 'checked' : '' %>>
+      <input type="checkbox" class="symptom" id="symptom-heavy-breath" name="symptom-heavy-breath" <%= symptomHeavyBreathing ? 'checked' : '' %>>
       <span><%= __('Shortness of breath') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-muscle-pain">
-      <input type="checkbox" id="symptom-muscle-pain" name="symptom-muscle-pain" <%= symptomMuscleAching ? 'checked' : '' %>>
+      <input type="checkbox" class="symptom" id="symptom-muscle-pain" name="symptom-muscle-pain" <%= symptomMuscleAching ? 'checked' : '' %>>
       <span><%= __('Muscle pain') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-diarrhea">
-      <input type="checkbox" id="symptom-diarrhea" name="symptom-diarrhea" <%= symptomDiarrhea ? 'checked' : '' %>>
+      <input type="checkbox" class="symptom" id="symptom-diarrhea" name="symptom-diarrhea" <%= symptomDiarrhea ? 'checked' : '' %>>
       <span><%= __('Diarrhea') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-headache">
-      <input type="checkbox" id="symptom-headache" name="symptom-headache" <%= symptomHeadache ? 'checked' : '' %>>
+      <input type="checkbox" class="symptom" id="symptom-headache" name="symptom-headache" <%= symptomHeadache ? 'checked' : '' %>>
       <span><%= __('Headache') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-sore-throat">
-      <input type="checkbox" id="symptom-sore-throat" name="symptom-sore-throat" <%= symptomSoreThroat ? 'checked' : '' %>>
+      <input type="checkbox" class="symptom" id="symptom-sore-throat" name="symptom-sore-throat" <%= symptomSoreThroat ? 'checked' : '' %>>
       <span><%= __('Sore throat') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-no-smell">
-      <input type="checkbox" id="symptom-no-smell" name="symptom-no-smell" <%= symptomNoSmell ? 'checked' : '' %>>
+      <input type="checkbox" class="symptom" id="symptom-no-smell" name="symptom-no-smell" <%= symptomNoSmell ? 'checked' : '' %>>
       <span><%= __('Loss of sense of smell') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-no-taste">
-      <input type="checkbox" id="symptom-no-taste" name="symptom-no-taste" <%= symptomNoTaste ? 'checked' : '' %>>
+      <input type="checkbox" class="symptom" id="symptom-no-taste" name="symptom-no-taste" <%= symptomNoTaste ? 'checked' : '' %>>
       <span><%= __('Loss of sense of taste') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-runny-nose">
-      <input type="checkbox" id="symptom-runny-nose" name="symptom-runny-nose" <%= symptomRunnyNose ? 'checked' : '' %>>
+      <input type="checkbox" class="symptom" id="symptom-runny-nose" name="symptom-runny-nose" <%= symptomRunnyNose ? 'checked' : '' %>>
       <span><%= __('Stuffy or runny nose') %></span>
       <span class="checkmark"></span>
     </label>
 
     <label class="checkbox" for="symptom-nausea-or-vomiting">
-      <input type="checkbox" id="symptom-nausea-or-vomiting" name="symptom-nausea-or-vomiting" <%= symptomNauseaOrVomiting ? 'checked' : '' %>>
+      <input type="checkbox" class="symptom" id="symptom-nausea-or-vomiting" name="symptom-nausea-or-vomiting" <%= symptomNauseaOrVomiting ? 'checked' : '' %>>
       <span><%= __('Nausea or vomiting') %></span>
       <span class="checkmark"></span>
     </label>
     </fieldset>
 
     <div id="symptom-start-question" style="display: none;">
-      <label for="symptom-start"><%= __('When did the symptoms start?')%></label>
+      <label for="symptom-start"><%= __('When did the symptoms start?')%> </label>
       <input
-        class="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        class="appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         type="date"
         name="symptom-start"
         id="symptom-start"
         value="<%= symptomStart %>">
     </div>
+    <ul class="mt-8 nav-btn-container">
+      <li> 
+        <input class="inverse next-btn" type="button" onclick="nextPage(validateSymptoms)" value="<%= __('Next') %>">
+        <input class="inverse" type="button" onclick="previousPage()" value="<%= __('Back') %>">
+      </li>
+    </ul> 
+  </div>
 
+  <div id="page-4" class="page-container">
+    <div class="flex flex-row items-center mt-8">
+      <img src="/static/images/doctor.svg" alt="" class="h-16 w-16">
+      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Health") %></h3>
+    </div>
     <fieldset>
-    <legend class="mb-0"><%= __('Have you been diagnosed with any of the following conditions?')%></legend>
+    <legend class="mb-0"><%= __('Have you been diagnosed with any of the following conditions?')%> </legend>
     <p class="mb-4"><%= __('Diabetes mellitus, Hypertension, Ischemic heart disease, Asthma, Chronic lung disease, Chronic kidney disease') %></p>
     <p>
         <input required type="radio" id="diagnosed-other-conditions-yes" name="diagnosed-other-conditions" value="yes" <%= diagnosedWithOtherConditions ? 'checked' : '' %>>
@@ -361,36 +577,9 @@
     </p>
     </fieldset>
 
-    <fieldset>
-    <legend><%= __('I am currently:')%></legend>
-    <p class="mb-2">
-      <input required type="radio" id="not-in-isolation" name="isolation-status" value="not-in-isolation" <%= isolationStatus === 'NOT_IN_ISOLATION' ? 'checked' : '' %>>
-      <label for="not-in-isolation"><%= __("Not in isolation") %></label>
-    </p>
-    <p class="mb-2">
-      <input required type="radio" id="isolation-due-to-travel" name="isolation-status" value="isolation-due-to-travel" <%= isolationStatus === 'ISOLATION_DUE_TO_TRAVEL' ? 'checked' : '' %>>
-      <label for="isolation-due-to-travel"><%= __("In isolation due to a recent international travel") %></label>
-    </p>
-    <p class="mb-2">
-      <input required type="radio" id="isolation-due-to-contact" name="isolation-status" value="isolation-due-to-contact" <%= isolationStatus === 'ISOLATION_DUE_TO_CONTACT' ? 'checked' : '' %>>
-      <label for="isolation-due-to-contact"><%= __("In isolation due to contact with an individual who has been exposed to the coronavirus.") %></label>
-    </p>
-    <p class="mb-2">
-      <input required type="radio" id="isolation-due-to-government" name="isolation-status" value="isolation-due-to-government" <%= isolationStatus === 'ISOLATION_DUE_TO_GOVERNMENT_ORDERS' ? 'checked' : '' %>>
-      <label for="isolation-due-to-government"><%= __("In isolation due to orders from the government") %></label>
-    </p>
-    <p class="mb-2">
-      <input required type="radio" id="isolation-due-to-covid-19" name="isolation-status" value="isolation-due-to-covid-19" <%= isolationStatus === 'ISOLATION_DUE_TO_COVID_19' ? 'checked' : '' %>>
-      <label for="isolation-due-to-covid-19"><%= __("In isolation due to COVID-19 infection") %></label>
-    </p>
-    <p>
-      <input required type="radio" id="voluntary-isolation" name="isolation-status" value="voluntary-isolation" <%= isolationStatus === 'VOLUNTARY_ISOLATION' ? 'checked' : '' %>>
-      <label for="voluntary-isolation"><%= __("In voluntary isolation to avoid potentially spreading or catching COVID-19") %></label>
-    </p>
-    </fieldset>
 
     <fieldset>
-    <legend><%= __('Cigarette smoking habits:') %></legend>
+    <legend><%= __('Cigarette smoking habits:') %> </legend>
     <p class="mb-2">
       <input required type="radio" id="currently-smoking" name="smoking-habits" value="currently-smoking" <%= smokingHabit === 'CURRENTLY' ? 'checked' : '' %>>
       <label for="currently-smoking"><%= __("I currently smoke") %></label>
@@ -418,8 +607,19 @@
       id="body-temperature"
       value="<%= bodyTemperature %>"
     >
+    <ul class="mt-8 nav-btn-container" >
+      <li>
+        <input class="inverse next-btn" type="button" onclick="nextPage(validateHealth)" value="<%= __('Next') %>">
+        <input class="inverse" type="button" onclick="previousPage()" value="<%= __('Back') %>">
+      </li>
+    </ul> 
+  </div>
 
-
+  <div id="page-5" class="page-container">
+    <div class="flex flex-row items-center mt-8">
+      <img src="/static/images/napkin.svg" alt="" class="h-16 w-16">
+      <h3 class="text-cvs-red text-xl font-bold m-4"><%= __("Submit & Share") %></h3>
+    </div>
     <h3 class="text-cvs-red text-xl font-bold m-4 ml-0 mt-8 mb-0"><%= __("How will my data be used?") %></h3>
 
     <p class="mt-0 mb-4"><%= __('Your health information is stored anonymously, and can not be used to identify you.')%><br />
@@ -442,14 +642,23 @@
       </label>
     </p>
 
-    <ul class="mt-4">
+    <ul class="mt-8 nav-btn-container">
       <li>
+        <input class="inverse next-btn custom-nav-link rounded-full text-base text-white mt-2 font-medium px-5 py-3" type="submit" value="<%= __('Submit report') %>">
         <input type="hidden" name="passcode" value="<%= passcode %>" />
-        <input class="inverse custom-nav-link rounded-full text-base text-white mt-2 font-medium px-5 py-3" type="submit" value="<%= __('Submit report') %>">
+        <input class="inverse" type="button" onclick="previousPage()" value="<%= __('Back') %>">
       </li>
     </ul>
+  </div>
   </form>
 </section>
+
+<div class="alert-toast fixed bottom-0 right-0 m-8 w-5/6 md:w-full max-w-sm hidden" id="toast">
+  <input class="hidden" type="checkbox" id="footertoast">
+  <label for="footertoast" title='<%= __("Close") %>' class="close cursor-pointer flex items-start justify-between w-full p-2 bg-cvs-red  h-24 rounded shadow-lg text-white">
+  <span id="toastmessage"></span>
+  <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path></svg>
+ </div>
 
 <section class="w-full self-center text-center m-8">
   <p class="pb-2 text-cvs-red text-lg md:text-xl lg:text-2xl font-bold"><%= __(`Contribute and share {{ hostname }} on`, { hostname: baseUrl }) %></p>
@@ -515,6 +724,28 @@
     altFormat: '<%= __(`F j, Y`) %>',
     dateFormat: 'Y-m-d'
   });
+  //accepts a collection of html elements and returns true if any of the elements is checked
+  function isRadioButtonSet(collection) {
+    var re = false;
+    for (var i = 0; i < collection.length; i++) {
+      if (collection[i].checked) {
+        re = true;
+        break;
+      }
+    };
+    return re;
+  }
+
+  //returns the radio button that is set or false if none are
+  function radioSet(collection) {
+    for (var i = 0; i < collection.length; i++) {
+      if (collection[i].checked) {
+        return collection[i];
+        break;
+      }
+    };
+    return false;
+  }
 </script>
 
 <script>
@@ -534,6 +765,21 @@
   if (symptoms != null && symptoms.length > 0) {
     document.getElementById('symptom-start-question').style.display = 'block';
   }
+
+  function showHideSymptomsCheckboxes() {
+    var hasSymptoms = document.getElementsByName("has-symptoms");
+    if (isRadioButtonSet(hasSymptoms)) {
+      if (radioSet(hasSymptoms).value === "yes") {
+        document.getElementById('symptoms-checkboxes').style.display = 'block';
+      } else {
+        document.getElementById('symptoms-checkboxes').style.display = 'none';
+      }
+    } else {
+      document.getElementById('symptoms-checkboxes').style.display = 'none';
+    }
+  }
+  showHideSymptomsCheckboxes();
+  
 
   changeTestResultDisplay(document.getElementById("been-tested-yes").checked);
 
@@ -556,5 +802,238 @@
   // Obfuscate path so people will not share their personal URL
   var obfuscatePath = true;
 </script>
+
+<script>
+  /* Page validation functions. 
+  If validation fails and messages to be displayed should be dispatched in the validation function.
+  These aren't done */
+  var validateDemographicsAndGeography = function() {
+      //validate age
+      var hasAge = document.getElementById("Age").value != "";
+      if (!hasAge) {
+        return [false,"<%= __('Please select a age range') %>"];
+      }
+
+      //validate sex
+      var hasGender = isRadioButtonSet(document.getElementsByName("gender"));
+      if (!hasGender) {
+        return [false,"<%= __('Please select a Biological gender/Sex') %>"];
+      }
+
+      //validate zip/postal code
+      var correctLength = document.getElementById("postal-code").value.length === "<%= locals.zipPlaceHolder %>".length;
+      if (!correctLength) {
+        return [false,"<%= __('Please enter a valid postal code for your country') %>"];
+      }
+
+      return [true,undefined];
+  }
+
+  var validateTestingAndIsolation = function() {
+    //validate in close contact
+    var hasContact = isRadioButtonSet(document.getElementsByName("been-in-contact-with"));
+    if (!hasContact) {
+      return [false,"<%= __('Please select whether you have been in close contact with someone who tested positive for COVID-19') %>"];
+    }
+
+    //validate tested
+    var hasTested = isRadioButtonSet(document.getElementsByName("been-tested"));
+    if (!hasTested) {
+      return [false,"<%= __('Please select whether you have been tested for COVID-19') %>"];
+    }
+
+    //validate isolation
+    var hasIsolation = isRadioButtonSet(document.getElementsByName("isolation-status"));
+    if (!hasIsolation) {
+      return [false,"<%= __('Please select your isolation status') %>"];
+    }
+
+    return [true, undefined];
+  }
+
+  var validateSymptoms = function() {
+    var hasSymptoms = document.getElementsByName("has-symptoms");
+    if (!isRadioButtonSet(hasSymptoms)) {
+      return [false, "<%= __('Please select if you have experienced symptoms') %>"];
+    }
+    return [true, undefined];
+  }
+
+  var validateHealth = function() {
+    //health condition
+    var hasHealthConditon = isRadioButtonSet(document.getElementsByName("diagnosed-other-conditions"));
+    if (!hasHealthConditon) {
+      return [false,"<%= __('Please select if you have a  preexisting health condition') %>"];
+    }
+
+    //smoking
+    var hasSmoking = isRadioButtonSet(document.getElementsByName("smoking-habits"));
+    if (!hasSmoking) {
+      return [false,"<%= __('Please select your smoking habits') %>"];
+    }
+
+    return [true,undefined];
+  }
+
+  var validationFunctions = [
+    validateDemographicsAndGeography,
+    validateTestingAndIsolation,
+    validateSymptoms,
+    validateHealth
+  ];
+
+
+</script>
+
+<script>
+  /* Pagination */
+ var numPages = 5;
+ var currentPage = 1;
+
+ /*increase page number by 1 and rerender the form. 
+ An optional validation function can be used to validate the contents of a page 
+ before you can move to the next page
+ */
+ function nextPage(validationFunction) {
+   if (validationFunction) {
+     valid = validationFunction(); //[success, msg]
+      if (valid[0]) {
+        currentPage = currentPage + 1;
+        updatePaginate();
+      } else {
+        //show validation errors to the user here
+        valid[1] ? toastAlert(valid[1]): false;
+      }
+   } else {
+     /* no validation function given */
+    currentPage = currentPage + 1;
+    updatePaginate();
+   }
+ }
+
+ 
+ 
+ //creates an alert for the user displaying given msg 
+ function toastAlert(msg) {
+   var toastMessage = document.getElementById("toastmessage");
+   toastMessage.innerText = msg;
+
+   document.getElementById("footertoast").checked = false;
+
+   var toast = document.getElementById("toast");
+   toast.classList.remove("hidden");
+   toast.onclick = function() {
+    document.getElementById("footertoast").checked = "checked";
+    setTimeout(function() {
+      document.getElementById("toast").classList.add("hidden");
+    }, 1000);
+   }
+ }
+
+
+ //decrease page number by 1 and rerender the form
+ function previousPage() {
+   currentPage = currentPage - 1;
+   updatePaginate();
+ }
+
+ //updates page number to a specific page (page) and then rerenders the paginated form
+ function goToPage(page) {
+  currentPage = page;
+  updatePaginate();
+ }
+
+ //Creates inner html for a breadcrumb which is incomplete and displays a number (i)
+ function incompleteBreadcrumb(breadcrumb, i, current=false) {
+    var breadcontent = document.createElement("div");
+    breadcontent.classList.add("w-10");
+    breadcontent.classList.add("h-10");
+    breadcontent.classList.add("bg-cvs-green-light");
+    breadcontent.classList.add("border-2");
+    breadcontent.classList.add("mx-auto");
+    breadcontent.classList.add("rounded-full");
+    breadcontent.classList.add("text-lg");
+    breadcontent.classList.add("flex");
+    breadcontent.classList.add("items-center");
+      
+      var span = document.createElement("span");
+      span.classList.add("text-gray-800");
+      span.classList.add("text-center");
+      span.classList.add("w-full");
+      span.innerText = i;
+
+      if (current) {
+        breadcontent.classList.add("border-cvs-green-dark");
+      } 
+
+      breadcrumb.onclick = function(){goToPage(i)};
+      if (validationFunctions[i-1] && !validationFunctions[i-1]()[0]) {
+        breadcrumb.onclick = function(){};
+      } else if (i-2>-1 && !validationFunctions[i-2]()[0]) {
+        //pages that are valid and the previous page is invalid 
+        //(for pages that don't have required fields)
+        breadcrumb.onclick = function(){};
+      } else if (i-3>-1 && !validationFunctions[i-3]()[0]) {
+        breadcrumb.onclick = function(){};
+      }
+
+      breadcontent.appendChild(span);
+      breadcrumb.appendChild(breadcontent);
+ }
+
+ //Creates inner html for a breadcrumb which is marked complete with a check mark
+ function completeBreadcrumb(breadcrumb, i) {
+  var breadcontent = document.createElement("div");
+      breadcontent.classList.add("w-10");
+      breadcontent.classList.add("h-10");
+      breadcontent.classList.add("bg-cvs-green-dark");
+      breadcontent.classList.add("mx-auto");
+      breadcontent.classList.add("rounded-full");
+      breadcontent.classList.add("text-lg");
+      breadcontent.classList.add("text-white");
+      breadcontent.classList.add("flex");
+      breadcontent.classList.add("items-center");
+      breadcontent.innerHTML = '<svg class="mx-auto h-8 w-8 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/> </svg>';
+      breadcrumb.appendChild(breadcontent);
+      breadcrumb.onclick = function() {goToPage(i)};
+ }
+
+ /*Applies updates to a progress bar given it's id number (i). 
+ If it can't find a progress bar with the id it does nothing*/
+ function updateProgressBar(i, percent) {
+  var bar = document.getElementById('progress-bar-'+i);
+  if (bar) {
+    bar.style.width = percent;
+  }
+ }
+
+ function updatePaginate() {
+  for (var i = 1; i <= numPages; i++) {
+    var page = document.getElementById('page-'+i);
+    var breadcrumb = document.getElementById('breadcrumb-'+i);
+    breadcrumb.textContent = '';
+
+    if (i === currentPage) {
+      incompleteBreadcrumb(breadcrumb, i, true);
+      updateProgressBar(i, "50%");
+      page.style.display = "block";
+    } else if (i < currentPage) {
+      completeBreadcrumb(breadcrumb, i);
+      updateProgressBar(i, "100%");
+      page.style.display = "none";
+    } else {
+      incompleteBreadcrumb(breadcrumb, i);
+      updateProgressBar(i, "0%");
+      page.style.display = "none";
+    }
+  }
+ }
+ updatePaginate();
+
+
+
+</script>
+
+
 
 <%- include('partials/footer', { home: true }) -%>
