@@ -44,6 +44,10 @@ const mapFeatureFromCoordinateAndReport = (
 });
 
 router.get('/geojson', async (req, res) => {
+
+  const allGeojson = require('./all-geojson.json');
+  return res.json(allGeojson);
+
   const allReports = await reportRepo.getLatestCovidReports();
   const features = allReports
     .map(report => {

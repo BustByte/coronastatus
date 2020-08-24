@@ -1,0 +1,1 @@
+{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":["101.5952","3.12"]},"properties":{"state":"SYMPTOMS"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["101.6584","3.1833"]},"properties":{"state":"HEALTHY"}}]}
