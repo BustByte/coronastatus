@@ -1,46 +1,3 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: italy
-spec:
-  selector:
-    matchLabels:
-      app: italy
-  replicas: 2
-  template:
-    metadata:
-      labels:
-        app: italy
-    spec:
-      containers:
-      - name: italy
-        image: bustbyte/coronastatus
-        ports:
-        - containerPort: 7272
-        env:
-        - name: COUNTRY_CODE
-          value: "it"
-        - name: DB_PATH
-          valueFrom:
-            # Each country has its own connection pool to its own database.
-            # kubectl create secret \
-            #   generic [country-name] \
-            #   --from-literal=postgres-pool-connection-string='[insert-connection-string]'
-            secretKeyRef:
-              name: italy
-              key: postgres-pool-connection-string
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: italy
-spec:
-  ports:
-  - port: 80
-    targetPort: 7272
-  selector:
-    app: italy
----
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
@@ -59,13 +16,13 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: italy
+          serviceName: goodbye
           servicePort: 80
   - host: www.coronastatus.it
     http:
       paths:
       - backend:
-          serviceName: italy
+          serviceName: goodbye
           servicePort: 80
   tls:
   - hosts:
