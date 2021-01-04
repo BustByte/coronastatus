@@ -1,10 +1,4 @@
-FROM node:lts-buster-slim
-
-RUN mkdir /app
-WORKDIR /app
-
-COPY package.json yarn.lock
-COPY . .
-
-RUN yarn
-CMD yarn start
+FROM nginx
+EXPOSE 80
+COPY static/ /usr/share/nginx/html/static
+COPY goodbye.html /usr/share/nginx/html/index.html

@@ -1,4 +1,4 @@
-# Coronastatus
+# Coronastatus (archived)
 
 ![](https://github.com/BustByte/coronastatus/workflows/test/badge.svg)
 
