@@ -60,7 +60,7 @@ The government is working on this, but they're too slow in getting something out
 | Title                                                                       | Country | URL                                                                                                                                                        |
 | --------------------------------------------------------------------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Self-report system for monitoring COVID19 needs to be in place immediately! |   🇳🇴    | [Read here](https://www.aftenposten.no/meninger/debatt/i/P9ALzX/selvrapporteringssystem-for-overvaaking-av-korona-maa-paa-plass-naa-petter-bae-brandtzaeg) |
-| Are you ill? Health services will soon let you self-report symtoms.         |   🇳🇴    | [Read here](https://www.bt.no/innenriks/i/QoAdAx/har-du-vaert-syk-snart-kan-du-hjelpe-helsemyndighetene-med-aa-registrer)                                  |
+| Are you ill? Health services will soon let you self-report symptoms.         |   🇳🇴    | [Read here](https://www.bt.no/innenriks/i/QoAdAx/har-du-vaert-syk-snart-kan-du-hjelpe-helsemyndighetene-med-aa-registrer)                                  |
 | Developers take on COVID-19 with open-source projects, hackathons           |   🇺🇸    | [Read here](https://sdtimes.com/open-source/developers-take-on-covid-19-with-open-source-projects-hackathons/)                                             |
 
 ## Who's behind this?
@@ -79,7 +79,7 @@ Adding a new language should be pretty straightforward. If you need help, you ca
 
 - Set up a new config file: `cp config.example.json config.json`. `COUNTRY_CODE` should be the Alpha-2-code listed here: https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
 - In `app/locales` you have to add
-  - Translations for all the sentences in `en.json`. The translations should be placed in `{LOCALE}.json` (`LOCALE` should be one of the locales from [here](https://github.com/ladjs/i18n-locales)). The keys are the same in all the `{LOCALE}.json`-files, and the values are the translations. We recommend translating everything in the file first, and then testing the site in order to verify that the translations look ok in context. Some texts conains `{{ SOME_VALUE }}`. The content in `{{ }}` will be replaced with a country specific variable.
+  - Translations for all the sentences in `en.json`. The translations should be placed in `{LOCALE}.json` (`LOCALE` should be one of the locales from [here](https://github.com/ladjs/i18n-locales)). The keys are the same in all the `{LOCALE}.json`-files, and the values are the translations. We recommend translating everything in the file first, and then testing the site in order to verify that the translations look ok in context. Some texts contains `{{ SOME_VALUE }}`. The content in `{{ }}` will be replaced with a country specific variable.
   - sort the locales alphabetically by keys. You can use a helper script to sort it: `yarn sort:locales`
 - In `app/countrySpecific/{COUNTRY-CODE}/` you have to add (follow filename convention of the files that are already there):
   - `config.ts`. Copy from `app/countrySpecific/en/config.ts`, and change the values so that it fits your country (ask in Telegram if you wonder what the different values mean).
@@ -96,11 +96,11 @@ Adding a new language should be pretty straightforward. If you need help, you ca
 
 ## Start developing
 
-You can either install and run everything on your own machine or build a docker image and run the the local development environment using docker. Choose one of the ways below that fits best to you:
+You can either install and run everything on your own machine or build a docker image and run the local development environment using docker. Choose one of the ways below that fits best to you:
 
 ### Developing on your own machine
 
-#### Prerequisities
+#### Prerequisites
 
 Download & install:
 
@@ -126,7 +126,7 @@ Download & install:
 
 `cp config.example.json config.json`
 
-5. Start the development webserver
+5. Start the development web server
 
 `yarn dev`
 
@@ -138,7 +138,7 @@ Download & install:
 
 ### Developing using docker
 
-#### Prerequisities
+#### Prerequisites
 
 Download & install:
 
