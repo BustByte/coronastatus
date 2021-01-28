@@ -1,0 +1,542 @@
+<%
+  const {
+    profile,
+    passcode,
+    baseUrl,
+    formatNumber,
+    urls
+  } = locals;
+  const shouldAddAnalytics = !locals.profile;
+%>
+<% const { show = true, menu = true, home = false, fullscreen = false, lastCommit = false, showLocaleSelector = true, tryStartOnUserLocation = false } = locals; %>
+
+<!DOCTYPE html>
+<html lang="<%= locale %>">
+<!-- <% if (lastCommit) { %>Current commit: https://github.com/BustByte/coronastatus/commits/<%= lastCommit %><% } else { %>Get our code here: https://github.com/BustByte/coronastatus<% } %>  -->
+<head>
+<%- include('partials/head') -%>
+<style>
+  body {
+    background-color: #222222;
+  }
+
+  .background-slate {
+    background-image: none;
+    background-color: #222222;
+  }
+
+  #map {
+    height: 60vh;
+    width:100%;
+    display: block;
+    position:relative;
+    top:-5%;
+    bottom:10%;
+    left:0;
+    right:0;
+  }
+
+  .country-button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+
+  .group:hover .group-hover\:block {
+    display: block !important;
+  }
+
+  .flag {
+    width:5vw;
+    height:5vh;
+  }
+
+  .marker {
+    background-image: url('static/images/logo-marker.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .mapboxgl-popup {
+    max-width: 200px;
+  }
+
+  .mapboxgl-popup-content {
+    text-align: center;
+  }
+
+  .center-80 {
+    width:80%;
+    margin-left: 10%;
+  }
+
+ 
+</style>
+<script
+  src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"
+  integrity="sha384-gUVjgBN2k0xDStRTBb1n9XCongQ8l5gP+wxXs1TkpusVUVFtlRFLvP88bu5wsBUp"
+  crossorigin="anonymous"
+></script>
+
+<link
+  href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css"
+  rel="stylesheet"
+/>
+</head>
+<body class="flex flex-col">
+
+  <div class="main-container flex flex-col flex-grow">
+
+  <% if (menu) { %>
+    <section class="background-slate custom-section custom-hero p-4 w-full <% if (fullscreen) { %>custom-fullscreen<% } %>">
+      <div class="custom-section-content <% if (fullscreen) { %>mx-4<% } else { %>mx-auto<% } %>">
+        <header class="py-2 flex justify-between items-center flex-wrap">
+          <div class="flex items-center">
+            <a class="flex flex-row" href="/">
+              <img src="/static/images/logo.svg" alt="icon" class="w-20 h-20 hidden sm:block" />
+              <div class="flex flex-row items-center" style="color: #F2CC20;">
+                <div
+                  class="flex flex-row flex-no-wrap text-2xl text-white sm:text-3xl font-bold whitespace-no-wrap"
+                > 
+                 <%- __("corona<span>status</span>").replace(/<span>/g, '<span class="text-cvs-gold">') %>
+                </div>
+              </div>
+            </a>
+          </div>
+          <ul class="mt-4 text-center">
+            <li class="group">
+              <button class="group inverse custom-nav-link rounded-full text-white mt-2 font-medium px-5 md:text-base" onclick="toggleCountryLinks()">
+                <span class="firstlevel"><%= __("Contribute now!") %> 🌍</span>
+              </button>
+
+              <ul id="country-links-container" class="absolute p-2 rounded-lg shadow-lg bg-white z-10 hidden group-hover:block">
+                <svg class="block fill-current text-white w-4 h-4 ml-3 -mt-3 z-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+              
+            </ul>
+            </li>
+          </ul>
+        </header>
+      </div>
+    </section>
+  <% } %>
+
+
+  <section class="custom-section custom-hero p-4 background-slate">
+  <div class="text-center mx-auto">
+    <h1
+      class="my-4 text-2xl md:text-3xl lg:text-4xl lg:mx-20 font-medium text-cvs-green-light leading-tight"
+    >
+      <%- __("Help us <span>uncover</span> and <span>predict</span> the corona spread across the world").replace(/<span>/g, '<span class="text-cvs-gold">') %>
+    </h1>
+  
+  </div>
+  </section>
+  
+
+
+  <section class="custom-section custom-hero background-slate">
+
+    <div class="text-center" id="current-country"></div>
+    <div>
+    <div id="map"></div>
+    <div class="flex items-center justify-center py-2 text-sm text-cvs-green font-bold">
+      <span class="mr-4 opacity-75 leading-none"><%= __("Animation") %>:</span>
+      <button id="animation-control" class="border-none px-4" onclick="toggleAnimation()">
+        <svg class="fill-current text-cvs-gold h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 4h3v12H5V4zm7 0h3v12h-3V4z"/></svg>
+      </button>
+    </div>
+  </section>
+
+
+
+
+  <section class="custom-section custom-hero p-4 background-slate mt-8">
+
+    <h3 class="center-80 mt-4 text-center text-base text-white border-b-2 border-cvs-red mt-2 font-medium text-xl md:text-3xl px-5">
+      <%- __("How can I <span>contribute</span>?").replace(/<span>/g, '<span class="text-cvs-gold">') %>
+    </h3>
+      
+
+    <div class=" flex flex-wrap flex-row justify-around m-2 md:m-8" >
+      <div class="text-center flex flex-col items-center w-full md:w-1/3 p-4 mt-8 md:mt-0">
+        <h1 class="text-cvs-gold m-2 text-3xl md:text-5xl"><%= __("1. Survey") %></h1>
+        <p class="text-white"><%= __("Select your *country and fill out the anonymous survey.") %></p>
+        <ul class="mt-8 text-center">
+          <li class="group">
+            <button class="inverse custom-nav-link rounded-full text-white m-2 font-medium px-5 md:text-base" onclick="jumpToCountryLinks()">
+              <%= __("Contribute now!") %> 🌍
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="text-center flex flex-col items-center w-full md:w-1/3 p-4 mt-8 md:mt-0">
+        <h1 class="text-cvs-gold m-2 text-3xl md:text-5xl"><%= __("2. Share") %></h1>
+        <p class="text-white"><%= __("Share the link with your friends, family, and encourage them to fill it in.") %></p>
+        <%- include('partials/share', { amount: formatNumber(10000) }) -%>
+      </div>
+      <div class="text-center flex flex-col items-center w-full md:w-1/3 p-4 mt-8 md:mt-0">
+        <h1 class="text-cvs-gold m-2 text-3xl md:text-5xl"><%= __("3. Build") %></h1>
+        <p class="text-white"><%= __("Don't see your country on the map?") %><br><a class="text-cvs-gold hover:underline" href="https://github.com/BustByte/coronastatus#how-to-launch-the-site-in-your-country">Why not set it up?</a> We can help you do it.</p>
+        <a
+        href="https://github.com/BustByte/coronastatus"
+        target="_blank"
+        class="footer-logo-link mt-4"
+      >
+        <img
+          src="/static/images/github.svg"
+          alt=""
+          class="footer-logo-link__img mt-4 h-12 w-12 lg:h-16 lg:w-16"
+        />
+      </a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="custom-section custom-hero p-4 background-slate mt-8">
+
+
+    <h3 class="center-80 mt-4 text-center text-base text-white border-b-2 border-cvs-red mt-2 font-medium text-xl md:text-3xl px-5">
+      <%- __("About corona<span>status</span>").replace(/<span>/g, '<span class="text-cvs-gold">') %>
+    </h3>
+      
+    <div class="my-8 flex flex-row flex-wrap justify-between">
+        
+        
+      <%- include('partials/app-feature-block', {
+        image: '/static/images/hospital.svg',
+        title: __('Unreported cases'),
+        description: __('The spread of COVID-19 in our world is unknown. Help us create a better overview.')
+      }) -%>
+  
+      <%- include('partials/app-feature-block', {
+        image: '/static/images/doctor.svg',
+        title: __('Contribute anonymously'),
+        description: __('Report your health condition anonymously')
+      }) -%>
+  
+      <%- include('partials/app-feature-block', {
+        image: '/static/images/research.svg',
+        title: __('Insight for everyone'),
+        description: __('The data is open to everyone. Look at maps and graphs, or download the data and create your own visualizations.')
+      }) -%>
+  
+      <%- include('partials/app-feature-block', {
+        image: '/static/images/mobile.svg',
+        title: __('Everything is open'),
+        description: __('The website is open source and built by volunteers. Feel free to join.')
+      }) -%>
+    </div>
+  </section> 
+
+
+
+  <footer class="custom-section custom-section-footer p-8 pt-12">
+    <div
+      class="custom-section-content mx-auto custom-section-footer-content flex flex-col items-center"
+    >
+      <a
+        href="https://github.com/BustByte/coronastatus"
+        target="_blank"
+        class="footer-logo-link m-6"
+      >
+        <img
+          src="/static/images/github.svg"
+          alt=""
+          class="footer-logo-link__img mt-12 h-12 w-12 lg:h-16 lg:w-16"
+        />
+      </a>
+      <div
+        class="flex flex-row justify-between flex-wrap items-center self-stretch mt-8 text-base lg:text-xl text-center"
+      >
+        <% if (locals.twitter) { %>
+        <a
+          class="text-white font-medium whitespace-no-wrap"
+          href="https://twitter.com/intent/user?screen_name=<%= locals.twitter %>"
+          target="_blank"
+          >@<%= locals.twitter %></a
+        >
+        <% } %>
+        <span
+          class="text-white font-medium text-left md:text-center md:whitespace-no-wrap"
+        >
+          <%= __('Developed by')%>
+          <a target="_blank" class="font-bold hover:text-cvs-red hover:underline" href="https://bustbyte.no"
+            ><%= __('BustByte AS')%></a
+          >
+          <%= __('and') %>
+          <a class="font-bold hover:text-cvs-red hover:underline" href="<%= urls.contributors %>">
+            <%= __('volunteers')%>
+          </a>
+        </span>
+        <a
+          class="text-white hover:text-cvs-red font-bold hover:underline whitespace-no-wrap"
+          href="<%= urls.privacyPolicy %>"
+          ><%= __('Privacy Policy')%></a
+        >
+      </div>
+
+      <div
+        class="flex items-center justify-center self-stretch mt-4 mb-8 text-sm lg:text-base text-center"
+      >
+        <img src="/static/images/analytics.svg" alt="Provided by Simple Analytics" class="mr-2" />
+          <a target="_blank" class="font-bold text-white hover:text-cvs-red hover:underline" href="https://simpleanalytics.com/<%= baseUrl %><% if (!shouldAddAnalytics) { %>?ref=<%= baseUrl %><% } %>"
+          ><%= __('View Website Statistics')%></a
+        >
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+<script>
+  function hasSubmittedAlertOnClick() {
+      document.getElementById('has-submitted-alert').style.display = 'none';
+      window.localStorage.setItem("hasCrossedOutInfo", "true");
+  }
+
+  if ((window.localStorage.getItem("hasSubmittedProfile") === "true"
+      || window.localStorage.getItem("isUsingPasscodeLink") === "true")
+      && window.localStorage.getItem("hasCrossedOutInfo") !== "true"
+      && window.location.pathname.indexOf("helsetilstand") === -1) {
+      document.getElementById('has-submitted-alert').style.display = 'flex';
+  }
+
+  var symptoms = document.querySelectorAll('input[name^="symptom-"]:checked');
+  if (symptoms != null && symptoms.length > 0) {
+    document.getElementById('symptom-start-question').style.display = 'block';
+  }
+
+  changeTestResultDisplay(document.getElementById("been-tested-yes").checked);
+
+  var hasPasscodeCookie = document.cookie.includes('passcode');
+  document.getElementById('accept-remember').checked = hasPasscodeCookie;
+</script>
+
+<script>
+  (function scrollCallToAction() {
+    document.querySelectorAll('[href="#contribute"]').forEach(function(element) {
+      element.addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("contribute").scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  })()
+</script>
+
+<script>
+  // Obfuscate path so people will not share their personal URL
+  var obfuscatePath = true;
+</script>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.min.js"
+  integrity="sha384-gWG9VgK097eQTR3sCV4vOFl+vCZUZpKoV6cidldSSoI/ThCG5Yvl0EBknaGZsd5L"
+  crossorigin="anonymous"
+></script>
+<script>
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: '/static/landing-map-theme.json',
+    zoom: 2,
+    maxZoom: 4,
+    hash: true,
+    scrollZoom      : false,
+    boxZoom         : false,
+    doubleClickZoom : false
+  });
+
+  var markers = {};
+  var markersOnScreen = {};
+
+  function updateMarkers() {
+    var newMarkers = {};
+    var features = map.querySourceFeatures('reports');
+    totals = getPointCount(features);
+    features.forEach(function(feature) {
+      var coordinates = feature.geometry.coordinates;
+      var props = feature.properties;
+      if (!props.cluster) {
+        return;
+      }
+      var id = props.cluster_id;
+      var marker = markers[id];
+      if (!marker) {
+        marker = markers[id] = new mapboxgl.Marker({
+          element: el
+        }).setLngLat(coordinates);
+      }
+
+      newMarkers[id] = marker;
+
+      if (!markersOnScreen[id]) {
+        marker.addTo(map);
+      }
+    });
+
+    for (id in markersOnScreen) {
+      if (!newMarkers[id]) {
+        markersOnScreen[id].remove();
+      }
+    }
+    markersOnScreen = newMarkers;
+  }
+
+  
+  map.on('data', function(e) {
+    if (e.sourceId !== 'reports' || !e.isSourceLoaded) return;
+
+    map.on('move', updateMarkers);
+    map.on('moveend', updateMarkers);
+    updateMarkers();
+  });
+
+  
+</script>
+
+
+<script>
+  function toggleCountryLinks () {
+    /* This is a second way to access the list of country links because hover doesn't work on mobile */
+    var con = document.getElementById("country-links-container");
+    if (con.classList.contains("hidden")) {
+      con.classList.remove("hidden");
+    } else {
+      con.classList.add("hidden");
+    }
+  }
+
+  function jumpToCountryLinks() {
+    //used by the second Contribute now button under 1. Survey
+    window.scrollTo(0,0);
+    toggleCountryLinks();
+    document.getElementById("country-links-container").focus(); 
+  }
+
+  function createCountryButton(i, container) {
+    var li = document.createElement("li");
+    li.classList.add("p-4");
+    li.classList.add("whitespace-no-wrap");
+    li.classList.add("m-2");
+    li.classList.add("md:text-base");
+    li.classList.add("text-sm");
+    li.classList.add("text-gray-600");
+    li.classList.add("hover:text-gray-800");
+    li.classList.add("hover:bg-gray-100");
+    li.id = i+"-item";
+
+    var a = document.createElement("a");
+    a.classList.add("px-2");
+    a.classList.add("py-1");
+    a.href = "http://"+countries[i].url;
+
+    var span = document.createElement("span");
+    span.innerText = countries[i].countryName;
+    a.appendChild(span);
+
+    li.style.backgroundImage = "url(static/flags/1x1/"+countries[i].countryCode+".svg)";
+    li.style.backgroundRepeat = "no-repeat";
+
+    li.append(a);
+    container.appendChild(li);
+  }
+
+  function createMarkerObject(i) {
+    countries[i].flag = 'static/flags/1x1/'+countries[i].countryCode+'.svg'
+    countries[i].mapCenter = [countries[i].mapCenter.lon, countries[i].mapCenter.lat];
+  }
+
+  function plotMarkers() {
+    console.log(countries);
+    for (var i = 0; i < countries.length; i++) {
+      var el = document.createElement('div');
+      el.className = 'marker';
+      new mapboxgl.Marker(el)
+      .setLngLat(countries[i].mapCenter)
+      .setPopup(new mapboxgl.Popup({ offset: 25 })
+      .setHTML('<h3 class="p-5"><a href="http://' + countries[i].url + '">' + countries[i].countryName + '</a></h3>'))
+      .addTo(map);
+    };
+  }
+  
+  function processCountriesJson () {
+    var container = document.getElementById("country-links-container");
+    for (i = 0; i < countries.length; i++){
+      createCountryButton(i, container);
+      createMarkerObject(i);
+    };
+    plotMarkers();
+  }
+
+  function getLocation() {
+    <% if (locals.tryStartOnUserLocation) { %>
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((result) => {
+          if (result.coordinates) {
+            showPosition([result.coordinates.longitude, result.coordinates.latitude]);
+          }
+        });
+      } 
+    <% } %>
+    //whether or not getting the location worked we start cycling countries after 5 seconds
+    window.setTimeout(function () {
+      playback(0);
+    },5000)
+  }
+
+  function showPosition(position) {
+      map.flyTo({
+        zoom: 4,
+        center: position,
+        essential: true
+      });
+  }
+
+  var currentCountry = document.getElementById("current-country");
+  var play = true;
+  function playback(index) {
+    currentCountry.innerHTML = "<div class=\"flex flex-wrap items-center justify-center pb-6 text-white text-xl font-bold\"><div class='w-full sm:w-auto flex items-center justify-center'><img class=\"h-5 w-6 mr-4\" src='"
+    +countries[index].flag
+    +"'>"
+    +countries[index].countryName
+    +"</div><span class=\"px-4 hidden sm:block\">|</span><div class=\"w-full sm:w-auto text-base sm:text-xl\"><a href='http://"
+    +countries[index].url
+    +"'>"
+    +countries[index].url.replace("status","<span class='text-cvs-gold'>status</span>")
+    +"</a></div></div>";
+    showPosition(countries[index].mapCenter);
+    map.once('moveend', function() {
+    window.setTimeout(function() {
+      index = index + 1 === countries.length ? 0 : index + 1;
+      if (play) {
+        playback(index);
+      }
+    }, 3500); 
+    });
+  }
+
+  function toggleAnimation() {
+    if (play) {
+      play = false;
+      document.getElementById("animation-control").innerHTML = '<svg class="fill-current text-cvs-gold h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M4 4l12 6-12 6z"/></svg>';
+    } else {
+      play = true;
+      document.getElementById("animation-control").innerHTML = '<svg class="fill-current text-cvs-gold h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 4h3v12H5V4zm7 0h3v12h-3V4z"/></svg>';
+      playback(Math.floor(Math.random() * countries.length));
+    }
+  }
+  var countries = new XMLHttpRequest();
+  countries.addEventListener("load", () => {
+    countries = JSON.parse(countries.responseText);
+    processCountriesJson();
+    getLocation();
+  });
+  countries.open("GET", "api/countries");
+  countries.send();
+</script>

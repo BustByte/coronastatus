@@ -19,9 +19,11 @@ import {
   SmokingHabit,
   IsolationStatus
 } from '../domain/types';
+import { CountryRepository } from '../repository/CountryRepository';
 
 const router = express.Router();
 const reportRepo = new CovidReportRepository();
+const countryRepo = new CountryRepository();
 
 router.get('/aggregated', cors(), async (req, res) => {
   const reports = await reportRepo.getLatestCovidReports();
@@ -181,6 +183,11 @@ router.get('/reports', cors(), async (req, res) => {
     .map(reportList => reportList.map(reportToExposedFormat))
     .filter(list => list.length > 0);
   return res.json(result);
+});
+
+router.get('/countries', cors(), async (req, res) => {
+  const countries = countryRepo.getCountries();
+  res.json(countries);
 });
 
 router.get('*', (req, res) => {

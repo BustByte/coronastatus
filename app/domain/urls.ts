@@ -44,6 +44,7 @@ interface CountrySpecificUrls {
   apiDocs: string;
   statistics: string;
   limit: string;
+  landing: string;
 }
 
 type Urls = {
@@ -60,6 +61,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estadisticas',
+    landing: '/landing',
     limit: '/limit'
   },
   au: {
@@ -71,6 +73,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
+    landing: '/landing',
     limit: '/limit'
   },
   bd: {
@@ -82,6 +85,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
+    landing: '/landing',
     limit: '/limit'
   },
   br: {
@@ -93,6 +97,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estatisticas',
+    landing: '/landing',
     limit: '/limit'
   },
   ca: {
@@ -104,6 +109,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
+    landing: '/landing',
     limit: '/limit'
   },
   cl: {
@@ -115,6 +121,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estadisticas',
+    landing: '/landing',
     limit: '/limit'
   },
   co: {
@@ -126,6 +133,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estadisticas',
+    landing: '/landing',
     limit: '/limit'
   },
   cz: {
@@ -137,6 +145,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistiky',
+    landing: '/landing',
     limit: '/limit'
   },
   de: {
@@ -148,6 +157,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistiken',
+    landing: '/landing',
     limit: '/limit'
   },
   dk: {
@@ -159,6 +169,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistikker',
+    landing: '/landing',
     limit: '/limit'
   },
   en: {
@@ -170,6 +181,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
+    landing: '/landing',
     limit: '/limit'
   },
   es: {
@@ -181,6 +193,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estadisticas',
+    landing: '/landing',
     limit: '/limit'
   },
   fr: {
@@ -192,6 +205,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistiques',
+    landing: '/landing',
     limit: '/limit'
   },
   id: {
@@ -203,6 +217,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistik',
+    landing: '/landing',
     limit: '/limit'
   },
   in: {
@@ -214,6 +229,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
+    landing: '/landing',
     limit: '/limit'
   },
   it: {
@@ -225,6 +241,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistiche',
+    landing: '/landing',
     limit: '/limit'
   },
   lt: {
@@ -236,6 +253,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistika',
+    landing: '/landing',
     limit: '/limit'
   },
   mt: {
@@ -247,6 +265,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
+    landing: '/landing',
     limit: '/limit'
   },
   mx: {
@@ -258,6 +277,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estadisticas',
+    landing: '/landing',
     limit: '/limit'
   },
   my: {
@@ -269,6 +289,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistik',
+    landing: '/landing',
     limit: '/limit'
   },
   ng: {
@@ -280,6 +301,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
+    landing: '/landing',
     limit: '/limit'
   },
   nl: {
@@ -291,6 +313,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistieken',
+    landing: '/landing',
     limit: '/limit'
   },
   no: {
@@ -302,6 +325,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistikk',
+    landing: '/landing',
     limit: '/limit'
   },
   np: {
@@ -313,6 +337,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
+    landing: '/landing',
     limit: '/limit'
   },
   ph: {
@@ -324,6 +349,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
+    landing: '/landing',
     limit: '/limit'
   },
   pt: {
@@ -335,6 +361,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/estatistica',
+    landing: '/landing',
     limit: '/limit'
   },
   ro: {
@@ -346,6 +373,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistici',
+    landing: '/landing',
     limit: '/limit'
   },
   se: {
@@ -357,6 +385,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistik',
+    landing: '/landing',
     limit: '/limit'
   },
   sg: {
@@ -368,6 +397,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
+    landing: '/landing',
     limit: '/limit'
   },
   sk: {
@@ -379,6 +409,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistiky',
+    landing: '/landing',
     limit: '/limit'
   },
   tr: {
@@ -390,6 +421,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/istatistikler',
+    landing: '/landing',
     limit: '/limit'
   },
   ua: {
@@ -401,6 +433,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
+    landing: '/landing',
     limit: '/limit'
   },
   us: {
@@ -412,6 +445,7 @@ export const countrySpecificUrls: Urls = {
     api: '/api',
     apiDocs: '/api-docs',
     statistics: '/statistics',
+    landing: '/landing',
     limit: '/limit'
   }
 };
