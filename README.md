@@ -6,7 +6,7 @@
 
 ## What is this?
 
-We don't know how many people have COVID-19. So we made a website where people can self-report symptoms. We plot the submissions on a map and show graphs with trends.
+We don't know how many people are infected by COVID-19. So we made a website where people can self-report symptoms. We plot the submissions on a map and show graphs with trends.
 
 ## How can I help?
 
@@ -105,7 +105,7 @@ You can either install and run everything on your own machine or build a docker 
 Download & install:
 
 - [git](https://git-scm.com/downloads)
-- [nodejs](https://nodejs.org),
+- [node.js](https://nodejs.org)
 - [yarn](https://yarnpkg.com/)
 
 #### Steps
