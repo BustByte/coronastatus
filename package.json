@@ -27,7 +27,7 @@
     "express": "^4.17.1",
     "express-rate-limit": "^5.1.1",
     "i18n": "^0.8.6",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "pg": "^7.18.2",
     "postcss-cli": "^7.1.0",
     "sqlite3": "^4.1.1",
