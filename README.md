@@ -7,7 +7,8 @@
 ## What is this?
 
 We don't know how many people have COVID-19. So we made a website where people can self-report symptoms. We plot the submissions on a map and show graphs with trends.
-
+## Wow! This is amazing work for all people 
+## Well done
 ## How can I help?
 
 We need people who can help translate the site, develop new features, project leads for new and existing countries, and much more. Join our group chat: https://t.me/onzecorona
@@ -50,7 +51,8 @@ We need people who can help translate the site, develop new features, project le
 - 🇩🇪 Germany: coming soon
 - 🇧🇩 Bangladesh: coming soon
 - ... want one for your country? Join our community: https://t.me/onzecorona
-
+## I am from india and i visited this website.
+## Good working.
 ## Why?
 
 The government is working on this, but they're too slow in getting something out fast.
